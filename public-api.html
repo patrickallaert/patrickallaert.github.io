@@ -1,50 +1,50 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
 
-		<title>Using the eZ Publish 5 Public API - eZ Summer Camp 2013</title>
+        <title>Using the eZ Publish 5 Public API - eZ Summer Camp 2013</title>
 
-		<meta name="description" content="With the new eZ version 5 and the Symfony based MVC knowing how to use Public API starts to be very important. In the workshop we will practice several common usage examples.">
-		<meta name="author" content="Damien Pobel &mdash; eZ Systems">
+        <meta name="description" content="With the new eZ version 5 and the Symfony based MVC knowing how to use Public API starts to be very important. In the workshop we will practice several common usage examples.">
+        <meta name="author" content="Damien Pobel &mdash; eZ Systems">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/ez.css" id="theme">
-		<link rel="stylesheet" href="lib/css/icomoon.css">
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/ez.css" id="theme">
+        <link rel="stylesheet" href="lib/css/icomoon.css">
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/tomorrow-night-bright.css">
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/tomorrow-night-bright.css">
 
-		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-		<script>
-			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-		</script>
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
 
-	<body>
+    <body>
 
-		<div class="reveal">
+        <div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
                     <img src="assets/ez.png" alt="eZ" />
                     <h1>eZ Publish Public API</h1>
 
                     <p>Available online at:<br><a href="http://j.mp/ez-sc-2013-public-api">http://j.mp/ez-sc-2013-public-api</a></p>
-				</section>
+                </section>
 
-				<section>
+                <section>
                     <h2>Me</h2>
 
                     <ul>
@@ -66,9 +66,9 @@
                             <li>Planet eZ Publish.fr probably the first eZ Publish 5 website</li>
                         </ul>
                     </aside>
-				</section>
+                </section>
 
-				<section>
+                <section>
                     <h2>eZ Publish 3.x/4.x</h2>
                     <ul>
                         <li><code>eZContentObjectTreeNode</code>, <code>eZContentObject</code>, <code>eZContentClass</code>, ...</li>
@@ -80,7 +80,7 @@
                         <li class="conclusion" data-icon="&#xe006 ">Difficult to maintain</li>
                         <li class="conclusion" data-icon="&#xe006 ">Huge effort to introduce new storage system</li>
                     </ul>
-				</section>
+                </section>
 
                 <section data-markdown>
                     <script type="text/template">
@@ -103,7 +103,7 @@
                     </aside>
                 </section>
 
-				<section>
+                <section>
                     <h2>Domain objects</h2>
                     <table>
                         <tr>
@@ -136,10 +136,10 @@
                             <li>Concepts remain, only vocabulary changes</li>
                         </ul>
                     </aside>
-				</section>
+                </section>
 
 
-				<section>
+                <section>
                     <p class="architecture"><img src="assets/architecture.png" alt="eZ Publish 5 architecture"></p>
                     <aside class="notes">
                         <ul>
@@ -148,10 +148,10 @@
                             <li>Storage engine: NoSQL, new based on SQL, Oracle, ...</li>
                         </ul>
                     </aside>
-				</section>
+                </section>
 
 
-				<section data-markdown>
+                <section data-markdown>
                     <script type="text/template">
                         ## Repository / Services
 
@@ -177,9 +177,9 @@
                             <li>Annotation for IDE</li>
                         </ul>
                     </aside>
-				</section>
+                </section>
 
-				<section data-markdown>
+                <section data-markdown>
                     <script type="text/template">
                         ## Services
 
@@ -190,9 +190,9 @@
                         * ...
                         * `SearchService` to search contents (`eZ\Publish\API\Repository\SearchService`)
                     </script>
-				</section>
+                </section>
 
-				<section data-markdown>
+                <section data-markdown>
                     <script type="text/template">
                         ## Current user and policies
 
@@ -203,9 +203,9 @@
                         * Unless specified, service's methods take user's policies into account
                         * Loading an inaccessible object throws an exception
                     </script>
-				</section>
+                </section>
 
-				<section data-markdown>
+                <section data-markdown>
                     <script type="text/template">
                         ## Usage of service (1)
 
@@ -221,9 +221,9 @@
                             * may have some convenient methods
                             * read only by design
                     </script>
-				</section>
+                </section>
 
-				<section data-markdown>
+                <section data-markdown>
                     <script type="text/template">
                         ## Usage of service (2)
 
@@ -239,9 +239,9 @@
                         * Created by the service
                         * `ContentMetadataUpdateStruct`, `ContentUpdateStruct`, `ContentCreateStruct`, ...
                     </script>
-				</section>
+                </section>
 
-				<section data-markdown>
+                <section data-markdown>
                     <script type="text/template">
                         ## Gettting the repository
 
@@ -266,7 +266,7 @@
                     </script>
                 </section>
 
-				<section data-markdown>
+                <section data-markdown>
                     <script type="text/template">
                         ## Content in the Public API
 
@@ -275,9 +275,9 @@
                         * `Content` vs. `ContentInfo`
                         * **No more lazy loaded attribute**
                     </script>
-				</section>
+                </section>
 
-				<section data-markdown>
+                <section data-markdown>
                     <script type="text/template">
                         ## Search contents
 
@@ -301,9 +301,9 @@
 
                         ```
                     </script>
-				</section>
+                </section>
 
-				<section data-markdown>
+                <section data-markdown>
                     <script type="text/template">
                         ## *fetch content list* legacy vs. eZ 5
 
@@ -333,9 +333,9 @@
                         $contents = $searchService->findContent( $query );
                         ```
                     </script>
-				</section>
+                </section>
 
-				<section data-markdown>
+                <section data-markdown>
                     <script type="text/template">
                         ## *fetch content tree* legacy vs. eZ 5
 
@@ -365,7 +365,7 @@
                         ```
 
                     </script>
-				</section>
+                </section>
 
 
                 <section data-markdown>
@@ -379,9 +379,9 @@
                         * allows to use legacy code inside the new stack
                         * Example: Trigger legacy workflow from an eZ Publish 5 script<br>See: http://j.mp/legacy-callback-ezpublish
                     </script>
-				</section>
+                </section>
 
-				<section data-markdown>
+                <section data-markdown>
                     <script type="text/template">
                         ## Hands on!
 
@@ -399,9 +399,9 @@
                         3. Bonus ;-)
 
                     </script>
-				</section>
+                </section>
 
-				<section data-markdown>
+                <section data-markdown>
                     <script type="text/template">
                         ## RSS feed
 
@@ -413,9 +413,9 @@
                             * `/eng/summercamp/rssblogposts` RSS feed of the blog posts (10 last)
                             * details in `EzSystems\SummerCamp2013PublicApiBundle\Controller\ExportController`
                     </script>
-				</section>
+                </section>
 
-				<section data-markdown>
+                <section data-markdown>
                     <script type="text/template">
                         ## *Import* script
 
@@ -423,9 +423,9 @@
                         * `$ php ezpublish/console summercamp:create_blog_posts`
                         * `EzSystems\SummerCamp2013PublicApiBundle\Command\CreateBlogPostCommand`
                     </script>
-				</section>
+                </section>
 
-				<section data-markdown>
+                <section data-markdown>
                     <script type="text/template">
                         ## Bonus
 
@@ -441,50 +441,50 @@
                     <aside class="notes">
                         HTML instead of strig_tags(ezxml) in item's description, configurable action: type identifier, number of elements, root location, adapt unit tests
                     </aside>
-				</section>
+                </section>
 
 
-				<section>
+                <section>
                     <h2>The end</h2>
 
                     <p class="end">?</p>
                 </section>
-			</div>
+            </div>
             <header>
             <h1>eZ Publish Public API</h1>
             </header>
             <footer><p>Damien Pobel &lt;dp@ez.no&gt;</p><p>eZ Summer Camp 2013</p><p>Slide <span class="page-nr">2</span></p></footer>
-		</div>
+        </div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
 
-		<script>
+        <script>
 
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: false,
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: false,
                 rollingLinks: false,
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
-					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                    // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+                    // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
 
             Reveal.addEventListener('ready', function (e) {
                 var header, footer, sections;
@@ -500,7 +500,7 @@
                 }
 
             });
-		</script>
+        </script>
 
-	</body>
+    </body>
 </html>
