@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Création d'un site orienté contenu en 45 min. (changements de spéc. inclus!) - Forum PHP Paris 2013</title>
+
+        <meta name="description" content="Création d'un site orienté contenu en 45 min. (changements de spéc. inclus!) Qui ne s'est jamais retrouvé à devoir monter le site web de son association sportive, les pages institutionnelles de son employeur ou encore la version web d'un magazine papier ? Ces projets ont un point commun : le contenu est le cœur du site, un CMS (Content Management System) semble l'outil le plus efficace pour les réaliser. Mais qu'en est il de l'évolutivité, que se passe-t-il si les spécifications changent, ne serais je pas bloqué par la rigidité supposée de ce type de solution ? Dans cette conférence sous forme de live coding, nous construirons pas à pas un site complet orienté contenu à l'aide d'eZ&nbsp;Publish&nbsp;5 en incluant quelques changements vis-à-vis des spécifications initiales et en montrant la flexibilité de ce CMS basé sur le framework Symfony2.">
+        <meta name="author" content="Damien Pobel &mdash; eZ Systems, Patrick Allaert &mdash; Libereco Technologies">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/ez.css" id="theme">
+        <link rel="stylesheet" href="lib/css/icomoon.css">
+        <link rel="stylesheet" href="css/slides.css">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/tomorrow-night-bright.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+
+                <section id="front-slide">
+                    <img src="assets/ez.png" alt="eZ" />
+                    <h1>Création d'un site orienté contenu en 45 min.</h1>
+
+                    <p>Disponible en ligne:<br><a href="FIXME">http://FIXME</a></p>
+                </section>
+
+                <section id="damien-pobel">
+                    <h2>Damien Pobel &lt;<a href="mailto:dp@ez.no">dp@ez.no</a>&gt;</h2>
+
+                    <ul>
+                        <li>Membre d'eZ&nbsp;Community depuis 2005</li>
+                        <li>Fait partie de l'équipe eZ&nbsp;Engineering depuis 2011</li>
+                        <li><em>Lead engineer User Interface</em> at eZ</li>
+                        <li>Webmaster de <a href="http://www.planet-ezpublish.fr/">http://www.planet-ezpublish.fr/</a>, fonctionnant sous eZ Publish 5!</li>
+                    </ul>
+
+                    <ul class="social">
+                        <li class="twitter"><a href="https://twitter.com/dpobel" data-icon="&#xe001"><span>@dpobel</span></a></li>
+                        <li class="gplus"><a href="https://plus.google.com/u/0/102664237253121682993/posts?rel=author" data-icon="&#xe000"><span>+Damien Pobel</span></a></li>
+                        <li class="github"><a href="http://github.com/dpobel" data-icon="&#xe003"><span>Github</span></a></li>
+                        <li class="linkedin"><a href="http://fr.linkedin.com/in/dpobel" data-icon="&#xe004"><span>LinkedIn</span></a></li>
+                        <li class="blog"><a href="http://damien.pobel.fr" data-icon="&#xe005"><span>Blog</span></a></li>
+                    </ul>
+                    <aside class="notes">
+                        <ul>
+                            <li>Planet eZ Publish.fr, probablement le premier site eZ&nbsp;Publish&nbsp;5</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section id="patrick-allaert">
+                    <h2>Patrick Allaert &lt;<a href="mailto:patrickallaert@php.net">patrickallaert@php.net</a>&gt;</h2>
+
+                    <ul>
+                        <li>Membre d'eZ&nbsp;Community depuis 2005</li>
+                        <li>Membre de PHP internals depuis 2009</li>
+                        <li>Fait partie de l'équipe eZ&nbsp;Engineering depuis 2009</li>
+                        <li>Fondateur de <em>Libereco Technologies</em></li>
+                        <li>Auteur de l'extension PHP <a href="http://pecl.php.net/package/APM">APM</a></li>
+                    </ul>
+
+                    <ul class="social">
+                        <li class="twitter"><a href="https://twitter.com/patrick_allaert" data-icon="&#xe001"><span>@patrick_allaert</span></a></li>
+                        <li class="gplus"><a href="https://plus.google.com/u/0/+PatrickAllaert" data-icon="&#xe000"><span>+Patrick Allaert</span></a></li>
+                        <li class="github"><a href="http://github.com/patrickallaert" data-icon="&#xe003"><span>Github</span></a></li>
+                        <li class="linkedin"><a href="http://www.linkedin.com/in/patrickallaert" data-icon="&#xe004"><span>LinkedIn</span></a></li>
+                        <li class="blog"><a href="http://patrickallaert.blogspot.be/" data-icon="&#xe005"><span>Blog</span></a></li>
+                    </ul>
+                    <aside class="notes">
+                        <ul>
+                            <li>Planet eZ Publish.fr, probablement le premier site eZ&nbsp;Publish&nbsp;5</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section id="ez-systems-1">
+                    <h2>eZ&nbsp;Systems</h2>
+
+                    <img src="assets/ez_presentation.png" alt="eZ en image"/>
+
+                    <h3>Éditeur de logiciel international</h3>
+
+                    <div>
+                        <ul>
+                            <li>Fondé en 1999 à Skien</li>
+                            <li>Localisé à&nbsp;:Skien, Oslo, Lyon, Paris, New&nbsp;York, Tokyo</li>
+                            <li>70 employés</li>
+                            <li>Investisseurs norvégiens</li>
+                        </ul>
+                        <ul>
+                            <li>Open Source Commercial</li>
+                            <li>Large communauté internationale&nbsp;:<br>44&nbsp;000 membres, 250&nbsp;000 installations</li>
+                            <li>Modèle d'abonnements</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <section id="ez-systems-2">
+                    <h2>Références</h2>
+
+                    <img src="assets/ez_customers.png" alt="eZ en image"/>
+
+                </section>
+
+                <section id="use-case">
+                    <h2>Cas d'utilisation</h2>
+
+                    <ul>
+                        <li>Site d'une conférence PHP :-)</li>
+                        <li>
+                            Les besoins:
+                            <ul>
+                                <!--li>page d'accueil;</li-->
+                                <li>lister les <strong>conférences</strong>, <strong>conférenciers</strong> et <strong>salles</strong>, tout en pouvant passer d'une information à l'autre.</li>
+                                <!--li>page de <strong>contact</strong> avec divers renseignements</li-->
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="under-construction" id="under-construction-1">
+                    <h2>Site en construction!</h2>
+
+                    <img src="assets/under_construction.jpg" alt="Construction du site en cours..."/>
+                </section>
+
+                <section id="spec-changes-1">
+                    <h2>Tout bon client se doit de changer les spécifications en cours...</h2>
+
+                    <ul>
+                        <li>... et tous projets d'avoir anticipé les possibilités de changements!</li>
+                        <li>
+                            Apportons quelques modifications aux:
+                            <ul>
+                                <li>conférences;</li>
+                                <li>conférenciers.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="under-construction" id="under-construction-2">
+                    <h2>Site en construction!</h2>
+
+                    <img src="assets/under_construction.jpg" alt="Construction du site en cours..."/>
+                </section>
+
+                <section id="conclusion">
+                    <h2>Conclusion</h2>
+
+                </section>
+
+                <section id="the-end">
+                    <h2>Fin</h2>
+
+                    <p class="end">?</p>
+
+                    <ul>
+                        <li>Psssst: n'oubliez pas de mettre vos commentaires sur: <a href="https://joind.in/9358">https://joind.in/9358</a></li>
+                    </ul>
+                </section>
+
+                <section id="credits">
+                    <h2>Crédits</h2>
+
+                    <ul>
+                        <li>Photo <em>"Under Construction"</em>: <a href="http://www.flickr.com/photos/jasoneppink/8534678311">http://www.flickr.com/photos/jasoneppink/8534678311</a></li>
+                    </ul>
+                </section>
+            </div>
+            <header>
+            <h1>Création d'un site orienté contenu en 45 min.</h1>
+            </header>
+            <footer><p>Damien Pobel, Patrick Allaert</p><p>Forum PHP Paris 2013</p><p>Slide <span class="page-nr">2</span></p></footer>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: false,
+                rollingLinks: false,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                    // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+                    // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+            Reveal.addEventListener('ready', function (e) {
+                var header, footer, sections;
+
+                header = document.querySelector('.reveal header');
+                footer = document.querySelector('.reveal footer');
+                sections = document.querySelectorAll('.slides section');
+
+                for (var i = 1, len = sections.length; i != len; i++) {
+                    sections[i].insertBefore(header.cloneNode(true), sections[i].firstChild);
+                    sections[i].appendChild(footer.cloneNode(true));
+                    sections[i].querySelector('.page-nr').innerHTML = i+1;
+                }
+
+            });
+        </script>
+
+    </body>
+</html>

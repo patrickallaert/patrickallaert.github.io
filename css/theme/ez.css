@@ -147,10 +147,10 @@ body {
     font-size: 66px;
     background: #2a84b7;
     color: #fff;
-    line-height: 2em;
     border-top-left-radius: 2em;
     border-bottom-left-radius: 2em;
     margin-left: 400px;
+    padding: 1em 0;
     text-align:center;
 }
 
