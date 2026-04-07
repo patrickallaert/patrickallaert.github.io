@@ -1,0 +1,9 @@
+.codex
+node_modules/
+
+instagram-source/
+
+site-source/assets/
+site-source/html/
+site-source/sitemaps/
+site-source/tmp/

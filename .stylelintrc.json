@@ -1,0 +1,6 @@
+{
+  "customSyntax": "postcss-scss",
+  "extends": [
+    "stylelint-config-recess-order"
+  ]
+}
