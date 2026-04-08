@@ -8,9 +8,9 @@ Whether you are already a forrozeiro or want to discover a new hobby where you c
 
 ⭐ CLICK HERE TO REGISTER ⭐
 
-1) Fill in the registration form
-2) Make payment straight away to the bank account details provided
-3) We'll send you a confirmation email once your payment hits our bank account.
+1. Fill in the registration form
+2. Make payment straight away to the bank account details provided
+3. We'll send you a confirmation email once your payment hits our bank account.
 
 If you have made payment and you don't receive an email within 7 working days, please email us at sarah@conexao.be to check what happened.
 
@@ -40,7 +40,9 @@ For any other non-level questions, email Sarah and Anaya at info@conexao.be.
 
 DATES & TIMES
 
-✔️ 10 weeks of classes + 1 personal feedback week ✔️ Starting the week of 12th Jan 2026 ✔️ Finishing on 2nd April 2026
+- 10 weeks of classes + 1 personal feedback week
+- Starting the week of 12th Jan 2026
+- Finishing on 2nd April 2026
 
 All classes are in English.
 
@@ -87,9 +89,11 @@ You don't need a partner to register. We take care of balancing the leaders and 
 
 By registering, you confirm you have read and agreed to the terms and conditions.
 
-3) We'll send you a confirmation email once your payment hits our bank account
+1. Fill in the registration form
+2. Make payment straight away to the bank account details provided
+3. We'll send you a confirmation email once your payment hits our bank account.
 
-If you have filled in the form and made payment but you don't receive an email within 7 working days, please email us at sarah@conexao.be to check what's happening.
+If you have filled in the form and made payment but you don't receive an email within 7 working days, please email us at info@conexao.be to check what's happening.
 
 We're trying to make the registration process smoother, so please go ahead and make payment straight after filling out your registration form - don't wait for a confirmation email before making the payment (as we used to do in the past).
 

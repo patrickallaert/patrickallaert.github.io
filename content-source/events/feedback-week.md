@@ -74,8 +74,6 @@ What if I can't attend my regular class that week?
 
 If you can’t attend your regular class slot that week, there are three options. You can select the appropriate one when you fill out the survey.
 
-Choose another class slot you can attend -> fill in the survey and this confirms the class slot you select.
-
-If you can't make another class time the same week, let us know. We will do our best to find an alternative moment, even though we can't guarantee this will be possible.
-
-If you can't make another class time, you can also skip the feedback opportunity this time. This means that you will register for the same level in April-June trimester.
+- Choose another class slot you can attend -> fill in the survey and this confirms the class slot you select.
+- If you can't make another class time the same week, let us know. We will do our best to find an alternative moment, even though we can't guarantee this will be possible.
+- If you can't make another class time, you can also skip the feedback opportunity this time. This means that you will register for the same level in April-June trimester.
