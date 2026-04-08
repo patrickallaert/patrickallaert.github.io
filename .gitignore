@@ -1,5 +1,7 @@
 .codex
 node_modules/
+__pycache__/
+npm-debug.log*
 
 instagram-source/
 

@@ -198,11 +198,11 @@ h2 {
 }
 
 h1 {
-  font-size: clamp(2.4rem, 8vw, 4.9rem);
+  font-size: clamp(2rem, 6vw, 3.9rem);
 }
 
 h2 {
-  font-size: clamp(1.8rem, 5vw, 2.9rem);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 h3 {
@@ -236,17 +236,12 @@ td {
 .wordmark {
   display: inline-flex;
   align-items: center;
-  gap: 0.8rem;
   text-decoration: none;
 
-  svg {
-    width: 13rem;
+  img {
+    width: auto;
+    max-width: 12.5rem;
     height: auto;
-  }
-
-  strong {
-    font-family: var(--display);
-    font-size: 1.35rem;
   }
 }
 
@@ -267,7 +262,7 @@ body#legal #legal-intro {
 
   p {
     max-width: 38rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   ul {
@@ -510,11 +505,43 @@ body#levels {
     background: var(--paper);
     border: 0.08rem solid rgba(23, 50, 75, 0.1);
   }
+
+  blockquote {
+    margin: 0;
+    padding-left: 1rem;
+    border-left: 0.2rem solid var(--yellow-deep);
+  }
 }
 
 body#events {
   #event-types article:first-child {
     background: linear-gradient(135deg, rgba(255, 214, 77, 0.2), rgba(23, 199, 201, 0.12));
+  }
+}
+
+body#about {
+  #founder,
+  #teaching-team {
+    padding: 1rem;
+    background: var(--paper);
+    border: 0.08rem solid rgba(23, 50, 75, 0.1);
+    border-radius: var(--radius-small);
+  }
+
+  #founder article {
+    max-width: 52rem;
+  }
+
+  #teaching-team > div {
+    display: grid;
+    gap: 1rem;
+  }
+
+  #teaching-team article {
+    padding: 1rem;
+    background: linear-gradient(180deg, rgba(23, 199, 201, 0.06), #fff);
+    border: 0.08rem solid rgba(23, 50, 75, 0.1);
+    border-radius: var(--radius-small);
   }
 }
 
@@ -561,7 +588,7 @@ body#events {
 
   body#classes #venues > div,
   body#home #priorities,
-  body#about #school-values {
+  body#about #teaching-team > div {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
