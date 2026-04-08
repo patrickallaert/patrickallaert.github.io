@@ -56,11 +56,9 @@ Can we see the figures and fundamentals for each level in advance?
 
 Of course! Find them here:
 
-⭐ For transitioning from Level 1 to Level 2
-
-⭐ For transitioning from Level 2 to Level 3
-
-⭐ For transitioning from Level 3 to Level 4
+- For transitioning from Level 1 to Level 2
+- For transitioning from Level 2 to Level 3
+- For transitioning from Level 3 to Level 4
 
 Plus some general guidance about changing levels here.
 

@@ -9,9 +9,7 @@ Whether you are already a forrozeiro or want to discover a new hobby where you c
 ⭐ CLICK HERE TO REGISTER ⭐
 
 1) Fill in the registration form
-
 2) Make payment straight away to the bank account details provided
-
 3) We'll send you a confirmation email once your payment hits our bank account.
 
 If you have made payment and you don't receive an email within 7 working days, please email us at sarah@conexao.be to check what happened.
@@ -32,11 +30,9 @@ LEVELS
 
 For an overview of each level, take a look at these links:
 
-👉 From Level 1 to Level 2: Fundamentals you need - Figures you need
-
-👉 From Level 2 to Level 3: Fundamentals you need - Figures you need
-
-👉 From Level 3 to Level 4: Fundamentals you need - Figures you need
+- From Level 1 to Level 2: Fundamentals you need - Figures you need
+- From Level 2 to Level 3: Fundamentals you need - Figures you need
+- From Level 3 to Level 4: Fundamentals you need - Figures you need
 
 If you aren't sure which level to register, drop your teacher a message and they'll be happy to help!
 
@@ -50,57 +46,37 @@ DATES & TIMES
 
 All classes are in English.
 
-🕗 Level 1: Monday 19h30 (Dojo)
+- Level 1: Monday 19h30 (Dojo)
+- Level 2: Monday 20h45 (Ten Noey) | Wednesday 19h
+- Level 3: Tuesday 19h | Monday 20h45 (Dojo)
+- Level 4: Thursday 20h45
+- Roots 1: Tuesday 20h45
+- Roots 2: Thursday 19h
+- Short Courses: Monday 19h (Ten Noey)
 
-🕗 Level 2: Monday 20h45 (Ten Noey) | Wednesday 19h
-
-🕗 Level 3: Tuesday 19h | Monday 20h45 (Dojo)
-
-🕗 Level 4: Thursday 20h45
-
-🕗 Roots 1: Tuesday 20h45
-
-🕗 Roots 2: Thursday 19h
-
-🕗 Short Courses: Monday 19h (Ten Noey)
-
-🗓️ Mondays: April 20, 27 | May 4, 11, 18, __ | June 1, 8, 15, 22, 29
-
-Dancing in Dialogue: April 20, 27 | May 4, 11, 18
-
-Footwork & Armwork: June 1, 8, 15, 22, 29
-
-🗓️ Tuesdays: April 21, 28 | May 5, 12, 19, 26 | June 2, 9, 16, 23
-
-🗓️ Wednesdays: April 22, 29 | May 6, 13, 20, 27 | June 3, 10, 17, 24
-
-🗓️ Thursdays: April 23, 30 | May 7, __, 21, 28 | June 4, 11, 18, 25 | July 2
+- Mondays: April 20, 27 | May 4, 11, 18, \_\_ | June 1, 8, 15, 22, 29
+  Dancing in Dialogue: April 20, 27 | May 4, 11, 18
+  Footwork & Armwork: June 1, 8, 15, 22, 29
+- Tuesdays: April 21, 28 | May 5, 12, 19, 26 | June 2, 9, 16, 23
+- Wednesdays: April 22, 29 | May 6, 13, 20, 27 | June 3, 10, 17, 24
+- Thursdays: April 23, 30 | May 7, \_\_, 21, 28 | June 4, 11, 18, 25 | July 2
 
 ADDRESSES
 
-📌 Monday (Short Courses & L2): GC Ten Noey, Rue de la Commune 25 → a lovely-sized dance room in a cool cultural centre.
-
-📌 Monday (L1 & L3): Dojo du Brochet, Rue du Brochet 55 → with the smoothest floor around.
-
-📌 Tuesday: Maison Malibran, Rue de la Digue 10 → Salle à Tout, a great big room on the first floor.
-
-📌 Wednesday: Salle Dublin, Rue de Dublin 13 → the quirkiest dance room in Brussels.
-
-📌 Thursday: Dojo du Brochet, Rue du Brochet 55 → with the smoothest floor around.
+- Monday (Short Courses & L2): GC Ten Noey, Rue de la Commune 25 → a lovely-sized dance room in a cool cultural centre.
+- Monday (L1 & L3): Dojo du Brochet, Rue du Brochet 55 → with the smoothest floor around.
+- Tuesday: Maison Malibran, Rue de la Digue 10 → Salle à Tout, a great big room on the first floor.
+- Wednesday: Salle Dublin, Rue de Dublin 13 → the quirkiest dance room in Brussels.
+- Thursday: Dojo du Brochet, Rue du Brochet 55 → with the smoothest floor around.
 
 PRICES
 
-🍀 Full trimester → 142 euros (one class per week)
-
-155 euros (fair trade option)
-
-🍀 Flexi-trimester → 113 euros (7 classes, valid 1 trimester)
-
-120 euros (fair trade option)
-
-🍀 Double trimester → 242 euros (two full trimesters or one full trimester + two short courses)
-
-260 euros (fair trade option)
+- Full trimester → 142 euros (one class per week)
+  155 euros (fair trade option)
+- Flexi-trimester → 113 euros (7 classes, valid 1 trimester)
+  120 euros (fair trade option)
+- Double trimester → 242 euros (two full trimesters or one full trimester + two short courses)
+  260 euros (fair trade option)
 
 FAIR TRADE OPTION
 
