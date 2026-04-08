@@ -16,8 +16,6 @@ This file maps extracted source material to the current minimal site structure.
 - `classes/overview.md`
 - `classes/april-june-2026.md`
 - `classes/jan-march-2026.md`
-- `classes/sept-dec-2025.md`
-- `classes/everyone-learns-to-lead-and-follow.md`
 
 ## Levels
 

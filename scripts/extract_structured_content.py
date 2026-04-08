@@ -52,8 +52,6 @@ MAPPING = [
     ("www.sarahforro.com__classes.html", "classes/overview.md", "Classes"),
     ("www.sarahforro.com__april-june-2026.html", "classes/april-june-2026.md", "Classes April-June 2026"),
     ("www.sarahforro.com__jan-march-2026.html", "classes/jan-march-2026.md", "Classes Jan-March 2026"),
-    ("www.sarahforro.com__sept-dec-2025.html", "classes/sept-dec-2025.md", "Classes Sep-Dec 2025"),
-    ("www.sarahforro.com__lead-and-follow.html", "classes/everyone-learns-to-lead-and-follow.md", "Everyone Learns to Lead & Follow"),
     ("www.sarahforro.com__level-descriptions.html", "levels/overview.md", "Levels"),
     ("www.sarahforro.com__level1description.html", "levels/level-1.md", "Level 1"),
     ("www.sarahforro.com__level2description.html", "levels/level-2.md", "Level 2"),
@@ -251,8 +249,6 @@ This file maps extracted source material to the current minimal site structure.
 - `classes/overview.md`
 - `classes/april-june-2026.md`
 - `classes/jan-march-2026.md`
-- `classes/sept-dec-2025.md`
-- `classes/everyone-learns-to-lead-and-follow.md`
 
 ## Levels
 

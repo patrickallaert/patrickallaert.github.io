@@ -62,7 +62,6 @@ BLOG_REFERENCE = {
 SEASONAL_REFERENCE = {
     "www.sarahforro.com__jan-march-2026.html",
     "www.sarahforro.com__april-june-2026.html",
-    "www.sarahforro.com__sept-dec-2025.html",
 }
 
 FR_ARCHIVE = {
