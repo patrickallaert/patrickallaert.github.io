@@ -16,7 +16,28 @@ If you have made payment and you don't receive an email within 7 working days, p
 
 ## Programme
 
-Take a look at the image above for a quick and easy overview of the programme.
+### Weekly overview
+
+#### Monday
+
+- 19h00 at GC Ten Noey: Musicality Course
+- 19h30 at Dojo du Brochet: Level 1
+- 20h45 at Dojo du Brochet: Level 2
+- 20h45 at GC Ten Noey: Level 3
+
+#### Tuesday
+
+- 19h00 at Maison Malibran: Level 3
+- 20h45 at Maison Malibran: Level 1
+
+#### Wednesday
+
+- 19h00 at Salle Dublin: Level 2
+
+#### Thursday
+
+- 19h00 at Dojo du Brochet: Roots Course
+- 20h45 at Dojo du Brochet: Level 4
 
 Never tried forró before? Or you'd like to meet us before registering? We have several free taster classes available: check out the dates here.
 
@@ -42,11 +63,15 @@ For any other non-level questions, email Sarah and Anaya at info@conexao.be.
 
 ## Dates and Times
 
+### Term summary
+
 - 10 weeks of classes + 1 personal feedback week
 - Starting the week of 12th Jan 2026
 - Finishing on 2nd April 2026
 
 All classes are in English.
+
+### Weekly class slots
 
 - Level 1: Monday 19h30 (Dojo) | Tuesday 20h45
 - Level 2: Monday 20h45 (Dojo) | Wednesday 19h
@@ -54,6 +79,8 @@ All classes are in English.
 - Level 4: Thursday 20h45
 - Roots Course: Thursday 19h
 - Musicality Course: Monday 19h (Ten Noey)
+
+### Calendar dates
 
 - Mondays: Jan 12, 19, 26 | Feb 2, 9, \_\_, 23 | March 2, 9, 16, 23, 30
 - Tuesdays: Jan 13, 20, 27 | Feb 3, 10, \_\_, 24 | March 3, 10, 17, 24, 31
