@@ -2,58 +2,24 @@
 
 Source: `www.sarahforro.com__about-us.html`
 
-## “The one thing that can solve most of our problems is dancing.”
+**“The one thing that can solve most of our problems is dancing.” – James Brown**
 
-## – James Brown
+## Sarah Collings
 
 Sarah fell in love with forró while living in Milan and she hasn’t looked back since. Building on her experience in sports and language education, Sarah launched and started to teach forró classes in Brussels in 2014. She now teaches regular classes across multiple levels and two cities, as well as travelling all over Europe and occasionally beyond to teach at workshops and festivals. She is also one of the founders of the Be Forró association in Brussels, working to serve the growing forró community in the city.
 
+## Teaching and Research
+
 Sarah's belief that a teacher should be forever an enthusiastic student has led her to study with many teachers and dancers, both within forró and beyond (samba de gafieira, tango, body percussion, and more…) In particular, her initial work and partnership with Ricardo Ambrózio shaped her vision of forró, and more recent studies with Sheila Santos have significantly enriched her approach and methodology. Beyond these two crucial influences, Sarah has been privileged to be able to teach and study with many other talented teachers which has broadened her horizons and skills as both leader and follower.
+
+## Building the School
 
 This desire to learn and share her knowledge also resulted in the creation of the Encontro Pedagogico in 2017 in collaboration with Emilie Gasia. This is an annual meeting of forró teachers to collaboratively discuss and enhance the quality of their work. In parallel Sarah has created the Projeto Monitores to develop assistants and future teachers here in Brussels - meet the team below!
 
+## Teaching Approach
+
 Sarah's classes emphasise the importance of presence, connection with our partner and musicality. Musicality has in fact been one of the focal points in her teaching and research for many years now and has become one of the most requested topics from festival and workshop organisers. In the classroom, she also prides herself on (trying to!) achieve that oh-so-delicate balance between technique and creativity, precision and freedom, focus and fun.
 
-## “I don’t want people who want to dance, I want people who have to dance.” – George Balanchine
+## Teaching Team
 
-## Simon
-
-Simon discovered forró in 2018 in Toulouse and dived straight in, immersing himself in the dance, the music, and the community.
-
-He loves the challenge of breaking down new moves and then practises diligently which creates his signature smooth dance style, whether he's turning universitário-style or exploring the intricacies of roots footwork. In the classroom, he is passionate, detailed-oriented, and untiring - keen to contribute to each student's learning as best he can.
-
-## Andrés
-
-The best way to get to know Andrés is to invite him to dance! One of the most generous dancers around, he's the first to open the dance floor and the last to leave it.
-
-Andrés started dancing forró in 2017, and quickly proved himself a dedicated and curious leader. One of his strongest skills is connection, opening up lots of space for creativity and playfulness on the dance floor. In the classroom, he is laid-back but highly observant, analysing what's going on and providing support wherever necessary.
-
-## Anna
-
-Anna’s warm and welcoming nature makes her a natural at putting new students at ease. Her passion for sharing and spreading the joy of forró shines through in everything she does, whether she’s teaching a class or dancing at a party.
-
-Outside the classroom, Anna takes her love for forró to the stage, where she keeps the rhythm alive as the zabumba player for "Forró na Chinela." Her commitment to the music and dance inspires everyone she encounters to dive deeper into the forró experience.
-
-## Charlotte
-
-Charlotte is all about the feeling. Her style of dancing values presence and connection, with a touch of playfulness. Highly committed, she studies hard as both a leader and follower. More recently, she has also put on an organiser hat to keep forró parties rolling in Brussels.
-
-Charlotte's kindness and patience is appreciated in the classroom. She puts students at ease and brings an embodied softness to the space.
-
-## Giulia
-
-Giulia radiates positivity and warmth, making her one of the sunniest and most uplifting people in the forró community. Her playful and dynamic dance style is all about embracing joy and creating a fun connection with her partners.
-
-As a teacher, Giulia is patient and encouraging, fostering an environment where students feel empowered to explore and grow. Beyond the dance floor, she brings her vibrant energy to the stage as the triangle player in the band "Forró na Chinela," adding sparkle and rhythm to their performances.
-
-## Patrick
-
-Everything Patrick does is clean and precise, providing maximum opportunity to connect with his partner. He's the embodiment of quality over quantity.
-
-He started dancing forró in 2018, bringing his background in salsa, bachata and other dance styles with him. If you fancy a philosophical conversation on couple dancing? Patrick is your guy! And in the classroom, he is exceptionally patient, drawing on his diverse dance experiences to clearly communicate the details with a touch of humour.
-
-## Vero
-
-Vero is a creative and versatile dancer who constantly draws inspiration from a variety of dance styles, adding depth and uniqueness to her forró. Her approach to dancing emphasizes fluidity and self-expression, making every moment on the dance floor engaging and memorable.
-
-In her teaching, Vero focuses on helping students enhance their technique and bring comfort and confidence to their dancing. Her thoughtful guidance and eye for detail ensure that students leave her classes feeling both accomplished and inspired to keep improving.
+See `team-profiles.md` for the assistant and teaching team profiles.
