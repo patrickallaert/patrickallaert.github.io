@@ -20,11 +20,11 @@
 }
 
 body {
-  margin: 0;
   min-width: 20rem;
-  color: var(--ink);
+  margin: 0;
   font-family: var(--body);
   line-height: 1.5;
+  color: var(--ink);
   background: var(--page);
 }
 
@@ -93,8 +93,8 @@ body > header {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin: 0;
     padding: 0;
+    margin: 0;
     list-style: none;
   }
 
@@ -107,15 +107,15 @@ body > header {
     align-items: center;
     min-height: 2.5rem;
     padding: 0.4rem 0.8rem;
-    border-radius: 999rem;
     color: inherit;
     text-decoration: none;
+    border-radius: 999rem;
   }
 
   a[aria-current="page"] {
-    background: var(--teal);
-    color: #ffffff;
     font-weight: 700;
+    color: #ffffff;
+    background: var(--teal);
   }
 }
 
@@ -279,8 +279,8 @@ body#classes {
       }
 
       tbody {
-        margin-bottom: 1rem;
         padding: 1rem;
+        margin-bottom: 1rem;
         background: rgba(65, 186, 174, 0.05);
         border: 0.08rem solid var(--line);
         border-radius: var(--radius);
@@ -305,16 +305,16 @@ body#classes {
 
       th[scope="rowgroup"] {
         margin-bottom: 0.5rem;
-        color: var(--teal);
         font-size: 1.1rem;
+        color: var(--teal);
       }
 
       tbody::before {
         display: block;
         padding: 0.2rem 0 0.5rem 0;
         color: var(--ink-soft);
-        content: "Dates: " attr(data-dates) "\A" "No class: " attr(data-no-class);
         white-space: pre-line;
+        content: "Dates: " attr(data-dates) "\A" "No class: " attr(data-no-class);
       }
 
       td {
@@ -322,12 +322,12 @@ body#classes {
         border-bottom: 0;
 
         &::before {
-          content: attr(data-label);
           float: left;
           width: 6.2rem;
           margin-left: -7rem;
-          color: var(--ink-soft);
           font-weight: 700;
+          color: var(--ink-soft);
+          content: attr(data-label);
         }
 
         &[data-label="Dates"],

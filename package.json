@@ -6,9 +6,13 @@
   "scripts": {
     "build:css": "sass --no-source-map src/styles/site.scss site/assets/site.css",
     "build": "npm run build:css",
+    "lint:css": "stylelint \"src/styles/**/*.scss\"",
     "watch:css": "sass --watch src/styles/site.scss:site/assets/site.css"
   },
   "devDependencies": {
-    "sass": "^1.93.2"
+    "postcss-scss": "^4.0.9",
+    "sass": "^1.93.2",
+    "stylelint": "^17.6.0",
+    "stylelint-config-recess-order": "^7.7.0"
   }
 }
