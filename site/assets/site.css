@@ -237,3 +237,71 @@ body#classes #next-trimester > div {
 body#classes table {
   min-width: 44rem;
 }
+
+@media (max-width: 47.99rem) {
+  body#classes thead {
+    display: none;
+  }
+  body#classes table,
+  body#classes tbody,
+  body#classes tr,
+  body#classes th,
+  body#classes td {
+    display: block;
+    width: 100%;
+  }
+  body#classes #current-trimester > div,
+  body#classes #next-trimester > div {
+    overflow-x: visible;
+  }
+  body#classes table {
+    min-width: 0;
+  }
+  body#classes tbody {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: rgba(65, 186, 174, 0.05);
+    border: 0.08rem solid var(--line);
+    border-radius: var(--radius);
+  }
+  body#classes tbody + tbody th,
+  body#classes tbody + tbody td {
+    border-top: 0;
+  }
+  body#classes tr {
+    padding: 0.5rem 0;
+    border-top: 0.08rem solid var(--line);
+  }
+  body#classes tr:first-child {
+    padding-top: 0;
+    border-top: 0;
+  }
+  body#classes th[scope=rowgroup] {
+    margin-bottom: 0.5rem;
+    color: var(--teal);
+    font-size: 1.1rem;
+  }
+  body#classes tbody::before {
+    display: block;
+    padding: 0.2rem 0 0.5rem 0;
+    color: var(--ink-soft);
+    content: "Dates: " attr(data-dates) "\a" "No class: " attr(data-no-class);
+    white-space: pre-line;
+  }
+  body#classes td {
+    padding: 0.2rem 0 0.2rem 7rem;
+    border-bottom: 0;
+  }
+  body#classes td::before {
+    content: attr(data-label);
+    float: left;
+    width: 6.2rem;
+    margin-left: -7rem;
+    color: var(--ink-soft);
+    font-weight: 700;
+  }
+  body#classes td[data-label=Dates],
+  body#classes td[data-label="No class"] {
+    display: none;
+  }
+}
