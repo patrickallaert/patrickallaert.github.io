@@ -6,7 +6,7 @@ Source: `www.sarahforro.com__about-us.html`
 
 ## Sarah Collings
 
-Sarah fell in love with forró while living in Milan and she hasn’t looked back since. Building on her experience in sports and language education, Sarah launched and started to teach forró classes in Brussels in 2014. She now teaches regular classes across multiple levels and two cities, as well as travelling all over Europe and occasionally beyond to teach at workshops and festivals. She is also one of the founders of the Be Forró association in Brussels, working to serve the growing forró community in the city.
+Sarah fell in love with forró while living in Milan and she hasn’t looked back since. Building on her experience in sports and language education, Sarah launched and started to teach forró classes in Brussels in 2014. She continues to oversee and guide the school, while also travelling across Europe and occasionally beyond to teach at workshops and festivals. She is also one of the founders of the Be Forró association in Brussels, working to serve the growing forró community in the city.
 
 ## Teaching and Research
 

@@ -16,9 +16,9 @@ Source: `www.sarahforro.com.html`
 
 ## Meet Sarah and the team
 
-Sarah fell in love with forró while living in Milan and she hasn’t looked back since. Building on her experience in sports and language education, Sarah launched and started to teach forró classes in Brussels in 2014.
+Conexão was founded by Sarah Collings, who has been teaching forró in Brussels since 2014.
 
-She now teaches regular classes in Brussels and Ghent, as well as travelling all over Europe and occasionally beyond to teach at workshops and festivals.
+She continues to oversee and guide the school, while also travelling across Europe and occasionally beyond to teach at workshops and festivals.
 
 Sarah's classes emphasise the importance of presence, connection with our partner and musicality. She also prides herself on trying to achieve that oh-so-delicate balance between technique and creativity, precision and freedom, focus and fun.
 
