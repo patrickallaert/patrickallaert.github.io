@@ -10,7 +10,7 @@ This Brazilian dance is warm, friendly and fun to learn! Come alone, with a part
 
 ***
 
-Summer 2025
+## Summer 2025
 
 - Thurs 11th Sept 19h30
   💬 The class will be taught in English or French depending on the group

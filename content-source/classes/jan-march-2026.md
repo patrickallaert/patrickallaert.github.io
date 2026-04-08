@@ -14,7 +14,9 @@ Whether you are already a forrozeiro or want to discover a new hobby where you c
 
 If you have made payment and you don't receive an email within 7 working days, please email us at sarah@conexao.be to check what happened.
 
-PROGRAMME Take a look at the image above for a quick and easy overview of the programme.
+## Programme
+
+Take a look at the image above for a quick and easy overview of the programme.
 
 Never tried forró before? Or you'd like to meet us before registering? We have several free taster classes available: check out the dates here.
 
@@ -24,7 +26,7 @@ Thanks to your enthusiasm for the topic, we continue our Roots offering! To regi
 
 And back again, a Musicality trimester to help you develop your ability to interpret and play with the music.
 
-LEVELS
+## Levels
 
 For an overview of each level, take a look at these links:
 
@@ -38,7 +40,7 @@ If weren't following classes in April-June, you can use the links above to help 
 
 For any other non-level questions, email Sarah and Anaya at info@conexao.be.
 
-DATES & TIMES
+## Dates and Times
 
 - 10 weeks of classes + 1 personal feedback week
 - Starting the week of 12th Jan 2026
@@ -58,7 +60,7 @@ All classes are in English.
 - Wednesdays: Jan 14, 21, 28 | Feb 4, 11, \_\_, 25 | March 4, 11, 18, 25 | April 1
 - Thursdays: Jan 15, 22, 29 | Feb 5, 12, \_\_, 26 | March 5, 12, 19, 26 | April 2
 
-ADDRESSES
+## Addresses
 
 - Monday (L3 & Musicality): GC Ten Noey, Rue de la Commune 25 → a lovely-sized dance room in a cool cultural centre.
 - Monday (L1 & L2): Dojo du Brochet, Rue du Brochet 55 → with the smoothest floor around.
@@ -66,7 +68,7 @@ ADDRESSES
 - Wednesday: Salle Dublin, Rue de Dublin 13 → the quirkiest dance room in Brussels.
 - Thursday: Dojo du Brochet, Rue du Brochet 55 → with the smoothest floor around.
 
-PRICES
+## Prices
 
 - Full trimester → 142 euros (one class per week)
   155 euros (fair trade option)
@@ -75,7 +77,7 @@ PRICES
 - Double trimester → 242 euros (two full trimesters or one full trimester + two short courses)
   260 euros (fair trade option)
 
-FAIR TRADE OPTION
+## Fair Trade Option
 
 We have a fair trade price for those of you who (if your own budget allows) would like to support us by giving a little extra.
 
@@ -83,7 +85,7 @@ The fair trade option is completely optional (no pressure at all!)
 
 It costs between 0.80 euros and 1.20 euros extra per class, depending on whether you choose a full/flexi/double trimester.
 
-REGISTRATIONS
+## Registrations
 
 You don't need a partner to register. We take care of balancing the leaders and followers in each group!
 
@@ -97,7 +99,9 @@ If you have filled in the form and made payment but you don't receive an email w
 
 We're trying to make the registration process smoother, so please go ahead and make payment straight after filling out your registration form - don't wait for a confirmation email before making the payment (as we used to do in the past).
 
-LEVEL 1 STUDENTS: We understand you want to try things out before committing to a new hobby! And our Level 1 groups often fill up completely. So to guarantee yourself a place for the trimester, you can register and pay before attending an initiation or Open Door class. You have 48 hours (and we're strict on this) after the Open Door class you attend to notify us via email if you do not wish to continue with the trimester and your payment will be refunded in full. [See terms & conditions].
+### Level 1 Students
+
+We understand you want to try things out before committing to a new hobby! And our Level 1 groups often fill up completely. So to guarantee yourself a place for the trimester, you can register and pay before attending an initiation or Open Door class. You have 48 hours (and we're strict on this) after the Open Door class you attend to notify us via email if you do not wish to continue with the trimester and your payment will be refunded in full. [See terms & conditions].
 
 Your place is only blocked and confirmed once we have received your payment, filling in the form without making payment is not sufficient.
 
