@@ -1,0 +1,19 @@
+{
+  "terms": {
+    "current": {
+      "slug": "january-march-2026",
+      "label": "January-March 2026"
+    },
+    "next": {
+      "slug": "april-june-2026",
+      "label": "April-June 2026"
+    }
+  },
+  "registration": {
+    "is_open": true,
+    "target_term_slug": "april-june-2026",
+    "target_term_label": "April-June 2026",
+    "url": "https://forms.gle/REPLACE_WITH_CURRENT_FORM",
+    "label": "Register for April-June 2026"
+  }
+}

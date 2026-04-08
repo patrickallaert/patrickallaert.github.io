@@ -33,6 +33,9 @@ This file captures product and content decisions for the rebuild so future sessi
   - Legal
 - Content will initially be maintained directly by the user.
 - Current registration flow should be kept for V1.
+- Registration is not permanently open.
+- Registration, when open, should target the next trimester only.
+- The site should not imply that users can register for more than one trimester at a time.
 - A Conexao logo already exists.
 - Visual direction should stay somewhat close to the current site, but modernized.
 - Instagram communication should be considered as a visual reference for consistency.
@@ -80,7 +83,14 @@ This file captures product and content decisions for the rebuild so future sessi
 ### 4. Registration flow
 
 - Keep the current flow for V1.
-- The exact current mechanism still needs to be documented in the new site.
+- Registration should be modeled separately from the current term content.
+- The new site should expose:
+  - current term
+  - next term
+  - registration state
+- Registration may be closed.
+- When registration is open, it should point only to the next term.
+- A single source of truth for this information should be used across the site.
 
 ### 5. Calendar model
 
