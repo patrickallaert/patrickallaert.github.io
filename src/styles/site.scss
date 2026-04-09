@@ -243,97 +243,58 @@ body#classes {
     border-radius: 999rem;
   }
 
-  #current-trimester > div,
-  #next-trimester > div {
+  #current-trimester > div.schedule-table,
+  #next-trimester > div.schedule-table {
     overflow-x: auto;
   }
 
   table {
     min-width: 44rem;
   }
+
+  .schedule-days {
+    display: none;
+  }
+
+  article + article {
+    margin-top: 1rem;
+  }
+
+  article {
+    padding: 1rem;
+    background: rgba(65, 186, 174, 0.05);
+    border: 0.08rem solid var(--line);
+    border-radius: var(--radius);
+  }
+
+  h5 {
+    margin: 0 0 0.35rem;
+    font-size: 1rem;
+    color: var(--ink);
+  }
+
+  article section + section {
+    margin-top: 0.75rem;
+  }
+
+  article ul {
+    padding-left: 1.2rem;
+    margin-bottom: 0;
+  }
 }
 
 @media (max-width: 47.99rem) {
   body#classes {
-    #current-trimester > div,
-    #next-trimester > div {
-      overflow-x: visible;
+    .schedule-table {
+      display: none;
     }
 
-    table {
+    .schedule-days {
       display: block;
-      width: 100%;
-      min-width: 0;
+    }
 
-      thead {
-        display: none;
-      }
-
-      tbody,
-      tr,
-      th,
-      td {
-        display: block;
-        width: 100%;
-      }
-
-      tbody {
-        padding: 1rem;
-        margin-bottom: 1rem;
-        background: rgba(65, 186, 174, 0.05);
-        border: 0.08rem solid var(--line);
-        border-radius: var(--radius);
-      }
-
-      tbody + tbody {
-        th,
-        td {
-          border-top: 0;
-        }
-      }
-
-      tr {
-        padding: 0.5rem 0;
-        border-top: 0.08rem solid var(--line);
-
-        &:first-child {
-          padding-top: 0;
-          border-top: 0;
-        }
-      }
-
-      th[scope="rowgroup"] {
-        margin-bottom: 0.5rem;
-        font-size: 1.1rem;
-        color: var(--teal);
-      }
-
-      tbody::before {
-        display: block;
-        padding: 0.2rem 0 0.5rem 0;
-        color: var(--ink-soft);
-        white-space: pre-line;
-        content: "Dates: " attr(data-dates) "\A" "No class: " attr(data-no-class);
-      }
-
-      td {
-        padding: 0.2rem 0 0.2rem 7rem;
-        border-bottom: 0;
-
-        &::before {
-          float: left;
-          width: 6.2rem;
-          margin-left: -7rem;
-          font-weight: 700;
-          color: var(--ink-soft);
-          content: attr(data-label);
-        }
-
-        &[data-label="Dates"],
-        &[data-label="No class"] {
-          display: none;
-        }
-      }
+    article p:last-of-type {
+      margin-bottom: 0.75rem;
     }
   }
 }

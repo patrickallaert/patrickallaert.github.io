@@ -10,7 +10,6 @@
   --shadow: 0 1rem 2.5rem rgba(23, 50, 75, 0.08);
   --radius: 1rem;
   --max: 64rem;
-  --body: "Avenir Next", Avenir, "Segoe UI", sans-serif;
 }
 
 *,
@@ -22,7 +21,7 @@
 body {
   min-width: 20rem;
   margin: 0;
-  font-family: var(--body);
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
   line-height: 1.5;
   color: var(--ink);
   background: var(--page);
@@ -228,78 +227,46 @@ body#classes a[href^="https://forms.gle"] {
   background: var(--teal);
   border-radius: 999rem;
 }
-body#classes #current-trimester > div,
-body#classes #next-trimester > div {
+body#classes #current-trimester > div.schedule-table,
+body#classes #next-trimester > div.schedule-table {
   overflow-x: auto;
 }
 body#classes table {
   min-width: 44rem;
 }
+body#classes .schedule-days {
+  display: none;
+}
+body#classes article + article {
+  margin-top: 1rem;
+}
+body#classes article {
+  padding: 1rem;
+  background: rgba(65, 186, 174, 0.05);
+  border: 0.08rem solid var(--line);
+  border-radius: var(--radius);
+}
+body#classes h5 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  color: var(--ink);
+}
+body#classes article section + section {
+  margin-top: 0.75rem;
+}
+body#classes article ul {
+  padding-left: 1.2rem;
+  margin-bottom: 0;
+}
 
 @media (max-width: 47.99rem) {
-  body#classes #current-trimester > div,
-  body#classes #next-trimester > div {
-    overflow-x: visible;
-  }
-  body#classes table {
-    display: block;
-    width: 100%;
-    min-width: 0;
-  }
-  body#classes table thead {
+  body#classes .schedule-table {
     display: none;
   }
-  body#classes table tbody,
-  body#classes table tr,
-  body#classes table th,
-  body#classes table td {
+  body#classes .schedule-days {
     display: block;
-    width: 100%;
   }
-  body#classes table tbody {
-    padding: 1rem;
-    margin-bottom: 1rem;
-    background: rgba(65, 186, 174, 0.05);
-    border: 0.08rem solid var(--line);
-    border-radius: var(--radius);
-  }
-  body#classes table tbody + tbody th,
-  body#classes table tbody + tbody td {
-    border-top: 0;
-  }
-  body#classes table tr {
-    padding: 0.5rem 0;
-    border-top: 0.08rem solid var(--line);
-  }
-  body#classes table tr:first-child {
-    padding-top: 0;
-    border-top: 0;
-  }
-  body#classes table th[scope=rowgroup] {
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-    color: var(--teal);
-  }
-  body#classes table tbody::before {
-    display: block;
-    padding: 0.2rem 0 0.5rem 0;
-    color: var(--ink-soft);
-    white-space: pre-line;
-    content: "Dates: " attr(data-dates) "\a" "No class: " attr(data-no-class);
-  }
-  body#classes table td {
-    padding: 0.2rem 0 0.2rem 7rem;
-    border-bottom: 0;
-  }
-  body#classes table td::before {
-    float: left;
-    width: 6.2rem;
-    margin-left: -7rem;
-    font-weight: 700;
-    color: var(--ink-soft);
-    content: attr(data-label);
-  }
-  body#classes table td[data-label=Dates], body#classes table td[data-label="No class"] {
-    display: none;
+  body#classes article p:last-of-type {
+    margin-bottom: 0.75rem;
   }
 }
