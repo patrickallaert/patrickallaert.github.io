@@ -10,7 +10,6 @@
   --shadow: 0 1rem 2.5rem rgba(23, 50, 75, 0.08);
   --radius: 1rem;
   --max: 64rem;
-  --body: "Avenir Next", Avenir, "Segoe UI", sans-serif;
 }
 
 *,
@@ -22,7 +21,7 @@
 body {
   min-width: 20rem;
   margin: 0;
-  font-family: var(--body);
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
   line-height: 1.5;
   color: var(--ink);
   background: var(--page);
