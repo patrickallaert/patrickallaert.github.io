@@ -248,6 +248,15 @@ body#about {
     gap: 0.85rem;
   }
 
+  #team > div > article {
+    align-content: start;
+    padding: 0.25rem 0 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
   #team > div > article,
   #team > div > article:first-of-type,
   #team > div > article + article {
@@ -258,22 +267,44 @@ body#about {
 
   #school figure,
   #team figure {
+    position: relative;
     margin: 0;
+    padding: 0.35rem;
+    background: linear-gradient(135deg, rgba(65, 186, 174, 0.18), rgba(255, 248, 235, 0.9));
+    border-radius: 999rem;
+    box-shadow: 0 0.65rem 1.2rem rgba(17, 24, 39, 0.07);
+  }
+
+  #school figure::after,
+  #team figure::after {
+    content: "";
+    position: absolute;
+    inset: 0.2rem;
+    border: 0.08rem solid rgba(255, 255, 255, 0.9);
+    border-radius: 999rem;
+    pointer-events: none;
   }
 
   #team figure {
-    width: min(100%, 18rem);
+    width: min(100%, 11rem);
+    justify-self: center;
+  }
+
+  #school figure,
+  #team figure {
+    aspect-ratio: 1;
   }
 
   #school img,
   #team img {
     width: 100%;
-    aspect-ratio: 1;
+    height: 100%;
     object-fit: cover;
     display: block;
+    object-position: center top;
     background: #e8f1ec;
-    border-radius: calc(var(--radius) - 0.15rem);
-    box-shadow: var(--shadow);
+    border-radius: 999rem;
+    box-shadow: 0 0.35rem 0.8rem rgba(17, 24, 39, 0.1);
   }
 
   #school article {
@@ -281,10 +312,30 @@ body#about {
     gap: 1rem;
   }
 
+  #team h3 {
+    margin-bottom: 0.15rem;
+    text-align: center;
+  }
+
+  #team p {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 32ch;
+    text-align: center;
+  }
+
+  #school article > div {
+    justify-content: start;
+  }
+
   #school article > div {
     display: grid;
     gap: 0.75rem;
-    grid-template-columns: repeat(auto-fit, minmax(0, 14rem));
+    grid-template-columns: repeat(auto-fit, minmax(0, 10.5rem));
+  }
+
+  #school figure {
+    width: min(100%, 10.5rem);
   }
 }
 
@@ -317,7 +368,7 @@ body#about {
     }
 
     #school article > div {
-      grid-template-columns: repeat(3, minmax(0, 14rem));
+      grid-template-columns: repeat(3, minmax(0, 10.5rem));
     }
   }
 }

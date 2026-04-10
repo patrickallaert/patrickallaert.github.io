@@ -235,6 +235,14 @@ body#about #team > div > article {
   display: grid;
   gap: 0.85rem;
 }
+body#about #team > div > article {
+  align-content: start;
+  padding: 0.25rem 0 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
 body#about #team > div > article,
 body#about #team > div > article:first-of-type,
 body#about #team > div > article + article {
@@ -244,29 +252,65 @@ body#about #team > div > article + article {
 }
 body#about #school figure,
 body#about #team figure {
+  position: relative;
   margin: 0;
+  padding: 0.35rem;
+  background: linear-gradient(135deg, rgba(65, 186, 174, 0.18), rgba(255, 248, 235, 0.9));
+  border-radius: 999rem;
+  box-shadow: 0 0.65rem 1.2rem rgba(17, 24, 39, 0.07);
+}
+body#about #school figure::after,
+body#about #team figure::after {
+  content: "";
+  position: absolute;
+  inset: 0.2rem;
+  border: 0.08rem solid rgba(255, 255, 255, 0.9);
+  border-radius: 999rem;
+  pointer-events: none;
 }
 body#about #team figure {
-  width: min(100%, 18rem);
+  width: min(100%, 11rem);
+  justify-self: center;
+}
+body#about #school figure,
+body#about #team figure {
+  aspect-ratio: 1;
 }
 body#about #school img,
 body#about #team img {
   width: 100%;
-  aspect-ratio: 1;
+  height: 100%;
   object-fit: cover;
   display: block;
+  object-position: center top;
   background: #e8f1ec;
-  border-radius: calc(var(--radius) - 0.15rem);
-  box-shadow: var(--shadow);
+  border-radius: 999rem;
+  box-shadow: 0 0.35rem 0.8rem rgba(17, 24, 39, 0.1);
 }
 body#about #school article {
   display: grid;
   gap: 1rem;
 }
+body#about #team h3 {
+  margin-bottom: 0.15rem;
+  text-align: center;
+}
+body#about #team p {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 32ch;
+  text-align: center;
+}
+body#about #school article > div {
+  justify-content: start;
+}
 body#about #school article > div {
   display: grid;
   gap: 0.75rem;
-  grid-template-columns: repeat(auto-fit, minmax(0, 14rem));
+  grid-template-columns: repeat(auto-fit, minmax(0, 10.5rem));
+}
+body#about #school figure {
+  width: min(100%, 10.5rem);
 }
 
 @media (min-width: 48rem) {
@@ -292,7 +336,7 @@ body#about #school article > div {
     align-items: start;
   }
   body#about #school article > div {
-    grid-template-columns: repeat(3, minmax(0, 14rem));
+    grid-template-columns: repeat(3, minmax(0, 10.5rem));
   }
 }
 body#classes a[href^="https://forms.gle"] {
