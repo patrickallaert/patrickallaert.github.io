@@ -226,6 +226,49 @@ td strong,
   height: auto;
 }
 
+body#about #team > div {
+  display: grid;
+  gap: 1rem;
+}
+body#about #school article,
+body#about #team > div > article {
+  display: grid;
+  gap: 0.85rem;
+}
+body#about #team > div > article,
+body#about #team > div > article:first-of-type,
+body#about #team > div > article + article {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+body#about #school figure,
+body#about #team figure {
+  margin: 0;
+}
+body#about #team figure {
+  width: min(100%, 18rem);
+}
+body#about #school img,
+body#about #team img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  background: #e8f1ec;
+  border-radius: calc(var(--radius) - 0.15rem);
+  box-shadow: var(--shadow);
+}
+body#about #school article {
+  display: grid;
+  gap: 1rem;
+}
+body#about #school article > div {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(0, 14rem));
+}
+
 @media (min-width: 48rem) {
   body#classes #term-status ul,
   body#classes #venues ul,
@@ -239,6 +282,17 @@ td strong,
   }
   body > header ul {
     justify-content: flex-end;
+  }
+  body#about #team > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+  body#about #school article {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    align-items: start;
+  }
+  body#about #school article > div {
+    grid-template-columns: repeat(3, minmax(0, 14rem));
   }
 }
 body#classes a[href^="https://forms.gle"] {
