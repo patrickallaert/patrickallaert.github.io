@@ -27,8 +27,8 @@ If you have made payment and you don't receive an email within 7 working days, p
 
 #### Tuesday
 
-- 19h00 at Maison Malibran: Level 3
-- 20h45 at Maison Malibran: Level 1
+- 19h00 at Maison de Quartier Malibran: Level 3
+- 20h45 at Maison de Quartier Malibran: Level 1
 
 #### Wednesday
 
@@ -91,7 +91,7 @@ All classes are in English.
 
 - Monday (L3 & Musicality): GC Ten Noey, Rue de la Commune 25 → a lovely-sized dance room in a cool cultural centre.
 - Monday (L1 & L2): Dojo du Brochet, Rue du Brochet 55 → with the smoothest floor around.
-- Tuesday: Maison Malibran, Rue de la Digue 10 → Salle à Tout, a great big room on the first floor.
+- Tuesday: Maison de Quartier Malibran, Rue de la Digue 10 → Salle à Tout, a great big room on the first floor.
 - Wednesday: Salle Dublin, Rue de Dublin 13 → the quirkiest dance room in Brussels.
 - Thursday: Dojo du Brochet, Rue du Brochet 55 → with the smoothest floor around.
 

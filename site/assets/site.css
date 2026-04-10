@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --page: #f7fbf9;
   --panel: #ffffff;
@@ -209,6 +210,11 @@ td small,
   color: var(--ink-soft);
 }
 
+td strong,
+.schedule-days li strong {
+  color: var(--teal);
+}
+
 .wordmark {
   display: inline-flex;
   align-items: center;
@@ -275,6 +281,28 @@ body#classes article section + section {
 body#classes article ul {
   padding-left: 1.2rem;
   margin-bottom: 0;
+}
+
+body#about article + article,
+body#about main > section + section,
+body#venues-page article + article,
+body#venues-page main > section + section {
+  margin-top: 1rem;
+}
+body#about article,
+body#venues-page article {
+  padding-top: 1rem;
+  border-top: 0.08rem solid var(--line);
+}
+body#about article:first-of-type,
+body#venues-page article:first-of-type {
+  padding-top: 0;
+  border-top: 0;
+}
+
+body#venues-page address strong::before {
+  margin-right: 0.35rem;
+  content: "📍";
 }
 
 @media (max-width: 47.99rem) {

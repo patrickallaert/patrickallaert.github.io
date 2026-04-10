@@ -219,6 +219,11 @@ td small,
   color: var(--ink-soft);
 }
 
+td strong,
+.schedule-days li strong {
+  color: var(--teal);
+}
+
 .wordmark {
   display: inline-flex;
   align-items: center;
@@ -299,6 +304,29 @@ body#classes {
     padding-left: 1.2rem;
     margin-bottom: 0;
   }
+}
+
+body#about,
+body#venues-page {
+  article + article,
+  main > section + section {
+    margin-top: 1rem;
+  }
+
+  article {
+    padding-top: 1rem;
+    border-top: 0.08rem solid var(--line);
+  }
+
+  article:first-of-type {
+    padding-top: 0;
+    border-top: 0;
+  }
+}
+
+body#venues-page address strong::before {
+  margin-right: 0.35rem;
+  content: "📍";
 }
 
 @media (max-width: 47.99rem) {

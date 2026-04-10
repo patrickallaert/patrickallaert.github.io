@@ -20,7 +20,7 @@ This Brazilian dance is warm, friendly and fun to learn! Come alone, with a part
 
 - Tues 16th Sept - 20h45-22h
   💬 The class will be taught in English
-  📌 Maison Malibran, Rue de la digue 10, Ixelles
+  📌 Maison de Quartier Malibran, Rue de la digue 10, Ixelles
   💶 Price: free!
 
 - Wed 17th Sept - 19h-20h15
