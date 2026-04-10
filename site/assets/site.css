@@ -286,18 +286,29 @@ body#classes article ul {
 body#about article + article,
 body#about main > section + section,
 body#venues-page article + article,
-body#venues-page main > section + section {
+body#venues-page main > section + section,
+body#levels article + article,
+body#levels main > section + section {
   margin-top: 1rem;
 }
 body#about article,
-body#venues-page article {
+body#venues-page article,
+body#levels article {
   padding-top: 1rem;
   border-top: 0.08rem solid var(--line);
 }
 body#about article:first-of-type,
-body#venues-page article:first-of-type {
+body#venues-page article:first-of-type,
+body#levels article:first-of-type {
   padding-top: 0;
   border-top: 0;
+}
+
+body#levels #level-1,
+body#levels #level-2,
+body#levels #level-3,
+body#levels #level-4 {
+  scroll-margin-top: 2rem;
 }
 
 body#venues-page address strong::before {

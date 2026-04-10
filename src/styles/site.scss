@@ -307,7 +307,8 @@ body#classes {
 }
 
 body#about,
-body#venues-page {
+body#venues-page,
+body#levels {
   article + article,
   main > section + section {
     margin-top: 1rem;
@@ -321,6 +322,15 @@ body#venues-page {
   article:first-of-type {
     padding-top: 0;
     border-top: 0;
+  }
+}
+
+body#levels {
+  #level-1,
+  #level-2,
+  #level-3,
+  #level-4 {
+    scroll-margin-top: 2rem;
   }
 }
 
