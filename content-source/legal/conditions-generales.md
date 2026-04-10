@@ -6,13 +6,13 @@ Conditions Générales EN/FR
 
 Retour aux informations pratiques (Cours avril 2022) EN/FR
 
-Inscription
+**Inscription**
 
 Pour vous inscrire aux cours de forró à Bruxelles, vous devez d'abord remplir ce formulaire : LIEN A SUIVRE
 
 En vous inscrivant, vous acceptez les présentes conditions générales et vous vous engagez à respecter les mesures covid en vigueur à tout moment.
 
-Mesures covid
+**Mesures covid**
 
 Actuellement, il n'y a aucune mesure qui concern les activités sportives ou la danse sociale.
 
@@ -24,7 +24,7 @@ Les conditions énoncées ci-dessous dans la rubrique Annulations et rembourseme
 
 Dans ce cas, vous serez informé et invité soit a) à transférer la valeur des cours restants ("votre crédit") à un trimestre ultérieur, soit b) à demander le remboursement de la valeur des cours restants.
 
-Paiement
+**Paiement**
 
 Le paiement doit être effectué par virement bancaire sur le compte ci-dessous dans les sept jours suivant l'inscription.
 
@@ -44,7 +44,7 @@ Paiement tardif
 
 Le paiement doit être effectué pour confirmer votre place. Si le paiement n'est pas réglé avant la quatrième semaine du trimestre, nous facturons des frais administratifs supplémentaires de 20 euros. Si vous vous inscrivez après le début du trimestre, les quatre semaines sont comptées à partir de votre première présence en classe ou la date d'inscription, si celle-ci est antérieure.
 
-Flexibilité et avantages
+**Flexibilité et avantages**
 
 Rattrapage d'un cours
 
@@ -56,7 +56,7 @@ Si vous ne pouvez pas vous inscrire pour le trimestre complet, il y a une option
 
 L'abonnement flexi-trimestriel est valable pour un seul niveau et un jour précis. Si votre situation particulière nécessite une approche plus flexible, veuillez contacter Sarah par e-mail pour en discuter. Nous ne pouvons pas garantir que des exceptions seront faites, mais dans la mesure du possible nous ferons de notre mieux pour prendre en compte vos circonstances spécifiques, tant que cela ne risque pas d'avoir un impact négatif sur les autres étudiants.
 
-Début des cours
+**Début des cours**
 
 Initiations & Portes Ouvertes/Open Doors
 
@@ -80,7 +80,7 @@ Si vous souhaitez commencer à apprendre le forró, vous pouvez rejoindre le niv
 
 Il n'y a pas de cours d'essai gratuit pour les étudiants qui commencent pendant le trimestre, tous les cours doivent être payés.
 
-Annulations et remboursements
+**Annulations et remboursements**
 
 Annulations
 

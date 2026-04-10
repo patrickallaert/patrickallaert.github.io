@@ -6,7 +6,7 @@ Source: `www.sarahforro.com__forr--initiations.html`
 
 This Brazilian dance is warm, friendly and fun to learn! Come alone, with a partner or with all your friends. Everyone welcome 💛
 
-⭐ Please register in advance: just click here!⭐
+⭐ Please register in advance: **just click here!** ⭐
 
 ***
 
@@ -32,13 +32,13 @@ This Brazilian dance is warm, friendly and fun to learn! Come alone, with a part
 
 - Sun 21st Sept - 19h-20h
 
-If space remains, you can also try out the first class of the trimester! These dates will be added to the registration form closer to the time.
+**If space remains**, you can also try out the first class of the trimester! These dates will be added to the registration form closer to the time.
 
 - Mon 22nd Sep - 19h-20h15 - FIRST CLASS OF TRIMESTER!
   💬 The class will be taught in English
   📌 GC Ten Noey, Rue de la Commune 25
   💶 Price: free!
 
-Registration required (see link above).
+**Registration required (see link above).**
 
 - Tues 23rd Sep - 20h45-22h - FIRST CLASS OF TRIMESTER!

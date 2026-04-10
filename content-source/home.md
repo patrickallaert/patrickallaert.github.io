@@ -4,13 +4,13 @@ Source: `www.sarahforro.com.html`
 
 ## Forró Classes
 
-## Forró classes are the perfect blend of hugs, laughter and music, community vibes, learning and fun. Registrations for the April-June trimester are now open! More info Register here
+## **Forró classes are the perfect blend of hugs, laughter and music, community vibes, learning and fun.** **Registrations for the April-June trimester are now open!** More info Register here
 
-## Join us for a free initiation class in Brussels! No partner needed, everyone welcome! More info
+## **Join us for a free initiation class in Brussels!** **No partner needed, everyone welcome!** More info
 
 ## Forró Prácticas
 
-## Forró práticas are the perfect opportunity to dance and meet other forrozeiros in a festive but relaxed atmosphere! Every Sunday (except the first one of each month) in Salle Dublin from September-June. More info
+## **Forró práticas are the perfect opportunity to dance and meet other forrozeiros in a festive but relaxed atmosphere!** **Every Sunday (except the first one of each month) in Salle Dublin from September-June.** More info
 
 ## WHO ARE WE
 

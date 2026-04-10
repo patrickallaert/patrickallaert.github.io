@@ -6,11 +6,11 @@ Forró classes offer you the perfect blend of hugs, laughter and music, communit
 
 Whether you are already a forrozeiro or want to discover a new hobby where you can meet cool people and learn something fun, this is the place to be...
 
-⭐ CLICK HERE TO REGISTER ⭐
+⭐ **CLICK HERE TO REGISTER** ⭐
 
-1. Fill in the registration form
-2. Make payment straight away to the bank account details provided
-3. We'll send you a confirmation email once your payment hits our bank account.
+1. **Fill in the registration form**
+2. **Make payment straight away to the bank account details provided**
+3. **We'll send you a confirmation email once your payment hits our bank account.**
 
 If you have made payment and you don't receive an email within 7 working days, please email us at sarah@conexao.be to check what happened.
 
@@ -43,19 +43,19 @@ Never tried forró before? Or you'd like to meet us before registering? We have 
 
 Each trimester includes a "special" course or two to go deeper into a topic...
 
-Thanks to your enthusiasm for the topic, we add to our Roots offering! To register for Roots 1, leaders and followers need to master the roots base, square base, facão, pião, and caminhada. To register for Roots 2, leaders and followers need to master the Roots 1 prerequisites and trava, sacada, xique xique and paulista. And new this trimester, are two Short Courses, for leaders and followers!
+Thanks to your enthusiasm for the topic, we add to our **Roots** offering! To register for **Roots 1**, leaders and followers need to master the roots base, square base, facão, pião, and caminhada. To register for **Roots 2**, leaders and followers need to master the Roots 1 prerequisites and trava, sacada, xique xique and paulista. And new this trimester, are two **Short Courses**, for leaders and followers!
 
-Dancing in Dialogue explores different ways that leaders and followers can work together to play, dialogue and interact on the dancefloor. [If you've discovered the "stages" as developed by Sheila Santos, this Short Course looks at stages 3 and 4!]
+**Dancing in Dialogue** explores different ways that leaders and followers can work together to play, dialogue and interact on the dancefloor. [If you've discovered the "stages" as developed by Sheila Santos, this Short Course looks at stages 3 and 4!]
 
-Footwork & Armwork focuses on how to use your arms and legs to create variations and express yourself. [Equivalent to stage 2!]
+**Footwork & Armwork** focuses on how to use your arms and legs to create variations and express yourself. [Equivalent to stage 2!]
 
 ## Levels
 
 For an overview of each level, take a look at these links:
 
-- From Level 1 to Level 2: Fundamentals you need - Figures you need
-- From Level 2 to Level 3: Fundamentals you need - Figures you need
-- From Level 3 to Level 4: Fundamentals you need - Figures you need
+- From Level 1 to Level 2: **Fundamentals you need** - **Figures you need**
+- From Level 2 to Level 3: **Fundamentals you need** - **Figures you need**
+- From Level 3 to Level 4: **Fundamentals you need** - **Figures you need**
 
 If you aren't sure which level to register, drop your teacher a message and they'll be happy to help!
 
@@ -123,9 +123,9 @@ You don't need a partner to register. We take care of balancing the leaders and 
 
 By registering, you confirm you have read and agreed to the terms and conditions.
 
-1. Fill in the registration form
-2. Make payment straight away to the bank account details provided
-3. We'll send you a confirmation email once your payment hits our bank account.
+1. **Fill in the registration form**
+2. **Make payment straight away to the bank account details provided**
+3. **We'll send you a confirmation email once your payment hits our bank account.**
 
 If you have filled in the form and made payment but you don't receive an email within 7 working days, please email us at info@conexao.be to check what's happening.
 

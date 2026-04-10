@@ -2,17 +2,17 @@
 
 Source: `www.sarahforro.com__terms-and-conditions.html`
 
-Terms & Conditions
+**Terms & Conditions**
 
 Back to classes page
 
-Registration
+**Registration**
 
 To join the forró classes In Brussels, you first need to fill in the registration form on the classes page.
 
 By registering, you accept these terms and conditions and agree to respect the covid measures in force at any given time.
 
-Covid measures
+**Covid measures**
 
 There are currently no covid measures affecting sporting activities or social dancing.
 
@@ -24,7 +24,7 @@ The terms laid out below under Cancelations and Refunds cease to apply if covid 
 
 If this occurs, you will be notified and invited to either a) transfer the value of the remaining classes ('credit') to a future trimester, or b) request a refund of the value of the remaining classes.
 
-Payment
+**Payment**
 
 Payment should be made by bank transfer to the following account within seven days of registering.
 
@@ -44,7 +44,7 @@ Late payment
 
 Payment must be made to confirm your place. If payment is not settled by the fourth week of the trimester, we charge an additional administrative fee of 20 euros. If you register after the start of the trimester, the four weeks are counted from the date of registration or your first attendance in class, whichever is early.
 
-Flexibility and Advantages
+**Flexibility and Advantages**
 
 Catching up on a class
 
@@ -56,7 +56,7 @@ If you cannot join for the full trimester, there is a flexi-trimester option ava
 
 The flexi-trimester pass is valid for a single level on a specific day. If your specific circumstances mean a more flexible approach is required, please contact Sarah via email to discuss this. We cannot guarantee that exceptions will be made, but where possible we will do our best to take into account your specific circumstances, as long as this doesn't risk having a negative impact on the other students.
 
-Starting the classes
+**Starting the classes**
 
 Initiations & Portes Ouvertes/Open Doors
 
@@ -80,7 +80,7 @@ If you would like to start learning forró, you can join Level 1 up to and inclu
 
 There is no free trial class available for students who start during the trimester, all classes should be paid for.
 
-Cancellations, Changes and Refunds
+**Cancellations, Changes and Refunds**
 
 Cancellations
 
