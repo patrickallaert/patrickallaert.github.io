@@ -138,6 +138,22 @@ body > footer p {
   margin: 0;
   color: var(--ink-soft);
 }
+body > footer .social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  padding: 0;
+  margin: 0.75rem 0 0;
+  list-style: none;
+}
+body > footer .social-links a {
+  display: inline-flex;
+  gap: 0.45rem;
+  align-items: center;
+}
+body > footer .social-links svg {
+  flex: none;
+}
 
 h1,
 h2,
@@ -239,6 +255,16 @@ body#home #home-about h3 {
   color: var(--ink);
 }
 
+body#contact ul {
+  padding-left: 1.25rem;
+}
+body#contact #contact-intro p:last-child,
+body#contact #contact-newsletter p:last-child,
+body#contact #contact-direct p:last-child,
+body#contact #contact-venues p:last-child {
+  margin-bottom: 0;
+}
+
 body#about #team > div {
   display: grid;
   gap: 1rem;
@@ -307,8 +333,8 @@ body#about #school article {
 body#about #team h3 {
   display: flex;
   gap: 0.45rem;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   margin-bottom: 0.15rem;
   text-align: center;
 }
