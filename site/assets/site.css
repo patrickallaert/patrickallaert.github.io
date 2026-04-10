@@ -305,6 +305,10 @@ body#about #school article {
   gap: 1rem;
 }
 body#about #team h3 {
+  display: flex;
+  gap: 0.45rem;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 0.15rem;
   text-align: center;
 }
@@ -314,30 +318,25 @@ body#about #team p {
   margin-left: auto;
   text-align: center;
 }
-body#about #team p:last-child {
-  margin-top: 0.25rem;
-}
-body#about #team a {
+body#about #team h3 a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  font-weight: 600;
+  width: 1.85rem;
+  height: 1.85rem;
   color: var(--teal);
   background: rgba(65, 186, 174, 0.1);
   border: 0.08rem solid rgba(65, 186, 174, 0.18);
   border-radius: 999rem;
-  text-underline-offset: 0.18em;
   transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
 }
-body#about #team a:hover,
-body#about #team a:focus-visible {
+body#about #team h3 a:hover,
+body#about #team h3 a:focus-visible {
   background: rgba(65, 186, 174, 0.18);
   border-color: rgba(65, 186, 174, 0.35);
   transform: translateY(-0.05rem);
 }
-body#about #team a svg {
+body#about #team h3 a svg {
   display: block;
 }
 body#about #school article > div {
