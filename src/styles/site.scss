@@ -201,6 +201,24 @@ tbody + tbody td {
   border-top: 0.14rem solid var(--line);
 }
 
+th[scope="rowgroup"] small {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.9em;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
+td small,
+.schedule-days li small {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.9em;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
 .wordmark {
   display: inline-flex;
   align-items: center;
