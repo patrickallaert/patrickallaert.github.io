@@ -226,6 +226,19 @@ td strong,
   height: auto;
 }
 
+body#home #home-intro p:first-of-type {
+  font-size: 1.1rem;
+}
+body#home #home-intro p:last-child,
+body#home #home-initiations p:last-child,
+body#home #home-praticas p:last-child,
+body#home #home-about p:last-child {
+  margin-bottom: 0;
+}
+body#home #home-about h3 {
+  color: var(--ink);
+}
+
 body#about #team > div {
   display: grid;
   gap: 1rem;
@@ -246,31 +259,31 @@ body#about #team > div > article {
 body#about #team > div > article,
 body#about #team > div > article:first-of-type,
 body#about #team > div > article + article {
-  margin-top: 0;
   padding-top: 0;
+  margin-top: 0;
   border-top: 0;
 }
 body#about #school figure,
 body#about #team figure {
   position: relative;
-  margin: 0;
   padding: 0.35rem;
+  margin: 0;
   background: linear-gradient(135deg, rgba(65, 186, 174, 0.18), rgba(255, 248, 235, 0.9));
   border-radius: 999rem;
   box-shadow: 0 0.65rem 1.2rem rgba(17, 24, 39, 0.07);
 }
 body#about #school figure::after,
 body#about #team figure::after {
-  content: "";
   position: absolute;
   inset: 0.2rem;
+  pointer-events: none;
+  content: "";
   border: 0.08rem solid rgba(255, 255, 255, 0.9);
   border-radius: 999rem;
-  pointer-events: none;
 }
 body#about #team figure {
-  width: min(100%, 11rem);
   justify-self: center;
+  width: min(100%, 11rem);
 }
 body#about #school figure,
 body#about #team figure {
@@ -278,10 +291,10 @@ body#about #team figure {
 }
 body#about #school img,
 body#about #team img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
   object-position: center top;
   background: #e8f1ec;
   border-radius: 999rem;
@@ -296,18 +309,44 @@ body#about #team h3 {
   text-align: center;
 }
 body#about #team p {
-  margin-left: auto;
-  margin-right: auto;
   max-width: 32ch;
+  margin-right: auto;
+  margin-left: auto;
   text-align: center;
+}
+body#about #team p:last-child {
+  margin-top: 0.25rem;
+}
+body#about #team a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-weight: 600;
+  color: var(--teal);
+  background: rgba(65, 186, 174, 0.1);
+  border: 0.08rem solid rgba(65, 186, 174, 0.18);
+  border-radius: 999rem;
+  text-underline-offset: 0.18em;
+  transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+body#about #team a:hover,
+body#about #team a:focus-visible {
+  background: rgba(65, 186, 174, 0.18);
+  border-color: rgba(65, 186, 174, 0.35);
+  transform: translateY(-0.05rem);
+}
+body#about #team a svg {
+  display: block;
 }
 body#about #school article > div {
   justify-content: start;
 }
 body#about #school article > div {
   display: grid;
-  gap: 0.75rem;
   grid-template-columns: repeat(auto-fit, minmax(0, 10.5rem));
+  gap: 0.75rem;
 }
 body#about #school figure {
   width: min(100%, 10.5rem);
