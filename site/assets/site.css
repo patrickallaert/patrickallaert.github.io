@@ -5,7 +5,7 @@
   --ink: #17324b;
   --ink-soft: #4d6070;
   --line: #c7d6df;
-  --teal: rgb(65, 186, 174);
+  --teal: #41baae;
   --yellow: #ffd64d;
   --focus: #0f6fff;
   --shadow: 0 1rem 2.5rem rgba(23, 50, 75, 0.08);
@@ -156,6 +156,8 @@ body > footer {
   padding: 0 0 2rem;
 }
 body > footer > div {
+  display: grid;
+  gap: 0.9rem;
   padding: 1rem 1.25rem;
   background: var(--panel);
   border: 0.08rem solid var(--line);
@@ -173,19 +175,24 @@ body > footer .social-links {
   margin: 0.75rem 0 0;
   list-style: none;
 }
-body > footer .social-links a {
+body > footer .social-links a,
+body > footer .footer-mail {
   display: inline-flex;
   gap: 0.45rem;
   align-items: center;
+  min-height: 2.4rem;
+  padding: 0.4rem 0.8rem;
+  text-decoration: none;
+  background: rgba(65, 186, 174, 0.08);
+  border: 0.08rem solid rgba(65, 186, 174, 0.16);
+  border-radius: 999rem;
 }
 body > footer .social-links svg {
   flex: none;
 }
 body > footer .footer-mail {
-  display: inline-flex;
-  gap: 0.45rem;
-  align-items: center;
-  margin-top: 0.75rem;
+  justify-self: start;
+  margin-top: 0;
 }
 
 h1,
@@ -275,14 +282,167 @@ td strong,
   height: auto;
 }
 
-body#home #intro p:first-of-type {
-  font-size: 1.1rem;
+body#home #intro {
+  display: grid;
+  gap: 1rem;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(240, 250, 246, 0.98));
 }
-body#home #intro p:last-child,
-body#home #initiations p:last-child,
-body#home #praticas p:last-child,
-body#home #about p:last-child {
+body#home #intro > div:first-child {
+  display: grid;
+  gap: 0.9rem;
+  align-content: start;
+}
+body#home #intro > div:first-child > p:first-child {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--teal);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+body#home #intro h1 {
+  max-width: 11ch;
   margin-bottom: 0;
+  color: var(--ink);
+}
+body#home #intro > div:first-child > p:nth-of-type(2) {
+  max-width: 34rem;
+  font-size: 1.08rem;
+}
+body#home #intro > div:first-child > p:last-child {
+  margin-bottom: 0;
+}
+body#home #intro > div:first-child > p:last-child a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.7rem;
+  padding: 0.45rem 0.9rem;
+  text-decoration: none;
+  background: rgba(65, 186, 174, 0.1);
+  border: 0.08rem solid rgba(65, 186, 174, 0.18);
+  border-radius: 999rem;
+}
+body#home #intro > div:last-child {
+  min-width: 0;
+}
+body#home #home-gallery {
+  display: grid;
+  gap: 0.85rem;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+body#home #home-gallery > div {
+  position: relative;
+  min-height: 24rem;
+  overflow: hidden;
+  border-radius: calc(var(--radius) - 0.1rem);
+  box-shadow: 0 1rem 2rem rgba(23, 50, 75, 0.12);
+}
+body#home #home-gallery figure {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+body#home #home-gallery figure[data-active] {
+  opacity: 1;
+}
+body#home #home-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+body#home #home-gallery nav,
+body#home #home-gallery ol {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+body#home #home-gallery nav {
+  justify-content: space-between;
+}
+body#home #home-gallery ol {
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+body#home #home-gallery button {
+  font: inherit;
+  cursor: pointer;
+}
+body#home #home-gallery nav > button,
+body#home #home-gallery ol button {
+  min-height: 2.3rem;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.92);
+  border: 0.08rem solid rgba(65, 186, 174, 0.18);
+  border-radius: 999rem;
+}
+body#home #home-gallery nav > button {
+  padding: 0.35rem 0.8rem;
+}
+body#home #home-gallery ol button {
+  width: 2.3rem;
+  padding: 0;
+}
+body#home #home-gallery ol button[aria-current=true] {
+  color: #ffffff;
+  background: var(--teal);
+  border-color: var(--teal);
+}
+body#home #start > div,
+body#home #highlights > div {
+  display: grid;
+  gap: 0.85rem;
+}
+body#home #start article,
+body#home #highlights article {
+  padding: 1rem;
+  background: rgba(65, 186, 174, 0.05);
+  border: 0.08rem solid rgba(65, 186, 174, 0.14);
+  border-radius: calc(var(--radius) - 0.1rem);
+}
+body#home #start article p:last-child,
+body#home #highlights article p:last-child,
+body#home #about p:last-child,
+body#home #questions p:last-child {
+  margin-bottom: 0;
+}
+body#home #video {
+  display: grid;
+  gap: 1rem;
+  background: linear-gradient(180deg, rgba(23, 50, 75, 0.98), rgba(36, 81, 88, 0.98));
+}
+body#home #video h2,
+body#home #video p {
+  color: #ffffff;
+}
+body#home #video p:last-child {
+  margin-bottom: 0;
+}
+body#home #video a {
+  color: #ffffff;
+}
+body#home #video > div:last-child {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: calc(var(--radius) - 0.1rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.18);
+}
+body#home #video iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+body#home #questions {
+  text-align: center;
 }
 body#home #about h3 {
   color: var(--ink);
@@ -293,20 +453,29 @@ body#contact main {
   align-items: start;
 }
 body#contact #intro {
+  display: grid;
   grid-column: 1/-1;
+  gap: 1rem;
+  background: var(--panel);
+}
+body#contact #intro p:first-of-type {
+  max-width: 40rem;
+  font-size: 1.1rem;
 }
 body#contact > main > figure:has(> blockquote) {
   grid-column: 1/-1;
 }
-body#contact #social ul {
-  padding: 0;
-  list-style: none;
+body#contact #intro a[href^="mailto:"] {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.8rem;
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  background: var(--teal);
+  border-radius: 999rem;
 }
-body#contact #social li + li {
-  margin-top: 0.5rem;
-}
-body#contact #social a,
-body#contact #direct a,
+body#contact #direct p:first-of-type a,
 body#contact #newsletter a {
   display: inline-flex;
   gap: 0.45rem;
@@ -317,9 +486,72 @@ body#contact #direct,
 body#contact #social {
   min-height: 100%;
 }
-body#contact #intro p:last-child,
 body#contact #newsletter p:last-child,
-body#contact #direct p:last-child {
+body#contact #direct p:last-child,
+body#contact #social p:last-child {
+  margin-bottom: 0;
+}
+body#contact #newsletter,
+body#contact #direct {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(244, 250, 247, 0.98));
+}
+body#contact #direct > p:last-child a,
+body#contact #newsletter > p:last-child a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.7rem;
+  padding: 0.45rem 0.9rem;
+  color: inherit;
+  text-decoration: none;
+  background: rgba(65, 186, 174, 0.1);
+  border: 0.08rem solid rgba(65, 186, 174, 0.18);
+  border-radius: 999rem;
+}
+body#contact #social {
+  background: linear-gradient(180deg, rgba(65, 186, 174, 0.08), rgba(255, 255, 255, 0.98));
+}
+body#contact #social ul {
+  padding: 0;
+  margin: 1rem 0 0;
+  list-style: none;
+}
+body#contact #social li {
+  margin: 0;
+}
+body#contact #social li + li {
+  margin-top: 0.75rem;
+}
+body#contact #social a {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 0.75rem;
+  align-items: center;
+  padding: 0.9rem 1rem;
+  color: inherit;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.9);
+  border: 0.08rem solid rgba(65, 186, 174, 0.14);
+  border-radius: calc(var(--radius) - 0.1rem);
+  box-shadow: 0 0.75rem 1.8rem rgba(23, 50, 75, 0.06);
+}
+body#contact #social svg {
+  grid-row: 1/span 2;
+  align-self: start;
+  margin-top: 0.1rem;
+  color: var(--teal);
+}
+body#contact #social strong,
+body#contact #social span {
+  display: block;
+}
+body#contact #social strong {
+  font-size: 1rem;
+  color: var(--ink);
+}
+body#contact #social span {
+  color: var(--ink-soft);
+}
+body#contact #intro p:last-child {
   margin-bottom: 0;
 }
 
@@ -350,6 +582,7 @@ body#about #team > div > article + article {
 body#about #school figure,
 body#about #team figure {
   position: relative;
+  aspect-ratio: 1;
   padding: 0.35rem;
   margin: 0;
   background: linear-gradient(135deg, rgba(65, 186, 174, 0.18), rgba(255, 248, 235, 0.9));
@@ -365,14 +598,6 @@ body#about #team figure::after {
   border: 0.08rem solid rgba(255, 255, 255, 0.9);
   border-radius: 999rem;
 }
-body#about #team figure {
-  justify-self: center;
-  width: min(100%, 11rem);
-}
-body#about #school figure,
-body#about #team figure {
-  aspect-ratio: 1;
-}
 body#about #school img,
 body#about #team img {
   display: block;
@@ -383,6 +608,10 @@ body#about #team img {
   background: #e8f1ec;
   border-radius: 999rem;
   box-shadow: 0 0.35rem 0.8rem rgba(17, 24, 39, 0.1);
+}
+body#about #team figure {
+  justify-self: center;
+  width: min(100%, 11rem);
 }
 body#about #school article {
   display: grid;
@@ -424,20 +653,16 @@ body#about #team h3 a svg {
   display: block;
 }
 body#about #school article > div {
-  justify-content: start;
-}
-body#about #school article > div {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(0, 10.5rem));
   gap: 0.75rem;
+  justify-content: start;
 }
 body#about #school figure {
   width: min(100%, 10.5rem);
 }
 
 @media (min-width: 48rem) {
-  body#classes #term-status ul,
-  body#classes #venues ul,
   body#classes #prices ul {
     columns: 2;
     column-gap: 2rem;
@@ -459,6 +684,36 @@ body#about #school figure {
   }
   body#about #school article > div {
     grid-template-columns: repeat(3, minmax(0, 10.5rem));
+  }
+  body#contact #intro {
+    grid-template-columns: minmax(0, 1.5fr) minmax(14rem, 0.9fr);
+    align-items: end;
+  }
+  body#contact #intro h1,
+  body#contact #intro p:first-of-type,
+  body#contact #intro p:nth-of-type(2) {
+    grid-column: 1;
+  }
+  body#contact #intro p:last-child {
+    grid-column: 2;
+    align-self: center;
+    justify-self: end;
+    margin-bottom: 0;
+  }
+  body#home #intro {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    align-items: end;
+  }
+  body#home #home-gallery > div {
+    min-height: 35rem;
+  }
+  body#home #start > div,
+  body#home #highlights > div {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  body#home #video {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: center;
   }
 }
 body#classes a[href^="https://forms.gle"] {
