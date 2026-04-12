@@ -123,6 +123,8 @@ This file captures product and content decisions for the rebuild so future sessi
   - semantic HTML first
   - avoid design-oriented utility class naming
   - prefer structural selectors where reasonable
+  - avoid repeating the page name in descendant IDs when the page is already scoped by `body`
+  - prefer patterns like `body#contact #intro` over `body#contact #contact-intro`
 
 ### 10. Legal/content
 

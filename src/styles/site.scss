@@ -4,7 +4,7 @@
   --ink: #17324b;
   --ink-soft: #4d6070;
   --line: #c7d6df;
-  --teal: rgb(65, 186, 174);
+  --teal: #41baae;
   --yellow: #ffd64d;
   --focus: #0f6fff;
   --shadow: 0 1rem 2.5rem rgba(23, 50, 75, 0.08);
@@ -132,7 +132,7 @@ body > main {
   }
 }
 
-.quote-banner {
+body > main > figure:has(> blockquote) {
   padding: 1.35rem 1.25rem;
   margin: 0;
   color: #ffffff;
@@ -293,18 +293,18 @@ td strong,
 }
 
 body#home {
-  #home-intro p:first-of-type {
+  #intro p:first-of-type {
     font-size: 1.1rem;
   }
 
-  #home-intro p:last-child,
-  #home-initiations p:last-child,
-  #home-praticas p:last-child,
-  #home-about p:last-child {
+  #intro p:last-child,
+  #initiations p:last-child,
+  #praticas p:last-child,
+  #about p:last-child {
     margin-bottom: 0;
   }
 
-  #home-about h3 {
+  #about h3 {
     color: var(--ink);
   }
 }
@@ -315,46 +315,46 @@ body#contact {
     align-items: start;
   }
 
-  #contact-intro {
+  #intro {
     grid-column: 1 / -1;
   }
 
-  .quote-banner {
+  > main > figure:has(> blockquote) {
     grid-column: 1 / -1;
   }
 
-  #contact-social ul {
+  #social ul {
     padding: 0;
     list-style: none;
   }
 
-  #contact-social li + li {
+  #social li + li {
     margin-top: 0.5rem;
   }
 
-  #contact-social a,
-  #contact-direct a,
-  #contact-newsletter a {
+  #social a,
+  #direct a,
+  #newsletter a {
     display: inline-flex;
     gap: 0.45rem;
     align-items: center;
   }
 
-  #contact-newsletter,
-  #contact-direct,
-  #contact-social {
+  #newsletter,
+  #direct,
+  #social {
     min-height: 100%;
   }
 
-  #contact-newsletter {
+  #newsletter {
   }
 
-  #contact-direct {
+  #direct {
   }
 
-  #contact-intro p:last-child,
-  #contact-newsletter p:last-child,
-  #contact-direct p:last-child {
+  #intro p:last-child,
+  #newsletter p:last-child,
+  #direct p:last-child {
     margin-bottom: 0;
   }
 }
@@ -580,7 +580,7 @@ body#classes {
 }
 
 body#about,
-body#venues-page,
+body#venues,
 body#levels {
   article + article,
   main > section + section {
@@ -607,7 +607,7 @@ body#levels {
   }
 }
 
-body#venues-page address strong::before {
+body#venues address strong::before {
   margin-right: 0.35rem;
   content: "📍";
 }

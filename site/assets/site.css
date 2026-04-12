@@ -125,7 +125,7 @@ body > main > section {
   box-shadow: var(--shadow);
 }
 
-.quote-banner {
+body > main > figure:has(> blockquote) {
   padding: 1.35rem 1.25rem;
   margin: 0;
   color: #ffffff;
@@ -135,17 +135,17 @@ body > main > section {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
-.quote-banner blockquote,
-.quote-banner p {
+body > main > figure:has(> blockquote) blockquote,
+body > main > figure:has(> blockquote) p {
   margin: 0;
 }
-.quote-banner blockquote p {
+body > main > figure:has(> blockquote) blockquote p {
   font-size: clamp(1.25rem, 3.2vw, 2.1rem);
   font-weight: 300;
   line-height: 1.35;
   letter-spacing: 0.01em;
 }
-.quote-banner figcaption {
+body > main > figure:has(> blockquote) figcaption {
   margin-top: 0.65rem;
   font-size: clamp(0.95rem, 1.6vw, 1.2rem);
   line-height: 1.3;
@@ -275,16 +275,16 @@ td strong,
   height: auto;
 }
 
-body#home #home-intro p:first-of-type {
+body#home #intro p:first-of-type {
   font-size: 1.1rem;
 }
-body#home #home-intro p:last-child,
-body#home #home-initiations p:last-child,
-body#home #home-praticas p:last-child,
-body#home #home-about p:last-child {
+body#home #intro p:last-child,
+body#home #initiations p:last-child,
+body#home #praticas p:last-child,
+body#home #about p:last-child {
   margin-bottom: 0;
 }
-body#home #home-about h3 {
+body#home #about h3 {
   color: var(--ink);
 }
 
@@ -292,34 +292,34 @@ body#contact main {
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   align-items: start;
 }
-body#contact #contact-intro {
+body#contact #intro {
   grid-column: 1/-1;
 }
-body#contact .quote-banner {
+body#contact > main > figure:has(> blockquote) {
   grid-column: 1/-1;
 }
-body#contact #contact-social ul {
+body#contact #social ul {
   padding: 0;
   list-style: none;
 }
-body#contact #contact-social li + li {
+body#contact #social li + li {
   margin-top: 0.5rem;
 }
-body#contact #contact-social a,
-body#contact #contact-direct a,
-body#contact #contact-newsletter a {
+body#contact #social a,
+body#contact #direct a,
+body#contact #newsletter a {
   display: inline-flex;
   gap: 0.45rem;
   align-items: center;
 }
-body#contact #contact-newsletter,
-body#contact #contact-direct,
-body#contact #contact-social {
+body#contact #newsletter,
+body#contact #direct,
+body#contact #social {
   min-height: 100%;
 }
-body#contact #contact-intro p:last-child,
-body#contact #contact-newsletter p:last-child,
-body#contact #contact-direct p:last-child {
+body#contact #intro p:last-child,
+body#contact #newsletter p:last-child,
+body#contact #direct p:last-child {
   margin-bottom: 0;
 }
 
@@ -505,20 +505,20 @@ body#classes article ul {
 
 body#about article + article,
 body#about main > section + section,
-body#venues-page article + article,
-body#venues-page main > section + section,
+body#venues article + article,
+body#venues main > section + section,
 body#levels article + article,
 body#levels main > section + section {
   margin-top: 1rem;
 }
 body#about article,
-body#venues-page article,
+body#venues article,
 body#levels article {
   padding-top: 1rem;
   border-top: 0.08rem solid var(--line);
 }
 body#about article:first-of-type,
-body#venues-page article:first-of-type,
+body#venues article:first-of-type,
 body#levels article:first-of-type {
   padding-top: 0;
   border-top: 0;
@@ -531,7 +531,7 @@ body#levels #level-4 {
   scroll-margin-top: 2rem;
 }
 
-body#venues-page address strong::before {
+body#venues address strong::before {
   margin-right: 0.35rem;
   content: "📍";
 }
