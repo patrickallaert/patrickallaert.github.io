@@ -364,7 +364,7 @@ body#home {
 
   #home-gallery > div {
     position: relative;
-    min-height: 24rem;
+    min-height: 21rem;
     overflow: hidden;
     border-radius: calc(var(--radius) - 0.1rem);
     box-shadow: 0 1rem 2rem rgba(23, 50, 75, 0.12);
@@ -387,6 +387,20 @@ body#home {
     height: 100%;
     object-fit: cover;
     object-position: center;
+  }
+
+  #home-gallery figure:nth-child(1) img,
+  #home-gallery figure:nth-child(2) img {
+    object-position: center 42%;
+  }
+
+  #home-gallery figure:nth-child(3) img,
+  #home-gallery figure:nth-child(4) img {
+    object-position: center 38%;
+  }
+
+  #home-gallery figure:nth-child(5) img {
+    object-position: center 28%;
   }
 
   #home-gallery nav,
@@ -813,7 +827,7 @@ body#about {
     }
 
     #home-gallery > div {
-      min-height: 35rem;
+      min-height: 29rem;
     }
 
     #start > div,

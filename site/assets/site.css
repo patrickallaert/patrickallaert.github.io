@@ -336,7 +336,7 @@ body#home #home-gallery {
 }
 body#home #home-gallery > div {
   position: relative;
-  min-height: 24rem;
+  min-height: 21rem;
   overflow: hidden;
   border-radius: calc(var(--radius) - 0.1rem);
   box-shadow: 0 1rem 2rem rgba(23, 50, 75, 0.12);
@@ -356,6 +356,17 @@ body#home #home-gallery img {
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+body#home #home-gallery figure:nth-child(1) img,
+body#home #home-gallery figure:nth-child(2) img {
+  object-position: center 42%;
+}
+body#home #home-gallery figure:nth-child(3) img,
+body#home #home-gallery figure:nth-child(4) img {
+  object-position: center 38%;
+}
+body#home #home-gallery figure:nth-child(5) img {
+  object-position: center 28%;
 }
 body#home #home-gallery nav,
 body#home #home-gallery ol {
@@ -705,7 +716,7 @@ body#about #school figure {
     align-items: end;
   }
   body#home #home-gallery > div {
-    min-height: 35rem;
+    min-height: 29rem;
   }
   body#home #start > div,
   body#home #highlights > div {
