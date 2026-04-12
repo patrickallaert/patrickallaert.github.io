@@ -125,6 +125,33 @@ body > main > section {
   box-shadow: var(--shadow);
 }
 
+.quote-banner {
+  padding: 1.35rem 1.25rem;
+  margin: 0;
+  color: #ffffff;
+  text-align: center;
+  background: var(--teal);
+  border: 0.08rem solid rgba(23, 50, 75, 0.08);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.quote-banner blockquote,
+.quote-banner p {
+  margin: 0;
+}
+.quote-banner blockquote p {
+  font-size: clamp(1.25rem, 3.2vw, 2.1rem);
+  font-weight: 300;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+}
+.quote-banner figcaption {
+  margin-top: 0.65rem;
+  font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+  line-height: 1.3;
+  opacity: 0.95;
+}
+
 body > footer {
   padding: 0 0 2rem;
 }
@@ -153,6 +180,12 @@ body > footer .social-links a {
 }
 body > footer .social-links svg {
   flex: none;
+}
+body > footer .footer-mail {
+  display: inline-flex;
+  gap: 0.45rem;
+  align-items: center;
+  margin-top: 0.75rem;
 }
 
 h1,
@@ -255,13 +288,38 @@ body#home #home-about h3 {
   color: var(--ink);
 }
 
-body#contact ul {
-  padding-left: 1.25rem;
+body#contact main {
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  align-items: start;
+}
+body#contact #contact-intro {
+  grid-column: 1/-1;
+}
+body#contact .quote-banner {
+  grid-column: 1/-1;
+}
+body#contact #contact-social ul {
+  padding: 0;
+  list-style: none;
+}
+body#contact #contact-social li + li {
+  margin-top: 0.5rem;
+}
+body#contact #contact-social a,
+body#contact #contact-direct a,
+body#contact #contact-newsletter a {
+  display: inline-flex;
+  gap: 0.45rem;
+  align-items: center;
+}
+body#contact #contact-newsletter,
+body#contact #contact-direct,
+body#contact #contact-social {
+  min-height: 100%;
 }
 body#contact #contact-intro p:last-child,
 body#contact #contact-newsletter p:last-child,
-body#contact #contact-direct p:last-child,
-body#contact #contact-venues p:last-child {
+body#contact #contact-direct p:last-child {
   margin-bottom: 0;
 }
 
