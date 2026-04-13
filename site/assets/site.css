@@ -7,6 +7,14 @@
   --line: #c7d6df;
   --teal: #41baae;
   --yellow: #ffd64d;
+  --course-level-1: #4ed9d7;
+  --course-level-2: #2f8cff;
+  --course-level-3: #0a6084;
+  --course-level-4: #c13cc6;
+  --course-musicality: #ff49c8;
+  --course-short: #ff49c8;
+  --course-roots: #ffe14e;
+  --course-practice: #ffe9a8;
   --focus: #0f6fff;
   --shadow: 0 1rem 2.5rem rgba(23, 50, 75, 0.08);
   --radius: 1rem;
@@ -566,6 +574,76 @@ body#contact #intro p:last-child {
   margin-bottom: 0;
 }
 
+body#events main {
+  display: block;
+}
+body#events #weekly > div {
+  display: block;
+}
+body#events #weekly > p:first-child {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--teal);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+body#events #weekly > h1 {
+  margin-bottom: 0.65rem;
+  color: var(--ink);
+}
+body#events #weekly > h1 + p {
+  max-width: 44rem;
+  margin-bottom: 1.4rem;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+}
+body#events #weekly article {
+  max-width: 46rem;
+  padding: 1.35rem 1.4rem;
+  margin: 0 auto;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(244, 250, 247, 0.98));
+  border: 0.08rem solid rgba(65, 186, 174, 0.14);
+  box-shadow: 0 1.2rem 2.4rem rgba(23, 50, 75, 0.08), inset 0 0 0 0.08rem rgba(255, 255, 255, 0.7);
+}
+body#events #weekly ul {
+  padding-left: 1.2rem;
+}
+body#events #weekly li + li {
+  margin-top: 0.45rem;
+}
+body#events #weekly h4 {
+  margin-top: 1.35rem;
+  color: var(--ink);
+}
+body#events #weekly article > p:first-of-type {
+  font-size: 1.03rem;
+}
+body#events #weekly article section {
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 0.08rem solid rgba(199, 214, 223, 0.8);
+}
+body#events #weekly article p:last-child,
+body#events #weekly article section p:last-child {
+  margin-bottom: 0;
+}
+body#events #weekly > aside {
+  max-width: 46rem;
+  padding: 1rem 1.15rem;
+  margin: 0.9rem auto 0;
+  background: rgba(65, 186, 174, 0.06);
+  border: 0.08rem solid rgba(65, 186, 174, 0.14);
+  border-radius: calc(var(--radius) - 0.1rem);
+}
+body#events #weekly > aside h3 {
+  margin-bottom: 0.45rem;
+}
+body#events #weekly > aside p {
+  margin-bottom: 0;
+  color: var(--ink-soft);
+}
+
 body#about #team > div {
   display: grid;
   gap: 1rem;
@@ -711,6 +789,9 @@ body#about #school figure {
     justify-self: end;
     margin-bottom: 0;
   }
+  body#events #weekly {
+    padding: 1.6rem;
+  }
   body#home #intro {
     grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
     align-items: end;
@@ -726,6 +807,30 @@ body#about #school figure {
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
     align-items: center;
   }
+}
+body#classes [data-course=level-1] {
+  --course-accent: var(--course-level-1);
+}
+body#classes [data-course=level-2] {
+  --course-accent: var(--course-level-2);
+}
+body#classes [data-course=level-3] {
+  --course-accent: var(--course-level-3);
+}
+body#classes [data-course=level-4] {
+  --course-accent: var(--course-level-4);
+}
+body#classes [data-course=musicality] {
+  --course-accent: var(--course-musicality);
+}
+body#classes [data-course=short-courses] {
+  --course-accent: var(--course-short);
+}
+body#classes [data-course=roots] {
+  --course-accent: var(--course-roots);
+}
+body#classes [data-course=free-practice] {
+  --course-accent: var(--course-practice);
 }
 body#classes a[href^="https://forms.gle"] {
   display: inline-flex;
@@ -743,6 +848,13 @@ body#classes #next-trimester > div.schedule-table {
 }
 body#classes table {
   min-width: 44rem;
+}
+body#classes td[data-course] {
+  background: linear-gradient(90deg, var(--course-accent) 0 0.35rem, transparent 0.35rem), color-mix(in srgb, var(--course-accent) 14%, #ffffff);
+}
+body#classes td[data-course] > a:first-child,
+body#classes td[data-course] > strong:first-child {
+  color: var(--ink);
 }
 body#classes .schedule-days {
   display: none;
@@ -767,6 +879,19 @@ body#classes article section + section {
 body#classes article ul {
   padding-left: 1.2rem;
   margin-bottom: 0;
+}
+body#classes .schedule-days ul {
+  padding-left: 0;
+  list-style: none;
+}
+body#classes .schedule-days li[data-course] {
+  padding: 0.55rem 0.7rem;
+  background: color-mix(in srgb, var(--course-accent) 14%, #ffffff);
+  border-left: 0.35rem solid var(--course-accent);
+  border-radius: 0.65rem;
+}
+body#classes .schedule-days li[data-course] + li[data-course] {
+  margin-top: 0.45rem;
 }
 
 body#about article + article,
@@ -795,6 +920,26 @@ body#levels #level-2,
 body#levels #level-3,
 body#levels #level-4 {
   scroll-margin-top: 2rem;
+  background: color-mix(in srgb, var(--course-accent) 10%, #ffffff);
+  border-left: 0.4rem solid var(--course-accent);
+}
+body#levels #level-1 {
+  --course-accent: var(--course-level-1);
+}
+body#levels #level-2 {
+  --course-accent: var(--course-level-2);
+}
+body#levels #level-3 {
+  --course-accent: var(--course-level-3);
+}
+body#levels #level-4 {
+  --course-accent: var(--course-level-4);
+}
+body#levels #level-1 h2,
+body#levels #level-2 h2,
+body#levels #level-3 h2,
+body#levels #level-4 h2 {
+  color: var(--ink);
 }
 
 body#venues address strong::before {
