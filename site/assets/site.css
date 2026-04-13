@@ -14,7 +14,7 @@
   --course-musicality: #ff49c8;
   --course-short: #ff49c8;
   --course-roots: #ffe14e;
-  --course-practice: #ffe9a8;
+  --course-practice: #f6c983;
   --focus: #0f6fff;
   --shadow: 0 1rem 2.5rem rgba(23, 50, 75, 0.08);
   --radius: 1rem;
@@ -575,72 +575,48 @@ body#contact #intro p:last-child {
 }
 
 body#events main {
-  display: block;
+  display: grid;
 }
-body#events #weekly > div {
-  display: block;
-}
-body#events #weekly > p:first-child {
-  margin: 0 0 0.5rem;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--teal);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-body#events #weekly > h1 {
-  margin-bottom: 0.65rem;
-  color: var(--ink);
-}
-body#events #weekly > h1 + p {
+body#events #intro > h1 + p {
   max-width: 44rem;
-  margin-bottom: 1.4rem;
   font-size: 1.05rem;
   color: var(--ink-soft);
 }
-body#events #weekly article {
-  max-width: 46rem;
-  padding: 1.35rem 1.4rem;
-  margin: 0 auto;
+body#events #praticas > div,
+body#events #occasional > div {
+  display: grid;
+  gap: 1rem;
+}
+body#events #praticas article,
+body#events #occasional article {
+  padding: 1.15rem 1.2rem;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(244, 250, 247, 0.98));
   border: 0.08rem solid rgba(65, 186, 174, 0.14);
+  border-radius: calc(var(--radius) - 0.1rem);
   box-shadow: 0 1.2rem 2.4rem rgba(23, 50, 75, 0.08), inset 0 0 0 0.08rem rgba(255, 255, 255, 0.7);
 }
-body#events #weekly ul {
+body#events #praticas ul,
+body#events #initiations ul {
   padding-left: 1.2rem;
 }
-body#events #weekly li + li {
+body#events #praticas li + li,
+body#events #initiations li + li {
   margin-top: 0.45rem;
 }
-body#events #weekly h4 {
-  margin-top: 1.35rem;
+body#events #praticas h3,
+body#events #occasional h3 {
   color: var(--ink);
 }
-body#events #weekly article > p:first-of-type {
-  font-size: 1.03rem;
-}
-body#events #weekly article section {
-  padding-top: 1rem;
-  margin-top: 1rem;
-  border-top: 0.08rem solid rgba(199, 214, 223, 0.8);
-}
-body#events #weekly article p:last-child,
-body#events #weekly article section p:last-child {
+body#events #praticas p:last-child,
+body#events #initiations p:last-child,
+body#events #occasional p:last-child,
+body#events #scene p:last-child {
   margin-bottom: 0;
 }
-body#events #weekly > aside {
-  max-width: 46rem;
-  padding: 1rem 1.15rem;
-  margin: 0.9rem auto 0;
+body#events #scene {
   background: rgba(65, 186, 174, 0.06);
-  border: 0.08rem solid rgba(65, 186, 174, 0.14);
-  border-radius: calc(var(--radius) - 0.1rem);
 }
-body#events #weekly > aside h3 {
-  margin-bottom: 0.45rem;
-}
-body#events #weekly > aside p {
-  margin-bottom: 0;
+body#events #scene p {
   color: var(--ink-soft);
 }
 
