@@ -326,6 +326,7 @@ body#home #intro > div:first-child > p:last-child a {
   align-items: center;
   min-height: 2.7rem;
   padding: 0.45rem 0.9rem;
+  color: inherit;
   text-decoration: none;
   background: rgba(65, 186, 174, 0.1);
   border: 0.08rem solid rgba(65, 186, 174, 0.18);
@@ -492,6 +493,7 @@ body#contact #intro a[href^="mailto:"] {
   color: #ffffff;
   text-decoration: none;
   background: var(--teal);
+  border: 0.08rem solid var(--teal);
   border-radius: 999rem;
 }
 body#contact #direct p:first-of-type a,
@@ -572,52 +574,6 @@ body#contact #social span {
 }
 body#contact #intro p:last-child {
   margin-bottom: 0;
-}
-
-body#events main {
-  display: grid;
-}
-body#events #intro > h1 + p {
-  max-width: 44rem;
-  font-size: 1.05rem;
-  color: var(--ink-soft);
-}
-body#events #praticas > div,
-body#events #occasional > div {
-  display: grid;
-  gap: 1rem;
-}
-body#events #praticas article,
-body#events #occasional article {
-  padding: 1.15rem 1.2rem;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(244, 250, 247, 0.98));
-  border: 0.08rem solid rgba(65, 186, 174, 0.14);
-  border-radius: calc(var(--radius) - 0.1rem);
-  box-shadow: 0 1.2rem 2.4rem rgba(23, 50, 75, 0.08), inset 0 0 0 0.08rem rgba(255, 255, 255, 0.7);
-}
-body#events #praticas ul,
-body#events #initiations ul {
-  padding-left: 1.2rem;
-}
-body#events #praticas li + li,
-body#events #initiations li + li {
-  margin-top: 0.45rem;
-}
-body#events #praticas h3,
-body#events #occasional h3 {
-  color: var(--ink);
-}
-body#events #praticas p:last-child,
-body#events #initiations p:last-child,
-body#events #occasional p:last-child,
-body#events #scene p:last-child {
-  margin-bottom: 0;
-}
-body#events #scene {
-  background: rgba(65, 186, 174, 0.06);
-}
-body#events #scene p {
-  color: var(--ink-soft);
 }
 
 body#about #team > div {
