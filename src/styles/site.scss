@@ -15,7 +15,7 @@
   --course-roots: #ffe14e;
   --course-practice: #f6c983;
   --focus: #0f6fff;
-  --shadow: 0 1rem 2.5rem rgba(23, 50, 75, 0.08);
+  --shadow: 0 0.5rem 1.4rem rgba(23, 50, 75, 0.06);
   --radius: 1rem;
   --max: 64rem;
 }
@@ -161,7 +161,7 @@ body > main {
 
   > section {
     padding: 1.25rem;
-    @include framed-block(var(--radius), var(--shadow));
+    @include framed-block;
   }
 }
 

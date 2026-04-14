@@ -16,7 +16,7 @@
   --course-roots: #ffe14e;
   --course-practice: #f6c983;
   --focus: #0f6fff;
-  --shadow: 0 1rem 2.5rem rgba(23, 50, 75, 0.08);
+  --shadow: 0 0.5rem 1.4rem rgba(23, 50, 75, 0.06);
   --radius: 1rem;
   --max: 64rem;
 }
@@ -130,7 +130,6 @@ body > main > section {
   background: var(--panel);
   border: 0.08rem solid var(--line);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
 }
 
 body > main > figure:has(> blockquote) {
