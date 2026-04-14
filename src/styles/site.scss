@@ -38,17 +38,10 @@
   border-radius: 999rem;
 }
 
-@mixin framed-block(
-  $radius: var(--radius),
-  $shadow: none
-) {
+@mixin framed-block {
   background: var(--panel);
   border: 0.08rem solid var(--line);
-  border-radius: $radius;
-
-  @if $shadow != none {
-    box-shadow: $shadow;
-  }
+  border-radius: var(--radius);
 }
 
 *,
@@ -117,7 +110,8 @@ body > header {
     display: grid;
     gap: 1rem;
     padding: 1rem;
-    @include framed-block(var(--radius), var(--shadow));
+    @include framed-block;
+    box-shadow: var(--shadow);
   }
 
   p {
