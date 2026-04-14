@@ -491,103 +491,29 @@ body#home {
     border: 0;
   }
 
-  #questions {
-    text-align: center;
-  }
-
-  #about h3 {
-    color: var(--ink);
-  }
 }
 
 body#contact {
   main {
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
     align-items: start;
   }
 
   #intro {
     display: grid;
-    grid-column: 1 / -1;
     gap: 1rem;
     background: var(--panel);
   }
 
-  > main > figure:has(> blockquote) {
-    grid-column: 1 / -1;
-  }
-
-  #intro a[href^="mailto:"] {
-    @include pill-link(2.8rem, 0.5rem 1rem, #ffffff, var(--teal), var(--teal));
-  }
-
-  #direct p:first-of-type a,
   #newsletter a {
     display: inline-flex;
     gap: 0.45rem;
     align-items: center;
   }
 
-  #newsletter,
-  #direct,
-  #social {
-    min-height: 100%;
-  }
-
-  #newsletter,
-  #direct {
+  #newsletter {
     background:
       linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(244, 250, 247, 0.98));
   }
-
-  #social {
-    background:
-      linear-gradient(180deg, rgba(65, 186, 174, 0.08), rgba(255, 255, 255, 0.98));
-  }
-
-  #social li {
-    margin: 0;
-  }
-
-  #social li + li {
-    margin-top: 0.75rem;
-  }
-
-  #social a {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 0.25rem 0.75rem;
-    align-items: center;
-    padding: 0.9rem 1rem;
-    color: inherit;
-    text-decoration: none;
-    background: rgba(255, 255, 255, 0.9);
-    border: 0.08rem solid rgba(65, 186, 174, 0.14);
-    border-radius: calc(var(--radius) - 0.1rem);
-    box-shadow: 0 0.75rem 1.8rem rgba(23, 50, 75, 0.06);
-  }
-
-  #social svg {
-    grid-row: 1 / span 2;
-    align-self: start;
-    margin-top: 0.1rem;
-    color: var(--teal);
-  }
-
-  #social strong,
-  #social span {
-    display: block;
-  }
-
-  #social strong {
-    font-size: 1rem;
-    color: var(--ink);
-  }
-
-  #social span {
-    color: var(--ink-soft);
-  }
-
 }
 
 body#home #intro > div:first-child > p:first-child,
@@ -609,13 +535,10 @@ body#events #intro h1 + p {
 }
 
 body#home #intro > div:first-child > p:last-child a,
-body#contact #direct > p:last-child a,
 body#contact #newsletter > p:last-child a {
   @include pill-link(2.7rem, 0.45rem 0.9rem);
 }
 
-body#home #start article,
-body#home #highlights article,
 body#events #praticas article {
   padding: 1rem;
   background: rgba(65, 186, 174, 0.05);
@@ -623,8 +546,6 @@ body#events #praticas article {
   border-radius: calc(var(--radius) - 0.1rem);
 }
 
-body#home #start > div,
-body#home #highlights > div,
 body#events #praticas > div {
   display: grid;
   gap: 0.85rem;
@@ -641,13 +562,11 @@ body#home #intro > div:first-child {
 }
 
 body#home #home-gallery,
-body#home #home-gallery ol,
-body#contact #social ul {
+body#home #home-gallery ol {
   padding: 0;
 }
 
-body#home #home-gallery ol,
-body#contact #social ul {
+body#home #home-gallery ol {
   list-style: none;
 }
 
@@ -825,23 +744,6 @@ body#about {
     }
   }
 
-  body#contact {
-    #intro {
-      grid-template-columns: minmax(0, 1.5fr) minmax(14rem, 0.9fr);
-      align-items: end;
-    }
-
-    #intro > :not(p:last-child) {
-      grid-column: 1;
-    }
-
-    #intro p:last-child {
-      grid-column: 2;
-      align-self: center;
-      justify-self: end;
-    }
-  }
-
   body#events {
     #praticas > div {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -856,11 +758,6 @@ body#about {
 
     #home-gallery > div {
       min-height: 29rem;
-    }
-
-    #start > div,
-    #highlights > div {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     #video {

@@ -427,90 +427,22 @@ body#home #video iframe {
   height: 100%;
   border: 0;
 }
-body#home #questions {
-  text-align: center;
-}
-body#home #about h3 {
-  color: var(--ink);
-}
 
 body#contact main {
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   align-items: start;
 }
 body#contact #intro {
   display: grid;
-  grid-column: 1/-1;
   gap: 1rem;
   background: var(--panel);
 }
-body#contact > main > figure:has(> blockquote) {
-  grid-column: 1/-1;
-}
-body#contact #intro a[href^="mailto:"] {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.8rem;
-  padding: 0.5rem 1rem;
-  color: #ffffff;
-  text-decoration: none;
-  background: var(--teal);
-  border: 0.08rem solid var(--teal);
-  border-radius: 999rem;
-}
-body#contact #direct p:first-of-type a,
 body#contact #newsletter a {
   display: inline-flex;
   gap: 0.45rem;
   align-items: center;
 }
-body#contact #newsletter,
-body#contact #direct,
-body#contact #social {
-  min-height: 100%;
-}
-body#contact #newsletter,
-body#contact #direct {
+body#contact #newsletter {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(244, 250, 247, 0.98));
-}
-body#contact #social {
-  background: linear-gradient(180deg, rgba(65, 186, 174, 0.08), rgba(255, 255, 255, 0.98));
-}
-body#contact #social li {
-  margin: 0;
-}
-body#contact #social li + li {
-  margin-top: 0.75rem;
-}
-body#contact #social a {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.25rem 0.75rem;
-  align-items: center;
-  padding: 0.9rem 1rem;
-  color: inherit;
-  text-decoration: none;
-  background: rgba(255, 255, 255, 0.9);
-  border: 0.08rem solid rgba(65, 186, 174, 0.14);
-  border-radius: calc(var(--radius) - 0.1rem);
-  box-shadow: 0 0.75rem 1.8rem rgba(23, 50, 75, 0.06);
-}
-body#contact #social svg {
-  grid-row: 1/span 2;
-  align-self: start;
-  margin-top: 0.1rem;
-  color: var(--teal);
-}
-body#contact #social strong,
-body#contact #social span {
-  display: block;
-}
-body#contact #social strong {
-  font-size: 1rem;
-  color: var(--ink);
-}
-body#contact #social span {
-  color: var(--ink-soft);
 }
 
 body#home #intro > div:first-child > p:first-child,
@@ -532,7 +464,6 @@ body#events #intro h1 + p {
 }
 
 body#home #intro > div:first-child > p:last-child a,
-body#contact #direct > p:last-child a,
 body#contact #newsletter > p:last-child a {
   display: inline-flex;
   align-items: center;
@@ -545,8 +476,6 @@ body#contact #newsletter > p:last-child a {
   border-radius: 999rem;
 }
 
-body#home #start article,
-body#home #highlights article,
 body#events #praticas article {
   padding: 1rem;
   background: rgba(65, 186, 174, 0.05);
@@ -554,8 +483,6 @@ body#events #praticas article {
   border-radius: calc(var(--radius) - 0.1rem);
 }
 
-body#home #start > div,
-body#home #highlights > div,
 body#events #praticas > div {
   display: grid;
   gap: 0.85rem;
@@ -572,13 +499,11 @@ body#home #intro > div:first-child {
 }
 
 body#home #home-gallery,
-body#home #home-gallery ol,
-body#contact #social ul {
+body#home #home-gallery ol {
   padding: 0;
 }
 
-body#home #home-gallery ol,
-body#contact #social ul {
+body#home #home-gallery ol {
   list-style: none;
 }
 
@@ -725,18 +650,6 @@ body#about #school figure {
   body#about #school article > div {
     grid-template-columns: repeat(3, minmax(0, 10.5rem));
   }
-  body#contact #intro {
-    grid-template-columns: minmax(0, 1.5fr) minmax(14rem, 0.9fr);
-    align-items: end;
-  }
-  body#contact #intro > :not(p:last-child) {
-    grid-column: 1;
-  }
-  body#contact #intro p:last-child {
-    grid-column: 2;
-    align-self: center;
-    justify-self: end;
-  }
   body#events #praticas > div {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -746,10 +659,6 @@ body#about #school figure {
   }
   body#home #home-gallery > div {
     min-height: 29rem;
-  }
-  body#home #start > div,
-  body#home #highlights > div {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   body#home #video {
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
