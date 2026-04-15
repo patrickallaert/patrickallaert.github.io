@@ -79,6 +79,14 @@ body > footer {
   margin-inline: auto;
 }
 
+body > header > nav,
+body > main > section,
+body > footer > div {
+  background: var(--panel);
+  border: 0.08rem solid var(--line);
+  border-radius: var(--radius);
+}
+
 body > header {
   padding: 1rem 0 0;
 }
@@ -86,9 +94,6 @@ body > header nav {
   display: grid;
   gap: 1rem;
   padding: 1rem;
-  background: var(--panel);
-  border: 0.08rem solid var(--line);
-  border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
 body > header p {
@@ -142,9 +147,6 @@ body > main > section {
   display: grid;
   gap: 1rem;
   padding: 1.25rem;
-  background: var(--panel);
-  border: 0.08rem solid var(--line);
-  border-radius: var(--radius);
 }
 
 body > main > section > *,
@@ -191,9 +193,6 @@ body > footer > div {
   display: grid;
   gap: 0.9rem;
   padding: 1rem 1.25rem;
-  background: var(--panel);
-  border: 0.08rem solid var(--line);
-  border-radius: var(--radius);
 }
 body > footer p {
   margin: 0;
@@ -780,3 +779,5 @@ body#venues address strong::before {
     margin-bottom: 0.75rem;
   }
 }
+
+/*# sourceMappingURL=site.css.map */
