@@ -20,24 +20,6 @@
   --max: 64rem;
 }
 
-@mixin pill-link(
-  $min-height,
-  $padding,
-  $color: inherit,
-  $background: rgba(65, 186, 174, 0.1),
-  $border-color: rgba(65, 186, 174, 0.18)
-) {
-  display: inline-flex;
-  align-items: center;
-  min-height: $min-height;
-  padding: $padding;
-  color: $color;
-  text-decoration: none;
-  background: $background;
-  border: 0.08rem solid $border-color;
-  border-radius: 999rem;
-}
-
 @mixin framed-block {
   background: var(--panel);
   border: 0.08rem solid var(--line);
@@ -513,10 +495,6 @@ body#events #intro h1 + p {
   max-width: 44rem;
   font-size: 1.05rem;
   color: var(--ink-soft);
-}
-
-body#home #intro > div:first-child > p:last-child a {
-  @include pill-link(2.7rem, 0.45rem 0.9rem);
 }
 
 body#events #praticas article {
