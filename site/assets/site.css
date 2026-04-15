@@ -96,9 +96,6 @@ body > header nav {
   padding: 1rem;
   box-shadow: var(--shadow);
 }
-body > header p {
-  margin: 0;
-}
 body > header ul {
   display: flex;
   flex-wrap: wrap;
