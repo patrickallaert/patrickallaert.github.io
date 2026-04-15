@@ -614,6 +614,20 @@ body#about {
     }
   }
 
+  body#venues {
+    main > section:not(#intro) {
+      grid-template-columns: minmax(0, 1fr) minmax(16rem, 26rem);
+      align-items: start;
+    }
+
+    figure {
+      grid-column: 2;
+      grid-row: 1 / span 6;
+      justify-self: end;
+      width: 100%;
+    }
+  }
+
   body#home {
     #intro {
       grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
@@ -768,6 +782,20 @@ body#levels {
   article:first-of-type {
     padding-top: 0;
     border-top: 0;
+  }
+}
+
+body#venues {
+  figure {
+    margin: 0;
+    overflow: hidden;
+    max-width: 26rem;
+    border-radius: calc(var(--radius) - 0.1rem);
+
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 }
 
