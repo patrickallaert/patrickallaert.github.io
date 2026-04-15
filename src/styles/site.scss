@@ -492,38 +492,13 @@ body#home {
 
 }
 
-body#contact {
-  main {
-    align-items: start;
-  }
-
-  #intro {
-    display: grid;
-    gap: 1rem;
-    background: var(--panel);
-  }
-
-  #newsletter a {
-    display: inline-flex;
-    gap: 0.45rem;
-    align-items: center;
-  }
-
-  #newsletter {
-    background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(244, 250, 247, 0.98));
-  }
-}
-
-body#contact #intro h1 + p,
 body#events #intro h1 + p {
   max-width: 44rem;
   font-size: 1.05rem;
   color: var(--ink-soft);
 }
 
-body#home #intro > div:first-child > p:last-child a,
-body#contact #newsletter > p:last-child a {
+body#home #intro > div:first-child > p:last-child a {
   @include pill-link(2.7rem, 0.45rem 0.9rem);
 }
 
@@ -777,7 +752,7 @@ body#classes {
     --course-accent: var(--course-practice);
   }
 
-  a[href^="https://forms.gle"] {
+  main a[href^="https://forms.gle"] {
     display: inline-flex;
     align-items: center;
     min-height: 2.75rem;

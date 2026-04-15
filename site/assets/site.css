@@ -427,32 +427,13 @@ body#home #video iframe {
   border: 0;
 }
 
-body#contact main {
-  align-items: start;
-}
-body#contact #intro {
-  display: grid;
-  gap: 1rem;
-  background: var(--panel);
-}
-body#contact #newsletter a {
-  display: inline-flex;
-  gap: 0.45rem;
-  align-items: center;
-}
-body#contact #newsletter {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(244, 250, 247, 0.98));
-}
-
-body#contact #intro h1 + p,
 body#events #intro h1 + p {
   max-width: 44rem;
   font-size: 1.05rem;
   color: var(--ink-soft);
 }
 
-body#home #intro > div:first-child > p:last-child a,
-body#contact #newsletter > p:last-child a {
+body#home #intro > div:first-child > p:last-child a {
   display: inline-flex;
   align-items: center;
   min-height: 2.7rem;
@@ -669,7 +650,7 @@ body#classes [data-course=roots] {
 body#classes [data-course=free-practice] {
   --course-accent: var(--course-practice);
 }
-body#classes a[href^="https://forms.gle"] {
+body#classes main a[href^="https://forms.gle"] {
   display: inline-flex;
   align-items: center;
   min-height: 2.75rem;
