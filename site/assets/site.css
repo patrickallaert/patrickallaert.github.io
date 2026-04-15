@@ -119,6 +119,19 @@ body > header a[aria-current=page] {
   color: #ffffff;
   background: var(--teal);
 }
+body > header nav > a[href="register.html"] {
+  justify-self: start;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+  background: linear-gradient(135deg, #17324b, #245158);
+  border: 0.08rem solid rgba(23, 50, 75, 0.18);
+  box-shadow: 0 0.8rem 1.6rem rgba(23, 50, 75, 0.12);
+}
+body > header nav > a[href="register.html"]:hover,
+body > header nav > a[href="register.html"]:focus-visible {
+  background: linear-gradient(135deg, #10283d, #1f464c);
+}
 
 body > main {
   display: grid;
@@ -594,11 +607,14 @@ body#about #school figure {
     column-gap: 2rem;
   }
   body > header nav {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
   }
   body > header ul {
     justify-content: flex-end;
+  }
+  body > header nav > a[href="register.html"] {
+    justify-self: end;
   }
   body#about #team > div {
     grid-template-columns: repeat(2, minmax(0, 1fr));
