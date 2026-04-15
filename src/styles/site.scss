@@ -563,17 +563,6 @@ body#home #video > div:first-child > * {
   margin: 0;
 }
 
-body#events {
-  #scene {
-    background: rgba(65, 186, 174, 0.06);
-    border-color: rgba(65, 186, 174, 0.14);
-  }
-
-  #scene p {
-    color: var(--ink-soft);
-  }
-}
-
 body#about {
   #team > div {
     display: grid;
