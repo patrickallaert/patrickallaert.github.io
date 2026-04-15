@@ -872,11 +872,6 @@ body#levels {
   }
 }
 
-body#venues address strong::before {
-  margin-right: 0.35rem;
-  content: "📍";
-}
-
 @media (max-width: 47.99rem) {
   body#classes {
     .schedule-table {
