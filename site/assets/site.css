@@ -95,7 +95,7 @@ body > header nav {
   padding: 1rem;
   box-shadow: var(--shadow);
 }
-body > header ul {
+body > header nav ul {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -103,10 +103,10 @@ body > header ul {
   margin: 0;
   list-style: none;
 }
-body > header li {
+body > header nav ul li {
   margin: 0;
 }
-body > header a:not([href="#main"]) {
+body > header nav a {
   display: inline-flex;
   align-items: center;
   min-height: 2.5rem;
@@ -115,7 +115,7 @@ body > header a:not([href="#main"]) {
   text-decoration: none;
   border-radius: 999rem;
 }
-body > header a[aria-current=page] {
+body > header nav a[aria-current=page] {
   font-weight: 700;
   color: #ffffff;
   background: var(--teal);
@@ -129,8 +129,7 @@ body > header nav > a[href="register.html"] {
   border: 0.08rem solid rgba(23, 50, 75, 0.18);
   box-shadow: 0 0.8rem 1.6rem rgba(23, 50, 75, 0.12);
 }
-body > header nav > a[href="register.html"]:hover,
-body > header nav > a[href="register.html"]:focus-visible {
+body > header nav > a[href="register.html"]:hover, body > header nav > a[href="register.html"]:focus-visible {
   background: linear-gradient(135deg, #10283d, #1f464c);
 }
 
@@ -144,17 +143,14 @@ body > main > section {
   gap: 1rem;
   padding: 1.25rem;
 }
-
-body > main > section > *,
-body > main article > * {
-  margin: 0;
-}
-
 body > main article {
   display: grid;
   gap: 1rem;
 }
-
+body > main > section > *,
+body > main article > * {
+  margin: 0;
+}
 body > main > figure:has(> blockquote) {
   padding: 1.35rem 1.25rem;
   margin: 0;
@@ -316,7 +312,12 @@ body#home #intro {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(240, 250, 246, 0.98));
 }
 body#home #intro > div:first-child {
+  display: grid;
+  gap: 0.9rem;
   align-content: start;
+}
+body#home #intro > div:first-child > * {
+  margin: 0;
 }
 body#home #intro h1 {
   max-width: 11ch;
@@ -354,22 +355,20 @@ body#home #home-gallery figure {
 body#home #home-gallery figure[data-active] {
   opacity: 1;
 }
+body#home #home-gallery figure:nth-child(1) img, body#home #home-gallery figure:nth-child(2) img {
+  object-position: center 42%;
+}
+body#home #home-gallery figure:nth-child(3) img, body#home #home-gallery figure:nth-child(4) img {
+  object-position: center 38%;
+}
+body#home #home-gallery figure:nth-child(5) img {
+  object-position: center 28%;
+}
 body#home #home-gallery img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-}
-body#home #home-gallery figure:nth-child(1) img,
-body#home #home-gallery figure:nth-child(2) img {
-  object-position: center 42%;
-}
-body#home #home-gallery figure:nth-child(3) img,
-body#home #home-gallery figure:nth-child(4) img {
-  object-position: center 38%;
-}
-body#home #home-gallery figure:nth-child(5) img {
-  object-position: center 28%;
 }
 body#home #home-gallery nav,
 body#home #home-gallery ol {
@@ -380,6 +379,14 @@ body#home #home-gallery ol {
 body#home #home-gallery nav {
   justify-content: space-between;
 }
+body#home #home-gallery nav > button {
+  min-height: 2.3rem;
+  padding: 0.35rem 0.8rem;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.92);
+  border: 0.08rem solid rgba(65, 186, 174, 0.18);
+  border-radius: 999rem;
+}
 body#home #home-gallery ol {
   flex-wrap: wrap;
   justify-content: center;
@@ -387,29 +394,23 @@ body#home #home-gallery ol {
   margin: 0;
   list-style: none;
 }
-body#home #home-gallery button {
-  font: inherit;
-  cursor: pointer;
-}
-body#home #home-gallery nav > button,
 body#home #home-gallery ol button {
+  width: 2.3rem;
   min-height: 2.3rem;
+  padding: 0;
   color: inherit;
   background: rgba(255, 255, 255, 0.92);
   border: 0.08rem solid rgba(65, 186, 174, 0.18);
   border-radius: 999rem;
 }
-body#home #home-gallery nav > button {
-  padding: 0.35rem 0.8rem;
-}
-body#home #home-gallery ol button {
-  width: 2.3rem;
-  padding: 0;
-}
 body#home #home-gallery ol button[aria-current=true] {
   color: #ffffff;
   background: var(--teal);
   border-color: var(--teal);
+}
+body#home #home-gallery button {
+  font: inherit;
+  cursor: pointer;
 }
 body#home #video {
   display: grid;
@@ -417,11 +418,16 @@ body#home #video {
   background: linear-gradient(180deg, rgba(23, 50, 75, 0.98), rgba(36, 81, 88, 0.98));
 }
 body#home #video h2,
-body#home #video p {
-  color: #ffffff;
-}
+body#home #video p,
 body#home #video a {
   color: #ffffff;
+}
+body#home #video > div:first-child {
+  display: grid;
+  gap: 1rem;
+}
+body#home #video > div:first-child > * {
+  margin: 0;
 }
 body#home #video > div:last-child {
   aspect-ratio: 16/9;
@@ -441,44 +447,14 @@ body#events #praticas article {
   border: 0.08rem solid rgba(65, 186, 174, 0.14);
   border-radius: calc(var(--radius) - 0.1rem);
 }
-
 body#events #praticas > div {
   display: grid;
   gap: 0.85rem;
 }
 
-body#home #intro > div:first-child,
-body#home #video > div:first-child {
-  display: grid;
-  gap: 1rem;
-}
-
-body#home #intro > div:first-child {
-  gap: 0.9rem;
-}
-
-body#home #home-gallery,
-body#home #home-gallery ol {
-  padding: 0;
-}
-
-body#home #home-gallery ol {
-  list-style: none;
-}
-
-body#home #intro > div:first-child > *,
-body#home #video > div:first-child > * {
-  margin: 0;
-}
-
 body#about #team > div {
   display: grid;
   gap: 1rem;
-}
-body#about #school article,
-body#about #team > div > article {
-  display: grid;
-  gap: 0.85rem;
 }
 body#about #team > div > article {
   align-content: start;
@@ -494,6 +470,11 @@ body#about #team > div > article + article {
   padding-top: 0;
   margin-top: 0;
   border-top: 0;
+}
+body#about #school article,
+body#about #team > div > article {
+  display: grid;
+  gap: 0.85rem;
 }
 body#about #school figure,
 body#about #team figure {
@@ -514,8 +495,8 @@ body#about #team figure::after {
   border: 0.08rem solid rgba(255, 255, 255, 0.9);
   border-radius: 999rem;
 }
-body#about #school img,
-body#about #team img {
+body#about #school figure img,
+body#about #team figure img {
   display: block;
   width: 100%;
   height: 100%;
@@ -529,22 +510,12 @@ body#about #team figure {
   justify-self: center;
   width: min(100%, 11rem);
 }
-body#about #school article {
-  display: grid;
-  gap: 1rem;
-}
 body#about #team h3 {
   display: flex;
   gap: 0.45rem;
   align-items: center;
   justify-content: center;
   margin-bottom: 0.15rem;
-  text-align: center;
-}
-body#about #team p {
-  max-width: 32ch;
-  margin-right: auto;
-  margin-left: auto;
   text-align: center;
 }
 body#about #team h3 a {
@@ -559,14 +530,23 @@ body#about #team h3 a {
   border-radius: 999rem;
   transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
 }
-body#about #team h3 a:hover,
-body#about #team h3 a:focus-visible {
+body#about #team h3 a:hover, body#about #team h3 a:focus-visible {
   background: rgba(65, 186, 174, 0.18);
   border-color: rgba(65, 186, 174, 0.35);
   transform: translateY(-0.05rem);
 }
 body#about #team h3 a svg {
   display: block;
+}
+body#about #team p {
+  max-width: 32ch;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+body#about #school article {
+  display: grid;
+  gap: 1rem;
 }
 body#about #school article > div {
   display: grid;
@@ -734,6 +714,12 @@ body#levels #level-4 {
   background: color-mix(in srgb, var(--course-accent) 10%, #ffffff);
   border-left: 0.4rem solid var(--course-accent);
 }
+body#levels #level-1 h2,
+body#levels #level-2 h2,
+body#levels #level-3 h2,
+body#levels #level-4 h2 {
+  color: var(--ink);
+}
 body#levels #level-1 {
   --course-accent: var(--course-level-1);
 }
@@ -745,12 +731,6 @@ body#levels #level-3 {
 }
 body#levels #level-4 {
   --course-accent: var(--course-level-4);
-}
-body#levels #level-1 h2,
-body#levels #level-2 h2,
-body#levels #level-3 h2,
-body#levels #level-4 h2 {
-  color: var(--ink);
 }
 
 @media (max-width: 47.99rem) {
