@@ -305,26 +305,6 @@ td strong,
   height: auto;
 }
 
-body#home #intro {
-  display: grid;
-  gap: 0.9rem 1rem;
-  overflow: hidden;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(240, 250, 246, 0.98));
-}
-body#home #intro h1 {
-  max-width: 11ch;
-  margin-bottom: 0;
-}
-body#home #intro h1 + p {
-  max-width: 34rem;
-  font-size: 1.08rem;
-}
-body#home #intro > * {
-  margin: 0;
-}
-body#home #intro > #home-gallery {
-  min-width: 0;
-}
 body#home #home-gallery {
   display: grid;
   gap: 0.85rem;
@@ -417,13 +397,6 @@ body#home #video p,
 body#home #video a {
   color: #ffffff;
 }
-body#home #video > div:first-child {
-  display: grid;
-  gap: 1rem;
-}
-body#home #video > div:first-child > * {
-  margin: 0;
-}
 body#home #video > div:last-child {
   aspect-ratio: 16/9;
   overflow: hidden;
@@ -436,12 +409,6 @@ body#home #video iframe {
   border: 0;
 }
 
-body#events #praticas article {
-  padding: 1rem;
-  background: rgba(65, 186, 174, 0.05);
-  border: 0.08rem solid rgba(65, 186, 174, 0.14);
-  border-radius: calc(var(--radius) - 0.1rem);
-}
 body#events #praticas > div {
   display: grid;
   gap: 0.85rem;
@@ -453,23 +420,6 @@ body#about #team > div {
 }
 body#about #team > div > article {
   align-content: start;
-  padding: 0.25rem 0 0;
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-}
-body#about #team > div > article,
-body#about #team > div > article:first-of-type,
-body#about #team > div > article + article {
-  padding-top: 0;
-  margin-top: 0;
-  border-top: 0;
-}
-body#about #school article,
-body#about #team > div > article {
-  display: grid;
-  gap: 0.85rem;
 }
 body#about #school figure,
 body#about #team figure {
@@ -539,10 +489,6 @@ body#about #team p {
   margin-left: auto;
   text-align: center;
 }
-body#about #school article {
-  display: grid;
-  gap: 1rem;
-}
 body#about #school article > div {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(0, 10.5rem));
@@ -584,7 +530,6 @@ body#about #school figure {
   }
   body#home #intro {
     grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-    align-items: end;
   }
   body#home #intro h1,
   body#home #intro h1 + p {
@@ -688,21 +633,17 @@ body#classes .schedule-days li[data-course] + li[data-course] {
   margin-top: 0.45rem;
 }
 
-body#about article + article,
-body#about main > section + section,
 body#venues article + article,
 body#venues main > section + section,
 body#levels article + article,
 body#levels main > section + section {
   margin-top: 1rem;
 }
-body#about article,
 body#venues article,
 body#levels article {
   padding-top: 1rem;
   border-top: 0.08rem solid var(--line);
 }
-body#about article:first-of-type,
 body#venues article:first-of-type,
 body#levels article:first-of-type {
   padding-top: 0;
