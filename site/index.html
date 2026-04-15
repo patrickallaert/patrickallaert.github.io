@@ -28,7 +28,6 @@
       <div>
         <h1>Learn forró, meet people, and keep dancing.</h1>
         <p>Conexão is a Brussels-based forró school centred on classes, social dancing, musicality, and a warm community spirit.</p>
-        <p><strong>Registrations for the April-June trimester are now open.</strong></p>
       </div>
       <section id="home-gallery" aria-label="Highlights from Conexão">
         <div>
@@ -92,8 +91,6 @@
       if (!gallery) return;
       const slides = Array.from(gallery.querySelectorAll('figure'));
       const dots = Array.from(gallery.querySelectorAll('ol button'));
-      const prev = gallery.querySelector('[data-dir="prev"]');
-      const next = gallery.querySelector('[data-dir="next"]');
       let active = 0;
 
       const render = (index) => {
@@ -113,8 +110,8 @@
       dots.forEach((dot, index) => {
         dot.addEventListener('click', () => render(index));
       });
-      prev.addEventListener('click', () => render(active - 1));
-      next.addEventListener('click', () => render(active + 1));
+      gallery.querySelector('[data-dir="prev"]').addEventListener('click', () => render(active - 1));
+      gallery.querySelector('[data-dir="next"]').addEventListener('click', () => render(active + 1));
       render(0);
     })();
   </script>
