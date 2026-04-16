@@ -289,11 +289,6 @@ td small,
   color: var(--ink-soft);
 }
 
-td strong,
-.schedule-days li strong {
-  color: var(--teal);
-}
-
 .wordmark {
   display: inline-flex;
   align-items: center;
@@ -410,7 +405,7 @@ body#home #video iframe {
 }
 
 body#events #praticas > div {
-  display: grid;
+  display: block;
   gap: 0.85rem;
 }
 
@@ -601,10 +596,6 @@ body#classes table {
 body#classes td[data-course] {
   background: linear-gradient(90deg, var(--course-accent) 0 0.35rem, transparent 0.35rem), color-mix(in srgb, var(--course-accent) 14%, #ffffff);
 }
-body#classes td[data-course] > a:first-child,
-body#classes td[data-course] > strong:first-child {
-  color: var(--ink);
-}
 body#classes .schedule-days {
   display: none;
 }
@@ -704,9 +695,6 @@ body#levels #level-4 {
   }
   body#classes .schedule-days {
     display: block;
-  }
-  body#classes article p:last-of-type {
-    margin-bottom: 0.75rem;
   }
 }
 
