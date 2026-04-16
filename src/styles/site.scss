@@ -748,6 +748,24 @@ body#classes {
     background:
       linear-gradient(90deg, var(--course-accent) 0 0.35rem, transparent 0.35rem),
       color-mix(in srgb, var(--course-accent) 14%, #ffffff);
+
+    > a:first-child,
+    > strong:first-child {
+      display: inline-block;
+      font-size: 1.03rem;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--ink);
+      text-decoration-thickness: 0.08rem;
+      text-underline-offset: 0.12em;
+    }
+
+    small {
+      display: block;
+      margin-top: 0.28rem;
+      line-height: 1.4;
+      color: var(--ink-soft);
+    }
   }
 
   td.class.free-practice {
@@ -775,10 +793,38 @@ body#classes {
     border-radius: var(--radius);
   }
 
-  h5 {
-    margin: 0 0 0.35rem;
-    font-size: 1rem;
+  h4 {
+    margin-bottom: 0.35rem;
+    font-size: 1.15rem;
+    line-height: 1.2;
     color: var(--ink);
+  }
+
+  h5 {
+    margin: 0 0 0.45rem;
+    padding-bottom: 0.2rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: var(--teal-deep);
+    border-bottom: 0.08rem solid color-mix(in srgb, var(--teal-deep) 18%, transparent);
+  }
+
+  article > p {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: 0.15rem 0.45rem;
+    align-items: baseline;
+    margin: 0.2rem 0 0;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+
+    strong {
+      color: var(--ink);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
   }
 
   article section + section {
@@ -797,10 +843,52 @@ body#classes {
     }
 
     li.class {
-      padding: 0.55rem 0.7rem;
+      display: grid;
+      grid-template-columns: minmax(5.2rem, auto) minmax(0, 1fr);
+      column-gap: 0.6rem;
+      row-gap: 0.18rem;
+      align-items: start;
+      padding: 0.65rem 0.75rem;
       background: color-mix(in srgb, var(--course-accent) 14%, #ffffff);
       border-left: 0.35rem solid var(--course-accent);
       border-radius: 0.65rem;
+      line-height: 1.35;
+
+      .class-line {
+        display: contents;
+      }
+
+      .time-range {
+        grid-column: 1;
+        white-space: nowrap;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        color: var(--teal-deep);
+      }
+
+      .class-name {
+        grid-column: 2;
+        font-size: 1.02rem;
+        font-weight: 700;
+        line-height: 1.25;
+        color: var(--ink);
+        text-decoration-thickness: 0.08rem;
+        text-underline-offset: 0.12em;
+      }
+
+      .class-name a,
+      .class-name strong {
+        color: inherit;
+      }
+
+      small {
+        grid-column: 2;
+        display: block;
+        margin-top: 0;
+        font-size: 0.82rem;
+        color: var(--ink-soft);
+      }
     }
 
     li.class.free-practice {
