@@ -554,34 +554,34 @@ body#about #school figure {
     align-items: center;
   }
 }
-body#classes [data-course=level-1] {
+body#classes .class.level.\31  {
   --course-accent: var(--course-level-1);
 }
-body#classes [data-course=level-2] {
+body#classes .class.level.\32  {
   --course-accent: var(--course-level-2);
 }
-body#classes [data-course=level-3] {
+body#classes .class.level.\33  {
   --course-accent: var(--course-level-3);
 }
-body#classes [data-course=level-4] {
+body#classes .class.level.\34  {
   --course-accent: var(--course-level-4);
 }
-body#classes [data-course=musicality] {
+body#classes .class.musicality {
   --course-accent: var(--course-musicality);
 }
-body#classes [data-course=dancing-in-dialogue] {
+body#classes .class.dancing-in-dialogue {
   --course-accent: var(--course-dancing-dialogue);
 }
-body#classes [data-course=footwork-armwork] {
+body#classes .class.footwork-armwork {
   --course-accent: var(--course-footwork-armwork);
 }
-body#classes [data-course=roots-1] {
+body#classes .class.roots.\31  {
   --course-accent: var(--course-roots-1);
 }
-body#classes [data-course=roots-2] {
+body#classes .class.roots.\32  {
   --course-accent: var(--course-roots-2);
 }
-body#classes [data-course=free-practice] {
+body#classes .free-practice {
   --course-accent: var(--course-practice);
 }
 body#classes main a[href^="https://forms.gle"] {
@@ -601,10 +601,10 @@ body#classes #next-trimester > div.schedule-table {
 body#classes table {
   min-width: 44rem;
 }
-body#classes td[data-course] {
+body#classes td.class {
   background: linear-gradient(90deg, var(--course-accent) 0 0.35rem, transparent 0.35rem), color-mix(in srgb, var(--course-accent) 14%, #ffffff);
 }
-body#classes td[data-course=free-practice] {
+body#classes td.class.free-practice {
   background: linear-gradient(90deg, var(--course-accent) 0 0.35rem, transparent 0.35rem), repeating-linear-gradient(135deg, rgba(246, 201, 131, 0.14) 0 0.55rem, rgba(255, 255, 255, 0.92) 0.55rem 1.1rem);
 }
 body#classes .schedule-days {
@@ -635,18 +635,18 @@ body#classes .schedule-days ul {
   padding-left: 0;
   list-style: none;
 }
-body#classes .schedule-days li[data-course] {
+body#classes .schedule-days li.class {
   padding: 0.55rem 0.7rem;
   background: color-mix(in srgb, var(--course-accent) 14%, #ffffff);
   border-left: 0.35rem solid var(--course-accent);
   border-radius: 0.65rem;
 }
-body#classes .schedule-days li[data-course=free-practice] {
+body#classes .schedule-days li.class.free-practice {
   background: repeating-linear-gradient(135deg, rgba(246, 201, 131, 0.14) 0 0.55rem, rgba(255, 255, 255, 0.92) 0.55rem 1.1rem);
   border: 0.08rem dashed color-mix(in srgb, var(--course-accent) 55%, var(--line));
   border-left: 0.35rem solid var(--course-accent);
 }
-body#classes .schedule-days li[data-course] + li[data-course] {
+body#classes .schedule-days li.class + li.class {
   margin-top: 0.45rem;
 }
 
@@ -678,28 +678,16 @@ body#venues figure img {
   height: auto;
 }
 
-body#levels section[data-course],
-body#levels #level-1,
-body#levels #level-2,
-body#levels #level-3,
-body#levels #level-4 {
+body#levels section.class {
   scroll-margin-top: 2rem;
   background: color-mix(in srgb, var(--course-accent) 10%, #ffffff);
   border-left: 0.4rem solid var(--course-accent);
 }
-body#levels section[data-course] h2,
-body#levels section[data-course] h3,
-body#levels #level-1 h2,
-body#levels #level-1 h3,
-body#levels #level-2 h2,
-body#levels #level-2 h3,
-body#levels #level-3 h2,
-body#levels #level-3 h3,
-body#levels #level-4 h2,
-body#levels #level-4 h3 {
+body#levels section.class h2,
+body#levels section.class h3 {
   color: var(--ink);
 }
-body#levels #short-courses > section[data-course] {
+body#levels #short-courses > section {
   padding: 1rem;
   margin-top: 0.85rem;
   background: color-mix(in srgb, var(--course-accent) 12%, #ffffff);
@@ -707,28 +695,28 @@ body#levels #short-courses > section[data-course] {
   border-left: 0.35rem solid var(--course-accent);
   border-radius: calc(var(--radius) - 0.1rem);
 }
-body#levels #level-1 {
+body#levels section.class.level.\31  {
   --course-accent: var(--course-level-1);
 }
-body#levels #level-2 {
+body#levels section.class.level.\32  {
   --course-accent: var(--course-level-2);
 }
-body#levels #level-3 {
+body#levels section.class.level.\33  {
   --course-accent: var(--course-level-3);
 }
-body#levels #level-4 {
+body#levels section.class.level.\34  {
   --course-accent: var(--course-level-4);
 }
-body#levels section[data-course=roots-1] {
+body#levels section.class.roots.\31  {
   --course-accent: var(--course-roots-1);
 }
-body#levels section[data-course=roots-2] {
+body#levels section.class.roots.\32  {
   --course-accent: var(--course-roots-2);
 }
-body#levels section[data-course=dancing-in-dialogue] {
+body#levels section.class.short-course.dancing-in-dialogue {
   --course-accent: var(--course-dancing-dialogue);
 }
-body#levels section[data-course=footwork-armwork] {
+body#levels section.class.short-course.footwork-armwork {
   --course-accent: var(--course-footwork-armwork);
 }
 

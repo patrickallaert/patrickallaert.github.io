@@ -652,43 +652,43 @@ body#about {
 }
 
 body#classes {
-  [data-course="level-1"] {
+  .class.level.\31 {
     --course-accent: var(--course-level-1);
   }
 
-  [data-course="level-2"] {
+  .class.level.\32 {
     --course-accent: var(--course-level-2);
   }
 
-  [data-course="level-3"] {
+  .class.level.\33 {
     --course-accent: var(--course-level-3);
   }
 
-  [data-course="level-4"] {
+  .class.level.\34 {
     --course-accent: var(--course-level-4);
   }
 
-  [data-course="musicality"] {
+  .class.musicality {
     --course-accent: var(--course-musicality);
   }
 
-  [data-course="dancing-in-dialogue"] {
+  .class.dancing-in-dialogue {
     --course-accent: var(--course-dancing-dialogue);
   }
 
-  [data-course="footwork-armwork"] {
+  .class.footwork-armwork {
     --course-accent: var(--course-footwork-armwork);
   }
 
-  [data-course="roots-1"] {
+  .class.roots.\31 {
     --course-accent: var(--course-roots-1);
   }
 
-  [data-course="roots-2"] {
+  .class.roots.\32 {
     --course-accent: var(--course-roots-2);
   }
 
-  [data-course="free-practice"] {
+  .free-practice {
     --course-accent: var(--course-practice);
   }
 
@@ -712,13 +712,13 @@ body#classes {
     min-width: 44rem;
   }
 
-  td[data-course] {
+  td.class {
     background:
       linear-gradient(90deg, var(--course-accent) 0 0.35rem, transparent 0.35rem),
       color-mix(in srgb, var(--course-accent) 14%, #ffffff);
   }
 
-  td[data-course="free-practice"] {
+  td.class.free-practice {
     background:
       linear-gradient(90deg, var(--course-accent) 0 0.35rem, transparent 0.35rem),
       repeating-linear-gradient(
@@ -764,14 +764,14 @@ body#classes {
       list-style: none;
     }
 
-    li[data-course] {
+    li.class {
       padding: 0.55rem 0.7rem;
       background: color-mix(in srgb, var(--course-accent) 14%, #ffffff);
       border-left: 0.35rem solid var(--course-accent);
       border-radius: 0.65rem;
     }
 
-    li[data-course="free-practice"] {
+    li.class.free-practice {
       background:
         repeating-linear-gradient(
           135deg,
@@ -782,7 +782,7 @@ body#classes {
       border-left: 0.35rem solid var(--course-accent);
     }
 
-    li[data-course] + li[data-course] {
+    li.class + li.class {
       margin-top: 0.45rem;
     }
   }
@@ -821,11 +821,7 @@ body#venues {
 }
 
 body#levels {
-  section[data-course],
-  #level-1,
-  #level-2,
-  #level-3,
-  #level-4 {
+  section.class {
     scroll-margin-top: 2rem;
     background: color-mix(in srgb, var(--course-accent) 10%, #ffffff);
     border-left: 0.4rem solid var(--course-accent);
@@ -836,7 +832,7 @@ body#levels {
     }
   }
 
-  #short-courses > section[data-course] {
+  #short-courses > section {
     padding: 1rem;
     margin-top: 0.85rem;
     background: color-mix(in srgb, var(--course-accent) 12%, #ffffff);
@@ -845,35 +841,35 @@ body#levels {
     border-radius: calc(var(--radius) - 0.1rem);
   }
 
-  #level-1 {
+  section.class.level.\31 {
     --course-accent: var(--course-level-1);
   }
 
-  #level-2 {
+  section.class.level.\32 {
     --course-accent: var(--course-level-2);
   }
 
-  #level-3 {
+  section.class.level.\33 {
     --course-accent: var(--course-level-3);
   }
 
-  #level-4 {
+  section.class.level.\34 {
     --course-accent: var(--course-level-4);
   }
 
-  section[data-course="roots-1"] {
+  section.class.roots.\31 {
     --course-accent: var(--course-roots-1);
   }
 
-  section[data-course="roots-2"] {
+  section.class.roots.\32 {
     --course-accent: var(--course-roots-2);
   }
 
-  section[data-course="dancing-in-dialogue"] {
+  section.class.short-course.dancing-in-dialogue {
     --course-accent: var(--course-dancing-dialogue);
   }
 
-  section[data-course="footwork-armwork"] {
+  section.class.short-course.footwork-armwork {
     --course-accent: var(--course-footwork-armwork);
   }
 }
