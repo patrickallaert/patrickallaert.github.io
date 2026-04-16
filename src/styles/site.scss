@@ -10,9 +10,11 @@
   --course-level-2: #2f8cff;
   --course-level-3: #0a6084;
   --course-level-4: #c13cc6;
-  --course-musicality: #ff49c8;
-  --course-short: #ff49c8;
-  --course-roots: #ffe14e;
+  --course-musicality: #ff5f9f;
+  --course-dancing-dialogue: #ff7a59;
+  --course-footwork-armwork: #f08c2e;
+  --course-roots-1: #e7c83a;
+  --course-roots-2: #b7a326;
   --course-practice: #f6c983;
   --focus: #0f6fff;
   --shadow: 0 0.5rem 1.4rem rgba(23, 50, 75, 0.06);
@@ -670,12 +672,20 @@ body#classes {
     --course-accent: var(--course-musicality);
   }
 
-  [data-course="short-courses"] {
-    --course-accent: var(--course-short);
+  [data-course="dancing-in-dialogue"] {
+    --course-accent: var(--course-dancing-dialogue);
   }
 
-  [data-course="roots"] {
-    --course-accent: var(--course-roots);
+  [data-course="footwork-armwork"] {
+    --course-accent: var(--course-footwork-armwork);
+  }
+
+  [data-course="roots-1"] {
+    --course-accent: var(--course-roots-1);
+  }
+
+  [data-course="roots-2"] {
+    --course-accent: var(--course-roots-2);
   }
 
   [data-course="free-practice"] {
@@ -706,6 +716,16 @@ body#classes {
     background:
       linear-gradient(90deg, var(--course-accent) 0 0.35rem, transparent 0.35rem),
       color-mix(in srgb, var(--course-accent) 14%, #ffffff);
+  }
+
+  td[data-course="free-practice"] {
+    background:
+      linear-gradient(90deg, var(--course-accent) 0 0.35rem, transparent 0.35rem),
+      repeating-linear-gradient(
+        135deg,
+        rgba(246, 201, 131, 0.14) 0 0.55rem,
+        rgba(255, 255, 255, 0.92) 0.55rem 1.1rem
+      );
   }
 
   .schedule-days {
@@ -751,6 +771,17 @@ body#classes {
       border-radius: 0.65rem;
     }
 
+    li[data-course="free-practice"] {
+      background:
+        repeating-linear-gradient(
+          135deg,
+          rgba(246, 201, 131, 0.14) 0 0.55rem,
+          rgba(255, 255, 255, 0.92) 0.55rem 1.1rem
+        );
+      border: 0.08rem dashed color-mix(in srgb, var(--course-accent) 55%, var(--line));
+      border-left: 0.35rem solid var(--course-accent);
+    }
+
     li[data-course] + li[data-course] {
       margin-top: 0.45rem;
     }
@@ -790,6 +821,7 @@ body#venues {
 }
 
 body#levels {
+  section[data-course],
   #level-1,
   #level-2,
   #level-3,
@@ -798,9 +830,19 @@ body#levels {
     background: color-mix(in srgb, var(--course-accent) 10%, #ffffff);
     border-left: 0.4rem solid var(--course-accent);
 
-    h2 {
+    h2,
+    h3 {
       color: var(--ink);
     }
+  }
+
+  #short-courses > section[data-course] {
+    padding: 1rem;
+    margin-top: 0.85rem;
+    background: color-mix(in srgb, var(--course-accent) 12%, #ffffff);
+    border: 0.08rem solid color-mix(in srgb, var(--course-accent) 35%, var(--line));
+    border-left: 0.35rem solid var(--course-accent);
+    border-radius: calc(var(--radius) - 0.1rem);
   }
 
   #level-1 {
@@ -817,6 +859,22 @@ body#levels {
 
   #level-4 {
     --course-accent: var(--course-level-4);
+  }
+
+  section[data-course="roots-1"] {
+    --course-accent: var(--course-roots-1);
+  }
+
+  section[data-course="roots-2"] {
+    --course-accent: var(--course-roots-2);
+  }
+
+  section[data-course="dancing-in-dialogue"] {
+    --course-accent: var(--course-dancing-dialogue);
+  }
+
+  section[data-course="footwork-armwork"] {
+    --course-accent: var(--course-footwork-armwork);
   }
 }
 
