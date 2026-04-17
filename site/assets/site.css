@@ -621,138 +621,188 @@ body#classes main a[href^="https://forms.gle"] {
   background: var(--teal);
   border-radius: 999rem;
 }
-body#classes #current-trimester > div.schedule-table,
-body#classes #next-trimester > div.schedule-table {
-  overflow-x: auto;
-}
-body#classes table {
-  min-width: 44rem;
-}
-body#classes td.class {
-  background: linear-gradient(90deg, var(--course-accent) 0 0.35rem, transparent 0.35rem), color-mix(in srgb, var(--course-accent) 14%, #ffffff);
-}
-body#classes td.class > a:first-child,
-body#classes td.class > strong:first-child {
-  display: inline-block;
-  font-size: 1.03rem;
-  font-weight: 700;
-  line-height: 1.25;
-  color: var(--ink);
-  text-decoration-thickness: 0.08rem;
-  text-underline-offset: 0.12em;
-}
-body#classes td.class small {
-  display: block;
-  margin-top: 0.28rem;
-  line-height: 1.4;
-  color: var(--ink-soft);
-}
-body#classes td.class.free-practice {
-  background: linear-gradient(90deg, var(--course-accent) 0 0.35rem, transparent 0.35rem), repeating-linear-gradient(135deg, rgba(246, 201, 131, 0.14) 0 0.55rem, rgba(255, 255, 255, 0.92) 0.55rem 1.1rem);
-}
 body#classes .schedule-days {
-  display: none;
+  display: grid;
+  gap: 1rem;
 }
-body#classes article + article {
-  margin-top: 1rem;
-}
-body#classes article {
-  padding: 1rem;
+body#classes .schedule-days > article {
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+  height: 100%;
+  padding: 0.9rem;
   background: rgba(65, 186, 174, 0.05);
   border: 0.08rem solid var(--line);
-  border-radius: var(--radius);
+  border-radius: 0.8rem;
+  box-shadow: var(--shadow);
 }
-body#classes h4 {
-  margin-bottom: 0.35rem;
-  font-size: 1.15rem;
-  line-height: 1.2;
-  color: var(--ink);
+body#classes .schedule-days > article > h4 {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.05;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--course-level-2) 70%, var(--ink));
 }
-body#classes h5 {
-  margin: 0 0 0.45rem;
-  padding-bottom: 0.2rem;
-  font-size: 1rem;
-  line-height: 1.25;
-  color: var(--teal-deep);
-  border-bottom: 0.08rem solid color-mix(in srgb, var(--teal-deep) 18%, transparent);
+body#classes .schedule-days > article > p {
+  margin: 0;
 }
-body#classes article > p {
-  display: grid;
-  grid-template-columns: max-content minmax(0, 1fr);
-  gap: 0.15rem 0.45rem;
-  align-items: baseline;
-  margin: 0.2rem 0 0;
-  font-size: 0.9rem;
-  color: var(--ink-soft);
-}
-body#classes article > p strong {
+body#classes .schedule-days > article > p:first-of-type {
+  justify-self: start;
+  padding: 0.45rem 0.6rem;
+  background: color-mix(in srgb, var(--course-level-2) 10%, #ffffff);
+  border-radius: 0.28rem;
   color: var(--ink);
   font-size: 0.78rem;
+  line-height: 1.25;
+}
+body#classes .schedule-days > article > p:first-of-type strong {
+  display: block;
+  margin-bottom: 0.1rem;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+body#classes .schedule-days > article > p:first-of-type time {
+  font-weight: 700;
+}
+body#classes .schedule-days > article > p:nth-of-type(2) {
+  color: color-mix(in srgb, var(--course-dancing-dialogue) 76%, #7b1d1d);
+  font-size: 0.82rem;
+  font-style: italic;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
-body#classes article section + section {
-  margin-top: 0.75rem;
+body#classes .schedule-days > article > p:nth-of-type(2) strong,
+body#classes .schedule-days > article > p:nth-of-type(2) time {
+  color: inherit;
 }
-body#classes article ul {
-  padding-left: 1.2rem;
-  margin-bottom: 0;
+body#classes .schedule-days > article > section {
+  min-width: 0;
+  padding-top: 0.75rem;
+  border-top: 0.08rem solid color-mix(in srgb, var(--line) 72%, transparent);
 }
-body#classes .schedule-days ul {
+body#classes .schedule-days > article > section + section {
+  margin-top: 0;
+}
+body#classes .schedule-days > article > section > h5 {
+  margin: 0 0 0.45rem;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  border: 0;
+  padding: 0;
+  overflow-wrap: anywhere;
+}
+body#classes .schedule-days > article > section > h5 a {
+  color: inherit;
+  text-decoration: none;
+}
+body#classes .schedule-days > article > section > ul {
+  display: grid;
+  gap: 0.45rem;
   padding-left: 0;
+  margin: 0;
   list-style: none;
 }
 body#classes .schedule-days li.class {
-  display: grid;
-  grid-template-columns: minmax(5.2rem, auto) minmax(0, 1fr);
-  column-gap: 0.6rem;
-  row-gap: 0.18rem;
-  align-items: start;
-  padding: 0.65rem 0.75rem;
+  min-width: 0;
+  padding: 0.72rem 0.78rem;
   background: color-mix(in srgb, var(--course-accent) 14%, #ffffff);
-  border-left: 0.35rem solid var(--course-accent);
-  border-radius: 0.65rem;
-  line-height: 1.35;
+  border-left: 0.32rem solid var(--course-accent);
+  border-radius: 0.45rem;
+  line-height: 1.3;
 }
 body#classes .schedule-days li.class .class-line {
-  display: contents;
+  display: grid;
+  gap: 0.18rem;
+  margin: 0;
 }
 body#classes .schedule-days li.class .time-range {
-  grid-column: 1;
   white-space: nowrap;
   font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.02em;
-  color: var(--teal-deep);
+  color: color-mix(in srgb, var(--course-accent) 72%, var(--ink));
 }
 body#classes .schedule-days li.class .class-name {
-  grid-column: 2;
-  font-size: 1.02rem;
+  font-size: 0.93rem;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.18;
   color: var(--ink);
   text-decoration-thickness: 0.08rem;
   text-underline-offset: 0.12em;
+  overflow-wrap: anywhere;
 }
 body#classes .schedule-days li.class .class-name a,
 body#classes .schedule-days li.class .class-name strong {
   color: inherit;
 }
 body#classes .schedule-days li.class small {
-  grid-column: 2;
   display: block;
-  margin-top: 0;
-  font-size: 0.82rem;
+  margin-top: 0.22rem;
+  font-size: 0.74rem;
   color: var(--ink-soft);
 }
+body#classes .schedule-days li.class small + small {
+  margin-top: 0.12rem;
+}
 body#classes .schedule-days li.class.free-practice {
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
   background: repeating-linear-gradient(135deg, rgba(246, 201, 131, 0.14) 0 0.55rem, rgba(255, 255, 255, 0.92) 0.55rem 1.1rem);
   border: 0.08rem dashed color-mix(in srgb, var(--course-accent) 55%, var(--line));
-  border-left: 0.35rem solid var(--course-accent);
+  border-left: 0.32rem solid var(--course-accent);
 }
-body#classes .schedule-days li.class + li.class {
-  margin-top: 0.45rem;
+body#classes .schedule-days li.class.free-practice .class-line {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.35rem 0.75rem;
+}
+body#classes .schedule-days li.class.free-practice .class-name {
+  font-size: 0.9rem;
+}
+@media (min-width: 48rem) {
+  body#classes .schedule-days {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 64rem) {
+  body#classes .schedule-days {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: start;
+  }
+  body#classes .schedule-days > article {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 0.9rem;
+    row-gap: 0.8rem;
+    padding: 0.95rem;
+  }
+  body#classes .schedule-days > article > h4 {
+    font-size: 1rem;
+  }
+  body#classes .schedule-days > article > p:first-of-type {
+    justify-self: end;
+    text-align: center;
+  }
+  body#classes .schedule-days > article > p:nth-of-type(2) {
+    grid-column: 1/-1;
+    padding-bottom: 0.05rem;
+  }
+  body#classes .schedule-days > article > section {
+    align-self: start;
+  }
+  body#classes .schedule-days > article > section:only-of-type,
+  body#classes .schedule-days > article > p:nth-of-type(2) + section:last-of-type {
+    grid-column: 1/-1;
+  }
 }
 
 body#venues article + article,
@@ -826,9 +876,6 @@ body#levels section.class.short-course.footwork-armwork {
 }
 
 @media (max-width: 47.99rem) {
-  body#classes .schedule-table {
-    display: none;
-  }
   body#classes .schedule-days {
     display: block;
   }
