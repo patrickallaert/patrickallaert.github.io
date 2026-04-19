@@ -742,6 +742,8 @@ body#classes .schedule-days li.class .time-range {
   color: color-mix(in srgb, var(--course-accent) 72%, var(--ink));
 }
 body#classes .schedule-days li.class .class-name {
+  display: inline-block;
+  margin: 0.08rem 0 0.12rem;
   font-size: 0.95rem;
   font-weight: 700;
   line-height: 1.16;
@@ -791,6 +793,7 @@ body#classes .schedule-days li.class.free-practice .class-line {
   gap: 0.45rem 0.9rem;
 }
 body#classes .schedule-days li.class.free-practice .class-name {
+  margin: 0;
   font-size: 0.79rem;
   font-weight: 600;
 }
