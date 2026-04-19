@@ -1079,5 +1079,13 @@ body#levels {
       display: block;
     }
 
+    .schedule-days > article {
+      height: auto;
+    }
+
+    .schedule-days > article + article {
+      margin-top: 1rem;
+    }
+
   }
 }

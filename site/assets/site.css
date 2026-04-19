@@ -905,6 +905,12 @@ body#levels section.class.short-course.footwork-armwork {
   body#classes .schedule-days {
     display: block;
   }
+  body#classes .schedule-days > article {
+    height: auto;
+  }
+  body#classes .schedule-days > article + article {
+    margin-top: 1rem;
+  }
 }
 
 /*# sourceMappingURL=site.css.map */
