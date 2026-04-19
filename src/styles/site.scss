@@ -843,7 +843,7 @@ body#classes {
     text-decoration: none;
   }
 
-  .schedule-days > article > section > ul {
+  .schedule-days > article > section > .schedule-courses {
     display: grid;
     gap: 0.45rem;
     padding-left: 0;
@@ -851,7 +851,7 @@ body#classes {
     list-style: none;
   }
 
-  .schedule-days li.class {
+  .schedule-days article.class {
     min-width: 0;
     padding: 0.82rem 0.8rem;
     background: color-mix(in srgb, var(--course-accent) 12%, #ffffff);
@@ -860,22 +860,16 @@ body#classes {
     line-height: 1.34;
   }
 
-  .schedule-days li.class .class-line {
-    display: grid;
-    gap: 0.26rem;
+  .schedule-days article.class .class-time {
     margin: 0;
-  }
-
-  .schedule-days li.class .time-range {
     white-space: nowrap;
     font-size: 0.73rem;
     font-weight: 700;
     color: color-mix(in srgb, var(--course-accent) 72%, var(--ink));
   }
 
-  .schedule-days li.class .class-name {
-    display: inline-block;
-    margin: 0.08rem 0 0.12rem;
+  .schedule-days article.class .class-name {
+    margin: 0.34rem 0 0.22rem;
     font-size: 0.95rem;
     font-weight: 700;
     line-height: 1.16;
@@ -885,18 +879,18 @@ body#classes {
     overflow-wrap: anywhere;
   }
 
-  .schedule-days li.class .class-name a {
+  .schedule-days article.class .class-name a {
     color: inherit;
   }
 
-  .schedule-days li.class small {
-    display: block;
-    margin-top: 0.28rem;
+  .schedule-days article.class .class-meta,
+  .schedule-days article.class .class-teachers {
+    margin: 0.18rem 0 0;
     font-size: 0.68rem;
     color: var(--ink-soft);
   }
 
-  .schedule-days li.class small.teachers {
+  .schedule-days article.class .class-teachers {
     position: relative;
     padding-left: 1rem;
 
@@ -912,11 +906,11 @@ body#classes {
     }
   }
 
-  .schedule-days li.class small + small {
+  .schedule-days article.class .class-meta + .class-teachers {
     margin-top: 0.18rem;
   }
 
-  .schedule-days li.class.free-practice {
+  .schedule-days article.class.free-practice {
     padding-top: 0.58rem;
     padding-bottom: 0.58rem;
     background:
@@ -929,19 +923,22 @@ body#classes {
     border-left: 0.32rem solid var(--course-accent);
   }
 
-  .schedule-days li.class.free-practice .class-line {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 0.45rem 0.9rem;
+  .schedule-days article.class.free-practice {
+    display: grid;
+    gap: 0.22rem;
   }
 
-  .schedule-days li.class.free-practice .class-name {
+  .schedule-days article.class.free-practice .class-time {
+    margin: 0;
+  }
+
+  .schedule-days article.class.free-practice .class-name {
     margin: 0;
     font-size: 0.79rem;
     font-weight: 600;
+    overflow-wrap: normal;
   }
+
 
   @media (min-width: 48rem) {
     .schedule-days {
