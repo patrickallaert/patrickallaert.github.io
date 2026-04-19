@@ -203,7 +203,7 @@ body > footer .social-links {
 body > footer .social-links a,
 body > footer .footer-mail {
   display: inline-flex;
-  gap: 0.45rem;
+  gap: 0.6rem;
   align-items: center;
   min-height: 2.4rem;
   padding: 0.4rem 0.8rem;
@@ -417,7 +417,7 @@ body#about #team > div {
 }
 body#about #team > div > article {
   display: grid;
-  gap: 0.75rem;
+  gap: 0.95rem;
   align-content: start;
   height: 100%;
   padding: 1rem;
@@ -630,7 +630,7 @@ body#classes .schedule-days > article {
   gap: 0.75rem;
   align-content: start;
   height: 100%;
-  padding: 0.9rem;
+  padding: 1.05rem;
   background: rgba(65, 186, 174, 0.05);
   border: 0.08rem solid var(--line);
   border-radius: 0.8rem;
@@ -638,7 +638,7 @@ body#classes .schedule-days > article {
 }
 body#classes .schedule-days > article > h4 {
   margin: 0;
-  font-size: 1.06rem;
+  font-size: 1rem;
   line-height: 1.02;
   letter-spacing: 0.035em;
   text-transform: uppercase;
@@ -649,17 +649,17 @@ body#classes .schedule-days > article > p {
 }
 body#classes .schedule-days > article > p:first-of-type {
   justify-self: start;
-  padding: 0.42rem 0.58rem;
+  padding: 0.48rem 0.62rem;
   background: color-mix(in srgb, var(--course-level-2) 10%, #ffffff);
   border-radius: 0.28rem;
   color: var(--ink);
-  font-size: 0.74rem;
+  font-size: 0.71rem;
   line-height: 1.2;
 }
 body#classes .schedule-days > article > p:first-of-type strong {
   display: block;
   margin-bottom: 0.08rem;
-  font-size: 0.58rem;
+  font-size: 0.56rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -670,7 +670,7 @@ body#classes .schedule-days > article > p:first-of-type time {
 }
 body#classes .schedule-days > article > p:nth-of-type(2) {
   color: color-mix(in srgb, var(--course-dancing-dialogue) 76%, #7b1d1d);
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-style: italic;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -682,7 +682,7 @@ body#classes .schedule-days > article > p:nth-of-type(2) time {
 }
 body#classes .schedule-days > article > section {
   min-width: 0;
-  padding-top: 0.75rem;
+  padding-top: 0.95rem;
   border-top: 0.08rem solid color-mix(in srgb, var(--line) 72%, transparent);
 }
 body#classes .schedule-days > article > section + section {
@@ -692,8 +692,8 @@ body#classes .schedule-days > article > section > h5 {
   display: flex;
   gap: 0.38rem;
   align-items: flex-start;
-  margin: 0 0 0.4rem;
-  font-size: 0.82rem;
+  margin: 0 0 0.55rem;
+  font-size: 0.79rem;
   line-height: 1.15;
   letter-spacing: 0.075em;
   text-transform: uppercase;
@@ -724,25 +724,25 @@ body#classes .schedule-days > article > section > ul {
 }
 body#classes .schedule-days li.class {
   min-width: 0;
-  padding: 0.66rem 0.72rem;
+  padding: 0.82rem 0.8rem;
   background: color-mix(in srgb, var(--course-accent) 12%, #ffffff);
   border-left: 0.28rem solid var(--course-accent);
   border-radius: 0.35rem;
-  line-height: 1.26;
+  line-height: 1.34;
 }
 body#classes .schedule-days li.class .class-line {
   display: grid;
-  gap: 0.18rem;
+  gap: 0.26rem;
   margin: 0;
 }
 body#classes .schedule-days li.class .time-range {
   white-space: nowrap;
-  font-size: 0.76rem;
+  font-size: 0.73rem;
   font-weight: 700;
   color: color-mix(in srgb, var(--course-accent) 72%, var(--ink));
 }
 body#classes .schedule-days li.class .class-name {
-  font-size: 0.98rem;
+  font-size: 0.95rem;
   font-weight: 700;
   line-height: 1.16;
   color: var(--ink);
@@ -755,8 +755,8 @@ body#classes .schedule-days li.class .class-name a {
 }
 body#classes .schedule-days li.class small {
   display: block;
-  margin-top: 0.18rem;
-  font-size: 0.7rem;
+  margin-top: 0.28rem;
+  font-size: 0.68rem;
   color: var(--ink-soft);
 }
 body#classes .schedule-days li.class small.teachers {
@@ -774,11 +774,11 @@ body#classes .schedule-days li.class small.teachers::before {
   opacity: 0.72;
 }
 body#classes .schedule-days li.class small + small {
-  margin-top: 0.12rem;
+  margin-top: 0.18rem;
 }
 body#classes .schedule-days li.class.free-practice {
-  padding-top: 0.48rem;
-  padding-bottom: 0.48rem;
+  padding-top: 0.58rem;
+  padding-bottom: 0.58rem;
   background: repeating-linear-gradient(135deg, rgba(246, 201, 131, 0.14) 0 0.55rem, rgba(255, 255, 255, 0.92) 0.55rem 1.1rem);
   border: 0.08rem dashed color-mix(in srgb, var(--course-accent) 55%, var(--line));
   border-left: 0.32rem solid var(--course-accent);
@@ -788,10 +788,10 @@ body#classes .schedule-days li.class.free-practice .class-line {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
-  gap: 0.35rem 0.75rem;
+  gap: 0.45rem 0.9rem;
 }
 body#classes .schedule-days li.class.free-practice .class-name {
-  font-size: 0.82rem;
+  font-size: 0.79rem;
   font-weight: 600;
 }
 @media (min-width: 48rem) {
@@ -808,11 +808,11 @@ body#classes .schedule-days li.class.free-practice .class-name {
   body#classes .schedule-days > article {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 0.9rem;
-    row-gap: 0.8rem;
-    padding: 0.95rem;
+    row-gap: 1rem;
+    padding: 1.05rem;
   }
   body#classes .schedule-days > article > h4 {
-    font-size: 1.12rem;
+    font-size: 1.06rem;
   }
   body#classes .schedule-days > article > p:first-of-type {
     justify-self: end;
