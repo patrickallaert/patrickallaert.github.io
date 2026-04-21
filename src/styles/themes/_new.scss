@@ -165,6 +165,55 @@ body > main {
     box-shadow: none;
   }
 
+  > figure:has(> blockquote) {
+    position: relative;
+    padding: clamp(1.6rem, 4vw, 2.4rem);
+    overflow: hidden;
+    color: var(--ink);
+    background: color-mix(in srgb, var(--teal) 10%, #ffffff);
+    border-left: 0.35rem solid var(--teal);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+
+    &::before {
+      content: "\201C";
+      position: absolute;
+      top: -0.55rem;
+      right: 1.1rem;
+      font-family: "Epilogue", sans-serif;
+      font-size: clamp(5rem, 16vw, 8rem);
+      font-weight: 800;
+      line-height: 1;
+      color: rgba(65, 186, 174, 0.18);
+      pointer-events: none;
+    }
+
+    blockquote,
+    p {
+      margin: 0;
+    }
+
+    blockquote p {
+      position: relative;
+      max-width: 34ch;
+      font-family: "Epilogue", sans-serif;
+      font-size: clamp(1.5rem, 4.2vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    figcaption {
+      position: relative;
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+  }
+
   > section + section,
   > figure + section,
   > section + figure {
