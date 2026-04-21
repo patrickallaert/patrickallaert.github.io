@@ -776,15 +776,13 @@ body#classes .schedule-days article.class .teachers::before {
   opacity: 0.72;
 }
 body#classes .schedule-days article.class.free-practice {
+  display: grid;
+  gap: 0.22rem;
   padding-top: 0.58rem;
   padding-bottom: 0.58rem;
   background: repeating-linear-gradient(135deg, rgba(246, 201, 131, 0.14) 0 0.55rem, rgba(255, 255, 255, 0.92) 0.55rem 1.1rem);
   border: 0.08rem dashed color-mix(in srgb, var(--course-accent) 55%, var(--line));
   border-left: 0.32rem solid var(--course-accent);
-}
-body#classes .schedule-days article.class.free-practice {
-  display: grid;
-  gap: 0.22rem;
 }
 body#classes .schedule-days article.class.free-practice > p:first-of-type {
   margin: 0;
