@@ -860,20 +860,23 @@ body#venues figure img {
 
 body#levels section.class {
   scroll-margin-top: 2rem;
-  background: color-mix(in srgb, var(--course-accent) 10%, #ffffff);
-  border-left: 0.4rem solid var(--course-accent);
+  padding-left: clamp(1.25rem, 3vw, 2rem);
+  background: color-mix(in srgb, var(--course-accent) 8%, #ffffff);
+  border-left: 0;
+  box-shadow: inset 0.35rem 0 0 var(--course-accent);
 }
 body#levels section.class h2,
 body#levels section.class h3 {
   color: var(--ink);
 }
 body#levels #short-courses > section {
-  padding: 1rem;
+  padding: 1rem 1rem 1rem clamp(1.25rem, 3vw, 2rem);
   margin-top: 0.85rem;
-  background: color-mix(in srgb, var(--course-accent) 12%, #ffffff);
+  background: color-mix(in srgb, var(--course-accent) 10%, #ffffff);
   border: 0.08rem solid color-mix(in srgb, var(--course-accent) 35%, var(--line));
-  border-left: 0.35rem solid var(--course-accent);
+  border-left: 0;
   border-radius: calc(var(--radius) - 0.1rem);
+  box-shadow: inset 0.3rem 0 0 var(--course-accent);
 }
 body#levels section.class.level.\31  {
   --course-accent: var(--course-level-1);
