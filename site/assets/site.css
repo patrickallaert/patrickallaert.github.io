@@ -100,8 +100,8 @@ body > header nav {
   gap: 1rem;
   align-items: center;
   width: min(100%, 80rem);
-  margin-inline: auto;
   padding: 1rem 2rem;
+  margin-inline: auto;
   background: transparent;
   border: 0;
   border-radius: 0;
@@ -109,8 +109,8 @@ body > header nav {
 }
 body > header nav ul {
   display: none;
-  align-items: center;
   gap: 2rem;
+  align-items: center;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -119,8 +119,8 @@ body > header nav ul li {
   margin: 0;
 }
 body > header nav a {
-  color: #475569;
   font-weight: 500;
+  color: #475569;
   text-decoration: none;
   transition: color 150ms ease, opacity 150ms ease;
 }
@@ -136,10 +136,10 @@ body > header nav a[aria-current=page] {
   border-radius: 0;
 }
 body > header nav > a[href="register.html"] {
-  justify-self: start;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  justify-self: start;
   min-height: auto;
   padding: 0.5rem 1.5rem;
   font-weight: 700;
@@ -164,8 +164,8 @@ body > main {
   display: block;
   width: min(100%, var(--max));
   min-height: 100vh;
-  margin-inline: auto;
   padding: 8rem 1.5rem 6rem;
+  margin-inline: auto;
 }
 body > main > section,
 body > main > figure {
@@ -187,7 +187,6 @@ body > main > figure:has(> blockquote) {
   box-shadow: var(--shadow);
 }
 body > main > figure:has(> blockquote)::before {
-  content: "“";
   position: absolute;
   top: -0.55rem;
   right: 1.1rem;
@@ -197,6 +196,7 @@ body > main > figure:has(> blockquote)::before {
   line-height: 1;
   color: rgba(65, 186, 174, 0.18);
   pointer-events: none;
+  content: "“";
 }
 body > main > figure:has(> blockquote) blockquote,
 body > main > figure:has(> blockquote) p {
@@ -216,9 +216,9 @@ body > main > figure:has(> blockquote) figcaption {
   margin-top: 1rem;
   font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
   color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
 body > main > section + section,
 body > main > figure + section,
@@ -271,8 +271,8 @@ body > main li + li {
   margin-top: 0.5rem;
 }
 body > main a {
-  color: var(--teal);
   font-weight: 600;
+  color: var(--teal);
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -289,8 +289,8 @@ body > footer > div {
   gap: 1.25rem;
   align-items: center;
   max-width: 96rem;
-  margin-inline: auto;
   padding: 0;
+  margin-inline: auto;
   background: transparent;
   border: 0;
   border-radius: 0;
@@ -298,20 +298,20 @@ body > footer > div {
 }
 body > footer p {
   margin: 0;
-  color: var(--ink-soft);
   font-size: 0.75rem;
-  letter-spacing: 0.08em;
   line-height: 1rem;
+  color: var(--ink-soft);
   text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 body > footer a {
-  color: var(--ink);
   font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
   line-height: 1rem;
-  text-decoration: none;
+  color: var(--ink);
   text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
   transition: color 150ms ease, border-color 150ms ease, background-color 150ms ease;
 }
 body > footer a:hover,
@@ -363,37 +363,37 @@ body > footer .footer-newsletter {
 }
 body > footer .footer-newsletter h2 {
   margin: 0;
-  color: var(--teal);
   font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
   line-height: 1rem;
+  color: var(--teal);
   text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
 body > footer .footer-newsletter p {
   margin: 0;
-  color: var(--ink);
   font-size: 0.86rem;
-  letter-spacing: 0;
   line-height: 1.35;
+  color: var(--ink);
   text-transform: none;
+  letter-spacing: 0;
 }
 body > footer .footer-newsletter a {
-  color: var(--ink);
   font-size: inherit;
-  letter-spacing: 0;
   line-height: inherit;
-  text-decoration: underline;
+  color: var(--ink);
   text-transform: none;
+  letter-spacing: 0;
+  text-decoration: underline;
   text-underline-offset: 0.2em;
 }
 body > footer .footer-links {
   gap: 0.9rem;
 }
 body > footer .footer-links a {
-  color: var(--ink-soft);
   font-size: 0.72rem;
   font-weight: 700;
+  color: var(--ink-soft);
   letter-spacing: 0.08em;
   text-decoration: underline;
   text-underline-offset: 0.22em;
@@ -671,15 +671,15 @@ body#about #school figure {
   }
   body#about #team > div > article {
     grid-template-columns: minmax(0, 9.5rem) minmax(0, 1fr);
-    column-gap: 1rem;
     row-gap: 0.6rem;
+    column-gap: 1rem;
   }
   body#about #team > div > article > h3 {
     grid-column: 1/-1;
   }
   body#about #team > div > article > figure {
-    grid-column: 1;
     grid-row: 2/span 3;
+    grid-column: 1;
     align-self: start;
   }
   body#about #team > div > article > p {
@@ -703,8 +703,8 @@ body#about #school figure {
     align-items: start;
   }
   body#venues figure {
-    grid-column: 2;
     grid-row: 1/span 6;
+    grid-column: 2;
     justify-self: end;
     width: 100%;
   }
@@ -716,8 +716,8 @@ body#about #school figure {
     grid-column: 1;
   }
   body#home #home-gallery {
-    grid-column: 2;
     grid-row: 1/span 2;
+    grid-column: 2;
   }
   body#home #home-gallery > div {
     min-height: 29rem;
@@ -800,9 +800,9 @@ body#classes .schedule-days > article > h4 {
   margin: 0;
   font-size: 1rem;
   line-height: 1.02;
-  letter-spacing: 0.035em;
-  text-transform: uppercase;
   color: color-mix(in srgb, var(--course-level-2) 70%, var(--ink));
+  text-transform: uppercase;
+  letter-spacing: 0.035em;
 }
 body#classes .schedule-days > article > p {
   margin: 0;
@@ -810,31 +810,31 @@ body#classes .schedule-days > article > p {
 body#classes .schedule-days > article > p:first-of-type {
   justify-self: start;
   padding: 0.48rem 0.62rem;
-  background: color-mix(in srgb, var(--course-level-2) 10%, #ffffff);
-  border-radius: 0.28rem;
-  color: var(--ink);
   font-size: 0.71rem;
   line-height: 1.2;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--course-level-2) 10%, #ffffff);
+  border-radius: 0.28rem;
 }
 body#classes .schedule-days > article > p:first-of-type strong {
   display: block;
   margin-bottom: 0.08rem;
   font-size: 0.56rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
   color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 body#classes .schedule-days > article > p:first-of-type time {
   font-weight: 700;
 }
 body#classes .schedule-days > article > p:nth-of-type(2) {
-  color: color-mix(in srgb, var(--course-dancing-dialogue) 76%, #7b1d1d);
   font-size: 0.75rem;
   font-style: italic;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  color: color-mix(in srgb, var(--course-dancing-dialogue) 76%, #7b1d1d);
   text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 body#classes .schedule-days > article > p:nth-of-type(2) strong,
 body#classes .schedule-days > article > p:nth-of-type(2) time {
@@ -852,22 +852,22 @@ body#classes .schedule-days > article > section > h5 {
   display: flex;
   gap: 0.38rem;
   align-items: flex-start;
+  padding: 0;
   margin: 0 0 0.75rem;
   font-size: 0.79rem;
   line-height: 1.15;
-  letter-spacing: 0.075em;
-  text-transform: uppercase;
   color: color-mix(in srgb, var(--ink-soft) 88%, var(--course-level-2));
-  border: 0;
-  padding: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.075em;
   overflow-wrap: anywhere;
+  border: 0;
 }
 body#classes .schedule-days > article > section > h5::before {
-  content: "";
+  flex: 0 0 0.72rem;
   width: 0.72rem;
   height: 0.72rem;
-  flex: 0 0 0.72rem;
   margin-top: 0.05rem;
+  content: "";
   background: no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234d6070' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E");
   opacity: 0.8;
 }
@@ -885,17 +885,17 @@ body#classes .schedule-days > article > section > div {
 body#classes .schedule-days article.class {
   min-width: 0;
   padding: 1rem 0.9rem;
+  line-height: 1.42;
   background: color-mix(in srgb, var(--course-accent) 12%, #ffffff);
   border-left: 0.28rem solid var(--course-accent);
   border-radius: 0.35rem;
-  line-height: 1.42;
 }
 body#classes .schedule-days article.class > p:first-of-type {
   margin: 0;
-  white-space: nowrap;
   font-size: 0.73rem;
   font-weight: 700;
   color: color-mix(in srgb, var(--course-accent) 72%, var(--ink));
+  white-space: nowrap;
 }
 body#classes .schedule-days article.class > h6 {
   margin: 0.58rem 0 0.42rem;
@@ -903,9 +903,9 @@ body#classes .schedule-days article.class > h6 {
   font-weight: 700;
   line-height: 1.16;
   color: var(--ink);
+  overflow-wrap: anywhere;
   text-decoration-thickness: 0.08rem;
   text-underline-offset: 0.12em;
-  overflow-wrap: anywhere;
 }
 body#classes .schedule-days article.class > h6 a {
   color: inherit;
@@ -921,12 +921,12 @@ body#classes .schedule-days article.class .teachers {
   padding-left: 1rem;
 }
 body#classes .schedule-days article.class .teachers::before {
-  content: "";
   position: absolute;
   top: 0.08rem;
   left: 0;
   width: 0.72rem;
   height: 0.72rem;
+  content: "";
   background: no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234d6070' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9.5' cy='7' r='4'/%3E%3Cpath d='M22 21v-2a4 4 0 0 0-3-3.87'/%3E%3Cpath d='M16 3.13a4 4 0 0 1 0 7.75'/%3E%3C/svg%3E");
   opacity: 0.72;
 }
@@ -961,8 +961,8 @@ body#classes .schedule-days article.class.free-practice > h6 {
   }
   body#classes .schedule-days > article {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 1rem;
     row-gap: 1.15rem;
+    column-gap: 1rem;
     padding: 1.2rem;
   }
   body#classes .schedule-days > article > h4 {
@@ -1003,9 +1003,9 @@ body#levels article:first-of-type {
 }
 
 body#venues figure {
+  max-width: 26rem;
   margin: 0;
   overflow: hidden;
-  max-width: 26rem;
   border-radius: calc(var(--radius) - 0.1rem);
 }
 body#venues figure img {
@@ -1014,8 +1014,8 @@ body#venues figure img {
 }
 
 body#levels section.class {
-  scroll-margin-top: 2rem;
   padding-left: clamp(1.25rem, 3vw, 2rem);
+  scroll-margin-top: 2rem;
   background: color-mix(in srgb, var(--course-accent) 8%, #ffffff);
   border-left: 0;
   box-shadow: inset 0.35rem 0 0 var(--course-accent);
@@ -1073,15 +1073,15 @@ body#levels section.class.short-course.footwork-armwork {
   display: flex;
   justify-content: center;
   max-width: 96rem;
-  margin: 0 auto 2rem;
   padding: 1.25rem 2rem 0;
+  margin: 0 auto 2rem;
   border-top: 1px dashed color-mix(in srgb, var(--line) 70%, transparent);
 }
 .theme-switch-panel .theme-switch {
   justify-self: end;
   padding: 0.5rem 0.9rem;
-  color: #475569;
   font-weight: 700;
+  color: #475569;
   background: transparent;
   border: 1px solid var(--line);
   border-radius: var(--radius);
