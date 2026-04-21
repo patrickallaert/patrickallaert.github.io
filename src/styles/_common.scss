@@ -37,6 +37,40 @@ textarea {
   --course-practice: #f6c983;
 }
 
+
+body {
+  min-width: 20rem;
+  margin: 0;
+  font-family: var(--font-body);
+  line-height: var(--body-line-height);
+  color: var(--ink);
+  background: var(--page);
+}
+
+body > header,
+body > main,
+body > footer {
+  width: var(--page-shell-width);
+  margin-inline: var(--page-shell-margin-inline);
+}
+
+body > header nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  li {
+    margin: 0;
+  }
+}
+
+body > main > figure:has(> blockquote) {
+  blockquote,
+  p {
+    margin: 0;
+  }
+}
+
 :focus-visible {
   outline: 0.2rem solid var(--focus);
   outline-offset: 0.2rem;
@@ -425,6 +459,20 @@ body#classes {
     border-radius: 999rem;
   }
 
+}
+
+
+@media (min-width: 48rem) {
+  body > header {
+    nav {
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+
+      > a[href="register.html"] {
+        justify-self: end;
+      }
+    }
+  }
 }
 
 @media (min-width: 48rem) {

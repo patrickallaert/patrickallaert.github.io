@@ -37,6 +37,36 @@ textarea {
   --course-practice: #f6c983;
 }
 
+body {
+  min-width: 20rem;
+  margin: 0;
+  font-family: var(--font-body);
+  line-height: var(--body-line-height);
+  color: var(--ink);
+  background: var(--page);
+}
+
+body > header,
+body > main,
+body > footer {
+  width: var(--page-shell-width);
+  margin-inline: var(--page-shell-margin-inline);
+}
+
+body > header nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+body > header nav ul li {
+  margin: 0;
+}
+
+body > main > figure:has(> blockquote) blockquote,
+body > main > figure:has(> blockquote) p {
+  margin: 0;
+}
+
 :focus-visible {
   outline: 0.2rem solid var(--focus);
   outline-offset: 0.2rem;
@@ -351,6 +381,15 @@ body#classes main a[href^="https://forms.gle"] {
 }
 
 @media (min-width: 48rem) {
+  body > header nav {
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+  }
+  body > header nav > a[href="register.html"] {
+    justify-self: end;
+  }
+}
+@media (min-width: 48rem) {
   body#classes #prices ul {
     columns: 2;
     column-gap: 2rem;
@@ -626,27 +665,15 @@ body#venues figure img {
   --shadow: 0 12px 40px rgba(23, 29, 28, 0.06);
   --radius: 0.25rem;
   --max: 82rem;
-}
-
-body {
-  min-width: 20rem;
-  margin: 0;
-  font-family: "Manrope", sans-serif;
-  line-height: 1.6;
-  color: var(--ink);
-  background: var(--page);
+  --font-body: "Manrope", sans-serif;
+  --body-line-height: 1.6;
+  --page-shell-width: 100%;
+  --page-shell-margin-inline: 0;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-}
-
-body > header,
-body > main,
-body > footer {
-  width: 100%;
-  margin-inline: 0;
 }
 
 body > header {
@@ -674,12 +701,6 @@ body > header nav ul {
   display: none;
   gap: 2rem;
   align-items: center;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-body > header nav ul li {
-  margin: 0;
 }
 body > header nav a {
   font-weight: 500;
@@ -760,10 +781,6 @@ body > main > figure:has(> blockquote)::before {
   color: rgba(65, 186, 174, 0.18);
   pointer-events: none;
   content: "“";
-}
-body > main > figure:has(> blockquote) blockquote,
-body > main > figure:has(> blockquote) p {
-  margin: 0;
 }
 body > main > figure:has(> blockquote) blockquote p {
   position: relative;
@@ -989,16 +1006,9 @@ body > footer svg {
 }
 
 @media (min-width: 48rem) {
-  body > header nav {
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-  }
   body > header nav ul {
     display: flex;
     justify-content: center;
-  }
-  body > header nav > a[href="register.html"] {
-    justify-self: end;
   }
   body > main {
     padding-inline: 3rem;
@@ -1074,8 +1084,8 @@ body#classes .schedule-days article.class.free-practice {
     gap: 1.2rem;
   }
   body#classes .schedule-days > article {
-    column-gap: 1rem;
     row-gap: 1.15rem;
+    column-gap: 1rem;
     padding: 1.2rem;
   }
 }

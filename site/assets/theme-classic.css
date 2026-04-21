@@ -36,6 +36,36 @@ textarea {
   --course-practice: #f6c983;
 }
 
+body {
+  min-width: 20rem;
+  margin: 0;
+  font-family: var(--font-body);
+  line-height: var(--body-line-height);
+  color: var(--ink);
+  background: var(--page);
+}
+
+body > header,
+body > main,
+body > footer {
+  width: var(--page-shell-width);
+  margin-inline: var(--page-shell-margin-inline);
+}
+
+body > header nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+body > header nav ul li {
+  margin: 0;
+}
+
+body > main > figure:has(> blockquote) blockquote,
+body > main > figure:has(> blockquote) p {
+  margin: 0;
+}
+
 :focus-visible {
   outline: 0.2rem solid var(--focus);
   outline-offset: 0.2rem;
@@ -350,6 +380,15 @@ body#classes main a[href^="https://forms.gle"] {
 }
 
 @media (min-width: 48rem) {
+  body > header nav {
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+  }
+  body > header nav > a[href="register.html"] {
+    justify-self: end;
+  }
+}
+@media (min-width: 48rem) {
   body#classes #prices ul {
     columns: 2;
     column-gap: 2rem;
@@ -625,27 +664,15 @@ body#venues figure img {
   --shadow: 0 0.5rem 1.4rem rgba(23, 50, 75, 0.06);
   --radius: 1rem;
   --max: 82rem;
-}
-
-body {
-  min-width: 20rem;
-  margin: 0;
-  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
-  line-height: 1.5;
-  color: var(--ink);
-  background: var(--page);
+  --font-body: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  --body-line-height: 1.5;
+  --page-shell-width: min(calc(100% - 2rem), var(--max));
+  --page-shell-margin-inline: auto;
 }
 
 a {
   color: var(--teal);
   text-underline-offset: 0.16em;
-}
-
-body > header,
-body > main,
-body > footer {
-  width: min(100% - 2rem, var(--max));
-  margin-inline: auto;
 }
 
 body > header > nav,
@@ -669,12 +696,6 @@ body > header nav ul {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-body > header nav ul li {
-  margin: 0;
 }
 body > header nav a {
   display: inline-flex;
@@ -730,10 +751,6 @@ body > main > figure:has(> blockquote) {
   border: 0.08rem solid rgba(23, 50, 75, 0.08);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-}
-body > main > figure:has(> blockquote) blockquote,
-body > main > figure:has(> blockquote) p {
-  margin: 0;
 }
 body > main > figure:has(> blockquote) blockquote p {
   font-size: clamp(1.25rem, 3.2vw, 2.1rem);
@@ -904,15 +921,8 @@ td small,
 }
 
 @media (min-width: 48rem) {
-  body > header nav {
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-  }
   body > header ul {
     justify-content: flex-end;
-  }
-  body > header nav > a[href="register.html"] {
-    justify-self: end;
   }
 }
 body#classes .schedule-days {
@@ -952,8 +962,8 @@ body#classes .schedule-days article.class.free-practice {
     gap: 1rem;
   }
   body#classes .schedule-days > article {
-    column-gap: 0.9rem;
     row-gap: 1rem;
+    column-gap: 0.9rem;
     padding: 1.05rem;
   }
 }
