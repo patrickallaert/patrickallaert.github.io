@@ -867,8 +867,8 @@ body#home #intro {
   display: grid;
   gap: 1.5rem;
   align-items: center;
-  min-height: clamp(34rem, 72vh, 46rem);
-  padding-block: clamp(3rem, 8vw, 7rem);
+  min-height: clamp(26rem, 56vh, 36rem);
+  padding-block: clamp(2.25rem, 5vw, 4.5rem);
 }
 body#home #intro > h1 {
   max-width: 12ch;
@@ -926,6 +926,53 @@ body#home #home-gallery > div {
 body#home #home-gallery nav {
   margin-top: 0.75rem;
 }
+body#home #intro + #video {
+  margin-top: clamp(0.75rem, 2vw, 1.5rem);
+}
+body#home #video {
+  gap: clamp(1.5rem, 5vw, 4rem);
+  align-items: center;
+  padding-block: clamp(1.75rem, 4vw, 3.5rem);
+  color: var(--ink);
+  background: transparent;
+}
+body#home #video h2,
+body#home #video p,
+body#home #video a {
+  color: inherit;
+}
+body#home #video h2 {
+  max-width: 12ch;
+  margin-bottom: 1rem;
+  color: var(--teal);
+  font-size: clamp(2.15rem, 5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+body#home #video p {
+  max-width: 31rem;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 1.65;
+}
+body#home #video p:last-child {
+  margin-bottom: 0;
+}
+body#home #video p:last-child a {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: var(--teal);
+  font-weight: 800;
+  text-decoration: none;
+}
+body#home #video p:last-child a::after {
+  content: "→";
+}
+body#home #video > div:last-child {
+  border-radius: calc(var(--radius) * 2.5);
+  box-shadow: 0 2rem 4rem rgba(23, 29, 28, 0.16);
+}
 
 @media (min-width: 48rem) {
   body#home #intro {
@@ -944,6 +991,16 @@ body#home #home-gallery nav {
   body#home #home-gallery {
     grid-row: 1/span 3;
     grid-column: 2;
+  }
+  body#home #video {
+    grid-template-columns: minmax(22rem, 1.08fr) minmax(18rem, 0.82fr);
+  }
+  body#home #video > div:first-child {
+    grid-column: 2;
+  }
+  body#home #video > div:last-child {
+    grid-row: 1;
+    grid-column: 1;
   }
 }
 body > footer {
