@@ -149,6 +149,9 @@ body#home #home-gallery ol {
   margin: 0;
   list-style: none;
 }
+body#home #home-gallery ol li {
+  margin-top: 0;
+}
 body#home #home-gallery ol button {
   width: 2.3rem;
   min-height: 2.3rem;
