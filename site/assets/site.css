@@ -860,6 +860,89 @@ body > main a:hover, body > main a:focus-visible {
   opacity: 0.8;
 }
 
+body#home #intro {
+  display: grid;
+  gap: 1.5rem;
+  min-height: clamp(34rem, 72vh, 46rem);
+  align-items: center;
+  padding-block: clamp(3rem, 8vw, 7rem);
+}
+body#home #intro > h1 {
+  max-width: 12ch;
+  margin-bottom: 0;
+  color: var(--ink);
+  font-size: clamp(2.15rem, 10vw, 3rem);
+  line-height: 1.08;
+}
+body#home #intro > h1 strong {
+  color: var(--teal);
+  font-weight: inherit;
+}
+body#home #intro > h1 + p {
+  max-width: 31rem;
+  margin-bottom: 0;
+  color: var(--ink);
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 1.65;
+}
+body#home #intro > p:last-of-type {
+  margin: 0;
+}
+body#home #intro > p:last-of-type a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.2rem;
+  padding: 0.85rem 1.35rem;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-decoration: none;
+  text-transform: none;
+  background: var(--teal);
+  border-radius: var(--radius);
+  box-shadow: 0 1rem 2rem rgba(65, 186, 174, 0.22);
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+body#home #intro > p:last-of-type a:hover, body#home #intro > p:last-of-type a:focus-visible {
+  color: #ffffff;
+  opacity: 0.85;
+}
+body#home #intro > p:last-of-type a:active {
+  transform: scale(0.96);
+}
+body#home #home-gallery {
+  align-self: center;
+}
+body#home #home-gallery > div {
+  min-height: clamp(18rem, 48vw, 31rem);
+  border-radius: calc(var(--radius) * 2.5);
+  box-shadow: 0 2rem 4rem rgba(23, 29, 28, 0.16);
+}
+body#home #home-gallery nav {
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 48rem) {
+  body#home #intro {
+    grid-template-columns: minmax(18rem, 0.95fr) minmax(22rem, 1fr);
+    column-gap: clamp(2rem, 4vw, 4rem);
+  }
+  body#home #intro > h1 {
+    font-size: clamp(3rem, 5.2vw, 4.4rem);
+    line-height: 1.02;
+  }
+  body#home #intro > h1,
+  body#home #intro > h1 + p,
+  body#home #intro > p:last-of-type {
+    grid-column: 1;
+  }
+  body#home #home-gallery {
+    grid-column: 2;
+    grid-row: 1/span 3;
+  }
+}
 body > footer {
   padding: 3.5rem 2rem;
   border-top: 1px solid var(--line);
