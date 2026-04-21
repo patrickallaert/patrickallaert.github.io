@@ -5,7 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Events | Conexão</title>
   <meta name="description" content="Forró práticas, initiations, and community events around Conexão in Brussels.">
-  <link rel="stylesheet" href="assets/site.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    document.documentElement.dataset.theme = sessionStorage.getItem("conexao-theme") === "classic" ? "classic" : "new";
+  </script>
+  <link id="theme-stylesheet" rel="stylesheet" href="assets/site.css">
+  <script>
+    if (document.documentElement.dataset.theme === "classic") {
+      document.getElementById("theme-stylesheet").href = "assets/theme-classic.css";
+    }
+  </script>
+  <script defer src="assets/theme-switcher.js"></script>
 </head>
 <body id="events">
   <a href="#main">Skip to content</a>

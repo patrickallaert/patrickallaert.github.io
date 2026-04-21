@@ -22,11 +22,11 @@ textarea {
 }
 
 :root {
-  --page: #f5faf8;
-  --panel: transparent;
-  --ink: #171d1c;
-  --ink-soft: rgba(23, 29, 28, 0.6);
-  --line: rgba(188, 201, 198, 0.2);
+  --page: #f7fbf9;
+  --panel: #ffffff;
+  --ink: #17324b;
+  --ink-soft: #4d6070;
+  --line: #c7d6df;
   --teal: #41baae;
   --yellow: #ffd64d;
   --course-level-1: #4ed9d7;
@@ -39,24 +39,24 @@ textarea {
   --course-roots-1: #e7c83a;
   --course-roots-2: #b7a326;
   --course-practice: #f6c983;
-  --focus: #41baae;
-  --shadow: 0 12px 40px rgba(23, 29, 28, 0.06);
-  --radius: 0.25rem;
+  --focus: #0f6fff;
+  --shadow: 0 0.5rem 1.4rem rgba(23, 50, 75, 0.06);
+  --radius: 1rem;
   --max: 82rem;
 }
 
 body {
   min-width: 20rem;
   margin: 0;
-  font-family: "Manrope", sans-serif;
-  line-height: 1.6;
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  line-height: 1.5;
   color: var(--ink);
   background: var(--page);
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  color: var(--teal);
+  text-underline-offset: 0.16em;
 }
 
 :focus-visible {
@@ -68,7 +68,7 @@ body > a:first-child {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 60;
+  z-index: 10;
   padding: 0.75rem 1rem;
   color: var(--ink);
   background: var(--yellow);
@@ -81,35 +81,31 @@ body > a:first-child:focus {
 body > header,
 body > main,
 body > footer {
-  width: 100%;
-  margin-inline: 0;
+  width: min(100% - 2rem, var(--max));
+  margin-inline: auto;
+}
+
+body > header > nav,
+body > main > section,
+body > footer > div {
+  background: var(--panel);
+  border: 0.08rem solid var(--line);
+  border-radius: var(--radius);
 }
 
 body > header {
-  position: fixed;
-  top: 0;
-  z-index: 50;
-  padding: 0;
-  background: rgba(245, 250, 248, 0.8);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(24px);
+  padding: 1rem 0 0;
 }
 body > header nav {
   display: grid;
   gap: 1rem;
-  align-items: center;
-  width: min(100%, 80rem);
-  margin-inline: auto;
-  padding: 1rem 2rem;
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
+  padding: 1rem;
+  box-shadow: var(--shadow);
 }
 body > header nav ul {
-  display: none;
-  align-items: center;
-  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -118,185 +114,196 @@ body > header nav ul li {
   margin: 0;
 }
 body > header nav a {
-  color: #475569;
-  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 0.4rem 0.8rem;
+  color: inherit;
   text-decoration: none;
-  transition: color 150ms ease, opacity 150ms ease;
-}
-body > header nav a:hover, body > header nav a:focus-visible {
-  color: var(--teal);
+  border-radius: 999rem;
 }
 body > header nav a[aria-current=page] {
-  padding-bottom: 0.25rem;
   font-weight: 700;
-  color: var(--teal);
-  background: transparent;
-  border-bottom: 2px solid var(--teal);
-  border-radius: 0;
+  color: #ffffff;
+  background: var(--teal);
 }
 body > header nav > a[href="register.html"] {
   justify-self: start;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: auto;
-  padding: 0.5rem 1.5rem;
   font-weight: 700;
   color: #ffffff;
-  letter-spacing: 0;
-  background: var(--teal);
-  border: 0;
-  border-radius: var(--radius);
-  box-shadow: none;
-  transition: opacity 150ms ease, transform 150ms ease;
+  letter-spacing: 0.01em;
+  background: linear-gradient(135deg, #17324b, #245158);
+  border: 0.08rem solid rgba(23, 50, 75, 0.18);
+  box-shadow: 0 0.8rem 1.6rem rgba(23, 50, 75, 0.12);
 }
 body > header nav > a[href="register.html"]:hover, body > header nav > a[href="register.html"]:focus-visible {
-  color: #ffffff;
-  background: var(--teal);
-  opacity: 0.8;
-}
-body > header nav > a[href="register.html"]:active {
-  transform: scale(0.95);
+  background: linear-gradient(135deg, #10283d, #1f464c);
 }
 
 body > main {
-  display: block;
-  width: min(100%, var(--max));
-  min-height: 100vh;
-  margin-inline: auto;
-  padding: 8rem 1.5rem 6rem;
+  display: grid;
+  gap: 1rem;
+  padding: 1rem 0 3rem;
 }
-body > main > section,
-body > main > figure {
-  display: block;
-  padding: 0;
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-}
-body > main > section + section,
-body > main > figure + section,
-body > main > section + figure {
-  margin-top: 3.5rem;
+body > main > section {
+  display: grid;
+  gap: 1rem;
+  padding: 1.25rem;
 }
 body > main article {
-  display: block;
+  display: grid;
+  gap: 1rem;
 }
+body > main > section > *,
 body > main article > * {
   margin: 0;
 }
-body > main h1,
-body > main h2,
-body > main h3 {
-  font-family: "Epilogue", sans-serif;
+body > main > figure:has(> blockquote) {
+  padding: 1.35rem 1.25rem;
+  margin: 0;
+  color: #ffffff;
+  text-align: center;
+  background: var(--teal);
+  border: 0.08rem solid rgba(23, 50, 75, 0.08);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
-body > main h1,
-body > main h2 {
-  color: var(--teal);
+body > main > figure:has(> blockquote) blockquote,
+body > main > figure:has(> blockquote) p {
+  margin: 0;
 }
-body > main h1 {
-  margin: 0 0 2.5rem;
-  font-size: clamp(2.7rem, 8vw, 3.5rem);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+body > main > figure:has(> blockquote) blockquote p {
+  font-size: clamp(1.25rem, 3.2vw, 2.1rem);
+  font-weight: 300;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
 }
-body > main h2 {
-  margin: 0 0 1.25rem;
-  font-size: 1.75rem;
-  font-weight: 600;
+body > main > figure:has(> blockquote) figcaption {
+  margin-top: 0.65rem;
+  font-size: clamp(0.95rem, 1.6vw, 1.2rem);
   line-height: 1.3;
-}
-body > main h3 {
-  margin: 0 0 1rem;
-  font-size: 1.25rem;
-  color: var(--ink);
-}
-body > main h2:not(:first-child),
-body > main section > section:not(:first-of-type) h3 {
-  margin-top: 3.5rem;
-}
-body > main p,
-body > main ul,
-body > main ol {
-  margin: 0 0 1.5rem;
-}
-body > main li + li {
-  margin-top: 0.5rem;
-}
-body > main a {
-  color: var(--teal);
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-body > main a:hover, body > main a:focus-visible {
-  opacity: 0.8;
+  opacity: 0.95;
 }
 
 body > footer {
-  padding: 3rem 2rem;
-  border-top: 1px solid var(--line);
+  padding: 0 0 2rem;
 }
 body > footer > div {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 96rem;
-  margin-inline: auto;
-  padding: 0;
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
+  display: grid;
+  gap: 0.9rem;
+  padding: 1rem 1.25rem;
 }
-body > footer p,
-body > footer a {
+body > footer p {
+  margin: 0;
   color: var(--ink-soft);
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  line-height: 1rem;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-body > footer a:hover,
-body > footer a:focus-visible {
-  color: var(--teal);
 }
 body > footer .social-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
+  gap: 0.5rem 1rem;
   padding: 0;
-  margin: 0;
+  margin: 0.75rem 0 0;
   list-style: none;
 }
 body > footer .social-links a,
 body > footer .footer-mail {
-  min-height: auto;
-  padding: 0;
-  background: transparent;
-  border: 0;
-  border-radius: 0;
+  display: inline-flex;
+  gap: 0.6rem;
+  align-items: center;
+  min-height: 2.4rem;
+  padding: 0.4rem 0.8rem;
+  text-decoration: none;
+  background: rgba(65, 186, 174, 0.08);
+  border: 0.08rem solid rgba(65, 186, 174, 0.16);
+  border-radius: 999rem;
 }
-body > footer svg {
-  display: none;
+body > footer .social-links svg {
+  flex: none;
+}
+body > footer .footer-mail {
+  justify-self: start;
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 0.75rem;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  color: var(--teal);
+}
+
+h2 {
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  color: var(--teal);
+}
+
+h3 {
+  font-size: clamp(1.1rem, 3vw, 1.35rem);
+}
+
+h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-bottom: 0.08rem solid var(--line);
+}
+
+thead th {
+  text-align: left;
+}
+
+tbody + tbody th,
+tbody + tbody td {
+  border-top: 0.14rem solid var(--line);
+}
+
+th[scope=rowgroup] small {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.9em;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
+td small,
+.schedule-days li small {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.9em;
+  line-height: 1.4;
+  color: var(--ink-soft);
 }
 
 .wordmark {
   display: inline-flex;
   align-items: center;
-  min-height: 2rem;
-  color: var(--ink);
   text-decoration: none;
 }
 .wordmark img {
   width: auto;
-  max-width: 7rem;
+  max-width: 12rem;
   height: auto;
 }
 
@@ -511,18 +518,11 @@ body#about #school figure {
     grid-template-columns: auto 1fr auto auto;
     align-items: center;
   }
-  body > header nav ul {
-    display: flex;
-    justify-content: center;
+  body > header ul {
+    justify-content: flex-end;
   }
   body > header nav > a[href="register.html"] {
     justify-self: end;
-  }
-  body > main {
-    padding-inline: 3rem;
-  }
-  body > footer > div {
-    flex-direction: row;
   }
   body#about #team > div {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -914,18 +914,12 @@ body#levels section.class.short-course.footwork-armwork {
   }
 }
 body > header nav .theme-switch {
-  justify-self: end;
-  padding: 0.5rem 0.9rem;
-  color: #475569;
-  font-weight: 700;
-  background: transparent;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  transition: color 150ms ease, border-color 150ms ease;
-}
-body > header nav .theme-switch:hover, body > header nav .theme-switch:focus-visible {
-  color: var(--teal);
-  border-color: var(--teal);
+  min-height: 2.4rem;
+  padding: 0.4rem 0.75rem;
+  color: var(--ink-soft);
+  background: rgba(65, 186, 174, 0.08);
+  border: 0.08rem solid rgba(65, 186, 174, 0.16);
+  border-radius: 999rem;
 }
 
-/*# sourceMappingURL=site.css.map */
+/*# sourceMappingURL=theme-classic.css.map */
