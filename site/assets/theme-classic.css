@@ -197,7 +197,8 @@ body > footer p {
   margin: 0;
   color: var(--ink-soft);
 }
-body > footer .social-links {
+body > footer .social-links,
+body > footer .footer-links {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 1rem;
@@ -219,6 +220,38 @@ body > footer .footer-mail {
 }
 body > footer .social-links svg {
   flex: none;
+}
+body > footer .footer-newsletter {
+  padding: 0.85rem 1rem;
+  background: rgba(65, 186, 174, 0.06);
+  border: 0.08rem solid rgba(65, 186, 174, 0.14);
+  border-radius: 0.9rem;
+}
+body > footer .footer-newsletter h2 {
+  margin: 0 0 0.25rem;
+  color: var(--ink);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+body > footer .footer-newsletter p {
+  margin: 0;
+}
+body > footer .footer-newsletter a {
+  color: var(--teal);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+body > footer .footer-links {
+  gap: 0.5rem 1rem;
+  margin: 0.25rem 0 0;
+  font-size: 0.92rem;
+}
+body > footer .footer-links a {
+  color: var(--ink-soft);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 body > footer .footer-mail {
   justify-self: start;
@@ -515,7 +548,7 @@ body#about #school figure {
     column-gap: 2rem;
   }
   body > header nav {
-    grid-template-columns: auto 1fr auto auto;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
   }
   body > header ul {
@@ -914,7 +947,21 @@ body#levels section.class.short-course.footwork-armwork {
     margin-top: 1rem;
   }
 }
-body > header nav .theme-switch {
+@media (min-width: 48rem) {
+  body > footer .social-links {
+    flex-wrap: nowrap;
+  }
+}
+.theme-switch-panel {
+  display: flex;
+  justify-content: center;
+  max-width: var(--max);
+  margin: 0 auto 2rem;
+  padding: 1rem 1.25rem 0;
+  border-top: 0.08rem dashed rgba(65, 186, 174, 0.16);
+}
+
+.theme-switch-panel .theme-switch {
   min-height: 2.4rem;
   padding: 0.4rem 0.75rem;
   color: var(--ink-soft);

@@ -1,9 +1,9 @@
 (() => {
     const storageKey = "conexao-theme";
     const link = document.querySelector("#theme-stylesheet") || document.querySelector('link[rel="stylesheet"]');
-    const nav = document.querySelector('header nav[aria-label="Primary"]');
+    const footer = document.querySelector("footer");
 
-    if (!link || !nav) return;
+    if (!link || !footer) return;
 
     let activeTheme = sessionStorage.getItem(storageKey) === "classic" ? "classic" : "new";
 
@@ -32,6 +32,9 @@
         applyTheme(activeTheme === "classic" ? "new" : "classic");
     });
 
-    nav.append(button);
+    const switchPanel = document.createElement("div");
+    switchPanel.className = "theme-switch-panel";
+    switchPanel.append(button);
+    footer.after(switchPanel);
     applyTheme(activeTheme);
 })();

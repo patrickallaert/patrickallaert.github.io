@@ -281,15 +281,13 @@ body > main a:hover, body > main a:focus-visible {
 }
 
 body > footer {
-  padding: 3rem 2rem;
+  padding: 3.5rem 2rem;
   border-top: 1px solid var(--line);
 }
 body > footer > div {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  display: grid;
+  gap: 1.25rem;
   align-items: center;
-  justify-content: space-between;
   max-width: 96rem;
   margin-inline: auto;
   padding: 0;
@@ -298,38 +296,120 @@ body > footer > div {
   border-radius: 0;
   box-shadow: none;
 }
-body > footer p,
-body > footer a {
+body > footer p {
+  margin: 0;
   color: var(--ink-soft);
   font-size: 0.75rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
+  line-height: 1rem;
+  text-transform: uppercase;
+}
+body > footer a {
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   line-height: 1rem;
   text-decoration: none;
   text-transform: uppercase;
+  transition: color 150ms ease, border-color 150ms ease, background-color 150ms ease;
 }
 body > footer a:hover,
 body > footer a:focus-visible {
   color: var(--teal);
 }
-body > footer .social-links {
+body > footer .footer-mail {
+  display: inline-flex;
+  gap: 0.55rem;
+  align-items: center;
+  justify-self: start;
+  min-height: 2.5rem;
+  padding: 0.55rem 0.75rem;
+  color: var(--teal);
+  background: color-mix(in srgb, var(--teal) 9%, #ffffff);
+  border: 1px solid color-mix(in srgb, var(--teal) 22%, var(--line));
+  border-radius: var(--radius);
+}
+body > footer .social-links,
+body > footer .footer-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
+  gap: 0.8rem;
+  justify-content: flex-start;
   padding: 0;
   margin: 0;
   list-style: none;
 }
-body > footer .social-links a,
-body > footer .footer-mail {
-  min-height: auto;
-  padding: 0;
-  background: transparent;
-  border: 0;
-  border-radius: 0;
+body > footer .social-links a {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.68rem 0.95rem;
+  color: var(--teal);
+  background: color-mix(in srgb, var(--teal) 6%, #ffffff);
+  border: 1px solid color-mix(in srgb, var(--teal) 20%, var(--line));
+  border-radius: var(--radius);
+  box-shadow: 0 0.45rem 1rem rgba(15, 118, 110, 0.08);
+}
+body > footer .footer-newsletter {
+  display: grid;
+  gap: 0.35rem;
+  max-width: 24rem;
+  padding: 1rem 1.1rem;
+  background: color-mix(in srgb, var(--teal) 8%, #ffffff);
+  border: 1px solid color-mix(in srgb, var(--teal) 24%, var(--line));
+  border-radius: var(--radius);
+}
+body > footer .footer-newsletter h2 {
+  margin: 0;
+  color: var(--teal);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1rem;
+  text-transform: uppercase;
+}
+body > footer .footer-newsletter p {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.86rem;
+  letter-spacing: 0;
+  line-height: 1.35;
+  text-transform: none;
+}
+body > footer .footer-newsletter a {
+  color: var(--ink);
+  font-size: inherit;
+  letter-spacing: 0;
+  line-height: inherit;
+  text-decoration: underline;
+  text-transform: none;
+  text-underline-offset: 0.2em;
+}
+body > footer .footer-links {
+  gap: 0.9rem;
+}
+body > footer .footer-links a {
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+body > footer .social-links a:hover,
+body > footer .social-links a:focus-visible,
+body > footer .footer-mail:hover,
+body > footer .footer-mail:focus-visible {
+  background: color-mix(in srgb, var(--teal) 7%, #ffffff);
+  border-color: color-mix(in srgb, var(--teal) 35%, var(--line));
 }
 body > footer svg {
-  display: none;
+  display: block;
+  flex: none;
+  width: 1.08rem;
+  height: 1.08rem;
 }
 
 .wordmark {
@@ -553,7 +633,7 @@ body#about #school figure {
     column-gap: 2rem;
   }
   body > header nav {
-    grid-template-columns: auto 1fr auto auto;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
   }
   body > header nav ul {
@@ -567,7 +647,23 @@ body#about #school figure {
     padding-inline: 3rem;
   }
   body > footer > div {
-    flex-direction: row;
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+  body > footer .social-links {
+    flex-wrap: nowrap;
+    justify-content: end;
+  }
+  body > footer .footer-newsletter {
+    grid-column: 1/-1;
+    justify-self: stretch;
+    max-width: none;
+  }
+  body > footer .footer-links {
+    justify-content: start;
+  }
+  body > footer p:last-of-type {
+    grid-column: 1/-1;
+    justify-self: end;
   }
   body#about #team > div {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -629,6 +725,20 @@ body#about #school figure {
   body#home #video {
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
     align-items: center;
+  }
+}
+@media (min-width: 75rem) {
+  body > footer > div {
+    grid-template-columns: auto max-content minmax(18rem, 1fr) auto;
+  }
+  body > footer .social-links {
+    justify-content: center;
+  }
+  body > footer .footer-newsletter {
+    grid-column: auto;
+  }
+  body > footer .footer-links {
+    justify-content: end;
   }
 }
 body#classes .class.level.\31  {
@@ -959,7 +1069,15 @@ body#levels section.class.short-course.footwork-armwork {
     margin-top: 1rem;
   }
 }
-body > header nav .theme-switch {
+.theme-switch-panel {
+  display: flex;
+  justify-content: center;
+  max-width: 96rem;
+  margin: 0 auto 2rem;
+  padding: 1.25rem 2rem 0;
+  border-top: 1px dashed color-mix(in srgb, var(--line) 70%, transparent);
+}
+.theme-switch-panel .theme-switch {
   justify-self: end;
   padding: 0.5rem 0.9rem;
   color: #475569;
@@ -969,7 +1087,7 @@ body > header nav .theme-switch {
   border-radius: var(--radius);
   transition: color 150ms ease, border-color 150ms ease;
 }
-body > header nav .theme-switch:hover, body > header nav .theme-switch:focus-visible {
+.theme-switch-panel .theme-switch:hover, .theme-switch-panel .theme-switch:focus-visible {
   color: var(--teal);
   border-color: var(--teal);
 }
