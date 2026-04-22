@@ -42,8 +42,9 @@ body > header {
     box-shadow: none;
 
     ul {
-      display: none;
-      gap: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 1rem;
       align-items: center;
     }
 
@@ -95,13 +96,14 @@ body > header {
         transform: scale(0.95);
       }
     }
+
   }
 }
 
 body > main {
   display: block;
   width: min(100%, var(--max));
-  padding: clamp(5.5rem, 9vw, 7rem) 1.5rem clamp(2.5rem, 5vw, 4rem);
+  padding: 14.75rem 1.5rem clamp(2.5rem, 5vw, 4rem);
   margin-inline: auto;
 
   > section,
@@ -506,7 +508,7 @@ body > footer {
   body > header {
     nav {
       ul {
-        display: flex;
+        gap: 2rem;
         justify-content: center;
       }
     }
@@ -514,6 +516,7 @@ body > footer {
 
   body > main {
     padding-inline: 3rem;
+    padding-top: clamp(5.5rem, 9vw, 7rem);
   }
 
 }
