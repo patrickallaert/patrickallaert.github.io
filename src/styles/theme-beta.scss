@@ -518,55 +518,235 @@ body > footer {
 
 }
 body#classes {
+  --schedule-level-1: var(--course-level-1);
+  --schedule-level-2: var(--course-level-2);
+  --schedule-level-3: #ff9f1a;
+  --schedule-level-4: #9b6bff;
+  --schedule-roots-1: #d8d0c2;
+  --schedule-roots-2: #9f9b8f;
+
   .schedule-days {
-    gap: 1.25rem;
+    gap: clamp(1.25rem, 2.4vw, 1.75rem);
+    align-items: start;
 
     > article {
-      gap: 1rem;
-      padding: 1.2rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 0.95rem 1rem;
+      padding: 0;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+
+      > h4,
+      > p:first-of-type {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid color-mix(in srgb, var(--ink) 24%, transparent);
+      }
+
+      > h4 {
+        align-self: end;
+        font-size: clamp(1.35rem, 2.3vw, 1.7rem);
+        font-weight: 800;
+        line-height: 1;
+        color: var(--ink);
+        text-transform: none;
+        letter-spacing: 0;
+      }
+
+      > p:first-of-type {
+        align-self: end;
+        justify-self: end;
+        padding-inline: 0;
+        font-size: 0.72rem;
+        font-weight: 500;
+        color: color-mix(in srgb, var(--ink) 64%, transparent);
+        white-space: nowrap;
+        background: transparent;
+        border-radius: 0;
+      }
+
+      > p:nth-of-type(2) {
+        grid-column: 1 / -1;
+        padding: 0.72rem 0.85rem;
+        font-size: 0.75rem;
+        color: #8a1616;
+        background: #f4dada;
+        border: 1px solid #e9c7c7;
+        border-radius: 0.25rem;
+      }
 
       > section {
-        padding-top: 1.15rem;
+        grid-column: 1 / -1;
+        padding-top: 0;
+        border-top: 0;
 
         > h5 {
-          margin: 0 0 0.75rem;
+          margin: 0 0 0.8rem;
+          color: #00635e;
         }
 
         > div {
-          gap: 0.7rem;
+          gap: 0.9rem;
         }
       }
     }
 
     article.class {
-      padding: 1rem 0.9rem;
-      line-height: 1.42;
+      min-height: 6.35rem;
+      padding: 1rem 1.1rem;
+      line-height: 1.36;
+      background: rgba(255, 255, 255, 0.84);
+      border: 0;
+      border-left: 0.24rem solid var(--course-accent);
+      border-radius: 0 0.75rem 0.75rem 0;
+      box-shadow: 0 1.25rem 2.4rem rgba(38, 71, 67, 0.05);
+
+      > p:first-of-type {
+        font-size: 0.72rem;
+        font-weight: 500;
+        color: color-mix(in srgb, var(--teal) 44%, #9db5b1);
+      }
 
       > h6 {
-        margin: 0.58rem 0 0.42rem;
+        margin: 0.42rem 0 0.55rem;
+        font-size: 1.08rem;
+        font-weight: 800;
+        line-height: 1.1;
+
+        a {
+          text-decoration: none;
+        }
       }
 
       > h6 ~ p,
       .teachers {
-        margin: 0.32rem 0 0;
+        margin: 0.28rem 0 0;
+
+        a {
+          color: var(--teal);
+          text-decoration: none;
+        }
+      }
+
+      &.level.\31 {
+        --course-accent: var(--schedule-level-1);
+      }
+
+      &.level.\32 {
+        --course-accent: var(--schedule-level-2);
+      }
+
+      &.level.\33 {
+        --course-accent: var(--schedule-level-3);
+      }
+
+      &.level.\34 {
+        --course-accent: var(--schedule-level-4);
+      }
+
+      &.roots.\31 {
+        --course-accent: var(--schedule-roots-1);
+      }
+
+      &.roots.\32 {
+        --course-accent: var(--schedule-roots-2);
       }
 
       &.free-practice {
+        grid-template-columns: 1fr auto;
         gap: 0.36rem;
-        padding-top: 0.72rem;
-        padding-bottom: 0.72rem;
+        align-items: center;
+        min-height: 1.95rem;
+        padding: 0.45rem 0.85rem;
+        background: rgba(255, 255, 255, 0.38);
+        border: 1px solid rgba(181, 196, 192, 0.28);
+        border-radius: 0.16rem;
+        box-shadow: none;
+
+        > p:first-of-type {
+          grid-row: 1;
+          grid-column: 2;
+          font-size: 0.68rem;
+          color: color-mix(in srgb, var(--ink) 66%, transparent);
+        }
+
+        > h6 {
+          grid-row: 1;
+          grid-column: 1;
+          font-size: 0.66rem;
+          color: color-mix(in srgb, var(--ink) 84%, var(--teal));
+          text-transform: uppercase;
+          letter-spacing: 0.03em;
+        }
       }
+    }
+  }
+
+  .schedule-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem 1.65rem;
+    justify-content: center;
+    padding: 1.45rem 0 0;
+    margin: 2rem 0 0;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: color-mix(in srgb, var(--ink) 66%, transparent);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    list-style: none;
+    border-top: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+
+    li {
+      display: inline-flex;
+      gap: 0.55rem;
+      align-items: center;
+      margin: 0;
+
+      &::before {
+        width: 0.25rem;
+        height: 1.4rem;
+        content: "";
+        background: var(--legend-color);
+        border-radius: 999rem;
+      }
+    }
+
+    .level-1 {
+      --legend-color: var(--schedule-level-1);
+    }
+
+    .level-2 {
+      --legend-color: var(--schedule-level-2);
+    }
+
+    .level-3 {
+      --legend-color: var(--schedule-level-3);
+    }
+
+    .level-4 {
+      --legend-color: var(--schedule-level-4);
+    }
+
+    .roots-1 {
+      --legend-color: var(--schedule-roots-1);
+    }
+
+    .roots-2 {
+      --legend-color: var(--schedule-roots-2);
     }
   }
 
   @media (min-width: 64rem) {
     .schedule-days {
-      gap: 1.2rem;
+      gap: 1.55rem;
 
       > article {
-        row-gap: 1.15rem;
+        row-gap: 0.95rem;
         column-gap: 1rem;
-        padding: 1.2rem;
+        padding: 0;
       }
     }
   }

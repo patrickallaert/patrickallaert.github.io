@@ -555,6 +555,10 @@ body#classes {
 }
 
 body#classes {
+  .schedule-legend {
+    display: none;
+  }
+
   .schedule-days {
     display: grid;
 
