@@ -780,17 +780,16 @@ body > footer p {
   margin: 0;
   color: var(--ink-soft);
 }
-body > footer .social-links,
-body > footer .footer-links {
+body > footer .contact-links {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 1rem;
+  justify-self: start;
   padding: 0;
   margin: 0.75rem 0 0;
   list-style: none;
 }
-body > footer .social-links a,
-body > footer .footer-mail {
+body > footer .contact-links a {
   display: inline-flex;
   gap: 0.6rem;
   align-items: center;
@@ -801,44 +800,8 @@ body > footer .footer-mail {
   border: 0.08rem solid rgba(65, 186, 174, 0.16);
   border-radius: 999rem;
 }
-body > footer .social-links svg {
+body > footer .contact-links svg {
   flex: none;
-}
-body > footer .footer-newsletter {
-  padding: 0.85rem 1rem;
-  background: rgba(65, 186, 174, 0.06);
-  border: 0.08rem solid rgba(65, 186, 174, 0.14);
-  border-radius: 0.9rem;
-}
-body > footer .footer-newsletter h2 {
-  margin: 0 0 0.25rem;
-  font-size: 0.78rem;
-  color: var(--ink);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-body > footer .footer-newsletter p {
-  margin: 0;
-}
-body > footer .footer-newsletter a {
-  font-weight: 700;
-  color: var(--teal);
-  text-decoration: underline;
-  text-underline-offset: 0.18em;
-}
-body > footer .footer-links {
-  gap: 0.5rem 1rem;
-  margin: 0.25rem 0 0;
-  font-size: 0.92rem;
-}
-body > footer .footer-links a {
-  color: var(--ink-soft);
-  text-decoration: underline;
-  text-underline-offset: 0.18em;
-}
-body > footer .footer-mail {
-  justify-self: start;
-  margin-top: 0;
 }
 
 h1,
@@ -972,7 +935,7 @@ body#classes .schedule-days article.class.free-practice {
 }
 
 @media (min-width: 48rem) {
-  body > footer .social-links {
+  body > footer .contact-links {
     flex-wrap: nowrap;
   }
 }
