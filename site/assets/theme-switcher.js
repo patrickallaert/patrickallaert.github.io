@@ -5,23 +5,23 @@
 
     if (!link || !footer) return;
 
-    let activeTheme = sessionStorage.getItem(storageKey) === "classic" ? "classic" : "new";
+    let activeTheme = sessionStorage.getItem(storageKey) === "alpha" ? "alpha" : "beta";
 
     const applyTheme = (theme) => {
         const label = {
-            classic: "Classic theme",
-            new: "New theme",
+            alpha: "Alpha theme",
+            beta: "Beta theme",
         };
 
-        activeTheme = theme === "classic" ? "classic" : "new";
+        activeTheme = theme === "alpha" ? "alpha" : "beta";
         document.documentElement.dataset.theme = activeTheme;
         link.href = {
-            classic: "assets/theme-classic.css",
-            new: "assets/site.css",
+            alpha: "assets/theme-alpha.css",
+            beta: "assets/theme-beta.css",
         }[activeTheme];
         sessionStorage.setItem(storageKey, activeTheme);
 
-        button.textContent = activeTheme === "classic" ? "Use new theme" : "Use classic theme";
+        button.textContent = activeTheme === "alpha" ? "Use beta theme" : "Use alpha theme";
         button.setAttribute("aria-label", `${label[activeTheme]} active. Switch theme.`);
     };
 
@@ -29,7 +29,7 @@
     button.type = "button";
     button.className = "theme-switch";
     button.addEventListener("click", () => {
-        applyTheme(activeTheme === "classic" ? "new" : "classic");
+        applyTheme(activeTheme === "alpha" ? "beta" : "alpha");
     });
 
     const switchPanel = document.createElement("div");

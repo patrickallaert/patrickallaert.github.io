@@ -9,12 +9,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script>
-    document.documentElement.dataset.theme = sessionStorage.getItem("conexao-theme") === "classic" ? "classic" : "new";
+    document.documentElement.dataset.theme = sessionStorage.getItem("conexao-theme") === "alpha" ? "alpha" : "beta";
   </script>
-  <link id="theme-stylesheet" rel="stylesheet" href="assets/site.css">
+  <link id="theme-stylesheet" rel="stylesheet" href="assets/theme-beta.css">
   <script>
-    if (document.documentElement.dataset.theme === "classic") {
-      document.getElementById("theme-stylesheet").href = "assets/theme-classic.css";
+    if (document.documentElement.dataset.theme === "alpha") {
+      document.getElementById("theme-stylesheet").href = "assets/theme-alpha.css";
     }
   </script>
   <script defer src="assets/theme-switcher.js"></script>

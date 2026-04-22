@@ -4,10 +4,10 @@
   "version": "0.1.0",
   "description": "Static site rebuild for Conexao",
   "scripts": {
-    "build:css": "sass --no-source-map src/styles/site.scss site/assets/theme-classic.css && sass --no-source-map src/styles/new.scss site/assets/theme-new.css && cp site/assets/theme-new.css site/assets/site.css",
+    "build:css": "sass --no-source-map src/styles/theme-alpha.scss site/assets/theme-alpha.css && sass --no-source-map src/styles/theme-beta.scss site/assets/theme-beta.css",
     "build": "npm run build:css",
     "lint:css": "stylelint \"src/styles/**/*.scss\"",
-    "watch:css": "sass --watch src/styles/site.scss:site/assets/theme-classic.css src/styles/new.scss:site/assets/site.css"
+    "watch:css": "sass --watch src/styles/theme-alpha.scss:site/assets/theme-alpha.css src/styles/theme-beta.scss:site/assets/theme-beta.css"
   },
   "devDependencies": {
     "postcss-scss": "^4.0.9",
