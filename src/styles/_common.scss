@@ -16,7 +16,6 @@ textarea {
   font: inherit;
 }
 
-
 .theme-switch {
   justify-self: start;
   cursor: pointer;
@@ -37,7 +36,6 @@ textarea {
   --course-practice: #f6c983;
   --max: 82rem;
 }
-
 
 body {
   min-width: 20rem;
@@ -463,9 +461,7 @@ body#classes {
     background: var(--teal);
     border-radius: 999rem;
   }
-
 }
-
 
 @media (min-width: 48rem) {
   body > header {
