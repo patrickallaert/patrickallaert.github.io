@@ -5,7 +5,8 @@
   "description": "Static site rebuild for Conexao",
   "scripts": {
     "build:css": "sass --no-source-map src/styles/theme-alpha.scss site/assets/theme-alpha.css && sass --no-source-map src/styles/theme-beta.scss site/assets/theme-beta.css",
-    "build": "npm run build:css",
+    "build:js": "terser src/scripts/theme-switcher.js --compress --mangle --output site/assets/app.js",
+    "build": "npm run build:css && npm run build:js",
     "lint:css": "stylelint \"src/styles/**/*.scss\"",
     "watch:css": "sass --watch src/styles/theme-alpha.scss:site/assets/theme-alpha.css src/styles/theme-beta.scss:site/assets/theme-beta.css"
   },
@@ -13,6 +14,7 @@
     "postcss-scss": "^4.0.9",
     "sass": "^1.93.2",
     "stylelint": "^17.6.0",
-    "stylelint-config-recess-order": "^7.7.0"
+    "stylelint-config-recess-order": "^7.7.0",
+    "terser": "^5.46.1"
   }
 }
