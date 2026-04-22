@@ -11,6 +11,7 @@
     "watch:css": "sass --watch src/styles/theme-alpha.scss:site/assets/theme-alpha.css src/styles/theme-beta.scss:site/assets/theme-beta.css"
   },
   "devDependencies": {
+    "playwright": "^1.59.1",
     "postcss-scss": "^4.0.9",
     "sass": "^1.93.2",
     "stylelint": "^17.6.0",
