@@ -196,45 +196,6 @@ ol {
   margin: 0 0 1rem;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th,
-td {
-  padding: 0.75rem;
-  vertical-align: top;
-  border-bottom: 0.08rem solid var(--line);
-}
-
-thead th {
-  text-align: left;
-}
-
-tbody + tbody th,
-tbody + tbody td {
-  border-top: 0.14rem solid var(--line);
-}
-
-th[scope="rowgroup"] small {
-  display: block;
-  margin-top: 0.35rem;
-  font-size: 0.9em;
-  font-weight: 400;
-  line-height: 1.4;
-  color: var(--ink-soft);
-}
-
-td small,
-.schedule-days li small {
-  display: block;
-  margin-top: 0.2rem;
-  font-size: 0.9em;
-  line-height: 1.4;
-  color: var(--ink-soft);
-}
-
 .wordmark {
   display: inline-flex;
   align-items: center;

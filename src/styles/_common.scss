@@ -589,16 +589,6 @@ body#classes {
         background: color-mix(in srgb, var(--course-level-2) 10%, #ffffff);
         border-radius: 0.28rem;
 
-        strong {
-          display: block;
-          margin-bottom: 0.08rem;
-          font-size: 0.56rem;
-          font-weight: 700;
-          color: var(--ink-soft);
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-        }
-
         time {
           font-weight: 700;
         }

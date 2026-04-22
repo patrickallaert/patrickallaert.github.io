@@ -481,15 +481,6 @@ body#classes .schedule-days > article > p:first-of-type {
   background: color-mix(in srgb, var(--course-level-2) 10%, #ffffff);
   border-radius: 0.28rem;
 }
-body#classes .schedule-days > article > p:first-of-type strong {
-  display: block;
-  margin-bottom: 0.08rem;
-  font-size: 0.56rem;
-  font-weight: 700;
-  color: var(--ink-soft);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
 body#classes .schedule-days > article > p:first-of-type time {
   font-weight: 700;
 }
@@ -834,45 +825,6 @@ p,
 ul,
 ol {
   margin: 0 0 1rem;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th,
-td {
-  padding: 0.75rem;
-  vertical-align: top;
-  border-bottom: 0.08rem solid var(--line);
-}
-
-thead th {
-  text-align: left;
-}
-
-tbody + tbody th,
-tbody + tbody td {
-  border-top: 0.14rem solid var(--line);
-}
-
-th[scope=rowgroup] small {
-  display: block;
-  margin-top: 0.35rem;
-  font-size: 0.9em;
-  font-weight: 400;
-  line-height: 1.4;
-  color: var(--ink-soft);
-}
-
-td small,
-.schedule-days li small {
-  display: block;
-  margin-top: 0.2rem;
-  font-size: 0.9em;
-  line-height: 1.4;
-  color: var(--ink-soft);
 }
 
 .wordmark {
