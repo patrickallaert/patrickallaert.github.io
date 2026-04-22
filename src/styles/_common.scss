@@ -445,6 +445,10 @@ body#classes {
     &.roots.\32 {
       --course-accent: var(--course-roots-2);
     }
+
+    &.pratica {
+      --course-accent: var(--course-practice);
+    }
   }
 
   .free-practice {
