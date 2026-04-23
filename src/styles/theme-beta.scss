@@ -778,6 +778,135 @@ body#classes {
   }
 }
 
+body#venues {
+  main {
+    max-width: 88rem;
+  }
+
+  main > section:not(#intro) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    align-items: stretch;
+    overflow: hidden;
+    scroll-margin-top: 15rem;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid color-mix(in srgb, var(--line) 76%, rgba(65, 186, 174, 0.16));
+    border-radius: 0.75rem;
+    box-shadow: 0 1.4rem 3rem rgba(23, 29, 28, 0.06);
+
+    h2,
+    address,
+    p,
+    ul {
+      margin-right: clamp(1.2rem, 3vw, 2rem);
+      margin-left: clamp(1.2rem, 3vw, 2rem);
+    }
+
+    h2 {
+      align-self: end;
+      margin-top: clamp(1.25rem, 3vw, 2rem);
+      margin-bottom: 0.75rem;
+      font-size: clamp(1.7rem, 3vw, 2.45rem);
+      font-weight: 800;
+      line-height: 1;
+      color: var(--ink);
+    }
+
+    figure {
+      grid-row: auto;
+      grid-column: auto;
+      width: 100%;
+      max-width: none;
+      aspect-ratio: 16 / 9;
+      margin: 0;
+      overflow: hidden;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    address {
+      margin-bottom: 1rem;
+      font-style: normal;
+
+      a {
+        display: inline-block;
+        min-height: 2.7rem;
+        padding: 0.55rem 0.8rem;
+        font-size: 0.9rem;
+        font-weight: 800;
+        line-height: 1.25;
+        color: #ffffff;
+        text-decoration: none;
+        background: var(--teal);
+        border-radius: 0.25rem;
+        box-shadow: 0 0.65rem 1.3rem rgba(65, 186, 174, 0.16);
+      }
+    }
+
+    p {
+      max-width: 44rem;
+      color: color-mix(in srgb, var(--ink) 74%, transparent);
+    }
+
+    p:last-child,
+    ul:last-child {
+      margin-bottom: clamp(1.35rem, 3vw, 2rem);
+    }
+
+    ul {
+      padding-left: 1.15rem;
+      color: color-mix(in srgb, var(--ink) 76%, transparent);
+    }
+  }
+
+  main > section:not(#intro) + section:not(#intro) {
+    margin-top: clamp(1.25rem, 2.5vw, 2rem);
+  }
+
+  @media (min-width: 52rem) {
+    main > section:not(#intro) {
+      grid-template-columns: minmax(0, 1.02fr) minmax(18rem, 0.98fr);
+      min-height: 24rem;
+      scroll-margin-top: 7rem;
+
+      figure {
+        grid-row: 1 / span 8;
+        grid-column: 2;
+        aspect-ratio: auto;
+      }
+
+      h2,
+      address,
+      p,
+      ul {
+        grid-column: 1;
+      }
+
+      &:nth-of-type(even) {
+        grid-template-columns: minmax(18rem, 0.98fr) minmax(0, 1.02fr);
+
+        figure {
+          grid-column: 1;
+        }
+
+        h2,
+        address,
+        p,
+        ul {
+          grid-column: 2;
+        }
+      }
+    }
+  }
+}
+
 .theme-switch-panel {
   display: flex;
   justify-content: center;
