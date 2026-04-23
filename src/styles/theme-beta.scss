@@ -528,6 +528,138 @@ body#classes {
   --schedule-roots-1: #d8d0c2;
   --schedule-roots-2: #9f9b8f;
 
+  #intro {
+    display: grid;
+    gap: 1rem;
+    align-items: center;
+    min-height: clamp(24rem, 48vw, 34rem);
+    padding-block: clamp(1.5rem, 4vw, 3.5rem);
+
+    > h1 {
+      max-width: 8ch;
+      margin-bottom: 0;
+      font-size: clamp(2.35rem, 10vw, 3.25rem);
+      line-height: 1.02;
+      color: var(--ink);
+    }
+
+    > h1 + p {
+      max-width: 35rem;
+      margin-bottom: 0;
+      font-size: clamp(1rem, 1.4vw, 1.12rem);
+      line-height: 1.7;
+      color: color-mix(in srgb, var(--ink) 84%, transparent);
+    }
+
+    > p:last-of-type {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 0;
+
+      a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 3rem;
+        padding: 0.8rem 1.2rem;
+        font-size: 0.92rem;
+        font-weight: 800;
+        text-decoration: none;
+        border-radius: var(--radius);
+        transition: opacity 150ms ease, transform 150ms ease;
+
+        &:first-child {
+          color: #ffffff;
+          background: var(--teal);
+          box-shadow: 0 1rem 2rem rgba(65, 186, 174, 0.2);
+        }
+
+        &:last-child {
+          color: var(--ink);
+          background: rgba(255, 255, 255, 0.72);
+          border: 1px solid color-mix(in srgb, var(--teal) 24%, var(--line));
+        }
+
+        &:hover,
+        &:focus-visible {
+          opacity: 0.86;
+        }
+
+        &:active {
+          transform: scale(0.97);
+        }
+      }
+    }
+
+    > ul[aria-label="Class overview"] {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+      li {
+        min-height: 2.3rem;
+        padding: 0.5rem 0.8rem;
+        margin: 0;
+        font-size: 0.76rem;
+        font-weight: 800;
+        color: color-mix(in srgb, var(--ink) 70%, transparent);
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        background: rgba(255, 255, 255, 0.58);
+        border: 1px solid color-mix(in srgb, var(--teal) 18%, var(--line));
+        border-radius: 999rem;
+      }
+    }
+
+    > figure {
+      position: relative;
+      margin: 0;
+      overflow: hidden;
+      border-radius: calc(var(--radius) * 3);
+      box-shadow: 0 2rem 4rem rgba(23, 29, 28, 0.14);
+
+      img {
+        width: 100%;
+        height: clamp(15rem, 72vw, 19rem);
+        object-fit: cover;
+        object-position: center 38%;
+      }
+
+      figcaption {
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
+        display: grid;
+        gap: 0.35rem;
+        max-width: min(20rem, calc(100% - 2rem));
+        padding: 0.95rem 1rem;
+        color: #ffffff;
+        background: rgba(23, 29, 28, 0.56);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: calc(var(--radius) * 1.5);
+        backdrop-filter: blur(18px);
+
+        span {
+          font-size: 0.72rem;
+          font-weight: 800;
+          color: rgba(255, 255, 255, 0.8);
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+        }
+
+        strong {
+          font-family: "Epilogue", sans-serif;
+          font-size: 1.05rem;
+          line-height: 1.2;
+        }
+      }
+    }
+  }
+
   .schedule-days {
     gap: clamp(1.25rem, 2.4vw, 1.75rem);
     align-items: start;
@@ -760,6 +892,27 @@ body#classes {
   }
 
   @media (min-width: 64rem) {
+    #intro {
+      grid-template-columns: minmax(18rem, 0.92fr) minmax(22rem, 1.08fr);
+      column-gap: clamp(2rem, 4vw, 4rem);
+
+      > h1,
+      > h1 + p,
+      > p:last-of-type,
+      > ul[aria-label="Class overview"] {
+        grid-column: 1;
+      }
+
+      > figure {
+        grid-row: 1 / span 4;
+        grid-column: 2;
+
+        img {
+          height: 28rem;
+        }
+      }
+    }
+
     .schedule-days {
       gap: 1.55rem;
 
