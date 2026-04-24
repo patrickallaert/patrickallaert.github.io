@@ -520,14 +520,8 @@ body > footer {
   }
 
 }
-body#classes {
-  --schedule-level-1: var(--course-level-1);
-  --schedule-level-2: var(--course-level-2);
-  --schedule-level-3: #ff9f1a;
-  --schedule-level-4: #9b6bff;
-  --schedule-roots-1: #d8d0c2;
-  --schedule-roots-2: #9f9b8f;
-
+body#classes,
+body#levels {
   #intro {
     display: grid;
     gap: 1rem;
@@ -544,14 +538,14 @@ body#classes {
     }
 
     > h1 + p {
-      max-width: 35rem;
+      max-width: 36rem;
       margin-bottom: 0;
       font-size: clamp(1rem, 1.4vw, 1.12rem);
       line-height: 1.7;
       color: color-mix(in srgb, var(--ink) 84%, transparent);
     }
 
-    > ol[aria-label="Trimester rhythm"] {
+    > ul {
       display: grid;
       gap: 0.8rem;
       padding: 0;
@@ -627,6 +621,40 @@ body#classes {
         }
       }
     }
+  }
+
+  @media (min-width: 64rem) {
+    #intro {
+      grid-template-columns: minmax(18rem, 0.92fr) minmax(22rem, 1.08fr);
+      column-gap: clamp(2rem, 4vw, 4rem);
+
+      > h1,
+      > h1 + p {
+        grid-column: 1;
+      }
+
+      > figure {
+        grid-row: 1 / span 4;
+        grid-column: 2;
+        align-self: start;
+
+        img {
+          height: 28rem;
+        }
+      }
+    }
+  }
+}
+
+body#classes {
+  --schedule-level-1: var(--course-level-1);
+  --schedule-level-2: var(--course-level-2);
+  --schedule-level-3: #ff9f1a;
+  --schedule-level-4: #9b6bff;
+  --schedule-roots-1: #d8d0c2;
+  --schedule-roots-2: #9f9b8f;
+
+  #intro {
   }
 
   .trimester-summary {
@@ -893,27 +921,12 @@ body#classes {
 
   @media (min-width: 64rem) {
     #intro {
-      grid-template-columns: minmax(18rem, 0.92fr) minmax(22rem, 1.08fr);
-      column-gap: clamp(2rem, 4vw, 4rem);
-
-      > h1,
-      > h1 + p,
       > ol[aria-label="Trimester rhythm"] {
         grid-column: 1;
       }
 
       > ol[aria-label="Trimester rhythm"] {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      > figure {
-        grid-row: 1 / span 4;
-        grid-column: 2;
-        align-self: start;
-
-        img {
-          height: 28rem;
-        }
       }
     }
 
@@ -936,114 +949,10 @@ body#classes {
 
 body#levels {
   #intro {
-    display: grid;
-    gap: 1rem;
-    align-items: center;
-    min-height: clamp(24rem, 48vw, 34rem);
-    padding-block: clamp(1.5rem, 4vw, 3.5rem);
-
-    > h1 {
-      max-width: 8ch;
-      margin-bottom: 0;
-      font-size: clamp(2.35rem, 10vw, 3.25rem);
-      line-height: 1.02;
-      color: var(--ink);
-    }
-
-    > h1 + p,
-    > p:nth-of-type(2) {
-      max-width: 36rem;
-      margin-bottom: 0;
-      font-size: clamp(1rem, 1.4vw, 1.12rem);
-      line-height: 1.7;
-      color: color-mix(in srgb, var(--ink) 84%, transparent);
-    }
-
-    > ul[aria-label="Core aspects of each level"] {
-      display: grid;
-      gap: 0.8rem;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-
-      li {
-        display: grid;
-        gap: 0.25rem;
-        padding: 0.95rem 1rem;
-        margin: 0;
-        background: rgba(255, 255, 255, 0.62);
-        border: 1px solid color-mix(in srgb, var(--teal) 14%, var(--line));
-        border-radius: calc(var(--radius) * 1.5);
-      }
-
-      strong {
-        font-family: "Epilogue", sans-serif;
-        font-size: 1rem;
-        line-height: 1.15;
-        color: var(--ink);
-      }
-
-      span {
-        font-size: 0.82rem;
-        font-weight: 700;
-        color: color-mix(in srgb, var(--ink) 64%, transparent);
-        text-transform: uppercase;
-        letter-spacing: 0.03em;
-      }
-    }
-
-    > figure {
-      position: relative;
-      margin: 0;
-      overflow: hidden;
-      border-radius: calc(var(--radius) * 3);
-      box-shadow: 0 2rem 4rem rgba(23, 29, 28, 0.14);
-
-      img {
-        width: 100%;
-        height: clamp(15rem, 72vw, 19rem);
-        object-fit: cover;
-        object-position: center 38%;
-      }
-
-      figcaption {
-        position: absolute;
-        right: 1rem;
-        bottom: 1rem;
-        display: grid;
-        gap: 0.35rem;
-        max-width: min(20rem, calc(100% - 2rem));
-        padding: 0.95rem 1rem;
-        color: #ffffff;
-        background: rgba(23, 29, 28, 0.56);
-        border: 1px solid rgba(255, 255, 255, 0.16);
-        border-radius: calc(var(--radius) * 1.5);
-        backdrop-filter: blur(18px);
-
-        span {
-          font-size: 0.72rem;
-          font-weight: 800;
-          color: rgba(255, 255, 255, 0.8);
-          text-transform: uppercase;
-          letter-spacing: 0.06em;
-        }
-
-        strong {
-          font-family: "Epilogue", sans-serif;
-          font-size: 1.05rem;
-          line-height: 1.2;
-        }
-      }
-    }
   }
 
   @media (min-width: 64rem) {
     #intro {
-      grid-template-columns: minmax(18rem, 0.92fr) minmax(22rem, 1.08fr);
-      column-gap: clamp(2rem, 4vw, 4rem);
-
-      > h1,
-      > h1 + p,
       > p:nth-of-type(2),
       > ul[aria-label="Core aspects of each level"] {
         grid-column: 1;
@@ -1053,15 +962,6 @@ body#levels {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      > figure {
-        grid-row: 1 / span 4;
-        grid-column: 2;
-        align-self: start;
-
-        img {
-          height: 28rem;
-        }
-      }
     }
   }
 }
