@@ -589,20 +589,6 @@ body#classes {
       }
 
       > p:first-of-type {
-        justify-self: start;
-        padding: 0.48rem 0.62rem;
-        font-size: 0.71rem;
-        line-height: 1.2;
-        color: var(--ink);
-        background: color-mix(in srgb, var(--course-level-2) 10%, #ffffff);
-        border-radius: 0.28rem;
-
-        time {
-          font-weight: 700;
-        }
-      }
-
-      > p:nth-of-type(2) {
         font-size: 0.75rem;
         font-style: italic;
         font-weight: 700;
@@ -749,18 +735,11 @@ body#classes {
       align-items: start;
 
       > article {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-
         > h4 {
           font-size: 1.06rem;
         }
 
         > p:first-of-type {
-          justify-self: end;
-          text-align: center;
-        }
-
-        > p:nth-of-type(2) {
           grid-column: 1 / -1;
           padding-bottom: 0.05rem;
         }
@@ -770,7 +749,7 @@ body#classes {
         }
 
         > section:only-of-type,
-        > p:nth-of-type(2) + section:last-of-type {
+        > p:first-of-type + section:last-of-type {
           grid-column: 1 / -1;
         }
       }
