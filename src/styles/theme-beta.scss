@@ -647,13 +647,6 @@ body#levels {
 }
 
 body#classes {
-  --schedule-level-1: var(--course-level-1);
-  --schedule-level-2: var(--course-level-2);
-  --schedule-level-3: #ff9f1a;
-  --schedule-level-4: #9b6bff;
-  --schedule-roots-1: #d8d0c2;
-  --schedule-roots-2: #9f9b8f;
-
   #intro {
   }
 
@@ -777,27 +770,27 @@ body#classes {
       }
 
       &.level.\31 {
-        --course-accent: var(--schedule-level-1);
+        --course-accent: var(--course-level-1);
       }
 
       &.level.\32 {
-        --course-accent: var(--schedule-level-2);
+        --course-accent: var(--course-level-2);
       }
 
       &.level.\33 {
-        --course-accent: var(--schedule-level-3);
+        --course-accent: var(--course-level-3);
       }
 
       &.level.\34 {
-        --course-accent: var(--schedule-level-4);
+        --course-accent: var(--course-level-4);
       }
 
       &.roots.\31 {
-        --course-accent: var(--schedule-roots-1);
+        --course-accent: var(--course-roots-1);
       }
 
       &.roots.\32 {
-        --course-accent: var(--schedule-roots-2);
+        --course-accent: var(--course-roots-2);
       }
 
       &.duration-30 {
@@ -879,27 +872,27 @@ body#classes {
     }
 
     .level-1 {
-      --legend-color: var(--schedule-level-1);
+      --legend-color: var(--course-level-1);
     }
 
     .level-2 {
-      --legend-color: var(--schedule-level-2);
+      --legend-color: var(--course-level-2);
     }
 
     .level-3 {
-      --legend-color: var(--schedule-level-3);
+      --legend-color: var(--course-level-3);
     }
 
     .level-4 {
-      --legend-color: var(--schedule-level-4);
+      --legend-color: var(--course-level-4);
     }
 
     .roots-1 {
-      --legend-color: var(--schedule-roots-1);
+      --legend-color: var(--course-roots-1);
     }
 
     .roots-2 {
-      --legend-color: var(--schedule-roots-2);
+      --legend-color: var(--course-roots-2);
     }
 
     .musicality {
