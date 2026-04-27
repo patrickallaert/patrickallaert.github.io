@@ -1,38 +1,51 @@
 (() => {
-    let activeTheme = sessionStorage.getItem("conexao-theme") === "alpha" ? "alpha" : "beta";
-    let button = null;
+    const themes = ["alpha", "beta", "gamma"];
+    const labels = { alpha: "Alpha", beta: "Beta", gamma: "Gamma" };
+    let activeTheme = themes.includes(sessionStorage.getItem("conexao-theme")) ? sessionStorage.getItem("conexao-theme") : "beta";
+    let buttons = [];
     const link = document.createElement("link");
     link.id = "theme-stylesheet";
     link.rel = "stylesheet";
     document.head.append(link);
 
     const applyTheme = (theme) => {
-        activeTheme = theme === "alpha" ? "alpha" : "beta";
+        activeTheme = themes.includes(theme) ? theme : "beta";
         document.documentElement.dataset.theme = activeTheme;
         link.href = `assets/theme-${activeTheme}.css`;
         sessionStorage.setItem("conexao-theme", activeTheme);
 
-        if (button) {
-            button.textContent = activeTheme === "alpha" ? "Use beta theme" : "Use alpha theme";
-            button.setAttribute("aria-label", `${activeTheme === "alpha" ? "Alpha" : "Beta"} theme active. Switch theme.`);
+        if (buttons.length) {
+            buttons.forEach((button) => {
+                const themeName = button.dataset.theme;
+                const isActive = themeName === activeTheme;
+                button.setAttribute("aria-pressed", isActive ? "true" : "false");
+                button.setAttribute("aria-label", `${labels[themeName]} theme${isActive ? " active" : ""}`);
+            });
         }
     };
 
     const mountSwitcher = () => {
         const footer = document.querySelector("footer");
 
-        if (!footer || button) return;
-
-        button = document.createElement("button");
-        button.type = "button";
-        button.className = "theme-switch";
-        button.addEventListener("click", () => {
-            applyTheme(activeTheme === "alpha" ? "beta" : "alpha");
-        });
+        if (!footer || buttons.length) return;
 
         const switchPanel = document.createElement("div");
         switchPanel.className = "theme-switch-panel";
-        switchPanel.append(button);
+        const group = document.createElement("div");
+        group.className = "theme-switch-group";
+        group.setAttribute("role", "group");
+        group.setAttribute("aria-label", "Theme selection");
+        buttons = themes.map((themeName) => {
+            const button = document.createElement("button");
+            button.type = "button";
+            button.className = "theme-switch";
+            button.dataset.theme = themeName;
+            button.textContent = labels[themeName];
+            button.addEventListener("click", () => applyTheme(themeName));
+            group.append(button);
+            return button;
+        });
+        switchPanel.append(group);
         footer.after(switchPanel);
         applyTheme(activeTheme);
     };

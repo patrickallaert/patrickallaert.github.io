@@ -284,6 +284,13 @@ body#classes {
   padding: 1rem 1.25rem 0;
   margin: 0 auto 2rem;
   border-top: 0.08rem dashed rgba(65, 186, 174, 0.16);
+
+  .theme-switch-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
 }
 
 .theme-switch-panel .theme-switch {
@@ -293,4 +300,10 @@ body#classes {
   background: rgba(65, 186, 174, 0.08);
   border: 0.08rem solid rgba(65, 186, 174, 0.16);
   border-radius: 999rem;
+
+  &[aria-pressed="true"] {
+    color: #ffffff;
+    background: var(--teal);
+    border-color: var(--teal);
+  }
 }
