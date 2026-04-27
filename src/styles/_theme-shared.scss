@@ -283,6 +283,7 @@ body {
 body#home {
   #intro {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: 1.5rem;
     align-items: center;
     min-height: clamp(26rem, 56vh, 36rem);
@@ -483,23 +484,40 @@ body#home {
 }
 
 body#classes,
-body#levels {
+body#levels,
+body#about,
+body#venues,
+body#events {
   #intro {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: 1rem;
     align-items: center;
-    min-height: clamp(24rem, 48vw, 34rem);
-    padding-block: clamp(1.5rem, 4vw, 3.5rem);
+    min-height: clamp(25rem, 50vw, 35rem);
+    padding-block: clamp(2rem, 4.5vw, 4rem);
+
+    > h1,
+    > p,
+    > ul,
+    > ol,
+    > figure {
+      grid-column: 1;
+    }
 
     > h1 {
-      max-width: 8ch;
+      max-width: 12ch;
       margin-bottom: 0;
       font-size: clamp(2.35rem, 10vw, 3.25rem);
       line-height: 1.02;
       color: var(--ink);
+
+      strong {
+        font-weight: inherit;
+        color: var(--teal);
+      }
     }
 
-    > h1 + p {
+    > p {
       max-width: 36rem;
       margin-bottom: 0;
       font-size: clamp(1rem, 1.4vw, 1.12rem);
@@ -542,6 +560,7 @@ body#levels {
 
     > figure {
       position: relative;
+      grid-row: auto;
       margin: 0;
       overflow: hidden;
       border-radius: calc(var(--radius) * 3);
@@ -591,7 +610,7 @@ body#levels {
       column-gap: clamp(2rem, 4vw, 4rem);
 
       > h1,
-      > h1 + p {
+      > p {
         grid-column: 1;
       }
 
@@ -905,7 +924,51 @@ body#levels {
   }
 }
 
+body#about {
+  #intro {
+    > p {
+      max-width: 34rem;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    #intro {
+      > h1,
+      > p {
+        grid-column: 1;
+      }
+
+      > figure {
+        grid-row: 1 / span 3;
+      }
+    }
+  }
+}
+
+body#venues,
+body#events {
+  @media (min-width: 64rem) {
+    #intro {
+      > h1,
+      > p {
+        grid-column: 1;
+      }
+
+      > figure {
+        grid-row: 1 / span 3;
+      }
+    }
+  }
+}
+
+body#events #intro > figure img {
+  object-position: center 34%;
+}
+
 body#venues {
+  #intro > figure img {
+    object-position: center 52%;
+  }
   main > section:not(#intro) {
     display: grid;
     grid-template-columns: minmax(0, 1fr);

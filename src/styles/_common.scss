@@ -753,7 +753,7 @@ body#classes {
 }
 
 body#venues {
-  figure {
+  main > section:not(#intro) figure {
     max-width: 26rem;
     margin: 0;
     overflow: hidden;
