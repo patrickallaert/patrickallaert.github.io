@@ -12,14 +12,8 @@
   --focus: #c65a3d;
   --shadow: 0 18px 50px rgba(68, 42, 30, 0.08);
   --radius: 0.75rem;
-  --font-body: "Manrope", sans-serif;
-  --body-line-height: 1.6;
   --max: 92rem;
-  --shell-inline: 1.5rem;
-  --shell-inline-wide: 3rem;
-  --page-shell-width: 100%;
-  --page-shell-margin-inline: 0;
-  --header-bg: rgba(244, 237, 227, 0.88);
+  --main-top-padding: 14rem;
 }
 
 body > header {
@@ -32,7 +26,6 @@ body > header {
 
       &[aria-current="page"] {
         padding: 0.45rem 0.8rem;
-        padding-bottom: 0;
         background: rgba(198, 90, 61, 0.08);
         border-bottom: 0;
         border-radius: 999rem;
@@ -54,8 +47,6 @@ body > header {
 }
 
 body > main {
-  padding-top: 14rem;
-
   > section:not(#intro),
   > figure {
     padding: clamp(1.25rem, 2vw, 1.8rem);

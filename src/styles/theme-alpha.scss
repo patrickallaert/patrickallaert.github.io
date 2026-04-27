@@ -29,137 +29,140 @@ body > footer > div
   border-radius: var(--radius);
 }
 
-body > header {
-  padding: 1rem 0 0;
+body {
+  > header {
+    padding: 1rem 0 0;
 
-  nav {
-    display: grid;
-    gap: 1rem;
-    padding: 1rem;
-    box-shadow: var(--shadow);
+    nav {
+      display: grid;
+      gap: 1rem;
+      padding: 1rem;
+      box-shadow: var(--shadow);
 
-    ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
 
-    a {
-      display: inline-flex;
-      align-items: center;
-      min-height: 2.5rem;
-      padding: 0.4rem 0.8rem;
-      color: inherit;
-      text-decoration: none;
-      border-radius: 999rem;
-    }
+      a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 2.5rem;
+        padding: 0.4rem 0.8rem;
+        color: inherit;
+        text-decoration: none;
+        border-radius: 999rem;
+      }
 
-    a[aria-current="page"] {
-      font-weight: 700;
-      color: #ffffff;
-      background: var(--teal);
-    }
+      a[aria-current="page"] {
+        font-weight: 700;
+        color: #ffffff;
+        background: var(--teal);
+      }
 
-    > a[href="register.html"] {
-      justify-self: start;
-      font-weight: 700;
-      color: #ffffff;
-      letter-spacing: 0.01em;
-      background: linear-gradient(135deg, #17324b, #245158);
-      border: 0.08rem solid rgba(23, 50, 75, 0.18);
-      box-shadow: 0 0.8rem 1.6rem rgba(23, 50, 75, 0.12);
-      &:hover,
-      &:focus-visible {
-        background: linear-gradient(135deg, #10283d, #1f464c);
+      > a[href="register.html"] {
+        justify-self: start;
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: 0.01em;
+        background: linear-gradient(135deg, #17324b, #245158);
+        border: 0.08rem solid rgba(23, 50, 75, 0.18);
+        box-shadow: 0 0.8rem 1.6rem rgba(23, 50, 75, 0.12);
+
+        &:hover,
+        &:focus-visible {
+          background: linear-gradient(135deg, #10283d, #1f464c);
+        }
       }
     }
   }
-}
 
-body > main {
-  display: grid;
-  gap: 1rem;
-  padding: 1rem 0 3rem;
-
-  > section {
+  > main {
     display: grid;
     gap: 1rem;
-    padding: 1.25rem;
-  }
+    padding: 1rem 0 3rem;
 
-  article {
-    display: grid;
-    gap: 1rem;
-  }
-
-  > section > *,
-  article > * {
-    margin: 0;
-  }
-
-  > figure:has(> blockquote) {
-    padding: 1.35rem 1.25rem;
-    margin: 0;
-    color: #ffffff;
-    text-align: center;
-    background: var(--teal);
-    border: 0.08rem solid rgba(23, 50, 75, 0.08);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-
-    blockquote p {
-      font-size: clamp(1.25rem, 3.2vw, 2.1rem);
-      font-weight: 300;
-      line-height: 1.35;
-      letter-spacing: 0.01em;
+    > section {
+      display: grid;
+      gap: 1rem;
+      padding: 1.25rem;
     }
 
-    figcaption {
-      margin-top: 0.65rem;
-      font-size: clamp(0.95rem, 1.6vw, 1.2rem);
-      line-height: 1.3;
-      opacity: 0.95;
-    }
-  }
-}
-
-body > footer {
-  padding: 0 0 2rem;
-
-  > div {
-    display: grid;
-    gap: 0.9rem;
-    padding: 1rem 1.25rem;
-  }
-
-  p {
-    margin: 0;
-    color: var(--ink-soft);
-  }
-
-  .contact-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 1rem;
-    justify-self: start;
-    padding: 0;
-    margin: 0.75rem 0 0;
-    list-style: none;
-
-    a {
-      display: inline-flex;
-      gap: 0.6rem;
-      align-items: center;
-      min-height: 2.4rem;
-      padding: 0.4rem 0.8rem;
-      text-decoration: none;
-      background: rgba(65, 186, 174, 0.08);
-      border: 0.08rem solid rgba(65, 186, 174, 0.16);
-      border-radius: 999rem;
+    article {
+      display: grid;
+      gap: 1rem;
     }
 
-    svg {
-      flex: none;
+    > section > *,
+    article > * {
+      margin: 0;
+    }
+
+    > figure:has(> blockquote) {
+      padding: 1.35rem 1.25rem;
+      margin: 0;
+      color: #ffffff;
+      text-align: center;
+      background: var(--teal);
+      border: 0.08rem solid rgba(23, 50, 75, 0.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+
+      blockquote p {
+        font-size: clamp(1.25rem, 3.2vw, 2.1rem);
+        font-weight: 300;
+        line-height: 1.35;
+        letter-spacing: 0.01em;
+      }
+
+      figcaption {
+        margin-top: 0.65rem;
+        font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+        line-height: 1.3;
+        opacity: 0.95;
+      }
+    }
+  }
+
+  > footer {
+    padding: 0 0 2rem;
+
+    > div {
+      display: grid;
+      gap: 0.9rem;
+      padding: 1rem 1.25rem;
+    }
+
+    p {
+      margin: 0;
+      color: var(--ink-soft);
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      justify-self: start;
+      padding: 0;
+      margin: 0.75rem 0 0;
+      list-style: none;
+
+      a {
+        display: inline-flex;
+        gap: 0.6rem;
+        align-items: center;
+        min-height: 2.4rem;
+        padding: 0.4rem 0.8rem;
+        text-decoration: none;
+        background: rgba(65, 186, 174, 0.08);
+        border: 0.08rem solid rgba(65, 186, 174, 0.16);
+        border-radius: 999rem;
+      }
+
+      svg {
+        flex: none;
+      }
     }
   }
 }
@@ -214,6 +217,10 @@ ol {
       justify-content: flex-end;
     }
   }
+}
+
+body#home #video {
+  background: linear-gradient(180deg, rgba(23, 50, 75, 0.98), rgba(36, 81, 88, 0.98));
 }
 
 body#classes {
@@ -291,19 +298,19 @@ body#classes {
     gap: 0.5rem;
     justify-content: center;
   }
-}
 
-.theme-switch-panel .theme-switch {
-  min-height: 2.4rem;
-  padding: 0.4rem 0.75rem;
-  color: var(--ink-soft);
-  background: rgba(65, 186, 174, 0.08);
-  border: 0.08rem solid rgba(65, 186, 174, 0.16);
-  border-radius: 999rem;
+  .theme-switch {
+    min-height: 2.4rem;
+    padding: 0.4rem 0.75rem;
+    color: var(--ink-soft);
+    background: rgba(65, 186, 174, 0.08);
+    border: 0.08rem solid rgba(65, 186, 174, 0.16);
+    border-radius: 999rem;
 
-  &[aria-pressed="true"] {
-    color: #ffffff;
-    background: var(--teal);
-    border-color: var(--teal);
+    &[aria-pressed="true"] {
+      color: #ffffff;
+      background: var(--teal);
+      border-color: var(--teal);
+    }
   }
 }

@@ -1,311 +1,321 @@
+:root {
+  --font-body: "Manrope", sans-serif;
+  --body-line-height: 1.6;
+  --shell-inline: 1.5rem;
+  --shell-inline-wide: 3rem;
+  --page-shell-width: 100%;
+  --page-shell-margin-inline: 0;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-body > header {
-  position: fixed;
-  top: 0;
-  z-index: 50;
-  padding: 0;
-  background: var(--header-bg, rgba(245, 250, 248, 0.8));
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(24px);
+body {
+  header {
+    position: fixed;
+    top: 0;
+    z-index: 50;
+    padding: 0;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(24px);
 
-  nav {
-    display: grid;
-    gap: 1rem;
-    align-items: center;
-    width: min(100%, var(--max));
-    padding: 1rem var(--shell-inline);
-    margin-inline: auto;
-    background: transparent;
-    border: 0;
-    border-radius: 0;
-    box-shadow: none;
-
-    ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem 1rem;
+    nav {
+      display: grid;
+      gap: 1rem;
       align-items: center;
+      width: min(100%, var(--max));
+      padding: 1rem var(--shell-inline);
+      margin-inline: auto;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem 1rem;
+        align-items: center;
+      }
+
+      a {
+        font-weight: 500;
+        color: #475569;
+        text-decoration: none;
+        transition: color 150ms ease, opacity 150ms ease;
+
+        &:hover,
+        &:focus-visible {
+          color: var(--teal);
+        }
+
+        &[aria-current="page"] {
+          padding-bottom: 0.25rem;
+          font-weight: 700;
+          color: var(--teal);
+          background: transparent;
+          border-bottom: 2px solid var(--teal);
+          border-radius: 0;
+        }
+      }
+
+      > a[href="register.html"] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        justify-self: start;
+        min-height: auto;
+        padding: 0.5rem 1.5rem;
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: 0;
+        background: var(--teal);
+        border: 0;
+        border-radius: var(--radius);
+        box-shadow: none;
+        transition: opacity 150ms ease, transform 150ms ease;
+
+        &:hover,
+        &:focus-visible {
+          color: #ffffff;
+          background: var(--teal);
+          opacity: 0.8;
+        }
+
+        &:active {
+          transform: scale(0.95);
+        }
+      }
+    }
+  }
+
+  > main {
+    display: block;
+    width: min(100%, var(--max));
+    padding: var(--main-top-padding) 1.5rem clamp(2.5rem, 5vw, 4rem);
+    margin-inline: auto;
+
+    > section,
+    > figure {
+      display: block;
+      padding: 0;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    > section:not(#intro),
+    > figure {
+      padding: 0;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    > figure:has(> blockquote) {
+      position: relative;
+      padding: clamp(1.6rem, 4vw, 2.4rem);
+      overflow: hidden;
+      color: var(--ink);
+      background: color-mix(in srgb, var(--teal) 10%, #ffffff);
+      border-left: 0.35rem solid var(--teal);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+
+      &::before {
+        position: absolute;
+        top: -0.55rem;
+        right: 1.1rem;
+        font-family: "Epilogue", sans-serif;
+        font-size: clamp(5rem, 16vw, 8rem);
+        font-weight: 800;
+        line-height: 1;
+        color: rgba(65, 186, 174, 0.18);
+        pointer-events: none;
+        content: "\201C";
+      }
+
+      blockquote p {
+        position: relative;
+        max-width: 34ch;
+        font-family: "Epilogue", sans-serif;
+        font-size: clamp(1.5rem, 4.2vw, 2.5rem);
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+      }
+
+      figcaption {
+        position: relative;
+        margin-top: 1rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--ink-soft);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+    }
+
+    > section + section,
+    > figure + section,
+    > section + figure {
+      margin-top: 3.5rem;
+    }
+
+    article {
+      display: block;
+    }
+
+    article > * {
+      margin: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Epilogue", sans-serif;
+    }
+
+    h1,
+    h2 {
+      color: var(--teal);
+    }
+
+    h1 {
+      margin: 0 0 2.5rem;
+      font-size: clamp(2.7rem, 8vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      margin: 0 0 1.25rem;
+      font-size: 1.75rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    h3 {
+      margin: 0 0 1rem;
+      font-size: 1.25rem;
+      color: var(--ink);
+    }
+
+    h2:not(:first-child),
+    section > section:not(:first-of-type) h3 {
+      margin-top: 3.5rem;
+    }
+
+    p,
+    ul,
+    ol {
+      margin: 0 0 1.5rem;
+    }
+
+    li + li {
+      margin-top: 0.5rem;
     }
 
     a {
-      font-weight: 500;
-      color: #475569;
-      text-decoration: none;
-      transition: color 150ms ease, opacity 150ms ease;
+      font-weight: 600;
+      color: var(--teal);
+      text-decoration: underline;
+      text-underline-offset: 4px;
 
       &:hover,
       &:focus-visible {
-        color: var(--teal);
-      }
-
-      &[aria-current="page"] {
-        padding-bottom: 0.25rem;
-        font-weight: 700;
-        color: var(--teal);
-        background: transparent;
-        border-bottom: 2px solid var(--teal);
-        border-radius: 0;
-      }
-    }
-
-    > a[href="register.html"] {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      justify-self: start;
-      min-height: auto;
-      padding: 0.5rem 1.5rem;
-      font-weight: 700;
-      color: #ffffff;
-      letter-spacing: 0;
-      background: var(--teal);
-      border: 0;
-      border-radius: var(--radius);
-      box-shadow: none;
-      transition: opacity 150ms ease, transform 150ms ease;
-
-      &:hover,
-      &:focus-visible {
-        color: #ffffff;
-        background: var(--teal);
         opacity: 0.8;
       }
-
-      &:active {
-        transform: scale(0.95);
-      }
     }
   }
-}
 
-body > main {
-  display: block;
-  width: min(100%, var(--max));
-  padding: 14.75rem 1.5rem clamp(2.5rem, 5vw, 4rem);
-  margin-inline: auto;
+  > footer {
+    padding: 2.25rem 1.5rem 2.5rem;
+    text-align: center;
+    background: linear-gradient(180deg, color-mix(in srgb, var(--teal) 5%, transparent), color-mix(in srgb, var(--teal) 8%, #ffffff));
+    border-top: 1px solid color-mix(in srgb, var(--teal) 18%, var(--line));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
 
-  > section,
-  > figure {
-    display: block;
-    padding: 0;
-    background: transparent;
-    border: 0;
-    border-radius: 0;
-    box-shadow: none;
-  }
-
-  > section:not(#intro),
-  > figure {
-    padding: 0;
-    background: transparent;
-    border: 0;
-    border-radius: 0;
-    box-shadow: none;
-  }
-
-  > figure:has(> blockquote) {
-    position: relative;
-    padding: clamp(1.6rem, 4vw, 2.4rem);
-    overflow: hidden;
-    color: var(--ink);
-    background: color-mix(in srgb, var(--teal) 10%, #ffffff);
-    border-left: 0.35rem solid var(--teal);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-
-    &::before {
-      position: absolute;
-      top: -0.55rem;
-      right: 1.1rem;
-      font-family: "Epilogue", sans-serif;
-      font-size: clamp(5rem, 16vw, 8rem);
-      font-weight: 800;
-      line-height: 1;
-      color: rgba(65, 186, 174, 0.18);
-      pointer-events: none;
-      content: "\201C";
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      align-items: center;
+      max-width: 72rem;
+      padding: 0;
+      margin-inline: auto;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
     }
 
-    blockquote p {
-      position: relative;
-      max-width: 34ch;
-      font-family: "Epilogue", sans-serif;
-      font-size: clamp(1.5rem, 4.2vw, 2.5rem);
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-    }
-
-    figcaption {
-      position: relative;
-      margin-top: 1rem;
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--ink-soft);
+    p {
+      margin: 0;
+      font-size: 0.72rem;
+      line-height: 1rem;
+      color: color-mix(in srgb, var(--ink) 56%, transparent);
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.09em;
     }
-  }
-
-  > section + section,
-  > figure + section,
-  > section + figure {
-    margin-top: 3.5rem;
-  }
-
-  article {
-    display: block;
-  }
-
-  article > * {
-    margin: 0;
-  }
-
-  h1,
-  h2,
-  h3 {
-    font-family: "Epilogue", sans-serif;
-  }
-
-  h1,
-  h2 {
-    color: var(--teal);
-  }
-
-  h1 {
-    margin: 0 0 2.5rem;
-    font-size: clamp(2.7rem, 8vw, 3.5rem);
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-  }
-
-  h2 {
-    margin: 0 0 1.25rem;
-    font-size: 1.75rem;
-    font-weight: 600;
-    line-height: 1.3;
-  }
-
-  h3 {
-    margin: 0 0 1rem;
-    font-size: 1.25rem;
-    color: var(--ink);
-  }
-
-  h2:not(:first-child),
-  section > section:not(:first-of-type) h3 {
-    margin-top: 3.5rem;
-  }
-
-  p,
-  ul,
-  ol {
-    margin: 0 0 1.5rem;
-  }
-
-  li + li {
-    margin-top: 0.5rem;
-  }
-
-  a {
-    font-weight: 600;
-    color: var(--teal);
-    text-decoration: underline;
-    text-underline-offset: 4px;
-
-    &:hover,
-    &:focus-visible {
-      opacity: 0.8;
-    }
-  }
-}
-
-body > footer {
-  padding: 2.25rem 1.5rem 2.5rem;
-  text-align: center;
-  background: linear-gradient(180deg, color-mix(in srgb, var(--teal) 5%, transparent), color-mix(in srgb, var(--teal) 8%, #ffffff));
-  border-top: 1px solid color-mix(in srgb, var(--teal) 18%, var(--line));
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
-
-  > div {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    align-items: center;
-    max-width: 72rem;
-    padding: 0;
-    margin-inline: auto;
-    background: transparent;
-    border: 0;
-    border-radius: 0;
-    box-shadow: none;
-  }
-
-  p {
-    margin: 0;
-    font-size: 0.72rem;
-    line-height: 1rem;
-    color: color-mix(in srgb, var(--ink) 56%, transparent);
-    text-transform: uppercase;
-    letter-spacing: 0.09em;
-  }
-
-  a {
-    font-size: 0.78rem;
-    font-weight: 800;
-    line-height: 1rem;
-    color: var(--ink);
-    text-transform: uppercase;
-    letter-spacing: 0.065em;
-    text-decoration: none;
-    transition: color 150ms ease, border-color 150ms ease, background-color 150ms ease, transform 150ms ease;
-  }
-
-  a:hover,
-  a:focus-visible {
-    color: var(--teal);
-  }
-
-  .contact-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.65rem;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-    list-style: none;
 
     a {
-      display: inline-flex;
-      gap: 0.5rem;
-      align-items: center;
-      min-height: 2.55rem;
-      padding: 0.58rem 0.85rem;
-      color: color-mix(in srgb, var(--teal) 88%, var(--ink));
-      background: rgba(255, 255, 255, 0.68);
-      border: 1px solid color-mix(in srgb, var(--teal) 30%, var(--line));
-      border-radius: var(--radius);
-      box-shadow: 0 0.4rem 1rem rgba(15, 118, 110, 0.06);
+      font-size: 0.78rem;
+      font-weight: 800;
+      line-height: 1rem;
+      color: var(--ink);
+      text-transform: uppercase;
+      letter-spacing: 0.065em;
+      text-decoration: none;
+      transition: color 150ms ease, border-color 150ms ease, background-color 150ms ease, transform 150ms ease;
     }
 
     a:hover,
     a:focus-visible {
-      color: var(--ink);
-      background: #ffffff;
-      border-color: color-mix(in srgb, var(--teal) 48%, var(--line));
-      transform: translateY(-1px);
+      color: var(--teal);
     }
 
-    svg {
-      display: block;
-      flex: none;
-      width: 1.08rem;
-      height: 1.08rem;
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+      a {
+        display: inline-flex;
+        gap: 0.5rem;
+        align-items: center;
+        min-height: 2.55rem;
+        padding: 0.58rem 0.85rem;
+        color: color-mix(in srgb, var(--teal) 88%, var(--ink));
+        background: rgba(255, 255, 255, 0.68);
+        border: 1px solid color-mix(in srgb, var(--teal) 30%, var(--line));
+        border-radius: var(--radius);
+        box-shadow: 0 0.4rem 1rem rgba(15, 118, 110, 0.06);
+      }
+
+      a:hover,
+      a:focus-visible {
+        color: var(--ink);
+        background: #ffffff;
+        border-color: color-mix(in srgb, var(--teal) 48%, var(--line));
+        transform: translateY(-1px);
+      }
+
+      svg {
+        display: block;
+        flex: none;
+        width: 1.08rem;
+        height: 1.08rem;
+      }
     }
   }
 }
@@ -395,7 +405,6 @@ body#home {
     align-items: center;
     padding-block: clamp(1.75rem, 4vw, 3.5rem);
     color: var(--ink);
-    background: transparent;
 
     h2,
     p,
@@ -497,23 +506,19 @@ body#home {
 }
 
 @media (min-width: 48rem) {
-  body > header {
-    nav {
+  body {
+    > header nav {
+      padding-inline: var(--shell-inline-wide);
+
       ul {
         gap: 2rem;
         justify-content: center;
       }
     }
-  }
 
-  body > main {
-    padding-inline: var(--shell-inline-wide);
-    padding-top: clamp(5.5rem, 9vw, 7rem);
-  }
-
-  body > header {
-    nav {
+    > main {
       padding-inline: var(--shell-inline-wide);
+      padding-top: clamp(5.5rem, 9vw, 7rem);
     }
   }
 }
