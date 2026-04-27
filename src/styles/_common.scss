@@ -449,8 +449,12 @@ body#classes {
   .free-practice {
     --course-accent: var(--course-practice);
   }
+}
 
-  main a[href^="https://forms.gle"] {
+body#classes,
+body#register {
+  main a[href^="https://forms.gle"],
+  main a[href*="docs.google.com/forms"] {
     display: inline-flex;
     align-items: center;
     min-height: 2.75rem;

@@ -487,7 +487,8 @@ body#classes,
 body#levels,
 body#about,
 body#venues,
-body#events {
+body#events,
+body#register {
   #intro {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
@@ -525,7 +526,8 @@ body#events {
       color: color-mix(in srgb, var(--ink) 84%, transparent);
     }
 
-    > ul {
+    > ul,
+    > ol {
       display: grid;
       gap: 0.8rem;
       padding: 0;
@@ -919,6 +921,24 @@ body#levels {
 
       > ul[aria-label="Core aspects of each level"] {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  }
+}
+
+body#register {
+  #intro {
+    > p:last-of-type {
+      margin-top: 0.35rem;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    #intro {
+      > ol[aria-label="Registration steps"] {
+        grid-row: 1 / span 3;
+        grid-column: 2;
+        align-self: center;
       }
     }
   }
