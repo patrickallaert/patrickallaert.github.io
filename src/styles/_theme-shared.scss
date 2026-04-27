@@ -448,24 +448,7 @@ body#home {
       }
     }
   }
-}
 
-
-.wordmark {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2rem;
-  color: var(--ink);
-  text-decoration: none;
-
-  img {
-    width: auto;
-    max-width: 7rem;
-    height: auto;
-  }
-}
-
-@media (min-width: 48rem) {
   body {
     > header nav {
       padding-inline: var(--shell-inline-wide);
@@ -480,6 +463,21 @@ body#home {
       padding-inline: var(--shell-inline-wide);
       padding-top: clamp(5.5rem, 9vw, 7rem);
     }
+  }
+}
+
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  color: var(--ink);
+  text-decoration: none;
+
+  img {
+    width: auto;
+    max-width: 7rem;
+    height: auto;
   }
 }
 
