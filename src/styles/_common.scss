@@ -336,7 +336,7 @@ body#venues {
       align-items: start;
     }
 
-    figure {
+    main > section:not(#intro) figure {
       grid-row: 1 / span 6;
       grid-column: 2;
       justify-self: end;

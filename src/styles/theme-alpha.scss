@@ -211,10 +211,181 @@ ol {
   }
 }
 
+body#home #intro,
+body#classes #intro,
+body#levels #intro,
+body#about #intro,
+body#venues #intro,
+body#events #intro,
+body#register #intro {
+  align-items: center;
+  padding: clamp(1.4rem, 3vw, 2rem);
+
+  > h1 {
+    max-width: 12ch;
+    margin: 0;
+    color: var(--ink);
+
+    strong {
+      font-weight: inherit;
+      color: var(--teal);
+    }
+  }
+
+  > p {
+    max-width: 38rem;
+    margin: 0;
+    color: var(--ink-soft);
+  }
+}
+
+body#classes #intro,
+body#levels #intro,
+body#about #intro,
+body#venues #intro,
+body#events #intro,
+body#register #intro {
+  > ul,
+  > ol {
+    display: grid;
+    gap: 0.75rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      display: grid;
+      gap: 0.25rem;
+      padding: 0.85rem 0.95rem;
+      margin: 0;
+      background: color-mix(in srgb, var(--teal) 7%, #ffffff);
+      border: 0.08rem solid color-mix(in srgb, var(--teal) 22%, var(--line));
+      border-radius: calc(var(--radius) - 0.25rem);
+    }
+
+    strong {
+      color: var(--ink);
+    }
+
+    span {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--ink-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+  }
+
+  > figure {
+    position: relative;
+    grid-row: auto;
+    margin: 0;
+    overflow: hidden;
+    border-radius: calc(var(--radius) - 0.25rem);
+    box-shadow: 0 1rem 2rem rgba(23, 50, 75, 0.12);
+
+    img {
+      display: block;
+      width: 100%;
+      height: clamp(15rem, 72vw, 19rem);
+      object-fit: cover;
+      object-position: center 38%;
+    }
+
+    figcaption {
+      position: absolute;
+      right: 0.85rem;
+      bottom: 0.85rem;
+      display: grid;
+      gap: 0.25rem;
+      max-width: min(20rem, calc(100% - 1.7rem));
+      padding: 0.8rem 0.9rem;
+      color: #ffffff;
+      background: rgba(23, 50, 75, 0.72);
+      border-radius: calc(var(--radius) - 0.35rem);
+
+      span {
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        opacity: 0.82;
+      }
+
+      strong {
+        line-height: 1.2;
+      }
+    }
+  }
+}
+
+body#events #intro > figure img {
+  object-position: center 34%;
+}
+
+body#venues #intro > figure img {
+  object-position: center 52%;
+}
+
 @media (min-width: 48rem) {
   body > header {
     ul {
       justify-content: flex-end;
+    }
+  }
+}
+
+@media (min-width: 64rem) {
+  body#classes #intro,
+  body#levels #intro,
+  body#about #intro,
+  body#venues #intro,
+  body#events #intro,
+  body#register #intro {
+    column-gap: clamp(2rem, 4vw, 4rem);
+
+    > h1,
+    > p {
+      grid-column: 1;
+    }
+
+    &:has(> figure) {
+      grid-template-columns: minmax(18rem, 0.92fr) minmax(22rem, 1.08fr);
+    }
+
+    > figure {
+      grid-row: 1 / span 4;
+      grid-column: 2;
+      align-self: start;
+
+      img {
+        height: 28rem;
+      }
+    }
+  }
+
+  body#classes #intro > ol[aria-label="Trimester rhythm"] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  body#levels #intro {
+    > p:nth-of-type(2),
+    > ul[aria-label="Core aspects of each level"] {
+      grid-column: 1;
+    }
+
+    > ul[aria-label="Core aspects of each level"] {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  body#register #intro {
+    grid-template-columns: minmax(18rem, 0.92fr) minmax(22rem, 1.08fr);
+
+    > ol[aria-label="Registration steps"] {
+      grid-row: 1 / span 3;
+      grid-column: 2;
+      align-self: center;
     }
   }
 }
