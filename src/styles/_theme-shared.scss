@@ -608,12 +608,15 @@ body#register {
 
   @media (min-width: 64rem) {
     #intro {
-      grid-template-columns: minmax(18rem, 0.92fr) minmax(22rem, 1.08fr);
       column-gap: clamp(2rem, 4vw, 4rem);
 
       > h1,
       > p {
         grid-column: 1;
+      }
+
+      &:has(> figure) {
+        grid-template-columns: minmax(18rem, 0.92fr) minmax(22rem, 1.08fr);
       }
 
       > figure {
@@ -935,6 +938,8 @@ body#register {
 
   @media (min-width: 64rem) {
     #intro {
+      grid-template-columns: minmax(18rem, 0.92fr) minmax(22rem, 1.08fr);
+
       > ol[aria-label="Registration steps"] {
         grid-row: 1 / span 3;
         grid-column: 2;
