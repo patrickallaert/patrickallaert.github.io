@@ -62,7 +62,7 @@ body {
         min-height: auto;
         padding: 0.5rem 1.5rem;
         font-weight: 700;
-        color: #ffffff;
+        color: var(--accent-ink);
         letter-spacing: 0;
         background: var(--teal);
         border-radius: var(--radius);
@@ -322,7 +322,7 @@ body#home {
       padding: 0.85rem 1.35rem;
       font-size: 0.95rem;
       font-weight: 800;
-      color: #ffffff;
+      color: var(--accent-ink);
       text-transform: none;
       letter-spacing: 0;
       text-decoration: none;
@@ -1049,7 +1049,7 @@ body#venues {
         font-size: 0.9rem;
         font-weight: 800;
         line-height: 1.25;
-        color: #ffffff;
+        color: var(--accent-ink);
         text-decoration: none;
         background: var(--teal);
         border-radius: 0.25rem;
@@ -1140,7 +1140,7 @@ body#venues {
     transition: color 150ms ease, border-color 150ms ease;
 
     &[aria-pressed="true"] {
-      color: #ffffff;
+      color: var(--accent-ink);
       background: var(--teal);
       border-color: var(--teal);
     }

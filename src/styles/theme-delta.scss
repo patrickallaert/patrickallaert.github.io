@@ -379,6 +379,30 @@ body {
     }
   }
 
+  &#levels {
+    section.class,
+    #short-courses > section {
+      color: var(--ink);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.02)),
+        rgba(7, 12, 21, 0.88);
+      border-color: rgba(125, 246, 216, 0.18);
+      box-shadow:
+        inset 0.35rem 0 0 var(--course-accent),
+        0 1rem 2rem rgba(0, 0, 0, 0.18);
+
+      h2,
+      h3 {
+        color: var(--ink);
+      }
+
+      p,
+      li {
+        color: var(--ink-soft);
+      }
+    }
+  }
+
   &#venues {
     main > section:not(#intro) {
       background:

@@ -23,6 +23,7 @@ textarea {
 
 :root {
   --teal: #41baae;
+  --accent-ink: #07100e;
   --yellow: #ffd64d;
   --course-level-1: #4ed9d7;
   --course-level-2: #2f8cff;
@@ -177,7 +178,7 @@ body#home {
         border-radius: 999rem;
 
         &[aria-current="true"] {
-          color: #ffffff;
+          color: var(--accent-ink);
           background: var(--teal);
           border-color: var(--teal);
         }
@@ -459,7 +460,7 @@ body#register {
     align-items: center;
     min-height: 2.75rem;
     padding: 0.45rem 0.9rem;
-    color: #ffffff;
+    color: var(--accent-ink);
     text-decoration: none;
     background: var(--teal);
     border-radius: 999rem;

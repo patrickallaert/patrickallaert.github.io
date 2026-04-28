@@ -57,7 +57,7 @@ body {
 
       a[aria-current="page"] {
         font-weight: 700;
-        color: #ffffff;
+        color: var(--accent-ink);
         background: var(--teal);
       }
 
@@ -102,7 +102,7 @@ body {
     > figure:has(> blockquote) {
       padding: 1.35rem 1.25rem;
       margin: 0;
-      color: #ffffff;
+      color: var(--accent-ink);
       text-align: center;
       background: var(--teal);
       border: 0.08rem solid rgba(23, 50, 75, 0.08);
@@ -476,7 +476,7 @@ body#classes {
     border-radius: 999rem;
 
     &[aria-pressed="true"] {
-      color: #ffffff;
+      color: var(--accent-ink);
       background: var(--teal);
       border-color: var(--teal);
     }
