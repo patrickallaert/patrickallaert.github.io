@@ -1,6 +1,6 @@
 (() => {
-    const themes = ["alpha", "beta", "gamma"];
-    const labels = { alpha: "Alpha", beta: "Beta", gamma: "Gamma" };
+    const themes = ["alpha", "beta", "gamma", "delta"];
+    const labels = { alpha: "Alpha", beta: "Beta", gamma: "Gamma", delta: "Delta" };
     let activeTheme = themes.includes(sessionStorage.getItem("conexao-theme")) ? sessionStorage.getItem("conexao-theme") : "beta";
     let buttons = [];
     const link = document.createElement("link");
