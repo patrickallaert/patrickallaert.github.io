@@ -2,7 +2,7 @@
 @use "theme-shared";
 
 :root {
-  --teal: #45f0c7;
+  --accent: #45f0c7;
   --yellow: #ffd166;
   --page: #07090f;
   --panel: rgba(10, 16, 26, 0.9);
@@ -89,7 +89,7 @@ body {
 
         &:hover,
         &:focus-visible {
-          color: var(--teal);
+          color: var(--accent);
         }
 
         &[aria-current="page"] {
@@ -106,7 +106,7 @@ body {
       > a[href="register.html"] {
         padding: 0.66rem 1.35rem;
         color: #07100e;
-        background: linear-gradient(135deg, var(--teal), var(--yellow));
+        background: linear-gradient(135deg, var(--accent), var(--yellow));
         box-shadow:
           0 0.9rem 2rem rgba(0, 0, 0, 0.22),
           0 0 1.5rem rgba(69, 240, 199, 0.18);
@@ -173,7 +173,7 @@ body {
       }
 
       > h1 strong {
-        color: var(--teal);
+        color: var(--accent);
         text-shadow: 0 0 1.2rem rgba(69, 240, 199, 0.24);
       }
 
@@ -221,7 +221,7 @@ body {
           box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.28);
 
           span {
-            color: color-mix(in srgb, var(--teal) 78%, #ffffff);
+            color: color-mix(in srgb, var(--accent) 78%, #ffffff);
           }
         }
       }
@@ -232,7 +232,7 @@ body {
         linear-gradient(135deg, rgba(69, 240, 199, 0.1), rgba(255, 209, 102, 0.07)),
         rgba(12, 18, 28, 0.72);
       border: 1px solid rgba(125, 246, 216, 0.18);
-      border-left: 0.35rem solid var(--teal);
+      border-left: 0.35rem solid var(--accent);
 
       &::before {
         color: rgba(69, 240, 199, 0.14);
@@ -245,7 +245,7 @@ body {
     }
 
     a {
-      color: var(--teal);
+      color: var(--accent);
     }
   }
 
@@ -262,21 +262,21 @@ body {
         &:hover,
         &:focus-visible {
           color: #07100e;
-          background: var(--teal);
+          background: var(--accent);
         }
       }
 
       ol button[aria-current="true"] {
         color: #07100e;
-        background: var(--teal);
-        border-color: var(--teal);
+        background: var(--accent);
+        border-color: var(--accent);
       }
     }
   }
 
   &#classes {
     .trimester-summary span:first-child {
-      color: color-mix(in srgb, var(--teal) 86%, #ffffff);
+      color: color-mix(in srgb, var(--accent) 86%, #ffffff);
       background: rgba(69, 240, 199, 0.14);
     }
 
@@ -294,7 +294,7 @@ body {
         }
 
         > section > h5 {
-          color: color-mix(in srgb, var(--teal) 82%, #ffffff);
+          color: color-mix(in srgb, var(--accent) 82%, #ffffff);
         }
       }
 
@@ -344,7 +344,7 @@ body {
       a[href^="https://forms.gle"],
       a[href*="docs.google.com/forms"] {
         color: #07100e;
-        background: linear-gradient(135deg, var(--teal), var(--yellow));
+        background: linear-gradient(135deg, var(--accent), var(--yellow));
         box-shadow: 0 0.9rem 1.8rem rgba(0, 0, 0, 0.22);
       }
     }
@@ -418,7 +418,7 @@ body {
 
       address a {
         color: #07100e;
-        background: linear-gradient(135deg, var(--teal), var(--yellow));
+        background: linear-gradient(135deg, var(--accent), var(--yellow));
         box-shadow: 0 0.9rem 1.8rem rgba(0, 0, 0, 0.22);
       }
     }
@@ -460,7 +460,7 @@ body {
       a[href^="https://forms.gle"],
       a[href*="docs.google.com/forms"] {
         color: #07100e;
-        background: linear-gradient(135deg, var(--teal), var(--yellow));
+        background: linear-gradient(135deg, var(--accent), var(--yellow));
         box-shadow: 0 0.9rem 1.8rem rgba(0, 0, 0, 0.22);
       }
     }
@@ -483,7 +483,7 @@ body {
 
         &:hover,
         &:focus-visible {
-          color: var(--teal);
+          color: var(--accent);
           background: rgba(69, 240, 199, 0.1);
           border-color: rgba(69, 240, 199, 0.32);
         }
@@ -503,7 +503,7 @@ body {
 
       &[aria-pressed="true"] {
         color: #07100e;
-        background: linear-gradient(135deg, var(--teal), var(--yellow));
+        background: linear-gradient(135deg, var(--accent), var(--yellow));
         border-color: transparent;
       }
 

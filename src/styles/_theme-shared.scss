@@ -43,14 +43,14 @@ body {
 
         &:hover,
         &:focus-visible {
-          color: var(--teal);
+          color: var(--accent);
         }
 
         &[aria-current="page"] {
           padding-bottom: 0.25rem;
           font-weight: 700;
-          color: var(--teal);
-          border-bottom: 2px solid var(--teal);
+          color: var(--accent);
+          border-bottom: 2px solid var(--accent);
         }
       }
 
@@ -64,7 +64,7 @@ body {
         font-weight: 700;
         color: var(--accent-ink);
         letter-spacing: 0;
-        background: var(--teal);
+        background: var(--accent);
         border-radius: var(--radius);
         transition: opacity 150ms ease, transform 150ms ease;
 
@@ -90,8 +90,8 @@ body {
       padding: clamp(1.6rem, 4vw, 2.4rem);
       overflow: hidden;
       color: var(--ink);
-      background: color-mix(in srgb, var(--teal) 10%, #ffffff);
-      border-left: 0.35rem solid var(--teal);
+      background: color-mix(in srgb, var(--accent) 10%, #ffffff);
+      border-left: 0.35rem solid var(--accent);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
 
@@ -147,7 +147,7 @@ body {
 
     h1,
     h2 {
-      color: var(--teal);
+      color: var(--accent);
     }
 
     h1 {
@@ -188,7 +188,7 @@ body {
 
     a {
       font-weight: 600;
-      color: var(--teal);
+      color: var(--accent);
       text-decoration: underline;
       text-underline-offset: 4px;
 
@@ -202,8 +202,8 @@ body {
   > footer {
     padding: 2.25rem 1.5rem 2.5rem;
     text-align: center;
-    background: linear-gradient(180deg, color-mix(in srgb, var(--teal) 5%, transparent), color-mix(in srgb, var(--teal) 8%, #ffffff));
-    border-top: 1px solid color-mix(in srgb, var(--teal) 18%, var(--line));
+    background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 5%, transparent), color-mix(in srgb, var(--accent) 8%, #ffffff));
+    border-top: 1px solid color-mix(in srgb, var(--accent) 18%, var(--line));
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
 
     > div {
@@ -237,7 +237,7 @@ body {
 
     a:hover,
     a:focus-visible {
-      color: var(--teal);
+      color: var(--accent);
     }
 
     .contact-links {
@@ -255,9 +255,9 @@ body {
         align-items: center;
         min-height: 2.55rem;
         padding: 0.58rem 0.85rem;
-        color: color-mix(in srgb, var(--teal) 88%, var(--ink));
+        color: color-mix(in srgb, var(--accent) 88%, var(--ink));
         background: rgba(255, 255, 255, 0.68);
-        border: 1px solid color-mix(in srgb, var(--teal) 30%, var(--line));
+        border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--line));
         border-radius: var(--radius);
         box-shadow: 0 0.4rem 1rem rgba(15, 118, 110, 0.06);
       }
@@ -266,7 +266,7 @@ body {
       a:focus-visible {
         color: var(--ink);
         background: #ffffff;
-        border-color: color-mix(in srgb, var(--teal) 48%, var(--line));
+        border-color: color-mix(in srgb, var(--accent) 48%, var(--line));
         transform: translateY(-1px);
       }
 
@@ -298,7 +298,7 @@ body#home {
 
       strong {
         font-weight: inherit;
-        color: var(--teal);
+        color: var(--accent);
       }
     }
 
@@ -348,7 +348,7 @@ body#home {
       font-size: clamp(2.15rem, 5vw, 3.2rem);
       font-weight: 800;
       line-height: 1.08;
-      color: var(--teal);
+      color: var(--accent);
       letter-spacing: -0.02em;
     }
 
@@ -367,7 +367,7 @@ body#home {
       gap: 0.5rem;
       align-items: center;
       font-weight: 800;
-      color: var(--teal);
+      color: var(--accent);
       text-decoration: none;
 
       &::after {
@@ -481,7 +481,7 @@ body#register {
 
       strong {
         font-weight: inherit;
-        color: var(--teal);
+        color: var(--accent);
       }
     }
 
@@ -507,7 +507,7 @@ body#register {
         padding: 0.95rem 1rem;
         margin: 0;
         background: rgba(255, 255, 255, 0.62);
-        border: 1px solid color-mix(in srgb, var(--teal) 14%, var(--line));
+        border: 1px solid color-mix(in srgb, var(--accent) 14%, var(--line));
         border-radius: calc(var(--radius) * 1.5);
       }
 
@@ -618,7 +618,7 @@ body#classes {
       padding: 0.5rem 1rem;
       font-size: 0.92rem;
       font-weight: 800;
-      color: var(--teal);
+      color: var(--accent);
       background: rgba(65, 186, 174, 0.1);
       border-radius: 999rem;
     }
@@ -686,7 +686,7 @@ body#classes {
       > p:first-of-type {
         font-size: 0.72rem;
         font-weight: 500;
-        color: color-mix(in srgb, var(--teal) 44%, #9db5b1);
+        color: color-mix(in srgb, var(--accent) 44%, #9db5b1);
       }
 
       > h6 {
@@ -705,7 +705,7 @@ body#classes {
         margin: 0.28rem 0 0;
 
         a {
-          color: var(--teal);
+          color: var(--accent);
           text-decoration: none;
         }
       }
@@ -773,7 +773,7 @@ body#classes {
           grid-row: 1;
           grid-column: 1;
           font-size: 0.66rem;
-          color: color-mix(in srgb, var(--ink) 84%, var(--teal));
+          color: color-mix(in srgb, var(--ink) 84%, var(--accent));
           text-transform: uppercase;
           letter-spacing: 0.03em;
         }
@@ -1020,7 +1020,7 @@ body#venues {
         line-height: 1.25;
         color: var(--accent-ink);
         text-decoration: none;
-        background: var(--teal);
+        background: var(--accent);
         border-radius: 0.25rem;
         box-shadow: 0 0.65rem 1.3rem rgba(65, 186, 174, 0.16);
       }
@@ -1110,14 +1110,14 @@ body#venues {
 
     &[aria-pressed="true"] {
       color: var(--accent-ink);
-      background: var(--teal);
-      border-color: var(--teal);
+      background: var(--accent);
+      border-color: var(--accent);
     }
 
     &:hover,
     &:focus-visible {
-      color: var(--teal);
-      border-color: var(--teal);
+      color: var(--accent);
+      border-color: var(--accent);
     }
   }
 }

@@ -22,7 +22,8 @@ textarea {
 }
 
 :root {
-  --teal: #41baae;
+  --brand: #41baae;
+  --accent: var(--brand);
   --accent-ink: #07100e;
   --yellow: #ffd64d;
   --course-level-1: #4ed9d7;
@@ -106,14 +107,14 @@ body {
 
     li:first-child a {
       color: var(--accent-ink);
-      background: var(--teal);
-      border: 1px solid var(--teal);
+      background: var(--accent);
+      border: 1px solid var(--accent);
     }
 
     li:not(:first-child) a {
-      color: var(--teal);
-      background: color-mix(in srgb, var(--teal) 8%, transparent);
-      border: 1px solid color-mix(in srgb, var(--teal) 35%, var(--line));
+      color: var(--accent);
+      background: color-mix(in srgb, var(--accent) 8%, transparent);
+      border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--line));
     }
   }
 }
@@ -233,8 +234,8 @@ body#home {
 
         &[aria-current="true"] {
           color: var(--accent-ink);
-          background: var(--teal);
-          border-color: var(--teal);
+          background: var(--accent);
+          border-color: var(--accent);
         }
       }
     }
@@ -341,7 +342,7 @@ body#about {
         justify-content: center;
         width: 1.85rem;
         height: 1.85rem;
-        color: var(--teal);
+        color: var(--accent);
         background: rgba(65, 186, 174, 0.1);
         border: 0.08rem solid rgba(65, 186, 174, 0.18);
         border-radius: 999rem;
@@ -516,7 +517,7 @@ body#register {
     padding: 0.45rem 0.9rem;
     color: var(--accent-ink);
     text-decoration: none;
-    background: var(--teal);
+    background: var(--accent);
     border-radius: 999rem;
   }
 }

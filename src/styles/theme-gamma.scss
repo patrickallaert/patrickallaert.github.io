@@ -2,7 +2,7 @@
 @use "theme-shared";
 
 :root {
-  --teal: #c65a3d;
+  --accent: #c65a3d;
   --yellow: #efbd6e;
   --page: #f4ede3;
   --panel: rgba(255, 250, 243, 0.9);
@@ -77,24 +77,24 @@ body {
 
       h1,
       h2 {
-        color: color-mix(in srgb, var(--teal) 82%, var(--ink));
+        color: color-mix(in srgb, var(--accent) 82%, var(--ink));
       }
     }
   }
 
   > footer {
     background: linear-gradient(180deg, rgba(198, 90, 61, 0.04), rgba(255, 250, 243, 0.4));
-    border-top: 1px solid color-mix(in srgb, var(--teal) 14%, var(--line));
+    border-top: 1px solid color-mix(in srgb, var(--accent) 14%, var(--line));
 
     .contact-links {
       a {
-        color: color-mix(in srgb, var(--teal) 82%, var(--ink));
+        color: color-mix(in srgb, var(--accent) 82%, var(--ink));
         background: rgba(255, 250, 243, 0.82);
-        border: 1px solid color-mix(in srgb, var(--teal) 22%, var(--line));
+        border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--line));
         box-shadow: 0 0.4rem 1rem rgba(95, 59, 43, 0.06);
         &:hover,
         &:focus-visible {
-          border-color: color-mix(in srgb, var(--teal) 44%, var(--line));
+          border-color: color-mix(in srgb, var(--accent) 44%, var(--line));
         }
       }
     }
@@ -107,7 +107,7 @@ body {
     padding: 0.55rem 0.95rem;
     color: color-mix(in srgb, var(--ink) 76%, #6e5e53);
     background: rgba(255, 250, 243, 0.82);
-    border: 1px solid color-mix(in srgb, var(--teal) 16%, var(--line));
+    border: 1px solid color-mix(in srgb, var(--accent) 16%, var(--line));
     border-radius: 999rem;
     transition: color 150ms ease, border-color 150ms ease, background-color 150ms ease;
 
@@ -118,7 +118,7 @@ body {
 
     &:hover,
     &:focus-visible {
-      border-color: color-mix(in srgb, var(--teal) 54%, var(--line));
+      border-color: color-mix(in srgb, var(--accent) 54%, var(--line));
     }
   }
 }

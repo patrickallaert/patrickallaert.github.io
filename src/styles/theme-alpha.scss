@@ -16,7 +16,7 @@
 }
 
 a {
-  color: var(--teal);
+  color: var(--accent);
   text-underline-offset: 0.16em;
 }
 
@@ -58,7 +58,7 @@ body {
       a[aria-current="page"] {
         font-weight: 700;
         color: var(--accent-ink);
-        background: var(--teal);
+        background: var(--accent);
       }
 
       > a[href="register.html"] {
@@ -104,7 +104,7 @@ body {
       margin: 0;
       color: var(--accent-ink);
       text-align: center;
-      background: var(--teal);
+      background: var(--accent);
       border: 0.08rem solid rgba(23, 50, 75, 0.08);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
@@ -176,12 +176,12 @@ h3 {
 
 h1 {
   font-size: clamp(2rem, 6vw, 3rem);
-  color: var(--teal);
+  color: var(--accent);
 }
 
 h2 {
   font-size: clamp(1.4rem, 4vw, 2rem);
-  color: var(--teal);
+  color: var(--accent);
 }
 
 h3 {
@@ -228,7 +228,7 @@ body#register #intro {
 
     strong {
       font-weight: inherit;
-      color: var(--teal);
+      color: var(--accent);
     }
   }
 
@@ -258,8 +258,8 @@ body#register #intro {
       gap: 0.25rem;
       padding: 0.85rem 0.95rem;
       margin: 0;
-      background: color-mix(in srgb, var(--teal) 7%, #ffffff);
-      border: 0.08rem solid color-mix(in srgb, var(--teal) 22%, var(--line));
+      background: color-mix(in srgb, var(--accent) 7%, #ffffff);
+      border: 0.08rem solid color-mix(in srgb, var(--accent) 22%, var(--line));
       border-radius: calc(var(--radius) - 0.25rem);
     }
 
@@ -477,8 +477,8 @@ body#classes {
 
     &[aria-pressed="true"] {
       color: var(--accent-ink);
-      background: var(--teal);
-      border-color: var(--teal);
+      background: var(--accent);
+      border-color: var(--accent);
     }
   }
 }
