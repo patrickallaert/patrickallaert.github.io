@@ -1,13 +1,19 @@
 @use "common";
 
 :root {
-  --page: #f7fbf9;
-  --panel: #ffffff;
-  --ink: #17324b;
-  --ink-soft: #4d6070;
-  --line: #c7d6df;
-  --focus: #0f6fff;
-  --shadow: 0 0.5rem 1.4rem rgba(23, 50, 75, 0.06);
+  --primary: var(--brand);
+  --primary-ink: #062d29;
+  --primary-soft: color-mix(in srgb, var(--primary) 9%, #ffffff);
+  --primary-line: color-mix(in srgb, var(--primary) 28%, #d5e9e5);
+  --accent: var(--primary);
+  --accent-ink: var(--primary-ink);
+  --page: color-mix(in srgb, var(--primary) 8%, #f8fffc);
+  --panel: color-mix(in srgb, var(--primary) 4%, #ffffff);
+  --ink: #102f2b;
+  --ink-soft: color-mix(in srgb, var(--ink) 68%, var(--primary));
+  --line: var(--primary-line);
+  --focus: var(--primary);
+  --shadow: 0 0.5rem 1.4rem color-mix(in srgb, var(--primary) 14%, transparent);
   --radius: 1rem;
   --font-body: "Avenir Next", Avenir, "Segoe UI", sans-serif;
   --body-line-height: 1.5;
@@ -30,6 +36,10 @@ body > footer > div
 }
 
 body {
+  background:
+    radial-gradient(circle at 8% 0%, color-mix(in srgb, var(--primary) 18%, transparent) 0, color-mix(in srgb, var(--primary) 18%, transparent) 14rem, transparent 30rem),
+    linear-gradient(180deg, color-mix(in srgb, var(--primary) 7%, #ffffff), var(--page));
+
   > header {
     padding: 1rem 0 0;
 
@@ -56,23 +66,53 @@ body {
       }
 
       a[aria-current="page"] {
+        position: relative;
         font-weight: 700;
-        color: var(--accent-ink);
-        background: var(--accent);
+        color: color-mix(in srgb, var(--primary) 58%, var(--ink));
+        background: color-mix(in srgb, var(--primary) 8%, #ffffff);
+        border: 0.08rem solid color-mix(in srgb, var(--primary) 28%, transparent);
+
+        &::before {
+          width: 0.42rem;
+          height: 0.42rem;
+          margin-right: 0.45rem;
+          content: "";
+          background: var(--primary);
+          border-radius: 999rem;
+        }
       }
 
       > a[href="register.html"] {
         justify-self: start;
         font-weight: 700;
-        color: #ffffff;
+        color: var(--primary-ink);
         letter-spacing: 0.01em;
-        background: linear-gradient(135deg, #17324b, #245158);
-        border: 0.08rem solid rgba(23, 50, 75, 0.18);
-        box-shadow: 0 0.8rem 1.6rem rgba(23, 50, 75, 0.12);
+        background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 94%, #ffffff), color-mix(in srgb, var(--primary) 72%, #d6fff8));
+        border: 0.08rem solid color-mix(in srgb, var(--primary) 46%, var(--primary-ink));
+        box-shadow: 0 0.8rem 1.6rem color-mix(in srgb, var(--primary) 22%, transparent);
 
         &:hover,
         &:focus-visible {
-          background: linear-gradient(135deg, #10283d, #1f464c);
+          background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 88%, #ffffff), color-mix(in srgb, var(--primary) 66%, #d6fff8));
+          transform: translateY(-1px);
+        }
+
+        &[aria-current="page"] {
+          color: #ffffff;
+          background: var(--primary-ink);
+          border-color: var(--primary-ink);
+          box-shadow:
+            0 0 0 0.18rem color-mix(in srgb, var(--primary) 26%, transparent),
+            0 0.8rem 1.6rem color-mix(in srgb, var(--primary) 22%, transparent);
+
+          &::before {
+            content: none;
+          }
+
+          &:hover,
+          &:focus-visible {
+            background: color-mix(in srgb, var(--primary-ink) 88%, var(--primary));
+          }
         }
       }
     }
@@ -105,7 +145,7 @@ body {
       color: var(--accent-ink);
       text-align: center;
       background: var(--accent);
-      border: 0.08rem solid rgba(23, 50, 75, 0.08);
+      border: 0.08rem solid color-mix(in srgb, var(--primary) 40%, transparent);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
 
@@ -154,10 +194,10 @@ body {
         align-items: center;
         min-height: 2.4rem;
         padding: 0.4rem 0.8rem;
-        color: color-mix(in srgb, var(--accent) 34%, var(--ink));
+        color: color-mix(in srgb, var(--primary) 56%, var(--ink));
         text-decoration: none;
-        background: rgba(65, 186, 174, 0.08);
-        border: 0.08rem solid rgba(65, 186, 174, 0.16);
+        background: color-mix(in srgb, var(--primary) 10%, #ffffff);
+        border: 0.08rem solid color-mix(in srgb, var(--primary) 24%, transparent);
         border-radius: 999rem;
       }
 
@@ -259,8 +299,8 @@ body#register #intro {
       gap: 0.25rem;
       padding: 0.85rem 0.95rem;
       margin: 0;
-      background: color-mix(in srgb, var(--accent) 7%, #ffffff);
-      border: 0.08rem solid color-mix(in srgb, var(--accent) 22%, var(--line));
+      background: var(--primary-soft);
+      border: 0.08rem solid color-mix(in srgb, var(--primary) 22%, var(--line));
       border-radius: calc(var(--radius) - 0.25rem);
     }
 
@@ -283,7 +323,7 @@ body#register #intro {
     margin: 0;
     overflow: hidden;
     border-radius: calc(var(--radius) - 0.25rem);
-    box-shadow: 0 1rem 2rem rgba(23, 50, 75, 0.12);
+    box-shadow: 0 1rem 2rem color-mix(in srgb, var(--primary) 16%, transparent);
 
     img {
       display: block;
@@ -302,7 +342,7 @@ body#register #intro {
       max-width: min(20rem, calc(100% - 1.7rem));
       padding: 0.8rem 0.9rem;
       color: #ffffff;
-      background: rgba(23, 50, 75, 0.72);
+      background: color-mix(in srgb, var(--ink) 72%, var(--primary));
       border-radius: calc(var(--radius) - 0.35rem);
 
       span {
@@ -395,7 +435,14 @@ body#venues #intro > figure img {
 }
 
 body#home #video {
-  background: linear-gradient(180deg, rgba(23, 50, 75, 0.98), rgba(36, 81, 88, 0.98));
+  color: var(--primary-ink);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--primary) 76%, #ffffff), color-mix(in srgb, var(--primary) 54%, #e5fffb));
+
+  h2,
+  p,
+  a {
+    color: var(--primary-ink);
+  }
 }
 
 body#classes {
@@ -459,7 +506,7 @@ body#classes {
   max-width: var(--max);
   padding: 1rem 1.25rem 0;
   margin: 0 auto 2rem;
-  border-top: 0.08rem dashed rgba(65, 186, 174, 0.16);
+  border-top: 0.08rem dashed color-mix(in srgb, var(--primary) 24%, transparent);
 
   .theme-switch-group {
     display: flex;
@@ -472,8 +519,8 @@ body#classes {
     min-height: 2.4rem;
     padding: 0.4rem 0.75rem;
     color: var(--ink-soft);
-    background: rgba(65, 186, 174, 0.08);
-    border: 0.08rem solid rgba(65, 186, 174, 0.16);
+    background: color-mix(in srgb, var(--primary) 10%, #ffffff);
+    border: 0.08rem solid color-mix(in srgb, var(--primary) 24%, transparent);
     border-radius: 999rem;
 
     &[aria-pressed="true"] {

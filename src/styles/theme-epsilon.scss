@@ -1,0 +1,148 @@
+@use "common";
+@use "theme-shared";
+
+:root {
+  --accent: var(--brand);
+  --accent-ink: #072422;
+  --yellow: #c9f4ff;
+  --page: #effaf6;
+  --panel: color-mix(in srgb, var(--brand) 8%, #ffffff);
+  --ink: #10211f;
+  --ink-soft: color-mix(in srgb, var(--ink) 66%, var(--brand));
+  --line: color-mix(in srgb, var(--brand) 24%, #dbece8);
+  --focus: var(--brand);
+  --shadow: 0 1.2rem 3.5rem rgba(10, 70, 64, 0.1);
+  --radius: 0.25rem;
+  --main-top-padding: 14.75rem;
+}
+
+body {
+  background:
+    radial-gradient(circle at 12% 10%, color-mix(in srgb, var(--brand) 28%, transparent) 0, color-mix(in srgb, var(--brand) 28%, transparent) 16rem, transparent 32rem),
+    radial-gradient(circle at 90% 16%, rgba(201, 244, 255, 0.72) 0, rgba(201, 244, 255, 0.72) 12rem, transparent 28rem),
+    linear-gradient(180deg, #f7fffb 0%, var(--page) 42%, color-mix(in srgb, var(--brand) 12%, #ffffff) 100%);
+
+  header {
+    background: color-mix(in srgb, var(--brand) 14%, rgba(255, 255, 255, 0.84));
+    border-bottom: 1px solid color-mix(in srgb, var(--brand) 28%, transparent);
+
+    nav {
+      a {
+        color: color-mix(in srgb, var(--ink) 76%, var(--brand));
+
+        &[aria-current="page"] {
+          color: var(--ink);
+          border-color: var(--brand);
+        }
+      }
+
+      > a[href="register.html"] {
+        color: var(--accent-ink);
+        background: linear-gradient(135deg, color-mix(in srgb, var(--brand) 94%, #ffffff), color-mix(in srgb, var(--brand) 70%, var(--yellow)));
+        box-shadow: 0 0.8rem 1.7rem color-mix(in srgb, var(--brand) 22%, transparent);
+      }
+    }
+  }
+
+  > main {
+    h1,
+    h2 {
+      color: color-mix(in srgb, var(--brand) 72%, var(--ink));
+    }
+
+    > #intro {
+      > h1 {
+        strong {
+          color: color-mix(in srgb, var(--brand) 76%, var(--ink));
+        }
+      }
+
+      > ul,
+      > ol {
+        li {
+          background: color-mix(in srgb, var(--brand) 8%, rgba(255, 255, 255, 0.86));
+          border-color: color-mix(in srgb, var(--brand) 22%, var(--line));
+          box-shadow: 0 0.8rem 1.8rem color-mix(in srgb, var(--brand) 8%, transparent);
+        }
+      }
+
+      > figure {
+        border: 1px solid color-mix(in srgb, var(--brand) 22%, rgba(255, 255, 255, 0.8));
+        box-shadow: 0 2rem 5rem color-mix(in srgb, var(--brand) 18%, transparent);
+
+        figcaption {
+          background: color-mix(in srgb, var(--ink) 58%, var(--brand));
+        }
+      }
+    }
+
+    > figure:has(> blockquote) {
+      background:
+        linear-gradient(135deg, color-mix(in srgb, var(--brand) 18%, #ffffff), rgba(255, 255, 255, 0.82));
+      border-color: var(--brand);
+    }
+  }
+
+  > footer {
+    background:
+      linear-gradient(180deg, color-mix(in srgb, var(--brand) 12%, #ffffff), color-mix(in srgb, var(--brand) 22%, #ffffff));
+    border-color: color-mix(in srgb, var(--brand) 32%, transparent);
+  }
+}
+
+body#home {
+  #home-gallery {
+    > div {
+      border: 1px solid color-mix(in srgb, var(--brand) 26%, rgba(255, 255, 255, 0.8));
+      box-shadow: 0 2rem 5rem color-mix(in srgb, var(--brand) 18%, transparent);
+    }
+  }
+
+  #video {
+    h2 {
+      color: color-mix(in srgb, var(--brand) 76%, var(--ink));
+    }
+  }
+}
+
+body#classes {
+  .trimester-summary {
+    span:first-child {
+      color: var(--accent-ink);
+      background: color-mix(in srgb, var(--brand) 68%, var(--yellow));
+    }
+  }
+
+  .schedule-days {
+    > article {
+      > h4 {
+        color: color-mix(in srgb, var(--brand) 66%, var(--ink));
+        background: color-mix(in srgb, var(--brand) 9%, rgba(255, 255, 255, 0.76));
+        border-color: color-mix(in srgb, var(--brand) 28%, transparent);
+      }
+
+      > section > h5 {
+        color: color-mix(in srgb, var(--brand) 76%, var(--ink));
+      }
+    }
+
+    article.class {
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: 0 1rem 2.2rem color-mix(in srgb, var(--brand) 8%, transparent);
+
+      > p:first-of-type {
+        color: color-mix(in srgb, var(--brand) 62%, var(--ink-soft));
+      }
+    }
+  }
+}
+
+.theme-switch-panel {
+  button {
+    &[aria-pressed="true"] {
+      color: var(--accent-ink);
+      background: color-mix(in srgb, var(--brand) 70%, var(--yellow));
+      border-color: transparent;
+    }
+  }
+}
