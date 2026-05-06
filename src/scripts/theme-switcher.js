@@ -1,5 +1,5 @@
 (() => {
-    const themes = ["alpha", "beta", "gamma", "delta", "epsilon", "zeta"];
+    const themes = ["beta", "delta", "epsilon", "zeta"];
     const labels = { alpha: "Alpha", beta: "Beta", gamma: "Gamma", delta: "Delta", epsilon: "Epsilon", zeta: "Zeta" };
     let activeTheme = themes.includes(sessionStorage.getItem("conexao-theme")) ? sessionStorage.getItem("conexao-theme") : "beta";
     let buttons = [];
