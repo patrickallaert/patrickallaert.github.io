@@ -2,7 +2,13 @@
 @use "theme-shared";
 
 :root {
-  --accent: #45f0c7;
+  --primary: #45f0c7;
+  --primary-text: var(--primary);
+  --primary-ink: #07100e;
+  --primary-soft: rgba(69, 240, 199, 0.12);
+  --primary-line: rgba(125, 246, 216, 0.28);
+  --accent: var(--primary);
+  --accent-ink: var(--primary-ink);
   --yellow: #ffd166;
   --page: #07090f;
   --panel: rgba(10, 16, 26, 0.9);
@@ -105,7 +111,7 @@ body {
 
       > a[href="register.html"] {
         padding: 0.66rem 1.35rem;
-        color: #07100e;
+        color: var(--primary-ink);
         background: linear-gradient(135deg, var(--accent), var(--yellow));
         box-shadow:
           0 0.9rem 2rem rgba(0, 0, 0, 0.22),

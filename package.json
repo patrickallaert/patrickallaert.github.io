@@ -8,6 +8,7 @@
     "build:js": "terser src/scripts/theme-switcher.js --compress --mangle --output site/assets/app.js",
     "build": "npm run build:css && npm run build:js",
     "lint:css": "stylelint \"src/styles/**/*.scss\"",
+    "test:contrast": "node scripts/check-contrast.js",
     "watch:css": "sass --watch src/styles/theme-alpha.scss:site/assets/theme-alpha.css src/styles/theme-beta.scss:site/assets/theme-beta.css src/styles/theme-gamma.scss:site/assets/theme-gamma.css src/styles/theme-delta.scss:site/assets/theme-delta.css src/styles/theme-epsilon.scss:site/assets/theme-epsilon.css src/styles/theme-zeta.scss:site/assets/theme-zeta.css"
   },
   "devDependencies": {

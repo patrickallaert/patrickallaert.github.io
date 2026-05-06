@@ -23,8 +23,13 @@ textarea {
 
 :root {
   --brand: #41baae;
-  --accent: var(--brand);
-  --accent-ink: #07100e;
+  --primary: var(--brand);
+  --primary-text: #0f766e;
+  --primary-ink: #062d29;
+  --primary-soft: color-mix(in srgb, var(--primary) 10%, #ffffff);
+  --primary-line: color-mix(in srgb, var(--primary) 28%, #d5e9e5);
+  --accent: var(--primary-text);
+  --accent-ink: #ffffff;
   --yellow: #ffd64d;
   --course-level-1: #4ed9d7;
   --course-level-2: #2f8cff;
@@ -207,7 +212,7 @@ body#home {
         padding: 0.35rem 0.8rem;
         color: inherit;
         background: rgba(255, 255, 255, 0.92);
-        border: 0.08rem solid rgba(65, 186, 174, 0.18);
+        border: 0.08rem solid color-mix(in srgb, var(--primary) 18%, transparent);
         border-radius: 999rem;
       }
     }
@@ -229,7 +234,7 @@ body#home {
         padding: 0;
         color: inherit;
         background: rgba(255, 255, 255, 0.92);
-        border: 0.08rem solid rgba(65, 186, 174, 0.18);
+        border: 0.08rem solid color-mix(in srgb, var(--primary) 18%, transparent);
         border-radius: 999rem;
 
         &[aria-current="true"] {
@@ -282,8 +287,8 @@ body#about {
       align-content: start;
       height: 100%;
       padding: 1rem;
-      background: color-mix(in srgb, #ffffff 88%, rgba(65, 186, 174, 0.06));
-      border: 0.08rem solid color-mix(in srgb, var(--line) 88%, rgba(65, 186, 174, 0.12));
+      background: color-mix(in srgb, #ffffff 88%, color-mix(in srgb, var(--primary) 6%, transparent));
+      border: 0.08rem solid color-mix(in srgb, var(--line) 88%, color-mix(in srgb, var(--primary) 12%, transparent));
       border-radius: calc(var(--radius) - 0.08rem);
     }
   }
@@ -295,7 +300,7 @@ body#about {
       aspect-ratio: 1;
       padding: 0.35rem;
       margin: 0;
-      background: linear-gradient(135deg, rgba(65, 186, 174, 0.18), rgba(255, 248, 235, 0.9));
+      background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 18%, transparent), rgba(255, 248, 235, 0.9));
       border-radius: 999rem;
       box-shadow: 0 0.65rem 1.2rem rgba(17, 24, 39, 0.07);
 
@@ -343,8 +348,8 @@ body#about {
         width: 1.85rem;
         height: 1.85rem;
         color: var(--accent);
-        background: rgba(65, 186, 174, 0.1);
-        border: 0.08rem solid rgba(65, 186, 174, 0.18);
+        background: color-mix(in srgb, var(--primary) 10%, transparent);
+        border: 0.08rem solid color-mix(in srgb, var(--primary) 18%, transparent);
         border-radius: 999rem;
         transition:
                 transform 160ms ease,
@@ -353,8 +358,8 @@ body#about {
 
         &:hover,
         &:focus-visible {
-          background: rgba(65, 186, 174, 0.18);
-          border-color: rgba(65, 186, 174, 0.35);
+          background: color-mix(in srgb, var(--primary) 18%, transparent);
+          border-color: color-mix(in srgb, var(--primary) 35%, transparent);
           transform: translateY(-0.05rem);
         }
 
@@ -623,7 +628,7 @@ body#classes {
       display: grid;
       align-content: start;
       height: 100%;
-      background: rgba(65, 186, 174, 0.05);
+      background: color-mix(in srgb, var(--primary) 5%, transparent);
       border: 0.08rem solid var(--line);
       border-radius: 0.8rem;
       box-shadow: var(--shadow);

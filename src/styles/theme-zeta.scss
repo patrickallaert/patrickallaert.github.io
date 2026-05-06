@@ -2,11 +2,12 @@
 
 :root {
   --primary: var(--brand);
+  --primary-text: #0f766e;
   --primary-ink: #062d29;
   --primary-soft: color-mix(in srgb, var(--primary) 9%, #ffffff);
   --primary-line: color-mix(in srgb, var(--primary) 28%, #d5e9e5);
-  --accent: var(--primary);
-  --accent-ink: var(--primary-ink);
+  --accent: var(--primary-text);
+  --accent-ink: #ffffff;
   --page: color-mix(in srgb, var(--primary) 8%, #f8fffc);
   --panel: color-mix(in srgb, var(--primary) 4%, #ffffff);
   --ink: #102f2b;

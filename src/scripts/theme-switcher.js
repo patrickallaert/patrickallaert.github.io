@@ -1,7 +1,10 @@
 (() => {
-    const themes = ["beta", "delta", "epsilon", "zeta"];
+    const activeThemes = ["beta", "delta", "epsilon", "zeta"];
+    const inactiveThemes = ["alpha", "gamma"];
+    const themes = activeThemes;
     const labels = { alpha: "Alpha", beta: "Beta", gamma: "Gamma", delta: "Delta", epsilon: "Epsilon", zeta: "Zeta" };
-    let activeTheme = themes.includes(sessionStorage.getItem("conexao-theme")) ? sessionStorage.getItem("conexao-theme") : "beta";
+    const isSelectableTheme = (theme) => themes.includes(theme) && !inactiveThemes.includes(theme);
+    let activeTheme = isSelectableTheme(sessionStorage.getItem("conexao-theme")) ? sessionStorage.getItem("conexao-theme") : "beta";
     let buttons = [];
     const link = document.createElement("link");
     link.id = "theme-stylesheet";
@@ -9,7 +12,7 @@
     document.head.append(link);
 
     const applyTheme = (theme) => {
-        activeTheme = themes.includes(theme) ? theme : "beta";
+        activeTheme = isSelectableTheme(theme) ? theme : "beta";
         document.documentElement.dataset.theme = activeTheme;
         link.href = `assets/theme-${activeTheme}.css`;
         sessionStorage.setItem("conexao-theme", activeTheme);

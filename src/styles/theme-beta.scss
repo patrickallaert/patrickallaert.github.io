@@ -2,13 +2,42 @@
 @use "theme-shared";
 
 :root {
+  --primary: var(--brand);
+  --primary-text: #0f766e;
+  --primary-ink: #062d29;
+  --primary-soft: color-mix(in srgb, var(--primary) 10%, #ffffff);
+  --primary-line: color-mix(in srgb, var(--primary) 28%, #d5e9e5);
+  --accent: var(--primary-text);
+  --accent-ink: #ffffff;
   --page: #f5faf8;
   --panel: transparent;
   --ink: #171d1c;
   --ink-soft: rgba(23, 29, 28, 0.6);
   --line: rgba(188, 201, 198, 0.2);
-  --focus: #41baae;
+  --focus: var(--accent);
   --shadow: 0 12px 40px rgba(23, 29, 28, 0.06);
   --radius: 0.25rem;
   --main-top-padding: 14.75rem;
+}
+
+body {
+  > main#main > #intro > figure {
+    figcaption {
+      background: rgba(23, 29, 28, 0.72);
+
+      span {
+        color: rgba(255, 255, 255, 0.9);
+      }
+    }
+  }
+}
+
+body#classes {
+  .schedule-days {
+    article.class {
+      > p:first-of-type {
+        color: color-mix(in srgb, var(--accent) 72%, var(--ink));
+      }
+    }
+  }
 }
