@@ -22,7 +22,35 @@ Watch the stylesheet during edits:
 npm run watch:css
 ```
 
+Run the full local verification suite:
+
+```bash
+npm run verify
+```
+
+This runs SCSS linting, rebuilds generated assets, and checks text contrast on the active themes. It expects the local static server to be available at `http://127.0.0.1:8000/`.
+
+Run only the contrast audit:
+
+```bash
+npm run test:contrast
+```
+
+The contrast audit can be configured with environment variables:
+
+```bash
+BASE_URL=http://127.0.0.1:8000 THEMES=beta,zeta PAGES=index.html,classes.html npm run test:contrast
+```
+
 The static pages live in `site/`.
+
+Generated assets live in `site/assets/` and are intentionally not tracked:
+
+- `site/assets/app.js`
+- `site/assets/theme-*.css`
+- `site/assets/theme-*.css.map`
+
+Regenerate them with `npm run build`.
 
 Extract the source material into structured Markdown:
 
@@ -37,7 +65,21 @@ Extract the source material into structured Markdown:
 - `src/data/`: small structured data files shared across the site
 - `src/styles/`: SCSS source
 - `docs/`: product and visual brief
+- `design/`: visual system notes, including theme token definitions
 - `site-source/`: collected material from the current live site
+
+## Themes
+
+The selectable themes are currently:
+
+- Beta
+- Delta
+- Epsilon
+- Zeta
+
+Alpha and Gamma remain in the source/build as inactive reference themes, but are not selectable in the public theme switcher.
+
+Theme tokens are documented in `design/theme-tokens.md`.
 
 ## Term state model
 
