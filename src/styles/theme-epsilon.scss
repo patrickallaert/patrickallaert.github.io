@@ -7,11 +7,18 @@
   --primary-ink: #072422;
   --primary-soft: color-mix(in srgb, var(--primary) 10%, #ffffff);
   --primary-line: color-mix(in srgb, var(--primary) 28%, #dbece8);
+  --primary-wash: color-mix(in srgb, var(--primary) 8%, rgba(255, 255, 255, 0.86));
+  --primary-shadow: color-mix(in srgb, var(--primary) 18%, transparent);
+  --primary-strong-text: color-mix(in srgb, var(--primary) 76%, var(--ink));
+  --primary-title: color-mix(in srgb, var(--primary) 72%, var(--ink));
+  --primary-chip: color-mix(in srgb, var(--primary) 68%, var(--yellow));
   --accent: var(--primary-text);
   --accent-ink: #ffffff;
   --yellow: #c9f4ff;
+  --surface: #ffffff;
+  --surface-veil: rgba(255, 255, 255, 0.86);
   --page: #effaf6;
-  --panel: color-mix(in srgb, var(--primary) 8%, #ffffff);
+  --panel: var(--primary-wash);
   --ink: #10211f;
   --ink-soft: color-mix(in srgb, var(--ink) 66%, var(--primary));
   --line: var(--primary-line);
@@ -25,7 +32,7 @@ body {
   background:
     radial-gradient(circle at 12% 10%, color-mix(in srgb, var(--primary) 28%, transparent) 0, color-mix(in srgb, var(--primary) 28%, transparent) 16rem, transparent 32rem),
     radial-gradient(circle at 90% 16%, rgba(201, 244, 255, 0.72) 0, rgba(201, 244, 255, 0.72) 12rem, transparent 28rem),
-    linear-gradient(180deg, #f7fffb 0%, var(--page) 42%, color-mix(in srgb, var(--primary) 12%, #ffffff) 100%);
+    linear-gradient(180deg, #f7fffb 0%, var(--page) 42%, color-mix(in srgb, var(--primary) 12%, var(--surface)) 100%);
 
   header {
     background: color-mix(in srgb, var(--primary) 14%, rgba(255, 255, 255, 0.84));
@@ -43,7 +50,7 @@ body {
 
       > a[href="register.html"] {
         color: var(--primary-ink);
-        background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 94%, #ffffff), color-mix(in srgb, var(--primary) 70%, var(--yellow)));
+        background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 94%, var(--surface)), color-mix(in srgb, var(--primary) 70%, var(--yellow)));
         box-shadow: 0 0.8rem 1.7rem color-mix(in srgb, var(--primary) 22%, transparent);
       }
     }
@@ -52,20 +59,20 @@ body {
   > main {
     h1,
     h2 {
-      color: color-mix(in srgb, var(--primary) 72%, var(--ink));
+      color: var(--primary-title);
     }
 
     > #intro {
       > h1 {
         strong {
-          color: color-mix(in srgb, var(--primary) 76%, var(--ink));
+          color: var(--primary-strong-text);
         }
       }
 
       > ul,
       > ol {
         li {
-          background: color-mix(in srgb, var(--primary) 8%, rgba(255, 255, 255, 0.86));
+          background: var(--primary-wash);
           border-color: color-mix(in srgb, var(--primary) 22%, var(--line));
           box-shadow: 0 0.8rem 1.8rem color-mix(in srgb, var(--primary) 8%, transparent);
         }
@@ -73,7 +80,7 @@ body {
 
       > figure {
         border: 1px solid color-mix(in srgb, var(--primary) 22%, rgba(255, 255, 255, 0.8));
-        box-shadow: 0 2rem 5rem color-mix(in srgb, var(--primary) 18%, transparent);
+        box-shadow: 0 2rem 5rem var(--primary-shadow);
 
         figcaption {
           background: color-mix(in srgb, var(--ink) 58%, var(--primary));
@@ -83,14 +90,14 @@ body {
 
     > figure:has(> blockquote) {
       background:
-        linear-gradient(135deg, color-mix(in srgb, var(--primary) 18%, #ffffff), rgba(255, 255, 255, 0.82));
+        linear-gradient(135deg, color-mix(in srgb, var(--primary) 18%, var(--surface)), rgba(255, 255, 255, 0.82));
       border-color: var(--primary);
     }
   }
 
   > footer {
     background:
-      linear-gradient(180deg, color-mix(in srgb, var(--primary) 12%, #ffffff), color-mix(in srgb, var(--primary) 22%, #ffffff));
+      linear-gradient(180deg, color-mix(in srgb, var(--primary) 12%, var(--surface)), color-mix(in srgb, var(--primary) 22%, var(--surface)));
     border-color: color-mix(in srgb, var(--primary) 32%, transparent);
   }
 }
@@ -99,13 +106,13 @@ body#home {
   #home-gallery {
     > div {
       border: 1px solid color-mix(in srgb, var(--primary) 26%, rgba(255, 255, 255, 0.8));
-      box-shadow: 0 2rem 5rem color-mix(in srgb, var(--primary) 18%, transparent);
+      box-shadow: 0 2rem 5rem var(--primary-shadow);
     }
   }
 
   #video {
     h2 {
-      color: color-mix(in srgb, var(--primary) 76%, var(--ink));
+      color: var(--primary-strong-text);
     }
   }
 }
@@ -114,7 +121,7 @@ body#classes {
   .trimester-summary {
     span:first-child {
       color: var(--primary-ink);
-      background: color-mix(in srgb, var(--primary) 68%, var(--yellow));
+      background: var(--primary-chip);
     }
   }
 
@@ -127,12 +134,12 @@ body#classes {
       }
 
       > section > h5 {
-        color: color-mix(in srgb, var(--primary) 76%, var(--ink));
+        color: var(--primary-strong-text);
       }
     }
 
     article.class {
-      background: rgba(255, 255, 255, 0.86);
+      background: var(--surface-veil);
       box-shadow: 0 1rem 2.2rem color-mix(in srgb, var(--primary) 8%, transparent);
 
       > p:first-of-type {

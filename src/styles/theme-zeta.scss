@@ -6,8 +6,14 @@
   --primary-ink: #062d29;
   --primary-soft: color-mix(in srgb, var(--primary) 9%, #ffffff);
   --primary-line: color-mix(in srgb, var(--primary) 28%, #d5e9e5);
+  --primary-glow: color-mix(in srgb, var(--primary) 18%, transparent);
+  --primary-shadow: color-mix(in srgb, var(--primary) 22%, transparent);
+  --primary-active: color-mix(in srgb, var(--primary) 8%, #ffffff);
+  --primary-cta: linear-gradient(135deg, color-mix(in srgb, var(--primary) 94%, #ffffff), color-mix(in srgb, var(--primary) 72%, #d6fff8));
+  --primary-cta-hover: linear-gradient(135deg, color-mix(in srgb, var(--primary) 88%, #ffffff), color-mix(in srgb, var(--primary) 66%, #d6fff8));
   --accent: var(--primary-text);
   --accent-ink: #ffffff;
+  --surface: #ffffff;
   --page: color-mix(in srgb, var(--primary) 8%, #f8fffc);
   --panel: color-mix(in srgb, var(--primary) 4%, #ffffff);
   --ink: #102f2b;
@@ -38,8 +44,8 @@ body > footer > div
 
 body {
   background:
-    radial-gradient(circle at 8% 0%, color-mix(in srgb, var(--primary) 18%, transparent) 0, color-mix(in srgb, var(--primary) 18%, transparent) 14rem, transparent 30rem),
-    linear-gradient(180deg, color-mix(in srgb, var(--primary) 7%, #ffffff), var(--page));
+    radial-gradient(circle at 8% 0%, var(--primary-glow) 0, var(--primary-glow) 14rem, transparent 30rem),
+    linear-gradient(180deg, color-mix(in srgb, var(--primary) 7%, var(--surface)), var(--page));
 
   > header {
     padding: 1rem 0 0;
@@ -70,7 +76,7 @@ body {
         position: relative;
         font-weight: 700;
         color: color-mix(in srgb, var(--primary) 58%, var(--ink));
-        background: color-mix(in srgb, var(--primary) 8%, #ffffff);
+        background: var(--primary-active);
         border: 0.08rem solid color-mix(in srgb, var(--primary) 28%, transparent);
 
         &::before {
@@ -88,13 +94,13 @@ body {
         font-weight: 700;
         color: var(--primary-ink);
         letter-spacing: 0.01em;
-        background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 94%, #ffffff), color-mix(in srgb, var(--primary) 72%, #d6fff8));
+        background: var(--primary-cta);
         border: 0.08rem solid color-mix(in srgb, var(--primary) 46%, var(--primary-ink));
-        box-shadow: 0 0.8rem 1.6rem color-mix(in srgb, var(--primary) 22%, transparent);
+        box-shadow: 0 0.8rem 1.6rem var(--primary-shadow);
 
         &:hover,
         &:focus-visible {
-          background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 88%, #ffffff), color-mix(in srgb, var(--primary) 66%, #d6fff8));
+          background: var(--primary-cta-hover);
           transform: translateY(-1px);
         }
 
@@ -104,7 +110,7 @@ body {
           border-color: var(--primary-ink);
           box-shadow:
             0 0 0 0.18rem color-mix(in srgb, var(--primary) 26%, transparent),
-            0 0.8rem 1.6rem color-mix(in srgb, var(--primary) 22%, transparent);
+            0 0.8rem 1.6rem var(--primary-shadow);
 
           &::before {
             content: none;
@@ -197,7 +203,7 @@ body {
         padding: 0.4rem 0.8rem;
         color: color-mix(in srgb, var(--primary) 56%, var(--ink));
         text-decoration: none;
-        background: color-mix(in srgb, var(--primary) 10%, #ffffff);
+        background: color-mix(in srgb, var(--primary) 10%, var(--surface));
         border: 0.08rem solid color-mix(in srgb, var(--primary) 24%, transparent);
         border-radius: 999rem;
       }
@@ -437,7 +443,7 @@ body#venues #intro > figure img {
 
 body#home #video {
   color: var(--primary-ink);
-  background: linear-gradient(180deg, color-mix(in srgb, var(--primary) 76%, #ffffff), color-mix(in srgb, var(--primary) 54%, #e5fffb));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--primary) 76%, var(--surface)), color-mix(in srgb, var(--primary) 54%, #e5fffb));
 
   h2,
   p,
@@ -520,7 +526,7 @@ body#classes {
     min-height: 2.4rem;
     padding: 0.4rem 0.75rem;
     color: var(--ink-soft);
-    background: color-mix(in srgb, var(--primary) 10%, #ffffff);
+    background: color-mix(in srgb, var(--primary) 10%, var(--surface));
     border: 0.08rem solid color-mix(in srgb, var(--primary) 24%, transparent);
     border-radius: 999rem;
 
