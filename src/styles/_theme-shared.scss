@@ -270,7 +270,7 @@ body {
         transform: translateY(-1px);
       }
 
-      svg {
+      a::before {
         display: block;
         flex: none;
         width: 1.08rem;
