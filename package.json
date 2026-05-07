@@ -4,9 +4,10 @@
   "version": "0.1.0",
   "description": "Static site rebuild for Conexao",
   "scripts": {
+    "build:html": "node scripts/build-classes.js",
     "build:css": "sass --no-source-map src/styles/theme-alpha.scss site/assets/theme-alpha.css && sass --no-source-map src/styles/theme-beta.scss site/assets/theme-beta.css && sass --no-source-map src/styles/theme-gamma.scss site/assets/theme-gamma.css && sass --no-source-map src/styles/theme-epsilon.scss site/assets/theme-epsilon.css && sass --no-source-map src/styles/theme-zeta.scss site/assets/theme-zeta.css && sass --no-source-map src/styles/theme-eta.scss site/assets/theme-eta.css",
     "build:js": "terser src/scripts/theme-switcher.js --compress --mangle --output site/assets/app.js",
-    "build": "npm run build:css && npm run build:js",
+    "build": "npm run build:html && npm run build:css && npm run build:js",
     "lint:css": "stylelint \"src/styles/**/*.scss\"",
     "test:contrast": "node scripts/check-contrast.js",
     "verify": "npm run lint:css && npm run build && npm run test:contrast",

@@ -31,7 +31,8 @@ This file captures product and content decisions for the rebuild so future sessi
   - About
   - Contact
   - Legal
-- Content will initially be maintained directly by the user.
+- Most content will initially be maintained directly by the user.
+- Class schedule data is maintained in `src/data/classes.json` and rendered into the static Classes page during the build.
 - Current registration flow should be kept for V1.
 - Registration is not permanently open.
 - Registration, when open, should target the next trimester only.
@@ -52,7 +53,7 @@ This file captures product and content decisions for the rebuild so future sessi
   - prefer `/classes/` over `/classes.html`
   - store secondary pages as `section/index.html`
   - use root-relative internal links and asset paths
-- Class content should be authored directly in HTML for V1.
+- Class schedule content should be authored in structured data for V1.
 - Class presentation should use a weekly grid only, not a calendar application/embed as the primary model.
 - HTML quality matters:
   - semantic structure is important

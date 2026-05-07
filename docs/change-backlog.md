@@ -35,6 +35,8 @@ Acceptance criteria:
 
 ### 2. Class Data Model
 
+Status: implemented for the Classes timetable. The data model and helper functions already support visible trimester sets, level lookups, and venue lookups; Levels and Venues can be wired to this data in a later step.
+
 Priority: high
 
 Decide whether class information remains authored in HTML or moves into a structured data file. This is the key decision before building filters, level-specific links, venue-specific listings, or embedded videos connected to levels.
