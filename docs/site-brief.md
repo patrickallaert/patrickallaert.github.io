@@ -48,6 +48,10 @@ This file captures product and content decisions for the rebuild so future sessi
   - no important text embedded in images
   - readable forms
 - Preferred implementation is a simple static site.
+- Public URLs should be extensionless and directory-based:
+  - prefer `/classes/` over `/classes.html`
+  - store secondary pages as `section/index.html`
+  - use root-relative internal links and asset paths
 - Class content should be authored directly in HTML for V1.
 - Class presentation should use a weekly grid only, not a calendar application/embed as the primary model.
 - HTML quality matters:

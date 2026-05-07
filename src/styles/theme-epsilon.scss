@@ -48,7 +48,7 @@ body {
         }
       }
 
-      > a[href="register.html"] {
+      > a[href="/register/"] {
         color: var(--primary-ink);
         background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 94%, var(--surface)), color-mix(in srgb, var(--primary) 70%, var(--yellow)));
         box-shadow: 0 0.8rem 1.7rem color-mix(in srgb, var(--primary) 22%, transparent);

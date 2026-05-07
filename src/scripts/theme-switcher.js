@@ -14,7 +14,7 @@
     const applyTheme = (theme) => {
         activeTheme = isSelectableTheme(theme) ? theme : "beta";
         document.documentElement.dataset.theme = activeTheme;
-        link.href = `assets/theme-${activeTheme}.css`;
+        link.href = `/assets/theme-${activeTheme}.css`;
         sessionStorage.setItem("conexao-theme", activeTheme);
 
         if (buttons.length) {

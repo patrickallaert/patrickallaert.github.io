@@ -584,7 +584,7 @@ body#register {
       grid-template-columns: auto 1fr auto;
       align-items: center;
 
-      > a[href="register.html"] {
+      > a[href="/register/"] {
         justify-self: end;
       }
     }

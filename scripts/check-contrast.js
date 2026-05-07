@@ -2,7 +2,7 @@ const { chromium } = require("playwright");
 
 const BASE_URL = process.env.BASE_URL || "http://127.0.0.1:8000";
 const THEMES = (process.env.THEMES || "beta,epsilon,zeta,eta").split(",").map((theme) => theme.trim()).filter(Boolean);
-const PAGES = (process.env.PAGES || "index.html,classes.html,levels.html,venues.html,events.html,about.html,register.html").split(",").map((page) => page.trim()).filter(Boolean);
+const PAGES = (process.env.PAGES || "/,classes/,levels/,venues/,events/,about/,register/").split(",").map((page) => page.trim()).filter(Boolean);
 const MIN_CONTRAST = Number(process.env.MIN_CONTRAST || 4.5);
 
 const parseColor = (value) => {
@@ -110,7 +110,7 @@ const collectRows = async (page) => page.evaluate(() => {
 
         for (const theme of THEMES) {
             for (const pagePath of PAGES) {
-                await page.goto(`${BASE_URL.replace(/\/$/, "")}/${pagePath}`, { waitUntil: "domcontentloaded" });
+                await page.goto(`${BASE_URL.replace(/\/$/, "")}/${pagePath.startsWith("/") ? pagePath : `/${pagePath}`}`, { waitUntil: "domcontentloaded" });
                 await page.evaluate((themeName) => sessionStorage.setItem("conexao-theme", themeName), theme);
                 await page.reload({ waitUntil: "networkidle" });
 
