@@ -1,7 +1,7 @@
 const { chromium } = require("playwright");
 
 const BASE_URL = process.env.BASE_URL || "http://127.0.0.1:8000";
-const THEMES = (process.env.THEMES || "beta,delta,epsilon,zeta").split(",").map((theme) => theme.trim()).filter(Boolean);
+const THEMES = (process.env.THEMES || "beta,delta,epsilon,zeta,eta").split(",").map((theme) => theme.trim()).filter(Boolean);
 const PAGES = (process.env.PAGES || "index.html,classes.html,levels.html,venues.html,events.html,about.html,register.html").split(",").map((page) => page.trim()).filter(Boolean);
 const MIN_CONTRAST = Number(process.env.MIN_CONTRAST || 4.5);
 
@@ -62,14 +62,21 @@ const collectRows = async (page) => page.evaluate(() => {
 
     const backgroundStack = (element) => {
         const stack = [];
+        const colorFromImage = (value) => {
+            const colors = value.match(/rgba?\([^)]+\)|color\(srgb\s+[\d.]+\s+[\d.]+\s+[\d.]+(?:\s*\/\s*[\d.]+)?\)/g);
+
+            return colors ? colors.reverse().find((color) => !["rgba(0, 0, 0, 0)", "rgba(0,0,0,0)"].includes(color)) : null;
+        };
 
         for (let node = element; node; node = node.parentElement) {
             const style = getComputedStyle(node);
 
-            if (style.backgroundImage && style.backgroundImage !== "none") return null;
-
             if (style.backgroundColor && !["rgba(0, 0, 0, 0)", "transparent"].includes(style.backgroundColor)) {
                 stack.push(style.backgroundColor);
+            } else if (style.backgroundImage && style.backgroundImage !== "none") {
+                const color = colorFromImage(style.backgroundImage);
+
+                if (color) stack.push(color);
             }
         }
 

@@ -4,13 +4,13 @@
   "version": "0.1.0",
   "description": "Static site rebuild for Conexao",
   "scripts": {
-    "build:css": "sass --no-source-map src/styles/theme-alpha.scss site/assets/theme-alpha.css && sass --no-source-map src/styles/theme-beta.scss site/assets/theme-beta.css && sass --no-source-map src/styles/theme-gamma.scss site/assets/theme-gamma.css && sass --no-source-map src/styles/theme-delta.scss site/assets/theme-delta.css && sass --no-source-map src/styles/theme-epsilon.scss site/assets/theme-epsilon.css && sass --no-source-map src/styles/theme-zeta.scss site/assets/theme-zeta.css",
+    "build:css": "sass --no-source-map src/styles/theme-alpha.scss site/assets/theme-alpha.css && sass --no-source-map src/styles/theme-beta.scss site/assets/theme-beta.css && sass --no-source-map src/styles/theme-gamma.scss site/assets/theme-gamma.css && sass --no-source-map src/styles/theme-delta.scss site/assets/theme-delta.css && sass --no-source-map src/styles/theme-epsilon.scss site/assets/theme-epsilon.css && sass --no-source-map src/styles/theme-zeta.scss site/assets/theme-zeta.css && sass --no-source-map src/styles/theme-eta.scss site/assets/theme-eta.css",
     "build:js": "terser src/scripts/theme-switcher.js --compress --mangle --output site/assets/app.js",
     "build": "npm run build:css && npm run build:js",
     "lint:css": "stylelint \"src/styles/**/*.scss\"",
     "test:contrast": "node scripts/check-contrast.js",
     "verify": "npm run lint:css && npm run build && npm run test:contrast",
-    "watch:css": "sass --watch src/styles/theme-alpha.scss:site/assets/theme-alpha.css src/styles/theme-beta.scss:site/assets/theme-beta.css src/styles/theme-gamma.scss:site/assets/theme-gamma.css src/styles/theme-delta.scss:site/assets/theme-delta.css src/styles/theme-epsilon.scss:site/assets/theme-epsilon.css src/styles/theme-zeta.scss:site/assets/theme-zeta.css"
+    "watch:css": "sass --watch src/styles/theme-alpha.scss:site/assets/theme-alpha.css src/styles/theme-beta.scss:site/assets/theme-beta.css src/styles/theme-gamma.scss:site/assets/theme-gamma.css src/styles/theme-delta.scss:site/assets/theme-delta.css src/styles/theme-epsilon.scss:site/assets/theme-epsilon.css src/styles/theme-zeta.scss:site/assets/theme-zeta.css src/styles/theme-eta.scss:site/assets/theme-eta.css"
   },
   "devDependencies": {
     "playwright": "^1.59.1",

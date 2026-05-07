@@ -76,6 +76,7 @@ The selectable themes are currently:
 - Delta
 - Epsilon
 - Zeta
+- Eta
 
 Alpha and Gamma remain in the source/build as inactive reference themes, but are not selectable in the public theme switcher.
 
