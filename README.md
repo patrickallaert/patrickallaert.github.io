@@ -73,7 +73,6 @@ Extract the source material into structured Markdown:
 The selectable themes are currently:
 
 - Beta
-- Delta
 - Epsilon
 - Zeta
 - Eta
