@@ -14,6 +14,8 @@ This backlog captures product, content, and technical ideas that should be consi
 
 ### 1. Naming And HTML Cleanup
 
+Status: done for currently identified page-prefix repetitions. Keep applying the rule during future refactors.
+
 Priority: high
 
 Clean redundant IDs and classes before larger feature work, because selectors and future templates will be easier to reason about.

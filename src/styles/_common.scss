@@ -192,7 +192,7 @@ body > a:first-child {
 }
 
 body#home {
-  #home-gallery {
+  #gallery {
     display: grid;
     gap: 0.85rem;
 
@@ -651,12 +651,12 @@ body#register {
       }
     }
 
-    #home-gallery {
+    #gallery {
       grid-row: 1 / span 2;
       grid-column: 2;
     }
 
-    #home-gallery > div {
+    #gallery > div {
       min-height: 29rem;
     }
 

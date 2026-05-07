@@ -30,7 +30,7 @@
     <section id="intro">
       <h1>Learn <strong>forró</strong>, meet people, and keep dancing.</h1>
       <p>Conexão is a Brussels-based forró school centred on classes, social dancing, musicality, and a warm community spirit.</p>
-      <section id="home-gallery" aria-label="Highlights from Conexão">
+      <section id="gallery" aria-label="Highlights from Conexão">
         <div>
           <figure data-active="true">
             <img src="assets/home/home-1.jpg" alt="Sarah dancing at a festival" width="1000" height="667">
@@ -66,7 +66,7 @@
       <h2 id="start-here-title">New to forró?</h2>
       <p>Start with Level 1. You do not need a partner or previous dance experience, and classes are taught in English.</p>
       <ul aria-label="Suggested next steps">
-        <li><a href="classes.html#beginner-classes">See beginner classes</a></li>
+        <li><a href="classes.html#beginner">See beginner classes</a></li>
         <li><a href="levels.html#level-1">Read about Level 1</a></li>
         <li><a href="register.html">Register</a></li>
       </ul>
@@ -98,7 +98,7 @@
   </footer>
   <script>
     (() => {
-      const gallery = document.querySelector('#home-gallery');
+      const gallery = document.querySelector('#gallery');
       if (!gallery) return;
       const slides = Array.from(gallery.querySelectorAll('figure'));
       const dots = Array.from(gallery.querySelectorAll('ol button'));

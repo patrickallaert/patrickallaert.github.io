@@ -60,6 +60,11 @@ This file captures product and content decisions for the rebuild so future sessi
   - nest selectors when that improves readability and remains reasonable
   - keep selectors structural/content-oriented
   - use `stylelint-config-recess-order` ordering
+- Naming rule for future refactors:
+  - do not repeat the current page name in descendant IDs or classes when `body#...` already scopes the page
+  - prefer `body#home #gallery` over `body#home #home-gallery`
+  - prefer `body#classes #beginner` over `body#classes #beginner-classes`
+  - only use page-prefixed names when the element genuinely needs to be referenced outside its page context
 - Existing legal/payment content should largely be kept for V1.
 - The user is comfortable with code-level editing and has strong PHP/CMS expertise.
 
