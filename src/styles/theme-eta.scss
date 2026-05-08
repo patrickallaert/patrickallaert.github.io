@@ -1,4 +1,6 @@
 @use "common";
+@use "scheduled-classes";
+@use "schedule-portraits";
 
 :root {
   --primary: #6ff7df;
@@ -729,6 +731,51 @@ body#levels {
       linear-gradient(135deg, color-mix(in srgb, var(--course-accent) 14%, transparent), rgba(255, 255, 255, 0.035)),
       rgba(8, 12, 17, 0.92);
     border-color: rgba(111, 247, 223, 0.16);
+  }
+
+  section.class > section[aria-labelledby$="-scheduled-classes"] {
+    article {
+      color: var(--ink);
+      background:
+        linear-gradient(135deg, color-mix(in srgb, var(--course-accent) 12%, transparent), rgba(255, 255, 255, 0.035)),
+        rgba(8, 12, 17, 0.9);
+      border-color: rgba(111, 247, 223, 0.16);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.24);
+
+      > h4 {
+        color: var(--ink);
+      }
+    }
+
+    .term a {
+      color: var(--primary-ink);
+      background: color-mix(in srgb, var(--course-accent) 72%, var(--primary));
+    }
+
+    .time {
+      color: color-mix(in srgb, var(--primary) 84%, #ffffff);
+
+      > span {
+        color: var(--ink);
+      }
+    }
+
+    .exceptions {
+      color: #ffdada;
+    }
+
+    .venue,
+    .people {
+      color: var(--ink-soft);
+
+      &::before {
+        background: var(--primary);
+      }
+
+      a {
+        color: var(--ink);
+      }
+    }
   }
 }
 

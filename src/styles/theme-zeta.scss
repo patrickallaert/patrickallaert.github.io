@@ -1,4 +1,6 @@
 @use "common";
+@use "scheduled-classes";
+@use "schedule-portraits";
 
 :root {
   --primary: var(--brand);
@@ -75,7 +77,7 @@ body {
       a[aria-current="page"] {
         position: relative;
         font-weight: 700;
-        color: color-mix(in srgb, var(--primary) 58%, var(--ink));
+        color: var(--primary-text);
         background: var(--primary-active);
         border: 0.08rem solid color-mix(in srgb, var(--primary) 28%, transparent);
 
@@ -456,6 +458,10 @@ body#classes {
       gap: 0.75rem;
       padding: 1.05rem;
 
+      > p:first-of-type {
+        color: #8a1616;
+      }
+
       > section {
         padding-top: 0.95rem;
 
@@ -482,10 +488,18 @@ body#classes {
         margin: 0.18rem 0 0;
       }
 
+      > p:first-of-type {
+        color: color-mix(in srgb, var(--primary-ink) 72%, var(--course-accent));
+      }
+
       &.free-practice {
         gap: 0.22rem;
         padding-top: 0.58rem;
         padding-bottom: 0.58rem;
+
+        > p:first-of-type {
+          color: var(--primary-ink);
+        }
       }
     }
   }
@@ -498,6 +512,47 @@ body#classes {
         row-gap: 1rem;
         column-gap: 0.9rem;
         padding: 1.05rem;
+      }
+    }
+  }
+}
+
+body#levels {
+  section.class > section[aria-labelledby$="-scheduled-classes"] {
+    article {
+      background: var(--surface);
+      border-color: color-mix(in srgb, var(--course-accent) 18%, var(--line));
+      border-radius: calc(var(--radius) - 0.25rem);
+      box-shadow: 0 0.8rem 1.6rem color-mix(in srgb, var(--primary) 10%, transparent);
+
+      > h4 {
+        color: color-mix(in srgb, var(--primary) 50%, var(--ink));
+      }
+    }
+
+    .term a {
+      color: var(--primary-ink);
+      background: color-mix(in srgb, var(--course-accent) 16%, var(--surface));
+    }
+
+    .time {
+      color: color-mix(in srgb, var(--primary-text) 74%, var(--ink));
+
+      > span {
+        color: color-mix(in srgb, var(--ink) 72%, var(--course-accent));
+      }
+    }
+
+    .venue,
+    .people {
+      color: var(--ink-soft);
+
+      &::before {
+        background: color-mix(in srgb, var(--course-accent) 34%, var(--primary-ink));
+      }
+
+      a {
+        color: var(--primary-text);
       }
     }
   }

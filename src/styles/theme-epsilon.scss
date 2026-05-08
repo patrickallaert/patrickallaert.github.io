@@ -1,5 +1,7 @@
 @use "common";
 @use "theme-shared";
+@use "scheduled-classes";
+@use "schedule-portraits";
 
 :root {
   --primary: var(--brand);
