@@ -1,31 +1,26 @@
 body#classes {
   .schedule-days {
     article.class {
-      position: relative;
-
       &:has(.portraits) {
-        padding-right: 3.8rem;
-      }
-
-      &:has(.portraits img:nth-child(3)) {
-        padding-right: 4.3rem;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 0.28rem 0.72rem;
+        align-items: start;
       }
 
       .portraits {
-        position: absolute;
-        top: 0.78rem;
-        right: 0.75rem;
         display: grid;
+        grid-row: 1 / span 4;
+        grid-column: 2;
         justify-items: end;
         width: max-content;
         padding: 0;
         margin: 0;
-        pointer-events: none;
 
         img {
           flex: none;
-          width: 1.9rem;
-          height: 2.25rem;
+          width: 2.05rem;
+          height: 2.42rem;
           object-fit: cover;
           border: 0.12rem solid #ffffff;
           border-radius: 0.25rem;
@@ -45,27 +40,23 @@ body#classes {
         }
 
         img + img {
-          margin-top: -0.82rem;
+          margin-top: -0.66rem;
         }
       }
 
+      &:has(.portraits) > :not(.portraits) {
+        grid-column: 1;
+      }
+
       @media (min-width: 78rem) {
-        &:has(.portraits) {
-          padding-right: 5.25rem;
-        }
-
-        &:has(.portraits img:nth-child(3)) {
-          padding-right: 6.25rem;
-        }
-
         .portraits {
           img {
-            width: 2.6rem;
-            height: 3.05rem;
+            width: 2.75rem;
+            height: 3.24rem;
           }
 
           img + img {
-            margin-top: -1.12rem;
+            margin-top: -0.9rem;
           }
         }
       }
