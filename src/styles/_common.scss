@@ -460,7 +460,7 @@ body#venues {
 
 body#levels {
   section.class {
-    padding-left: clamp(1.25rem, 3vw, 2rem);
+    padding: 1rem 1rem 1rem clamp(1.25rem, 3vw, 2rem);
     scroll-margin-top: 2rem;
     background: color-mix(in srgb, var(--course-accent) 8%, #ffffff);
     border-left: 0;

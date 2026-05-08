@@ -171,8 +171,7 @@ body {
       color: var(--ink);
     }
 
-    h2:not(:first-child),
-    section > section:not(:first-of-type) h3 {
+    h2:not(:first-child) {
       margin-top: 3.5rem;
     }
 
