@@ -87,6 +87,20 @@ const renderPeople = (ids, people) => listNames(ids.map((id) => {
     return link(`/about/#${id}`, people[id]);
 }));
 
+const sessionPeople = (session) => [...new Set([...(session.teachers || []), ...(session.assistants || [])])];
+
+const renderPortraits = (session, people) => {
+    const ids = sessionPeople(session);
+
+    if (!ids.length) return "";
+
+    return [
+        '                <figure class="portraits" aria-label="Teaching team">',
+        ...ids.map((id) => `                  <img src="/assets/team/${id}.jpg" alt="${escapeHtml(people[id])}" width="320" height="320" loading="lazy">`),
+        "                </figure>",
+    ].join("\n");
+};
+
 const renderTeachers = (session, people) => {
     if (!session.teachers?.length) return "";
 
@@ -110,6 +124,7 @@ const renderSession = (session, data) => {
     const time = session.time.split("-");
     return [
         `              <article class="${(courseClassName(session.course, course, minutesBetween(time)))}">`,
+        renderPortraits(session, data.teachers),
         `                <p><time datetime="${time[0]}">${formatTime(time[0])}</time> - <time datetime="${time[1]}">${formatTime(time[1])}</time></p>`,
         `                <h6>${link(courseHref(session.course, course), courseTitle(session.course, course))}</h6>`,
         renderDateRange(session) && `                ${renderDateRange(session)}`,
