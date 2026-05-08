@@ -88,6 +88,8 @@ Acceptance criteria:
 
 ### 3. Level Filtering On Classes
 
+Status: partly implemented. Levels now shows scheduled classes generated from `src/data/classes.json`, so visitors can see relevant days, times, venues, and teachers without leaving the level description. A Classes-page filter remains a possible follow-up if the full timetable needs an interactive narrow view.
+
 Priority: high, after class data model or as a smaller static interim step
 
 Allow visitors to clearly see the classes for a given level.
