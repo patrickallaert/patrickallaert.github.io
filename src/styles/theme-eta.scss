@@ -560,6 +560,14 @@ body#classes {
         border: 1px solid rgba(255, 154, 154, 0.26);
         border-radius: var(--radius);
       }
+
+      > section > h5::before {
+        background: var(--primary);
+        -webkit-mask: var(--icon-pin) center / contain no-repeat;
+        mask: var(--icon-pin) center / contain no-repeat;
+        opacity: 1;
+        filter: drop-shadow(0 0 0.12rem rgba(111, 247, 223, 0.42));
+      }
     }
 
     article.class {
@@ -584,6 +592,14 @@ body#classes {
       a {
         color: var(--ink);
         text-decoration-color: var(--primary);
+      }
+
+      .teachers::before {
+        background: var(--primary);
+        -webkit-mask: var(--icon-people) center / contain no-repeat;
+        mask: var(--icon-people) center / contain no-repeat;
+        opacity: 1;
+        filter: drop-shadow(0 0 0.12rem rgba(111, 247, 223, 0.42));
       }
 
       &.level.\31 {

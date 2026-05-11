@@ -140,6 +140,14 @@ body#classes {
 
   .schedule-days {
     > article {
+      > section {
+        padding: 0.3rem 0.85rem 0.85rem;
+
+        > h5 {
+          margin: 0 0 0.6rem;
+        }
+      }
+
       > h4 {
         color: color-mix(in srgb, var(--primary) 66%, var(--ink));
         background: color-mix(in srgb, var(--primary) 9%, rgba(255, 255, 255, 0.76));

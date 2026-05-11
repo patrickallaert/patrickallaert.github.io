@@ -36,6 +36,14 @@ body {
 
 body#classes {
   .schedule-days {
+    > article > section {
+      padding: 0.3rem 0.85rem 0.85rem;
+
+      > h5 {
+        margin: 0 0 0.6rem;
+      }
+    }
+
     article.class {
       > p:first-of-type {
         color: color-mix(in srgb, var(--accent) 72%, var(--ink));
