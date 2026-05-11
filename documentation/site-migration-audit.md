@@ -2,45 +2,45 @@
 
 Updated: 2026-04-10
 
-This note compares the current `site/` pages against the structured source material in `content-source/`.
+This note compares the current `docs/` pages against the structured source material in `content-source/`.
 
 ## Current State
 
 ### Strongest pages
 
-- `site/classes.html`
+- `docs/classes.html`
   The clearest and most advanced page so far. The weekly schedule is usable on desktop and mobile, and the page already links out to levels, teachers, assistants, venues, and registration.
 
-- `site/levels.html`
+- `docs/levels.html`
   The overview and level sections now follow `content-source/levels/overview.md` and `content-source/levels/level-1.md` to `level-4.md` much more faithfully than before.
 
-- `site/venues.html`
+- `docs/venues.html`
   Useful, standalone page. The addresses, room notes, and map links are already in place.
 
 ### Partially migrated pages
 
-- `site/about.html`
+- `docs/about.html`
   Real content is present, but the page is still shorter than the source material in `content-source/about/about-us.md` and `content-source/about/team-profiles.md`.
 
-- `site/contact.html`
+- `docs/contact.html`
   Still a scaffold that points to `content-source/`.
 
-- `site/events.html`
+- `docs/events.html`
   Still a scaffold that points to `content-source/`.
 
-- `site/index.html`
+- `docs/index.html`
   Still a scaffold that points to `content-source/`.
 
-- `site/legal.html`
+- `docs/legal.html`
   Still a scaffold that points to `content-source/`.
 
 ## Link Integrity
 
-The internal links used from `site/classes.html` currently resolve correctly:
+The internal links used from `docs/classes.html` currently resolve correctly:
 
-- teacher and assistant links to `site/about.html`
-- venue links to `site/venues.html`
-- level links to `site/levels.html`
+- teacher and assistant links to `docs/about.html`
+- venue links to `docs/venues.html`
+- level links to `docs/levels.html`
 
 No missing internal anchors were found in these cross-page links.
 
@@ -204,19 +204,19 @@ Important note:
 
 ## Suggested Migration Order
 
-1. `site/index.html`
+1. `docs/index.html`
    Home is still too empty compared with the maturity of `Classes`, `Levels`, `About`, and `Venues`.
 
-2. `site/about.html`
+2. `docs/about.html`
    Expand the existing page with the missing source details, without rewriting.
 
-3. `site/contact.html`
+3. `docs/contact.html`
    Bring back the real contact and newsletter information, while keeping venue logistics on the separate `Venues` page.
 
-4. `site/events.html`
+4. `docs/events.html`
    Start with evergreen event formats, not one-off archives.
 
-5. `site/legal.html`
+5. `docs/legal.html`
    Rebuild around the English terms and conditions page.
 
 ## General Guidance

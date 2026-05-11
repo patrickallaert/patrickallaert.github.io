@@ -1997,3 +1997,5 @@ body > footer .contact-links a:hover, body > footer .contact-links a:focus-visib
 .theme-switch-panel .theme-switch:hover, .theme-switch-panel .theme-switch:focus-visible {
   border-color: color-mix(in srgb, var(--accent) 54%, var(--line));
 }
+
+/*# sourceMappingURL=theme-gamma.css.map */

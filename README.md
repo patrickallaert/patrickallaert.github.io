@@ -42,13 +42,13 @@ The contrast audit can be configured with environment variables:
 BASE_URL=http://127.0.0.1:8000 THEMES=beta,zeta PAGES=index.html,classes.html npm run test:contrast
 ```
 
-The static pages live in `site/`.
+The static pages live in `docs/`.
 
-Generated assets live in `site/assets/` and are intentionally not tracked:
+Generated assets live in `docs/assets/` and are intentionally not tracked:
 
-- `site/assets/app.js`
-- `site/assets/theme-*.css`
-- `site/assets/theme-*.css.map`
+- `docs/assets/app.js`
+- `docs/assets/theme-*.css`
+- `docs/assets/theme-*.css.map`
 
 Regenerate them with `npm run build`.
 
@@ -60,7 +60,7 @@ Extract the source material into structured Markdown:
 
 ## Current structure
 
-- `site/`: static HTML pages and compiled assets
+- `docs/`: static HTML pages and compiled assets
 - `content-source/`: structured content extracted from the existing site, used as the migration base
 - `src/data/`: small structured data files shared across the site
 - `src/styles/`: SCSS source
@@ -97,4 +97,4 @@ The current HTML pages are intentionally minimal. The priority is to:
 
 1. extract and preserve source content
 2. organize it by page and hierarchy
-3. reincorporate it progressively into `site/`
+3. reincorporate it progressively into `docs/`
