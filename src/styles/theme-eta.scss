@@ -563,10 +563,10 @@ body#classes {
 
       > section > h5::before {
         background: var(--primary);
-        -webkit-mask: var(--icon-pin) center / contain no-repeat;
-        mask: var(--icon-pin) center / contain no-repeat;
         opacity: 1;
         filter: drop-shadow(0 0 0.12rem rgba(111, 247, 223, 0.42));
+        -webkit-mask: var(--icon-pin) center / contain no-repeat;
+        mask: var(--icon-pin) center / contain no-repeat;
       }
     }
 
@@ -596,10 +596,10 @@ body#classes {
 
       .teachers::before {
         background: var(--primary);
-        -webkit-mask: var(--icon-people) center / contain no-repeat;
-        mask: var(--icon-people) center / contain no-repeat;
         opacity: 1;
         filter: drop-shadow(0 0 0.12rem rgba(111, 247, 223, 0.42));
+        -webkit-mask: var(--icon-people) center / contain no-repeat;
+        mask: var(--icon-people) center / contain no-repeat;
       }
 
       &.level.\31 {
@@ -736,6 +736,36 @@ body#about {
         rgba(8, 12, 17, 0.92);
       border-color: rgba(111, 247, 223, 0.18);
       box-shadow: 0 1rem 2.2rem rgba(0, 0, 0, 0.28);
+    }
+  }
+}
+
+body#classes,
+body#register {
+  #prices {
+    article {
+      background:
+        linear-gradient(135deg, color-mix(in srgb, var(--primary) 10%, transparent), rgba(255, 255, 255, 0.03)),
+        rgba(8, 12, 17, 0.92);
+      border-color: rgba(111, 247, 223, 0.16);
+    }
+
+    h3,
+    dd {
+      color: var(--ink);
+    }
+
+    dt {
+      color: color-mix(in srgb, var(--primary) 72%, var(--ink));
+    }
+
+    article > p,
+    > ul li {
+      color: var(--ink-soft);
+    }
+
+    > ul li::before {
+      background: var(--primary);
     }
   }
 }
