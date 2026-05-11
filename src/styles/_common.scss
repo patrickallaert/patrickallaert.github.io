@@ -517,7 +517,8 @@ body#levels {
   }
 }
 
-body#classes {
+body#classes,
+body#venues {
   .class {
     &.level.\31 {
       --course-accent: var(--course-level-1);
