@@ -1,0 +1,1350 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.theme-switch {
+  justify-self: start;
+  cursor: pointer;
+}
+
+:root {
+  --brand: #41baae;
+  --primary: var(--brand);
+  --primary-text: #0f766e;
+  --primary-ink: #062d29;
+  --primary-soft: color-mix(in srgb, var(--primary) 10%, #ffffff);
+  --primary-line: color-mix(in srgb, var(--primary) 28%, #d5e9e5);
+  --accent: var(--primary-text);
+  --accent-ink: #ffffff;
+  --icon-mail: url("icons/mail.svg");
+  --icon-newsletter: url("icons/newsletter.svg");
+  --icon-instagram: url("icons/instagram.svg");
+  --icon-facebook: url("icons/facebook.svg");
+  --icon-youtube: url("icons/youtube.svg");
+  --icon-pin: url("icons/pin.svg");
+  --icon-people: url("icons/people.svg");
+  --yellow: #ffd64d;
+  --course-level-1: #4ed9d7;
+  --course-level-2: #2f8cff;
+  --course-level-3: #0a6084;
+  --course-level-4: #c13cc6;
+  --course-musicality: #ff5f9f;
+  --course-dancing-dialogue: #ff7a59;
+  --course-footwork-armwork: #f08c2e;
+  --course-roots-1: #e7c83a;
+  --course-roots-2: #b7a326;
+  --course-practice: #f6c983;
+  --max: 82rem;
+}
+
+body {
+  min-width: 20rem;
+  margin: 0;
+  font-family: var(--font-body);
+  line-height: var(--body-line-height);
+  color: var(--ink);
+  background: var(--page);
+}
+
+body > header,
+body > main,
+body > footer {
+  width: var(--page-shell-width);
+  margin-inline: var(--page-shell-margin-inline);
+}
+
+body > header nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+body > header nav ul li {
+  margin: 0;
+}
+
+body > footer .contact-links a::before {
+  display: inline-block;
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  content: "";
+  background: currentColor;
+  -webkit-mask: var(--icon) center/contain no-repeat;
+  mask: var(--icon) center/contain no-repeat;
+}
+body > footer .contact-links a[href^="mailto:"] {
+  --icon: var(--icon-mail);
+}
+body > footer .contact-links a[href*="share-eu1.hsforms.com"] {
+  --icon: var(--icon-newsletter);
+}
+body > footer .contact-links a[href*="instagram.com"] {
+  --icon: var(--icon-instagram);
+}
+body > footer .contact-links a[href*="facebook.com"] {
+  --icon: var(--icon-facebook);
+}
+body > footer .contact-links a[href*="youtube.com"] {
+  --icon: var(--icon-youtube);
+}
+
+body > main > section.orientation {
+  display: grid;
+  gap: 0.9rem;
+  align-items: start;
+}
+body > main > section.orientation h2,
+body > main > section.orientation p,
+body > main > section.orientation ul {
+  margin-bottom: 0;
+}
+body > main > section.orientation p {
+  max-width: 52rem;
+}
+body > main > section.orientation ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  padding: 0;
+  margin-top: 0.25rem;
+  list-style: none;
+}
+body > main > section.orientation li {
+  margin-top: 0;
+}
+body > main > section.orientation a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+  border-radius: 999rem;
+}
+body > main > section.orientation li:first-child a {
+  color: var(--accent-ink);
+  background: var(--accent);
+  border: 1px solid var(--accent);
+}
+body > main > section.orientation li:not(:first-child) a {
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--line));
+}
+
+body > main > figure:has(> blockquote) blockquote,
+body > main > figure:has(> blockquote) p {
+  margin: 0;
+}
+
+:focus-visible {
+  outline: 0.2rem solid var(--focus);
+  outline-offset: 0.2rem;
+}
+
+body > a:first-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  color: var(--ink);
+  background: var(--yellow);
+  transform: translateY(-140%);
+}
+body > a:first-child:focus {
+  transform: translateY(0);
+}
+
+body#home #gallery {
+  display: grid;
+  gap: 0.85rem;
+}
+body#home #gallery > div {
+  position: relative;
+  min-height: 21rem;
+  overflow: hidden;
+  border-radius: calc(var(--radius) - 0.1rem);
+  box-shadow: 0 1rem 2rem rgba(23, 50, 75, 0.12);
+}
+body#home #gallery figure {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+body#home #gallery figure[data-active] {
+  opacity: 1;
+}
+body#home #gallery figure:nth-child(1) img, body#home #gallery figure:nth-child(2) img {
+  object-position: center 42%;
+}
+body#home #gallery figure:nth-child(3) img, body#home #gallery figure:nth-child(4) img {
+  object-position: center 38%;
+}
+body#home #gallery figure:nth-child(5) img {
+  object-position: center 28%;
+}
+body#home #gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+body#home #gallery nav,
+body#home #gallery ol {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+body#home #gallery nav {
+  justify-content: space-between;
+}
+body#home #gallery nav > button {
+  min-height: 2.3rem;
+  padding: 0.35rem 0.8rem;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.92);
+  border: 0.08rem solid color-mix(in srgb, var(--primary) 18%, transparent);
+  border-radius: 999rem;
+}
+body#home #gallery ol {
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+body#home #gallery ol li {
+  margin-top: 0;
+}
+body#home #gallery ol button {
+  width: 2.3rem;
+  min-height: 2.3rem;
+  padding: 0;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.92);
+  border: 0.08rem solid color-mix(in srgb, var(--primary) 18%, transparent);
+  border-radius: 999rem;
+}
+body#home #gallery ol button[aria-current=true] {
+  color: var(--accent-ink);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+body#home #gallery button {
+  font: inherit;
+  cursor: pointer;
+}
+body#home #video {
+  display: grid;
+  gap: 1rem;
+}
+body#home #video h2,
+body#home #video p,
+body#home #video a {
+  color: #ffffff;
+}
+body#home #video > div:last-child {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: calc(var(--radius) - 0.1rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.18);
+}
+body#home #video iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+body#about #team > div {
+  display: grid;
+  gap: 1rem;
+}
+body#about #team > div > article {
+  display: grid;
+  gap: 0.95rem;
+  align-content: start;
+  height: 100%;
+  padding: 1rem;
+  background: color-mix(in srgb, #ffffff 88%, color-mix(in srgb, var(--primary) 6%, transparent));
+  border: 0.08rem solid color-mix(in srgb, var(--line) 88%, color-mix(in srgb, var(--primary) 12%, transparent));
+  border-radius: calc(var(--radius) - 0.08rem);
+}
+body#about #school figure,
+body#about #team figure {
+  position: relative;
+  aspect-ratio: 1;
+  padding: 0.35rem;
+  margin: 0;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 18%, transparent), rgba(255, 248, 235, 0.9));
+  border-radius: 999rem;
+  box-shadow: 0 0.65rem 1.2rem rgba(17, 24, 39, 0.07);
+}
+body#about #school figure::after,
+body#about #team figure::after {
+  position: absolute;
+  inset: 0.2rem;
+  pointer-events: none;
+  content: "";
+  border: 0.08rem solid rgba(255, 255, 255, 0.9);
+  border-radius: 999rem;
+}
+body#about #school figure img,
+body#about #team figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  background: #e8f1ec;
+  border-radius: 999rem;
+  box-shadow: 0 0.35rem 0.8rem rgba(17, 24, 39, 0.1);
+}
+body#about #team figure {
+  justify-self: start;
+  width: min(100%, 9rem);
+}
+body#about #team h3 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 0;
+  text-align: left;
+}
+body#about #team h3 a[href*="instagram.com"] {
+  --icon: var(--icon-instagram);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.85rem;
+  height: 1.85rem;
+  overflow: hidden;
+  font-size: 0;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
+  border: 0.08rem solid color-mix(in srgb, var(--primary) 18%, transparent);
+  border-radius: 999rem;
+  transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+body#about #team h3 a[href*="instagram.com"]:hover, body#about #team h3 a[href*="instagram.com"]:focus-visible {
+  background: color-mix(in srgb, var(--primary) 18%, transparent);
+  border-color: color-mix(in srgb, var(--primary) 35%, transparent);
+  transform: translateY(-0.05rem);
+}
+body#about #team h3 a[href*="instagram.com"]::before {
+  display: block;
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  content: "";
+  background: currentColor;
+  -webkit-mask: var(--icon) center/contain no-repeat;
+  mask: var(--icon) center/contain no-repeat;
+}
+body#about #team p {
+  max-width: 58ch;
+  margin: 0;
+  text-align: left;
+  text-wrap: pretty;
+}
+body#about #school article > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 10.5rem));
+  gap: 0.75rem;
+  justify-content: start;
+}
+body#about #school figure {
+  width: min(100%, 10.5rem);
+}
+
+body#venues main > section:not(#intro) {
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 26rem);
+  align-items: start;
+}
+body#venues main > section:not(#intro) figure {
+  grid-row: 1/span 6;
+  grid-column: 2;
+  justify-self: end;
+  width: 100%;
+}
+
+body#levels section.class {
+  padding: 1rem 1rem 1rem clamp(1.25rem, 3vw, 2rem);
+  scroll-margin-top: 2rem;
+  background: color-mix(in srgb, var(--course-accent) 8%, #ffffff);
+  border-left: 0;
+  box-shadow: inset 0.35rem 0 0 var(--course-accent);
+}
+body#levels section.class h2,
+body#levels section.class h3 {
+  color: var(--ink);
+}
+body#levels #short-courses > section {
+  padding: 1rem 1rem 1rem clamp(1.25rem, 3vw, 2rem);
+  margin-top: 0.85rem;
+  background: color-mix(in srgb, var(--course-accent) 10%, #ffffff);
+  border: 0.08rem solid color-mix(in srgb, var(--course-accent) 35%, var(--line));
+  border-left: 0;
+  border-radius: calc(var(--radius) - 0.1rem);
+  box-shadow: inset 0.3rem 0 0 var(--course-accent);
+}
+body#levels section.class.level.\31  {
+  --course-accent: var(--course-level-1);
+}
+body#levels section.class.level.\32  {
+  --course-accent: var(--course-level-2);
+}
+body#levels section.class.level.\33  {
+  --course-accent: var(--course-level-3);
+}
+body#levels section.class.level.\34  {
+  --course-accent: var(--course-level-4);
+}
+body#levels section.class.roots.\31  {
+  --course-accent: var(--course-roots-1);
+}
+body#levels section.class.roots.\32  {
+  --course-accent: var(--course-roots-2);
+}
+body#levels section.class.short-course.dancing-in-dialogue {
+  --course-accent: var(--course-dancing-dialogue);
+}
+body#levels section.class.short-course.footwork-armwork {
+  --course-accent: var(--course-footwork-armwork);
+}
+
+body#classes .class.level.\31 ,
+body#venues .class.level.\31  {
+  --course-accent: var(--course-level-1);
+}
+body#classes .class.level.\32 ,
+body#venues .class.level.\32  {
+  --course-accent: var(--course-level-2);
+}
+body#classes .class.level.\33 ,
+body#venues .class.level.\33  {
+  --course-accent: var(--course-level-3);
+}
+body#classes .class.level.\34 ,
+body#venues .class.level.\34  {
+  --course-accent: var(--course-level-4);
+}
+body#classes .class.musicality,
+body#venues .class.musicality {
+  --course-accent: var(--course-musicality);
+}
+body#classes .class.dancing-in-dialogue,
+body#venues .class.dancing-in-dialogue {
+  --course-accent: var(--course-dancing-dialogue);
+}
+body#classes .class.footwork-armwork,
+body#venues .class.footwork-armwork {
+  --course-accent: var(--course-footwork-armwork);
+}
+body#classes .class.roots.\31 ,
+body#venues .class.roots.\31  {
+  --course-accent: var(--course-roots-1);
+}
+body#classes .class.roots.\32 ,
+body#venues .class.roots.\32  {
+  --course-accent: var(--course-roots-2);
+}
+body#classes .class.pratica,
+body#venues .class.pratica {
+  --course-accent: var(--course-practice);
+}
+body#classes .free-practice,
+body#venues .free-practice {
+  --course-accent: var(--course-practice);
+}
+
+body#classes main a[href^="https://forms.gle"],
+body#classes main a[href*="docs.google.com/forms"],
+body#register main a[href^="https://forms.gle"],
+body#register main a[href*="docs.google.com/forms"] {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.45rem 0.9rem;
+  color: var(--accent-ink);
+  text-decoration: none;
+  background: var(--accent);
+  border-radius: 999rem;
+}
+body#classes #prices > p,
+body#register #prices > p {
+  max-width: 46rem;
+}
+body#classes #prices > div,
+body#register #prices > div {
+  display: grid;
+  gap: 1rem;
+  margin: 1rem 0 1.15rem;
+}
+body#classes #prices article,
+body#register #prices article {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem 1rem 1.1rem;
+  background: color-mix(in srgb, var(--accent) 6%, #ffffff);
+  border: 1px solid color-mix(in srgb, var(--accent) 14%, var(--line));
+  border-radius: calc(var(--radius) * 1.5);
+}
+body#classes #prices h3,
+body#register #prices h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.12;
+  color: var(--ink);
+}
+body#classes #prices dl,
+body#register #prices dl {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+}
+body#classes #prices dl > div,
+body#register #prices dl > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  align-items: baseline;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 72%, transparent);
+}
+body#classes #prices dt,
+body#register #prices dt {
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: color-mix(in srgb, var(--accent) 72%, var(--ink));
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+body#classes #prices dd,
+body#register #prices dd {
+  margin: 0;
+  font-family: "Epilogue", sans-serif;
+  font-size: 1.08rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--ink);
+  white-space: nowrap;
+}
+body#classes #prices article > p,
+body#register #prices article > p {
+  margin: 0;
+  color: color-mix(in srgb, var(--ink) 76%, transparent);
+}
+body#classes #prices > ul,
+body#register #prices > ul {
+  display: grid;
+  gap: 0.65rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+body#classes #prices > ul li,
+body#register #prices > ul li {
+  position: relative;
+  padding-left: 1.15rem;
+  margin: 0;
+}
+body#classes #prices > ul li::before,
+body#register #prices > ul li::before {
+  position: absolute;
+  top: 0.58rem;
+  left: 0;
+  width: 0.42rem;
+  height: 0.42rem;
+  content: "";
+  background: var(--accent);
+  border-radius: 999rem;
+}
+
+@media (min-width: 48rem) {
+  body > header nav {
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+  }
+  body > header nav > a[href="/register/"] {
+    justify-self: end;
+  }
+  body#classes #prices > div,
+  body#register #prices > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  body#about #team > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+  body#about #team > div > article {
+    grid-template-columns: minmax(0, 9.5rem) minmax(0, 1fr);
+    row-gap: 0.6rem;
+    column-gap: 1rem;
+  }
+  body#about #team > div > article > h3 {
+    grid-column: 1/-1;
+  }
+  body#about #team > div > article > figure {
+    grid-row: 2/span 3;
+    grid-column: 1;
+    align-self: start;
+  }
+  body#about #team > div > article > p {
+    grid-column: 2;
+  }
+  body#about #team > div > article:not(:has(figure)) > p {
+    grid-column: 1/-1;
+  }
+  body#about #school article {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    align-items: start;
+  }
+  body#about #school article > div {
+    grid-template-columns: repeat(3, minmax(0, 10.5rem));
+  }
+  body#events #praticas > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  body#home #intro {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  }
+  body#home #intro h1,
+  body#home #intro h1 + p {
+    grid-column: 1;
+  }
+  body#home #gallery {
+    grid-row: 1/span 2;
+    grid-column: 2;
+  }
+  body#home #gallery > div {
+    min-height: 29rem;
+  }
+  body#home #video {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: center;
+  }
+}
+body#classes .schedule-legend {
+  display: none;
+}
+body#classes .schedule-days {
+  display: grid;
+}
+body#classes .schedule-days > article {
+  display: grid;
+  align-content: start;
+  height: 100%;
+  background: color-mix(in srgb, var(--primary) 5%, transparent);
+  border: 0.08rem solid var(--line);
+  border-radius: 0.8rem;
+  box-shadow: var(--shadow);
+}
+body#classes .schedule-days > article > h4 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.02;
+  color: color-mix(in srgb, var(--course-level-2) 70%, var(--ink));
+  text-transform: uppercase;
+  letter-spacing: 0.035em;
+}
+body#classes .schedule-days > article > p {
+  margin: 0;
+}
+body#classes .schedule-days > article > p:first-of-type {
+  font-size: 0.75rem;
+  font-style: italic;
+  font-weight: 700;
+  color: color-mix(in srgb, var(--course-dancing-dialogue) 76%, #7b1d1d);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+body#classes .schedule-days > article > p:first-of-type strong,
+body#classes .schedule-days > article > p:first-of-type time {
+  color: inherit;
+}
+body#classes .schedule-days > article > section {
+  min-width: 0;
+  border-top: 0.08rem solid color-mix(in srgb, var(--line) 72%, transparent);
+}
+body#classes .schedule-days > article > section + section {
+  margin-top: 0;
+}
+body#classes .schedule-days > article > section > h5 {
+  display: flex;
+  gap: 0.38rem;
+  align-items: flex-start;
+  padding: 0;
+  font-size: 0.79rem;
+  line-height: 1.15;
+  color: color-mix(in srgb, var(--ink-soft) 88%, var(--course-level-2));
+  text-transform: uppercase;
+  letter-spacing: 0.075em;
+  overflow-wrap: anywhere;
+  border: 0;
+}
+body#classes .schedule-days > article > section > h5::before {
+  flex: 0 0 0.72rem;
+  width: 0.72rem;
+  height: 0.72rem;
+  margin-top: 0.05rem;
+  content: "";
+  background: no-repeat center/contain var(--icon-pin);
+  opacity: 0.8;
+}
+body#classes .schedule-days > article > section > h5 a {
+  color: inherit;
+  text-decoration: none;
+}
+body#classes .schedule-days > article > section > div {
+  display: grid;
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+}
+body#classes .schedule-days article.class {
+  min-width: 0;
+  background: color-mix(in srgb, var(--course-accent) 12%, #ffffff);
+  border-left: 0.28rem solid var(--course-accent);
+  border-radius: 0.35rem;
+}
+body#classes .schedule-days article.class > p:first-of-type {
+  margin: 0;
+  font-size: 0.73rem;
+  font-weight: 700;
+  color: color-mix(in srgb, var(--course-accent) 72%, var(--ink));
+  white-space: nowrap;
+}
+body#classes .schedule-days article.class > h6 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.16;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+  text-decoration-thickness: 0.08rem;
+  text-underline-offset: 0.12em;
+}
+body#classes .schedule-days article.class > h6 a {
+  color: inherit;
+}
+body#classes .schedule-days article.class > h6 ~ p,
+body#classes .schedule-days article.class .teachers {
+  font-size: 0.68rem;
+  color: var(--ink-soft);
+}
+body#classes .schedule-days article.class .teachers {
+  position: relative;
+  padding-left: 1rem;
+}
+body#classes .schedule-days article.class .teachers::before {
+  position: absolute;
+  top: 0.08rem;
+  left: 0;
+  width: 0.72rem;
+  height: 0.72rem;
+  content: "";
+  background: no-repeat center/contain var(--icon-people);
+  opacity: 0.72;
+}
+body#classes .schedule-days article.class.free-practice {
+  display: grid;
+  background: repeating-linear-gradient(135deg, rgba(246, 201, 131, 0.14) 0 0.55rem, rgba(255, 255, 255, 0.92) 0.55rem 1.1rem);
+  border: 0.08rem dashed color-mix(in srgb, var(--course-accent) 55%, var(--line));
+  border-left: 0.32rem solid var(--course-accent);
+}
+body#classes .schedule-days article.class.free-practice > p:first-of-type {
+  margin: 0;
+}
+body#classes .schedule-days article.class.free-practice > h6 {
+  margin: 0;
+  font-size: 0.79rem;
+  font-weight: 600;
+  overflow-wrap: normal;
+}
+@media (min-width: 48rem) {
+  body#classes .schedule-days {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 64rem) {
+  body#classes .schedule-days {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start;
+  }
+  body#classes .schedule-days > article > h4 {
+    font-size: 1.06rem;
+  }
+  body#classes .schedule-days > article > p:first-of-type {
+    grid-column: 1/-1;
+    padding-bottom: 0.05rem;
+  }
+  body#classes .schedule-days > article > section {
+    align-self: start;
+  }
+  body#classes .schedule-days > article > section:only-of-type,
+  body#classes .schedule-days > article > p:first-of-type + section:last-of-type {
+    grid-column: 1/-1;
+  }
+}
+
+body#venues main > section:not(#intro) figure {
+  max-width: 26rem;
+  margin: 0;
+  overflow: hidden;
+  border-radius: calc(var(--radius) - 0.1rem);
+}
+body#venues main > section:not(#intro) figure img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 47.99rem) {
+  body#classes .schedule-days {
+    display: block;
+  }
+  body#classes .schedule-days > article {
+    height: auto;
+  }
+  body#classes .schedule-days > article + article {
+    margin-top: 1rem;
+  }
+}
+:root {
+  --page: #f7fbf9;
+  --panel: #ffffff;
+  --ink: #17324b;
+  --ink-soft: #4d6070;
+  --line: #c7d6df;
+  --focus: #0f6fff;
+  --shadow: 0 0.5rem 1.4rem rgba(23, 50, 75, 0.06);
+  --radius: 1rem;
+  --font-body: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  --body-line-height: 1.5;
+  --page-shell-width: min(calc(100% - 2rem), var(--max));
+  --page-shell-margin-inline: auto;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 0.16em;
+}
+
+body > header > nav,
+body > main > section,
+body > footer > div {
+  background: var(--panel);
+  border: 0.08rem solid var(--line);
+  border-radius: var(--radius);
+}
+
+body > header {
+  padding: 1rem 0 0;
+}
+body > header nav {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+body > header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+body > header nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 0.4rem 0.8rem;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 999rem;
+}
+body > header nav a[aria-current=page] {
+  font-weight: 700;
+  color: var(--accent-ink);
+  background: var(--accent);
+}
+body > header nav > a[href="/register/"] {
+  justify-self: start;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+  background: linear-gradient(135deg, #17324b, #245158);
+  border: 0.08rem solid rgba(23, 50, 75, 0.18);
+  box-shadow: 0 0.8rem 1.6rem rgba(23, 50, 75, 0.12);
+}
+body > header nav > a[href="/register/"]:hover, body > header nav > a[href="/register/"]:focus-visible {
+  background: linear-gradient(135deg, #10283d, #1f464c);
+}
+body > main {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem 0 3rem;
+}
+body > main > section {
+  display: grid;
+  gap: 1rem;
+  padding: 1.25rem;
+}
+body > main article {
+  display: grid;
+  gap: 1rem;
+}
+body > main > section > *,
+body > main article > * {
+  margin: 0;
+}
+body > main > figure:has(> blockquote) {
+  padding: 1.35rem 1.25rem;
+  margin: 0;
+  color: var(--accent-ink);
+  text-align: center;
+  background: var(--accent);
+  border: 0.08rem solid rgba(23, 50, 75, 0.08);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+body > main > figure:has(> blockquote) blockquote p {
+  font-size: clamp(1.25rem, 3.2vw, 2.1rem);
+  font-weight: 300;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+}
+body > main > figure:has(> blockquote) figcaption {
+  margin-top: 0.65rem;
+  font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+  line-height: 1.3;
+  opacity: 0.95;
+}
+body > footer {
+  padding: 0 0 2rem;
+}
+body > footer > div {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1rem 1.25rem;
+}
+body > footer p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+body > footer .contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  justify-self: start;
+  padding: 0;
+  margin: 0.75rem 0 0;
+  list-style: none;
+}
+body > footer .contact-links a {
+  display: inline-flex;
+  gap: 0.6rem;
+  align-items: center;
+  min-height: 2.4rem;
+  padding: 0.4rem 0.8rem;
+  color: color-mix(in srgb, var(--accent) 34%, var(--ink));
+  text-decoration: none;
+  background: rgba(65, 186, 174, 0.08);
+  border: 0.08rem solid rgba(65, 186, 174, 0.16);
+  border-radius: 999rem;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 0.75rem;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  color: var(--accent);
+}
+
+h2 {
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  color: var(--accent);
+}
+
+h3 {
+  font-size: clamp(1.1rem, 3vw, 1.35rem);
+}
+
+h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 1rem;
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+.wordmark img {
+  width: auto;
+  max-width: 12rem;
+  height: auto;
+}
+
+body#home #intro,
+body#classes #intro,
+body#levels #intro,
+body#about #intro,
+body#venues #intro,
+body#events #intro,
+body#register #intro {
+  align-items: center;
+  padding: clamp(1.4rem, 3vw, 2rem);
+}
+body#home #intro > h1,
+body#classes #intro > h1,
+body#levels #intro > h1,
+body#about #intro > h1,
+body#venues #intro > h1,
+body#events #intro > h1,
+body#register #intro > h1 {
+  max-width: 12ch;
+  margin: 0;
+  color: var(--ink);
+}
+body#home #intro > h1 strong,
+body#classes #intro > h1 strong,
+body#levels #intro > h1 strong,
+body#about #intro > h1 strong,
+body#venues #intro > h1 strong,
+body#events #intro > h1 strong,
+body#register #intro > h1 strong {
+  font-weight: inherit;
+  color: var(--accent);
+}
+body#home #intro > p,
+body#classes #intro > p,
+body#levels #intro > p,
+body#about #intro > p,
+body#venues #intro > p,
+body#events #intro > p,
+body#register #intro > p {
+  max-width: 38rem;
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+body#classes #intro > ul,
+body#classes #intro > ol,
+body#levels #intro > ul,
+body#levels #intro > ol,
+body#about #intro > ul,
+body#about #intro > ol,
+body#venues #intro > ul,
+body#venues #intro > ol,
+body#events #intro > ul,
+body#events #intro > ol,
+body#register #intro > ul,
+body#register #intro > ol {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+body#classes #intro > ul li,
+body#classes #intro > ol li,
+body#levels #intro > ul li,
+body#levels #intro > ol li,
+body#about #intro > ul li,
+body#about #intro > ol li,
+body#venues #intro > ul li,
+body#venues #intro > ol li,
+body#events #intro > ul li,
+body#events #intro > ol li,
+body#register #intro > ul li,
+body#register #intro > ol li {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.85rem 0.95rem;
+  margin: 0;
+  background: color-mix(in srgb, var(--accent) 7%, #ffffff);
+  border: 0.08rem solid color-mix(in srgb, var(--accent) 22%, var(--line));
+  border-radius: calc(var(--radius) - 0.25rem);
+}
+body#classes #intro > ul strong,
+body#classes #intro > ol strong,
+body#levels #intro > ul strong,
+body#levels #intro > ol strong,
+body#about #intro > ul strong,
+body#about #intro > ol strong,
+body#venues #intro > ul strong,
+body#venues #intro > ol strong,
+body#events #intro > ul strong,
+body#events #intro > ol strong,
+body#register #intro > ul strong,
+body#register #intro > ol strong {
+  color: var(--ink);
+}
+body#classes #intro > ul span,
+body#classes #intro > ol span,
+body#levels #intro > ul span,
+body#levels #intro > ol span,
+body#about #intro > ul span,
+body#about #intro > ol span,
+body#venues #intro > ul span,
+body#venues #intro > ol span,
+body#events #intro > ul span,
+body#events #intro > ol span,
+body#register #intro > ul span,
+body#register #intro > ol span {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+body#classes #intro > figure,
+body#levels #intro > figure,
+body#about #intro > figure,
+body#venues #intro > figure,
+body#events #intro > figure,
+body#register #intro > figure {
+  position: relative;
+  grid-row: auto;
+  margin: 0;
+  overflow: hidden;
+  border-radius: calc(var(--radius) - 0.25rem);
+  box-shadow: 0 1rem 2rem rgba(23, 50, 75, 0.12);
+}
+body#classes #intro > figure img,
+body#levels #intro > figure img,
+body#about #intro > figure img,
+body#venues #intro > figure img,
+body#events #intro > figure img,
+body#register #intro > figure img {
+  display: block;
+  width: 100%;
+  height: clamp(15rem, 72vw, 19rem);
+  object-fit: cover;
+  object-position: center 38%;
+}
+body#classes #intro > figure figcaption,
+body#levels #intro > figure figcaption,
+body#about #intro > figure figcaption,
+body#venues #intro > figure figcaption,
+body#events #intro > figure figcaption,
+body#register #intro > figure figcaption {
+  position: absolute;
+  right: 0.85rem;
+  bottom: 0.85rem;
+  display: grid;
+  gap: 0.25rem;
+  max-width: min(20rem, 100% - 1.7rem);
+  padding: 0.8rem 0.9rem;
+  color: #ffffff;
+  background: rgba(23, 50, 75, 0.72);
+  border-radius: calc(var(--radius) - 0.35rem);
+}
+body#classes #intro > figure figcaption span,
+body#levels #intro > figure figcaption span,
+body#about #intro > figure figcaption span,
+body#venues #intro > figure figcaption span,
+body#events #intro > figure figcaption span,
+body#register #intro > figure figcaption span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.82;
+}
+body#classes #intro > figure figcaption strong,
+body#levels #intro > figure figcaption strong,
+body#about #intro > figure figcaption strong,
+body#venues #intro > figure figcaption strong,
+body#events #intro > figure figcaption strong,
+body#register #intro > figure figcaption strong {
+  line-height: 1.2;
+}
+
+body#events #intro > figure img {
+  object-position: center 34%;
+}
+
+body#venues #intro > figure img {
+  object-position: center 52%;
+}
+
+@media (min-width: 48rem) {
+  body > header ul {
+    justify-content: flex-end;
+  }
+  body > footer .contact-links {
+    flex-wrap: nowrap;
+  }
+}
+@media (min-width: 64rem) {
+  body#classes #intro,
+  body#levels #intro,
+  body#about #intro,
+  body#venues #intro,
+  body#events #intro,
+  body#register #intro {
+    column-gap: clamp(2rem, 4vw, 4rem);
+  }
+  body#classes #intro > h1,
+  body#classes #intro > p,
+  body#levels #intro > h1,
+  body#levels #intro > p,
+  body#about #intro > h1,
+  body#about #intro > p,
+  body#venues #intro > h1,
+  body#venues #intro > p,
+  body#events #intro > h1,
+  body#events #intro > p,
+  body#register #intro > h1,
+  body#register #intro > p {
+    grid-column: 1;
+  }
+  body#classes #intro:has(> figure),
+  body#levels #intro:has(> figure),
+  body#about #intro:has(> figure),
+  body#venues #intro:has(> figure),
+  body#events #intro:has(> figure),
+  body#register #intro:has(> figure) {
+    grid-template-columns: minmax(18rem, 0.92fr) minmax(22rem, 1.08fr);
+  }
+  body#classes #intro > figure,
+  body#levels #intro > figure,
+  body#about #intro > figure,
+  body#venues #intro > figure,
+  body#events #intro > figure,
+  body#register #intro > figure {
+    grid-row: 1/span 4;
+    grid-column: 2;
+    align-self: start;
+  }
+  body#classes #intro > figure img,
+  body#levels #intro > figure img,
+  body#about #intro > figure img,
+  body#venues #intro > figure img,
+  body#events #intro > figure img,
+  body#register #intro > figure img {
+    height: 28rem;
+  }
+  body#classes #intro > ol[aria-label="Trimester rhythm"] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  body#levels #intro > p:nth-of-type(2),
+  body#levels #intro > ul[aria-label="Core aspects of each level"] {
+    grid-column: 1;
+  }
+  body#levels #intro > ul[aria-label="Core aspects of each level"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  body#register #intro {
+    grid-template-columns: minmax(18rem, 0.92fr) minmax(22rem, 1.08fr);
+  }
+  body#register #intro > ol[aria-label="Registration steps"] {
+    grid-row: 1/span 3;
+    grid-column: 2;
+    align-self: center;
+  }
+}
+body#home #video {
+  background: linear-gradient(180deg, rgba(23, 50, 75, 0.98), rgba(36, 81, 88, 0.98));
+}
+
+body#classes .schedule-days {
+  gap: 1rem;
+}
+body#classes .schedule-days > article {
+  gap: 0.75rem;
+  padding: 1.05rem;
+}
+body#classes .schedule-days > article > section {
+  padding-top: 0.95rem;
+}
+body#classes .schedule-days > article > section > h5 {
+  margin: 0 0 0.55rem;
+}
+body#classes .schedule-days > article > section > div {
+  gap: 0.45rem;
+}
+body#classes .schedule-days article.class {
+  padding: 0.82rem 0.8rem;
+  line-height: 1.34;
+}
+body#classes .schedule-days article.class > h6 {
+  margin: 0.34rem 0 0.22rem;
+}
+body#classes .schedule-days article.class > h6 ~ p,
+body#classes .schedule-days article.class .teachers {
+  margin: 0.18rem 0 0;
+}
+body#classes .schedule-days article.class.free-practice {
+  gap: 0.22rem;
+  padding-top: 0.58rem;
+  padding-bottom: 0.58rem;
+}
+@media (min-width: 64rem) {
+  body#classes .schedule-days {
+    gap: 1rem;
+  }
+  body#classes .schedule-days > article {
+    row-gap: 1rem;
+    column-gap: 0.9rem;
+    padding: 1.05rem;
+  }
+}
+
+.theme-switch-panel {
+  display: flex;
+  justify-content: center;
+  max-width: var(--max);
+  padding: 1rem 1.25rem 0;
+  margin: 0 auto 2rem;
+  border-top: 0.08rem dashed rgba(65, 186, 174, 0.16);
+}
+.theme-switch-panel .theme-switch-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.theme-switch-panel .theme-switch {
+  min-height: 2.4rem;
+  padding: 0.4rem 0.75rem;
+  color: var(--ink-soft);
+  background: rgba(65, 186, 174, 0.08);
+  border: 0.08rem solid rgba(65, 186, 174, 0.16);
+  border-radius: 999rem;
+}
+.theme-switch-panel .theme-switch[aria-pressed=true] {
+  color: var(--accent-ink);
+  background: var(--accent);
+  border-color: var(--accent);
+}
