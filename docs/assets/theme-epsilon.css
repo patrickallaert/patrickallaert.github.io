@@ -865,6 +865,7 @@ body#venues main > section:not(#intro) figure img {
   --body-line-height: 1.6;
   --shell-inline: clamp(1rem, 4vw, 1.5rem);
   --shell-inline-wide: 3rem;
+  --section-gap: clamp(2rem, 5vw, 3.5rem);
   --page-shell-width: 100%;
   --page-shell-margin-inline: 0;
 }
@@ -991,7 +992,11 @@ body > main > figure:has(> blockquote) figcaption {
 body > main > section + section,
 body > main > figure + section,
 body > main > section + figure {
-  margin-top: 3.5rem;
+  margin-top: var(--section-gap);
+}
+body > main > #intro + section,
+body > main > #intro + figure {
+  margin-top: 0;
 }
 body > main article > * {
   margin: 0;
@@ -1024,7 +1029,7 @@ body > main h3 {
   color: var(--ink);
 }
 body > main h2:not(:first-child) {
-  margin-top: 3.5rem;
+  margin-top: var(--section-gap);
 }
 body > main p,
 body > main ul,
@@ -1154,6 +1159,9 @@ body#home #gallery nav {
 }
 body#home #intro + #video {
   margin-top: clamp(0.75rem, 2vw, 1.5rem);
+}
+body#home #start-here + #video {
+  margin-top: 0;
 }
 body#home #video {
   gap: clamp(1.5rem, 5vw, 4rem);

@@ -3,6 +3,7 @@
   --body-line-height: 1.6;
   --shell-inline: clamp(1rem, 4vw, 1.5rem);
   --shell-inline-wide: 3rem;
+  --section-gap: clamp(2rem, 5vw, 3.5rem);
   --page-shell-width: 100%;
   --page-shell-margin-inline: 0;
 }
@@ -146,7 +147,12 @@ body {
     > section + section,
     > figure + section,
     > section + figure {
-      margin-top: 3.5rem;
+      margin-top: var(--section-gap);
+    }
+
+    > #intro + section,
+    > #intro + figure {
+      margin-top: 0;
     }
 
     article > * {
@@ -186,7 +192,7 @@ body {
     }
 
     h2:not(:first-child) {
-      margin-top: 3.5rem;
+      margin-top: var(--section-gap);
     }
 
     p,
@@ -341,6 +347,10 @@ body#home {
 
   #intro + #video {
     margin-top: clamp(0.75rem, 2vw, 1.5rem);
+  }
+
+  #start-here + #video {
+    margin-top: 0;
   }
 
   #video {
