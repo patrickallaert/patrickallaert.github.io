@@ -1235,45 +1235,54 @@ body {
   background: radial-gradient(circle at 8% 0%, var(--primary-glow) 0, var(--primary-glow) 14rem, transparent 30rem), linear-gradient(180deg, color-mix(in srgb, var(--primary) 7%, var(--surface)), var(--page));
 }
 body > header {
-  padding: 1rem 0 0;
+  padding: 0.5rem 0 0;
 }
 body > header nav {
   display: grid;
-  gap: 1rem;
-  padding: 1rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.55rem 0.75rem;
+  align-items: center;
+  padding: 0.7rem;
   box-shadow: var(--shadow);
 }
 body > header nav ul {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  flex-wrap: nowrap;
+  grid-column: 1/-1;
+  gap: 0.45rem;
+  padding-block-end: 0.1rem;
 }
 body > header nav a {
   display: inline-flex;
   align-items: center;
-  min-height: 2.5rem;
-  padding: 0.4rem 0.8rem;
+  min-height: 1.75rem;
+  padding: 0;
+  font-size: 0.82rem;
   color: inherit;
+  white-space: nowrap;
   text-decoration: none;
   border-radius: 999rem;
 }
 body > header nav a[aria-current=page] {
   position: relative;
+  padding: 0.15rem 0.42rem;
   font-weight: 700;
   color: var(--primary-text);
   background: var(--primary-active);
   border: 0.08rem solid color-mix(in srgb, var(--primary) 28%, transparent);
 }
 body > header nav a[aria-current=page]::before {
-  width: 0.42rem;
-  height: 0.42rem;
-  margin-right: 0.45rem;
+  width: 0.32rem;
+  height: 0.32rem;
+  margin-right: 0.28rem;
   content: "";
   background: var(--primary);
   border-radius: 999rem;
 }
 body > header nav > a[href="/register/"] {
-  justify-self: start;
+  grid-row: 1;
+  grid-column: 2;
+  justify-self: end;
   font-weight: 700;
   color: var(--primary-ink);
   letter-spacing: 0.01em;
@@ -1410,7 +1419,7 @@ ol {
 }
 .wordmark img {
   width: auto;
-  max-width: 12rem;
+  max-width: 6rem;
   height: auto;
 }
 
@@ -1599,8 +1608,41 @@ body#venues #intro > figure img {
 }
 
 @media (min-width: 48rem) {
-  body > header ul {
+  body > header {
+    padding: 1rem 0 0;
+  }
+  body > header nav {
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  body > header nav ul {
+    flex-wrap: wrap;
+    grid-column: auto;
+    gap: 0.5rem;
     justify-content: flex-end;
+    overflow: visible;
+  }
+  body > header nav a {
+    min-height: 2.5rem;
+    padding: 0.4rem 0.8rem;
+    font-size: inherit;
+  }
+  body > header nav a[aria-current=page] {
+    padding: 0.4rem 0.8rem;
+  }
+  body > header nav a[aria-current=page]::before {
+    width: 0.42rem;
+    height: 0.42rem;
+    margin-right: 0.45rem;
+  }
+  body > header nav > a[href="/register/"] {
+    grid-row: auto;
+    grid-column: auto;
+    justify-self: end;
+  }
+  .wordmark img {
+    max-width: 12rem;
   }
   body > footer .contact-links {
     flex-wrap: nowrap;

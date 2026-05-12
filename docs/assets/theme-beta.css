@@ -833,7 +833,7 @@ body#venues main > section:not(#intro) figure img {
 :root {
   --font-body: "Manrope", sans-serif;
   --body-line-height: 1.6;
-  --shell-inline: 1.5rem;
+  --shell-inline: clamp(1rem, 4vw, 1.5rem);
   --shell-inline-wide: 3rem;
   --page-shell-width: 100%;
   --page-shell-margin-inline: 0;
@@ -854,21 +854,31 @@ body header {
 }
 body header nav {
   display: grid;
-  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.45rem 0.75rem;
   align-items: center;
   width: min(100%, var(--max));
-  padding: 1rem var(--shell-inline);
+  padding: 0.65rem var(--shell-inline);
   margin-inline: auto;
 }
 body header nav ul {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem 1rem;
+  flex-wrap: nowrap;
+  grid-column: 1/-1;
+  gap: clamp(0.55rem, 16vw - 3.05rem, 1.75rem);
   align-items: center;
+  padding-block-end: 0.1rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+body header nav ul::-webkit-scrollbar {
+  display: none;
 }
 body header nav a {
+  font-size: 0.9rem;
   font-weight: 500;
   color: #475569;
+  white-space: nowrap;
   transition: color 150ms ease, opacity 150ms ease;
 }
 body header nav a:hover, body header nav a:focus-visible {
@@ -882,11 +892,14 @@ body header nav a[aria-current=page] {
 }
 body header nav > a[href="/register/"] {
   display: inline-flex;
+  grid-row: 1;
+  grid-column: 2;
   align-items: center;
   justify-content: center;
-  justify-self: start;
-  min-height: auto;
-  padding: 0.5rem 1.5rem;
+  justify-self: end;
+  min-height: 2rem;
+  padding: 0.38rem 0.75rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: var(--accent-ink);
   letter-spacing: 0;
@@ -1184,11 +1197,25 @@ body#home #video > div:last-child {
     grid-column: 1;
   }
   body > header nav {
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
     padding-inline: var(--shell-inline-wide);
   }
   body > header nav ul {
+    flex-wrap: wrap;
+    grid-column: auto;
     gap: 2rem;
     justify-content: center;
+    overflow: visible;
+  }
+  body > header nav a {
+    font-size: inherit;
+  }
+  body > header nav > a[href="/register/"] {
+    grid-row: auto;
+    grid-column: auto;
+    min-height: auto;
+    padding: 0.5rem 1.5rem;
   }
   body > main {
     padding-inline: var(--shell-inline-wide);
@@ -2281,7 +2308,7 @@ body#classes .schedule-days article.class:has(.portraits) > :not(.portraits) {
   --focus: var(--accent);
   --shadow: 0 12px 40px rgba(23, 29, 28, 0.06);
   --radius: 0.25rem;
-  --main-top-padding: 14.75rem;
+  --main-top-padding: 7.25rem;
 }
 
 body > main#main > #intro > figure figcaption {
@@ -2497,5 +2524,3 @@ body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-cla
     grid-column: 2;
   }
 }
-
-/*# sourceMappingURL=theme-beta.css.map */

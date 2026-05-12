@@ -1243,28 +1243,32 @@ body > header {
 }
 body > header nav {
   display: grid;
-  gap: 0.9rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.55rem 0.75rem;
   align-items: center;
   width: min(100%, var(--max));
-  padding: 0.85rem 1.2rem;
+  padding: 0.65rem 1rem;
   margin-inline: auto;
 }
 body > header nav ul {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
+  flex-wrap: nowrap;
+  grid-column: 1/-1;
+  gap: 0.45rem;
   align-items: center;
+  padding-block-end: 0.1rem;
 }
 body > header nav a {
   display: inline-flex;
   align-items: center;
-  min-height: 2.35rem;
-  padding: 0.42rem 0.72rem;
-  font-size: 0.86rem;
+  min-height: 1.7rem;
+  padding: 0;
+  font-size: 0.72rem;
   font-weight: 800;
   color: rgba(243, 251, 248, 0.82);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
   text-decoration: none;
   border: 1px solid transparent;
   border-radius: 999rem;
@@ -1276,13 +1280,16 @@ body > header nav a:hover, body > header nav a:focus-visible {
   border-color: rgba(111, 247, 223, 0.24);
 }
 body > header nav a[aria-current=page] {
+  padding: 0.16rem 0.4rem;
   color: var(--primary);
   background: rgba(111, 247, 223, 0.12);
   border-color: var(--primary-line);
   box-shadow: inset 0 0 1.4rem rgba(111, 247, 223, 0.08);
 }
 body > header nav > a[href="/register/"] {
-  justify-self: start;
+  grid-row: 1;
+  grid-column: 2;
+  justify-self: end;
   color: var(--primary-ink);
   background: linear-gradient(135deg, var(--primary), color-mix(in srgb, var(--primary) 62%, var(--yellow))), var(--primary);
   border-color: transparent;
@@ -1528,7 +1535,7 @@ body > footer .contact-links a {
 }
 .wordmark img {
   width: auto;
-  max-width: 7.2rem;
+  max-width: 6.4rem;
   height: auto;
 }
 
@@ -2118,13 +2125,32 @@ body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-cla
 @media (min-width: 48rem) {
   body > header nav {
     grid-template-columns: auto 1fr auto;
-    padding-inline: 1.5rem;
+    gap: 0.9rem;
+    padding: 0.85rem 1.5rem;
   }
   body > header nav ul {
+    flex-wrap: wrap;
+    grid-column: auto;
+    gap: 0.4rem;
     justify-content: center;
+    overflow: visible;
+  }
+  body > header nav a {
+    min-height: 2.35rem;
+    padding: 0.42rem 0.72rem;
+    font-size: 0.86rem;
+    letter-spacing: 0.04em;
+  }
+  body > header nav a[aria-current=page] {
+    padding: 0.42rem 0.72rem;
   }
   body > header nav > a[href="/register/"] {
+    grid-row: auto;
+    grid-column: auto;
     justify-self: end;
+  }
+  .wordmark img {
+    max-width: 7.2rem;
   }
   body#home #intro {
     grid-template-columns: minmax(18rem, 0.9fr) minmax(22rem, 1.1fr);
@@ -2250,5 +2276,3 @@ body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-cla
     height: 28rem;
   }
 }
-
-/*# sourceMappingURL=theme-eta.css.map */
