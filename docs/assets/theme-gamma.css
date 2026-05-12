@@ -180,6 +180,7 @@ body#home #gallery > div {
   position: relative;
   min-height: 21rem;
   overflow: hidden;
+  touch-action: pan-y;
   border-radius: calc(var(--radius) - 0.1rem);
   box-shadow: 0 1rem 2rem rgba(23, 50, 75, 0.12);
 }
@@ -188,10 +189,13 @@ body#home #gallery figure {
   inset: 0;
   margin: 0;
   opacity: 0;
-  transition: opacity 220ms ease;
+  transform: scale(1.025);
+  transition: opacity 260ms ease, transform 360ms ease;
+  will-change: opacity, transform;
 }
 body#home #gallery figure[data-active] {
   opacity: 1;
+  transform: scale(1);
 }
 body#home #gallery figure:nth-child(1) img, body#home #gallery figure:nth-child(2) img {
   object-position: center 42%;
@@ -211,22 +215,38 @@ body#home #gallery img {
 body#home #gallery nav,
 body#home #gallery ol {
   display: flex;
-  gap: 0.5rem;
   align-items: center;
 }
 body#home #gallery nav {
-  justify-content: space-between;
+  gap: 0.8rem;
+  justify-content: center;
 }
 body#home #gallery nav > button {
-  min-height: 2.3rem;
-  padding: 0.35rem 0.8rem;
+  display: inline-grid;
+  place-items: center;
+  width: 2.35rem;
+  min-height: 2.35rem;
+  padding: 0;
+  font-size: 0;
+  line-height: 1;
   color: inherit;
   background: rgba(255, 255, 255, 0.92);
   border: 0.08rem solid color-mix(in srgb, var(--primary) 18%, transparent);
   border-radius: 999rem;
 }
+body#home #gallery nav > button::before {
+  font-size: 1.45rem;
+  line-height: 1;
+}
+body#home #gallery nav > button[data-dir=prev]::before {
+  content: "‹";
+}
+body#home #gallery nav > button[data-dir=next]::before {
+  content: "›";
+}
 body#home #gallery ol {
   flex-wrap: wrap;
+  gap: 0.42rem;
   justify-content: center;
   padding: 0;
   margin: 0;
@@ -236,15 +256,19 @@ body#home #gallery ol li {
   margin-top: 0;
 }
 body#home #gallery ol button {
-  width: 2.3rem;
-  min-height: 2.3rem;
+  width: 0.55rem;
+  min-height: 0.55rem;
   padding: 0;
+  overflow: hidden;
+  font-size: 0;
   color: inherit;
   background: rgba(255, 255, 255, 0.92);
   border: 0.08rem solid color-mix(in srgb, var(--primary) 18%, transparent);
   border-radius: 999rem;
+  transition: width 180ms ease, background-color 180ms ease, border-color 180ms ease;
 }
 body#home #gallery ol button[aria-current=true] {
+  width: 1.35rem;
   color: var(--accent-ink);
   background: var(--accent);
   border-color: var(--accent);
@@ -828,6 +852,12 @@ body#venues main > section:not(#intro) figure img {
   }
   body#classes .schedule-days > article + article {
     margin-top: 1rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body#home #gallery figure,
+  body#home #gallery ol button {
+    transition: none;
   }
 }
 :root {
