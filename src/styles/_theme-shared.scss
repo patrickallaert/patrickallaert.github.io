@@ -82,7 +82,7 @@ body {
 
   > main {
     width: min(100%, var(--max));
-    padding: var(--main-top-padding) 1.5rem clamp(2.5rem, 5vw, 4rem);
+    padding: var(--main-top-padding) var(--shell-inline) clamp(2.5rem, 5vw, 4rem);
     margin-inline: auto;
 
     > figure:has(> blockquote) {
