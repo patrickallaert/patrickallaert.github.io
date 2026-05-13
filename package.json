@@ -5,13 +5,13 @@
   "description": "Static site rebuild for Conexao",
   "scripts": {
     "build:html": "node scripts/build-classes.js && node scripts/build-levels.js && node scripts/build-venues.js",
-    "build:css": "sass --no-source-map src/styles/theme-beta.scss docs/assets/theme-beta.css && sass --no-source-map src/styles/theme-epsilon.scss docs/assets/theme-epsilon.css && sass --no-source-map src/styles/theme-zeta.scss docs/assets/theme-zeta.css && sass --no-source-map src/styles/theme-eta.scss docs/assets/theme-eta.css && sass --no-source-map src/styles/theme-theta.scss docs/assets/theme-theta.css && sass --no-source-map src/styles/theme-iota.scss docs/assets/theme-iota.css",
+    "build:css": "sass --no-source-map src/styles/theme-gonzaga.scss docs/assets/theme-gonzaga.css && sass --no-source-map src/styles/theme-zabumba.scss docs/assets/theme-zabumba.css && sass --no-source-map src/styles/theme-sanfona.scss docs/assets/theme-sanfona.css && sass --no-source-map src/styles/theme-baiao.scss docs/assets/theme-baiao.css && sass --no-source-map src/styles/theme-roots.scss docs/assets/theme-roots.css && sass --no-source-map src/styles/theme-abraco.scss docs/assets/theme-abraco.css",
     "build:js": "terser src/scripts/theme-switcher.js --compress --mangle --output docs/assets/app.js",
     "build": "npm run build:html && npm run build:css && npm run build:js",
     "lint:css": "stylelint \"src/styles/**/*.scss\"",
     "test:contrast": "node scripts/check-contrast.js",
     "verify": "npm run lint:css && npm run build && npm run test:contrast",
-    "watch:css": "sass --watch src/styles/theme-beta.scss:docs/assets/theme-beta.css src/styles/theme-epsilon.scss:docs/assets/theme-epsilon.css src/styles/theme-zeta.scss:docs/assets/theme-zeta.css src/styles/theme-eta.scss:docs/assets/theme-eta.css src/styles/theme-theta.scss:docs/assets/theme-theta.css src/styles/theme-iota.scss:docs/assets/theme-iota.css"
+    "watch:css": "sass --watch src/styles/theme-gonzaga.scss:docs/assets/theme-gonzaga.css src/styles/theme-zabumba.scss:docs/assets/theme-zabumba.css src/styles/theme-sanfona.scss:docs/assets/theme-sanfona.css src/styles/theme-baiao.scss:docs/assets/theme-baiao.css src/styles/theme-roots.scss:docs/assets/theme-roots.css src/styles/theme-abraco.scss:docs/assets/theme-abraco.css"
   },
   "devDependencies": {
     "playwright": "^1.59.1",
