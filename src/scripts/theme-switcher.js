@@ -1,7 +1,7 @@
 (() => {
-    const activeThemes = ["beta", "epsilon", "zeta", "eta", "theta"];
+    const activeThemes = ["beta", "epsilon", "zeta", "eta", "theta", "iota"];
     const themes = activeThemes;
-    const labels = { beta: "Beta", epsilon: "Epsilon", zeta: "Zeta", eta: "Eta", theta: "Theta" };
+    const labels = { beta: "Beta", epsilon: "Epsilon", zeta: "Zeta", eta: "Eta", theta: "Theta", iota: "Iota" };
     const isSelectableTheme = (theme) => themes.includes(theme);
     let activeTheme = isSelectableTheme(sessionStorage.getItem("conexao-theme")) ? sessionStorage.getItem("conexao-theme") : "beta";
     let buttons = [];
