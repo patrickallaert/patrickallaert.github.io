@@ -1,7 +1,7 @@
 const { chromium } = require("playwright");
 
 const BASE_URL = process.env.BASE_URL || "http://127.0.0.1:8000";
-const THEMES = (process.env.THEMES || "gonzaga,zabumba,sanfona,baiao,roots,abraco").split(",").map((theme) => theme.trim()).filter(Boolean);
+const THEMES = (process.env.THEMES || "gonzaga,zabumba,sanfona,baiao,roots,abraco,mandacaru,triangulo").split(",").map((theme) => theme.trim()).filter(Boolean);
 const PAGES = (process.env.PAGES || "/,classes/,levels/,venues/,events/,about/,register/").split(",").map((page) => page.trim()).filter(Boolean);
 const MIN_CONTRAST = Number(process.env.MIN_CONTRAST || 4.5);
 

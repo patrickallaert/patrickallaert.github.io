@@ -1,7 +1,7 @@
 (() => {
-    const activeThemes = ["gonzaga", "zabumba", "sanfona", "baiao", "roots", "abraco"];
+    const activeThemes = ["gonzaga", "zabumba", "sanfona", "baiao", "roots", "abraco", "mandacaru", "triangulo"];
     const themes = activeThemes;
-    const labels = { gonzaga: "Gonzaga", zabumba: "Zabumba", sanfona: "Sanfona", baiao: "Baião", roots: "Roots", abraco: "Abraço" };
+    const labels = { gonzaga: "Gonzaga", zabumba: "Zabumba", sanfona: "Sanfona", baiao: "Baião", roots: "Roots", abraco: "Abraço", mandacaru: "Mandacaru", triangulo: "Triângulo" };
     const isSelectableTheme = (theme) => themes.includes(theme);
     let activeTheme = isSelectableTheme(sessionStorage.getItem("conexao-theme")) ? sessionStorage.getItem("conexao-theme") : "gonzaga";
     let buttons = [];

@@ -1,0 +1,2431 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.theme-switch {
+  justify-self: start;
+  cursor: pointer;
+}
+
+:root {
+  --brand: #41baae;
+  --primary: var(--brand);
+  --primary-text: #0f766e;
+  --primary-ink: #062d29;
+  --primary-soft: color-mix(in srgb, var(--primary) 10%, #ffffff);
+  --primary-line: color-mix(in srgb, var(--primary) 28%, #d5e9e5);
+  --accent: var(--primary-text);
+  --accent-ink: #ffffff;
+  --icon-mail: url("icons/mail.svg");
+  --icon-newsletter: url("icons/newsletter.svg");
+  --icon-instagram: url("icons/instagram.svg");
+  --icon-facebook: url("icons/facebook.svg");
+  --icon-youtube: url("icons/youtube.svg");
+  --icon-pin: url("icons/pin.svg");
+  --icon-people: url("icons/people.svg");
+  --yellow: #ffd64d;
+  --course-level-1: #4ed9d7;
+  --course-level-2: #2f8cff;
+  --course-level-3: #0a6084;
+  --course-level-4: #c13cc6;
+  --course-musicality: #ff5f9f;
+  --course-dancing-dialogue: #ff7a59;
+  --course-footwork-armwork: #f08c2e;
+  --course-roots-1: #e7c83a;
+  --course-roots-2: #b7a326;
+  --course-practice: #f6c983;
+  --max: 82rem;
+}
+
+body {
+  min-width: 20rem;
+  margin: 0;
+  font-family: var(--font-body);
+  line-height: var(--body-line-height);
+  color: var(--ink);
+  background: var(--page);
+}
+
+body > header,
+body > main,
+body > footer {
+  width: var(--page-shell-width);
+  margin-inline: var(--page-shell-margin-inline);
+}
+
+body > header nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+body > header nav ul li {
+  margin: 0;
+}
+
+body > footer .contact-links a::before {
+  display: inline-block;
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  content: "";
+  background: currentColor;
+  -webkit-mask: var(--icon) center/contain no-repeat;
+  mask: var(--icon) center/contain no-repeat;
+}
+body > footer .contact-links a[href^="mailto:"] {
+  --icon: var(--icon-mail);
+}
+body > footer .contact-links a[href*="share-eu1.hsforms.com"] {
+  --icon: var(--icon-newsletter);
+}
+body > footer .contact-links a[href*="instagram.com"] {
+  --icon: var(--icon-instagram);
+}
+body > footer .contact-links a[href*="facebook.com"] {
+  --icon: var(--icon-facebook);
+}
+body > footer .contact-links a[href*="youtube.com"] {
+  --icon: var(--icon-youtube);
+}
+
+body > main > section.orientation {
+  display: grid;
+  gap: 0.9rem;
+  align-items: start;
+}
+body > main > section.orientation h2,
+body > main > section.orientation p,
+body > main > section.orientation ul {
+  margin-bottom: 0;
+}
+body > main > section.orientation p {
+  max-width: 52rem;
+}
+body > main > section.orientation ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  padding: 0;
+  margin-top: 0.25rem;
+  list-style: none;
+}
+body > main > section.orientation li {
+  margin-top: 0;
+}
+body > main > section.orientation a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+  border-radius: 999rem;
+}
+body > main > section.orientation li:first-child a {
+  color: var(--accent-ink);
+  background: var(--accent);
+  border: 1px solid var(--accent);
+}
+body > main > section.orientation li:not(:first-child) a {
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--line));
+}
+
+body > main > figure:has(> blockquote) blockquote,
+body > main > figure:has(> blockquote) p {
+  margin: 0;
+}
+
+:focus-visible {
+  outline: 0.2rem solid var(--focus);
+  outline-offset: 0.2rem;
+}
+
+body > a:first-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  color: var(--ink);
+  background: var(--yellow);
+  transform: translateY(-140%);
+}
+body > a:first-child:focus {
+  transform: translateY(0);
+}
+
+body#home #gallery {
+  display: grid;
+  gap: 0.85rem;
+}
+body#home #gallery > div {
+  position: relative;
+  min-height: 21rem;
+  overflow: hidden;
+  touch-action: pan-y;
+  border-radius: calc(var(--radius) - 0.1rem);
+  box-shadow: 0 1rem 2rem rgba(23, 50, 75, 0.12);
+}
+body#home #gallery figure {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  transform: scale(1.025);
+  transition: opacity 260ms ease, transform 360ms ease;
+  will-change: opacity, transform;
+}
+body#home #gallery figure[data-active] {
+  opacity: 1;
+  transform: scale(1);
+}
+body#home #gallery figure:nth-child(1) img, body#home #gallery figure:nth-child(2) img {
+  object-position: center 42%;
+}
+body#home #gallery figure:nth-child(3) img, body#home #gallery figure:nth-child(4) img {
+  object-position: center 38%;
+}
+body#home #gallery figure:nth-child(5) img {
+  object-position: center 28%;
+}
+body#home #gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+body#home #gallery nav,
+body#home #gallery ol {
+  display: flex;
+  align-items: center;
+}
+body#home #gallery nav {
+  gap: 0.8rem;
+  justify-content: center;
+}
+body#home #gallery nav > button {
+  display: inline-grid;
+  place-items: center;
+  width: 2.35rem;
+  min-height: 2.35rem;
+  padding: 0;
+  font-size: 0;
+  line-height: 1;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.92);
+  border: 0.08rem solid color-mix(in srgb, var(--primary) 18%, transparent);
+  border-radius: 999rem;
+}
+body#home #gallery nav > button::before {
+  font-size: 1.45rem;
+  line-height: 1;
+}
+body#home #gallery nav > button[data-dir=prev]::before {
+  content: "‹";
+}
+body#home #gallery nav > button[data-dir=next]::before {
+  content: "›";
+}
+body#home #gallery ol {
+  flex-wrap: wrap;
+  gap: 0.42rem;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+body#home #gallery ol li {
+  margin-top: 0;
+}
+body#home #gallery ol button {
+  width: 0.55rem;
+  min-height: 0.55rem;
+  padding: 0;
+  overflow: hidden;
+  font-size: 0;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.92);
+  border: 0.08rem solid color-mix(in srgb, var(--primary) 18%, transparent);
+  border-radius: 999rem;
+  transition: width 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+body#home #gallery ol button[aria-current=true] {
+  width: 1.35rem;
+  color: var(--accent-ink);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+body#home #gallery button {
+  font: inherit;
+  cursor: pointer;
+}
+body#home #video {
+  display: grid;
+  gap: 1rem;
+}
+body#home #video h2,
+body#home #video p,
+body#home #video a {
+  color: #ffffff;
+}
+body#home #video > div:last-child {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: calc(var(--radius) - 0.1rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.18);
+}
+body#home #video iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+body#about #team > div {
+  display: grid;
+  gap: 1rem;
+}
+body#about #team > div > article {
+  display: grid;
+  gap: 0.95rem;
+  align-content: start;
+  height: 100%;
+  padding: 1rem;
+  background: color-mix(in srgb, #ffffff 88%, color-mix(in srgb, var(--primary) 6%, transparent));
+  border: 0.08rem solid color-mix(in srgb, var(--line) 88%, color-mix(in srgb, var(--primary) 12%, transparent));
+  border-radius: calc(var(--radius) - 0.08rem);
+}
+body#about #school figure,
+body#about #team figure {
+  position: relative;
+  aspect-ratio: 1;
+  padding: 0.35rem;
+  margin: 0;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 18%, transparent), rgba(255, 248, 235, 0.9));
+  border-radius: 999rem;
+  box-shadow: 0 0.65rem 1.2rem rgba(17, 24, 39, 0.07);
+}
+body#about #school figure::after,
+body#about #team figure::after {
+  position: absolute;
+  inset: 0.2rem;
+  pointer-events: none;
+  content: "";
+  border: 0.08rem solid rgba(255, 255, 255, 0.9);
+  border-radius: 999rem;
+}
+body#about #school figure img,
+body#about #team figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  background: #e8f1ec;
+  border-radius: 999rem;
+  box-shadow: 0 0.35rem 0.8rem rgba(17, 24, 39, 0.1);
+}
+body#about #team figure {
+  justify-self: start;
+  width: min(100%, 9rem);
+}
+body#about #team h3 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 0;
+  text-align: left;
+}
+body#about #team h3 a[href*="instagram.com"] {
+  --icon: var(--icon-instagram);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.85rem;
+  height: 1.85rem;
+  overflow: hidden;
+  font-size: 0;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
+  border: 0.08rem solid color-mix(in srgb, var(--primary) 18%, transparent);
+  border-radius: 999rem;
+  transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+body#about #team h3 a[href*="instagram.com"]:hover, body#about #team h3 a[href*="instagram.com"]:focus-visible {
+  background: color-mix(in srgb, var(--primary) 18%, transparent);
+  border-color: color-mix(in srgb, var(--primary) 35%, transparent);
+  transform: translateY(-0.05rem);
+}
+body#about #team h3 a[href*="instagram.com"]::before {
+  display: block;
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  content: "";
+  background: currentColor;
+  -webkit-mask: var(--icon) center/contain no-repeat;
+  mask: var(--icon) center/contain no-repeat;
+}
+body#about #team p {
+  max-width: 58ch;
+  margin: 0;
+  text-align: left;
+  text-wrap: pretty;
+}
+body#about #school article > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 10.5rem));
+  gap: 0.75rem;
+  justify-content: start;
+}
+body#about #school figure {
+  width: min(100%, 10.5rem);
+}
+
+body#venues main > section:not(#intro) {
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 26rem);
+  align-items: start;
+}
+body#venues main > section:not(#intro) figure {
+  grid-row: 1/span 6;
+  grid-column: 2;
+  justify-self: end;
+  width: 100%;
+}
+
+body#levels section.class {
+  padding: 1rem 1rem 1rem clamp(1.25rem, 3vw, 2rem);
+  scroll-margin-top: 2rem;
+  background: color-mix(in srgb, var(--course-accent) 8%, #ffffff);
+  border-left: 0;
+  box-shadow: inset 0.35rem 0 0 var(--course-accent);
+}
+body#levels section.class h2,
+body#levels section.class h3 {
+  color: var(--ink);
+}
+body#levels #short-courses > section {
+  padding: 1rem 1rem 1rem clamp(1.25rem, 3vw, 2rem);
+  margin-top: 0.85rem;
+  background: color-mix(in srgb, var(--course-accent) 10%, #ffffff);
+  border: 0.08rem solid color-mix(in srgb, var(--course-accent) 35%, var(--line));
+  border-left: 0;
+  border-radius: calc(var(--radius) - 0.1rem);
+  box-shadow: inset 0.3rem 0 0 var(--course-accent);
+}
+body#levels section.class.level.\31  {
+  --course-accent: var(--course-level-1);
+}
+body#levels section.class.level.\32  {
+  --course-accent: var(--course-level-2);
+}
+body#levels section.class.level.\33  {
+  --course-accent: var(--course-level-3);
+}
+body#levels section.class.level.\34  {
+  --course-accent: var(--course-level-4);
+}
+body#levels section.class.roots.\31  {
+  --course-accent: var(--course-roots-1);
+}
+body#levels section.class.roots.\32  {
+  --course-accent: var(--course-roots-2);
+}
+body#levels section.class.short-course.dancing-in-dialogue {
+  --course-accent: var(--course-dancing-dialogue);
+}
+body#levels section.class.short-course.footwork-armwork {
+  --course-accent: var(--course-footwork-armwork);
+}
+
+body#classes .class.level.\31 ,
+body#venues .class.level.\31  {
+  --course-accent: var(--course-level-1);
+}
+body#classes .class.level.\32 ,
+body#venues .class.level.\32  {
+  --course-accent: var(--course-level-2);
+}
+body#classes .class.level.\33 ,
+body#venues .class.level.\33  {
+  --course-accent: var(--course-level-3);
+}
+body#classes .class.level.\34 ,
+body#venues .class.level.\34  {
+  --course-accent: var(--course-level-4);
+}
+body#classes .class.musicality,
+body#venues .class.musicality {
+  --course-accent: var(--course-musicality);
+}
+body#classes .class.dancing-in-dialogue,
+body#venues .class.dancing-in-dialogue {
+  --course-accent: var(--course-dancing-dialogue);
+}
+body#classes .class.footwork-armwork,
+body#venues .class.footwork-armwork {
+  --course-accent: var(--course-footwork-armwork);
+}
+body#classes .class.roots.\31 ,
+body#venues .class.roots.\31  {
+  --course-accent: var(--course-roots-1);
+}
+body#classes .class.roots.\32 ,
+body#venues .class.roots.\32  {
+  --course-accent: var(--course-roots-2);
+}
+body#classes .class.pratica,
+body#venues .class.pratica {
+  --course-accent: var(--course-practice);
+}
+body#classes .free-practice,
+body#venues .free-practice {
+  --course-accent: var(--course-practice);
+}
+
+body#classes main a[href^="https://forms.gle"],
+body#classes main a[href*="docs.google.com/forms"],
+body#register main a[href^="https://forms.gle"],
+body#register main a[href*="docs.google.com/forms"] {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.45rem 0.9rem;
+  color: var(--accent-ink);
+  text-decoration: none;
+  background: var(--accent);
+  border-radius: 999rem;
+}
+body#classes #prices > p,
+body#register #prices > p {
+  max-width: 46rem;
+}
+body#classes #prices > div,
+body#register #prices > div {
+  display: grid;
+  gap: 1rem;
+  margin: 1rem 0 1.15rem;
+}
+body#classes #prices article,
+body#register #prices article {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem 1rem 1.1rem;
+  background: color-mix(in srgb, var(--accent) 6%, #ffffff);
+  border: 1px solid color-mix(in srgb, var(--accent) 14%, var(--line));
+  border-radius: calc(var(--radius) * 1.5);
+}
+body#classes #prices h3,
+body#register #prices h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.12;
+  color: var(--ink);
+}
+body#classes #prices dl,
+body#register #prices dl {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+}
+body#classes #prices dl > div,
+body#register #prices dl > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  align-items: baseline;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 72%, transparent);
+}
+body#classes #prices dt,
+body#register #prices dt {
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: color-mix(in srgb, var(--accent) 72%, var(--ink));
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+body#classes #prices dd,
+body#register #prices dd {
+  margin: 0;
+  font-family: "Epilogue", sans-serif;
+  font-size: 1.08rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--ink);
+  white-space: nowrap;
+}
+body#classes #prices article > p,
+body#register #prices article > p {
+  margin: 0;
+  color: color-mix(in srgb, var(--ink) 76%, transparent);
+}
+body#classes #prices > ul,
+body#register #prices > ul {
+  display: grid;
+  gap: 0.65rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+body#classes #prices > ul li,
+body#register #prices > ul li {
+  position: relative;
+  padding-left: 1.15rem;
+  margin: 0;
+}
+body#classes #prices > ul li::before,
+body#register #prices > ul li::before {
+  position: absolute;
+  top: 0.58rem;
+  left: 0;
+  width: 0.42rem;
+  height: 0.42rem;
+  content: "";
+  background: var(--accent);
+  border-radius: 999rem;
+}
+
+@media (min-width: 48rem) {
+  body > header nav {
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+  }
+  body > header nav > a[href="/register/"] {
+    justify-self: end;
+  }
+  body#classes #prices > div,
+  body#register #prices > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  body#about #team > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+  body#about #team > div > article {
+    grid-template-columns: minmax(0, 9.5rem) minmax(0, 1fr);
+    row-gap: 0.6rem;
+    column-gap: 1rem;
+  }
+  body#about #team > div > article > h3 {
+    grid-column: 1/-1;
+  }
+  body#about #team > div > article > figure {
+    grid-row: 2/span 3;
+    grid-column: 1;
+    align-self: start;
+  }
+  body#about #team > div > article > p {
+    grid-column: 2;
+  }
+  body#about #team > div > article:not(:has(figure)) > p {
+    grid-column: 1/-1;
+  }
+  body#about #school article {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    align-items: start;
+  }
+  body#about #school article > div {
+    grid-template-columns: repeat(3, minmax(0, 10.5rem));
+  }
+  body#events #praticas > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  body#home #intro {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  }
+  body#home #intro h1,
+  body#home #intro h1 + p {
+    grid-column: 1;
+  }
+  body#home #gallery {
+    grid-row: 1/span 2;
+    grid-column: 2;
+  }
+  body#home #gallery > div {
+    min-height: 29rem;
+  }
+  body#home #video {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: center;
+  }
+}
+body#classes .schedule-legend {
+  display: none;
+}
+body#classes .schedule-days {
+  display: grid;
+}
+body#classes .schedule-days > article {
+  display: grid;
+  align-content: start;
+  height: 100%;
+  background: color-mix(in srgb, var(--primary) 5%, transparent);
+  border: 0.08rem solid var(--line);
+  border-radius: 0.8rem;
+  box-shadow: var(--shadow);
+}
+body#classes .schedule-days > article > h4 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.02;
+  color: color-mix(in srgb, var(--course-level-2) 70%, var(--ink));
+  text-transform: uppercase;
+  letter-spacing: 0.035em;
+}
+body#classes .schedule-days > article > p {
+  margin: 0;
+}
+body#classes .schedule-days > article > p:first-of-type {
+  font-size: 0.75rem;
+  font-style: italic;
+  font-weight: 700;
+  color: color-mix(in srgb, var(--course-dancing-dialogue) 76%, #7b1d1d);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+body#classes .schedule-days > article > p:first-of-type strong,
+body#classes .schedule-days > article > p:first-of-type time {
+  color: inherit;
+}
+body#classes .schedule-days > article > section {
+  min-width: 0;
+  border-top: 0.08rem solid color-mix(in srgb, var(--line) 72%, transparent);
+}
+body#classes .schedule-days > article > section + section {
+  margin-top: 0;
+}
+body#classes .schedule-days > article > section > h5 {
+  display: flex;
+  gap: 0.38rem;
+  align-items: flex-start;
+  padding: 0;
+  font-size: 0.79rem;
+  line-height: 1.15;
+  color: color-mix(in srgb, var(--ink-soft) 88%, var(--course-level-2));
+  text-transform: uppercase;
+  letter-spacing: 0.075em;
+  overflow-wrap: anywhere;
+  border: 0;
+}
+body#classes .schedule-days > article > section > h5::before {
+  flex: 0 0 0.72rem;
+  width: 0.72rem;
+  height: 0.72rem;
+  margin-top: 0.05rem;
+  content: "";
+  background: no-repeat center/contain var(--icon-pin);
+  opacity: 0.8;
+}
+body#classes .schedule-days > article > section > h5 a {
+  color: inherit;
+  text-decoration: none;
+}
+body#classes .schedule-days > article > section > div {
+  display: grid;
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+}
+body#classes .schedule-days article.class {
+  min-width: 0;
+  background: color-mix(in srgb, var(--course-accent) 12%, #ffffff);
+  border-left: 0.28rem solid var(--course-accent);
+  border-radius: 0.35rem;
+}
+body#classes .schedule-days article.class > p:first-of-type {
+  margin: 0;
+  font-size: 0.73rem;
+  font-weight: 700;
+  color: color-mix(in srgb, var(--course-accent) 72%, var(--ink));
+  white-space: nowrap;
+}
+body#classes .schedule-days article.class > h6 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.16;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+  text-decoration-thickness: 0.08rem;
+  text-underline-offset: 0.12em;
+}
+body#classes .schedule-days article.class > h6 a {
+  color: inherit;
+}
+body#classes .schedule-days article.class > h6 ~ p,
+body#classes .schedule-days article.class .teachers {
+  font-size: 0.68rem;
+  color: var(--ink-soft);
+}
+body#classes .schedule-days article.class .teachers {
+  position: relative;
+  padding-left: 1rem;
+}
+body#classes .schedule-days article.class .teachers::before {
+  position: absolute;
+  top: 0.08rem;
+  left: 0;
+  width: 0.72rem;
+  height: 0.72rem;
+  content: "";
+  background: no-repeat center/contain var(--icon-people);
+  opacity: 0.72;
+}
+body#classes .schedule-days article.class.free-practice {
+  display: grid;
+  background: repeating-linear-gradient(135deg, rgba(246, 201, 131, 0.14) 0 0.55rem, rgba(255, 255, 255, 0.92) 0.55rem 1.1rem);
+  border: 0.08rem dashed color-mix(in srgb, var(--course-accent) 55%, var(--line));
+  border-left: 0.32rem solid var(--course-accent);
+}
+body#classes .schedule-days article.class.free-practice > p:first-of-type {
+  margin: 0;
+}
+body#classes .schedule-days article.class.free-practice > h6 {
+  margin: 0;
+  font-size: 0.79rem;
+  font-weight: 600;
+  overflow-wrap: normal;
+}
+@media (min-width: 48rem) {
+  body#classes .schedule-days {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 64rem) {
+  body#classes .schedule-days {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start;
+  }
+  body#classes .schedule-days > article > h4 {
+    font-size: 1.06rem;
+  }
+  body#classes .schedule-days > article > p:first-of-type {
+    grid-column: 1/-1;
+    padding-bottom: 0.05rem;
+  }
+  body#classes .schedule-days > article > section {
+    align-self: start;
+  }
+  body#classes .schedule-days > article > section:only-of-type,
+  body#classes .schedule-days > article > p:first-of-type + section:last-of-type {
+    grid-column: 1/-1;
+  }
+}
+
+body#venues main > section:not(#intro) figure {
+  max-width: 26rem;
+  margin: 0;
+  overflow: hidden;
+  border-radius: calc(var(--radius) - 0.1rem);
+}
+body#venues main > section:not(#intro) figure img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 47.99rem) {
+  body#classes .schedule-days {
+    display: block;
+  }
+  body#classes .schedule-days > article {
+    height: auto;
+  }
+  body#classes .schedule-days > article + article {
+    margin-top: 1rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body#home #gallery figure,
+  body#home #gallery ol button {
+    transition: none;
+  }
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes],
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] {
+  padding: 0;
+  margin-top: clamp(1rem, 2vw, 1.35rem);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] > h3,
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] > h4,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] > h3,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] > h4 {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.65rem;
+  padding: 0;
+  margin: 0 0 0.7rem;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: color-mix(in srgb, var(--ink) 78%, var(--course-accent));
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] li,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] li {
+  margin: 0;
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] article,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] article {
+  position: relative;
+  display: grid;
+  gap: 0.7rem;
+  padding: 0.9rem 1rem 1rem;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--course-accent) 8%, #ffffff);
+  border: 1px solid color-mix(in srgb, var(--course-accent) 18%, rgba(181, 196, 192, 0.4));
+  border-left: 0;
+  border-radius: 0 0.78rem 0.78rem 0;
+  box-shadow: inset 0.28rem 0 0 var(--course-accent), 0 1.1rem 2.2rem rgba(38, 71, 67, 0.06);
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] article > h4,
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] article > h5,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] article > h4,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] article > h5 {
+  padding: 0 0 0.6rem;
+  margin: 0;
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  font-weight: 800;
+  line-height: 1;
+  color: color-mix(in srgb, var(--ink) 82%, var(--course-accent));
+  border-bottom: 1px solid color-mix(in srgb, var(--course-accent) 20%, transparent);
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] article > h5 a,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] article > h5 a {
+  color: inherit;
+  text-decoration: none;
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] article > p,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] article > p {
+  margin: 0;
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] article.pratica,
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] article.free-practice,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] article.pratica,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] article.free-practice {
+  background: color-mix(in srgb, var(--course-accent) 10%, #ffffff);
+  border-color: color-mix(in srgb, var(--course-accent) 44%, rgba(181, 196, 192, 0.6));
+  border-style: dashed;
+  border-left: 0;
+  box-shadow: inset 0.28rem 0 0 var(--course-accent), 0 0.8rem 1.6rem rgba(38, 71, 67, 0.04);
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] article.free-practice,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] article.free-practice {
+  gap: 0.55rem;
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .portraits,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .portraits {
+  display: flex;
+  grid-row: 1/span 2;
+  grid-column: 2;
+  align-self: start;
+  justify-self: end;
+  width: max-content;
+  padding: 0;
+  margin: 0;
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .portraits:has(img:nth-child(1)),
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .portraits:has(img:nth-child(1)) {
+  width: 4.45rem;
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .portraits:has(img:nth-child(2)),
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .portraits:has(img:nth-child(2)) {
+  width: 6.65rem;
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .portraits:has(img:nth-child(3)),
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .portraits:has(img:nth-child(3)) {
+  width: 8.85rem;
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .portraits img,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .portraits img {
+  flex: none;
+  width: 3.55rem;
+  height: 4.15rem;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+  border-radius: 0.3rem;
+  box-shadow: 0 0.45rem 1.1rem rgba(23, 29, 28, 0.12);
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .portraits img:nth-child(1),
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .portraits img:nth-child(1) {
+  transform: rotate(4deg);
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .portraits img:nth-child(2n),
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .portraits img:nth-child(2n) {
+  transform: rotate(-8deg) translateY(0.12rem);
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .portraits img:nth-child(3n),
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .portraits img:nth-child(3n) {
+  transform: rotate(6deg) translateY(-0.1rem);
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .portraits img + img,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .portraits img + img {
+  margin-left: -1.2rem;
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .term a,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .term a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.6rem;
+  padding: 0.18rem 0.58rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: color-mix(in srgb, var(--course-accent) 36%, var(--primary-ink));
+  white-space: nowrap;
+  text-decoration: none;
+  background: color-mix(in srgb, var(--course-accent) 13%, #ffffff);
+  border-radius: 999rem;
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .time,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .time {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.22rem 0.55rem;
+  align-items: baseline;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: color-mix(in srgb, var(--accent) 58%, var(--ink-soft));
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .time > span,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .time > span {
+  color: color-mix(in srgb, var(--ink) 70%, var(--course-accent));
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .exceptions,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .exceptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.45rem;
+  align-items: baseline;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #8a1616;
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .exceptions strong,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .exceptions strong {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .course,
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .venue,
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .people,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .course,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .venue,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .people {
+  position: relative;
+  padding-left: 1.45rem;
+  font-size: 0.87rem;
+  line-height: 1.35;
+  color: color-mix(in srgb, var(--ink) 84%, var(--primary-ink));
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .course::before,
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .venue::before,
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .people::before,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .course::before,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .venue::before,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .people::before {
+  position: absolute;
+  top: 0.08rem;
+  left: 0.1rem;
+  width: 1rem;
+  height: 1rem;
+  content: "";
+  background: color-mix(in srgb, var(--course-accent) 28%, var(--primary-ink));
+  -webkit-mask: var(--scheduled-icon) center/contain no-repeat;
+  mask: var(--scheduled-icon) center/contain no-repeat;
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .course a,
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .venue a,
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .people a,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .course a,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .venue a,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .people a {
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .venue,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .venue {
+  --scheduled-icon: var(--icon-pin);
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .course,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .course {
+  --scheduled-icon: var(--icon-newsletter);
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .people,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .people {
+  --scheduled-icon: var(--icon-people);
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] a:hover,
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] a:focus-visible,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] a:hover,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] {
+  padding: clamp(0.85rem, 2vw, 1.05rem);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--course-accent) 7%, transparent), transparent 62%), color-mix(in srgb, var(--course-accent) 3%, rgba(255, 255, 255, 0.72));
+  border: 1px solid color-mix(in srgb, var(--course-accent) 16%, var(--line));
+  border-radius: 0.95rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 0.9rem 1.8rem rgba(38, 71, 67, 0.035);
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] > h3,
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] > h4 {
+  margin-bottom: 0.85rem;
+  color: color-mix(in srgb, var(--course-accent) 42%, var(--ink));
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] > ul {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] article {
+  padding-top: 1rem;
+  background: rgba(255, 255, 255, 0.82);
+  border-color: color-mix(in srgb, var(--course-accent) 14%, var(--line));
+  border-radius: 0.75rem;
+  box-shadow: 0 0.7rem 1.35rem rgba(38, 71, 67, 0.045);
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] article::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 0.24rem;
+  content: "";
+  background: var(--course-accent);
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] article.pratica,
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] article.free-practice {
+  box-shadow: 0 0.6rem 1.1rem rgba(38, 71, 67, 0.035);
+}
+
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] {
+  grid-column: 1/-1;
+}
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] > .scheduled-days {
+  display: grid;
+  gap: 0.9rem;
+}
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] > .scheduled-days > section {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0.85rem;
+  background: color-mix(in srgb, var(--course-accent, var(--accent)) 5%, rgba(255, 255, 255, 0.7));
+  border: 1px solid color-mix(in srgb, var(--line) 78%, transparent);
+  border-radius: 0.95rem;
+}
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] > .scheduled-days > section > h4 {
+  padding: 0 0 0.55rem;
+  margin: 0;
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--ink);
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 78%, transparent);
+}
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] > .scheduled-days > section > ul {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@media (min-width: 42rem) {
+  body#levels section.class > section[aria-labelledby$=-scheduled-classes] > ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] > .scheduled-days {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  body#levels section.class > section[aria-labelledby$=-scheduled-classes] article,
+  body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] article {
+    grid-template-columns: minmax(8rem, 0.72fr) minmax(0, 1fr) auto;
+    gap: 0.62rem 1rem;
+    align-items: start;
+  }
+  body#levels section.class > section[aria-labelledby$=-scheduled-classes] article > h4,
+  body#levels section.class > section[aria-labelledby$=-scheduled-classes] article > h5,
+  body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] article > h4,
+  body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] article > h5 {
+    align-self: center;
+    padding: 0;
+    border: 0;
+  }
+  body#levels section.class > section[aria-labelledby$=-scheduled-classes] .term,
+  body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .term {
+    justify-self: end;
+  }
+  body#levels section.class > section[aria-labelledby$=-scheduled-classes] .time,
+  body#levels section.class > section[aria-labelledby$=-scheduled-classes] .exceptions,
+  body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .time,
+  body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .exceptions {
+    grid-column: 1/-1;
+  }
+  body#levels section.class > section[aria-labelledby$=-scheduled-classes] .course,
+  body#levels section.class > section[aria-labelledby$=-scheduled-classes] .venue,
+  body#levels section.class > section[aria-labelledby$=-scheduled-classes] .people,
+  body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .course,
+  body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .venue,
+  body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .people {
+    align-self: start;
+  }
+  body#levels section.class > section[aria-labelledby$=-scheduled-classes] .portraits,
+  body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .portraits {
+    grid-column: 3;
+  }
+}
+body#classes .schedule-days article.class:has(.portraits) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.28rem 0.72rem;
+  align-items: start;
+}
+body#classes .schedule-days article.class .portraits {
+  display: grid;
+  grid-row: 1/span 4;
+  grid-column: 2;
+  justify-items: end;
+  width: max-content;
+  padding: 0;
+  margin: 0;
+}
+body#classes .schedule-days article.class .portraits img {
+  flex: none;
+  width: 2.05rem;
+  height: 2.42rem;
+  object-fit: cover;
+  border: 0.12rem solid #ffffff;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.45rem 0.9rem rgba(23, 29, 28, 0.14);
+}
+body#classes .schedule-days article.class .portraits img:nth-child(1) {
+  transform: rotate(5deg);
+}
+body#classes .schedule-days article.class .portraits img:nth-child(2n) {
+  transform: rotate(-7deg) translateY(0.1rem);
+}
+body#classes .schedule-days article.class .portraits img:nth-child(3n) {
+  transform: rotate(6deg) translateY(-0.08rem);
+}
+body#classes .schedule-days article.class .portraits img + img {
+  margin-top: -0.66rem;
+}
+body#classes .schedule-days article.class:has(.portraits) > :not(.portraits) {
+  grid-column: 1;
+}
+@media (min-width: 78rem) {
+  body#classes .schedule-days article.class .portraits img {
+    width: 2.75rem;
+    height: 3.24rem;
+  }
+  body#classes .schedule-days article.class .portraits img + img {
+    margin-top: -0.9rem;
+  }
+}
+
+:root {
+  --sand: #fff0c9;
+  --sand-deep: #efd091;
+  --paper: #fff7dc;
+  --paper-soft: #fffbea;
+  --surface: #fff9e5;
+  --surface-warm: #ffeab8;
+  --ink: #302313;
+  --ink-soft: rgba(48, 35, 19, 0.74);
+  --primary: #b84d2c;
+  --primary-text: #7f2d1c;
+  --primary-ink: #fff8e4;
+  --primary-soft: color-mix(in srgb, var(--primary) 12%, var(--surface));
+  --primary-line: color-mix(in srgb, var(--primary) 34%, transparent);
+  --accent: var(--primary-text);
+  --accent-ink: #fff8e4;
+  --yellow: #f0b735;
+  --green: #396f4f;
+  --green-text: #2f5f43;
+  --guava: #c85d65;
+  --leather: #6d3f21;
+  --line: rgba(109, 63, 33, 0.22);
+  --shadow-color: rgba(76, 44, 21, 0.13);
+  --shadow: 0 1rem 0 rgba(109, 63, 33, 0.08), 0 1.5rem 3rem var(--shadow-color);
+  --radius: 1.45rem;
+  --focus: #123d31;
+  --page: var(--sand);
+  --cut-radius: 2rem 1.25rem 1.85rem 1rem;
+  --cut-shadow: 0 0.55rem 0 rgba(109, 63, 33, 0.1), 0 1.35rem 2.6rem rgba(76, 44, 21, 0.16);
+  --font-body: Inter, "Source Sans 3", "Segoe UI", sans-serif;
+  --font-title: "Bricolage Grotesque", Fraunces, Georgia, serif;
+  --body-line-height: 1.62;
+  --max: 88rem;
+  --page-shell-width: 100%;
+  --page-shell-margin-inline: 0;
+  --main-inline: clamp(1rem, 4vw, 1.5rem);
+  --main-top-padding: clamp(1rem, 2vw, 1.35rem);
+  --section-gap: clamp(1.6rem, 4vw, 3rem);
+  --course-level-1: #2f8564;
+  --course-level-2: #2d6f86;
+  --course-level-3: #b84d2c;
+  --course-level-4: #8d4f86;
+  --course-musicality: #c85d65;
+  --course-dancing-dialogue: #9e432c;
+  --course-footwork-armwork: #bd731d;
+  --course-roots-1: #74602d;
+  --course-roots-2: #5d4b22;
+  --course-practice: #396f4f;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 0.18em;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 0.18rem solid color-mix(in srgb, var(--focus) 75%, var(--yellow));
+  outline-offset: 0.18rem;
+}
+
+body {
+  color: var(--ink);
+  background: radial-gradient(circle at 13% 6%, color-mix(in srgb, var(--yellow) 36%, transparent) 0 7rem, transparent 20rem), radial-gradient(circle at 90% 9%, color-mix(in srgb, var(--guava) 15%, transparent) 0 8rem, transparent 23rem), radial-gradient(circle at 74% 86%, color-mix(in srgb, var(--green) 12%, transparent) 0 12rem, transparent 28rem), linear-gradient(180deg, var(--sand) 0%, #f8ddb0 52%, #f5d69e 100%);
+}
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background-image: radial-gradient(circle, rgba(109, 63, 33, 0.12) 0 1px, transparent 1.2px), repeating-linear-gradient(102deg, transparent 0 2.5rem, rgba(184, 77, 44, 0.045) 2.5rem 2.58rem, transparent 2.58rem 5.25rem), repeating-linear-gradient(8deg, transparent 0 4.9rem, rgba(57, 111, 79, 0.035) 4.9rem 5rem, transparent 5rem 9.6rem);
+  background-size: 1.45rem 1.45rem, 16rem 16rem, 18rem 18rem;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.72), transparent 76%);
+}
+body > header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 247, 220, 0.86);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 0.75rem 0 rgba(109, 63, 33, 0.07), 0 1.1rem 2rem rgba(76, 44, 21, 0.08);
+  backdrop-filter: blur(18px);
+}
+body > header::after {
+  position: absolute;
+  right: 0;
+  bottom: -0.58rem;
+  left: 0;
+  height: 0.75rem;
+  pointer-events: none;
+  content: "";
+  background: radial-gradient(1.15rem 0.65rem at 1.1rem 0, rgba(109, 63, 33, 0.11) 42%, transparent 44%) 0 0/3.6rem 100% repeat-x, linear-gradient(180deg, rgba(109, 63, 33, 0.07), transparent);
+}
+body > header nav {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.55rem 0.75rem;
+  align-items: center;
+  width: min(100%, var(--max));
+  padding: 0.65rem var(--main-inline);
+  margin-inline: auto;
+}
+body > header nav ul {
+  display: flex;
+  flex-wrap: nowrap;
+  grid-column: 1/-1;
+  gap: clamp(0.5rem, 14vw - 2.6rem, 1.5rem);
+  align-items: center;
+  padding-block-end: 0.1rem;
+}
+body > header nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.8rem;
+  padding: 0;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: color-mix(in srgb, var(--ink) 88%, var(--leather));
+  white-space: nowrap;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 999rem;
+  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+body > header nav a:hover, body > header nav a:focus-visible {
+  color: var(--primary-text);
+}
+body > header nav a[aria-current=page] {
+  padding: 0.16rem 0.48rem;
+  color: var(--primary-text);
+  background: color-mix(in srgb, var(--yellow) 32%, var(--surface));
+  border-color: color-mix(in srgb, var(--primary) 24%, transparent);
+  box-shadow: 0 0.28rem 0 rgba(109, 63, 33, 0.09);
+  transform: rotate(-1.2deg);
+}
+body > header nav > a[href="/register/"] {
+  grid-row: 1;
+  grid-column: 2;
+  justify-self: end;
+  min-height: 2.2rem;
+  padding: 0.38rem 0.82rem;
+  color: var(--primary-ink);
+  background: var(--primary-text);
+  border-color: color-mix(in srgb, var(--primary) 42%, var(--leather));
+  border-radius: 999rem 1.1rem 999rem 1.35rem;
+  box-shadow: 0 0.35rem 0 rgba(109, 63, 33, 0.16), 0 0.9rem 1.5rem rgba(127, 45, 28, 0.16);
+}
+body > header nav > a[href="/register/"]:hover, body > header nav > a[href="/register/"]:focus-visible {
+  color: var(--primary-ink);
+  background: #692313;
+  transform: translateY(-1px) rotate(-1deg);
+}
+body > header nav > a[href="/register/"][aria-current=page] {
+  color: var(--primary-ink);
+  background: var(--ink);
+  border-color: var(--ink);
+}
+body > main {
+  display: grid;
+  gap: var(--section-gap);
+  width: min(100%, var(--max));
+  padding: var(--main-top-padding) var(--main-inline) clamp(3rem, 7vw, 5rem);
+  margin-inline: auto;
+}
+body > main > section,
+body > main > figure {
+  position: relative;
+  padding: clamp(1.25rem, 3vw, 2.4rem);
+  overflow: hidden;
+  background: color-mix(in srgb, var(--surface) 92%, var(--yellow));
+  border: 1px solid var(--line);
+  border-radius: var(--cut-radius);
+  box-shadow: var(--cut-shadow);
+  clip-path: polygon(0.8% 1.2%, 98.9% 0, 100% 96.8%, 96% 100%, 2.1% 98.8%, 0 5.2%);
+}
+body > main > section::after,
+body > main > figure::after {
+  position: absolute;
+  right: 1.2rem;
+  bottom: 0.8rem;
+  z-index: 0;
+  width: clamp(3rem, 10vw, 5.5rem);
+  height: clamp(3rem, 10vw, 5.5rem);
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(90deg, transparent 42%, color-mix(in srgb, var(--yellow) 36%, transparent) 42% 58%, transparent 58%), linear-gradient(0deg, transparent 42%, color-mix(in srgb, var(--yellow) 36%, transparent) 42% 58%, transparent 58%), radial-gradient(circle, color-mix(in srgb, var(--yellow) 30%, transparent) 0 34%, transparent 36%);
+  border-radius: 50%;
+  opacity: 0.45;
+  transform: rotate(10deg);
+}
+body > main > section > *,
+body > main > figure > * {
+  position: relative;
+  z-index: 1;
+}
+body > main > section + section,
+body > main > figure + section,
+body > main > section + figure {
+  margin-top: 0;
+}
+body > main > #intro + section,
+body > main > #intro + figure {
+  margin-top: calc(var(--section-gap) * -0.25);
+}
+body > main > figure:has(> blockquote) {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 12%, transparent), transparent 54%), var(--surface);
+  border-color: color-mix(in srgb, var(--primary) 22%, var(--line));
+}
+body > main > figure:has(> blockquote)::before {
+  position: absolute;
+  top: -0.8rem;
+  right: 1rem;
+  font-family: var(--font-title);
+  font-size: clamp(5rem, 16vw, 8rem);
+  font-weight: 800;
+  line-height: 1;
+  color: color-mix(in srgb, var(--yellow) 42%, transparent);
+  pointer-events: none;
+  content: "“";
+}
+body > main > figure:has(> blockquote) blockquote p {
+  position: relative;
+  max-width: 34ch;
+  margin: 0;
+  font-family: var(--font-title);
+  font-size: clamp(1.35rem, 4vw, 2.35rem);
+  font-weight: 760;
+  line-height: 1.13;
+}
+body > main > figure:has(> blockquote) figcaption {
+  position: relative;
+  margin-top: 1rem;
+  color: var(--ink-soft);
+}
+body > main article > * {
+  margin: 0;
+}
+body > main h1,
+body > main h2,
+body > main h3 {
+  font-family: var(--font-title);
+  color: var(--ink);
+}
+body > main h1 {
+  margin: 0 0 1.25rem;
+  font-size: clamp(2.5rem, 8vw, 4.6rem);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+body > main h1 strong {
+  position: relative;
+  display: inline-block;
+}
+body > main h1 strong::after {
+  position: absolute;
+  right: -0.05em;
+  bottom: 0.02em;
+  left: -0.04em;
+  z-index: -1;
+  height: 0.24em;
+  content: "";
+  background: color-mix(in srgb, var(--yellow) 68%, transparent);
+  border-radius: 999rem 1rem 999rem 0.7rem;
+  transform: rotate(-1.5deg);
+}
+body > main h2 {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 1rem;
+  font-size: clamp(1.75rem, 4vw, 2.45rem);
+  font-weight: 780;
+  line-height: 1.04;
+}
+body > main h2::after {
+  position: absolute;
+  right: 0.04em;
+  bottom: -0.18em;
+  left: 0.04em;
+  height: 0.16em;
+  content: "";
+  background: color-mix(in srgb, var(--yellow) 72%, transparent);
+  border-radius: 999rem 1rem 999rem 0.7rem;
+  transform: rotate(-1deg);
+}
+body > main h3 {
+  margin: 0 0 0.85rem;
+  font-size: clamp(1.2rem, 3vw, 1.55rem);
+  line-height: 1.12;
+}
+body > main h4 {
+  margin: 0 0 0.65rem;
+  font-size: 1.05rem;
+}
+body > main p,
+body > main ul,
+body > main ol {
+  margin: 0 0 1.15rem;
+}
+body > main p,
+body > main li {
+  color: var(--ink-soft);
+}
+body > main a {
+  font-weight: 800;
+  color: var(--primary-text);
+}
+body > main a:hover, body > main a:focus-visible {
+  color: #743315;
+}
+body > footer {
+  padding: 0 var(--main-inline) clamp(2.5rem, 6vw, 4rem);
+}
+body > footer > div {
+  position: relative;
+  display: grid;
+  gap: 0.9rem;
+  width: min(100%, var(--max));
+  padding: clamp(1.15rem, 3vw, 1.7rem);
+  margin-inline: auto;
+  color: var(--primary-ink);
+  background: radial-gradient(circle at 8% 12%, color-mix(in srgb, var(--yellow) 20%, transparent), transparent 14rem), linear-gradient(135deg, color-mix(in srgb, var(--green) 26%, transparent), transparent), #2f2115;
+  border: 1px solid rgba(255, 248, 228, 0.12);
+  border-radius: 2rem 1rem 1.8rem 1.25rem;
+  box-shadow: var(--shadow);
+  clip-path: polygon(0.6% 3%, 98.5% 0, 100% 94%, 96% 100%, 1.5% 98%, 0 12%);
+}
+body > footer > div::before {
+  position: absolute;
+  top: -0.1rem;
+  right: 0;
+  left: 0;
+  height: 1rem;
+  pointer-events: none;
+  content: "";
+  background: radial-gradient(1.1rem 0.75rem at 1rem 0.18rem, rgba(255, 248, 228, 0.17) 42%, transparent 44%) 0 0/3.2rem 100% repeat-x;
+}
+body > footer p {
+  margin: 0;
+  color: rgba(255, 250, 241, 0.74);
+}
+body > footer a {
+  color: var(--primary-ink);
+}
+body > footer .contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+body > footer .contact-links li {
+  margin: 0;
+}
+body > footer .contact-links a {
+  display: inline-flex;
+  gap: 0.45rem;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 0.48rem 0.75rem;
+  text-decoration: none;
+  background: rgba(255, 248, 228, 0.11);
+  border: 1px solid rgba(255, 248, 228, 0.18);
+  border-radius: 999rem 1rem 999rem 1.1rem;
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.1rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+.wordmark img {
+  width: auto;
+  max-width: 6.5rem;
+  height: auto;
+}
+
+body > main > section.orientation {
+  background: radial-gradient(circle at 96% 12%, color-mix(in srgb, var(--green) 13%, transparent), transparent 12rem), linear-gradient(135deg, color-mix(in srgb, var(--yellow) 30%, transparent), transparent 50%), var(--surface);
+}
+body > main > section.orientation a {
+  color: var(--primary-text);
+  background: color-mix(in srgb, var(--primary) 8%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--primary) 26%, var(--line));
+}
+body > main > section.orientation a:hover, body > main > section.orientation a:focus-visible {
+  background: color-mix(in srgb, var(--primary) 13%, var(--surface));
+}
+body > main > section.orientation li:first-child a {
+  color: var(--primary-ink);
+  background: var(--primary-text);
+  border-color: var(--primary-text);
+}
+
+body#home #intro {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1rem, 4vw, 2rem);
+  align-items: center;
+  min-height: clamp(27rem, 58vh, 42rem);
+  background: radial-gradient(circle at 86% 11%, color-mix(in srgb, var(--yellow) 48%, transparent) 0 4.2rem, transparent 12rem), radial-gradient(circle at 8% 88%, color-mix(in srgb, var(--green) 17%, transparent), transparent 17rem), linear-gradient(145deg, color-mix(in srgb, var(--primary) 12%, var(--surface)), var(--surface) 54%, color-mix(in srgb, var(--yellow) 16%, var(--surface)));
+}
+body#home #intro::before {
+  position: absolute;
+  top: clamp(0.9rem, 3vw, 1.8rem);
+  right: clamp(1rem, 4vw, 3rem);
+  z-index: 0;
+  width: clamp(7rem, 18vw, 13rem);
+  height: clamp(7rem, 18vw, 13rem);
+  pointer-events: none;
+  content: "";
+  background: conic-gradient(from 10deg, color-mix(in srgb, var(--yellow) 80%, transparent) 0 8deg, transparent 8deg 18deg), radial-gradient(circle, var(--yellow) 0 31%, transparent 32%);
+  border-radius: 49% 51% 48% 52%;
+  opacity: 0.42;
+  transform: rotate(-8deg);
+}
+body#home #intro::after {
+  position: absolute;
+  right: clamp(1.2rem, 5vw, 4rem);
+  bottom: clamp(1.2rem, 4vw, 3rem);
+  z-index: 0;
+  width: clamp(5rem, 14vw, 9rem);
+  height: clamp(6rem, 17vw, 11rem);
+  pointer-events: none;
+  content: "";
+  background: color-mix(in srgb, var(--green) 36%, transparent);
+  opacity: 0.42;
+  clip-path: polygon(46% 0, 58% 26%, 78% 10%, 70% 40%, 100% 44%, 71% 58%, 84% 86%, 57% 69%, 46% 100%, 35% 70%, 8% 86%, 23% 57%, 0 43%, 28% 40%, 19% 10%, 39% 27%);
+  transform: rotate(6deg);
+}
+body#home #intro > h1 {
+  max-width: 12ch;
+  margin: 0;
+}
+body#home #intro > h1 strong {
+  color: var(--primary-text);
+}
+body#home #intro > h1 + p {
+  max-width: 34rem;
+  margin: 0;
+  font-size: clamp(1rem, 1.5vw, 1.18rem);
+  color: var(--ink-soft);
+}
+body#home #gallery {
+  align-self: center;
+}
+body#home #gallery > div {
+  min-height: clamp(19rem, 52vw, 32rem);
+  border: 1px solid color-mix(in srgb, var(--leather) 16%, transparent);
+  border-radius: 2rem 1.1rem 2.2rem 1.4rem;
+  box-shadow: 0 0.8rem 0 rgba(109, 63, 33, 0.11), 0 1.5rem 3rem rgba(76, 44, 21, 0.18);
+  clip-path: polygon(1% 4%, 97% 0, 100% 94%, 93% 100%, 3% 97%, 0 13%);
+  transform: rotate(1.1deg);
+}
+body#home #gallery img {
+  filter: saturate(1.06) sepia(0.08) contrast(1.02);
+}
+body#home #gallery nav {
+  margin-top: 0.9rem;
+}
+body#home #gallery nav > button,
+body#home #gallery nav ol button {
+  color: var(--ink);
+  background: var(--surface);
+  border-color: var(--line);
+}
+body#home #gallery nav ol button[aria-current=true] {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+body#home #video {
+  display: grid;
+  gap: clamp(1rem, 4vw, 2.5rem);
+  background: radial-gradient(circle at 20% 20%, color-mix(in srgb, var(--yellow) 24%, transparent), transparent 18rem), linear-gradient(145deg, #2d2114, #163c31);
+}
+body#home #video h2,
+body#home #video p,
+body#home #video a {
+  color: var(--primary-ink);
+}
+body#home #video p {
+  color: rgba(255, 250, 241, 0.82);
+}
+
+body#classes #intro,
+body#levels #intro,
+body#about #intro,
+body#venues #intro,
+body#events #intro,
+body#register #intro {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1rem, 3vw, 1.8rem);
+  min-height: clamp(24rem, 46vw, 37rem);
+  background: radial-gradient(circle at 86% 14%, color-mix(in srgb, var(--yellow) 42%, transparent) 0 3.5rem, transparent 11rem), radial-gradient(circle at 2% 84%, color-mix(in srgb, var(--green) 13%, transparent), transparent 16rem), linear-gradient(135deg, color-mix(in srgb, var(--primary) 11%, transparent), transparent 45%), linear-gradient(315deg, color-mix(in srgb, var(--yellow) 17%, transparent), transparent 52%), var(--surface);
+}
+body#classes #intro::before,
+body#levels #intro::before,
+body#about #intro::before,
+body#venues #intro::before,
+body#events #intro::before,
+body#register #intro::before {
+  position: absolute;
+  top: clamp(1rem, 3vw, 2.2rem);
+  right: clamp(1rem, 3vw, 2.4rem);
+  z-index: 0;
+  width: clamp(4.8rem, 13vw, 8.5rem);
+  height: clamp(4.8rem, 13vw, 8.5rem);
+  pointer-events: none;
+  content: "";
+  background: conic-gradient(from 7deg, color-mix(in srgb, var(--yellow) 72%, transparent) 0 10deg, transparent 10deg 21deg), radial-gradient(circle, color-mix(in srgb, var(--yellow) 70%, transparent) 0 30%, transparent 31%);
+  border-radius: 50%;
+  opacity: 0.38;
+  transform: rotate(6deg);
+}
+body#classes #intro > h1,
+body#levels #intro > h1,
+body#about #intro > h1,
+body#venues #intro > h1,
+body#events #intro > h1,
+body#register #intro > h1 {
+  max-width: 12ch;
+  margin: 0;
+}
+body#classes #intro > h1 strong,
+body#levels #intro > h1 strong,
+body#about #intro > h1 strong,
+body#venues #intro > h1 strong,
+body#events #intro > h1 strong,
+body#register #intro > h1 strong {
+  color: var(--primary-text);
+}
+body#classes #intro > p,
+body#levels #intro > p,
+body#about #intro > p,
+body#venues #intro > p,
+body#events #intro > p,
+body#register #intro > p {
+  max-width: 38rem;
+  margin: 0;
+  font-size: clamp(1rem, 1.45vw, 1.16rem);
+  color: var(--ink-soft);
+}
+body#classes #intro > ul,
+body#classes #intro > ol,
+body#levels #intro > ul,
+body#levels #intro > ol,
+body#about #intro > ul,
+body#about #intro > ol,
+body#venues #intro > ul,
+body#venues #intro > ol,
+body#events #intro > ul,
+body#events #intro > ol,
+body#register #intro > ul,
+body#register #intro > ol {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+body#classes #intro > ul li,
+body#classes #intro > ol li,
+body#levels #intro > ul li,
+body#levels #intro > ol li,
+body#about #intro > ul li,
+body#about #intro > ol li,
+body#venues #intro > ul li,
+body#venues #intro > ol li,
+body#events #intro > ul li,
+body#events #intro > ol li,
+body#register #intro > ul li,
+body#register #intro > ol li {
+  padding: 0.9rem 1rem;
+  background: color-mix(in srgb, var(--yellow) 18%, var(--surface));
+  border: 1px solid var(--line);
+  border-radius: 1.15rem 0.9rem 1.25rem 0.85rem;
+  box-shadow: 0 0.32rem 0 rgba(109, 63, 33, 0.08);
+  clip-path: polygon(1% 2%, 99% 0, 100% 96%, 96% 100%, 2% 98%, 0 9%);
+}
+body#classes #intro > ul strong,
+body#classes #intro > ol strong,
+body#levels #intro > ul strong,
+body#levels #intro > ol strong,
+body#about #intro > ul strong,
+body#about #intro > ol strong,
+body#venues #intro > ul strong,
+body#venues #intro > ol strong,
+body#events #intro > ul strong,
+body#events #intro > ol strong,
+body#register #intro > ul strong,
+body#register #intro > ol strong {
+  display: block;
+  color: var(--ink);
+}
+body#classes #intro > ul span,
+body#classes #intro > ol span,
+body#levels #intro > ul span,
+body#levels #intro > ol span,
+body#about #intro > ul span,
+body#about #intro > ol span,
+body#venues #intro > ul span,
+body#venues #intro > ol span,
+body#events #intro > ul span,
+body#events #intro > ol span,
+body#register #intro > ul span,
+body#register #intro > ol span {
+  color: var(--ink-soft);
+}
+body#classes #intro > figure,
+body#levels #intro > figure,
+body#about #intro > figure,
+body#venues #intro > figure,
+body#events #intro > figure,
+body#register #intro > figure {
+  margin: 0;
+  overflow: hidden;
+  border: 0.32rem solid color-mix(in srgb, var(--surface) 86%, var(--yellow));
+  border-radius: 2rem 1rem 2.2rem 1.35rem;
+  box-shadow: 0 0.75rem 0 rgba(109, 63, 33, 0.12), 0 1.35rem 2.8rem rgba(76, 44, 21, 0.18);
+  transform: rotate(1.1deg);
+}
+body#classes #intro > figure img,
+body#levels #intro > figure img,
+body#about #intro > figure img,
+body#venues #intro > figure img,
+body#events #intro > figure img,
+body#register #intro > figure img {
+  display: block;
+  width: 100%;
+  height: clamp(18rem, 52vw, 28rem);
+  object-fit: cover;
+  filter: saturate(1.08) sepia(0.09) contrast(1.03);
+  clip-path: polygon(2% 0, 99% 4%, 100% 100%, 0 100%, 0 8%);
+}
+body#classes #intro > figure figcaption,
+body#levels #intro > figure figcaption,
+body#about #intro > figure figcaption,
+body#venues #intro > figure figcaption,
+body#events #intro > figure figcaption,
+body#register #intro > figure figcaption {
+  padding: 0.7rem 0.85rem;
+  margin: 0;
+  color: var(--primary-ink);
+  background: rgba(48, 35, 19, 0.86);
+}
+
+body#classes .schedule-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  padding: 0;
+  margin: 0 0 1.25rem;
+  list-style: none;
+}
+body#classes .schedule-summary li {
+  padding: 0.45rem 0.72rem;
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--primary-text);
+  background: color-mix(in srgb, var(--yellow) 24%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--primary) 20%, transparent);
+  border-radius: 999rem 1rem 999rem 1.2rem;
+  box-shadow: 0 0.25rem 0 rgba(109, 63, 33, 0.08);
+}
+body#classes .schedule-days {
+  display: grid;
+  gap: 1rem;
+}
+body#classes .schedule-days > article {
+  display: grid;
+  gap: 0.85rem;
+  align-content: start;
+  padding: 1rem;
+  background: color-mix(in srgb, var(--surface) 88%, var(--yellow));
+  border: 1px solid var(--line);
+  border-radius: 1.4rem 1rem 1.6rem 0.95rem;
+  box-shadow: 0 0.5rem 0 rgba(109, 63, 33, 0.08), 0 0.8rem 1.8rem rgba(76, 44, 21, 0.08);
+  clip-path: polygon(1.2% 0, 99% 1.5%, 100% 97%, 96% 100%, 2.5% 98%, 0 7%);
+}
+body#classes .schedule-days > article > h4 {
+  margin: 0;
+  font-family: var(--font-title);
+  font-size: clamp(1.45rem, 3vw, 1.9rem);
+  line-height: 1;
+  color: var(--ink);
+}
+body#classes .schedule-days > article > p:first-of-type {
+  padding: 0.65rem 0.75rem;
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #8c1e22;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: color-mix(in srgb, var(--guava) 14%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--guava) 30%, transparent);
+  border-radius: 0.95rem 0.7rem 1rem 0.75rem;
+}
+body#classes .schedule-days > article > section {
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--line);
+}
+body#classes .schedule-days > article > section > h5 {
+  margin: 0 0 0.65rem;
+  font-size: 0.78rem;
+  color: var(--green-text);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+body#classes .schedule-days article.class {
+  position: relative;
+  display: grid;
+  gap: 0.55rem;
+  min-height: auto;
+  padding: 0.9rem 0.95rem 0.95rem;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid color-mix(in srgb, var(--course-accent) 22%, var(--line));
+  border-radius: 1rem 0.78rem 1.05rem 0.72rem;
+  box-shadow: 0 0.34rem 0 color-mix(in srgb, var(--course-accent) 12%, transparent), 0 0.65rem 1.35rem rgba(76, 44, 21, 0.08);
+  clip-path: polygon(0.8% 2%, 99% 0, 100% 96%, 96% 100%, 2% 98%, 0 8%);
+}
+body#classes .schedule-days article.class::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0.32rem;
+  content: "";
+  background: var(--course-accent);
+}
+body#classes .schedule-days article.class > p:first-of-type {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: color-mix(in srgb, var(--course-accent) 38%, var(--ink));
+}
+body#classes .schedule-days article.class > h6 {
+  margin: 0;
+  font-size: 1.08rem;
+  font-weight: 850;
+  line-height: 1.12;
+}
+body#classes .schedule-days article.class > h6 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+body#classes .schedule-days article.class > h6 ~ p,
+body#classes .schedule-days article.class .teachers {
+  margin: 0;
+  color: var(--ink-soft);
+}
+body#classes .schedule-days article.class .teachers {
+  position: relative;
+  padding-left: 1.35rem;
+}
+body#classes .schedule-days article.class .teachers::before {
+  position: absolute;
+  top: 0.16rem;
+  left: 0;
+  width: 0.9rem;
+  height: 0.9rem;
+  content: "";
+  background: color-mix(in srgb, var(--course-accent) 72%, var(--ink));
+  -webkit-mask: var(--icon-people) center/contain no-repeat;
+  mask: var(--icon-people) center/contain no-repeat;
+}
+body#classes .schedule-days article.class.free-practice {
+  background: color-mix(in srgb, var(--yellow) 12%, var(--surface));
+  border-style: dashed;
+}
+body#classes .schedule-days article.class.free-practice h6 {
+  font-size: 0.9rem;
+}
+body#classes .schedule-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1rem;
+  justify-content: center;
+  padding: 1rem 0 0;
+  margin: 1rem 0 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+body#classes .schedule-legend li {
+  display: inline-flex;
+  gap: 0.38rem;
+  align-items: center;
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+body#classes .schedule-legend li::before {
+  width: 0.45rem;
+  height: 1.35rem;
+  content: "";
+  background: var(--course-accent);
+  border-radius: 999rem;
+}
+
+body#levels section.class,
+body#levels #short-courses > section {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--course-accent) 10%, transparent), transparent 42%), var(--surface);
+  border-left: 0.38rem solid var(--course-accent);
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--course-accent) 7%, transparent), transparent 62%), color-mix(in srgb, var(--surface) 92%, var(--yellow));
+  border-color: color-mix(in srgb, var(--course-accent) 18%, var(--line));
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] article {
+  background: var(--surface);
+}
+
+body#venues main > section:not(#intro) {
+  display: grid;
+  gap: clamp(1rem, 2.5vw, 1.55rem);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--green) 8%, transparent), transparent 54%), var(--surface);
+}
+body#venues main > section:not(#intro) > h2,
+body#venues main > section:not(#intro) > address,
+body#venues main > section:not(#intro) > p,
+body#venues main > section:not(#intro) > ul,
+body#venues main > section:not(#intro) > section {
+  margin: 0;
+}
+body#venues main > section:not(#intro) > h2 {
+  color: var(--ink);
+}
+body#venues main > section:not(#intro) address a {
+  display: inline-grid;
+  gap: 0.08rem;
+  padding: 0.7rem 0.85rem;
+  color: var(--ink);
+  text-decoration: none;
+  background: color-mix(in srgb, var(--yellow) 14%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--yellow) 35%, var(--line));
+  border-radius: 0.85rem;
+}
+body#venues main > section:not(#intro) > figure {
+  margin: 0;
+  overflow: hidden;
+  border-radius: calc(var(--radius) * 0.9);
+}
+body#venues main > section:not(#intro) > figure img {
+  width: 100%;
+  height: auto;
+}
+body#venues main > section:not(#intro) > ul {
+  padding: 1rem 1rem 1rem 2.2rem;
+  background: color-mix(in srgb, var(--green) 7%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--green) 18%, var(--line));
+  border-radius: 1rem;
+}
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] {
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+body#about #team > div {
+  gap: 1.1rem;
+}
+body#about #team article {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 1.3rem 0.95rem 1.45rem 1rem;
+  box-shadow: 0 0.45rem 0 rgba(109, 63, 33, 0.08), 0 0.8rem 1.8rem rgba(76, 44, 21, 0.08);
+  clip-path: polygon(1% 0, 99% 1.5%, 100% 96%, 96% 100%, 2% 98%, 0 6%);
+}
+
+body#events #praticas article,
+body#events main > section:not(#intro) article {
+  padding: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 1.25rem 0.9rem 1.4rem 1rem;
+  box-shadow: 0 0.45rem 0 rgba(109, 63, 33, 0.08), 0 0.8rem 1.8rem rgba(76, 44, 21, 0.08);
+  clip-path: polygon(1% 0, 99% 1%, 100% 96%, 96% 100%, 2% 98%, 0 7%);
+}
+
+body#classes main a[href^="https://forms.gle"],
+body#classes main a[href*="docs.google.com/forms"],
+body#register main a[href^="https://forms.gle"],
+body#register main a[href*="docs.google.com/forms"] {
+  color: var(--primary-ink);
+  background: var(--primary-text);
+  border: 1px solid var(--primary-text);
+  border-radius: 999rem 1rem 999rem 1.15rem;
+  box-shadow: 0 0.32rem 0 rgba(109, 63, 33, 0.14);
+}
+body#classes main a[href^="https://forms.gle"]:hover, body#classes main a[href^="https://forms.gle"]:focus-visible,
+body#classes main a[href*="docs.google.com/forms"]:hover,
+body#classes main a[href*="docs.google.com/forms"]:focus-visible,
+body#register main a[href^="https://forms.gle"]:hover,
+body#register main a[href^="https://forms.gle"]:focus-visible,
+body#register main a[href*="docs.google.com/forms"]:hover,
+body#register main a[href*="docs.google.com/forms"]:focus-visible {
+  background: #692313;
+}
+body#classes #prices article,
+body#register #prices article {
+  background: var(--surface);
+  border-color: var(--line);
+  border-radius: 1.25rem 0.9rem 1.45rem 0.95rem;
+  box-shadow: 0 0.42rem 0 rgba(109, 63, 33, 0.08), 0 0.75rem 1.6rem rgba(76, 44, 21, 0.08);
+  clip-path: polygon(1% 0, 99% 1%, 100% 96%, 96% 100%, 2% 98%, 0 7%);
+}
+body#classes #prices dt,
+body#register #prices dt {
+  color: var(--primary-text);
+}
+body#classes #prices dd,
+body#register #prices dd {
+  font-family: var(--font-title);
+  color: var(--ink);
+}
+
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] article,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] article {
+  background: var(--surface);
+  border-color: color-mix(in srgb, var(--course-accent) 20%, var(--line));
+  border-radius: 1rem 0.78rem 1.08rem 0.75rem;
+  box-shadow: 0 0.35rem 0 color-mix(in srgb, var(--course-accent) 12%, transparent), 0 0.7rem 1.45rem rgba(76, 44, 21, 0.08);
+  clip-path: polygon(0.8% 2%, 99% 0, 100% 96%, 96% 100%, 2% 98%, 0 8%);
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] article > h4,
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] article > h5,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] article > h4,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] article > h5 {
+  font-family: var(--font-title);
+  color: var(--ink);
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .term a,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .term a {
+  color: var(--primary-text);
+  background: color-mix(in srgb, var(--yellow) 20%, var(--surface));
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .time,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .time {
+  color: color-mix(in srgb, var(--primary-text) 72%, var(--ink));
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .time > span,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .time > span {
+  color: var(--ink-soft);
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .course,
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .venue,
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .people,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .course,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .venue,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .people {
+  color: var(--ink-soft);
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .course::before,
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .venue::before,
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .people::before,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .course::before,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .venue::before,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .people::before {
+  background: color-mix(in srgb, var(--course-accent) 70%, var(--ink));
+}
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .course a,
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .venue a,
+body#levels section.class > section[aria-labelledby$=-scheduled-classes] .people a,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .course a,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .venue a,
+body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .people a {
+  color: var(--primary-text);
+}
+
+.theme-switch-panel {
+  width: min(100%, var(--max));
+  padding: 0 var(--main-inline) 1.4rem;
+  margin-inline: auto;
+}
+.theme-switch-panel .theme-switch-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.theme-switch-panel .theme-switch {
+  min-height: 2.35rem;
+  padding: 0.4rem 0.72rem;
+  font-weight: 800;
+  color: var(--primary-text);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999rem 1rem 999rem 1.15rem;
+  box-shadow: 0 0.26rem 0 rgba(109, 63, 33, 0.08);
+}
+.theme-switch-panel .theme-switch[aria-pressed=true] {
+  color: var(--primary-ink);
+  background: var(--primary-text);
+  border-color: var(--primary-text);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body > main > section,
+  body > main > figure,
+  body#home #gallery > div,
+  body#classes .schedule-days article.class,
+  body#levels section.class > section[aria-labelledby$=-scheduled-classes] article,
+  body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] article {
+    transition: transform 180ms ease, box-shadow 180ms ease;
+  }
+  body > main > section:hover,
+  body > main > figure:hover {
+    transform: translateY(-0.08rem) rotate(-0.15deg);
+  }
+  body#home #intro::before,
+  body#classes #intro::before,
+  body#levels #intro::before,
+  body#about #intro::before,
+  body#venues #intro::before,
+  body#events #intro::before,
+  body#register #intro::before {
+    animation: mandacaru-sun 12s ease-in-out infinite alternate;
+  }
+  body#home #intro::after {
+    animation: mandacaru-cutout 9s ease-in-out infinite alternate;
+  }
+  body#home #gallery > div:hover,
+  body#classes .schedule-days article.class:hover,
+  body#levels section.class > section[aria-labelledby$=-scheduled-classes] article:hover,
+  body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] article:hover {
+    transform: translateY(-0.12rem) rotate(0.35deg);
+  }
+  body a,
+  body button {
+    transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+@keyframes mandacaru-sun {
+  from {
+    transform: rotate(-7deg) scale(0.98);
+  }
+  to {
+    transform: rotate(8deg) scale(1.03);
+  }
+}
+@keyframes mandacaru-cutout {
+  from {
+    transform: translateY(0) rotate(5deg);
+  }
+  to {
+    transform: translateY(-0.35rem) rotate(9deg);
+  }
+}
+@media (min-width: 42rem) {
+  body#classes .schedule-days {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 48rem) {
+  .wordmark img {
+    max-width: 7.8rem;
+  }
+  body > header nav {
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    padding-block: 0.9rem;
+  }
+  body > header nav ul {
+    grid-column: auto;
+    gap: 1.3rem;
+    justify-content: center;
+  }
+  body > header nav a {
+    min-height: 2.15rem;
+    padding: 0.2rem 0.35rem;
+    font-size: 0.95rem;
+  }
+  body > header nav a[aria-current=page] {
+    padding: 0.3rem 0.7rem;
+  }
+  body > header nav > a[href="/register/"] {
+    grid-row: auto;
+    grid-column: auto;
+    padding: 0.45rem 1rem;
+  }
+  body#home #intro {
+    grid-template-columns: minmax(16rem, 0.86fr) minmax(21rem, 1.14fr);
+  }
+  body#home #intro > h1,
+  body#home #intro > h1 + p {
+    grid-column: 1;
+  }
+  body#home #gallery {
+    grid-row: 1/span 2;
+    grid-column: 2;
+  }
+  body#home #video {
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+    align-items: center;
+  }
+}
+@media (min-width: 64rem) {
+  body#classes .schedule-days {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start;
+  }
+  body#classes #intro:has(> figure),
+  body#levels #intro:has(> figure),
+  body#about #intro:has(> figure),
+  body#venues #intro:has(> figure),
+  body#events #intro:has(> figure),
+  body#register #intro:has(> figure) {
+    grid-template-columns: minmax(18rem, 0.92fr) minmax(22rem, 1.08fr);
+    column-gap: clamp(2rem, 4vw, 4rem);
+  }
+  body#classes #intro:has(> figure) > h1,
+  body#classes #intro:has(> figure) > p,
+  body#classes #intro:has(> figure) > ul,
+  body#classes #intro:has(> figure) > ol,
+  body#levels #intro:has(> figure) > h1,
+  body#levels #intro:has(> figure) > p,
+  body#levels #intro:has(> figure) > ul,
+  body#levels #intro:has(> figure) > ol,
+  body#about #intro:has(> figure) > h1,
+  body#about #intro:has(> figure) > p,
+  body#about #intro:has(> figure) > ul,
+  body#about #intro:has(> figure) > ol,
+  body#venues #intro:has(> figure) > h1,
+  body#venues #intro:has(> figure) > p,
+  body#venues #intro:has(> figure) > ul,
+  body#venues #intro:has(> figure) > ol,
+  body#events #intro:has(> figure) > h1,
+  body#events #intro:has(> figure) > p,
+  body#events #intro:has(> figure) > ul,
+  body#events #intro:has(> figure) > ol,
+  body#register #intro:has(> figure) > h1,
+  body#register #intro:has(> figure) > p,
+  body#register #intro:has(> figure) > ul,
+  body#register #intro:has(> figure) > ol {
+    grid-column: 1;
+  }
+  body#classes #intro:has(> figure) > figure,
+  body#levels #intro:has(> figure) > figure,
+  body#about #intro:has(> figure) > figure,
+  body#venues #intro:has(> figure) > figure,
+  body#events #intro:has(> figure) > figure,
+  body#register #intro:has(> figure) > figure {
+    grid-row: 1/span 4;
+    grid-column: 2;
+  }
+  body#venues main > section:not(#intro) {
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.72fr);
+  }
+  body#venues main > section:not(#intro) > figure {
+    grid-row: 1/span 4;
+    grid-column: 2;
+  }
+  body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] {
+    grid-column: 1/-1;
+  }
+}
