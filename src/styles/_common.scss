@@ -471,7 +471,8 @@ body#about {
   }
 }
 
-body#venues {
+@media (min-width: 64rem) {
+  body#venues {
     main > section:not(#intro) {
       grid-template-columns: minmax(0, 1fr) minmax(16rem, 26rem);
       align-items: start;
@@ -484,6 +485,7 @@ body#venues {
       width: 100%;
     }
   }
+}
 
 body#levels {
   section.class {

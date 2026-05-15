@@ -401,17 +401,18 @@ body#about #school figure {
   width: min(100%, 10.5rem);
 }
 
-body#venues main > section:not(#intro) {
-  grid-template-columns: minmax(0, 1fr) minmax(16rem, 26rem);
-  align-items: start;
+@media (min-width: 64rem) {
+  body#venues main > section:not(#intro) {
+    grid-template-columns: minmax(0, 1fr) minmax(16rem, 26rem);
+    align-items: start;
+  }
+  body#venues main > section:not(#intro) figure {
+    grid-row: 1/span 6;
+    grid-column: 2;
+    justify-self: end;
+    width: 100%;
+  }
 }
-body#venues main > section:not(#intro) figure {
-  grid-row: 1/span 6;
-  grid-column: 2;
-  justify-self: end;
-  width: 100%;
-}
-
 body#levels section.class {
   padding: 1rem 1rem 1rem clamp(1.25rem, 3vw, 2rem);
   scroll-margin-top: 2rem;
