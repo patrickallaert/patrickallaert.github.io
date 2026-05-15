@@ -687,7 +687,7 @@ body#classes .schedule-days > article {
 }
 body#classes .schedule-days > article > h4 {
   margin: 0;
-  font-size: 1rem;
+  font-size: 1.12rem;
   line-height: 1.02;
   color: color-mix(in srgb, var(--course-level-2) 70%, var(--ink));
   text-transform: uppercase;
@@ -720,7 +720,7 @@ body#classes .schedule-days > article > section > h5 {
   gap: 0.38rem;
   align-items: flex-start;
   padding: 0;
-  font-size: 0.79rem;
+  font-size: 0.82rem;
   line-height: 1.15;
   color: color-mix(in srgb, var(--ink-soft) 88%, var(--course-level-2));
   text-transform: uppercase;
@@ -755,13 +755,13 @@ body#classes .schedule-days article.class {
 }
 body#classes .schedule-days article.class > p:first-of-type {
   margin: 0;
-  font-size: 0.73rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: color-mix(in srgb, var(--course-accent) 72%, var(--ink));
   white-space: nowrap;
 }
 body#classes .schedule-days article.class > h6 {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1.16;
   color: var(--ink);
@@ -774,19 +774,19 @@ body#classes .schedule-days article.class > h6 a {
 }
 body#classes .schedule-days article.class > h6 ~ p,
 body#classes .schedule-days article.class .teachers {
-  font-size: 0.68rem;
+  font-size: 0.76rem;
   color: var(--ink-soft);
 }
 body#classes .schedule-days article.class .teachers {
   position: relative;
-  padding-left: 1rem;
+  padding-left: 1.12rem;
 }
 body#classes .schedule-days article.class .teachers::before {
   position: absolute;
-  top: 0.08rem;
+  top: 0.1rem;
   left: 0;
-  width: 0.72rem;
-  height: 0.72rem;
+  width: 0.8rem;
+  height: 0.8rem;
   content: "";
   background: no-repeat center/contain var(--icon-people);
   opacity: 0.72;
@@ -802,7 +802,7 @@ body#classes .schedule-days article.class.free-practice > p:first-of-type {
 }
 body#classes .schedule-days article.class.free-practice > h6 {
   margin: 0;
-  font-size: 0.79rem;
+  font-size: 0.82rem;
   font-weight: 600;
   overflow-wrap: normal;
 }
@@ -1615,7 +1615,7 @@ body#classes .schedule-days article.class {
   box-shadow: 0 1.25rem 2.4rem rgba(38, 71, 67, 0.05);
 }
 body#classes .schedule-days article.class > p:first-of-type {
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 500;
   color: color-mix(in srgb, var(--accent) 44%, #9db5b1);
 }
@@ -1682,13 +1682,13 @@ body#classes .schedule-days article.class.free-practice {
 body#classes .schedule-days article.class.free-practice > p:first-of-type {
   grid-row: 1;
   grid-column: 2;
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   color: color-mix(in srgb, var(--ink) 66%, transparent);
 }
 body#classes .schedule-days article.class.free-practice > h6 {
   grid-row: 1;
   grid-column: 1;
-  font-size: 0.66rem;
+  font-size: 0.74rem;
   color: color-mix(in srgb, var(--ink) 84%, var(--accent));
   text-transform: uppercase;
   letter-spacing: 0.03em;
@@ -2364,14 +2364,14 @@ body#classes .schedule-days article.class:has(.portraits) > :not(.portraits) {
 
 :root {
   --primary: var(--brand);
-  --primary-text: #0f766e;
+  --primary-text: #0b635c;
   --primary-ink: #072422;
   --primary-soft: color-mix(in srgb, var(--primary) 10%, #ffffff);
   --primary-line: color-mix(in srgb, var(--primary) 28%, #dbece8);
   --primary-wash: color-mix(in srgb, var(--primary) 8%, rgba(255, 255, 255, 0.86));
   --primary-shadow: color-mix(in srgb, var(--primary) 18%, transparent);
-  --primary-strong-text: color-mix(in srgb, var(--primary) 76%, var(--ink));
-  --primary-title: color-mix(in srgb, var(--primary) 72%, var(--ink));
+  --primary-strong-text: color-mix(in srgb, var(--primary-text) 86%, var(--ink));
+  --primary-title: color-mix(in srgb, var(--primary-text) 86%, var(--ink));
   --primary-chip: color-mix(in srgb, var(--primary) 68%, var(--yellow));
   --accent: var(--primary-text);
   --accent-ink: #ffffff;
@@ -2465,7 +2465,7 @@ body#classes .schedule-days > article > section > h5 {
   margin: 0 0 0.6rem;
 }
 body#classes .schedule-days > article > h4 {
-  color: color-mix(in srgb, var(--primary) 66%, var(--ink));
+  color: var(--primary-title);
   background: color-mix(in srgb, var(--primary) 9%, rgba(255, 255, 255, 0.76));
   border-color: color-mix(in srgb, var(--primary) 28%, transparent);
 }

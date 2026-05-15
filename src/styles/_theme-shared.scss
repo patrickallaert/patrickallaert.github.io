@@ -724,7 +724,7 @@ body#classes {
       box-shadow: 0 1.25rem 2.4rem rgba(38, 71, 67, 0.05);
 
       > p:first-of-type {
-        font-size: 0.72rem;
+        font-size: 0.78rem;
         font-weight: 500;
         color: color-mix(in srgb, var(--accent) 44%, #9db5b1);
       }
@@ -805,14 +805,14 @@ body#classes {
         > p:first-of-type {
           grid-row: 1;
           grid-column: 2;
-          font-size: 0.68rem;
+          font-size: 0.75rem;
           color: color-mix(in srgb, var(--ink) 66%, transparent);
         }
 
         > h6 {
           grid-row: 1;
           grid-column: 1;
-          font-size: 0.66rem;
+          font-size: 0.74rem;
           color: color-mix(in srgb, var(--ink) 84%, var(--accent));
           text-transform: uppercase;
           letter-spacing: 0.03em;

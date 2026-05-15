@@ -810,7 +810,7 @@ body#classes {
 
       > h4 {
         margin: 0;
-        font-size: 1rem;
+        font-size: 1.12rem;
         line-height: 1.02;
         color: color-mix(in srgb, var(--course-level-2) 70%, var(--ink));
         text-transform: uppercase;
@@ -848,7 +848,7 @@ body#classes {
           gap: 0.38rem;
           align-items: flex-start;
           padding: 0;
-          font-size: 0.79rem;
+          font-size: 0.82rem;
           line-height: 1.15;
           color: color-mix(in srgb, var(--ink-soft) 88%, var(--course-level-2));
           text-transform: uppercase;
@@ -889,14 +889,14 @@ body#classes {
 
       > p:first-of-type {
         margin: 0;
-        font-size: 0.73rem;
+        font-size: 0.78rem;
         font-weight: 700;
         color: color-mix(in srgb, var(--course-accent) 72%, var(--ink));
         white-space: nowrap;
       }
 
       > h6 {
-        font-size: 0.95rem;
+        font-size: 1rem;
         font-weight: 700;
         line-height: 1.16;
         color: var(--ink);
@@ -911,20 +911,20 @@ body#classes {
 
       > h6 ~ p,
       .teachers {
-        font-size: 0.68rem;
+        font-size: 0.76rem;
         color: var(--ink-soft);
       }
 
       .teachers {
         position: relative;
-        padding-left: 1rem;
+        padding-left: 1.12rem;
 
         &::before {
           position: absolute;
-          top: 0.08rem;
+          top: 0.1rem;
           left: 0;
-          width: 0.72rem;
-          height: 0.72rem;
+          width: 0.8rem;
+          height: 0.8rem;
           content: "";
           background: no-repeat center / contain var(--icon-people);
           opacity: 0.72;
@@ -948,7 +948,7 @@ body#classes {
 
         > h6 {
           margin: 0;
-          font-size: 0.79rem;
+          font-size: 0.82rem;
           font-weight: 600;
           overflow-wrap: normal;
         }

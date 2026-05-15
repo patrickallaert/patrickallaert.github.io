@@ -5,14 +5,14 @@
 
 :root {
   --primary: var(--brand);
-  --primary-text: #0f766e;
+  --primary-text: #0b635c;
   --primary-ink: #072422;
   --primary-soft: color-mix(in srgb, var(--primary) 10%, #ffffff);
   --primary-line: color-mix(in srgb, var(--primary) 28%, #dbece8);
   --primary-wash: color-mix(in srgb, var(--primary) 8%, rgba(255, 255, 255, 0.86));
   --primary-shadow: color-mix(in srgb, var(--primary) 18%, transparent);
-  --primary-strong-text: color-mix(in srgb, var(--primary) 76%, var(--ink));
-  --primary-title: color-mix(in srgb, var(--primary) 72%, var(--ink));
+  --primary-strong-text: color-mix(in srgb, var(--primary-text) 86%, var(--ink));
+  --primary-title: color-mix(in srgb, var(--primary-text) 86%, var(--ink));
   --primary-chip: color-mix(in srgb, var(--primary) 68%, var(--yellow));
   --accent: var(--primary-text);
   --accent-ink: #ffffff;
@@ -149,7 +149,7 @@ body#classes {
       }
 
       > h4 {
-        color: color-mix(in srgb, var(--primary) 66%, var(--ink));
+        color: var(--primary-title);
         background: color-mix(in srgb, var(--primary) 9%, rgba(255, 255, 255, 0.76));
         border-color: color-mix(in srgb, var(--primary) 28%, transparent);
       }
