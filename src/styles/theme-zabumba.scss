@@ -71,7 +71,7 @@ body {
         }
       }
 
-      > ul,
+      > ul:not([aria-label="Trimester rhythm"]),
       > ol {
         li {
           background: var(--primary-wash);

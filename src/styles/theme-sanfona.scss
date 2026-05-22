@@ -308,7 +308,8 @@ body#register #intro {
     margin: 0;
     list-style: none;
 
-    li {
+    > ul:not([aria-label="Trimester rhythm"]) li,
+    > ol li {
       display: grid;
       gap: 0.25rem;
       padding: 0.85rem 0.95rem;
@@ -461,8 +462,10 @@ body#venues #intro > figure img {
     }
   }
 
-  body#classes #intro > ol[aria-label="Trimester rhythm"] {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  body#classes {
+    #intro > ul[aria-label="Trimester rhythm"] {
+      grid-column: 1;
+    }
   }
 
   body#levels #intro {
@@ -499,6 +502,38 @@ body#home #video {
 }
 
 body#classes {
+  #intro {
+    > ul[aria-label="Trimester rhythm"] {
+      gap: 0.55rem;
+      padding-left: 0.1rem;
+
+      li {
+        display: grid;
+        grid-template-columns: 1.05rem minmax(0, 1fr);
+        gap: 0.1rem 0.45rem;
+        align-items: center;
+        padding: 0.08rem 0;
+
+        &::before {
+          grid-row: 1 / span 2;
+          align-self: center;
+          justify-self: center;
+          width: 0.48rem;
+          height: 0.48rem;
+          content: "";
+          background: var(--primary-text);
+          border-radius: 50%;
+          box-shadow: 0 0 0 0.28rem color-mix(in srgb, var(--primary) 14%, transparent);
+        }
+
+        strong,
+        span {
+          grid-column: 2;
+        }
+      }
+    }
+  }
+
   .schedule-days {
     gap: 1rem;
 

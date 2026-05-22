@@ -1822,25 +1822,6 @@ body#register #intro > ol {
   margin: 0;
   list-style: none;
 }
-body#classes #intro > ul li,
-body#classes #intro > ol li,
-body#levels #intro > ul li,
-body#levels #intro > ol li,
-body#about #intro > ul li,
-body#about #intro > ol li,
-body#venues #intro > ul li,
-body#venues #intro > ol li,
-body#events #intro > ul li,
-body#events #intro > ol li,
-body#register #intro > ul li,
-body#register #intro > ol li {
-  padding: 0.9rem 1rem;
-  background: color-mix(in srgb, var(--yellow) 18%, var(--surface));
-  border: 1px solid var(--line);
-  border-radius: 1.15rem 0.9rem 1.25rem 0.85rem;
-  box-shadow: 0 0.32rem 0 rgba(109, 63, 33, 0.08);
-  clip-path: polygon(1% 2%, 99% 0, 100% 96%, 96% 100%, 2% 98%, 0 9%);
-}
 body#classes #intro > ul strong,
 body#classes #intro > ol strong,
 body#levels #intro > ul strong,
@@ -1869,6 +1850,25 @@ body#events #intro > ol span,
 body#register #intro > ul span,
 body#register #intro > ol span {
   color: var(--ink-soft);
+}
+body#classes #intro > ul:not([aria-label="Trimester rhythm"]) li,
+body#classes #intro > ol li,
+body#levels #intro > ul:not([aria-label="Trimester rhythm"]) li,
+body#levels #intro > ol li,
+body#about #intro > ul:not([aria-label="Trimester rhythm"]) li,
+body#about #intro > ol li,
+body#venues #intro > ul:not([aria-label="Trimester rhythm"]) li,
+body#venues #intro > ol li,
+body#events #intro > ul:not([aria-label="Trimester rhythm"]) li,
+body#events #intro > ol li,
+body#register #intro > ul:not([aria-label="Trimester rhythm"]) li,
+body#register #intro > ol li {
+  padding: 0.9rem 1rem;
+  background: color-mix(in srgb, var(--yellow) 18%, var(--surface));
+  border: 1px solid var(--line);
+  border-radius: 1.15rem 0.9rem 1.25rem 0.85rem;
+  box-shadow: 0 0.32rem 0 rgba(109, 63, 33, 0.08);
+  clip-path: polygon(1% 2%, 99% 0, 100% 96%, 96% 100%, 2% 98%, 0 9%);
 }
 body#classes #intro > figure,
 body#levels #intro > figure,
@@ -1908,6 +1908,32 @@ body#register #intro > figure figcaption {
   background: rgba(48, 35, 19, 0.86);
 }
 
+body#classes #intro > ul[aria-label="Trimester rhythm"] {
+  gap: 0.55rem;
+  padding-left: 0.1rem;
+}
+body#classes #intro > ul[aria-label="Trimester rhythm"] li {
+  display: grid;
+  grid-template-columns: 1.05rem minmax(0, 1fr);
+  gap: 0.1rem 0.45rem;
+  align-items: center;
+  padding: 0.08rem 0;
+}
+body#classes #intro > ul[aria-label="Trimester rhythm"] li::before {
+  grid-row: 1/span 2;
+  align-self: center;
+  justify-self: center;
+  width: 0.48rem;
+  height: 0.48rem;
+  content: "";
+  background: var(--primary-text);
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.28rem color-mix(in srgb, var(--primary) 14%, transparent);
+}
+body#classes #intro > ul[aria-label="Trimester rhythm"] li strong,
+body#classes #intro > ul[aria-label="Trimester rhythm"] li span {
+  grid-column: 2;
+}
 body#classes .schedule-summary {
   display: flex;
   flex-wrap: wrap;

@@ -493,7 +493,8 @@ body#register {
       margin: 0;
       list-style: none;
 
-      li {
+      > ul:not([aria-label="Trimester rhythm"]) li,
+      > ol li {
         padding: 0.9rem 1rem;
         background: color-mix(in srgb, var(--yellow) 12%, var(--surface));
         border: 1px solid var(--line);
@@ -534,6 +535,38 @@ body#register {
 }
 
 body#classes {
+  #intro {
+    > ul[aria-label="Trimester rhythm"] {
+      gap: 0.55rem;
+      padding-left: 0.1rem;
+
+      li {
+        display: grid;
+        grid-template-columns: 1.05rem minmax(0, 1fr);
+        gap: 0.1rem 0.45rem;
+        align-items: center;
+        padding: 0.08rem 0;
+
+        &::before {
+          grid-row: 1 / span 2;
+          align-self: center;
+          justify-self: center;
+          width: 0.48rem;
+          height: 0.48rem;
+          content: "";
+          background: var(--primary-text);
+          border-radius: 50%;
+          box-shadow: 0 0 0 0.28rem color-mix(in srgb, var(--primary) 12%, transparent);
+        }
+
+        strong,
+        span {
+          grid-column: 2;
+        }
+      }
+    }
+  }
+
   .schedule-summary {
     display: flex;
     flex-wrap: wrap;

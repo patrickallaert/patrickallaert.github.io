@@ -1370,18 +1370,30 @@ body#register #intro > ol {
   margin: 0;
   list-style: none;
 }
-body#classes #intro > ul li,
-body#classes #intro > ol li,
-body#levels #intro > ul li,
-body#levels #intro > ol li,
-body#about #intro > ul li,
-body#about #intro > ol li,
-body#venues #intro > ul li,
-body#venues #intro > ol li,
-body#events #intro > ul li,
-body#events #intro > ol li,
-body#register #intro > ul li,
-body#register #intro > ol li {
+body#classes #intro > ul > ul:not([aria-label="Trimester rhythm"]) li,
+body#classes #intro > ul > ol li,
+body#classes #intro > ol > ul:not([aria-label="Trimester rhythm"]) li,
+body#classes #intro > ol > ol li,
+body#levels #intro > ul > ul:not([aria-label="Trimester rhythm"]) li,
+body#levels #intro > ul > ol li,
+body#levels #intro > ol > ul:not([aria-label="Trimester rhythm"]) li,
+body#levels #intro > ol > ol li,
+body#about #intro > ul > ul:not([aria-label="Trimester rhythm"]) li,
+body#about #intro > ul > ol li,
+body#about #intro > ol > ul:not([aria-label="Trimester rhythm"]) li,
+body#about #intro > ol > ol li,
+body#venues #intro > ul > ul:not([aria-label="Trimester rhythm"]) li,
+body#venues #intro > ul > ol li,
+body#venues #intro > ol > ul:not([aria-label="Trimester rhythm"]) li,
+body#venues #intro > ol > ol li,
+body#events #intro > ul > ul:not([aria-label="Trimester rhythm"]) li,
+body#events #intro > ul > ol li,
+body#events #intro > ol > ul:not([aria-label="Trimester rhythm"]) li,
+body#events #intro > ol > ol li,
+body#register #intro > ul > ul:not([aria-label="Trimester rhythm"]) li,
+body#register #intro > ul > ol li,
+body#register #intro > ol > ul:not([aria-label="Trimester rhythm"]) li,
+body#register #intro > ol > ol li {
   display: grid;
   gap: 0.25rem;
   padding: 0.95rem 1rem;
@@ -1541,6 +1553,32 @@ body#register #intro > figure figcaption strong {
   }
 }
 
+body#classes #intro > ul[aria-label="Trimester rhythm"] {
+  gap: 0.55rem;
+  padding-left: 0.15rem;
+}
+body#classes #intro > ul[aria-label="Trimester rhythm"] li {
+  display: grid;
+  grid-template-columns: 1.05rem minmax(0, 1fr);
+  gap: 0.1rem 0.45rem;
+  align-items: center;
+  padding: 0.08rem 0;
+}
+body#classes #intro > ul[aria-label="Trimester rhythm"] li::before {
+  grid-row: 1/span 2;
+  align-self: center;
+  justify-self: center;
+  width: 0.48rem;
+  height: 0.48rem;
+  content: "";
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.28rem color-mix(in srgb, var(--accent) 12%, transparent);
+}
+body#classes #intro > ul[aria-label="Trimester rhythm"] li strong,
+body#classes #intro > ul[aria-label="Trimester rhythm"] li span {
+  grid-column: 2;
+}
 body#classes .trimester-summary {
   display: flex;
   flex-wrap: wrap;
@@ -1754,11 +1792,8 @@ body#classes .schedule-legend .pratica {
   --legend-color: var(--course-practice);
 }
 @media (min-width: 64rem) {
-  body#classes #intro > ol[aria-label="Trimester rhythm"] {
+  body#classes #intro > ul[aria-label="Trimester rhythm"] {
     grid-column: 1;
-  }
-  body#classes #intro > ol[aria-label="Trimester rhythm"] {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   body#classes .schedule-days {
     gap: 1.55rem;
@@ -2595,3 +2630,5 @@ body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-cla
     grid-column: 2;
   }
 }
+
+/*# sourceMappingURL=theme-gonzaga.css.map */

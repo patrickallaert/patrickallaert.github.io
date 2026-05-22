@@ -1456,8 +1456,10 @@ body > main #intro > ol {
   margin: 0;
   list-style: none;
 }
-body > main #intro > ul li,
-body > main #intro > ol li {
+body > main #intro > ul > ul:not([aria-label="Trimester rhythm"]) li,
+body > main #intro > ul > ol li,
+body > main #intro > ol > ul:not([aria-label="Trimester rhythm"]) li,
+body > main #intro > ol > ol li {
   display: grid;
   gap: 0.25rem;
   padding: 0.9rem 1rem;
@@ -1684,6 +1686,32 @@ body#venues #intro > figure img {
   object-position: center 52%;
 }
 
+body#classes #intro > ul[aria-label="Trimester rhythm"] {
+  gap: 0.55rem;
+  padding-left: 0.1rem;
+}
+body#classes #intro > ul[aria-label="Trimester rhythm"] li {
+  display: grid;
+  grid-template-columns: 1.05rem minmax(0, 1fr);
+  gap: 0.1rem 0.45rem;
+  align-items: center;
+  padding: 0.08rem 0;
+}
+body#classes #intro > ul[aria-label="Trimester rhythm"] li::before {
+  grid-row: 1/span 2;
+  align-self: center;
+  justify-self: center;
+  width: 0.48rem;
+  height: 0.48rem;
+  content: "";
+  background: var(--primary);
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.28rem rgba(111, 247, 223, 0.12);
+}
+body#classes #intro > ul[aria-label="Trimester rhythm"] li strong,
+body#classes #intro > ul[aria-label="Trimester rhythm"] li span {
+  grid-column: 2;
+}
 body#classes .trimester-summary {
   display: flex;
   flex-wrap: wrap;
@@ -2327,8 +2355,8 @@ body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-cla
   body#classes #intro:has(> figure) > figure img {
     height: clamp(15rem, 72vw, 19rem);
   }
-  body#classes #intro > ol[aria-label="Trimester rhythm"] {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  body#classes #intro > ul[aria-label="Trimester rhythm"] {
+    grid-column: 1;
   }
   body#classes .schedule-days {
     gap: 1rem;
@@ -2360,3 +2388,5 @@ body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-cla
     height: 28rem;
   }
 }
+
+/*# sourceMappingURL=theme-baiao.css.map */
