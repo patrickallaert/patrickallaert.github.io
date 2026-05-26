@@ -49,6 +49,10 @@ This file captures product and content decisions for the rebuild so future sessi
   - no important text embedded in images
   - readable forms
 - Preferred implementation is a simple static site.
+- `docs/` is both the GitHub Pages publication directory and the directly edited HTML location for the MVP.
+- There should be no separate `site/` source directory.
+- Build scripts may update marked regions inside `docs/**/*.html`; hand edits should stay outside generated markers.
+- Generated class, level, and venue schedule content should be changed through structured data, then rebuilt.
 - Public URLs should be extensionless and directory-based:
   - prefer `/classes/` over `/classes.html`
   - store secondary pages as `section/index.html`
@@ -89,6 +93,7 @@ This file captures product and content decisions for the rebuild so future sessi
 - The user will update content initially.
 - Store class content directly in HTML/templates for V1.
 - Future CMS is possible, but not for now.
+- If a CMS is reconsidered after the MVP, Ibexa is the default candidate to evaluate first.
 
 ### 4. Registration flow
 

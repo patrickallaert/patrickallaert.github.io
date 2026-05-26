@@ -28,3 +28,10 @@
 `scripts/build-classes.js` replaces the timetable between `class-schedules` markers in `docs/classes/index.html`.
 
 `scripts/build-levels.js` replaces `course-sessions:<course-id>` markers in `docs/levels/index.html`. Keep those markers in place when editing the page by hand.
+
+`scripts/build-venues.js` replaces `venue-sessions:<venue-id>` markers in `docs/venues/index.html`.
+
+For the MVP, `docs/` is both the GitHub Pages publication directory and the
+directly edited HTML source. Do not create a separate `site/` directory. Edit
+HTML outside generated markers by hand; edit generated content through
+`classes.json` and rerun `npm run build`.
