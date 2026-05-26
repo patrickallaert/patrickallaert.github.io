@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { loadClassData, sessionsForLevel } = require("./class-data");
 
-const LEVELS_PATH = path.join(__dirname, "..", "site", "levels", "index.html");
+const LEVELS_PATH = path.join(__dirname, "..", "docs", "levels", "index.html");
 const COURSE_SECTIONS = [
     ["level-1", 3, "      "],
     ["level-2", 3, "      "],

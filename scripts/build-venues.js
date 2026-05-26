@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { loadClassData, sessionsForVenue } = require("./class-data");
 
-const VENUES_PATH = path.join(__dirname, "..", "site", "venues", "index.html");
+const VENUES_PATH = path.join(__dirname, "..", "docs", "venues", "index.html");
 const VENUES = [
     "salle-dublin",
     "gc-ten-noey",

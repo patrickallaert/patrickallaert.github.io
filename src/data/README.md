@@ -25,6 +25,6 @@
 
 ## Generated HTML Blocks
 
-`scripts/build-classes.js` replaces the timetable between `class-schedules` markers in `site/classes/index.html`.
+`scripts/build-classes.js` replaces the timetable between `class-schedules` markers in `docs/classes/index.html`.
 
-`scripts/build-levels.js` replaces `course-sessions:<course-id>` markers in `site/levels/index.html`. Keep those markers in place when editing the page by hand.
+`scripts/build-levels.js` replaces `course-sessions:<course-id>` markers in `docs/levels/index.html`. Keep those markers in place when editing the page by hand.

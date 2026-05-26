@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { loadClassData, visibleTerms } = require("./class-data");
 
-const CLASSES_PATH = path.join(__dirname, "..", "site", "classes", "index.html");
+const CLASSES_PATH = path.join(__dirname, "..", "docs", "classes", "index.html");
 const START_MARKER = "    <!-- class-schedules:start -->";
 const END_MARKER = "    <!-- class-schedules:end -->";
 const COURSE_ORDER = [
