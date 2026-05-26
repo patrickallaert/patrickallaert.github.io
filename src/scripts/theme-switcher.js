@@ -2,6 +2,7 @@
     const activeThemes = ["gonzaga", "zabumba", "sanfona", "baiao", "roots", "abraco", "mandacaru", "triangulo"];
     const themes = activeThemes;
     const labels = { gonzaga: "Gonzaga", zabumba: "Zabumba", sanfona: "Sanfona", baiao: "Baião", roots: "Roots", abraco: "Abraço", mandacaru: "Mandacaru", triangulo: "Triângulo" };
+    const cssVersion = "20260523";
     const isSelectableTheme = (theme) => themes.includes(theme);
     let activeTheme = isSelectableTheme(sessionStorage.getItem("conexao-theme")) ? sessionStorage.getItem("conexao-theme") : "gonzaga";
     let buttons = [];
@@ -13,7 +14,7 @@
     const applyTheme = (theme) => {
         activeTheme = isSelectableTheme(theme) ? theme : "gonzaga";
         document.documentElement.dataset.theme = activeTheme;
-        link.href = `/assets/theme-${activeTheme}.css`;
+        link.href = `/assets/theme-${activeTheme}.css?v=${cssVersion}`;
         sessionStorage.setItem("conexao-theme", activeTheme);
 
         if (buttons.length) {
