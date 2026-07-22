@@ -22,12 +22,6 @@ The best way to get to know Andrés is to invite him to dance! One of the most g
 
 Andrés started dancing forró in 2017, and quickly proved himself a dedicated and curious leader. One of his strongest skills is connection, opening up lots of space for creativity and playfulness on the dance floor. In the classroom, he is laid-back but highly observant, analysing what's going on and providing support wherever necessary.
 
-## Anna
-
-Anna’s warm and welcoming nature makes her a natural at putting new students at ease. Her passion for sharing and spreading the joy of forró shines through in everything she does, whether she’s teaching a class or dancing at a party.
-
-Outside the classroom, Anna takes her love for forró to the stage, where she keeps the rhythm alive as the zabumba player for "Forró na Chinela." Her commitment to the music and dance inspires everyone she encounters to dive deeper into the forró experience.
-
 ## Charlotte
 
 Charlotte is all about the feeling. Her style of dancing values presence and connection, with a touch of playfulness. Highly committed, she studies hard as both a leader and follower. More recently, she has also put on an organiser hat to keep forró parties rolling in Brussels.

@@ -69,7 +69,7 @@ Useful fields:
           "level": "level-2",
           "title": "Level 2",
           "venue": "gc-ten-noey",
-          "teachers": ["andres", "anna"],
+          "teachers": ["andres", "patrick"],
           "noClass": ["2026-05-25"]
         }
       ]

@@ -7,7 +7,6 @@
   },
   "teachers": {
     "andres": "Andrés",
-    "anna": "Anna",
     "charlotte": "Charlotte",
     "emma": "Emma",
     "giulia": "Giulia",
@@ -71,7 +70,6 @@
           "starts": "2026-04-20",
           "ends": "2026-05-18",
           "teachers": [
-            "anna",
             "vero",
             "giulia"
           ]
@@ -84,7 +82,6 @@
           "starts": "2026-06-01",
           "ends": "2026-06-29",
           "teachers": [
-            "anna",
             "vero",
             "giulia"
           ]
@@ -101,8 +98,7 @@
           "time": "20:45-22:00",
           "course": "level-2",
           "teachers": [
-            "andres",
-            "anna"
+            "andres"
           ]
         },
         {
