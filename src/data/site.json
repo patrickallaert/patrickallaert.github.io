@@ -1,8 +1,5 @@
 {
-  "registration": {
-    "trimester": "2026-04",
-    "url": "https://docs.google.com/forms/d/e/1FAIpQLSevIQ59CZwoHaL5h0iJXvsM-OK0Rph9PK1YxRGnsl0amBt4Fw/viewform"
-  },
+  "registration": null,
   "venues": {
     "brochet": "Dojo du Brochet",
     "ten-noey": "GC Ten Noey",
@@ -33,81 +30,75 @@
       "legend": false,
       "link": false
     },
+    "lead-follow": {
+      "title": "Everyone Leads & Follows",
+      "link": false
+    },
     "pratica": {
       "title": "Forró Prática",
       "legendLabel": "Prática"
+    },
+    "roots": {
+      "title": "Roots",
+      "link": false
     }
   },
   "trimesters": [
     {
-      "id": "2026-04",
-      "title": "April-June 2026",
-      "starts": "2026-04-20",
-      "ends": "2026-07-02",
-      "summary": "10 weeks of classes",
+      "id": "2026-09",
+      "title": "September-December 2026",
+      "starts": "2026-09-14",
+      "ends": "2026-12-16",
+      "summary": "11 weeks of classes",
       "noClassDates": [
-        "2026-05-14",
-        "2026-05-25",
-        "2026-06-30",
-        "2026-07-01"
       ],
       "schedule": [
         {
           "day": "monday",
           "venue": "ten-noey",
           "time": "19:00-20:15",
-          "course": "dancing-in-dialogue",
-          "starts": "2026-04-20",
-          "ends": "2026-05-18",
+          "course": "lead-follow",
           "teachers": [
-            "vero",
-            "giulia"
+            "simon"
           ]
-        },
-        {
-          "day": "monday",
-          "venue": "ten-noey",
-          "time": "19:00-20:15",
-          "course": "footwork-armwork",
-          "starts": "2026-06-01",
-          "ends": "2026-06-29",
-          "teachers": [
-            "vero",
-            "giulia"
-          ]
-        },
-        {
-          "day": "monday",
-          "venue": "ten-noey",
-          "time": "20:15-20:45",
-          "course": "free-practice"
         },
         {
           "day": "monday",
           "venue": "ten-noey",
           "time": "20:45-22:00",
-          "course": "level-2",
+          "course": "level-1",
           "teachers": [
+            "charlotte"
+          ],
+          "assistants": [
             "andres"
           ]
         },
         {
           "day": "monday",
           "venue": "brochet",
-          "time": "19:30-20:45",
-          "course": "level-1",
+          "time": "19:00-20:15",
+          "course": "level-2",
           "teachers": [
-            "simon"
-          ],
-          "assistants": [
-            "marco"
+            "vero",
+            "giulia"
           ]
         },
         {
           "day": "monday",
           "venue": "brochet",
           "time": "20:45-22:00",
-          "course": "level-3",
+          "course": "roots",
+          "teachers": [
+            "simon",
+            "vero"
+          ]
+        },
+        {
+          "day": "tuesday",
+          "venue": "malibran",
+          "time": "19:00-20:15",
+          "course": "level-4",
           "teachers": [
             "simon"
           ],
@@ -118,47 +109,29 @@
         {
           "day": "tuesday",
           "venue": "malibran",
-          "time": "19:00-20:15",
+          "time": "20:45-22:00",
           "course": "level-3",
           "teachers": [
             "simon"
           ],
           "assistants": [
-            "emma"
-          ]
-        },
-        {
-          "day": "tuesday",
-          "venue": "malibran",
-          "time": "20:15-20:45",
-          "course": "free-practice"
-        },
-        {
-          "day": "tuesday",
-          "venue": "malibran",
-          "time": "20:45-22:00",
-          "course": "roots-1",
-          "teachers": [
-            "simon"
-          ],
-          "assistants": [
-            "emma"
+            "marco"
           ]
         },
         {
           "day": "wednesday",
           "venue": "dublin",
           "time": "19:00-20:15",
-          "course": "level-2",
+          "course": "level-3",
           "teachers": [
             "charlotte",
-            "patrick"
+            "emma"
           ]
         },
         {
           "day": "wednesday",
           "venue": "dublin",
-          "time": "20:15-22:30",
+          "time": "20:45-22:00",
           "course": "pratica",
           "note": "No registration required"
         },
@@ -166,28 +139,22 @@
           "day": "thursday",
           "venue": "brochet",
           "time": "19:00-20:15",
-          "course": "roots-2",
+          "course": "level-1",
           "teachers": [
+            "emma",
             "simon"
-          ],
-          "assistants": [
-            "vero"
           ]
         },
         {
           "day": "thursday",
           "venue": "brochet",
-          "time": "20:15-20:45",
-          "course": "free-practice"
-        },
-        {
-          "day": "thursday",
-          "venue": "brochet",
           "time": "20:45-22:00",
-          "course": "level-4",
+          "course": "level-2",
           "teachers": [
-            "simon",
-            "vero"
+            "simon"
+          ],
+          "assistants": [
+            "patrick"
           ]
         }
       ]
