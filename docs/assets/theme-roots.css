@@ -1691,30 +1691,20 @@ body#register #intro > ol {
   margin: 0;
   list-style: none;
 }
-body#classes #intro > ul > ul:not([aria-label="Trimester rhythm"]) li,
-body#classes #intro > ul > ol li,
-body#classes #intro > ol > ul:not([aria-label="Trimester rhythm"]) li,
-body#classes #intro > ol > ol li,
-body#levels #intro > ul > ul:not([aria-label="Trimester rhythm"]) li,
-body#levels #intro > ul > ol li,
-body#levels #intro > ol > ul:not([aria-label="Trimester rhythm"]) li,
-body#levels #intro > ol > ol li,
-body#about #intro > ul > ul:not([aria-label="Trimester rhythm"]) li,
-body#about #intro > ul > ol li,
-body#about #intro > ol > ul:not([aria-label="Trimester rhythm"]) li,
-body#about #intro > ol > ol li,
-body#venues #intro > ul > ul:not([aria-label="Trimester rhythm"]) li,
-body#venues #intro > ul > ol li,
-body#venues #intro > ol > ul:not([aria-label="Trimester rhythm"]) li,
-body#venues #intro > ol > ol li,
-body#events #intro > ul > ul:not([aria-label="Trimester rhythm"]) li,
-body#events #intro > ul > ol li,
-body#events #intro > ol > ul:not([aria-label="Trimester rhythm"]) li,
-body#events #intro > ol > ol li,
-body#register #intro > ul > ul:not([aria-label="Trimester rhythm"]) li,
-body#register #intro > ul > ol li,
-body#register #intro > ol > ul:not([aria-label="Trimester rhythm"]) li,
-body#register #intro > ol > ol li {
+body#classes #intro > ul:not([aria-label="Trimester rhythm"]) > li,
+body#classes #intro > ol:not([aria-label="Trimester rhythm"]) > li,
+body#levels #intro > ul:not([aria-label="Trimester rhythm"]) > li,
+body#levels #intro > ol:not([aria-label="Trimester rhythm"]) > li,
+body#about #intro > ul:not([aria-label="Trimester rhythm"]) > li,
+body#about #intro > ol:not([aria-label="Trimester rhythm"]) > li,
+body#venues #intro > ul:not([aria-label="Trimester rhythm"]) > li,
+body#venues #intro > ol:not([aria-label="Trimester rhythm"]) > li,
+body#events #intro > ul:not([aria-label="Trimester rhythm"]) > li,
+body#events #intro > ol:not([aria-label="Trimester rhythm"]) > li,
+body#register #intro > ul:not([aria-label="Trimester rhythm"]) > li,
+body#register #intro > ol:not([aria-label="Trimester rhythm"]) > li {
+  display: grid;
+  gap: 0.25rem;
   padding: 0.9rem 1rem;
   background: color-mix(in srgb, var(--yellow) 12%, var(--surface));
   border: 1px solid var(--line);

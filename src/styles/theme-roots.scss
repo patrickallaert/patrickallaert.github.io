@@ -493,8 +493,9 @@ body#register {
       margin: 0;
       list-style: none;
 
-      > ul:not([aria-label="Trimester rhythm"]) li,
-      > ol li {
+      &:not([aria-label="Trimester rhythm"]) > li {
+        display: grid;
+        gap: 0.25rem;
         padding: 0.9rem 1rem;
         background: color-mix(in srgb, var(--yellow) 12%, var(--surface));
         border: 1px solid var(--line);

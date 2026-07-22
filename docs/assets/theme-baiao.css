@@ -1456,10 +1456,8 @@ body > main #intro > ol {
   margin: 0;
   list-style: none;
 }
-body > main #intro > ul > ul:not([aria-label="Trimester rhythm"]) li,
-body > main #intro > ul > ol li,
-body > main #intro > ol > ul:not([aria-label="Trimester rhythm"]) li,
-body > main #intro > ol > ol li {
+body > main #intro > ul:not([aria-label="Trimester rhythm"]) > li,
+body > main #intro > ol:not([aria-label="Trimester rhythm"]) > li {
   display: grid;
   gap: 0.25rem;
   padding: 0.9rem 1rem;
