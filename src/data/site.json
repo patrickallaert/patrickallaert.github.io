@@ -1,13 +1,13 @@
 {
   "registration": {
-    "trimester": "april-june-2026",
+    "trimester": "2026-04",
     "url": "https://docs.google.com/forms/d/e/1FAIpQLSevIQ59CZwoHaL5h0iJXvsM-OK0Rph9PK1YxRGnsl0amBt4Fw/viewform"
   },
   "venues": {
-    "dojo-du-brochet": "Dojo du Brochet",
-    "gc-ten-noey": "GC Ten Noey",
-    "maison-malibran": "Maison de Quartier Malibran",
-    "salle-dublin": "Salle Dublin"
+    "brochet": "Dojo du Brochet",
+    "ten-noey": "GC Ten Noey",
+    "malibran": "Maison de Quartier Malibran",
+    "dublin": "Salle Dublin"
   },
   "teachers": {
     "andres": "Andrés",
@@ -40,7 +40,7 @@
   },
   "trimesters": [
     {
-      "id": "april-june-2026",
+      "id": "2026-04",
       "title": "April-June 2026",
       "starts": "2026-04-20",
       "ends": "2026-07-02",
@@ -54,7 +54,7 @@
       "schedule": [
         {
           "day": "monday",
-          "venue": "gc-ten-noey",
+          "venue": "ten-noey",
           "time": "19:00-20:15",
           "course": "dancing-in-dialogue",
           "starts": "2026-04-20",
@@ -66,7 +66,7 @@
         },
         {
           "day": "monday",
-          "venue": "gc-ten-noey",
+          "venue": "ten-noey",
           "time": "19:00-20:15",
           "course": "footwork-armwork",
           "starts": "2026-06-01",
@@ -78,13 +78,13 @@
         },
         {
           "day": "monday",
-          "venue": "gc-ten-noey",
+          "venue": "ten-noey",
           "time": "20:15-20:45",
           "course": "free-practice"
         },
         {
           "day": "monday",
-          "venue": "gc-ten-noey",
+          "venue": "ten-noey",
           "time": "20:45-22:00",
           "course": "level-2",
           "teachers": [
@@ -93,7 +93,7 @@
         },
         {
           "day": "monday",
-          "venue": "dojo-du-brochet",
+          "venue": "brochet",
           "time": "19:30-20:45",
           "course": "level-1",
           "teachers": [
@@ -105,7 +105,7 @@
         },
         {
           "day": "monday",
-          "venue": "dojo-du-brochet",
+          "venue": "brochet",
           "time": "20:45-22:00",
           "course": "level-3",
           "teachers": [
@@ -117,7 +117,7 @@
         },
         {
           "day": "tuesday",
-          "venue": "maison-malibran",
+          "venue": "malibran",
           "time": "19:00-20:15",
           "course": "level-3",
           "teachers": [
@@ -129,13 +129,13 @@
         },
         {
           "day": "tuesday",
-          "venue": "maison-malibran",
+          "venue": "malibran",
           "time": "20:15-20:45",
           "course": "free-practice"
         },
         {
           "day": "tuesday",
-          "venue": "maison-malibran",
+          "venue": "malibran",
           "time": "20:45-22:00",
           "course": "roots-1",
           "teachers": [
@@ -147,7 +147,7 @@
         },
         {
           "day": "wednesday",
-          "venue": "salle-dublin",
+          "venue": "dublin",
           "time": "19:00-20:15",
           "course": "level-2",
           "teachers": [
@@ -157,14 +157,14 @@
         },
         {
           "day": "wednesday",
-          "venue": "salle-dublin",
+          "venue": "dublin",
           "time": "20:15-22:30",
           "course": "pratica",
           "note": "No registration required"
         },
         {
           "day": "thursday",
-          "venue": "dojo-du-brochet",
+          "venue": "brochet",
           "time": "19:00-20:15",
           "course": "roots-2",
           "teachers": [
@@ -176,13 +176,13 @@
         },
         {
           "day": "thursday",
-          "venue": "dojo-du-brochet",
+          "venue": "brochet",
           "time": "20:15-20:45",
           "course": "free-practice"
         },
         {
           "day": "thursday",
-          "venue": "dojo-du-brochet",
+          "venue": "brochet",
           "time": "20:45-22:00",
           "course": "level-4",
           "teachers": [

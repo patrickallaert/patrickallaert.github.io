@@ -4,10 +4,10 @@ const { loadSiteData, noClassDatesForDay, scheduleForVenue } = require("./site-d
 
 const VENUES_PATH = path.join(__dirname, "..", "docs", "venues", "index.html");
 const VENUES = [
-    "salle-dublin",
-    "gc-ten-noey",
-    "dojo-du-brochet",
-    "maison-malibran",
+    "dublin",
+    "ten-noey",
+    "brochet",
+    "malibran",
 ];
 
 const DAY_INDEX = {

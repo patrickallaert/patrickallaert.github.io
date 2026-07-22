@@ -55,7 +55,7 @@ Useful fields:
 {
   "trimesters": [
     {
-      "id": "april-june-2026",
+      "id": "2026-04",
       "title": "April-June 2026",
       "starts": "2026-04-20",
       "ends": "2026-07-02",
@@ -65,7 +65,7 @@ Useful fields:
           "day": "monday",
           "time": "20:45-22:00",
           "course": "level-2",
-          "venue": "gc-ten-noey",
+          "venue": "ten-noey",
           "teachers": ["andres", "patrick"]
         }
       ]

@@ -14,7 +14,7 @@ safely.
 
 ## Derived By The Generator
 
-- Venue links are derived from venue IDs: `dojo-du-brochet` becomes `/venues/#dojo-du-brochet`.
+- Venue links are derived from venue IDs: `brochet` becomes `/venues/#brochet`.
 - Teacher links are derived from teacher IDs: `simon` becomes `/about/#simon`.
 - Standard course links are derived from course IDs: `level-2` becomes `/levels/#level-2`.
 - `level-N` and `roots-N` titles and CSS classes are inferred from their IDs.
