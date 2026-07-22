@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { loadClassData, sessionsForLevel } = require("./class-data");
+const { loadSiteData, noClassDatesForDay, scheduleForLevel } = require("./site-data");
 
 const LEVELS_PATH = path.join(__dirname, "..", "docs", "levels", "index.html");
 const COURSE_SECTIONS = [
@@ -89,7 +89,7 @@ const nextWeek = (date) => {
 const sessionOccurrences = (term, session) => {
     const starts = session.starts || firstDayInRange(term.starts, session.day);
     const ends = session.ends || term.ends;
-    const noClass = new Set(term.days[session.day]);
+    const noClass = new Set(noClassDatesForDay(term, session.day));
     const dates = [];
 
     for (let date = starts; date <= ends; date = nextWeek(date)) {
@@ -129,7 +129,7 @@ const isWithinSessionDates = (date, term, session) => {
 };
 
 const renderNoClass = (term, session) => {
-    const dates = term.days[session.day].filter((date) => isWithinSessionDates(date, term, session));
+    const dates = noClassDatesForDay(term, session.day).filter((date) => isWithinSessionDates(date, term, session));
 
     if (!dates.length) return "";
 
@@ -175,7 +175,7 @@ const sessionDetails = ({ term, session }, data, indent) => {
 };
 
 const renderCourseSessions = (course, headingLevel, indent, data) => {
-    const sessions = sessionsForLevel(data, course, process.env.CLASSES_ON_DATE || null);
+    const sessions = scheduleForLevel(data, course);
     const heading = `h${headingLevel}`;
     const innerIndent = `${indent}  `;
     const listIndent = `${innerIndent}  `;
@@ -194,10 +194,12 @@ const renderCourseSessions = (course, headingLevel, indent, data) => {
     ].filter(Boolean).join("\n");
 };
 
+const data = loadSiteData();
+
 fs.writeFileSync(LEVELS_PATH, COURSE_SECTIONS.reduce(
     (output, [course, headingLevel, indent]) => output.replace(
         new RegExp(`[ \\t]*<!-- course-sessions:${course}:start -->[\\s\\S]*?[ \\t]*<!-- course-sessions:${course}:end -->`),
-        renderCourseSessions(course, headingLevel, indent, loadClassData()),
+        renderCourseSessions(course, headingLevel, indent, data),
     ),
     fs.readFileSync(LEVELS_PATH, "utf8"),
 ));

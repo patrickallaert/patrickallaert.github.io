@@ -87,15 +87,12 @@ Alpha and Gamma remain in the source/build as inactive reference themes, but are
 
 Theme tokens are documented in `design/theme-tokens.md`.
 
-## Term state model
+## Site data model
 
-The site should distinguish between:
-
-1. the current term
-2. the next term
-3. the registration state
-
-Registration is not always open, and when it is open it should only point to the next term. The shared source of truth currently lives in `src/data/site.json`.
+`src/data/site.json` is the single structured data source for trimesters,
+schedules, venues, teachers, courses, and registration. Every configured
+trimester is published in JSON order. Registration is either `null` when
+closed or points to exactly one configured trimester and its form URL.
 
 ## Current approach
 
@@ -107,6 +104,7 @@ Build scripts may update marked regions inside those same HTML files:
 - `class-schedules` blocks in `docs/classes/index.html`
 - `course-sessions:<course-id>` blocks in `docs/levels/index.html`
 - `venue-sessions:<venue-id>` blocks in `docs/venues/index.html`
+- `registration-status` and `registration-link` blocks in `docs/register/index.html`
 
 The priority is to:
 

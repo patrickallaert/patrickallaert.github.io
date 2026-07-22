@@ -32,7 +32,7 @@ This file captures product and content decisions for the rebuild so future sessi
   - Contact
   - Legal
 - Most content will initially be maintained directly by the user.
-- Class schedule data is maintained in `src/data/classes.json` and rendered into the static Classes page during the build.
+- Site and class schedule data is maintained in `src/data/site.json` and rendered into marked regions of the static pages during the build.
 - Current registration flow should be kept for V1.
 - Registration is not permanently open.
 - Registration, when open, should target the next trimester only.
@@ -88,23 +88,19 @@ This file captures product and content decisions for the rebuild so future sessi
 - Core V1 pages are confirmed.
 - Which additional subpages are required for V1 under `Classes`, `Events`, or `Contact` is still open.
 
-### 3. Classes data
+### 3. Site data
 
 - The user will update content initially.
-- Store class content directly in HTML/templates for V1.
+- Store editorial page content directly in HTML for V1 and shared schedule data in `src/data/site.json`.
 - Future CMS is possible, but not for now.
 - If a CMS is reconsidered after the MVP, Ibexa is the default candidate to evaluate first.
 
 ### 4. Registration flow
 
 - Keep the current flow for V1.
-- Registration should be modeled separately from the current term content.
-- The new site should expose:
-  - current term
-  - next term
-  - registration state
+- Registration should reference one configured trimester from the shared site data.
 - Registration may be closed.
-- When registration is open, it should point only to the next term.
+- No more than one trimester may accept registrations at once.
 - A single source of truth for this information should be used across the site.
 
 ### 5. Calendar model

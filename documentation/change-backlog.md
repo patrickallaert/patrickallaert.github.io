@@ -35,17 +35,17 @@ Acceptance criteria:
 
 ### 2. Class Data Model
 
-Status: implemented for the Classes timetable. The data model and helper functions already support visible trimester sets, level lookups, and venue lookups; Levels and Venues can be wired to this data in a later step.
+Status: implemented. One structured source generates the Classes timetable and the schedule summaries on Levels and Venues.
 
 Priority: high
 
 Decide whether class information remains authored in HTML or moves into a structured data file. This is the key decision before building filters, level-specific links, venue-specific listings, or embedded videos connected to levels.
 
-The model must handle trimester-specific data. During most of the year, Classes may show one trimester. During transition periods, Classes may show two trimesters at once, each with its own schedule section. Levels and Venues then need to show a coherent mix of classes across the visible trimesters without duplicating editorial work.
+The model handles trimester-specific data. Classes may show one or several configured trimesters, each with its own schedule section. Levels and Venues show the same classes without duplicating editorial work.
 
 Preferred direction:
 
-- Create a structured source such as `src/data/classes.json`.
+- Maintain the structured source in `src/data/site.json`.
 - Generate the Classes timetable from that data.
 - Reuse the same data to show relevant courses on Levels and Venues.
 
@@ -53,24 +53,20 @@ Useful fields:
 
 ```json
 {
-  "terms": [
+  "trimesters": [
     {
       "id": "april-june-2026",
       "title": "April-June 2026",
       "starts": "2026-04-20",
       "ends": "2026-07-02",
-      "visibleFrom": "2026-03-16",
-      "visibleUntil": "2026-07-06",
-      "sessions": [
+      "noClassDates": ["2026-05-25"],
+      "schedule": [
         {
           "day": "monday",
           "time": "20:45-22:00",
-          "type": "class",
-          "level": "level-2",
-          "title": "Level 2",
+          "course": "level-2",
           "venue": "gc-ten-noey",
-          "teachers": ["andres", "patrick"],
-          "noClass": ["2026-05-25"]
+          "teachers": ["andres", "patrick"]
         }
       ]
     }
@@ -81,14 +77,14 @@ Useful fields:
 Acceptance criteria:
 
 - One source of truth can produce one or several trimester schedules, level-specific summaries, and venue-specific summaries.
-- Classes can render two visible trimesters as two separate schedule sections when needed.
-- Levels and Venues can aggregate courses from the visible trimester set without losing trimester context.
+- Classes renders every configured trimester as a separate schedule section.
+- Levels and Venues aggregate courses from the configured trimesters without losing trimester context.
 - Editorial updates do not require modifying the same course in multiple HTML files.
 - The generated HTML remains semantic and inspectable.
 
 ### 3. Level Filtering On Classes
 
-Status: partly implemented. Levels now shows scheduled classes generated from `src/data/classes.json`, so visitors can see relevant days, times, venues, and teachers without leaving the level description. A Classes-page filter remains a possible follow-up if the full timetable needs an interactive narrow view.
+Status: partly implemented. Levels now shows scheduled classes generated from `src/data/site.json`, so visitors can see relevant days, times, venues, and teachers without leaving the level description. A Classes-page filter remains a possible follow-up if the full timetable needs an interactive narrow view.
 
 Priority: high, after class data model or as a smaller static interim step
 

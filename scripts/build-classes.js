@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { loadClassData, visibleTerms } = require("./class-data");
+const { loadSiteData, noClassDatesForDay, WEEKDAYS } = require("./site-data");
 
 const CLASSES_PATH = path.join(__dirname, "..", "docs", "classes", "index.html");
 const START_MARKER = "    <!-- class-schedules:start -->";
@@ -55,8 +55,8 @@ const inferredCourse = (id) => {
     const [, type, number] = match;
 
     return {
-        classes: [type, number],
-        includeIdClass: false,
+        category: type,
+        categoryDetail: number,
         title: `${type.charAt(0).toUpperCase()}${type.slice(1)} ${number}`,
     };
 };
@@ -66,10 +66,10 @@ const getCourse = (data, id) => {
 };
 
 const courseClasses = (id, course) => {
-    if (!course.classes) return [id];
-    if (course.includeIdClass === false) return course.classes;
+    if (course.categoryDetail) return [course.category, course.categoryDetail];
+    if (!course.category) return [id];
 
-    return [...course.classes, id];
+    return [course.category, id];
 };
 
 const courseClassName = (id, course, duration) => ["class", ...courseClasses(id, course), `duration-${duration}`].join(" ");
@@ -155,21 +155,21 @@ const renderVenue = (venueId, sessions, data) => {
     ].join("\n");
 };
 
-const renderDay = ([day, noClass], term, data) => {
-    const sessions = term.sessions.filter((session) => session.day === day);
+const renderDay = (day, term, data) => {
+    const sessions = term.schedule.filter((session) => session.day === day);
     const venues = [...new Set(sessions.map((session) => session.venue))];
 
     return [
         "        <article>",
         `          <h4>${escapeHtml(dayName(day))}</h4>`,
-        renderNoClass(noClass),
+        renderNoClass(noClassDatesForDay(term, day)),
         venues.map((venue) => renderVenue(venue, sessions.filter((session) => session.venue === venue), data)).join("\n"),
         "        </article>",
     ].filter(Boolean).join("\n");
 };
 
 const legendItems = (term, data) => {
-    const courses = [...new Set(term.sessions.map((session) => session.course))];
+    const courses = [...new Set(term.schedule.map((session) => session.course))];
 
     return courses
         .sort((left, right) => {
@@ -193,11 +193,12 @@ const renderLegend = (term, data) => [
 const renderTerm = (term, data) => [
     `    <section id="${term.id}">`,
     `      <h2>${escapeHtml(term.title)}</h2>`,
-    term.registration !== false && `      <p><a href="/register/">Register for ${escapeHtml(term.title)}</a></p>`,
+    data.registration?.trimester === term.id && `      <p><a href="/register/">Register for ${escapeHtml(term.title)}</a></p>`,
     `      <p class="trimester-summary"><span><time datetime="${term.starts}">${formatDate(term.starts)}</time> - <time datetime="${term.ends}">${formatDate(term.ends)}</time></span> <span>${escapeHtml(term.summary)}</span></p>`,
     "",
     '      <div class="schedule-days">',
-    Object.entries(term.days).map((day) => renderDay(day, term, data)).join("\n"),
+    WEEKDAYS.filter((day) => term.schedule.some((session) => session.day === day))
+        .map((day) => renderDay(day, term, data)).join("\n"),
     "      </div>",
     "",
     renderLegend(term, data),
@@ -206,7 +207,7 @@ const renderTerm = (term, data) => [
 
 const renderSchedules = (data) => [
     START_MARKER,
-    visibleTerms(data, process.env.CLASSES_ON_DATE || null).map((term) => renderTerm(term, data)).join("\n\n"),
+    data.trimesters.map((term) => renderTerm(term, data)).join("\n\n"),
     END_MARKER,
 ].join("\n");
 
@@ -214,4 +215,4 @@ const replaceSchedules = (html, schedules) => {
     return html.replace(new RegExp(`${START_MARKER}[\\s\\S]*?${END_MARKER}`), schedules);
 };
 
-fs.writeFileSync(CLASSES_PATH, replaceSchedules(fs.readFileSync(CLASSES_PATH, "utf8"), renderSchedules(loadClassData())));
+fs.writeFileSync(CLASSES_PATH, replaceSchedules(fs.readFileSync(CLASSES_PATH, "utf8"), renderSchedules(loadSiteData())));

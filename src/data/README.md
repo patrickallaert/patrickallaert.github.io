@@ -1,6 +1,16 @@
-# Class Data
+# Site Data
 
-`classes.json` is the source of truth for the class timetable. Keep it editorial: only store information that actually changes from term to term or cannot be derived safely.
+`site.json` is the single source of structured site data. Keep it editorial:
+only store information that changes between trimesters or cannot be derived
+safely.
+
+## Data Model
+
+- `trimesters` contains every programme to publish, in display order.
+- `noClassDates` lists dates on which every class scheduled that day is cancelled.
+- `schedule` contains the recurring class slots for a trimester.
+- `registration` points to the only trimester accepting registrations and its form URL. Set it to `null` to close registration.
+- `venues`, `teachers`, and `courses` provide shared labels and course-specific display options.
 
 ## Derived By The Generator
 
@@ -8,30 +18,18 @@
 - Teacher links are derived from teacher IDs: `simon` becomes `/about/#simon`.
 - Standard course links are derived from course IDs: `level-2` becomes `/levels/#level-2`.
 - `level-N` and `roots-N` titles and CSS classes are inferred from their IDs.
-- Day names are derived from day keys: `monday` becomes `Monday`.
-- Registration links always point to `/register/`.
-- Registration labels are generated from the term title.
-- Session duration classes are generated from the time range.
-- Legend items are generated from the courses present in a term.
-- Scheduled class summaries on Levels are generated from the visible terms.
-
-## Store Explicitly
-
-- Human-readable venue and teacher names.
-- Term dates, visibility dates, and term summaries.
-- No-class dates.
-- Session day, venue, time, course, teachers, assistants, and term-specific date ranges.
-- Course exceptions such as short courses, practice sessions, labels, or non-standard linking behavior.
+- Day names and the weekday for each no-class date are derived automatically.
+- Registration labels are generated from the referenced trimester title.
+- Session duration classes and legend items are generated from the schedule.
 
 ## Generated HTML Blocks
 
-`scripts/build-classes.js` replaces the timetable between `class-schedules` markers in `docs/classes/index.html`.
-
-`scripts/build-levels.js` replaces `course-sessions:<course-id>` markers in `docs/levels/index.html`. Keep those markers in place when editing the page by hand.
-
-`scripts/build-venues.js` replaces `venue-sessions:<venue-id>` markers in `docs/venues/index.html`.
+- `scripts/build-classes.js` replaces the `class-schedules` block in `docs/classes/index.html`.
+- `scripts/build-levels.js` replaces the `course-sessions:<course-id>` blocks in `docs/levels/index.html`.
+- `scripts/build-venues.js` replaces the `venue-sessions:<venue-id>` blocks in `docs/venues/index.html`.
+- `scripts/build-registration.js` replaces the `registration-status` and `registration-link` blocks in `docs/register/index.html`.
 
 For the MVP, `docs/` is both the GitHub Pages publication directory and the
 directly edited HTML source. Do not create a separate `site/` directory. Edit
 HTML outside generated markers by hand; edit generated content through
-`classes.json` and rerun `npm run build`.
+`site.json` and rerun `npm run build`.

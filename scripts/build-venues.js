@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { loadClassData, sessionsForVenue } = require("./class-data");
+const { loadSiteData, noClassDatesForDay, scheduleForVenue } = require("./site-data");
 
 const VENUES_PATH = path.join(__dirname, "..", "docs", "venues", "index.html");
 const VENUES = [
@@ -83,7 +83,7 @@ const courseClassName = (data, id) => {
     const classes = ["class"];
 
     if (id.match(/^(level|roots)-\d$/)) return [...classes, id.replace("-", " ")].join(" ");
-    if (item.classes) return [...classes, ...item.classes, id].join(" ");
+    if (item.category) return [...classes, item.category, id].join(" ");
 
     return [...classes, id].join(" ");
 };
@@ -128,7 +128,7 @@ const nextWeek = (date) => {
 const sessionOccurrences = (term, session) => {
     const starts = session.starts || firstDayInRange(term.starts, session.day);
     const ends = session.ends || term.ends;
-    const noClass = new Set(term.days[session.day]);
+    const noClass = new Set(noClassDatesForDay(term, session.day));
     const dates = [];
 
     for (let date = starts; date <= ends; date = nextWeek(date)) {
@@ -168,7 +168,7 @@ const isWithinSessionDates = (date, term, session) => {
 };
 
 const renderNoClass = (term, session) => {
-    const dates = term.days[session.day].filter((date) => isWithinSessionDates(date, term, session));
+    const dates = noClassDatesForDay(term, session.day).filter((date) => isWithinSessionDates(date, term, session));
 
     if (!dates.length) return "";
 
@@ -252,7 +252,7 @@ const renderDayGroup = ({ day, sessions }, data, indent) => {
 };
 
 const renderVenueSessions = (venue, data) => {
-    const sessions = sessionsForVenue(data, venue, process.env.CLASSES_ON_DATE || null)
+    const sessions = scheduleForVenue(data, venue)
         .filter(({ session }) => session.course !== "free-practice")
         .sort(compareSessions);
     const indent = "      ";
@@ -279,7 +279,7 @@ const replaceVenueSessions = (html, venue, data) => html.replace(
     renderVenueSessions(venue, data),
 );
 
-const data = loadClassData();
+const data = loadSiteData();
 
 fs.writeFileSync(VENUES_PATH, VENUES.reduce(
     (output, venue) => replaceVenueSessions(output, venue, data),
