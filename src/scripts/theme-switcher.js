@@ -1,10 +1,21 @@
 (() => {
     const activeThemes = ["gonzaga", "zabumba", "sanfona", "baiao", "roots", "abraco", "mandacaru", "triangulo"];
     const themes = activeThemes;
+    const defaultTheme = "roots";
     const labels = { gonzaga: "Gonzaga", zabumba: "Zabumba", sanfona: "Sanfona", baiao: "Baião", roots: "Roots", abraco: "Abraço", mandacaru: "Mandacaru", triangulo: "Triângulo" };
-    const cssVersion = "20260523";
+    const logos = {
+        gonzaga: "/assets/logos/logo-full-black.svg",
+        zabumba: "/assets/logos/logo-full-blue.svg",
+        sanfona: "/assets/logos/logo-full-green.svg",
+        baiao: "/assets/logos/logo-full-white.svg",
+        roots: "/assets/logos/logo-full-blue.svg",
+        abraco: "/assets/logos/logo-full-white.svg",
+        mandacaru: "/assets/logos/logo-full-yellow.svg",
+        triangulo: "/assets/logos/logo-full-yellow.svg",
+    };
+    const assetVersion = "20260723";
     const isSelectableTheme = (theme) => themes.includes(theme);
-    let activeTheme = isSelectableTheme(sessionStorage.getItem("conexao-theme")) ? sessionStorage.getItem("conexao-theme") : "gonzaga";
+    let activeTheme = isSelectableTheme(sessionStorage.getItem("conexao-theme")) ? sessionStorage.getItem("conexao-theme") : defaultTheme;
     let buttons = [];
     const link = document.createElement("link");
     link.id = "theme-stylesheet";
@@ -12,10 +23,16 @@
     document.head.append(link);
 
     const applyTheme = (theme) => {
-        activeTheme = isSelectableTheme(theme) ? theme : "gonzaga";
+        activeTheme = isSelectableTheme(theme) ? theme : defaultTheme;
         document.documentElement.dataset.theme = activeTheme;
-        link.href = `/assets/theme-${activeTheme}.css?v=${cssVersion}`;
+        link.href = `/assets/theme-${activeTheme}.css?v=${assetVersion}`;
         sessionStorage.setItem("conexao-theme", activeTheme);
+
+        const logo = document.querySelector(".wordmark img");
+
+        if (logo) {
+            logo.src = `${logos[activeTheme]}?v=${assetVersion}`;
+        }
 
         if (buttons.length) {
             buttons.forEach((button) => {
