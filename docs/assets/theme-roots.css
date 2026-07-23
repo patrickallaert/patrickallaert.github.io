@@ -1331,29 +1331,33 @@ body#classes .schedule-days article.class:has(.portraits) > :not(.portraits) {
 }
 
 :root {
+  --brand-blue: #004f71;
+  --brand-blue-hover: #003b55;
   --paper: #fff7ea;
   --paper-soft: #fffaf1;
   --surface: #fffdf8;
   --surface-warm: #fff4df;
-  --ink: #203a4c;
-  --ink-soft: rgba(32, 58, 76, 0.72);
-  --primary: #c96f3a;
-  --primary-text: #91451f;
-  --primary-ink: #fffaf1;
+  --ink: #173846;
+  --ink-soft: rgba(23, 56, 70, 0.74);
+  --primary: var(--brand-blue);
+  --primary-text: var(--brand-blue);
+  --primary-ink: #fff;
   --primary-soft: color-mix(in srgb, var(--primary) 10%, var(--surface));
   --primary-line: color-mix(in srgb, var(--primary) 30%, transparent);
   --accent: var(--primary-text);
-  --accent-ink: #fffaf1;
+  --accent-ink: #fff;
+  --clay: #b85f39;
+  --clay-text: #8a3f24;
   --yellow: #f2c14e;
   --green: #5e7f5e;
   --green-text: #486948;
   --guava: #d96c75;
   --leather: #6b4226;
-  --line: rgba(107, 66, 38, 0.15);
-  --shadow-color: rgba(32, 58, 76, 0.08);
+  --line: rgba(0, 79, 113, 0.16);
+  --shadow-color: rgba(0, 79, 113, 0.1);
   --shadow: 0 1rem 2.4rem var(--shadow-color);
-  --radius: 1.25rem;
-  --focus: #203a4c;
+  --radius: 0.5rem;
+  --focus: var(--brand-blue);
   --page: var(--paper);
   --font-body: Inter, "Source Sans 3", "Segoe UI", sans-serif;
   --font-title: "Bricolage Grotesque", Fraunces, Georgia, serif;
@@ -1366,7 +1370,7 @@ body#classes .schedule-days article.class:has(.portraits) > :not(.portraits) {
   --section-gap: clamp(1.6rem, 4vw, 3rem);
   --course-level-1: #4cafa5;
   --course-level-2: #3c73b8;
-  --course-level-3: #c96f3a;
+  --course-level-3: var(--clay);
   --course-level-4: #8f5fb8;
   --course-musicality: #d96c75;
   --course-dancing-dialogue: #b8563f;
@@ -1390,7 +1394,7 @@ summary:focus-visible {
 
 body {
   color: var(--ink);
-  background: radial-gradient(circle at 8% 4%, color-mix(in srgb, var(--yellow) 24%, transparent) 0 8rem, transparent 20rem), radial-gradient(circle at 88% 7%, color-mix(in srgb, var(--guava) 13%, transparent) 0 7rem, transparent 22rem), linear-gradient(180deg, var(--paper) 0%, color-mix(in srgb, var(--green) 5%, var(--paper)) 100%);
+  background: linear-gradient(180deg, var(--paper) 0%, color-mix(in srgb, var(--green) 5%, var(--paper)) 100%);
 }
 body::before {
   position: fixed;
@@ -1398,7 +1402,7 @@ body::before {
   z-index: -1;
   pointer-events: none;
   content: "";
-  background-image: radial-gradient(circle, rgba(107, 66, 38, 0.08) 0 1px, transparent 1px), repeating-linear-gradient(115deg, transparent 0 2.4rem, rgba(201, 111, 58, 0.035) 2.4rem 2.48rem, transparent 2.48rem 4.8rem);
+  background-image: radial-gradient(circle, rgba(0, 79, 113, 0.07) 0 1px, transparent 1px), repeating-linear-gradient(115deg, transparent 0 2.4rem, rgba(184, 95, 57, 0.035) 2.4rem 2.48rem, transparent 2.48rem 4.8rem);
   background-size: 1.8rem 1.8rem, 16rem 16rem;
   mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.72), transparent 76%);
 }
@@ -1406,9 +1410,9 @@ body > header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255, 247, 234, 0.82);
-  border-bottom: 1px solid var(--line);
-  box-shadow: 0 0.7rem 1.8rem rgba(32, 58, 76, 0.06);
+  background: rgba(255, 247, 234, 0.9);
+  border-bottom: 1px solid color-mix(in srgb, var(--brand-blue) 18%, transparent);
+  box-shadow: 0 0.7rem 1.8rem rgba(0, 79, 113, 0.07);
   backdrop-filter: blur(18px);
 }
 body > header nav {
@@ -1458,13 +1462,13 @@ body > header nav > a[href="/register/"] {
   min-height: 2.2rem;
   padding: 0.38rem 0.82rem;
   color: var(--primary-ink);
-  background: #91451f;
-  border-color: color-mix(in srgb, var(--primary) 42%, var(--leather));
-  box-shadow: 0 0.7rem 1.5rem rgba(145, 69, 31, 0.16);
+  background: var(--brand-blue);
+  border-color: var(--brand-blue);
+  box-shadow: 0 0.7rem 1.5rem rgba(0, 79, 113, 0.18);
 }
 body > header nav > a[href="/register/"]:hover, body > header nav > a[href="/register/"]:focus-visible {
   color: var(--primary-ink);
-  background: #7b3618;
+  background: var(--brand-blue-hover);
   transform: translateY(-1px);
 }
 body > header nav > a[href="/register/"][aria-current=page] {
@@ -1542,7 +1546,7 @@ body > main h1 {
   font-size: clamp(2.5rem, 8vw, 4.6rem);
   font-weight: 800;
   line-height: 0.98;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 body > main h2 {
   margin: 0 0 1rem;
@@ -1573,7 +1577,7 @@ body > main a {
   color: var(--primary-text);
 }
 body > main a:hover, body > main a:focus-visible {
-  color: #743315;
+  color: var(--brand-blue-hover);
 }
 body > footer {
   padding: 0 var(--main-inline) clamp(2.5rem, 6vw, 4rem);
@@ -1645,8 +1649,8 @@ body > main > section.orientation a:hover, body > main > section.orientation a:f
 }
 body > main > section.orientation li:first-child a {
   color: var(--primary-ink);
-  background: #91451f;
-  border-color: #91451f;
+  background: var(--brand-blue);
+  border-color: var(--brand-blue);
 }
 
 body#home #intro {
@@ -1655,14 +1659,14 @@ body#home #intro {
   gap: clamp(1rem, 4vw, 2rem);
   align-items: center;
   min-height: clamp(27rem, 58vh, 42rem);
-  background: radial-gradient(circle at 85% 12%, color-mix(in srgb, var(--yellow) 32%, transparent) 0 4rem, transparent 13rem), linear-gradient(145deg, color-mix(in srgb, var(--primary) 9%, var(--surface)), var(--surface));
+  background: linear-gradient(145deg, color-mix(in srgb, var(--primary) 8%, var(--surface)), var(--surface) 52%, color-mix(in srgb, var(--yellow) 10%, var(--surface)));
 }
 body#home #intro > h1 {
   max-width: 12ch;
   margin: 0;
 }
 body#home #intro > h1 strong {
-  color: var(--primary-text);
+  color: var(--clay-text);
 }
 body#home #intro > h1 + p {
   max-width: 34rem;
@@ -1677,10 +1681,10 @@ body#home #gallery > div {
   min-height: clamp(19rem, 52vw, 32rem);
   border: 1px solid color-mix(in srgb, var(--leather) 16%, transparent);
   border-radius: calc(var(--radius) * 1.15);
-  box-shadow: 0 1.5rem 3rem rgba(32, 58, 76, 0.12);
+  box-shadow: 0 1.5rem 3rem rgba(0, 79, 113, 0.12);
 }
 body#home #gallery img {
-  filter: saturate(1.03) sepia(0.05);
+  filter: saturate(1.02);
 }
 body#home #gallery nav {
   margin-top: 0.9rem;
@@ -1698,7 +1702,7 @@ body#home #gallery nav ol button[aria-current=true] {
 body#home #video {
   display: grid;
   gap: clamp(1rem, 4vw, 2.5rem);
-  background: radial-gradient(circle at 20% 20%, color-mix(in srgb, var(--yellow) 18%, transparent), transparent 18rem), var(--ink);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--brand-blue) 42%, var(--ink)), var(--ink));
 }
 body#home #video h2,
 body#home #video p,
@@ -1736,7 +1740,7 @@ body#about #intro > h1 strong,
 body#venues #intro > h1 strong,
 body#events #intro > h1 strong,
 body#register #intro > h1 strong {
-  color: var(--primary-text);
+  color: var(--clay-text);
 }
 body#classes #intro > p,
 body#levels #intro > p,
@@ -1824,7 +1828,7 @@ body#register #intro > figure {
   margin: 0;
   overflow: hidden;
   border-radius: calc(var(--radius) * 1.1);
-  box-shadow: 0 1.3rem 2.8rem rgba(32, 58, 76, 0.12);
+  box-shadow: 0 1.3rem 2.8rem rgba(0, 79, 113, 0.12);
 }
 body#classes #intro > figure img,
 body#levels #intro > figure img,
@@ -1835,7 +1839,7 @@ body#register #intro > figure img {
   width: 100%;
   height: clamp(18rem, 52vw, 28rem);
   object-fit: cover;
-  filter: saturate(1.04) sepia(0.04);
+  filter: saturate(1.03);
 }
 body#classes #intro > figure figcaption,
 body#levels #intro > figure figcaption,
@@ -1846,7 +1850,7 @@ body#register #intro > figure figcaption {
   padding: 0.7rem 0.85rem;
   margin: 0;
   color: var(--primary-ink);
-  background: rgba(32, 58, 76, 0.82);
+  background: rgba(0, 79, 113, 0.88);
 }
 
 body#classes #intro > ul[aria-label="Trimester rhythm"] {
@@ -1905,7 +1909,7 @@ body#classes .schedule-days > article {
   background: color-mix(in srgb, var(--surface) 88%, var(--yellow));
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  box-shadow: 0 0.8rem 1.8rem rgba(32, 58, 76, 0.055);
+  box-shadow: 0 0.8rem 1.8rem rgba(0, 79, 113, 0.06);
 }
 body#classes .schedule-days > article > h4 {
   margin: 0;
@@ -1921,7 +1925,7 @@ body#classes .schedule-days > article > p:first-of-type {
   font-weight: 800;
   color: #8c1e22;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0;
   background: color-mix(in srgb, var(--guava) 14%, var(--surface));
   border: 1px solid color-mix(in srgb, var(--guava) 30%, transparent);
   border-radius: 0.8rem;
@@ -1935,7 +1939,7 @@ body#classes .schedule-days > article > section > h5 {
   font-size: 0.82rem;
   color: var(--green-text);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
 }
 body#classes .schedule-days article.class {
   position: relative;
@@ -1947,7 +1951,7 @@ body#classes .schedule-days article.class {
   background: var(--surface);
   border: 1px solid color-mix(in srgb, var(--course-accent) 22%, var(--line));
   border-radius: 0.95rem;
-  box-shadow: 0 0.65rem 1.35rem rgba(32, 58, 76, 0.055);
+  box-shadow: 0 0.65rem 1.35rem rgba(0, 79, 113, 0.06);
 }
 body#classes .schedule-days article.class::before {
   position: absolute;
@@ -2018,7 +2022,7 @@ body#classes .schedule-legend li {
   font-weight: 800;
   color: var(--ink-soft);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0;
 }
 body#classes .schedule-legend li::before {
   width: 0.45rem;
@@ -2093,7 +2097,7 @@ body#about #team article {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  box-shadow: 0 0.8rem 1.8rem rgba(32, 58, 76, 0.055);
+  box-shadow: 0 0.8rem 1.8rem rgba(0, 79, 113, 0.06);
 }
 
 body#events #praticas article,
@@ -2102,7 +2106,7 @@ body#events main > section:not(#intro) article {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  box-shadow: 0 0.8rem 1.8rem rgba(32, 58, 76, 0.055);
+  box-shadow: 0 0.8rem 1.8rem rgba(0, 79, 113, 0.06);
 }
 
 body#classes main a[href^="https://forms.gle"],
@@ -2110,8 +2114,8 @@ body#classes main a[href*="docs.google.com/forms"],
 body#register main a[href^="https://forms.gle"],
 body#register main a[href*="docs.google.com/forms"] {
   color: var(--primary-ink);
-  background: #91451f;
-  border: 1px solid #91451f;
+  background: var(--brand-blue);
+  border: 1px solid var(--brand-blue);
 }
 body#classes main a[href^="https://forms.gle"]:hover, body#classes main a[href^="https://forms.gle"]:focus-visible,
 body#classes main a[href*="docs.google.com/forms"]:hover,
@@ -2120,14 +2124,14 @@ body#register main a[href^="https://forms.gle"]:hover,
 body#register main a[href^="https://forms.gle"]:focus-visible,
 body#register main a[href*="docs.google.com/forms"]:hover,
 body#register main a[href*="docs.google.com/forms"]:focus-visible {
-  background: #7b3618;
+  background: var(--brand-blue-hover);
 }
 body#classes #prices article,
 body#register #prices article {
   background: var(--surface);
   border-color: var(--line);
   border-radius: var(--radius);
-  box-shadow: 0 0.75rem 1.6rem rgba(32, 58, 76, 0.055);
+  box-shadow: 0 0.75rem 1.6rem rgba(0, 79, 113, 0.06);
 }
 body#classes #prices dt,
 body#register #prices dt {
@@ -2144,7 +2148,7 @@ body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-cla
   background: var(--surface);
   border-color: color-mix(in srgb, var(--course-accent) 20%, var(--line));
   border-radius: 0.95rem;
-  box-shadow: 0 0.7rem 1.45rem rgba(32, 58, 76, 0.055);
+  box-shadow: 0 0.7rem 1.45rem rgba(0, 79, 113, 0.06);
 }
 body#levels section.class > section[aria-labelledby$=-scheduled-classes] article > h4,
 body#levels section.class > section[aria-labelledby$=-scheduled-classes] article > h5,
@@ -2213,8 +2217,8 @@ body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-cla
 }
 .theme-switch-panel .theme-switch[aria-pressed=true] {
   color: var(--primary-ink);
-  background: #91451f;
-  border-color: #91451f;
+  background: var(--brand-blue);
+  border-color: var(--brand-blue);
 }
 
 @media (min-width: 42rem) {
