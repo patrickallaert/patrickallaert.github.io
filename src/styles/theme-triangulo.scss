@@ -1316,6 +1316,18 @@ body#venues main > section:not(#intro) > section[aria-labelledby$="-scheduled-cl
     }
   }
 
+  body#levels #intro:has(> figure) {
+    > ul[aria-label="Core aspects of each level"] {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-column: 1 / -1;
+    }
+
+    > figure {
+      grid-row: 1 / span 3;
+      align-self: start;
+    }
+  }
+
   body#venues {
     main > section:not(#intro) {
       grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.72fr);
