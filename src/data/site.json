@@ -17,14 +17,6 @@
     "vero": "Vero"
   },
   "courses": {
-    "dancing-in-dialogue": {
-      "title": "Dancing in Dialogue",
-      "category": "short-course"
-    },
-    "footwork-armwork": {
-      "title": "Footwork & Armwork",
-      "category": "short-course"
-    },
     "free-practice": {
       "title": "Free practice",
       "legend": false,

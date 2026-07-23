@@ -82,7 +82,7 @@ Current status:
 Open points:
 
 - the registration URL is still a placeholder
-- `Roots`, `Musicality`, and `Short Courses` do not yet have dedicated explanation pages or anchors
+- `Roots` and `Musicality` do not yet have dedicated explanation pages or anchors
 - if desired later, a small monthly calendar view could complement the schedule without replacing it
 
 ### Levels

@@ -689,13 +689,6 @@ body#classes {
         --course-accent: var(--course-musicality);
       }
 
-      &.dancing-in-dialogue {
-        --course-accent: var(--course-dancing-dialogue);
-      }
-
-      &.footwork-armwork {
-        --course-accent: var(--course-footwork-armwork);
-      }
     }
   }
 
@@ -752,14 +745,6 @@ body#classes {
       --legend-color: var(--course-musicality);
     }
 
-    .dancing-in-dialogue {
-      --legend-color: var(--course-dancing-dialogue);
-    }
-
-    .footwork-armwork {
-      --legend-color: var(--course-footwork-armwork);
-    }
-
     .pratica {
       --legend-color: var(--course-practice);
     }
@@ -809,8 +794,7 @@ body#register {
 }
 
 body#levels {
-  section.class,
-  #short-courses > section {
+  section.class {
     background:
       linear-gradient(135deg, color-mix(in srgb, var(--course-accent) 14%, transparent), rgba(255, 255, 255, 0.035)),
       rgba(8, 12, 17, 0.92);

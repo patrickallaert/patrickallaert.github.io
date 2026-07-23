@@ -41,8 +41,6 @@
   --course-level-3: #f0a26d;
   --course-level-4: #d29beb;
   --course-musicality: #ef8790;
-  --course-dancing-dialogue: #ee8b72;
-  --course-footwork-armwork: #e2aa55;
   --course-roots-1: #d2bb69;
   --course-roots-2: #b6a15b;
   --course-practice: #9fb783;
@@ -747,8 +745,7 @@ body#classes {
 }
 
 body#levels {
-  section.class,
-  #short-courses > section {
+  section.class {
     background:
       linear-gradient(135deg, color-mix(in srgb, var(--course-accent) 10%, transparent), transparent 42%),
       var(--surface);

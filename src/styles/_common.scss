@@ -43,11 +43,10 @@ textarea {
   --course-level-3: #0a6084;
   --course-level-4: #c13cc6;
   --course-musicality: #ff5f9f;
-  --course-dancing-dialogue: #ff7a59;
-  --course-footwork-armwork: #f08c2e;
   --course-roots-1: #e7c83a;
   --course-roots-2: #b7a326;
   --course-practice: #f6c983;
+  --schedule-exception-text: #7b1d1d;
   --max: 82rem;
 }
 
@@ -501,16 +500,6 @@ body#levels {
     }
   }
 
-  #short-courses > section {
-    padding: 1rem 1rem 1rem clamp(1.25rem, 3vw, 2rem);
-    margin-top: 0.85rem;
-    background: color-mix(in srgb, var(--course-accent) 10%, #ffffff);
-    border: 0.08rem solid color-mix(in srgb, var(--course-accent) 35%, var(--line));
-    border-left: 0;
-    border-radius: calc(var(--radius) - 0.1rem);
-    box-shadow: inset 0.3rem 0 0 var(--course-accent);
-  }
-
   section.class {
     &.level.\31 {
       --course-accent: var(--course-level-1);
@@ -536,13 +525,6 @@ body#levels {
       --course-accent: var(--course-roots-2);
     }
 
-    &.short-course.dancing-in-dialogue {
-      --course-accent: var(--course-dancing-dialogue);
-    }
-
-    &.short-course.footwork-armwork {
-      --course-accent: var(--course-footwork-armwork);
-    }
   }
 }
 
@@ -567,14 +549,6 @@ body#venues {
 
     &.musicality {
       --course-accent: var(--course-musicality);
-    }
-
-    &.dancing-in-dialogue {
-      --course-accent: var(--course-dancing-dialogue);
-    }
-
-    &.footwork-armwork {
-      --course-accent: var(--course-footwork-armwork);
     }
 
     &.roots.\31 {
@@ -921,7 +895,7 @@ body#classes {
         font-size: 0.75rem;
         font-style: italic;
         font-weight: 700;
-        color: color-mix(in srgb, var(--course-dancing-dialogue) 76%, #7b1d1d);
+        color: var(--schedule-exception-text);
         text-transform: uppercase;
         letter-spacing: 0.05em;
 

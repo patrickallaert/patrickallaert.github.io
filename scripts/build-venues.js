@@ -21,8 +21,6 @@ const DAY_INDEX = {
 };
 
 const COURSE_ORDER = [
-    "dancing-in-dialogue",
-    "footwork-armwork",
     "level-1",
     "level-2",
     "level-3",

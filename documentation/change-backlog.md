@@ -94,7 +94,7 @@ Possible UX:
 
 - On Levels, each level links to `classes.html?level=level-2`.
 - On Classes, a compact filter control lets users view all classes or one level.
-- The legend should reflect the visible programme, including special formats such as Dancing in Dialogue and Footwork & Armwork.
+- The legend should reflect only the courses in the visible programme.
 
 Interim static option:
 

@@ -6,8 +6,6 @@ const CLASSES_PATH = path.join(__dirname, "..", "docs", "classes", "index.html")
 const START_MARKER = "    <!-- class-schedules:start -->";
 const END_MARKER = "    <!-- class-schedules:end -->";
 const COURSE_ORDER = [
-    "dancing-in-dialogue",
-    "footwork-armwork",
     "level-1",
     "level-2",
     "level-3",
