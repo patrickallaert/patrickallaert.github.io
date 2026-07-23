@@ -301,6 +301,10 @@ body#venues main > section:not(#intro) > section[aria-labelledby$="-scheduled-cl
   }
 }
 
+body#levels section.class > .vocabulary-videos {
+  margin-top: 1rem;
+}
+
 @media (min-width: 42rem) {
   body#levels section.class > section[aria-labelledby$="-scheduled-classes"] {
     > ul {
