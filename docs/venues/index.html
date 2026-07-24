@@ -26,16 +26,26 @@
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="/assets/app.js?v=20260723"></script>
+  <script>
+    (() => {
+      const themes = ["gonzaga", "zabumba", "sanfona", "baiao", "roots", "abraco", "mandacaru", "triangulo"];
+      let theme = "roots";
+      try {
+        const storedTheme = sessionStorage.getItem("conexao-theme");
+        if (themes.includes(storedTheme)) theme = storedTheme;
+      } catch {}
+      document.documentElement.dataset.theme = theme;
+      document.write(`<link id="theme-stylesheet" rel="stylesheet" href="/assets/theme-${theme}.css?v=20260724">`);
+    })();
+  </script>
+  <noscript><link rel="stylesheet" href="/assets/theme-roots.css?v=20260724"></noscript>
+  <script src="/assets/app.js?v=20260724" defer></script>
 </head>
 <body id="venues">
   <a href="#main">Skip to content</a>
   <header>
     <nav aria-label="Primary">
-      <a class="wordmark" href="/"><img src="/assets/logos/logo-full-blue.svg?v=20260723" alt="Conexão" width="233" height="93"></a>
+      <a class="wordmark" href="/"><img src="/assets/logos/logo-full-blue.svg?v=20260724" alt="Conexão" width="233" height="93"></a>
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/classes/">Classes</a></li>
@@ -52,7 +62,7 @@
       <h1>Dance <strong>Venues</strong></h1>
       <p>Conexão uses several different venues in Brussels. This page gathers the addresses together with the notes that are useful before arriving.</p>
       <figure>
-        <img src="/assets/venues/map.png" alt="Stylized Brussels map with venue markers" width="1254" height="1254">
+        <img src="/assets/venues/map.webp" alt="Stylized Brussels map with venue markers" width="1200" height="1200">
         <figcaption>
           <span>Weekly spaces</span>
           <strong>Find the rooms used for classes across Brussels.</strong>
@@ -63,7 +73,7 @@
     <section id="dublin">
         <h2>Salle Dublin</h2>
         <figure>
-            <img src="/assets/venues/dublin.jpg" alt="Salle Dublin during a class at Conexão" width="3840" height="1720">
+            <img src="/assets/venues/dublin.webp" alt="Salle Dublin during a class at Conexão" width="1440" height="645" loading="lazy" decoding="async">
         </figure>
         <address>
             <a href="https://maps.app.goo.gl/wfFFTMVXAcdKCKhYA" target="_blank" rel="noreferrer noopener">
@@ -82,8 +92,8 @@
               <li>
                 <article class="class level 3">
                   <figure class="portraits" aria-label="Teaching team">
-                    <img src="/assets/team/charlotte.jpg" alt="Charlotte" width="320" height="320" loading="lazy">
-                    <img src="/assets/team/emma.jpg" alt="Emma" width="320" height="320" loading="lazy">
+                    <img src="/assets/team/charlotte.webp" alt="Charlotte" width="360" height="360" loading="lazy" decoding="async">
+                    <img src="/assets/team/emma.webp" alt="Emma" width="360" height="360" loading="lazy" decoding="async">
                   </figure>
                   <h5><a href="/levels/#level-3">Level 3</a></h5>
                   <p class="term"><a href="/classes/#2026-09">September-December 2026</a></p>
@@ -111,7 +121,7 @@
     <section id="ten-noey">
       <h2>GC Ten Noey</h2>
       <figure>
-        <img src="/assets/venues/ten-noey.jpg" alt="Front entrance of GC Ten Noey" width="870" height="580">
+        <img src="/assets/venues/ten-noey.webp" alt="Front entrance of GC Ten Noey" width="870" height="580" loading="lazy" decoding="async">
       </figure>
       <address>
         <a href="https://maps.app.goo.gl/1qrUxojYpS3irhd2A" target="_blank" rel="noreferrer noopener">
@@ -130,7 +140,7 @@
               <li>
                 <article class="class lead-follow">
                   <figure class="portraits" aria-label="Teaching team">
-                    <img src="/assets/team/simon.jpg" alt="Simon" width="320" height="320" loading="lazy">
+                    <img src="/assets/team/simon.webp" alt="Simon" width="360" height="360" loading="lazy" decoding="async">
                   </figure>
                   <h5>Everyone Leads &amp; Follows</h5>
                   <p class="term"><a href="/classes/#2026-09">September-December 2026</a></p>
@@ -142,8 +152,8 @@
               <li>
                 <article class="class level 1">
                   <figure class="portraits" aria-label="Teaching team">
-                    <img src="/assets/team/charlotte.jpg" alt="Charlotte" width="320" height="320" loading="lazy">
-                    <img src="/assets/team/andres.jpg" alt="Andrés" width="320" height="320" loading="lazy">
+                    <img src="/assets/team/charlotte.webp" alt="Charlotte" width="360" height="360" loading="lazy" decoding="async">
+                    <img src="/assets/team/andres.webp" alt="Andrés" width="360" height="360" loading="lazy" decoding="async">
                   </figure>
                   <h5><a href="/levels/#level-1">Level 1</a></h5>
                   <p class="term"><a href="/classes/#2026-09">September-December 2026</a></p>
@@ -162,7 +172,7 @@
     <section id="brochet">
       <h2>Dojo du Brochet</h2>
       <figure>
-        <img src="/assets/venues/brochet.jpg" alt="Dojo du Brochet during a forró class" width="3840" height="1720">
+        <img src="/assets/venues/brochet.webp" alt="Dojo du Brochet during a forró class" width="1440" height="645" loading="lazy" decoding="async">
       </figure>
       <address>
         <a href="https://maps.app.goo.gl/MbJNqqGQ74RW7dNFA" target="_blank" rel="noreferrer noopener">
@@ -187,8 +197,8 @@
               <li>
                 <article class="class level 2">
                   <figure class="portraits" aria-label="Teaching team">
-                    <img src="/assets/team/vero.jpg" alt="Vero" width="320" height="320" loading="lazy">
-                    <img src="/assets/team/giulia.jpg" alt="Giulia" width="320" height="320" loading="lazy">
+                    <img src="/assets/team/vero.webp" alt="Vero" width="360" height="360" loading="lazy" decoding="async">
+                    <img src="/assets/team/giulia.webp" alt="Giulia" width="360" height="360" loading="lazy" decoding="async">
                   </figure>
                   <h5><a href="/levels/#level-2">Level 2</a></h5>
                   <p class="term"><a href="/classes/#2026-09">September-December 2026</a></p>
@@ -200,8 +210,8 @@
               <li>
                 <article class="class roots">
                   <figure class="portraits" aria-label="Teaching team">
-                    <img src="/assets/team/simon.jpg" alt="Simon" width="320" height="320" loading="lazy">
-                    <img src="/assets/team/vero.jpg" alt="Vero" width="320" height="320" loading="lazy">
+                    <img src="/assets/team/simon.webp" alt="Simon" width="360" height="360" loading="lazy" decoding="async">
+                    <img src="/assets/team/vero.webp" alt="Vero" width="360" height="360" loading="lazy" decoding="async">
                   </figure>
                   <h5>Roots</h5>
                   <p class="term"><a href="/classes/#2026-09">September-December 2026</a></p>
@@ -218,8 +228,8 @@
               <li>
                 <article class="class level 1">
                   <figure class="portraits" aria-label="Teaching team">
-                    <img src="/assets/team/emma.jpg" alt="Emma" width="320" height="320" loading="lazy">
-                    <img src="/assets/team/simon.jpg" alt="Simon" width="320" height="320" loading="lazy">
+                    <img src="/assets/team/emma.webp" alt="Emma" width="360" height="360" loading="lazy" decoding="async">
+                    <img src="/assets/team/simon.webp" alt="Simon" width="360" height="360" loading="lazy" decoding="async">
                   </figure>
                   <h5><a href="/levels/#level-1">Level 1</a></h5>
                   <p class="term"><a href="/classes/#2026-09">September-December 2026</a></p>
@@ -231,8 +241,8 @@
               <li>
                 <article class="class level 2">
                   <figure class="portraits" aria-label="Teaching team">
-                    <img src="/assets/team/simon.jpg" alt="Simon" width="320" height="320" loading="lazy">
-                    <img src="/assets/team/patrick.jpg" alt="Patrick" width="320" height="320" loading="lazy">
+                    <img src="/assets/team/simon.webp" alt="Simon" width="360" height="360" loading="lazy" decoding="async">
+                    <img src="/assets/team/patrick.webp" alt="Patrick" width="360" height="360" loading="lazy" decoding="async">
                   </figure>
                   <h5><a href="/levels/#level-2">Level 2</a></h5>
                   <p class="term"><a href="/classes/#2026-09">September-December 2026</a></p>
@@ -251,7 +261,7 @@
     <section id="malibran">
       <h2>Maison de Quartier Malibran</h2>
       <figure>
-        <img src="/assets/venues/malibran.jpg" alt="Maison de Quartier Malibran during a forró workshop" width="3840" height="1920">
+        <img src="/assets/venues/malibran.webp" alt="Maison de Quartier Malibran during a forró workshop" width="1440" height="720" loading="lazy" decoding="async">
       </figure>
       <address>
         <a href="https://maps.app.goo.gl/U5KVmrCR6iFmtWRa6" target="_blank" rel="noreferrer noopener">
@@ -270,8 +280,8 @@
               <li>
                 <article class="class level 4">
                   <figure class="portraits" aria-label="Teaching team">
-                    <img src="/assets/team/simon.jpg" alt="Simon" width="320" height="320" loading="lazy">
-                    <img src="/assets/team/marco.jpg" alt="Marco" width="320" height="320" loading="lazy">
+                    <img src="/assets/team/simon.webp" alt="Simon" width="360" height="360" loading="lazy" decoding="async">
+                    <img src="/assets/team/marco.webp" alt="Marco" width="360" height="360" loading="lazy" decoding="async">
                   </figure>
                   <h5><a href="/levels/#level-4">Level 4</a></h5>
                   <p class="term"><a href="/classes/#2026-09">September-December 2026</a></p>
@@ -283,8 +293,8 @@
               <li>
                 <article class="class level 3">
                   <figure class="portraits" aria-label="Teaching team">
-                    <img src="/assets/team/simon.jpg" alt="Simon" width="320" height="320" loading="lazy">
-                    <img src="/assets/team/marco.jpg" alt="Marco" width="320" height="320" loading="lazy">
+                    <img src="/assets/team/simon.webp" alt="Simon" width="360" height="360" loading="lazy" decoding="async">
+                    <img src="/assets/team/marco.webp" alt="Marco" width="360" height="360" loading="lazy" decoding="async">
                   </figure>
                   <h5><a href="/levels/#level-3">Level 3</a></h5>
                   <p class="term"><a href="/classes/#2026-09">September-December 2026</a></p>

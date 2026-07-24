@@ -128,16 +128,41 @@ shared social image are static files maintained by hand.
 
 ## Deployment
 
-GitHub Pages publishes `docs/` with `conexao.be` as the custom domain, declared
-in `docs/CNAME`. In the GitHub Pages and DNS settings:
+Publish the contents of `docs/` to `/var/www/conexao.be`. Keep HTML immediately
+revalidatable and add long-lived caching for versioned assets by placing these
+locations inside the `conexao.be` HTTPS `server` block:
 
-- configure `conexao.be` as the custom domain and enable enforced HTTPS
-- point the apex records to GitHub Pages using GitHub's current documented values
-- point `www.conexao.be` to `patrickallaert.github.io` and redirect it to the apex
+```nginx
+location ~* \.(?:css|js|woff2)$ {
+    expires 1y;
+    try_files $uri =404;
+}
 
-After the first production deployment, verify the HTTP-to-HTTPS and www-to-apex
-redirects, add the domain property in Google Search Console, and submit
-`https://conexao.be/sitemap.xml`.
+location ~* \.(?:webp|svg|png|jpe?g|ico)$ {
+    expires 30d;
+    try_files $uri =404;
+}
+```
+
+The global nginx configuration must include the standard `mime.types` file so
+that WebP and WOFF2 files receive the correct content types. These locations do
+not repeat `add_header`, allowing server-level headers such as `Alt-Svc` to
+remain inherited.
+
+After changing nginx, validate and reload it:
+
+```bash
+sudo nginx -t
+sudo systemctl reload nginx
+```
+
+After deployment, verify redirects and cache headers, then rerun Lighthouse:
+
+```bash
+curl -I https://conexao.be/
+curl -I 'https://conexao.be/assets/app.js?v=20260724'
+curl -I https://conexao.be/assets/home/home-1.webp
+```
 
 The priority is to:
 

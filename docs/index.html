@@ -61,16 +61,26 @@
     ]
   }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="/assets/app.js?v=20260723"></script>
+  <script>
+    (() => {
+      const themes = ["gonzaga", "zabumba", "sanfona", "baiao", "roots", "abraco", "mandacaru", "triangulo"];
+      let theme = "roots";
+      try {
+        const storedTheme = sessionStorage.getItem("conexao-theme");
+        if (themes.includes(storedTheme)) theme = storedTheme;
+      } catch {}
+      document.documentElement.dataset.theme = theme;
+      document.write(`<link id="theme-stylesheet" rel="stylesheet" href="/assets/theme-${theme}.css?v=20260724">`);
+    })();
+  </script>
+  <noscript><link rel="stylesheet" href="/assets/theme-roots.css?v=20260724"></noscript>
+  <script src="/assets/app.js?v=20260724" defer></script>
 </head>
 <body id="home">
   <a href="#main">Skip to content</a>
   <header>
     <nav aria-label="Primary">
-      <a class="wordmark" href="/"><img src="/assets/logos/logo-full-blue.svg?v=20260723" alt="Conexão" width="233" height="93"></a>
+      <a class="wordmark" href="/"><img src="/assets/logos/logo-full-blue.svg?v=20260724" alt="Conexão" width="233" height="93"></a>
       <ul>
         <li><a aria-current="page" href="/">Home</a></li>
         <li><a href="/classes/">Classes</a></li>
@@ -89,19 +99,19 @@
       <section id="gallery" aria-label="Highlights from Conexão">
         <div>
           <figure data-active="true">
-            <img src="/assets/home/home-1.jpg" alt="Sarah dancing at a festival" width="1000" height="667">
+            <img src="/assets/home/home-1.webp" alt="Sarah dancing at a festival" width="1000" height="667" fetchpriority="high">
           </figure>
           <figure>
-            <img src="/assets/home/home-2.jpg" alt="Conexão dancers together in class" width="1328" height="747">
+            <img data-src="/assets/home/home-2.webp" alt="Conexão dancers together in class" width="1280" height="720">
           </figure>
           <figure>
-            <img src="/assets/home/home-3.jpg" alt="Forró dancers together at Conexão" width="2048" height="1365">
+            <img data-src="/assets/home/home-3.webp" alt="Forró dancers together at Conexão" width="1280" height="854">
           </figure>
           <figure>
-            <img src="/assets/home/home-4.jpg" alt="Couple dancing forró in Brussels" width="2048" height="1365">
+            <img data-src="/assets/home/home-4.webp" alt="Couple dancing forró in Brussels" width="1280" height="854">
           </figure>
           <figure>
-            <img src="/assets/home/home-5.jpg" alt="Sarah dancing forró on stage" width="1960" height="760">
+            <img data-src="/assets/home/home-5.webp" alt="Sarah dancing forró on stage" width="1000" height="667">
           </figure>
         </div>
         <nav aria-label="Gallery controls">
@@ -135,7 +145,10 @@
         <p><a href="https://www.youtube.com/watch?v=VQ5k7mmcWuQ" rel="noopener noreferrer" target="_blank">Watch on YouTube</a></p>
       </div>
       <div>
-        <iframe src="https://www.youtube-nocookie.com/embed/VQ5k7mmcWuQ?rel=0" title="Conexão video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <a class="video-facade" href="https://www.youtube.com/watch?v=VQ5k7mmcWuQ" rel="noopener noreferrer" target="_blank" aria-label="Play Conexão video on YouTube">
+          <img src="/assets/video/conexao.webp" alt="" width="640" height="360" loading="lazy" decoding="async">
+          <span aria-hidden="true"></span>
+        </a>
       </div>
     </section>
 
@@ -164,6 +177,11 @@
 
       const render = (index) => {
         active = (index + slides.length) % slides.length;
+        const image = slides[active].querySelector('img');
+        if (image.dataset.src) {
+          image.src = image.dataset.src;
+          delete image.dataset.src;
+        }
         slides.forEach((slide, i) => {
           slide.toggleAttribute('data-active', i === active);
         });
@@ -197,6 +215,18 @@
         pointerStart = null;
       });
       render(0);
+
+      const videoFacade = document.querySelector('.video-facade');
+      videoFacade?.addEventListener('click', (event) => {
+        event.preventDefault();
+        const iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube-nocookie.com/embed/VQ5k7mmcWuQ?rel=0&autoplay=1';
+        iframe.title = 'Conexão video';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+        iframe.allowFullscreen = true;
+        videoFacade.replaceWith(iframe);
+      });
     })();
   </script>
 </body>

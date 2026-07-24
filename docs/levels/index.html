@@ -26,16 +26,26 @@
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="/assets/app.js?v=20260723"></script>
+  <script>
+    (() => {
+      const themes = ["gonzaga", "zabumba", "sanfona", "baiao", "roots", "abraco", "mandacaru", "triangulo"];
+      let theme = "roots";
+      try {
+        const storedTheme = sessionStorage.getItem("conexao-theme");
+        if (themes.includes(storedTheme)) theme = storedTheme;
+      } catch {}
+      document.documentElement.dataset.theme = theme;
+      document.write(`<link id="theme-stylesheet" rel="stylesheet" href="/assets/theme-${theme}.css?v=20260724">`);
+    })();
+  </script>
+  <noscript><link rel="stylesheet" href="/assets/theme-roots.css?v=20260724"></noscript>
+  <script src="/assets/app.js?v=20260724" defer></script>
 </head>
 <body id="levels">
   <a href="#main">Skip to content</a>
   <header>
     <nav aria-label="Primary">
-      <a class="wordmark" href="/"><img src="/assets/logos/logo-full-blue.svg?v=20260723" alt="Conexão" width="233" height="93"></a>
+      <a class="wordmark" href="/"><img src="/assets/logos/logo-full-blue.svg?v=20260724" alt="Conexão" width="233" height="93"></a>
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/classes/">Classes</a></li>
@@ -60,7 +70,7 @@
         <li><strong>Cultural awareness</strong><span>Context, references, roots</span></li>
       </ul>
       <figure>
-        <img src="/assets/home/home-4.jpg" alt="Two dancers practising forró together" width="2048" height="1365">
+        <img src="/assets/home/home-4.webp" alt="Two dancers practising forró together" width="1280" height="854">
         <figcaption>
           <span>Level guidance</span>
           <strong>Read the descriptions and compare what each stage expects.</strong>
@@ -115,8 +125,8 @@
           <li>
             <article>
               <figure class="portraits" aria-label="Teaching team">
-                <img src="/assets/team/charlotte.jpg" alt="Charlotte" width="320" height="320" loading="lazy">
-                <img src="/assets/team/andres.jpg" alt="Andrés" width="320" height="320" loading="lazy">
+                <img src="/assets/team/charlotte.webp" alt="Charlotte" width="360" height="360" loading="lazy" decoding="async">
+                <img src="/assets/team/andres.webp" alt="Andrés" width="360" height="360" loading="lazy" decoding="async">
               </figure>
               <h4>Monday</h4>
               <p class="term"><a href="/classes/#2026-09">September-December 2026</a></p>
@@ -129,8 +139,8 @@
           <li>
             <article>
               <figure class="portraits" aria-label="Teaching team">
-                <img src="/assets/team/emma.jpg" alt="Emma" width="320" height="320" loading="lazy">
-                <img src="/assets/team/simon.jpg" alt="Simon" width="320" height="320" loading="lazy">
+                <img src="/assets/team/emma.webp" alt="Emma" width="360" height="360" loading="lazy" decoding="async">
+                <img src="/assets/team/simon.webp" alt="Simon" width="360" height="360" loading="lazy" decoding="async">
               </figure>
               <h4>Thursday</h4>
               <p class="term"><a href="/classes/#2026-09">September-December 2026</a></p>
@@ -162,8 +172,8 @@
           <li>
             <article>
               <figure class="portraits" aria-label="Teaching team">
-                <img src="/assets/team/vero.jpg" alt="Vero" width="320" height="320" loading="lazy">
-                <img src="/assets/team/giulia.jpg" alt="Giulia" width="320" height="320" loading="lazy">
+                <img src="/assets/team/vero.webp" alt="Vero" width="360" height="360" loading="lazy" decoding="async">
+                <img src="/assets/team/giulia.webp" alt="Giulia" width="360" height="360" loading="lazy" decoding="async">
               </figure>
               <h4>Monday</h4>
               <p class="term"><a href="/classes/#2026-09">September-December 2026</a></p>
@@ -176,8 +186,8 @@
           <li>
             <article>
               <figure class="portraits" aria-label="Teaching team">
-                <img src="/assets/team/simon.jpg" alt="Simon" width="320" height="320" loading="lazy">
-                <img src="/assets/team/patrick.jpg" alt="Patrick" width="320" height="320" loading="lazy">
+                <img src="/assets/team/simon.webp" alt="Simon" width="360" height="360" loading="lazy" decoding="async">
+                <img src="/assets/team/patrick.webp" alt="Patrick" width="360" height="360" loading="lazy" decoding="async">
               </figure>
               <h4>Thursday</h4>
               <p class="term"><a href="/classes/#2026-09">September-December 2026</a></p>
@@ -209,8 +219,8 @@
           <li>
             <article>
               <figure class="portraits" aria-label="Teaching team">
-                <img src="/assets/team/simon.jpg" alt="Simon" width="320" height="320" loading="lazy">
-                <img src="/assets/team/marco.jpg" alt="Marco" width="320" height="320" loading="lazy">
+                <img src="/assets/team/simon.webp" alt="Simon" width="360" height="360" loading="lazy" decoding="async">
+                <img src="/assets/team/marco.webp" alt="Marco" width="360" height="360" loading="lazy" decoding="async">
               </figure>
               <h4>Tuesday</h4>
               <p class="term"><a href="/classes/#2026-09">September-December 2026</a></p>
@@ -223,8 +233,8 @@
           <li>
             <article>
               <figure class="portraits" aria-label="Teaching team">
-                <img src="/assets/team/charlotte.jpg" alt="Charlotte" width="320" height="320" loading="lazy">
-                <img src="/assets/team/emma.jpg" alt="Emma" width="320" height="320" loading="lazy">
+                <img src="/assets/team/charlotte.webp" alt="Charlotte" width="360" height="360" loading="lazy" decoding="async">
+                <img src="/assets/team/emma.webp" alt="Emma" width="360" height="360" loading="lazy" decoding="async">
               </figure>
               <h4>Wednesday</h4>
               <p class="term"><a href="/classes/#2026-09">September-December 2026</a></p>
@@ -255,8 +265,8 @@
           <li>
             <article>
               <figure class="portraits" aria-label="Teaching team">
-                <img src="/assets/team/simon.jpg" alt="Simon" width="320" height="320" loading="lazy">
-                <img src="/assets/team/marco.jpg" alt="Marco" width="320" height="320" loading="lazy">
+                <img src="/assets/team/simon.webp" alt="Simon" width="360" height="360" loading="lazy" decoding="async">
+                <img src="/assets/team/marco.webp" alt="Marco" width="360" height="360" loading="lazy" decoding="async">
               </figure>
               <h4>Tuesday</h4>
               <p class="term"><a href="/classes/#2026-09">September-December 2026</a></p>

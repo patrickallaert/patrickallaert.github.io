@@ -180,7 +180,7 @@ const renderPortraits = (session, data, indent) => {
 
     return [
         `${indent}<figure class="portraits" aria-label="Teaching team">`,
-        ...ids.map((id) => `${indent}  <img src="/assets/team/${id}.jpg" alt="${escapeHtml(data.teachers[id])}" width="320" height="320" loading="lazy">`),
+        ...ids.map((id) => `${indent}  <img src="/assets/team/${id}.webp" alt="${escapeHtml(data.teachers[id])}" width="360" height="360" loading="lazy" decoding="async">`),
         `${indent}</figure>`,
     ].join("\n");
 };

@@ -94,7 +94,7 @@ const renderPortraits = (session, people) => {
 
     return [
         '                <figure class="portraits" aria-label="Teaching team">',
-        ...ids.map((id) => `                  <img src="/assets/team/${id}.jpg" alt="${escapeHtml(people[id])}" width="320" height="320" loading="lazy">`),
+        ...ids.map((id) => `                  <img src="/assets/team/${id}.webp" alt="${escapeHtml(people[id])}" width="360" height="360" loading="lazy" decoding="async">`),
         "                </figure>",
     ].join("\n");
 };

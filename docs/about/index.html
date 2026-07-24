@@ -26,16 +26,26 @@
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="/assets/app.js?v=20260723"></script>
+  <script>
+    (() => {
+      const themes = ["gonzaga", "zabumba", "sanfona", "baiao", "roots", "abraco", "mandacaru", "triangulo"];
+      let theme = "roots";
+      try {
+        const storedTheme = sessionStorage.getItem("conexao-theme");
+        if (themes.includes(storedTheme)) theme = storedTheme;
+      } catch {}
+      document.documentElement.dataset.theme = theme;
+      document.write(`<link id="theme-stylesheet" rel="stylesheet" href="/assets/theme-${theme}.css?v=20260724">`);
+    })();
+  </script>
+  <noscript><link rel="stylesheet" href="/assets/theme-roots.css?v=20260724"></noscript>
+  <script src="/assets/app.js?v=20260724" defer></script>
 </head>
 <body id="about">
   <a href="#main">Skip to content</a>
   <header>
     <nav aria-label="Primary">
-      <a class="wordmark" href="/"><img src="/assets/logos/logo-full-blue.svg?v=20260723" alt="Conexão" width="233" height="93"></a>
+      <a class="wordmark" href="/"><img src="/assets/logos/logo-full-blue.svg?v=20260724" alt="Conexão" width="233" height="93"></a>
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/classes/">Classes</a></li>
@@ -53,7 +63,7 @@
       <p>Conexão is a Brussels-based Forró school built around learning, social dancing, and a strong sense of community.</p>
       <p>Sarah Collings founded the school in 2014 and continues to oversee and guide it, together with a wider team of teachers and assistants.</p>
       <figure>
-        <img src="/assets/team/sarah-1.jpg" alt="Sarah dancing forró" width="340" height="324">
+        <img src="/assets/team/sarah-1.webp" alt="Sarah dancing forró" width="340" height="324">
         <figcaption>
           <span>The school</span>
           <strong>Meet the people shaping Conexão in Brussels.</strong>
@@ -74,13 +84,13 @@
         <h3>Sarah Collings</h3>
         <div>
           <figure>
-            <img src="/assets/team/sarah-1.jpg" alt="Sarah dancing forró" width="340" height="324">
+            <img src="/assets/team/sarah-1.webp" alt="Sarah dancing forró" width="340" height="324" loading="lazy" decoding="async">
           </figure>
           <figure>
-            <img src="/assets/team/sarah-2.jpg" alt="Sarah portrait" width="340" height="324">
+            <img src="/assets/team/sarah-2.webp" alt="Sarah portrait" width="340" height="324" loading="lazy" decoding="async">
           </figure>
           <figure>
-            <img src="/assets/team/sarah-3.jpg" alt="Sarah at a festival" width="340" height="324">
+            <img src="/assets/team/sarah-3.webp" alt="Sarah at a festival" width="340" height="324" loading="lazy" decoding="async">
           </figure>
         </div>
         <p>Sarah fell in love with forró while living in Milan and she hasn’t looked back since. Building on her experience in sports and language education, Sarah launched and started to teach forró classes in Brussels in 2014. She continues to oversee and guide the school, while also travelling across Europe and occasionally beyond to teach at workshops and festivals. She is also one of the founders of the Be Forró association in Brussels, working to serve the growing forró community in the city.</p>
@@ -104,7 +114,7 @@
       <article id="simon">
         <h3>Simon <a href="https://www.instagram.com/forro_with_symon/" rel="noopener noreferrer" target="_blank">Instagram of Simon</a></h3>
         <figure>
-          <img src="/assets/team/simon.jpg" alt="Portrait of Simon" width="360" height="360">
+          <img src="/assets/team/simon.webp" alt="Portrait of Simon" width="360" height="360" loading="lazy" decoding="async">
         </figure>
         <p>Simon discovered forró in 2018 in Toulouse and dived straight in, immersing himself in the dance, the music, and the community.</p>
         <p>He loves the challenge of breaking down new moves and then practises diligently which creates his signature smooth dance style, whether he's turning universitário-style or exploring the intricacies of roots footwork. In the classroom, he is passionate, detailed-oriented, and untiring - keen to contribute to each student's learning as best he can.</p>
@@ -113,7 +123,7 @@
       <article id="andres">
         <h3>Andrés <a href="https://www.instagram.com/andrestominaga/" rel="noopener noreferrer" target="_blank">Instagram of Andrés</a></h3>
         <figure>
-          <img src="/assets/team/andres.jpg" alt="Portrait of Andrés" width="360" height="360">
+          <img src="/assets/team/andres.webp" alt="Portrait of Andrés" width="360" height="360" loading="lazy" decoding="async">
         </figure>
         <p>The best way to get to know Andrés is to invite him to dance! One of the most generous dancers around, he's the first to open the dance floor and the last to leave it.</p>
         <p>Andrés started dancing forró in 2017, and quickly proved himself a dedicated and curious leader. One of his strongest skills is connection, opening up lots of space for creativity and playfulness on the dance floor. In the classroom, he is laid-back but highly observant, analysing what's going on and providing support wherever necessary.</p>
@@ -122,7 +132,7 @@
       <article id="charlotte">
         <h3>Charlotte <a href="https://www.instagram.com/charlottemees_dance/" rel="noopener noreferrer" target="_blank">Instagram of Charlotte</a></h3>
         <figure>
-          <img src="/assets/team/charlotte.jpg" alt="Portrait of Charlotte" width="360" height="360">
+          <img src="/assets/team/charlotte.webp" alt="Portrait of Charlotte" width="360" height="360" loading="lazy" decoding="async">
         </figure>
         <p>Charlotte is all about the feeling. Her style of dancing values presence and connection, with a touch of playfulness. Highly committed, she studies hard as both a leader and follower. More recently, she has also put on an organiser hat to keep forró parties rolling in Brussels.</p>
         <p>Charlotte's kindness and patience is appreciated in the classroom. She puts students at ease and brings an embodied softness to the space.</p>
@@ -131,7 +141,7 @@
       <article id="giulia">
         <h3>Giulia <a href="https://www.instagram.com/giulia_traversi/" rel="noopener noreferrer" target="_blank">Instagram of Giulia</a></h3>
         <figure>
-          <img src="/assets/team/giulia.jpg" alt="Portrait of Giulia" width="360" height="360">
+          <img src="/assets/team/giulia.webp" alt="Portrait of Giulia" width="360" height="360" loading="lazy" decoding="async">
         </figure>
         <p>Giulia radiates positivity and warmth, making her one of the sunniest and most uplifting people in the forró community. Her playful and dynamic dance style is all about embracing joy and creating a fun connection with her partners.</p>
         <p>As a teacher, Giulia is patient and encouraging, fostering an environment where students feel empowered to explore and grow. Beyond the dance floor, she brings her vibrant energy to the stage as the triangle player in the band "Forró na Chinela," adding sparkle and rhythm to their performances.</p>
@@ -140,7 +150,7 @@
       <article id="patrick">
         <h3>Patrick <a href="https://www.instagram.com/patrick_allaert/" rel="noopener noreferrer" target="_blank">Instagram of Patrick</a></h3>
         <figure>
-          <img src="/assets/team/patrick.jpg" alt="Portrait of Patrick" width="360" height="360">
+          <img src="/assets/team/patrick.webp" alt="Portrait of Patrick" width="360" height="360" loading="lazy" decoding="async">
         </figure>
         <p>Everything Patrick does is clean and precise, providing maximum opportunity to connect with his partner. He's the embodiment of quality over quantity.</p>
         <p>He started dancing forró in 2018, bringing his background in salsa, bachata and other dance styles with him. If you fancy a philosophical conversation on couple dancing? Patrick is your guy! And in the classroom, he is exceptionally patient, drawing on his diverse dance experiences to clearly communicate the details with a touch of humour.</p>
@@ -149,7 +159,7 @@
       <article id="vero">
         <h3>Vero <a href="https://www.instagram.com/forro_vero/" rel="noopener noreferrer" target="_blank">Instagram of Vero</a></h3>
         <figure>
-          <img src="/assets/team/vero.jpg" alt="Portrait of Vero" width="360" height="360">
+          <img src="/assets/team/vero.webp" alt="Portrait of Vero" width="360" height="360" loading="lazy" decoding="async">
         </figure>
         <p>Vero is a creative and versatile dancer who constantly draws inspiration from a variety of dance styles, adding depth and uniqueness to her forró. Her approach to dancing emphasizes fluidity and self-expression, making every moment on the dance floor engaging and memorable.</p>
         <p>In her teaching, Vero focuses on helping students enhance their technique and bring comfort and confidence to their dancing. Her thoughtful guidance and eye for detail ensure that students leave her classes feeling both accomplished and inspired to keep improving.</p>
@@ -157,7 +167,7 @@
 
      <article id="anaya">
        <figure>
-         <img src="/assets/team/anaya.jpg" alt="Portrait of Anaya" width="360" height="360">
+         <img src="/assets/team/anaya.webp" alt="Portrait of Anaya" width="360" height="360" loading="lazy" decoding="async">
        </figure>
        <h3>Anaya <a href="https://www.instagram.com/3nayya/" rel="noopener noreferrer" target="_blank">Instagram of Anaya</a></h3>
        <p>Anaya is part of the wider Conexão assistant team. A fuller profile can be added here as the site content is completed.</p>
@@ -165,7 +175,7 @@
 
       <article id="emma">
         <figure>
-          <img src="/assets/team/emma.jpg" alt="Portrait of Emma" width="360" height="360">
+          <img src="/assets/team/emma.webp" alt="Portrait of Emma" width="360" height="360" loading="lazy" decoding="async">
         </figure>
         <h3>Emma <a href="https://www.instagram.com/forro_da_emma/" rel="noopener noreferrer" target="_blank">Instagram of Emma</a></h3>
         <p>Emma is part of the wider Conexão assistant team. A fuller profile can be added here as the site content is completed.</p>
@@ -173,7 +183,7 @@
 
       <article id="marco">
         <figure>
-          <img src="/assets/team/marco.jpg" alt="Portrait of Marco" width="360" height="360">
+          <img src="/assets/team/marco.webp" alt="Portrait of Marco" width="360" height="360" loading="lazy" decoding="async">
         </figure>
         <h3>Marco <a href="https://www.instagram.com/mdv.ts/" rel="noopener noreferrer" target="_blank">Instagram of Marco</a></h3>
         <p>Marco is part of the wider Conexão assistant team. A fuller profile can be added here as the site content is completed.</p>

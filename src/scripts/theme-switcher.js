@@ -13,20 +13,22 @@
         mandacaru: "/assets/logos/logo-full-yellow.svg",
         triangulo: "/assets/logos/logo-full-yellow.svg",
     };
-    const assetVersion = "20260723";
+    const assetVersion = "20260724";
     const isSelectableTheme = (theme) => themes.includes(theme);
-    let activeTheme = isSelectableTheme(sessionStorage.getItem("conexao-theme")) ? sessionStorage.getItem("conexao-theme") : defaultTheme;
+    let activeTheme = isSelectableTheme(document.documentElement.dataset.theme) ? document.documentElement.dataset.theme : defaultTheme;
     let buttons = [];
-    const link = document.createElement("link");
-    link.id = "theme-stylesheet";
-    link.rel = "stylesheet";
-    document.head.append(link);
+    const link = document.getElementById("theme-stylesheet");
 
     const applyTheme = (theme) => {
         activeTheme = isSelectableTheme(theme) ? theme : defaultTheme;
         document.documentElement.dataset.theme = activeTheme;
         link.href = `/assets/theme-${activeTheme}.css?v=${assetVersion}`;
-        sessionStorage.setItem("conexao-theme", activeTheme);
+
+        try {
+            sessionStorage.setItem("conexao-theme", activeTheme);
+        } catch {
+            // The selected theme still applies when storage is unavailable.
+        }
 
         const logo = document.querySelector(".wordmark img");
 
@@ -69,8 +71,6 @@
         footer.after(switchPanel);
         applyTheme(activeTheme);
     };
-
-    applyTheme(activeTheme);
 
     if (document.readyState === "loading") {
         document.addEventListener("DOMContentLoaded", mountSwitcher);
