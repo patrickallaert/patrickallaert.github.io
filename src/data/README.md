@@ -1,8 +1,8 @@
 # Site Data
 
-`site.json` is the single source of structured site data. Keep it editorial:
-only store information that changes between trimesters or cannot be derived
-safely.
+`site.json` is the single source of structured programme data. Keep it
+editorial: only store information that changes between trimesters or values
+that cannot be derived safely.
 
 ## Data Model
 

@@ -1,6 +1,6 @@
 # Conexão Website Rebuild
 
-Static rebuild of `sarahforro.com` for the future `conexao.be` or `conexao.dance`.
+Static rebuild of `sarahforro.com` for `https://conexao.be/`.
 
 ## Development
 
@@ -98,10 +98,11 @@ originals during the web optimization process.
 
 ## Site data model
 
-`src/data/site.json` is the single structured data source for trimesters,
-schedules, venues, teachers, courses, and registration. Every configured
-trimester is published in JSON order. Registration is either `null` when
-closed or points to exactly one configured trimester and its form URL.
+`src/data/site.json` contains the structured information that changes with the
+programme: trimesters, schedules, venues, teachers, courses, and registration.
+Every configured trimester is published in JSON order. Registration is either
+`null` when closed or points to exactly one configured trimester and its form
+URL.
 
 ## Current approach
 
@@ -114,6 +115,29 @@ Build scripts may update marked regions inside those same HTML files:
 - `course-sessions:<course-id>` blocks in `docs/levels/index.html`
 - `venue-sessions:<venue-id>` blocks in `docs/venues/index.html`
 - `registration-status` and `registration-link` blocks in `docs/register/index.html`
+
+Stable publication metadata is maintained directly in the HTML. When adding,
+renaming, or removing a public page:
+
+- update its title, description, canonical URL, Open Graph data, and social card
+- add or remove its canonical URL in `docs/sitemap.xml`
+- keep non-indexable pages out of the sitemap and declare `noindex` in their HTML
+
+`docs/robots.txt`, `docs/sitemap.xml`, the homepage JSON-LD, favicons, and the
+shared social image are static files maintained by hand.
+
+## Deployment
+
+GitHub Pages publishes `docs/` with `conexao.be` as the custom domain, declared
+in `docs/CNAME`. In the GitHub Pages and DNS settings:
+
+- configure `conexao.be` as the custom domain and enable enforced HTTPS
+- point the apex records to GitHub Pages using GitHub's current documented values
+- point `www.conexao.be` to `patrickallaert.github.io` and redirect it to the apex
+
+After the first production deployment, verify the HTTP-to-HTTPS and www-to-apex
+redirects, add the domain property in Google Search Console, and submit
+`https://conexao.be/sitemap.xml`.
 
 The priority is to:
 
