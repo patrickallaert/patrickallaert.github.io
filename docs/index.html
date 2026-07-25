@@ -64,23 +64,35 @@
   <script>
     (() => {
       const themes = ["gonzaga", "zabumba", "sanfona", "baiao", "roots", "abraco", "mandacaru", "triangulo"];
+      const fonts = ["theme", "chewy", "architects-daughter"];
+      const fontScopes = ["headings", "all"];
+      const fontFiles = { chewy: "chewy-latin.woff2", "architects-daughter": "architects-daughter-latin.woff2" };
       let theme = "roots";
+      let font = "theme";
+      let fontScope = "headings";
       try {
         const storedTheme = sessionStorage.getItem("conexao-theme");
+        const storedFont = sessionStorage.getItem("conexao-font");
+        const storedFontScope = sessionStorage.getItem("conexao-font-scope");
         if (themes.includes(storedTheme)) theme = storedTheme;
+        if (fonts.includes(storedFont)) font = storedFont;
+        if (fontScopes.includes(storedFontScope)) fontScope = storedFontScope;
       } catch {}
       document.documentElement.dataset.theme = theme;
-      document.write(`<link id="theme-stylesheet" rel="stylesheet" href="/assets/theme-${theme}.css?v=20260724">`);
+      document.documentElement.dataset.font = font;
+      document.documentElement.dataset.fontScope = fontScope;
+      const fontPreload = fontFiles[font] ? `<link rel="preload" href="/assets/fonts/${fontFiles[font]}" as="font" type="font/woff2" crossorigin>` : "";
+      document.write(`${fontPreload}<link id="theme-stylesheet" rel="stylesheet" href="/assets/theme-${theme}.css?v=20260725">`);
     })();
   </script>
-  <noscript><link rel="stylesheet" href="/assets/theme-roots.css?v=20260724"></noscript>
-  <script src="/assets/app.js?v=20260724" defer></script>
+  <noscript><link rel="stylesheet" href="/assets/theme-roots.css?v=20260725"></noscript>
+  <script src="/assets/app.js?v=20260725" defer></script>
 </head>
 <body id="home">
   <a href="#main">Skip to content</a>
   <header>
     <nav aria-label="Primary">
-      <a class="wordmark" href="/"><img src="/assets/logos/logo-full-blue.svg?v=20260724" alt="Conexão" width="233" height="93"></a>
+      <a class="wordmark" href="/"><img src="/assets/logos/logo-full-blue.svg?v=20260725" alt="Conexão" width="233" height="93"></a>
       <ul>
         <li><a aria-current="page" href="/">Home</a></li>
         <li><a href="/classes/">Classes</a></li>

@@ -1,4 +1,5 @@
 @use "common";
+@use "font-options";
 @use "scheduled-classes";
 @use "schedule-portraits";
 
@@ -54,6 +55,8 @@
   --course-roots-2: #54451e;
   --course-practice: #265844;
 }
+
+@include font-options.styles;
 
 a {
   color: var(--accent);
@@ -1117,6 +1120,10 @@ body#venues main > section:not(#intro) > section[aria-labelledby$="-scheduled-cl
   width: min(100%, var(--max));
   padding: 0 var(--main-inline) 1.4rem;
   margin-inline: auto;
+
+  .preference-label {
+    color: var(--metal-soft);
+  }
 
   .theme-switch-group {
     display: flex;

@@ -90,6 +90,11 @@ The selectable themes are currently:
 Roots is the default theme for a first visit. A theme selected in the footer is
 kept for the duration of the browser session.
 
+The footer also offers optional Chewy and Architects Daughter typography. Each
+font can apply to headings only or to all text. The theme typography remains the
+default, and typography preferences use the same browser-session persistence as
+the theme.
+
 Theme tokens are documented in `design/theme-tokens.md`.
 
 Optimized web versions of the official logos live in `docs/assets/logos/`.
@@ -160,7 +165,7 @@ After deployment, verify redirects and cache headers, then rerun Lighthouse:
 
 ```bash
 curl -I https://conexao.be/
-curl -I 'https://conexao.be/assets/app.js?v=20260724'
+curl -I 'https://conexao.be/assets/app.js?v=20260725'
 curl -I https://conexao.be/assets/home/home-1.webp
 ```
 

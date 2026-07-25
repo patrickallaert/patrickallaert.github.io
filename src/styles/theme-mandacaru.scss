@@ -1,4 +1,5 @@
 @use "common";
+@use "font-options";
 @use "scheduled-classes";
 @use "schedule-portraits";
 
@@ -49,6 +50,8 @@
   --course-roots-2: #5d4b22;
   --course-practice: #396f4f;
 }
+
+@include font-options.styles;
 
 a {
   color: var(--accent);

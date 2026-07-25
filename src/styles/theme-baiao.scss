@@ -1,4 +1,5 @@
 @use "common";
+@use "font-options";
 @use "scheduled-classes";
 @use "schedule-portraits";
 
@@ -29,6 +30,8 @@
   --main-top-padding: clamp(1rem, 2vw, 1.5rem);
   --max: 92rem;
 }
+
+@include font-options.styles;
 
 a {
   color: var(--accent);
