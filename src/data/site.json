@@ -1,5 +1,8 @@
 {
-  "registration": null,
+  "registration": {
+    "trimester": "2026-09",
+    "url": "https://forms.gle/nJ5ZbAh3v3fsHC5M6"
+  },
   "venues": {
     "brochet": "Dojo du Brochet",
     "ten-noey": "GC Ten Noey",
