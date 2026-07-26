@@ -28,7 +28,7 @@ Run the full local verification suite:
 npm run verify
 ```
 
-This runs SCSS linting, rebuilds generated assets, and checks text contrast on the active themes. It expects the local static server to be available at `http://127.0.0.1:8000/`.
+This runs SCSS linting, rebuilds generated assets, and checks text contrast on the available themes. It expects the local static server to be available at `http://127.0.0.1:8000/`.
 
 Run only the contrast audit:
 
@@ -52,7 +52,6 @@ the matching data files and rerun `npm run build`.
 
 Generated assets live in `docs/assets/`:
 
-- `docs/assets/app.js`
 - `docs/assets/theme-*.css`
 - `docs/assets/theme-*.css.map`
 
@@ -76,7 +75,8 @@ Extract the source material into structured Markdown:
 
 ## Themes
 
-The selectable themes are currently:
+Roots is the active site theme. The alternative theme sources and their
+generated stylesheets remain available for design reference:
 
 - Gonzaga
 - Zabumba
@@ -87,13 +87,9 @@ The selectable themes are currently:
 - Mandacaru
 - Triângulo
 
-Roots is the default theme for a first visit. A theme selected in the footer is
-kept for the duration of the browser session.
-
-The footer also offers optional Chewy and Architects Daughter typography. Each
-font can apply to headings only or to all text. The theme typography remains the
-default, and typography preferences use the same browser-session persistence as
-the theme.
+Architects Daughter is used consistently for the primary editorial headings
+(`h1` and `h2`) in every theme. Smaller structural headings retain each theme's
+typography so schedules and dense content remain easy to scan.
 
 Theme tokens are documented in `design/theme-tokens.md`.
 
@@ -165,7 +161,7 @@ After deployment, verify redirects and cache headers, then rerun Lighthouse:
 
 ```bash
 curl -I https://conexao.be/
-curl -I 'https://conexao.be/assets/app.js?v=20260725'
+curl -I 'https://conexao.be/assets/theme-roots.css?v=20260726-2'
 curl -I https://conexao.be/assets/home/home-1.webp
 ```
 

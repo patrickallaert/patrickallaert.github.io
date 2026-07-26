@@ -1,5 +1,5 @@
 @use "common";
-@use "font-options";
+@use "editorial-typography";
 @use "scheduled-classes";
 @use "schedule-portraits";
 
@@ -56,7 +56,7 @@
   --course-practice: #265844;
 }
 
-@include font-options.styles;
+@include editorial-typography.styles;
 
 a {
   color: var(--accent);
@@ -1116,40 +1116,6 @@ body#venues main > section:not(#intro) > section[aria-labelledby$="-scheduled-cl
   }
 }
 
-.theme-switch-panel {
-  width: min(100%, var(--max));
-  padding: 0 var(--main-inline) 1.4rem;
-  margin-inline: auto;
-
-  .preference-label {
-    color: var(--metal-soft);
-  }
-
-  .theme-switch-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    justify-content: center;
-  }
-
-  .theme-switch {
-    min-height: 2.35rem;
-    padding: 0.4rem 0.72rem;
-    font-weight: 800;
-    color: var(--primary-text);
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 0.2rem;
-    box-shadow: 0.22rem 0.22rem 0 rgba(217, 164, 49, 0.16);
-    clip-path: polygon(0.45rem 0, 100% 0, calc(100% - 0.45rem) 100%, 0 100%);
-
-    &[aria-pressed="true"] {
-      color: var(--night);
-      background: var(--metal);
-      border-color: var(--metal);
-    }
-  }
-}
 
 @media (prefers-reduced-motion: no-preference) {
   body > main > section,

@@ -31,11 +31,6 @@ textarea {
   font: inherit;
 }
 
-.theme-switch {
-  justify-self: start;
-  cursor: pointer;
-}
-
 :root {
   --brand: #41baae;
   --primary: var(--brand);
@@ -1409,72 +1404,14 @@ body#classes .schedule-days article.class:has(.portraits) > :not(.portraits) {
 }
 
 @font-face {
-  font-family: "Chewy";
-  font-style: normal;
-  font-weight: 400;
-  src: url("fonts/chewy-latin.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
   font-family: "Architects Daughter";
   font-style: normal;
   font-weight: 400;
   src: url("fonts/architects-daughter-latin.woff2") format("woff2");
   font-display: swap;
 }
-html[data-font=chewy][data-font-scope=headings] body :is(h1, h2, h3, h4, h5, h6) {
-  font-family: "Chewy", sans-serif !important;
-}
-
-html[data-font=architects-daughter][data-font-scope=headings] body :is(h1, h2, h3, h4, h5, h6) {
+body :is(h1, h2) {
   font-family: "Architects Daughter", cursive !important;
-}
-
-html[data-font=chewy][data-font-scope=all] body,
-html[data-font=chewy][data-font-scope=all] body * {
-  font-family: "Chewy", sans-serif !important;
-}
-
-html[data-font=architects-daughter][data-font-scope=all] body,
-html[data-font=architects-daughter][data-font-scope=all] body * {
-  font-family: "Architects Daughter", cursive !important;
-}
-
-html[data-font-scope=all][data-font]:not([data-font=theme]) body#levels section.class {
-  grid-template-columns: minmax(0, 1fr);
-}
-
-@media (max-width: 41.99rem) {
-  html[data-font-scope=all][data-font]:not([data-font=theme]) body#levels section.class > section[aria-labelledby$=-scheduled-classes] > ul {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-.theme-switch-panel {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 1.5rem;
-  align-items: flex-start;
-  justify-content: center;
-}
-.theme-switch-panel .preference-group {
-  display: grid;
-  gap: 0.45rem;
-  justify-items: center;
-}
-.theme-switch-panel .preference-group:first-child {
-  flex-basis: 100%;
-}
-.theme-switch-panel .preference-label {
-  margin: 0;
-  font-size: 0.76rem;
-  font-weight: 800;
-  line-height: 1.2;
-}
-.theme-switch-panel .theme-switch-group[aria-disabled=true] {
-  opacity: 0.5;
-}
-.theme-switch-panel .theme-switch:disabled {
-  cursor: not-allowed;
 }
 
 a {
@@ -2431,33 +2368,6 @@ body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-cla
 body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .venue a,
 body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-classes] .people a {
   color: var(--primary-text);
-}
-
-.theme-switch-panel {
-  width: min(100%, var(--max));
-  padding: 0 var(--main-inline) 1.4rem;
-  margin-inline: auto;
-}
-.theme-switch-panel .theme-switch-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
-}
-.theme-switch-panel .theme-switch {
-  min-height: 2.35rem;
-  padding: 0.4rem 0.72rem;
-  font-weight: 800;
-  color: var(--primary-text);
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 999rem 1rem 999rem 1.15rem;
-  box-shadow: 0 0.26rem 0 rgba(109, 63, 33, 0.08);
-}
-.theme-switch-panel .theme-switch[aria-pressed=true] {
-  color: var(--primary-ink);
-  background: var(--primary-text);
-  border-color: var(--primary-text);
 }
 
 @media (prefers-reduced-motion: no-preference) {

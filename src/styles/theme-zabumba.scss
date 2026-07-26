@@ -1,5 +1,5 @@
 @use "common";
-@use "font-options";
+@use "editorial-typography";
 @use "theme-shared";
 @use "scheduled-classes";
 @use "schedule-portraits";
@@ -31,7 +31,7 @@
   --main-top-padding: 7.25rem;
 }
 
-@include font-options.styles;
+@include editorial-typography.styles;
 
 body {
   background:
@@ -419,16 +419,6 @@ body#venues {
           }
         }
       }
-    }
-  }
-}
-
-.theme-switch-panel {
-  button {
-    &[aria-pressed="true"] {
-      color: var(--primary-ink);
-      background: color-mix(in srgb, var(--primary) 70%, var(--yellow));
-      border-color: transparent;
     }
   }
 }

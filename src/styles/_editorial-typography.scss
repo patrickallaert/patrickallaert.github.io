@@ -1,0 +1,13 @@
+@mixin styles {
+  @font-face {
+    font-family: "Architects Daughter";
+    font-style: normal;
+    font-weight: 400;
+    src: url("fonts/architects-daughter-latin.woff2") format("woff2");
+    font-display: swap;
+  }
+
+  body :is(h1, h2) {
+    font-family: "Architects Daughter", cursive !important;
+  }
+}
