@@ -10,6 +10,7 @@
     "dublin": "Salle Dublin"
   },
   "teachers": {
+    "anaya": "Anaya",
     "andres": "Andrés",
     "charlotte": "Charlotte",
     "emma": "Emma",
@@ -70,7 +71,8 @@
             "charlotte"
           ],
           "assistants": [
-            "andres"
+            "andres",
+            "anaya"
           ]
         },
         {
