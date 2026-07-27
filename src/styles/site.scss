@@ -20,6 +20,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-padding-top: 7.5rem;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -820,6 +824,10 @@ body#events {
 }
 
 @media (min-width: 48rem) {
+  html {
+    scroll-padding-top: 6.5rem;
+  }
+
   body > header {
     nav {
       grid-template-columns: auto 1fr auto;
@@ -1150,6 +1158,31 @@ body#venues {
       ol button {
         transition: none;
       }
+    }
+  }
+}
+
+body#legal {
+  .legal-details {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0;
+
+    div {
+      display: grid;
+      gap: 0.1rem;
+    }
+
+    dt {
+      font-weight: 800;
+    }
+
+    dd {
+      margin: 0;
+    }
+
+    address {
+      font-style: normal;
     }
   }
 }
@@ -1889,6 +1922,24 @@ body {
     p {
       margin: 0;
       color: rgba(255, 250, 241, 0.74);
+    }
+
+    .legal-identity {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.2rem 0.8rem;
+      margin: 0;
+      font-size: 0.9rem;
+      font-style: normal;
+      color: rgba(255, 250, 241, 0.74);
+
+      a {
+        font-weight: 800;
+      }
+
+      address {
+        font-style: normal;
+      }
     }
 
     a {
