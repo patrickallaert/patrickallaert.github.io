@@ -27,16 +27,14 @@
       "link": false
     },
     "lead-follow": {
-      "title": "Everyone Leads & Follows",
-      "link": false
+      "title": "Everyone Leads, Everyone Follows"
     },
     "pratica": {
       "title": "Forró Prática",
       "legendLabel": "Prática"
     },
     "roots": {
-      "title": "Roots",
-      "link": false
+      "title": "Roots"
     }
   },
   "trimesters": [

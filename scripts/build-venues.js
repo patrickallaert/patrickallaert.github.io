@@ -25,8 +25,8 @@ const COURSE_ORDER = [
     "level-2",
     "level-3",
     "level-4",
-    "roots-1",
-    "roots-2",
+    "lead-follow",
+    "roots",
     "pratica",
     "free-practice",
 ];
@@ -57,11 +57,11 @@ const listNames = (items) => {
 const link = (href, label) => href ? `<a href="${href}">${escapeHtml(label)}</a>` : escapeHtml(label);
 
 const inferredCourse = (id) => {
-    const match = id.match(/^(level|roots)-(\d)$/);
-    const [, type, number] = match;
+    const match = id.match(/^level-(\d)$/);
+    const [, number] = match;
 
     return {
-        title: `${type.charAt(0).toUpperCase()}${type.slice(1)} ${number}`,
+        title: `Level ${number}`,
     };
 };
 

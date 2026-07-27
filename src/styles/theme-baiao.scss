@@ -659,12 +659,12 @@ body#classes {
         --course-accent: var(--course-level-4);
       }
 
-      &.roots.\31 {
-        --course-accent: var(--course-roots-1);
+      &.lead-follow {
+        --course-accent: var(--course-lead-follow);
       }
 
-      &.roots.\32 {
-        --course-accent: var(--course-roots-2);
+      &.roots {
+        --course-accent: var(--course-roots);
       }
 
       &.duration-30 {
@@ -736,12 +736,12 @@ body#classes {
       --legend-color: var(--course-level-4);
     }
 
-    .roots-1 {
-      --legend-color: var(--course-roots-1);
+    .lead-follow {
+      --legend-color: var(--course-lead-follow);
     }
 
-    .roots-2 {
-      --legend-color: var(--course-roots-2);
+    .roots {
+      --legend-color: var(--course-roots);
     }
 
     .musicality {

@@ -53,8 +53,8 @@ textarea {
   --course-level-3: #0a6084;
   --course-level-4: #c13cc6;
   --course-musicality: #ff5f9f;
-  --course-roots-1: #e7c83a;
-  --course-roots-2: #b7a326;
+  --course-lead-follow: var(--course-musicality);
+  --course-roots: #e7c83a;
   --course-practice: #f6c983;
   --schedule-exception-text: #7b1d1d;
   --max: 82rem;
@@ -459,7 +459,7 @@ body#about #school figure {
 }
 body#levels section.class {
   padding: 1rem 1rem 1rem clamp(1.25rem, 3vw, 2rem);
-  scroll-margin-top: 2rem;
+  scroll-margin-top: 7rem;
   background: color-mix(in srgb, var(--course-accent) 8%, #ffffff);
   border-left: 0;
   box-shadow: inset 0.35rem 0 0 var(--course-accent);
@@ -480,11 +480,11 @@ body#levels section.class.level.\33  {
 body#levels section.class.level.\34  {
   --course-accent: var(--course-level-4);
 }
-body#levels section.class.roots.\31  {
-  --course-accent: var(--course-roots-1);
+body#levels section.class.lead-follow {
+  --course-accent: var(--course-lead-follow);
 }
-body#levels section.class.roots.\32  {
-  --course-accent: var(--course-roots-2);
+body#levels section.class.roots {
+  --course-accent: var(--course-roots);
 }
 
 body#classes .class.level.\31 ,
@@ -507,13 +507,13 @@ body#classes .class.musicality,
 body#venues .class.musicality {
   --course-accent: var(--course-musicality);
 }
-body#classes .class.roots.\31 ,
-body#venues .class.roots.\31  {
-  --course-accent: var(--course-roots-1);
+body#classes .class.lead-follow,
+body#venues .class.lead-follow {
+  --course-accent: var(--course-lead-follow);
 }
-body#classes .class.roots.\32 ,
-body#venues .class.roots.\32  {
-  --course-accent: var(--course-roots-2);
+body#classes .class.roots,
+body#venues .class.roots {
+  --course-accent: var(--course-roots);
 }
 body#classes .class.pratica,
 body#venues .class.pratica {
@@ -1773,11 +1773,11 @@ body#classes .schedule-days article.class.level.\33  {
 body#classes .schedule-days article.class.level.\34  {
   --course-accent: var(--course-level-4);
 }
-body#classes .schedule-days article.class.roots.\31  {
-  --course-accent: var(--course-roots-1);
+body#classes .schedule-days article.class.lead-follow {
+  --course-accent: var(--course-lead-follow);
 }
-body#classes .schedule-days article.class.roots.\32  {
-  --course-accent: var(--course-roots-2);
+body#classes .schedule-days article.class.roots {
+  --course-accent: var(--course-roots);
 }
 body#classes .schedule-days article.class.duration-30 {
   --duration-height: 2.55rem;
@@ -1858,11 +1858,11 @@ body#classes .schedule-legend .level-3 {
 body#classes .schedule-legend .level-4 {
   --legend-color: var(--course-level-4);
 }
-body#classes .schedule-legend .roots-1 {
-  --legend-color: var(--course-roots-1);
+body#classes .schedule-legend .lead-follow {
+  --legend-color: var(--course-lead-follow);
 }
-body#classes .schedule-legend .roots-2 {
-  --legend-color: var(--course-roots-2);
+body#classes .schedule-legend .roots {
+  --legend-color: var(--course-roots);
 }
 body#classes .schedule-legend .musicality {
   --legend-color: var(--course-musicality);

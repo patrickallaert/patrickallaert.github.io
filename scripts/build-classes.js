@@ -10,8 +10,8 @@ const COURSE_ORDER = [
     "level-2",
     "level-3",
     "level-4",
-    "roots-1",
-    "roots-2",
+    "lead-follow",
+    "roots",
     "pratica",
 ];
 
@@ -48,14 +48,14 @@ const courseHref = (id, course) => {
 };
 
 const inferredCourse = (id) => {
-    const match = id.match(/^(level|roots)-(\d)$/);
+    const match = id.match(/^level-(\d)$/);
 
-    const [, type, number] = match;
+    const [, number] = match;
 
     return {
-        category: type,
+        category: "level",
         categoryDetail: number,
-        title: `${type.charAt(0).toUpperCase()}${type.slice(1)} ${number}`,
+        title: `Level ${number}`,
     };
 };
 

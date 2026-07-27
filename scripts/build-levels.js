@@ -8,8 +8,8 @@ const COURSE_SECTIONS = [
     ["level-2", 3, "      "],
     ["level-3", 3, "      "],
     ["level-4", 3, "      "],
-    ["roots-1", 3, "      "],
-    ["roots-2", 3, "      "],
+    ["lead-follow", 3, "      "],
+    ["roots", 3, "      "],
 ];
 
 const escapeHtml = (value) => String(value)

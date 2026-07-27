@@ -29,7 +29,7 @@ const validateSiteData = (data) => {
         for (const item of trimester.schedule) {
             assert(DAYS.includes(item.day), `unknown day ${item.day} in trimester ${trimester.id}`);
             assert(data.venues[item.venue], `unknown venue ${item.venue} in trimester ${trimester.id}`);
-            assert(data.courses[item.course] || /^(level|roots)-\d$/.test(item.course), `unknown course ${item.course} in trimester ${trimester.id}`);
+            assert(data.courses[item.course] || /^level-\d$/.test(item.course), `unknown course ${item.course} in trimester ${trimester.id}`);
 
             for (const person of [...(item.teachers || []), ...(item.assistants || [])]) {
                 assert(data.teachers[person], `unknown teacher ${person} in trimester ${trimester.id}`);
