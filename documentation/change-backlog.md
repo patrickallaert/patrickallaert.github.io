@@ -31,7 +31,7 @@ Acceptance criteria:
 
 - No obvious repeated page prefix in descendant IDs/classes.
 - SCSS selectors remain readable and nested according to DOM hierarchy.
-- No visual regression across active themes.
+- No visual regression across public pages.
 
 ### 2. Class Data Model
 
@@ -183,11 +183,11 @@ Recommended direction:
 
 - Prototype one new layout against real content.
 - Validate Home, Classes, Levels, Venues, About, Events, and Register.
-- Keep each theme as a distinct look and feel over the same semantic HTML.
+- Keep the Roots visual language consistent across the same semantic HTML.
 
 Acceptance criteria:
 
-- Same HTML can support meaningfully different themes.
+- Every public page type supports the same Roots design consistently.
 - Mobile layouts are checked with real content.
 - Header/main spacing and hero behavior are consistent.
 

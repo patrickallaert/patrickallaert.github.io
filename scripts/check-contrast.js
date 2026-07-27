@@ -1,7 +1,6 @@
 const { chromium } = require("playwright");
 
 const BASE_URL = process.env.BASE_URL || "http://127.0.0.1:8000";
-const THEMES = (process.env.THEMES || "gonzaga,zabumba,sanfona,baiao,roots,abraco,mandacaru,triangulo").split(",").map((theme) => theme.trim()).filter(Boolean);
 const PAGES = (process.env.PAGES || "/,classes/,levels/,venues/,events/,about/,register/").split(",").map((page) => page.trim()).filter(Boolean);
 const MIN_CONTRAST = Number(process.env.MIN_CONTRAST || 4.5);
 
@@ -108,40 +107,35 @@ const collectRows = async (page) => page.evaluate(() => {
     try {
         await checkServer(browser);
 
-        for (const theme of THEMES) {
-            for (const pagePath of PAGES) {
-                await page.goto(`${BASE_URL.replace(/\/$/, "")}/${pagePath.startsWith("/") ? pagePath : `/${pagePath}`}`, { waitUntil: "domcontentloaded" });
-                await page.evaluate((themeName) => sessionStorage.setItem("conexao-theme", themeName), theme);
-                await page.reload({ waitUntil: "networkidle" });
+        for (const pagePath of PAGES) {
+            await page.goto(`${BASE_URL.replace(/\/$/, "")}/${pagePath.startsWith("/") ? pagePath : `/${pagePath}`}`, { waitUntil: "networkidle" });
 
-                const rows = await collectRows(page);
+            const rows = await collectRows(page);
 
-                for (const row of rows) {
-                    const foreground = parseColor(row.color);
+            for (const row of rows) {
+                const foreground = parseColor(row.color);
 
-                    if (!foreground) continue;
+                if (!foreground) continue;
 
-                    let background = [255, 255, 255, 1];
+                let background = [255, 255, 255, 1];
 
-                    for (const color of row.backgroundStack.reverse()) {
-                        const parsed = parseColor(color);
+                for (const color of row.backgroundStack.reverse()) {
+                    const parsed = parseColor(color);
 
-                        if (parsed) background = composite(parsed, background);
-                    }
+                    if (parsed) background = composite(parsed, background);
+                }
 
-                    const value = contrast(foreground, background);
+                const value = contrast(foreground, background);
 
-                    if (value < MIN_CONTRAST) {
-                        failures.push({
-                            theme,
-                            page: pagePath,
-                            contrast: value,
-                            tag: row.tag,
-                            text: row.text,
-                            color: row.color,
-                            background: `rgb(${background.slice(0, 3).join(", ")})`,
-                        });
-                    }
+                if (value < MIN_CONTRAST) {
+                    failures.push({
+                        page: pagePath,
+                        contrast: value,
+                        tag: row.tag,
+                        text: row.text,
+                        color: row.color,
+                        background: `rgb(${background.slice(0, 3).join(", ")})`,
+                    });
                 }
             }
         }
@@ -153,7 +147,7 @@ const collectRows = async (page) => page.evaluate(() => {
         console.error(`Contrast check failed: ${failures.length} text nodes below ${MIN_CONTRAST}:1`);
 
         for (const failure of failures.slice(0, 40)) {
-            console.error(`${failure.theme}/${failure.page}: ${failure.contrast.toFixed(2)} ${failure.tag} "${failure.text}" color=${failure.color} bg=${failure.background}`);
+            console.error(`${failure.page}: ${failure.contrast.toFixed(2)} ${failure.tag} "${failure.text}" color=${failure.color} bg=${failure.background}`);
         }
 
         if (failures.length > 40) {
@@ -163,7 +157,7 @@ const collectRows = async (page) => page.evaluate(() => {
         process.exit(1);
     }
 
-    console.log(`Contrast check passed for ${THEMES.join(", ")} on ${PAGES.length} pages at ${BASE_URL}.`);
+    console.log(`Contrast check passed on ${PAGES.length} pages at ${BASE_URL}.`);
 })().catch((error) => {
     console.error(error.message);
     process.exit(1);

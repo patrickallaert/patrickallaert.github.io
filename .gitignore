@@ -3,7 +3,7 @@ node_modules/
 __pycache__/
 npm-debug.log*
 
-docs/assets/theme-*.css.map
+docs/assets/site.css.map
 
 instagram-source/
 

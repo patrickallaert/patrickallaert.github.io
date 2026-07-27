@@ -28,7 +28,7 @@ Run the full local verification suite:
 npm run verify
 ```
 
-This runs SCSS linting, rebuilds generated assets, and checks text contrast on the available themes. It expects the local static server to be available at `http://127.0.0.1:8000/`.
+This runs SCSS linting, rebuilds generated assets, and checks text contrast across the public pages. It expects the local static server to be available at `http://127.0.0.1:8000/`.
 
 Run only the contrast audit:
 
@@ -39,7 +39,7 @@ npm run test:contrast
 The contrast audit can be configured with environment variables:
 
 ```bash
-BASE_URL=http://127.0.0.1:8000 THEMES=beta,zeta PAGES=index.html,classes.html npm run test:contrast
+BASE_URL=http://127.0.0.1:8000 PAGES=/,classes/ npm run test:contrast
 ```
 
 The static pages live in `docs/`. This is also the GitHub Pages publication
@@ -52,8 +52,8 @@ the matching data files and rerun `npm run build`.
 
 Generated assets live in `docs/assets/`:
 
-- `docs/assets/theme-*.css`
-- `docs/assets/theme-*.css.map`
+- `docs/assets/site.css`
+- `docs/assets/site.css.map`
 
 Regenerate them with `npm run build`.
 
@@ -70,32 +70,20 @@ Extract the source material into structured Markdown:
 - `src/data/`: small structured data files shared across the site
 - `src/styles/`: SCSS source
 - `documentation/`: product and visual brief
-- `design/`: visual system notes, including theme token definitions
 - `site-source/`: collected material from the current live site
 
-## Themes
+## Visual design
 
-Roots is the active site theme. The alternative theme sources and their
-generated stylesheets remain available for design reference:
-
-- Gonzaga
-- Zabumba
-- Sanfona
-- Baião
-- Roots
-- Abraço
-- Mandacaru
-- Triângulo
+The site uses a single visual design named Roots. Its complete SCSS source is
+maintained in `src/styles/site.scss` and compiled to `docs/assets/site.css`.
 
 Architects Daughter is used consistently for the primary editorial headings
-(`h1` and `h2`) in every theme. Smaller structural headings retain each theme's
-typography so schedules and dense content remain easy to scan.
+(`h1` and `h2`). Smaller structural headings retain the Roots typography so
+schedules and dense content remain easy to scan.
 
-Theme tokens are documented in `design/theme-tokens.md`.
-
-Optimized web versions of the official logos live in `docs/assets/logos/`.
-Their source files are the SVG variants in `Logos/SVG/`; do not edit those
-originals during the web optimization process.
+The optimized logo used by the site lives in `docs/assets/logos/`. Its source
+is one of the official SVG variants in `Logos/SVG/`; do not edit the originals
+during the web optimization process.
 
 ## Site data model
 
