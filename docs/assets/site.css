@@ -1487,7 +1487,7 @@ body > header nav ul {
   display: flex;
   flex-wrap: nowrap;
   grid-column: 1/-1;
-  gap: clamp(0.5rem, 14vw - 2.6rem, 1.5rem);
+  gap: clamp(0.35rem, 14vw - 2.6rem, 1.5rem);
   align-items: center;
   padding-block-end: 0.1rem;
 }
@@ -2163,6 +2163,17 @@ body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-cla
   border-top: 1px solid var(--line);
 }
 
+body#about #team > .team-intro {
+  width: min(100%, 62rem);
+  max-width: none;
+  padding-left: 1rem;
+  margin: 0.3rem 0 1.4rem;
+  color: var(--ink-soft);
+  border-left: 0.24rem solid var(--brand-blue);
+}
+body#about #team > .team-intro a {
+  white-space: nowrap;
+}
 body#about #team > div {
   gap: 1.1rem;
 }
@@ -2268,7 +2279,256 @@ body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-cla
   color: var(--primary-text);
 }
 
+body > footer .community-links {
+  display: grid;
+  gap: 0.55rem;
+}
+body > footer .community-links > p {
+  font-weight: 800;
+  color: var(--primary-ink);
+}
+body > footer .community-links ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+body > footer .community-links li {
+  margin: 0;
+}
+body > footer .community-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.25rem;
+  font-weight: 800;
+  text-underline-offset: 0.2em;
+}
+body > footer .community-links a[aria-current=page] {
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.14rem;
+}
+
+body#about #team .care-team-marker {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.55rem;
+  padding: 0.18rem 0.42rem;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 850;
+  line-height: 1;
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: 0;
+  background: color-mix(in srgb, var(--yellow) 52%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--yellow) 70%, var(--line));
+  border-radius: 0.3rem;
+}
+
+body.community-page #intro {
+  display: grid;
+  gap: clamp(0.9rem, 2vw, 1.25rem);
+  min-height: auto;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--yellow) 18%, transparent), transparent 46%), linear-gradient(315deg, color-mix(in srgb, var(--green) 9%, transparent), transparent 54%), var(--surface);
+}
+body.community-page #intro > h1 {
+  max-width: 15ch;
+  margin: 0;
+}
+body.community-page #intro > h1 strong {
+  color: var(--clay-text);
+}
+body.community-page #intro > p {
+  max-width: 46rem;
+  margin: 0;
+  font-size: clamp(1rem, 1.45vw, 1.16rem);
+  color: var(--ink-soft);
+}
+body.community-page #intro .initiative-logo {
+  width: min(100%, 20rem);
+  margin: 0.35rem auto 0;
+}
+body.community-page #intro .initiative-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+body.community-page .page-actions {
+  margin-top: 0.35rem;
+}
+body.community-page .page-actions ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+body.community-page .page-actions li {
+  margin: 0;
+}
+body.community-page .page-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.9rem;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  background: color-mix(in srgb, var(--primary) 8%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--primary) 28%, var(--line));
+  border-radius: 0.65rem;
+}
+body.community-page .page-actions a:hover, body.community-page .page-actions a:focus-visible {
+  text-decoration: underline;
+  background: color-mix(in srgb, var(--primary) 14%, var(--surface));
+}
+body.community-page .page-actions li:first-child a {
+  color: var(--primary-ink);
+  background: var(--brand-blue);
+  border-color: var(--brand-blue);
+}
+body.community-page .page-actions li:first-child a:hover, body.community-page .page-actions li:first-child a:focus-visible {
+  background: var(--brand-blue-hover);
+}
+body.community-page .support-panel {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--brand-blue) 9%, transparent), transparent 52%), var(--surface);
+  border: 0.14rem solid color-mix(in srgb, var(--brand-blue) 45%, var(--line));
+}
+body.community-page .support-panel > h2 {
+  color: var(--brand-blue-hover);
+}
+body.community-page .primary-action {
+  margin-top: 1.4rem;
+}
+body.community-page .primary-action a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.65rem 1rem;
+  color: var(--primary-ink);
+  text-align: center;
+  text-decoration: none;
+  background: var(--brand-blue);
+  border: 1px solid var(--brand-blue);
+  border-radius: 0.65rem;
+  box-shadow: 0 0.7rem 1.5rem rgba(0, 79, 113, 0.14);
+}
+body.community-page .primary-action a:hover, body.community-page .primary-action a:focus-visible {
+  text-decoration: underline;
+  background: var(--brand-blue-hover);
+}
+body.community-page .emergency-notice {
+  padding: clamp(1rem, 2.5vw, 1.35rem);
+  margin: 1.5rem 0;
+  background: color-mix(in srgb, var(--yellow) 17%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--yellow) 58%, var(--line));
+  border-left: 0.35rem solid color-mix(in srgb, var(--yellow) 62%, var(--leather));
+  border-radius: 0.55rem;
+}
+body.community-page .emergency-notice h3 {
+  margin-bottom: 0.55rem;
+}
+body.community-page .emergency-notice p {
+  margin: 0;
+}
+body.community-page .care-team-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 10rem));
+  gap: 0.85rem 1.2rem;
+  padding: 0;
+  margin: 0.35rem 0 1.25rem;
+  list-style: none;
+}
+body.community-page .care-team-list li {
+  margin: 0;
+}
+body.community-page .care-team-list a {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  gap: 0.65rem;
+  align-items: center;
+  font-weight: 800;
+}
+body.community-page .care-team-list img {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  border: 2px solid color-mix(in srgb, var(--brand-blue) 32%, var(--line));
+  border-radius: 0.45rem;
+}
+body.community-page .care-team-list a:hover img,
+body.community-page .care-team-list a:focus-visible img {
+  border-color: var(--brand-blue);
+}
+body.community-page .care-process {
+  padding: 0;
+  margin: 0 0 1.5rem;
+  list-style: none;
+  counter-reset: care-step;
+}
+body.community-page .care-process > li {
+  position: relative;
+  padding: 1rem 0 1rem 3rem;
+  margin: 0;
+  counter-increment: care-step;
+  border-top: 1px solid var(--line);
+}
+body.community-page .care-process > li::before {
+  position: absolute;
+  top: 0.9rem;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  font-weight: 850;
+  color: var(--primary-ink);
+  content: counter(care-step);
+  background: var(--brand-blue);
+  border-radius: 50%;
+}
+body.community-page .care-process > li h3 {
+  margin-bottom: 0.4rem;
+}
+body.community-page .care-process > li p {
+  margin: 0;
+}
+body.community-page .document-content {
+  width: min(100%, 66rem);
+  padding: clamp(1.25rem, 3vw, 2.4rem);
+  margin-inline: auto;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+body.community-page .document-content > header {
+  padding-bottom: 1.25rem;
+  border-bottom: 0.18rem solid color-mix(in srgb, var(--brand-blue) 36%, var(--line));
+}
+body.community-page .document-content > header h2 {
+  margin: 0;
+}
+body.community-page .document-content > section {
+  padding-block: clamp(1.25rem, 3vw, 2rem);
+}
+body.community-page .document-content > section + section {
+  border-top: 1px solid var(--line);
+}
+body.community-page .document-content > section > :last-child {
+  margin-bottom: 0;
+}
+
 @media (min-width: 42rem) {
+  body.community-page .care-team-list {
+    grid-template-columns: repeat(4, minmax(0, 10rem));
+  }
   body#classes .schedule-days {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2317,6 +2577,22 @@ body#venues main > section:not(#intro) > section[aria-labelledby$=-scheduled-cla
   }
 }
 @media (min-width: 64rem) {
+  body.community-page #intro:has(> .initiative-logo) {
+    grid-template-columns: minmax(24rem, 1fr) minmax(16rem, 0.55fr);
+    column-gap: clamp(2.5rem, 6vw, 6rem);
+  }
+  body.community-page #intro:has(> .initiative-logo) > h1,
+  body.community-page #intro:has(> .initiative-logo) > p,
+  body.community-page #intro:has(> .initiative-logo) > nav {
+    grid-column: 1;
+  }
+  body.community-page #intro:has(> .initiative-logo) > .initiative-logo {
+    grid-row: 1/span 6;
+    grid-column: 2;
+    align-self: center;
+    width: min(100%, 24rem);
+    margin: 0;
+  }
   body#classes .schedule-days {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     align-items: start;
