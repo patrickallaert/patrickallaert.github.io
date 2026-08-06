@@ -1,16 +1,16 @@
 @charset "UTF-8";
 @font-face {
-  font-family: "Epilogue";
+  font-family: "Source Sans 3";
   font-style: normal;
-  font-weight: 400 900;
-  src: url("fonts/epilogue-latin.woff2") format("woff2");
+  font-weight: 200 900;
+  src: url("fonts/source-sans-3-latin.woff2") format("woff2");
   font-display: swap;
 }
 @font-face {
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 400 900;
-  src: url("fonts/manrope-latin.woff2") format("woff2");
+  font-family: "Source Sans 3";
+  font-style: italic;
+  font-weight: 200 900;
+  src: url("fonts/source-sans-3-italic-latin.woff2") format("woff2");
   font-display: swap;
 }
 *,
@@ -594,7 +594,7 @@ body#register #prices dt {
 body#classes #prices dd,
 body#register #prices dd {
   margin: 0;
-  font-family: "Epilogue", sans-serif;
+  font-family: var(--font-body);
   font-size: 1.08rem;
   font-weight: 800;
   line-height: 1;
@@ -1410,8 +1410,8 @@ body#classes .schedule-days article.class:has(.portraits) > :not(.portraits) {
   --radius: 0.5rem;
   --focus: var(--brand-blue);
   --page: var(--paper);
-  --font-body: Inter, "Source Sans 3", "Segoe UI", sans-serif;
-  --font-title: "Bricolage Grotesque", Fraunces, Georgia, serif;
+  --font-body: "Source Sans 3", sans-serif;
+  --font-title: "Source Sans 3", sans-serif;
   --body-line-height: 1.62;
   --max: 88rem;
   --page-shell-width: 100%;
@@ -1485,7 +1485,7 @@ body > header nav {
 }
 body > header nav ul {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   grid-column: 1/-1;
   gap: clamp(0.35rem, 14vw - 2.6rem, 1.5rem);
   align-items: center;
@@ -1496,7 +1496,7 @@ body > header nav a {
   align-items: center;
   min-height: 1.8rem;
   padding: 0;
-  font-size: 0.82rem;
+  font-size: 0.875rem;
   font-weight: 800;
   color: color-mix(in srgb, var(--ink) 86%, var(--leather));
   white-space: nowrap;
@@ -1615,7 +1615,8 @@ body > main h2 {
 }
 body > main h3 {
   margin: 0 0 0.85rem;
-  font-size: clamp(1.2rem, 3vw, 1.55rem);
+  font-size: clamp(1.25rem, 3vw, 1.625rem);
+  font-weight: 750;
   line-height: 1.12;
 }
 body > main h4 {
@@ -2172,7 +2173,7 @@ body#about #team > .team-intro {
   border-left: 0.24rem solid var(--brand-blue);
 }
 body#about #team > .team-intro a {
-  white-space: nowrap;
+  white-space: normal;
 }
 body#about #team > div {
   gap: 1.1rem;
@@ -2550,7 +2551,7 @@ body.community-page .document-content > section > :last-child {
   body > header nav a {
     min-height: 2.15rem;
     padding: 0.2rem 0.35rem;
-    font-size: 0.95rem;
+    font-size: 0.875rem;
   }
   body > header nav a[aria-current=page] {
     padding: 0.3rem 0.7rem;
@@ -2574,6 +2575,11 @@ body.community-page .document-content > section > :last-child {
   body#home #video {
     grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
     align-items: center;
+  }
+}
+@media (min-width: 50rem) {
+  body > header nav a {
+    font-size: 1rem;
   }
 }
 @media (min-width: 64rem) {
