@@ -10,6 +10,7 @@ that cannot be derived safely.
 - `noClassDates` lists dates on which every class scheduled that day is cancelled.
 - `schedule` contains the recurring class slots for a trimester.
 - `registration` points to the only trimester accepting registrations and its form URL. Set it to `null` to close registration.
+- `featuredEvent` controls the single event promoted across the site. Set it to `null` to remove the global banner and the promotional blocks from Home and Events.
 - `venues`, `teachers`, and `courses` provide shared labels and course-specific display options.
 
 ## Derived By The Generator
@@ -28,6 +29,7 @@ that cannot be derived safely.
 - `scripts/build-levels.js` replaces the `course-sessions:<course-id>` blocks in `docs/levels/index.html`.
 - `scripts/build-venues.js` replaces the `venue-sessions:<venue-id>` blocks in `docs/venues/index.html`.
 - `scripts/build-registration.js` replaces the `registration-status` and `registration-link` blocks in `docs/register/index.html`.
+- `scripts/build-featured-event.js` replaces the `featured-event-banner`, `featured-event-home`, and `featured-event-summary` blocks in `docs/`.
 
 For the MVP, `docs/` is both the GitHub Pages publication directory and the
 directly edited HTML source. Do not create a separate `site/` directory. Edit

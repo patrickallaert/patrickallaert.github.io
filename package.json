@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "Static site rebuild for Conexao",
   "scripts": {
-    "build:html": "node scripts/build-classes.js && node scripts/build-levels.js && node scripts/build-venues.js && node scripts/build-registration.js",
+    "build:html": "node scripts/build-classes.js && node scripts/build-levels.js && node scripts/build-venues.js && node scripts/build-registration.js && node scripts/build-featured-event.js",
     "build:css": "sass --no-source-map src/styles/site.scss docs/assets/site.css",
     "build": "npm run build:html && npm run build:css",
     "lint:css": "stylelint \"src/styles/**/*.scss\"",

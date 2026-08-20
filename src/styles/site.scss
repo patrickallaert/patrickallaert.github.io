@@ -2867,6 +2867,309 @@ body.community-page {
   }
 }
 
+.featured-event-banner {
+  color: #ffffff;
+  background: #9b146d;
+
+  p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    align-items: center;
+    justify-content: center;
+    width: min(100%, var(--max));
+    padding: 0.65rem var(--main-inline);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  strong,
+  span {
+    color: inherit;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.35rem;
+    padding: 0.35rem 0.75rem;
+    font-weight: 850;
+    color: #062d29;
+    text-decoration: none;
+    background: var(--yellow);
+    border: 1px solid var(--yellow);
+    border-radius: 999rem;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+      background: #ffffff;
+      border-color: #ffffff;
+    }
+  }
+}
+
+body > main > .featured-event {
+  display: grid;
+  gap: clamp(1.25rem, 4vw, 3rem);
+  align-items: center;
+  color: #ffffff;
+  background:
+    linear-gradient(135deg, rgba(255, 214, 77, 0.12), transparent 48%),
+    #9b146d;
+  border-color: #9b146d;
+
+  > div {
+    display: grid;
+    gap: 0.8rem;
+    align-items: start;
+  }
+
+  .eyebrow,
+  h2,
+  p {
+    margin: 0;
+    color: inherit;
+  }
+
+  .eyebrow {
+    font-size: 0.78rem;
+    font-weight: 850;
+    text-transform: uppercase;
+  }
+
+  .event-date {
+    font-size: 1.08rem;
+    font-weight: 800;
+    color: var(--yellow);
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    padding: 0;
+    margin: 0.35rem 0 0;
+    list-style: none;
+  }
+
+  li {
+    margin: 0;
+    color: inherit;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    padding: 0.55rem 0.9rem;
+    font-weight: 850;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 999rem;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+      background: rgba(255, 255, 255, 0.12);
+    }
+  }
+
+  li:first-child a {
+    color: #062d29;
+    background: var(--yellow);
+    border-color: var(--yellow);
+
+    &:hover,
+    &:focus-visible {
+      background: #ffffff;
+      border-color: #ffffff;
+    }
+  }
+
+  figure {
+    justify-self: center;
+    width: min(100%, 21rem);
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: var(--radius);
+    box-shadow: 0 1.2rem 2.4rem rgba(55, 8, 42, 0.3);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+body#events.event-detail {
+  #intro {
+    min-height: auto;
+
+    > .eyebrow {
+      font-size: 0.78rem;
+      font-weight: 850;
+      color: #9b146d;
+      text-transform: uppercase;
+    }
+
+    > .event-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      padding: 0;
+      margin: 0.25rem 0 0;
+      list-style: none;
+
+      li {
+        display: block;
+        padding: 0;
+        margin: 0;
+        background: transparent;
+        border: 0;
+      }
+
+      a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 2.85rem;
+        padding: 0.55rem 0.9rem;
+        font-weight: 850;
+        text-align: center;
+        text-decoration: none;
+        border: 1px solid color-mix(in srgb, var(--primary) 35%, var(--line));
+        border-radius: 999rem;
+
+        &:hover,
+        &:focus-visible {
+          text-decoration: underline;
+          background: color-mix(in srgb, var(--primary) 10%, var(--surface));
+        }
+      }
+
+      li:first-child a {
+        color: #062d29;
+        background: var(--yellow);
+        border-color: var(--yellow);
+      }
+    }
+
+    > .event-poster {
+      justify-self: center;
+      width: min(100%, 24rem);
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: initial;
+      }
+    }
+  }
+
+  #programme {
+    > p {
+      max-width: 48rem;
+    }
+  }
+
+  .event-day {
+    padding-top: clamp(1.25rem, 3vw, 2rem);
+    margin-top: clamp(1.25rem, 3vw, 2rem);
+    border-top: 1px solid var(--line);
+
+    > p {
+      margin-bottom: 1.25rem;
+    }
+  }
+
+  #programme .workshops {
+    display: grid;
+    gap: 0;
+
+    article {
+      padding: 1.25rem 0 1.25rem 1rem;
+      background: transparent;
+      border: 0;
+      border-left: 0.28rem solid #9b146d;
+      border-radius: 0;
+      box-shadow: none;
+
+      + article {
+        margin-top: 1rem;
+      }
+
+      > p {
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  .workshop-facts {
+    display: grid;
+    gap: 0.45rem;
+    margin: 0;
+
+    > div {
+      display: grid;
+      grid-template-columns: minmax(5.5rem, 0.3fr) minmax(0, 1fr);
+      gap: 0.75rem;
+    }
+
+    dt {
+      font-weight: 800;
+    }
+
+    dd {
+      margin: 0;
+      color: var(--ink-soft);
+    }
+  }
+
+  #prices table {
+    width: min(100%, 32rem);
+    margin-top: 1.25rem;
+    border-collapse: collapse;
+
+    th,
+    td {
+      padding: 0.65rem 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+    }
+
+    thead th {
+      color: #ffffff;
+      background: #9b146d;
+    }
+  }
+
+  .primary-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    padding: 0.65rem 1rem;
+    font-weight: 850;
+    color: #062d29;
+    text-align: center;
+    text-decoration: none;
+    background: var(--yellow);
+    border: 1px solid var(--yellow);
+    border-radius: 999rem;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+      background: color-mix(in srgb, var(--yellow) 75%, #ffffff);
+    }
+  }
+}
+
 
 @media (min-width: 42rem) {
   body.community-page .care-team-list {
@@ -2935,6 +3238,17 @@ body.community-page {
       align-items: center;
     }
   }
+
+  body#events.event-detail {
+    #programme .workshops {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(1.5rem, 4vw, 3rem);
+
+      article + article {
+        margin-top: 0;
+      }
+    }
+  }
 }
 
 @media (min-width: 50rem) {
@@ -2944,6 +3258,14 @@ body.community-page {
 }
 
 @media (min-width: 64rem) {
+  body > main > .featured-event {
+    grid-template-columns: minmax(0, 1fr) minmax(15rem, 21rem);
+
+    > div {
+      padding-left: clamp(0rem, 2vw, 1.5rem);
+    }
+  }
+
   body.community-page #intro:has(> .initiative-logo) {
     grid-template-columns: minmax(24rem, 1fr) minmax(16rem, 0.55fr);
     column-gap: clamp(2.5rem, 6vw, 6rem);
