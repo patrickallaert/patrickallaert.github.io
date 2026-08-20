@@ -50,6 +50,9 @@ textarea {
   --icon-instagram: url("icons/instagram.svg");
   --icon-facebook: url("icons/facebook.svg");
   --icon-youtube: url("icons/youtube.svg");
+  --icon-phone: url("icons/phone.svg");
+  --icon-sms: url("icons/message-square-text.svg");
+  --icon-whatsapp: url("icons/whatsapp.svg");
   --icon-pin: url("icons/pin.svg");
   --icon-people: url("icons/people.svg");
   --yellow: #ffd64d;
@@ -466,43 +469,6 @@ body#about {
       margin-bottom: 0;
       text-align: left;
 
-      a[href*="instagram.com"] {
-        --icon: var(--icon-instagram);
-
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 1.85rem;
-        height: 1.85rem;
-        overflow: hidden;
-        font-size: 0;
-        color: var(--accent);
-        background: color-mix(in srgb, var(--primary) 10%, transparent);
-        border: 0.08rem solid color-mix(in srgb, var(--primary) 18%, transparent);
-        border-radius: 999rem;
-        transition:
-                transform 160ms ease,
-                background-color 160ms ease,
-                border-color 160ms ease;
-
-        &:hover,
-        &:focus-visible {
-          background: color-mix(in srgb, var(--primary) 18%, transparent);
-          border-color: color-mix(in srgb, var(--primary) 35%, transparent);
-          transform: translateY(-0.05rem);
-        }
-
-        &::before {
-          display: block;
-          flex: none;
-          width: 1.25rem;
-          height: 1.25rem;
-          content: "";
-          background: currentColor;
-          -webkit-mask: var(--icon) center / contain no-repeat;
-          mask: var(--icon) center / contain no-repeat;
-        }
-      }
     }
 
     p {
@@ -867,6 +833,10 @@ body#events {
         }
 
         > p {
+          grid-column: 2;
+        }
+
+        > .team-contact {
           grid-column: 2;
         }
 
@@ -2475,10 +2445,91 @@ body#about {
     }
 
     article {
+      scroll-margin-top: 7.5rem;
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: 0 0.8rem 1.8rem rgba(0, 79, 113, 0.06);
+
+      &:target {
+        background: color-mix(in srgb, var(--yellow) 13%, var(--surface));
+        border-color: #9b146d;
+        box-shadow:
+          0 0 0 0.22rem color-mix(in srgb, #9b146d 24%, transparent),
+          0 0.8rem 1.8rem rgba(0, 79, 113, 0.1);
+      }
+    }
+
+    .team-contact {
+      margin: 0;
+      font-style: normal;
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      li {
+        margin: 0;
+      }
+
+      a {
+        --icon: var(--icon-instagram);
+
+        display: inline-flex;
+        gap: 0.42rem;
+        align-items: center;
+        justify-content: center;
+        min-height: 2.5rem;
+        padding: 0.4rem 0.7rem;
+        font-weight: 800;
+        color: var(--primary-text);
+        text-decoration: none;
+        background: color-mix(in srgb, var(--primary) 8%, var(--surface));
+        border: 1px solid color-mix(in srgb, var(--primary) 28%, var(--line));
+        border-radius: 999rem;
+        transition:
+          color 160ms ease,
+          background-color 160ms ease,
+          border-color 160ms ease,
+          transform 160ms ease;
+
+        &[href^="tel:"] {
+          --icon: var(--icon-phone);
+        }
+
+        &[href^="sms:"] {
+          --icon: var(--icon-sms);
+        }
+
+        &[href*="wa.me"] {
+          --icon: var(--icon-whatsapp);
+        }
+
+        &::before {
+          display: block;
+          flex: none;
+          width: 1.15rem;
+          height: 1.15rem;
+          content: "";
+          background: currentColor;
+          -webkit-mask: var(--icon) center / contain no-repeat;
+          mask: var(--icon) center / contain no-repeat;
+        }
+
+        &:hover,
+        &:focus-visible {
+          color: var(--primary-ink);
+          text-decoration: none;
+          background: color-mix(in srgb, var(--primary) 14%, var(--surface));
+          border-color: color-mix(in srgb, var(--primary) 48%, var(--line));
+          transform: translateY(-0.05rem);
+        }
+      }
     }
   }
 }
