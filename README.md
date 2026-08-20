@@ -57,16 +57,9 @@ Generated assets live in `docs/assets/`:
 
 Regenerate them with `npm run build`.
 
-Extract the source material into structured Markdown:
-
-```bash
-./scripts/extract_structured_content.py
-```
-
 ## Current structure
 
 - `docs/`: static HTML pages, generated HTML blocks, and compiled assets for GitHub Pages
-- `content-source/`: structured content extracted from the existing site, used as the migration base
 - `src/data/`: small structured data files shared across the site
 - `src/styles/`: SCSS source
 - `documentation/`: product and visual brief
