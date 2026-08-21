@@ -893,10 +893,6 @@ body#events {
 }
 
 body#classes {
-  .schedule-legend {
-    display: none;
-  }
-
   .schedule-days {
     display: grid;
 
@@ -2317,36 +2313,6 @@ body#classes {
     }
   }
 
-  .schedule-legend {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.55rem 1rem;
-    justify-content: center;
-    padding: 1rem 0 0;
-    margin: 1rem 0 0;
-    list-style: none;
-    border-top: 1px solid var(--line);
-
-    li {
-      display: inline-flex;
-      gap: 0.38rem;
-      align-items: center;
-      margin: 0;
-      font-size: 0.75rem;
-      font-weight: 800;
-      color: var(--ink-soft);
-      text-transform: uppercase;
-      letter-spacing: 0;
-
-      &::before {
-        width: 0.45rem;
-        height: 1.35rem;
-        content: "";
-        background: var(--course-accent);
-        border-radius: 999rem;
-      }
-    }
-  }
 }
 
 body#levels {

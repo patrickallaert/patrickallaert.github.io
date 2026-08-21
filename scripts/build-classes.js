@@ -5,15 +5,6 @@ const { loadSiteData, noClassDatesForDay, WEEKDAYS } = require("./site-data");
 const CLASSES_PATH = path.join(__dirname, "..", "docs", "classes", "index.html");
 const START_MARKER = "    <!-- class-schedules:start -->";
 const END_MARKER = "    <!-- class-schedules:end -->";
-const COURSE_ORDER = [
-    "level-1",
-    "level-2",
-    "level-3",
-    "level-4",
-    "lead-follow",
-    "roots",
-    "pratica",
-];
 
 const escapeHtml = (value) => String(value)
     .replaceAll("&", "&amp;")
@@ -166,28 +157,6 @@ const renderDay = (day, term, data) => {
     ].filter(Boolean).join("\n");
 };
 
-const legendItems = (term, data) => {
-    const courses = [...new Set(term.schedule.map((session) => session.course))];
-
-    return courses
-        .sort((left, right) => {
-            const leftIndex = COURSE_ORDER.indexOf(left);
-            const rightIndex = COURSE_ORDER.indexOf(right);
-
-            return (leftIndex === -1 ? Number.MAX_SAFE_INTEGER : leftIndex) - (rightIndex === -1 ? Number.MAX_SAFE_INTEGER : rightIndex);
-        })
-        .map((id) => ({ id, course: getCourse(data, id) }))
-        .filter(({ course }) => {
-            return course.legend !== false;
-        });
-};
-
-const renderLegend = (term, data) => [
-    '      <ul class="schedule-legend" aria-label="Course colour legend">',
-    ...legendItems(term, data).map(({ id, course }) => `        <li class="${course.legendClass || id}">${escapeHtml(course.legendLabel || courseTitle(id, course))}</li>`),
-    "      </ul>",
-].join("\n");
-
 const renderTerm = (term, data) => [
     `    <section id="${term.id}">`,
     `      <h2>${escapeHtml(term.title)}</h2>`,
@@ -198,8 +167,6 @@ const renderTerm = (term, data) => [
     WEEKDAYS.filter((day) => term.schedule.some((session) => session.day === day))
         .map((day) => renderDay(day, term, data)).join("\n"),
     "      </div>",
-    "",
-    renderLegend(term, data),
     "    </section>",
 ].filter(Boolean).join("\n");
 

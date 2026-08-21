@@ -33,15 +33,13 @@
   "courses": {
     "free-practice": {
       "title": "Free practice",
-      "legend": false,
       "link": false
     },
     "lead-follow": {
       "title": "Everyone Leads, Everyone Follows"
     },
     "pratica": {
-      "title": "Forró Prática",
-      "legendLabel": "Prática"
+      "title": "Forró Prática"
     },
     "roots": {
       "title": "Roots"
