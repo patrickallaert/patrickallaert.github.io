@@ -1,5 +1,6 @@
 {
   "featuredEvent": {
+    "category": "workshops",
     "title": "Mardio & Milena in Brussels",
     "label": "Four special forró workshops",
     "dates": "9–10 September 2026",
@@ -7,7 +8,49 @@
     "registrationUrl": "https://forms.gle/USd71MYVitjBayrY9",
     "summary": "Milena Morais and Mardio Costa are visiting from Brazil for four special forró workshops.",
     "image": "/assets/events/mardio-milena.webp",
-    "imageAlt": "Milena Morais and Mardio Costa"
+    "imageAlt": "Milena Morais and Mardio Costa",
+    "occurrences": [
+      {
+        "id": "palha-do-coqueiro",
+        "title": "A palha do coqueiro",
+        "date": "2026-09-09",
+        "time": "19:00-20:15",
+        "venue": "dublin",
+        "level": "Intermediate",
+        "prerequisite": "Completed Level 2 twice, or a higher level",
+        "description": "We’ll explore a different way of balancing the body, playing with imbalance, musicality, and movement."
+      },
+      {
+        "id": "o-molho",
+        "title": "O Molho",
+        "date": "2026-09-09",
+        "time": "20:30-21:45",
+        "venue": "dublin",
+        "level": "Open level",
+        "prerequisite": "Completed Level 2 once, or a higher level",
+        "description": "We’ll work on one of Mardio and Milena’s fundamental techniques, O Molho, and apply it to movements."
+      },
+      {
+        "id": "temperos-do-nordeste",
+        "title": "Temperos do Nordeste",
+        "date": "2026-09-10",
+        "time": "19:00-20:15",
+        "venue": "brochet",
+        "level": "Open level",
+        "prerequisite": "Completed Level 1 or a higher level",
+        "description": "We’ll explore the origins of forró and experience the characteristic movements of São João da Bahia through our bodies."
+      },
+      {
+        "id": "adaptation",
+        "title": "Adaptation: how to enjoy dancing with anyone",
+        "date": "2026-09-10",
+        "time": "20:30-21:45",
+        "venue": "brochet",
+        "level": "Advanced",
+        "prerequisite": "Completed Level 4, or danced intensively for four years and attended festivals",
+        "description": "We’ll work on techniques and tools to connect with different people and body types, applying them to movements and exploring adaptation."
+      }
+    ]
   },
   "registration": {
     "trimester": "2026-09",
@@ -43,6 +86,81 @@
     },
     "roots": {
       "title": "Roots"
+    }
+  },
+  "events": {
+    "summer-guinguette": {
+      "category": "social-dancing",
+      "title": "Summer Forró Guinguette",
+      "url": "/events/#summer-guinguettes",
+      "location": "George Henri, Brussels",
+      "time": "18:30-22:00",
+      "recurrence": {
+        "day": "wednesday",
+        "starts": "2026-07-01",
+        "ends": "2026-09-16"
+      },
+      "excludedDates": [
+        "2026-09-09"
+      ],
+      "links": {
+        "instagram": "https://www.instagram.com/reels/DaAvWxds3Vi/",
+        "facebook": "https://www.facebook.com/events/1572927807654920/1572929660988068"
+      }
+    },
+    "summer-initiation": {
+      "category": "initiations",
+      "title": "Free forró initiation",
+      "url": "/events/#summer-guinguettes",
+      "location": "George Henri, Brussels",
+      "time": "19:30",
+      "dates": [
+        "2026-07-08",
+        "2026-07-22",
+        "2026-08-05",
+        "2026-08-19",
+        "2026-09-02",
+        "2026-09-16"
+      ]
+    },
+    "sunday-pratica": {
+      "category": "social-dancing",
+      "title": "Forró Prática",
+      "url": "/events/#praticas",
+      "course": "pratica",
+      "venue": "dublin",
+      "time": "19:00-22:00",
+      "scheduleNote": "except the first Sunday of each month",
+      "recurrence": {
+        "day": "sunday",
+        "starts": "2026-09-20",
+        "ends": "2027-06-27"
+      },
+      "excludedDates": [
+        "2026-10-04",
+        "2026-11-01",
+        "2026-12-06",
+        "2027-01-03",
+        "2027-02-07",
+        "2027-03-07",
+        "2027-04-04",
+        "2027-05-02",
+        "2027-06-06"
+      ]
+    },
+    "wednesday-pratica": {
+      "category": "social-dancing",
+      "title": "Forró Prática",
+      "url": "/events/#praticas",
+      "course": "pratica",
+      "venue": "dublin",
+      "time": "20:15-22:30",
+      "note": "Open practice · No registration required",
+      "recurrence": {
+        "day": "wednesday",
+        "starts": "2026-09-23",
+        "ends": "2027-06-30"
+      }
     }
   },
   "trimesters": [
@@ -136,11 +254,7 @@
           ]
         },
         {
-          "day": "wednesday",
-          "venue": "dublin",
-          "time": "20:45-22:00",
-          "course": "pratica",
-          "note": "No registration required"
+          "event": "wednesday-pratica"
         },
         {
           "day": "thursday",

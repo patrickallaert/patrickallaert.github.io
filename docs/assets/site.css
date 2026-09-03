@@ -736,11 +736,12 @@ body#events .event-links a {
     grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
   }
   body#home #intro h1,
-  body#home #intro h1 + p {
+  body#home #intro h1 + p,
+  body#home #intro .intro-action {
     grid-column: 1;
   }
   body#home #gallery {
-    grid-row: 1/span 2;
+    grid-row: 1/span 3;
     grid-column: 2;
   }
   body#home #gallery > div {
@@ -1721,6 +1722,25 @@ body#home #intro > h1 + p {
   margin: 0;
   font-size: clamp(1rem, 1.5vw, 1.18rem);
   color: var(--ink-soft);
+}
+body#home #intro > .intro-action {
+  margin: 0;
+}
+body#home #intro > .intro-action a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.95rem;
+  color: var(--primary-ink);
+  text-decoration: none;
+  background: var(--brand-blue);
+  border: 1px solid var(--brand-blue);
+  border-radius: 999rem;
+}
+body#home #intro > .intro-action a:hover, body#home #intro > .intro-action a:focus-visible {
+  color: var(--primary-ink);
+  background: var(--brand-blue-hover);
 }
 body#home #gallery {
   align-self: center;
@@ -2786,6 +2806,164 @@ body#events.event-detail .primary-action:hover, body#events.event-detail .primar
   background: color-mix(in srgb, var(--yellow) 75%, #ffffff);
 }
 
+body#events #calendar {
+  overflow: visible;
+}
+body#events #calendar > p {
+  max-width: 50rem;
+}
+body#events .calendar-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0 0 1.4rem;
+  border: 0;
+}
+body#events .calendar-filters legend {
+  width: 100%;
+  margin-bottom: 0.45rem;
+  font-size: 1rem;
+  font-weight: 800;
+}
+body#events .calendar-filters label {
+  display: inline-flex;
+  gap: 0.45rem;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.45rem 0.7rem;
+  font-weight: 750;
+  color: var(--ink);
+  cursor: pointer;
+  background: color-mix(in srgb, var(--calendar-category) 8%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--calendar-category) 32%, var(--line));
+  border-radius: 0.35rem;
+  transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease;
+}
+body#events .calendar-filters label:has(input:not(:checked)) {
+  color: var(--ink-soft);
+  background: var(--surface);
+  border-color: var(--line);
+}
+body#events .calendar-filters input {
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+  accent-color: var(--calendar-category);
+}
+body#events .calendar-filters .classes {
+  --calendar-category: #3c73b8;
+}
+body#events .calendar-filters .social-dancing {
+  --calendar-category: #5e7f5e;
+}
+body#events .calendar-filters .workshops {
+  --calendar-category: #b85f39;
+}
+body#events .calendar-filters .initiations {
+  --calendar-category: #9b4f72;
+}
+body#events #calendar-viewer {
+  --fc-classic-button: var(--brand-blue);
+  --fc-classic-button-border: var(--brand-blue);
+  --fc-classic-button-strong: var(--brand-blue-hover);
+  --fc-classic-button-strong-border: var(--brand-blue-hover);
+  --fc-classic-button-outline: color-mix(in srgb, var(--brand-blue) 45%, transparent);
+  --fc-classic-primary: var(--brand-blue);
+  --fc-classic-background: var(--surface);
+  --fc-classic-foreground: var(--ink);
+  --fc-classic-muted-foreground: var(--ink-soft);
+  --fc-classic-border: color-mix(in srgb, var(--brand-blue) 20%, transparent);
+  --fc-classic-strong-border: color-mix(in srgb, var(--brand-blue) 38%, transparent);
+  --fc-classic-today: color-mix(in srgb, var(--yellow) 24%, transparent);
+  min-width: 0;
+}
+body#events #calendar-viewer > div:first-child {
+  display: grid !important;
+  grid-template-columns: 1fr auto;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+body#events #calendar-viewer > div:first-child > div:nth-child(1) {
+  grid-row: 2;
+  grid-column: 1;
+  justify-self: start;
+}
+body#events #calendar-viewer > div:first-child > div:nth-child(2) {
+  grid-row: 1;
+  grid-column: 1/-1;
+  justify-self: center;
+}
+body#events #calendar-viewer > div:first-child > div:nth-child(3) {
+  grid-row: 2;
+  grid-column: 2;
+  justify-self: end;
+}
+body#events #calendar-viewer button {
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  font-weight: 750;
+}
+body#events #calendar-viewer [role=heading] {
+  font-family: var(--font-body);
+  font-size: clamp(1.2rem, 3vw, 1.55rem);
+  font-weight: 800;
+  color: var(--ink);
+}
+body#events #calendar-viewer [role=grid] {
+  overflow: hidden;
+  background: var(--surface);
+  border-radius: 0.35rem;
+}
+body#events #calendar-viewer a[aria-label] {
+  font-weight: 400;
+  color: #ffffff;
+  background: var(--calendar-category) !important;
+  border-color: color-mix(in srgb, var(--calendar-category) 70%, #000000) !important;
+}
+body#events #calendar-viewer a[aria-label] > :first-child:empty {
+  display: none;
+}
+body#events #calendar-viewer a[aria-label] * {
+  font-weight: inherit;
+  color: inherit;
+}
+body#events #calendar-viewer a[aria-label]:hover, body#events #calendar-viewer a[aria-label]:focus-visible {
+  color: #ffffff;
+  filter: brightness(0.88);
+}
+body#events #calendar-viewer a.classes {
+  --calendar-category: #35699f;
+}
+body#events #calendar-viewer a.social-dancing {
+  --calendar-category: #486948;
+}
+body#events #calendar-viewer a.workshops {
+  --calendar-category: #994928;
+}
+body#events #calendar-viewer a.initiations {
+  --calendar-category: #8b4264;
+}
+body#events #calendar-viewer .calendar-event-details {
+  display: grid;
+  grid-template-columns: 4.8rem minmax(0, 1fr);
+  gap: 0.55rem;
+  width: 100%;
+  padding: 0.2rem 0.1rem;
+}
+body#events #calendar-viewer .calendar-event-time {
+  font-variant-numeric: tabular-nums;
+}
+body#events #calendar-viewer .calendar-event-copy {
+  display: grid;
+  gap: 0.08rem;
+  min-width: 0;
+}
+body#events #calendar-viewer .calendar-event-copy > span {
+  opacity: 0.88;
+}
+
 @media (min-width: 42rem) {
   body.community-page .care-team-list {
     grid-template-columns: repeat(4, minmax(0, 10rem));
@@ -2825,16 +3003,34 @@ body#events.event-detail .primary-action:hover, body#events.event-detail .primar
     grid-template-columns: minmax(16rem, 0.86fr) minmax(21rem, 1.14fr);
   }
   body#home #intro > h1,
-  body#home #intro > h1 + p {
+  body#home #intro > h1 + p,
+  body#home #intro > .intro-action {
     grid-column: 1;
   }
   body#home #gallery {
-    grid-row: 1/span 2;
+    grid-row: 1/span 3;
     grid-column: 2;
   }
   body#home #video {
     grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
     align-items: center;
+  }
+  body#events #calendar-viewer > div:first-child {
+    grid-template-columns: 1fr auto 1fr;
+  }
+  body#events #calendar-viewer > div:first-child > div:nth-child(1),
+  body#events #calendar-viewer > div:first-child > div:nth-child(2),
+  body#events #calendar-viewer > div:first-child > div:nth-child(3) {
+    grid-row: 1;
+  }
+  body#events #calendar-viewer > div:first-child > div:nth-child(1) {
+    grid-column: 1;
+  }
+  body#events #calendar-viewer > div:first-child > div:nth-child(2) {
+    grid-column: 2;
+  }
+  body#events #calendar-viewer > div:first-child > div:nth-child(3) {
+    grid-column: 3;
   }
   body#events.event-detail #programme .workshops {
     grid-template-columns: repeat(2, minmax(0, 1fr));

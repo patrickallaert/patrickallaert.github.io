@@ -871,13 +871,14 @@ body#events {
       grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
 
       h1,
-      h1 + p {
+      h1 + p,
+      .intro-action {
         grid-column: 1;
       }
     }
 
     #gallery {
-      grid-row: 1 / span 2;
+      grid-row: 1 / span 3;
       grid-column: 2;
     }
 
@@ -2005,6 +2006,29 @@ body#home {
       margin: 0;
       font-size: clamp(1rem, 1.5vw, 1.18rem);
       color: var(--ink-soft);
+    }
+
+    > .intro-action {
+      margin: 0;
+
+      a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 2.75rem;
+        padding: 0.55rem 0.95rem;
+        color: var(--primary-ink);
+        text-decoration: none;
+        background: var(--brand-blue);
+        border: 1px solid var(--brand-blue);
+        border-radius: 999rem;
+
+        &:hover,
+        &:focus-visible {
+          color: var(--primary-ink);
+          background: var(--brand-blue-hover);
+        }
+      }
     }
   }
 
@@ -3187,6 +3211,197 @@ body#events.event-detail {
   }
 }
 
+body#events {
+  #calendar {
+    overflow: visible;
+
+    > p {
+      max-width: 50rem;
+    }
+  }
+
+  .calendar-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0 0 1.4rem;
+    border: 0;
+
+    legend {
+      width: 100%;
+      margin-bottom: 0.45rem;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    label {
+      display: inline-flex;
+      gap: 0.45rem;
+      align-items: center;
+      min-height: 2.75rem;
+      padding: 0.45rem 0.7rem;
+      font-weight: 750;
+      color: var(--ink);
+      cursor: pointer;
+      background: color-mix(in srgb, var(--calendar-category) 8%, var(--surface));
+      border: 1px solid color-mix(in srgb, var(--calendar-category) 32%, var(--line));
+      border-radius: 0.35rem;
+      transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease;
+
+      &:has(input:not(:checked)) {
+        color: var(--ink-soft);
+        background: var(--surface);
+        border-color: var(--line);
+      }
+    }
+
+    input {
+      width: 1rem;
+      height: 1rem;
+      margin: 0;
+      accent-color: var(--calendar-category);
+    }
+
+    .classes {
+      --calendar-category: #3c73b8;
+    }
+
+    .social-dancing {
+      --calendar-category: #5e7f5e;
+    }
+
+    .workshops {
+      --calendar-category: #b85f39;
+    }
+
+    .initiations {
+      --calendar-category: #9b4f72;
+    }
+  }
+
+  #calendar-viewer {
+    --fc-classic-button: var(--brand-blue);
+    --fc-classic-button-border: var(--brand-blue);
+    --fc-classic-button-strong: var(--brand-blue-hover);
+    --fc-classic-button-strong-border: var(--brand-blue-hover);
+    --fc-classic-button-outline: color-mix(in srgb, var(--brand-blue) 45%, transparent);
+    --fc-classic-primary: var(--brand-blue);
+    --fc-classic-background: var(--surface);
+    --fc-classic-foreground: var(--ink);
+    --fc-classic-muted-foreground: var(--ink-soft);
+    --fc-classic-border: color-mix(in srgb, var(--brand-blue) 20%, transparent);
+    --fc-classic-strong-border: color-mix(in srgb, var(--brand-blue) 38%, transparent);
+    --fc-classic-today: color-mix(in srgb, var(--yellow) 24%, transparent);
+    min-width: 0;
+
+    > div:first-child {
+      display: grid !important;
+      grid-template-columns: 1fr auto;
+      gap: 0.75rem;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      > div:nth-child(1) {
+        grid-row: 2;
+        grid-column: 1;
+        justify-self: start;
+      }
+
+      > div:nth-child(2) {
+        grid-row: 1;
+        grid-column: 1 / -1;
+        justify-self: center;
+      }
+
+      > div:nth-child(3) {
+        grid-row: 2;
+        grid-column: 2;
+        justify-self: end;
+      }
+    }
+
+    button {
+      min-width: 2.75rem;
+      min-height: 2.75rem;
+      font-weight: 750;
+    }
+
+    [role="heading"] {
+      font-family: var(--font-body);
+      font-size: clamp(1.2rem, 3vw, 1.55rem);
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    [role="grid"] {
+      overflow: hidden;
+      background: var(--surface);
+      border-radius: 0.35rem;
+    }
+
+    a[aria-label] {
+      font-weight: 400;
+      color: #ffffff;
+      background: var(--calendar-category) !important;
+      border-color: color-mix(in srgb, var(--calendar-category) 70%, #000000) !important;
+
+      > :first-child:empty {
+        display: none;
+      }
+
+      * {
+        font-weight: inherit;
+        color: inherit;
+      }
+
+      &:hover,
+      &:focus-visible {
+        color: #ffffff;
+        filter: brightness(0.88);
+      }
+    }
+
+    a.classes {
+      --calendar-category: #35699f;
+    }
+
+    a.social-dancing {
+      --calendar-category: #486948;
+    }
+
+    a.workshops {
+      --calendar-category: #994928;
+    }
+
+    a.initiations {
+      --calendar-category: #8b4264;
+    }
+
+    .calendar-event-details {
+      display: grid;
+      grid-template-columns: 4.8rem minmax(0, 1fr);
+      gap: 0.55rem;
+      width: 100%;
+      padding: 0.2rem 0.1rem;
+    }
+
+    .calendar-event-time {
+      font-variant-numeric: tabular-nums;
+    }
+
+    .calendar-event-copy {
+      display: grid;
+      gap: 0.08rem;
+      min-width: 0;
+
+      > span {
+        opacity: 0.88;
+      }
+    }
+  }
+}
+
 
 @media (min-width: 42rem) {
   body.community-page .care-team-list {
@@ -3240,19 +3455,42 @@ body#events.event-detail {
       grid-template-columns: minmax(16rem, 0.86fr) minmax(21rem, 1.14fr);
 
       > h1,
-      > h1 + p {
+      > h1 + p,
+      > .intro-action {
         grid-column: 1;
       }
     }
 
     #gallery {
-      grid-row: 1 / span 2;
+      grid-row: 1 / span 3;
       grid-column: 2;
     }
 
     #video {
       grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
       align-items: center;
+    }
+  }
+
+  body#events #calendar-viewer > div:first-child {
+    grid-template-columns: 1fr auto 1fr;
+
+    > div:nth-child(1),
+    > div:nth-child(2),
+    > div:nth-child(3) {
+      grid-row: 1;
+    }
+
+    > div:nth-child(1) {
+      grid-column: 1;
+    }
+
+    > div:nth-child(2) {
+      grid-column: 2;
+    }
+
+    > div:nth-child(3) {
+      grid-column: 3;
     }
   }
 

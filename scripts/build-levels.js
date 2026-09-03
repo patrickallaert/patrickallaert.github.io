@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { loadSiteData, noClassDatesForDay, scheduleForLevel } = require("./site-data");
+const { loadSiteData, noClassDatesForDay, scheduleForLevel, sessionOccurrences } = require("./site-data");
 
 const LEVELS_PATH = path.join(__dirname, "..", "docs", "levels", "index.html");
 const COURSE_SECTIONS = [
@@ -28,16 +28,6 @@ const formatTime = (time) => time.replace(":", "h");
 
 const dayName = (day) => day.charAt(0).toUpperCase() + day.slice(1);
 
-const DAY_INDEX = {
-    sunday: 0,
-    monday: 1,
-    tuesday: 2,
-    wednesday: 3,
-    thursday: 4,
-    friday: 5,
-    saturday: 6,
-};
-
 const listNames = (items) => {
     if (items.length <= 1) return items.join("");
     if (items.length === 2) return `${items[0]} &amp; ${items[1]}`;
@@ -61,40 +51,6 @@ const renderPeople = (session, data) => {
     }
 
     return teachers;
-};
-
-const dateToIso = (date) => date.toISOString().slice(0, 10);
-
-const utcDate = (date) => new Date(`${date}T00:00:00Z`);
-
-const firstDayInRange = (start, day) => {
-    const date = utcDate(start);
-    const offset = (DAY_INDEX[day] - date.getUTCDay() + 7) % 7;
-
-    date.setUTCDate(date.getUTCDate() + offset);
-
-    return dateToIso(date);
-};
-
-const nextWeek = (date) => {
-    const next = utcDate(date);
-
-    next.setUTCDate(next.getUTCDate() + 7);
-
-    return dateToIso(next);
-};
-
-const sessionOccurrences = (term, session) => {
-    const starts = session.starts || firstDayInRange(term.starts, session.day);
-    const ends = session.ends || term.ends;
-    const noClass = new Set(noClassDatesForDay(term, session.day));
-    const dates = [];
-
-    for (let date = starts; date <= ends; date = nextWeek(date)) {
-        if (!noClass.has(date)) dates.push(date);
-    }
-
-    return dates;
 };
 
 const sessionDateRange = (term, session) => {

@@ -9,8 +9,9 @@ that cannot be derived safely.
 - `trimesters` contains every programme to publish, in display order.
 - `noClassDates` lists dates on which every class scheduled that day is cancelled.
 - `schedule` contains the recurring class slots for a trimester.
+- `events` contains recurring or explicitly dated public activities such as práticas, Guinguettes, and initiations. A schedule item may reference one of these entries with `event`.
 - `registration` points to the only trimester accepting registrations and its form URL. Set it to `null` to close registration.
-- `featuredEvent` controls the single event promoted across the site. Set it to `null` to remove the global banner and the promotional blocks from Home and Events.
+- `featuredEvent` controls the single event promoted across the site. Its `occurrences` list contains the individually timed workshops. Set it to `null` to remove the global banner and the promotional blocks from Home and Events.
 - `venues`, `teachers`, and `courses` provide shared labels and course-specific display options.
 
 ## Derived By The Generator
@@ -21,13 +22,16 @@ that cannot be derived safely.
 - `level-N` and `roots-N` titles and CSS classes are inferred from their IDs.
 - Day names and the weekday for each no-class date are derived automatically.
 - Registration labels are generated from the referenced trimester title.
-- Session duration classes and legend items are generated from the schedule.
+- Session duration classes are generated from the schedule.
+- Weekly calendar occurrences are derived from `recurrence`; one-off or irregular occurrences use `dates`. `excludedDates` removes exceptions.
 
 ## Generated HTML Blocks
 
 - `scripts/build-classes.js` replaces the `class-schedules` block in `docs/classes/index.html`.
 - `scripts/build-levels.js` replaces the `course-sessions:<course-id>` blocks in `docs/levels/index.html`.
 - `scripts/build-venues.js` replaces the `venue-sessions:<venue-id>` blocks in `docs/venues/index.html`.
+- `scripts/build-events.js` replaces the workshop programme, Guinguette details, and prática schedules in `docs/events/`.
+- `scripts/build-calendar.js` writes all individual class and event occurrences into the calendar block in `docs/events/index.html`.
 - `scripts/build-registration.js` replaces the `registration-status` and `registration-link` blocks in `docs/register/index.html`.
 - `scripts/build-featured-event.js` replaces the `featured-event-banner`, `featured-event-home`, and `featured-event-summary` blocks in `docs/`.
 

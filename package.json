@@ -4,19 +4,24 @@
   "version": "0.1.0",
   "description": "Static site rebuild for Conexao",
   "scripts": {
-    "build:html": "node scripts/build-classes.js && node scripts/build-levels.js && node scripts/build-venues.js && node scripts/build-registration.js && node scripts/build-featured-event.js",
+    "build:html": "node scripts/build-classes.js && node scripts/build-levels.js && node scripts/build-venues.js && node scripts/build-events.js && node scripts/build-calendar.js && node scripts/build-registration.js && node scripts/build-featured-event.js",
     "build:css": "sass --no-source-map src/styles/site.scss docs/assets/site.css",
-    "build": "npm run build:html && npm run build:css",
+    "build:js": "esbuild src/scripts/calendar.js --bundle --minify --legal-comments=none --format=iife --outfile=docs/assets/calendar.js",
+    "build": "npm run build:html && npm run build:css && npm run build:js",
     "lint:css": "stylelint \"src/styles/**/*.scss\"",
     "test:contrast": "node scripts/check-contrast.js",
-    "verify": "npm run lint:css && npm run build && npm run test:contrast",
+    "test:calendar": "node scripts/check-calendar.js",
+    "verify": "npm run lint:css && npm run build && npm run test:contrast && npm run test:calendar",
     "watch:css": "sass --watch src/styles/site.scss:docs/assets/site.css"
   },
   "devDependencies": {
+    "esbuild": "^0.28.2",
+    "fullcalendar": "^7.0.2",
     "playwright": "^1.59.1",
     "postcss-scss": "^4.0.9",
     "sass": "^1.93.2",
     "stylelint": "^17.6.0",
-    "stylelint-config-recess-order": "^7.7.0"
+    "stylelint-config-recess-order": "^7.7.0",
+    "temporal-polyfill": "^1.0.4"
   }
 }
