@@ -74,6 +74,19 @@
         }
       },
       {
+        "id": "pianofabriek-12-september",
+        "type": "intro",
+        "date": "2026-09-12",
+        "time": "18:00-19:00",
+        "location": "Pianofabriek",
+        "address": "Fortstraat 35, 1060 Saint-Gilles",
+        "language": "English or French, with Portuguese translation possible",
+        "event": {
+          "title": "Panorama Brasilis",
+          "url": "https://www.pianofabriek.be/en/activiteiten/bora-pianofabriek-cineclube-panorama-brasilis"
+        }
+      },
+      {
         "id": "ten-noey-14-september",
         "type": "intro",
         "date": "2026-09-14",
