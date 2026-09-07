@@ -81,10 +81,15 @@ during the web optimization process.
 ## Site data model
 
 `src/data/site.json` contains the structured information that changes with the
-programme: trimesters, schedules, venues, teachers, courses, and registration.
-Every configured trimester is published in JSON order. Registration is either
-`null` when closed or points to exactly one configured trimester and its form
-URL.
+programme: trimesters, schedules, venues, teachers, courses, registration, and
+free intro campaigns. Every configured trimester is published in JSON order.
+Registration is either `null` when closed or points to exactly one configured
+trimester and its form URL.
+
+The permanent `/try-forro/` page and its temporary promotions are controlled by
+`freeIntro.status`. Set it to `open` while free sessions can be booked, or to
+`closed` to replace the schedule with the next-period message and remove the
+prominent links. Run `npm run build` and deploy after changing the status.
 
 ## Current approach
 
@@ -97,6 +102,7 @@ Build scripts may update marked regions inside those same HTML files:
 - `course-sessions:<course-id>` blocks in `docs/levels/index.html`
 - `venue-sessions:<venue-id>` blocks in `docs/venues/index.html`
 - `registration-status` and `registration-link` blocks in `docs/register/index.html`
+- `free-intro-*` blocks on the permanent `/try-forro/` page and its contextual entry points
 
 Stable publication metadata is maintained directly in the HTML. When adding,
 renaming, or removing a public page:

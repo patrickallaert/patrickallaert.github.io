@@ -1786,7 +1786,8 @@ body#levels #intro,
 body#about #intro,
 body#venues #intro,
 body#events #intro,
-body#register #intro {
+body#register #intro,
+body#try-forro #intro {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: clamp(1rem, 3vw, 1.8rem);
@@ -1798,7 +1799,8 @@ body#levels #intro > h1,
 body#about #intro > h1,
 body#venues #intro > h1,
 body#events #intro > h1,
-body#register #intro > h1 {
+body#register #intro > h1,
+body#try-forro #intro > h1 {
   max-width: 12ch;
   margin: 0;
 }
@@ -1807,7 +1809,8 @@ body#levels #intro > h1 strong,
 body#about #intro > h1 strong,
 body#venues #intro > h1 strong,
 body#events #intro > h1 strong,
-body#register #intro > h1 strong {
+body#register #intro > h1 strong,
+body#try-forro #intro > h1 strong {
   color: var(--clay-text);
 }
 body#classes #intro > p,
@@ -1815,7 +1818,8 @@ body#levels #intro > p,
 body#about #intro > p,
 body#venues #intro > p,
 body#events #intro > p,
-body#register #intro > p {
+body#register #intro > p,
+body#try-forro #intro > p {
   max-width: 38rem;
   margin: 0;
   font-size: clamp(1rem, 1.45vw, 1.16rem);
@@ -1832,7 +1836,9 @@ body#venues #intro > ol,
 body#events #intro > ul,
 body#events #intro > ol,
 body#register #intro > ul,
-body#register #intro > ol {
+body#register #intro > ol,
+body#try-forro #intro > ul,
+body#try-forro #intro > ol {
   display: grid;
   gap: 0.75rem;
   padding: 0;
@@ -1850,7 +1856,9 @@ body#venues #intro > ol:not([aria-label="Trimester rhythm"]) > li,
 body#events #intro > ul:not([aria-label="Trimester rhythm"]) > li,
 body#events #intro > ol:not([aria-label="Trimester rhythm"]) > li,
 body#register #intro > ul:not([aria-label="Trimester rhythm"]) > li,
-body#register #intro > ol:not([aria-label="Trimester rhythm"]) > li {
+body#register #intro > ol:not([aria-label="Trimester rhythm"]) > li,
+body#try-forro #intro > ul:not([aria-label="Trimester rhythm"]) > li,
+body#try-forro #intro > ol:not([aria-label="Trimester rhythm"]) > li {
   display: grid;
   gap: 0.25rem;
   padding: 0.9rem 1rem;
@@ -1869,7 +1877,9 @@ body#venues #intro > ol strong,
 body#events #intro > ul strong,
 body#events #intro > ol strong,
 body#register #intro > ul strong,
-body#register #intro > ol strong {
+body#register #intro > ol strong,
+body#try-forro #intro > ul strong,
+body#try-forro #intro > ol strong {
   display: block;
   color: var(--ink);
 }
@@ -1884,7 +1894,9 @@ body#venues #intro > ol span,
 body#events #intro > ul span,
 body#events #intro > ol span,
 body#register #intro > ul span,
-body#register #intro > ol span {
+body#register #intro > ol span,
+body#try-forro #intro > ul span,
+body#try-forro #intro > ol span {
   color: var(--ink-soft);
 }
 body#classes #intro > figure,
@@ -1892,7 +1904,8 @@ body#levels #intro > figure,
 body#about #intro > figure,
 body#venues #intro > figure,
 body#events #intro > figure,
-body#register #intro > figure {
+body#register #intro > figure,
+body#try-forro #intro > figure {
   margin: 0;
   overflow: hidden;
   border-radius: calc(var(--radius) * 1.1);
@@ -1903,7 +1916,8 @@ body#levels #intro > figure img,
 body#about #intro > figure img,
 body#venues #intro > figure img,
 body#events #intro > figure img,
-body#register #intro > figure img {
+body#register #intro > figure img,
+body#try-forro #intro > figure img {
   width: 100%;
   height: clamp(18rem, 52vw, 28rem);
   object-fit: cover;
@@ -1914,11 +1928,134 @@ body#levels #intro > figure figcaption,
 body#about #intro > figure figcaption,
 body#venues #intro > figure figcaption,
 body#events #intro > figure figcaption,
-body#register #intro > figure figcaption {
+body#register #intro > figure figcaption,
+body#try-forro #intro > figure figcaption {
   padding: 0.7rem 0.85rem;
   margin: 0;
   color: var(--primary-ink);
   background: rgba(0, 79, 113, 0.88);
+}
+
+body#register .free-intro-promotion {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 38rem;
+  padding: 1rem;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--yellow) 18%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--yellow) 48%, var(--line));
+  border-radius: var(--radius);
+}
+body#register .free-intro-promotion p {
+  margin: 0;
+}
+body#register .free-intro-promotion a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: start;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.95rem;
+  color: var(--primary-ink);
+  text-decoration: none;
+  background: var(--brand-blue);
+  border: 1px solid var(--brand-blue);
+  border-radius: 999rem;
+}
+body#register .free-intro-promotion a:hover, body#register .free-intro-promotion a:focus-visible {
+  color: var(--primary-ink);
+  background: var(--brand-blue-hover);
+}
+body#register .free-intro-return {
+  font-size: 1rem;
+}
+
+body#try-forro #free-sessions > p {
+  max-width: 52rem;
+}
+body#try-forro .free-intro-sessions {
+  display: grid;
+  gap: 0;
+  margin-block: clamp(1.25rem, 3vw, 2rem);
+  border-bottom: 1px solid var(--line);
+}
+body#try-forro .free-intro-sessions article {
+  display: grid;
+  gap: 0.45rem;
+  padding-block: 1.2rem;
+  border-top: 1px solid var(--line);
+}
+body#try-forro .free-intro-sessions article h3,
+body#try-forro .free-intro-sessions article p {
+  margin: 0;
+}
+body#try-forro .session-type {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--clay-text);
+  text-transform: uppercase;
+}
+body#try-forro .session-facts {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0.35rem 0 0;
+}
+body#try-forro .session-facts > div {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: 0.75rem;
+}
+body#try-forro .session-facts dt {
+  font-weight: 700;
+  color: var(--ink);
+}
+body#try-forro .session-facts dd {
+  margin: 0;
+  color: var(--ink-soft);
+}
+body#try-forro .free-intro-registration {
+  display: grid;
+  gap: 0.75rem;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  background: color-mix(in srgb, var(--yellow) 16%, var(--surface));
+  border-left: 0.25rem solid var(--yellow);
+}
+body#try-forro .free-intro-registration h3,
+body#try-forro .free-intro-registration p {
+  margin: 0;
+}
+body#try-forro .free-intro-action a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.95rem;
+  color: var(--primary-ink);
+  text-decoration: none;
+  background: var(--brand-blue);
+  border: 1px solid var(--brand-blue);
+  border-radius: 999rem;
+}
+body#try-forro .free-intro-action a:hover, body#try-forro .free-intro-action a:focus-visible {
+  color: var(--primary-ink);
+  background: var(--brand-blue-hover);
+}
+
+body#events #intro > .intro-action a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.95rem;
+  color: var(--primary-ink);
+  text-decoration: none;
+  background: var(--brand-blue);
+  border: 1px solid var(--brand-blue);
+  border-radius: 999rem;
+}
+body#events #intro > .intro-action a:hover, body#events #intro > .intro-action a:focus-visible {
+  color: var(--primary-ink);
+  background: var(--brand-blue-hover);
 }
 
 body#classes #intro > ul[aria-label="Trimester rhythm"] {
@@ -2222,6 +2359,18 @@ body#events main > section:not(#intro) article {
   box-shadow: 0 0.8rem 1.8rem rgba(0, 79, 113, 0.06);
 }
 
+@media (min-width: 48rem) {
+  body#try-forro .free-intro-sessions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  body#try-forro .free-intro-sessions article:nth-child(odd) {
+    padding-right: clamp(1rem, 3vw, 2rem);
+  }
+  body#try-forro .free-intro-sessions article:nth-child(even) {
+    padding-left: clamp(1rem, 3vw, 2rem);
+    border-left: 1px solid var(--line);
+  }
+}
 body#classes main a[href^="https://forms.gle"],
 body#classes main a[href*="docs.google.com/forms"],
 body#register main a[href^="https://forms.gle"],
@@ -2863,6 +3012,12 @@ body#events .calendar-filters .workshops {
 body#events .calendar-filters .initiations {
   --calendar-category: #9b4f72;
 }
+body#events .calendar-filters .calendar-filter-note {
+  width: 100%;
+  margin: 0.15rem 0 0;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
 body#events #calendar-viewer {
   --fc-classic-button: var(--brand-blue);
   --fc-classic-button-border: var(--brand-blue);
@@ -2944,6 +3099,11 @@ body#events #calendar-viewer a.workshops {
 }
 body#events #calendar-viewer a.initiations {
   --calendar-category: #8b4264;
+}
+body#events #calendar-viewer a.free-trial {
+  background: linear-gradient(110deg, #35699f 0 42%, #8b4264 42% 100%) !important;
+  border-color: #623047 !important;
+  box-shadow: none;
 }
 body#events #calendar-viewer .calendar-event-details {
   display: grid;
@@ -3077,7 +3237,8 @@ body#events #calendar-viewer .calendar-event-copy > span {
   body#about #intro:has(> figure),
   body#venues #intro:has(> figure),
   body#events #intro:has(> figure),
-  body#register #intro:has(> figure) {
+  body#register #intro:has(> figure),
+  body#try-forro #intro:has(> figure) {
     grid-template-columns: minmax(18rem, 0.92fr) minmax(22rem, 1.08fr);
     column-gap: clamp(2rem, 4vw, 4rem);
   }
@@ -3104,7 +3265,11 @@ body#events #calendar-viewer .calendar-event-copy > span {
   body#register #intro:has(> figure) > h1,
   body#register #intro:has(> figure) > p,
   body#register #intro:has(> figure) > ul,
-  body#register #intro:has(> figure) > ol {
+  body#register #intro:has(> figure) > ol,
+  body#try-forro #intro:has(> figure) > h1,
+  body#try-forro #intro:has(> figure) > p,
+  body#try-forro #intro:has(> figure) > ul,
+  body#try-forro #intro:has(> figure) > ol {
     grid-column: 1;
   }
   body#classes #intro:has(> figure) > figure,
@@ -3112,7 +3277,8 @@ body#events #calendar-viewer .calendar-event-copy > span {
   body#about #intro:has(> figure) > figure,
   body#venues #intro:has(> figure) > figure,
   body#events #intro:has(> figure) > figure,
-  body#register #intro:has(> figure) > figure {
+  body#register #intro:has(> figure) > figure,
+  body#try-forro #intro:has(> figure) > figure {
     grid-row: 1/span 4;
     grid-column: 2;
   }

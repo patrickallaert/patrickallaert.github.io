@@ -2085,7 +2085,8 @@ body#levels,
 body#about,
 body#venues,
 body#events,
-body#register {
+body#register,
+body#try-forro {
   #intro {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
@@ -2158,6 +2159,154 @@ body#register {
         color: var(--primary-ink);
         background: rgba(0, 79, 113, 0.88);
       }
+    }
+  }
+}
+
+body#register {
+  .free-intro-promotion {
+    display: grid;
+    gap: 0.75rem;
+    max-width: 38rem;
+    padding: 1rem;
+    color: var(--ink);
+    background: color-mix(in srgb, var(--yellow) 18%, var(--surface));
+    border: 1px solid color-mix(in srgb, var(--yellow) 48%, var(--line));
+    border-radius: var(--radius);
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      justify-self: start;
+      min-height: 2.75rem;
+      padding: 0.55rem 0.95rem;
+      color: var(--primary-ink);
+      text-decoration: none;
+      background: var(--brand-blue);
+      border: 1px solid var(--brand-blue);
+      border-radius: 999rem;
+
+      &:hover,
+      &:focus-visible {
+        color: var(--primary-ink);
+        background: var(--brand-blue-hover);
+      }
+    }
+  }
+
+  .free-intro-return {
+    font-size: 1rem;
+  }
+}
+
+body#try-forro {
+  #free-sessions > p {
+    max-width: 52rem;
+  }
+
+  .free-intro-sessions {
+    display: grid;
+    gap: 0;
+    margin-block: clamp(1.25rem, 3vw, 2rem);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .free-intro-sessions article {
+    display: grid;
+    gap: 0.45rem;
+    padding-block: 1.2rem;
+    border-top: 1px solid var(--line);
+
+    h3,
+    p {
+      margin: 0;
+    }
+  }
+
+  .session-type {
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--clay-text);
+    text-transform: uppercase;
+  }
+
+  .session-facts {
+    display: grid;
+    gap: 0.35rem;
+    margin: 0.35rem 0 0;
+
+    > div {
+      display: grid;
+      grid-template-columns: 5rem minmax(0, 1fr);
+      gap: 0.75rem;
+    }
+
+    dt {
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    dd {
+      margin: 0;
+      color: var(--ink-soft);
+    }
+  }
+
+  .free-intro-registration {
+    display: grid;
+    gap: 0.75rem;
+    padding: clamp(1rem, 3vw, 1.5rem);
+    background: color-mix(in srgb, var(--yellow) 16%, var(--surface));
+    border-left: 0.25rem solid var(--yellow);
+
+    h3,
+    p {
+      margin: 0;
+    }
+  }
+
+  .free-intro-action a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    padding: 0.55rem 0.95rem;
+    color: var(--primary-ink);
+    text-decoration: none;
+    background: var(--brand-blue);
+    border: 1px solid var(--brand-blue);
+    border-radius: 999rem;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--primary-ink);
+      background: var(--brand-blue-hover);
+    }
+  }
+}
+
+body#events #intro > .intro-action {
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    padding: 0.55rem 0.95rem;
+    color: var(--primary-ink);
+    text-decoration: none;
+    background: var(--brand-blue);
+    border: 1px solid var(--brand-blue);
+    border-radius: 999rem;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--primary-ink);
+      background: var(--brand-blue-hover);
     }
   }
 }
@@ -2532,6 +2681,21 @@ body#events {
     border: 1px solid var(--line);
     border-radius: var(--radius);
     box-shadow: 0 0.8rem 1.8rem rgba(0, 79, 113, 0.06);
+  }
+}
+
+@media (min-width: 48rem) {
+  body#try-forro .free-intro-sessions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    article:nth-child(odd) {
+      padding-right: clamp(1rem, 3vw, 2rem);
+    }
+
+    article:nth-child(even) {
+      padding-left: clamp(1rem, 3vw, 2rem);
+      border-left: 1px solid var(--line);
+    }
   }
 }
 
@@ -3278,6 +3442,13 @@ body#events {
     .initiations {
       --calendar-category: #9b4f72;
     }
+
+    .calendar-filter-note {
+      width: 100%;
+      margin: 0.15rem 0 0;
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+    }
   }
 
   #calendar-viewer {
@@ -3376,6 +3547,12 @@ body#events {
 
     a.initiations {
       --calendar-category: #8b4264;
+    }
+
+    a.free-trial {
+      background: linear-gradient(110deg, #35699f 0 42%, #8b4264 42% 100%) !important;
+      border-color: #623047 !important;
+      box-shadow: none;
     }
 
     .calendar-event-details {
@@ -3552,7 +3729,8 @@ body#events {
   body#about,
   body#venues,
   body#events,
-  body#register {
+  body#register,
+  body#try-forro {
     #intro:has(> figure) {
       grid-template-columns: minmax(18rem, 0.92fr) minmax(22rem, 1.08fr);
       column-gap: clamp(2rem, 4vw, 4rem);

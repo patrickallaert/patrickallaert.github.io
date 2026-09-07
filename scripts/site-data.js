@@ -48,6 +48,9 @@ const validateSiteData = (data) => {
     assert(data.courses && typeof data.courses === "object", "courses must be an object");
     assert(data.events && typeof data.events === "object", "events must be an object");
     assert(Array.isArray(data.trimesters), "trimesters must be an array");
+    assert(["open", "closed"].includes(data.freeIntro.status), "freeIntro status must be open or closed");
+    assert(data.freeIntro.registrationUrl, "freeIntro needs a registrationUrl");
+    assert(Array.isArray(data.freeIntro.sessions), "freeIntro sessions must be an array");
 
     const trimesterIds = new Set();
 

@@ -11,6 +11,7 @@ that cannot be derived safely.
 - `schedule` contains the recurring class slots for a trimester.
 - `events` contains recurring or explicitly dated public activities such as práticas, Guinguettes, and initiations. A schedule item may reference one of these entries with `event`.
 - `registration` points to the only trimester accepting registrations and its form URL. Set it to `null` to close registration.
+- `freeIntro` controls the permanent `/try-forro/` page and its temporary promotion. `status` is explicitly `open` or `closed`; sessions identify standalone introductions or reference an existing event or scheduled class so the calendar does not duplicate them.
 - `featuredEvent` controls the single event promoted across the site. Its `occurrences` list contains the individually timed workshops. Set it to `null` to remove the global banner and the promotional blocks from Home and Events.
 - `venues`, `teachers`, and `courses` provide shared labels and course-specific display options.
 
@@ -23,7 +24,7 @@ that cannot be derived safely.
 - Day names and the weekday for each no-class date are derived automatically.
 - Registration labels are generated from the referenced trimester title.
 - Session duration classes are generated from the schedule.
-- Weekly calendar occurrences are derived from `recurrence`; one-off or irregular occurrences use `dates`. `excludedDates` removes exceptions.
+- Weekly calendar occurrences are derived from `recurrence`; one-off or irregular occurrences use `dates`. `excludedDates` removes exceptions. Each occurrence has one primary visual `category` and one or more filtering `categories`; free Level 1 trials belong to both classes and initiations without being duplicated.
 
 ## Generated HTML Blocks
 
@@ -33,6 +34,7 @@ that cannot be derived safely.
 - `scripts/build-events.js` replaces the workshop programme, Guinguette details, and prática schedules in `docs/events/`.
 - `scripts/build-calendar.js` writes all individual class and event occurrences into the calendar block in `docs/events/index.html`.
 - `scripts/build-registration.js` replaces the `registration-status` and `registration-link` blocks in `docs/register/index.html`.
+- `scripts/build-free-intro.js` builds `/try-forro/` and the `free-intro-*` promotional blocks on Home, Classes, Levels, Events, and Register.
 - `scripts/build-featured-event.js` replaces the `featured-event-banner`, `featured-event-home`, and `featured-event-summary` blocks in `docs/`.
 
 For the MVP, `docs/` is both the GitHub Pages publication directory and the

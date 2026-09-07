@@ -56,6 +56,77 @@
     "trimester": "2026-09",
     "url": "https://forms.gle/nJ5ZbAh3v3fsHC5M6"
   },
+  "freeIntro": {
+    "status": "open",
+    "registrationUrl": "https://forms.gle/n1eNggE7MnH8Amhc9",
+    "nextPeriod": "January 2027",
+    "sessions": [
+      {
+        "id": "guinguette-2-september",
+        "type": "intro",
+        "date": "2026-09-02",
+        "time": "19:30",
+        "location": "La Guinguette Henri",
+        "address": "Parc Georges Henri, 1200 Woluwe-Saint-Lambert",
+        "language": "English or French, with Portuguese translation possible",
+        "source": {
+          "event": "summer-initiation"
+        }
+      },
+      {
+        "id": "ten-noey-14-september",
+        "type": "intro",
+        "date": "2026-09-14",
+        "time": "20:45-22:00",
+        "venue": "ten-noey",
+        "language": "English, with personal feedback possible in French or Portuguese"
+      },
+      {
+        "id": "guinguette-16-september",
+        "type": "intro",
+        "date": "2026-09-16",
+        "time": "19:30",
+        "location": "La Guinguette Henri",
+        "address": "Parc Georges Henri, 1200 Woluwe-Saint-Lambert",
+        "language": "English or French, with Portuguese translation possible",
+        "source": {
+          "event": "summer-initiation"
+        }
+      },
+      {
+        "id": "brochet-17-september",
+        "type": "intro",
+        "date": "2026-09-17",
+        "time": "19:00-20:15",
+        "venue": "brochet",
+        "language": "English, with personal feedback possible in French or Portuguese"
+      },
+      {
+        "id": "ten-noey-21-september",
+        "type": "trial",
+        "date": "2026-09-21",
+        "time": "20:45-22:00",
+        "venue": "ten-noey",
+        "language": "English, with personal feedback possible in French or Portuguese",
+        "source": {
+          "trimester": "2026-09",
+          "course": "level-1"
+        }
+      },
+      {
+        "id": "brochet-24-september",
+        "type": "trial",
+        "date": "2026-09-24",
+        "time": "19:00-20:15",
+        "venue": "brochet",
+        "language": "English, with personal feedback possible in French or Portuguese",
+        "source": {
+          "trimester": "2026-09",
+          "course": "level-1"
+        }
+      }
+    ]
+  },
   "venues": {
     "brochet": "Dojo du Brochet",
     "ten-noey": "GC Ten Noey",

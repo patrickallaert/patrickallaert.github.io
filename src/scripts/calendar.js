@@ -17,7 +17,7 @@ const visibleEvents = () => {
             .map((checkbox) => checkbox.value),
     );
 
-    return events.filter((event) => categories.has(event.category));
+    return events.filter((event) => event.categories.some((category) => categories.has(category)));
 };
 
 const calendar = new Calendar(calendarElement, {
@@ -49,6 +49,7 @@ const calendar = new Calendar(calendarElement, {
         const label = venue ? `${event.title}, ${venue}` : event.title;
 
         el.classList.add(event.extendedProps.category);
+        if (event.extendedProps.categories.length > 1) el.classList.add("free-trial");
         el.setAttribute("aria-label", label);
         el.title = label;
     },
