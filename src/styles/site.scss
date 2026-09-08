@@ -592,6 +592,31 @@ body#venues {
   }
 }
 
+body main .schedule-notice {
+  grid-column: 1 / -1;
+  min-width: 0;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--yellow) 18%, var(--surface));
+  border-left: 0.35rem solid var(--brand-blue);
+
+  p {
+    max-width: 75ch;
+    margin: 0;
+  }
+
+  p + p {
+    margin-top: 0.5rem;
+  }
+}
+
+body main article > .schedule-notice {
+  grid-column: 1 / span 2;
+}
+
 body#classes,
 body#register {
   main a[href^="https://forms.gle"],

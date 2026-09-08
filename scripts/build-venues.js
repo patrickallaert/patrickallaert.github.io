@@ -1,4 +1,5 @@
 const fs = require("fs");
+const { renderScheduleNotice } = require("./schedule-notice");
 const path = require("path");
 const { loadSiteData, noClassDatesForDay, scheduleForVenue, sessionOccurrences } = require("./site-data");
 
@@ -196,6 +197,7 @@ const sessionDetails = ({ term, session }, data, indent) => {
         noClass ? `${detailIndent}<p class="exceptions"><strong>No class:</strong> ${noClass}</p>` : "",
         people ? `${detailIndent}<p class="people">${people}</p>` : "",
         session.note ? `${detailIndent}<p class="note">${escapeHtml(session.note)}</p>` : "",
+        session.scheduleNotice ? renderScheduleNotice(session.scheduleNotice).split("\n").map((line) => `${detailIndent}${line}`).join("\n") : "",
         `${innerIndent}</article>`,
         `${indent}</li>`,
     ].filter(Boolean).join("\n");

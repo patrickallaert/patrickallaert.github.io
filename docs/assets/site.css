@@ -501,6 +501,29 @@ body#venues .free-practice {
   --course-accent: var(--course-practice);
 }
 
+body main .schedule-notice {
+  grid-column: 1/-1;
+  min-width: 0;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--yellow) 18%, var(--surface));
+  border-left: 0.35rem solid var(--brand-blue);
+}
+body main .schedule-notice p {
+  max-width: 75ch;
+  margin: 0;
+}
+body main .schedule-notice p + p {
+  margin-top: 0.5rem;
+}
+
+body main article > .schedule-notice {
+  grid-column: 1/span 2;
+}
+
 body#classes main a[href^="https://forms.gle"],
 body#classes main a[href*="docs.google.com/forms"],
 body#register main a[href^="https://forms.gle"],
@@ -603,6 +626,19 @@ body#register #prices > ul li::before {
   content: "";
   background: var(--accent);
   border-radius: 999rem;
+}
+
+body#classes #prices > ul {
+  display: block;
+  padding-left: 2.5rem;
+  margin: 1rem 0;
+  list-style: disc;
+}
+body#classes #prices > ul li {
+  padding-left: 0;
+}
+body#classes #prices > ul li::before {
+  content: none;
 }
 
 body#events #summer-guinguettes {

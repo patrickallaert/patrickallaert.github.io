@@ -28,6 +28,8 @@ that cannot be derived safely.
 
 ## Generated HTML Blocks
 
+Optional `scheduleNotice` on a schedule entry contains a `title` and `text` for a temporary timetable announcement. It appears on Home, Classes, Register, and beside the relevant course on Levels and Venues. Remove this field and rebuild to remove all announcements while retaining the updated `time`. Home and Register use `schedule-notices` markers, updated by `build-classes.js`.
+
 - `scripts/build-classes.js` replaces the `class-schedules` block in `docs/classes/index.html`.
 - `scripts/build-levels.js` replaces the `course-sessions:<course-id>` blocks in `docs/levels/index.html`.
 - `scripts/build-venues.js` replaces the `venue-sessions:<venue-id>` blocks in `docs/venues/index.html`.

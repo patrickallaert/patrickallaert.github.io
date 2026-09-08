@@ -286,8 +286,12 @@
         {
           "day": "monday",
           "venue": "brochet",
-          "time": "19:00-20:15",
+          "time": "19:30-20:45",
           "course": "level-2",
+          "scheduleNotice": {
+            "title": "Schedule update: Monday Level 2 at Dojo du Brochet",
+            "text": "From Monday 21 September, this class will run from 19:30 to 20:45 instead of 19:00 to 20:15. Due to a change in venue availability beyond our control, we can now access the space only from 19:30. If you have already registered, please note the updated time. Thank you for your understanding."
+          },
           "teachers": [
             "vero",
             "giulia"
