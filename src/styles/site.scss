@@ -551,8 +551,7 @@ body#levels {
   }
 }
 
-body#classes,
-body#venues {
+body:is(#classes, #venues) {
   .class {
     &.level.\31 {
       --course-accent: var(--course-level-1);
@@ -617,8 +616,7 @@ body main article > .schedule-notice {
   grid-column: 1 / span 2;
 }
 
-body#classes,
-body#register {
+body:is(#classes, #register) {
   main a[href^="https://forms.gle"],
   main a[href*="docs.google.com/forms"] {
     display: inline-flex;
@@ -806,8 +804,7 @@ body#events {
     }
   }
 
-  body#classes,
-  body#register {
+  body:is(#classes, #register) {
     #prices > div {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -2081,13 +2078,7 @@ body#home {
   }
 }
 
-body#classes,
-body#levels,
-body#about,
-body#venues,
-body#events,
-body#register,
-body#try-forro {
+body:is(#classes, #levels, #about, #venues, #events, #register, #try-forro) {
   #intro {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
@@ -2700,8 +2691,7 @@ body#events {
   }
 }
 
-body#classes,
-body#register {
+body:is(#classes, #register) {
   main a[href^="https://forms.gle"],
   main a[href*="docs.google.com/forms"] {
     color: var(--primary-ink);
@@ -3725,13 +3715,7 @@ body#events {
     }
   }
 
-  body#classes,
-  body#levels,
-  body#about,
-  body#venues,
-  body#events,
-  body#register,
-  body#try-forro {
+  body:is(#classes, #levels, #about, #venues, #events, #register, #try-forro) {
     #intro:has(> figure) {
       grid-template-columns: minmax(18rem, 0.92fr) minmax(22rem, 1.08fr);
       column-gap: clamp(2rem, 4vw, 4rem);
