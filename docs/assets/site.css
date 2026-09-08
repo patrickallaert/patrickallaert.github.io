@@ -602,44 +602,6 @@ body#register #prices article > p {
   margin: 0;
   color: color-mix(in srgb, var(--ink) 76%, transparent);
 }
-body#classes #prices > ul,
-body#register #prices > ul {
-  display: grid;
-  gap: 0.65rem;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-body#classes #prices > ul li,
-body#register #prices > ul li {
-  position: relative;
-  padding-left: 1.15rem;
-  margin: 0;
-}
-body#classes #prices > ul li::before,
-body#register #prices > ul li::before {
-  position: absolute;
-  top: 0.58rem;
-  left: 0;
-  width: 0.42rem;
-  height: 0.42rem;
-  content: "";
-  background: var(--accent);
-  border-radius: 999rem;
-}
-
-body#classes #prices > ul {
-  display: block;
-  padding-left: 2.5rem;
-  margin: 1rem 0;
-  list-style: disc;
-}
-body#classes #prices > ul li {
-  padding-left: 0;
-}
-body#classes #prices > ul li::before {
-  content: none;
-}
 
 body#events #summer-guinguettes {
   display: grid;
