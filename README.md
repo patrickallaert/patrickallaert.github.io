@@ -78,6 +78,19 @@ The optimized logo used by the site lives in `docs/assets/logos/`. Its source
 is one of the official SVG variants in `Logos/SVG/`; do not edit the originals
 during the web optimization process.
 
+## SCSS conventions
+
+Nest selectors under their nearest stable structural or component parent, and
+do not repeat a page ID or class that is already implied by the surrounding
+SCSS block. Use `&` for states, pseudo-classes, and component modifiers.
+
+Keep a semantic class when the HTML structure alone is not a sufficiently
+stable styling contract. Nesting is not a reason to increase specificity or to
+move a rule across base and Roots override layers: cascade order takes priority
+over having every related rule in one block. SCSS-only refactoring must preserve
+the rendered result and pass `npm run lint:css`. No fixed nesting-depth limit is
+imposed; stop nesting when the selector no longer belongs to one clear parent.
+
 ## Site data model
 
 `src/data/site.json` contains the structured information that changes with the

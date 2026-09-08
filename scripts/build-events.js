@@ -82,7 +82,7 @@ const renderWorkshopProgramme = (event, data) => groupByDate(event.occurrences).
         ...occurrences.map((occurrence) => [
             `    <article id="${occurrence.id}">`,
             `      <h4>${escapeHtml(occurrence.title)}</h4>`,
-            '      <dl class="workshop-facts">',
+            "      <dl>",
             `        <div><dt>Time</dt><dd>${renderTime(occurrence.time)}</dd></div>`,
             `        <div><dt>Level</dt><dd>${escapeHtml(occurrence.level)}</dd></div>`,
             `        <div><dt>Prerequisite</dt><dd>${escapeHtml(occurrence.prerequisite)}</dd></div>`,
