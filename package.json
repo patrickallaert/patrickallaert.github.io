@@ -5,7 +5,7 @@
   "description": "Static site rebuild for Conexao",
   "scripts": {
     "build:html": "node scripts/build-classes.js && node scripts/build-levels.js && node scripts/build-venues.js && node scripts/build-events.js && node scripts/build-free-intro.js && node scripts/build-calendar.js && node scripts/build-registration.js && node scripts/build-featured-event.js",
-    "build:css": "sass --no-source-map src/styles/site.scss docs/assets/site.css",
+    "build:css": "sass --no-source-map --style=compressed src/styles/site.scss docs/assets/site.css",
     "build:js": "esbuild src/scripts/calendar.js --bundle --minify --legal-comments=none --format=iife --outfile=docs/assets/calendar.js",
     "build": "npm run build:html && npm run build:css && npm run build:js",
     "lint:css": "stylelint \"src/styles/**/*.scss\"",
