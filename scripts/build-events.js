@@ -139,15 +139,17 @@ const renderPraticaSchedules = (events, data) => {
     const praticas = [events["sunday-pratica"], events["wednesday-pratica"]];
 
     return [
-        "<div>",
+        '<dl>',
         ...praticas.map((event) => [
-            "  <article>",
-            `    <h3>${escapeHtml(event.recurrence.day[0].toUpperCase() + event.recurrence.day.slice(1))}s</h3>`,
-            `    <p><strong>Time:</strong> ${renderPraticaTime(event.time)}${event.scheduleNote ? `, ${escapeHtml(event.scheduleNote)}` : ""}</p>`,
-            `    <p><strong>2026–2027 season:</strong> <time datetime="${event.recurrence.starts}">${escapeHtml(formatDate(event.recurrence.starts, true))}</time> to <time datetime="${event.recurrence.ends}">${escapeHtml(formatDate(event.recurrence.ends, true))}</time></p>`,
-            "  </article>",
+            "  <div>",
+            `    <dt>${escapeHtml(event.recurrence.day[0].toUpperCase() + event.recurrence.day.slice(1))}s</dt>`,
+            "    <dd>",
+            `      <span><strong>Time</strong><span>${renderPraticaTime(event.time)}${event.scheduleNote ? `, ${escapeHtml(event.scheduleNote)}` : ""}</span></span>`,
+            `      <span><strong>2026–2027 season</strong><span><time datetime="${event.recurrence.starts}">${escapeHtml(formatDate(event.recurrence.starts, true))}</time> to <time datetime="${event.recurrence.ends}">${escapeHtml(formatDate(event.recurrence.ends, true))}</time></span></span>`,
+            "    </dd>",
+            "  </div>",
         ].join("\n")),
-        "</div>",
+        "</dl>",
         "",
         `<p><strong>Venue:</strong> <a href="/venues/#${praticas[0].venue}">${escapeHtml(data.venues[praticas[0].venue])}</a></p>`,
     ].join("\n");

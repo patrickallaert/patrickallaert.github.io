@@ -82,14 +82,29 @@ during the web optimization process.
 
 Nest selectors under their nearest stable structural or component parent, and
 do not repeat a page ID or class that is already implied by the surrounding
-SCSS block. Use `&` for states, pseudo-classes, and component modifiers.
+SCSS block. Use `&` for states and pseudo-classes.
 
 Keep a semantic class when the HTML structure alone is not a sufficiently
-stable styling contract. Nesting is not a reason to increase specificity or to
-move a rule across base and Roots override layers: cascade order takes priority
-over having every related rule in one block. SCSS-only refactoring must preserve
-the rendered result and pass `npm run lint:css`. No fixed nesting-depth limit is
-imposed; stop nesting when the selector no longer belongs to one clear parent.
+stable styling contract. Classes describe content, roles, or states rather than
+visual appearance. Do not repeat the parent context in descendant class names:
+for example, use `#praticas .details`, not `.pratica-details`. When a modifier
+class is necessary, use a separate class such as `.component.state`, not a BEM
+name such as `.component--state`. Structural selectors such as `:first-child`
+may express priority when content order is a stable part of the document.
+
+Nesting is not a reason to increase specificity or to duplicate a component in
+a later override layer. Roots is the only design: keep one definitive
+declaration for each component and place responsive rules with that component
+whenever cascade order permits it.
+
+Reuse a visual token or component only when it has multiple real uses. Prefer
+the shared surface, highlight, and shadow tokens over one-off differences that
+are too subtle to communicate meaning. Do not add aliases for identical values
+unless they represent roles that may vary independently. Keep dedicated colours
+for semantic states such as course levels, calendar categories, notices, and
+featured events. SCSS-only refactoring must preserve the rendered result and
+pass `npm run lint:css`. No fixed nesting-depth limit is imposed; stop nesting
+when the selector no longer belongs to one clear parent.
 
 ## Site data model
 

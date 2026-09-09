@@ -27,7 +27,7 @@ const renderStatus = (data) => {
 
 const renderLink = (data) => {
     const paragraph = data.registration
-        ? `      <p><a href="${escapeHtml(data.registration.url)}" rel="noopener noreferrer" target="_blank">Open the registration form</a></p>`
+        ? `      <p class="registration-action"><a href="${escapeHtml(data.registration.url)}" rel="noopener noreferrer" target="_blank">Open the registration form</a></p>`
         : "";
 
     return [LINK_START_MARKER, paragraph, LINK_END_MARKER].filter(Boolean).join("\n");
