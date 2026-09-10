@@ -42,6 +42,20 @@ The contrast audit can be configured with environment variables:
 BASE_URL=http://127.0.0.1:8000 PAGES=/,classes/ npm run test:contrast
 ```
 
+Run the informative CSS usage audit against a local server:
+
+```bash
+BASE_URL=http://conexao.local npm run audit:css
+```
+
+It reports rules that are not encountered and declarations whose removal does
+not change their computed property across the public pages at mobile, tablet,
+and desktop widths. These are review candidates, not automatic failures: the
+current content and Chromium cannot exercise every possible future state. Each
+declaration is evaluated independently, so rerun the audit and visual checks
+after every cleanup batch: two declarations may be interchangeable separately
+but not removable together.
+
 The static pages live in `docs/`. This is also the GitHub Pages publication
 directory.
 
