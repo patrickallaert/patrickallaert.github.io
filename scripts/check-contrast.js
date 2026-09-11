@@ -1,6 +1,6 @@
 const { chromium } = require("playwright");
 
-const BASE_URL = process.env.BASE_URL || "http://127.0.0.1:8000";
+const BASE_URL = process.env.BASE_URL || "http://conexao.local";
 const PAGES = (process.env.PAGES || "/,classes/,levels/,venues/,events/,events/mardio-milena/,about/,register/,try-forro/,legal/,safer-dance-spaces/,community-values/,team-practices/").split(",").map((page) => page.trim()).filter(Boolean);
 const MIN_CONTRAST = Number(process.env.MIN_CONTRAST || 4.5);
 

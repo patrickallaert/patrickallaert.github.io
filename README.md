@@ -28,7 +28,7 @@ Run the full local verification suite:
 npm run verify
 ```
 
-This runs SCSS linting, rebuilds generated assets, and checks text contrast across the public pages. It expects the local static server to be available at `http://127.0.0.1:8000/`.
+This runs SCSS linting, rebuilds generated assets, and checks text contrast across the public pages. It expects the local static server to be available at `http://conexao.local/`.
 
 Run only the contrast audit:
 
@@ -39,7 +39,7 @@ npm run test:contrast
 The contrast audit can be configured with environment variables:
 
 ```bash
-BASE_URL=http://127.0.0.1:8000 PAGES=/,classes/ npm run test:contrast
+BASE_URL=http://conexao.local PAGES=/,classes/ npm run test:contrast
 ```
 
 Run the informative CSS usage audit against a local server:
