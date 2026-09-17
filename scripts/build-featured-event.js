@@ -24,30 +24,29 @@ const replaceBlock = (html, name, content) => {
 };
 
 const data = loadSiteData();
-const event = data.featuredEvent;
+const event = data.featuredEvent ? data.events[data.featuredEvent] : null;
 const banner = event ? [
     "<aside class=\"featured-event-banner\" aria-label=\"Featured event\">",
     "  <p>",
     `    <strong>${escapeHtml(event.title)}</strong>`,
     `    <span>${escapeHtml(event.label)} · ${escapeHtml(event.dates)}</span>`,
-    `    <a href=\"${escapeHtml(event.url)}\">View the workshops</a>`,
+    `    <a href=\"${escapeHtml(event.url)}\">View event details</a>`,
     "  </p>",
     "</aside>",
 ].join("\n") : "";
-const feature = event ? [
+const renderFeature = (eager = false) => event ? [
     "<section id=\"featured-event\" class=\"featured-event\" aria-labelledby=\"featured-event-title\">",
     "  <div>",
     "    <p class=\"eyebrow\">Featured event</p>",
     `    <h2 id=\"featured-event-title\">${escapeHtml(event.title)}</h2>`,
     `    <p class=\"event-date\">${escapeHtml(event.label)} · ${escapeHtml(event.dates)}</p>`,
     `    <p>${escapeHtml(event.summary)}</p>`,
-    "    <ul aria-label=\"Mardio and Milena event links\">",
-    `      <li><a href=\"${escapeHtml(event.registrationUrl)}\" rel=\"noopener noreferrer\" target=\"_blank\">Register for the workshops</a></li>`,
-    `      <li><a href=\"${escapeHtml(event.url)}\">View the full programme</a></li>`,
+    `    <ul aria-label=\"${escapeHtml(event.title)} links\">`,
+    `      <li><a href=\"${escapeHtml(event.url)}\">View event details</a></li>`,
     "    </ul>",
     "  </div>",
     "  <figure>",
-    `    <img src=\"${escapeHtml(event.image)}\" alt=\"${escapeHtml(event.imageAlt)}\" width=\"1080\" height=\"1920\" loading=\"lazy\" decoding=\"async\">`,
+    `    <img src=\"${escapeHtml(event.image)}\" alt=\"${escapeHtml(event.imageAlt)}\" width=\"1080\" height=\"1920\" ${eager ? "loading=\"eager\"" : "loading=\"lazy\""} decoding=\"async\">`,
     "  </figure>",
     "</section>",
 ].join("\n") : "";
@@ -57,11 +56,11 @@ for (const page of fs.globSync(path.join(DOCS_PATH, "**", "index.html"))) {
     html = replaceBlock(html, "featured-event-banner", banner);
 
     if (page === path.join(DOCS_PATH, "index.html")) {
-        html = replaceBlock(html, "featured-event-home", feature);
+        html = replaceBlock(html, "featured-event-home", renderFeature());
     }
 
     if (page === path.join(DOCS_PATH, "events", "index.html")) {
-        html = replaceBlock(html, "featured-event-summary", feature.replaceAll("featured-event-title", "featured-event-summary-title"));
+        html = replaceBlock(html, "featured-event-summary", renderFeature(true).replaceAll("featured-event-title", "featured-event-summary-title"));
     }
 
     fs.writeFileSync(page, html);

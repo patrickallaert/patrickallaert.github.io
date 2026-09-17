@@ -1,57 +1,5 @@
 {
-  "featuredEvent": {
-    "category": "workshops",
-    "title": "Mardio & Milena in Brussels",
-    "label": "Four special forró workshops",
-    "dates": "9–10 September 2026",
-    "url": "/events/mardio-milena/",
-    "registrationUrl": "https://forms.gle/USd71MYVitjBayrY9",
-    "summary": "Milena Morais and Mardio Costa are visiting from Brazil for four special forró workshops.",
-    "image": "/assets/events/mardio-milena.webp",
-    "imageAlt": "Milena Morais and Mardio Costa",
-    "occurrences": [
-      {
-        "id": "palha-do-coqueiro",
-        "title": "A palha do coqueiro",
-        "date": "2026-09-09",
-        "time": "19:00-20:15",
-        "venue": "dublin",
-        "level": "Intermediate",
-        "prerequisite": "Completed Level 2 twice, or a higher level",
-        "description": "We’ll explore a different way of balancing the body, playing with imbalance, musicality, and movement."
-      },
-      {
-        "id": "o-molho",
-        "title": "O Molho",
-        "date": "2026-09-09",
-        "time": "20:30-21:45",
-        "venue": "dublin",
-        "level": "Open level",
-        "prerequisite": "Completed Level 2 once, or a higher level",
-        "description": "We’ll work on one of Mardio and Milena’s fundamental techniques, O Molho, and apply it to movements."
-      },
-      {
-        "id": "temperos-do-nordeste",
-        "title": "Temperos do Nordeste",
-        "date": "2026-09-10",
-        "time": "19:00-20:15",
-        "venue": "brochet",
-        "level": "Open level",
-        "prerequisite": "Completed Level 1 or a higher level",
-        "description": "We’ll explore the origins of forró and experience the characteristic movements of São João da Bahia through our bodies."
-      },
-      {
-        "id": "adaptation",
-        "title": "Adaptation: how to enjoy dancing with anyone",
-        "date": "2026-09-10",
-        "time": "20:30-21:45",
-        "venue": "brochet",
-        "level": "Advanced",
-        "prerequisite": "Completed Level 4, or danced intensively for four years and attended festivals",
-        "description": "We’ll work on techniques and tools to connect with different people and body types, applying them to movements and exploring adaptation."
-      }
-    ]
-  },
+  "featuredEvent": "2026-10-camila-alves",
   "registration": {
     "trimester": "2026-09",
     "url": "https://forms.gle/nJ5ZbAh3v3fsHC5M6"
@@ -173,6 +121,104 @@
     }
   },
   "events": {
+    "2026-09-mardio-milena": {
+      "status": "past",
+      "category": "workshops",
+      "title": "Mardio & Milena in Brussels",
+      "label": "Four special forró workshops",
+      "dates": "9–10 September 2026",
+      "url": "/events/2026-09-mardio-milena/",
+      "summary": "Milena Morais and Mardio Costa visited Brussels for four special forró workshops.",
+      "image": "/assets/events/mardio-milena.webp",
+      "imageAlt": "Milena Morais and Mardio Costa",
+      "occurrences": [
+        {
+          "id": "palha-do-coqueiro",
+          "title": "A palha do coqueiro",
+          "date": "2026-09-09",
+          "time": "19:00-20:15",
+          "venue": "dublin",
+          "level": "Intermediate",
+          "prerequisite": "Completed Level 2 twice, or a higher level",
+          "description": "We’ll explore a different way of balancing the body, playing with imbalance, musicality, and movement."
+        },
+        {
+          "id": "o-molho",
+          "title": "O Molho",
+          "date": "2026-09-09",
+          "time": "20:30-21:45",
+          "venue": "dublin",
+          "level": "Open level",
+          "prerequisite": "Completed Level 2 once, or a higher level",
+          "description": "We’ll work on one of Mardio and Milena’s fundamental techniques, O Molho, and apply it to movements."
+        },
+        {
+          "id": "temperos-do-nordeste",
+          "title": "Temperos do Nordeste",
+          "date": "2026-09-10",
+          "time": "19:00-20:15",
+          "venue": "brochet",
+          "level": "Open level",
+          "prerequisite": "Completed Level 1 or a higher level",
+          "description": "We’ll explore the origins of forró and experience the characteristic movements of São João da Bahia through our bodies."
+        },
+        {
+          "id": "adaptation",
+          "title": "Adaptation: how to enjoy dancing with anyone",
+          "date": "2026-09-10",
+          "time": "20:30-21:45",
+          "venue": "brochet",
+          "level": "Advanced",
+          "prerequisite": "Completed Level 4, or danced intensively for four years and attended festivals",
+          "description": "We’ll work on techniques and tools to connect with different people and body types, applying them to movements and exploring adaptation."
+        }
+      ]
+    },
+    "2026-10-camila-alves": {
+      "status": "upcoming",
+      "category": "workshops",
+      "title": "Camila Alves in Brussels",
+      "label": "Three forró workshops",
+      "dates": "3 October 2026",
+      "url": "/events/2026-10-camila-alves/",
+      "summary": "Camila Alves is coming from Lisbon for three workshops on turns technique, active following and attentive leading, and frame in forró.",
+      "image": "/assets/events/2026-10-camila-alves.webp",
+      "imageAlt": "Camila Alves",
+      "registrationUrl": null,
+      "room": "Room Rhythm",
+      "occurrences": [
+        {
+          "id": "turns-technique",
+          "title": "Turns Technique: Pivot, Focus & Energy (for Followers AND LEADERS)",
+          "date": "2026-10-03",
+          "time": "14:00-15:15",
+          "venue": "malibran",
+          "level": "Open level",
+          "prerequisite": "You have done level 1 and up",
+          "description": "Clean turns aren't magic, they're honestly just four boring things done right: your pivot point, your focus, your energy and your count. We're going to break down every single one (including the solo drilling nobody enjoys, sorry not sorry) before taking it into partnerwork. It's a proper technical class, less about looking cool and more about actually understanding what your body is doing when it spins."
+        },
+        {
+          "id": "active-following-attentive-leading",
+          "title": "Active following & attentive leading",
+          "date": "2026-10-03",
+          "time": "15:30-16:45",
+          "venue": "malibran",
+          "level": "Open level",
+          "prerequisite": "You have done at least one level 2 and up",
+          "description": "In this class we’ll explore the foundations of communication in dance. We’ll work on how followers can contribute ideas in a clear, courageous and comfortable way, and how leaders can develop awareness and responsiveness to those proposals, creating a true dialogue in Forró. Through simple exercises and partnerwork, we’ll build the skills needed to create a more collaborative, musical, and fun dance for all of us :)"
+        },
+        {
+          "id": "frame-in-forro",
+          "title": "Frame in Forró",
+          "date": "2026-10-03",
+          "time": "17:00-18:15",
+          "venue": "malibran",
+          "level": "Intermediate level",
+          "prerequisite": "You have done at least two levels 2 and up",
+          "description": "Frame is by far one of the hardest technical elements to understand and integrate in our dance, but so important! It's not stiffness and it's not some shape you hold like a mannequin in a shop window: it's the connection running through your hands, arms, shoulders and torso, the thing that actually lets you feel your partner (and get felt back). We'll work on exercises together first and then apply these ideas in a set of steps that I'm sure you'll love!"
+        }
+      ]
+    },
     "summer-guinguette": {
       "category": "social-dancing",
       "title": "Summer Forró Guinguette",
@@ -187,6 +233,9 @@
       "excludedDates": [
         "2026-09-09"
       ],
+      "excludedDateEvents": {
+        "2026-09-09": "2026-09-mardio-milena"
+      },
       "links": {
         "instagram": "https://www.instagram.com/reels/DaAvWxds3Vi/",
         "facebook": "https://www.facebook.com/events/1572927807654920/1572929660988068"

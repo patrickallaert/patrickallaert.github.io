@@ -37,8 +37,20 @@ textarea {
 }
 
 :root {
-  --brand-blue: #004f71;
-  --brand-blue-hover: #003b55;
+  --brand-yellow: #ffd91a;
+  --brand-navy: #004f71;
+  --brand-navy-hover: #003b55;
+  --brand-pink: #ff00bf;
+  --brand-teal: #09b3b1;
+  --brand-magenta: #b3128a;
+  --brand-blue: #0077c8;
+  --brand-cyan: #14ccca;
+  --featured-event-background: var(--brand-teal);
+  --featured-event-text: #062d29;
+  --featured-event-emphasis: #062d29;
+  --featured-event-action-background: var(--brand-navy);
+  --featured-event-action-hover-background: var(--brand-navy-hover);
+  --featured-event-action-text: #ffffff;
   --paper: #fff7ea;
   --surface: #fffdf8;
   --surface-muted: color-mix(in srgb, var(--surface) 92%, var(--yellow));
@@ -198,25 +210,25 @@ body {
         min-height: 2.75rem;
         padding: 0.55rem 0.9rem;
         text-decoration: none;
-        border: 1px solid color-mix(in srgb, var(--brand-blue) 26%, var(--line));
+        border: 1px solid color-mix(in srgb, var(--brand-navy) 26%, var(--line));
         border-radius: var(--radius);
 
       }
 
       li:not(:first-child) a {
-        background: color-mix(in srgb, var(--brand-blue) 8%, transparent);
-        border-color: color-mix(in srgb, var(--brand-blue) 35%, var(--line));
+        background: color-mix(in srgb, var(--brand-navy) 8%, transparent);
+        border-color: color-mix(in srgb, var(--brand-navy) 35%, var(--line));
       }
 
       a:hover,
       a:focus-visible {
-        background: color-mix(in srgb, var(--brand-blue) 13%, var(--surface));
+        background: color-mix(in srgb, var(--brand-navy) 13%, var(--surface));
       }
 
       li:first-child a {
         color: var(--light-ink);
-        background: var(--brand-blue);
-        border-color: var(--brand-blue);
+        background: var(--brand-navy);
+        border-color: var(--brand-navy);
       }
     }
 
@@ -235,7 +247,7 @@ body {
       line-height: 1.5;
       color: var(--ink);
       background: var(--surface-highlight);
-      border-left: 0.35rem solid var(--brand-blue);
+      border-left: 0.35rem solid var(--brand-navy);
 
       p {
         max-width: 75ch;
@@ -255,11 +267,9 @@ body {
       display: grid;
       gap: clamp(1.25rem, 4vw, 3rem);
       align-items: center;
-      color: #ffffff;
-      background:
-              linear-gradient(135deg, rgba(255, 214, 77, 0.12), transparent 48%),
-              #9b146d;
-      border-color: #9b146d;
+      color: var(--featured-event-text);
+      background: var(--featured-event-background);
+      border-color: var(--featured-event-background);
 
       > div {
         display: grid;
@@ -283,7 +293,7 @@ body {
       .event-date {
         font-size: 1.08rem;
         font-weight: 800;
-        color: var(--yellow);
+        color: var(--featured-event-emphasis);
       }
 
       ul {
@@ -304,28 +314,28 @@ body {
             min-height: 2.75rem;
             padding: 0.55rem 0.9rem;
             font-weight: 850;
-            color: #ffffff;
+            color: var(--featured-event-text);
             text-align: center;
             text-decoration: none;
-            border: 1px solid rgba(255, 255, 255, 0.72);
+            border: 1px solid color-mix(in srgb, var(--featured-event-text) 72%, transparent);
             border-radius: 999rem;
 
             &:hover,
             &:focus-visible {
               text-decoration: underline;
-              background: rgba(255, 255, 255, 0.12);
+              background: color-mix(in srgb, var(--featured-event-text) 12%, transparent);
             }
           }
 
           &:first-child a {
-            color: #062d29;
-            background: var(--yellow);
-            border-color: var(--yellow);
+            color: var(--featured-event-action-text);
+            background: var(--featured-event-action-background);
+            border-color: var(--featured-event-action-background);
 
             &:hover,
             &:focus-visible {
-              background: #ffffff;
-              border-color: #ffffff;
+              background: var(--featured-event-action-hover-background);
+              border-color: var(--featured-event-action-hover-background);
             }
           }
         }
@@ -336,9 +346,9 @@ body {
         width: min(100%, 21rem);
         margin: 0;
         overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.45);
+        border: 1px solid color-mix(in srgb, var(--featured-event-text) 28%, transparent);
         border-radius: var(--radius);
-        box-shadow: 0 1.2rem 2.4rem rgba(55, 8, 42, 0.3);
+        box-shadow: 0 1.2rem 2.4rem color-mix(in srgb, var(--featured-event-emphasis) 28%, transparent);
 
         img {
           height: auto;
@@ -364,7 +374,7 @@ body {
 }
 
 :focus-visible {
-  outline: 0.2rem solid var(--brand-blue);
+  outline: 0.2rem solid var(--brand-navy);
   outline-offset: 0.2rem;
 }
 
@@ -434,7 +444,7 @@ body#home {
         padding: 0;
         font-size: 0;
         line-height: 1;
-        border: 0.08rem solid color-mix(in srgb, var(--brand-blue) 18%, transparent);
+        border: 0.08rem solid color-mix(in srgb, var(--brand-navy) 18%, transparent);
         border-radius: 999rem;
 
         &::before {
@@ -467,15 +477,15 @@ body#home {
           padding: 0;
           overflow: hidden;
           font-size: 0;
-          border: 0.08rem solid color-mix(in srgb, var(--brand-blue) 18%, transparent);
+          border: 0.08rem solid color-mix(in srgb, var(--brand-navy) 18%, transparent);
           border-radius: 999rem;
           transition: width 180ms ease, background-color 180ms ease, border-color 180ms ease;
 
           &[aria-current="true"] {
             width: 1.35rem;
             color: var(--light-ink);
-            background: var(--brand-blue);
-            border-color: var(--brand-blue);
+            background: var(--brand-navy);
+            border-color: var(--brand-navy);
           }
         }
       }
@@ -488,8 +498,8 @@ body#home {
       }
 
       ol button[aria-current="true"] {
-        background: var(--brand-blue);
-        border-color: var(--brand-blue);
+        background: var(--brand-navy);
+        border-color: var(--brand-navy);
       }
     }
 
@@ -562,7 +572,7 @@ body#about {
       aspect-ratio: 1;
       padding: 0.35rem;
       margin: 0;
-      background: linear-gradient(135deg, color-mix(in srgb, var(--brand-blue) 18%, transparent), rgba(255, 248, 235, 0.9));
+      background: linear-gradient(135deg, color-mix(in srgb, var(--brand-navy) 18%, transparent), rgba(255, 248, 235, 0.9));
       border-radius: 999rem;
       box-shadow: 0 0.65rem 1.2rem rgba(17, 24, 39, 0.07);
 
@@ -628,7 +638,7 @@ body#about {
       max-width: none;
       padding-left: 1rem;
       margin: 0.3rem 0 1.4rem;
-      border-left: 0.24rem solid var(--brand-blue);
+      border-left: 0.24rem solid var(--brand-navy);
     }
 
     > div {
@@ -649,9 +659,9 @@ body#about {
 
         &:target {
           background: color-mix(in srgb, var(--yellow) 13%, var(--surface));
-          border-color: #9b146d;
+          border-color: var(--brand-magenta);
           box-shadow:
-                  0 0 0 0.22rem color-mix(in srgb, #9b146d 24%, transparent),
+                  0 0 0 0.22rem color-mix(in srgb, var(--brand-magenta) 24%, transparent),
                   0 0.8rem 1.8rem rgba(0, 79, 113, 0.1);
         }
 
@@ -680,8 +690,8 @@ body#about {
                 min-height: 2.5rem;
                 padding: 0.4rem 0.7rem;
                 text-decoration: none;
-                background: color-mix(in srgb, var(--brand-blue) 8%, var(--surface));
-                border: 1px solid color-mix(in srgb, var(--brand-blue) 28%, var(--line));
+                background: color-mix(in srgb, var(--brand-navy) 8%, var(--surface));
+                border: 1px solid color-mix(in srgb, var(--brand-navy) 28%, var(--line));
                 border-radius: 999rem;
                 transition:
                         color 160ms ease,
@@ -716,8 +726,8 @@ body#about {
                 &:focus-visible {
                   color: var(--light-ink);
                   text-decoration: none;
-                  background: color-mix(in srgb, var(--brand-blue) 14%, var(--surface));
-                  border-color: color-mix(in srgb, var(--brand-blue) 48%, var(--line));
+                  background: color-mix(in srgb, var(--brand-navy) 14%, var(--surface));
+                  border-color: color-mix(in srgb, var(--brand-navy) 48%, var(--line));
                   transform: translateY(-0.05rem);
                 }
               }
@@ -857,7 +867,7 @@ body:is(#classes, #register) {
           font-size: 0.76rem;
           font-weight: 800;
           line-height: 1.2;
-          color: var(--brand-blue);
+          color: var(--brand-navy);
           text-transform: uppercase;
           letter-spacing: 0.05em;
         }
@@ -940,7 +950,7 @@ body#events {
       li {
         padding-left: 0.7rem;
         margin: 0;
-        border-left: 0.2rem solid var(--brand-blue);
+        border-left: 0.2rem solid var(--brand-navy);
       }
     }
   }
@@ -1027,6 +1037,52 @@ body#events {
     }
   }
 
+  #past-events {
+    > ul {
+      display: grid;
+      gap: 1rem;
+      padding: 0;
+      margin: 1.25rem 0 0;
+      list-style: none;
+    }
+
+    li {
+      margin: 0;
+    }
+
+    article {
+      display: grid;
+      grid-template-columns: 6rem minmax(0, 1fr);
+      gap: 1rem;
+      align-items: center;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 0.35rem;
+
+      figure {
+        aspect-ratio: 9 / 16;
+        margin: 0;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      h3,
+      p {
+        margin: 0;
+      }
+
+      p + p {
+        margin-top: 0.4rem;
+        color: var(--ink-soft);
+      }
+    }
+  }
+
   #calendar {
     overflow: visible;
 
@@ -1100,17 +1156,17 @@ body#events {
   }
 
   #calendar-viewer {
-    --fc-classic-button: var(--brand-blue);
-    --fc-classic-button-border: var(--brand-blue);
-    --fc-classic-button-strong: var(--brand-blue-hover);
-    --fc-classic-button-strong-border: var(--brand-blue-hover);
-    --fc-classic-button-outline: color-mix(in srgb, var(--brand-blue) 45%, transparent);
-    --fc-classic-primary: var(--brand-blue);
+    --fc-classic-button: var(--brand-navy);
+    --fc-classic-button-border: var(--brand-navy);
+    --fc-classic-button-strong: var(--brand-navy-hover);
+    --fc-classic-button-strong-border: var(--brand-navy-hover);
+    --fc-classic-button-outline: color-mix(in srgb, var(--brand-navy) 45%, transparent);
+    --fc-classic-primary: var(--brand-navy);
     --fc-classic-background: var(--surface);
     --fc-classic-foreground: var(--ink);
     --fc-classic-muted-foreground: var(--ink-soft);
-    --fc-classic-border: color-mix(in srgb, var(--brand-blue) 20%, transparent);
-    --fc-classic-strong-border: color-mix(in srgb, var(--brand-blue) 38%, transparent);
+    --fc-classic-border: color-mix(in srgb, var(--brand-navy) 20%, transparent);
+    --fc-classic-strong-border: color-mix(in srgb, var(--brand-navy) 38%, transparent);
     --fc-classic-today: color-mix(in srgb, var(--yellow) 24%, transparent);
     min-width: 0;
 
@@ -1453,7 +1509,7 @@ body#venues {
           display: grid;
           gap: 0.75rem;
           padding: 0.85rem;
-          background: color-mix(in srgb, var(--course-accent, var(--brand-blue)) 5%, rgba(255, 255, 255, 0.7));
+          background: color-mix(in srgb, var(--course-accent, var(--brand-navy)) 5%, rgba(255, 255, 255, 0.7));
           border: 1px solid color-mix(in srgb, var(--line) 78%, transparent);
           border-radius: 0.95rem;
 
@@ -1817,7 +1873,7 @@ a {
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible {
-  outline: 0.18rem solid color-mix(in srgb, var(--brand-blue) 75%, var(--yellow));
+  outline: 0.18rem solid color-mix(in srgb, var(--brand-navy) 75%, var(--yellow));
   outline-offset: 0.18rem;
 }
 
@@ -1843,7 +1899,7 @@ body {
     top: 0;
     z-index: 50;
     background: rgba(255, 247, 234, 0.9);
-    border-bottom: 1px solid color-mix(in srgb, var(--brand-blue) 18%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, var(--brand-navy) 18%, transparent);
     box-shadow: 0 0.7rem 1.8rem rgba(0, 79, 113, 0.07);
     backdrop-filter: blur(18px);
 
@@ -1881,14 +1937,14 @@ body {
 
         &:hover,
         &:focus-visible {
-          color: var(--brand-blue);
+          color: var(--brand-navy);
         }
 
         &[aria-current="page"] {
           padding: 0.16rem 0.48rem;
-          color: var(--brand-blue);
-          background: color-mix(in srgb, var(--brand-blue) 10%, var(--surface));
-          border-color: color-mix(in srgb, var(--brand-blue) 24%, transparent);
+          color: var(--brand-navy);
+          background: color-mix(in srgb, var(--brand-navy) 10%, var(--surface));
+          border-color: color-mix(in srgb, var(--brand-navy) 24%, transparent);
         }
       }
 
@@ -1899,14 +1955,14 @@ body {
         min-height: 2.2rem;
         padding: 0.38rem 0.82rem;
         color: var(--light-ink);
-        background: var(--brand-blue);
-        border-color: var(--brand-blue);
+        background: var(--brand-navy);
+        border-color: var(--brand-navy);
         box-shadow: 0 0.7rem 1.5rem rgba(0, 79, 113, 0.18);
 
         &:hover,
         &:focus-visible {
           color: var(--light-ink);
-          background: var(--brand-blue-hover);
+          background: var(--brand-navy-hover);
           transform: translateY(-1px);
         }
 
@@ -1936,27 +1992,27 @@ body {
       color: var(--light-ink);
       text-align: center;
       text-decoration: none;
-      background: var(--brand-blue);
-      border: 1px solid var(--brand-blue);
+      background: var(--brand-navy);
+      border: 1px solid var(--brand-navy);
       border-radius: var(--radius);
 
       &:hover,
       &:focus-visible {
         color: var(--light-ink);
         text-decoration: underline;
-        background: var(--brand-blue-hover);
+        background: var(--brand-navy-hover);
       }
     }
 
     .page-actions li:not(:first-child) a {
-      color: var(--brand-blue);
-      background: color-mix(in srgb, var(--brand-blue) 8%, var(--surface));
-      border-color: color-mix(in srgb, var(--brand-blue) 28%, var(--line));
+      color: var(--brand-navy);
+      background: color-mix(in srgb, var(--brand-navy) 8%, var(--surface));
+      border-color: color-mix(in srgb, var(--brand-navy) 28%, var(--line));
 
       &:hover,
       &:focus-visible {
-        color: var(--brand-blue-hover);
-        background: color-mix(in srgb, var(--brand-blue) 14%, var(--surface));
+        color: var(--brand-navy-hover);
+        background: color-mix(in srgb, var(--brand-navy) 14%, var(--surface));
       }
     }
 
@@ -1984,9 +2040,9 @@ body {
 
     > figure:has(> blockquote) {
       background:
-        linear-gradient(135deg, color-mix(in srgb, var(--brand-blue) 12%, transparent), transparent 54%),
+        linear-gradient(135deg, color-mix(in srgb, var(--brand-navy) 12%, transparent), transparent 54%),
         var(--surface);
-      border-color: color-mix(in srgb, var(--brand-blue) 22%, var(--line));
+      border-color: color-mix(in srgb, var(--brand-navy) 22%, var(--line));
 
       &::before {
         position: absolute;
@@ -2060,11 +2116,11 @@ body {
 
     a {
       font-weight: 800;
-      color: var(--brand-blue);
+      color: var(--brand-navy);
 
       &:hover,
       &:focus-visible {
-        color: var(--brand-blue-hover);
+        color: var(--brand-navy-hover);
       }
     }
   }
@@ -2080,7 +2136,7 @@ body {
       margin-inline: auto;
       color: var(--light-ink);
       background:
-        linear-gradient(135deg, color-mix(in srgb, var(--brand-blue) 16%, transparent), transparent),
+        linear-gradient(135deg, color-mix(in srgb, var(--brand-navy) 16%, transparent), transparent),
         var(--ink);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
@@ -2151,7 +2207,7 @@ body#home {
     min-height: clamp(27rem, 58vh, 42rem);
     background: linear-gradient(
       145deg,
-      color-mix(in srgb, var(--brand-blue) 8%, var(--surface)),
+      color-mix(in srgb, var(--brand-navy) 8%, var(--surface)),
       var(--surface) 52%,
       color-mix(in srgb, var(--yellow) 10%, var(--surface))
     );
@@ -2179,7 +2235,7 @@ body#home {
   #video {
     display: grid;
     gap: clamp(1rem, 4vw, 2.5rem);
-    background: linear-gradient(135deg, color-mix(in srgb, var(--brand-blue) 42%, var(--ink)), var(--ink));
+    background: linear-gradient(135deg, color-mix(in srgb, var(--brand-navy) 42%, var(--ink)), var(--ink));
 
     h2,
     p,
@@ -2381,9 +2437,9 @@ body#classes {
           width: 0.48rem;
           height: 0.48rem;
           content: "";
-          background: var(--brand-blue);
+          background: var(--brand-navy);
           border-radius: 50%;
-          box-shadow: 0 0 0 0.28rem color-mix(in srgb, var(--brand-blue) 12%, transparent);
+          box-shadow: 0 0 0 0.28rem color-mix(in srgb, var(--brand-navy) 12%, transparent);
         }
 
         strong,
@@ -2597,7 +2653,7 @@ body#venues main > section:not(#intro) > section[aria-labelledby$="-scheduled-cl
   }
 
   .time {
-    color: color-mix(in srgb, var(--brand-blue) 72%, var(--ink));
+    color: color-mix(in srgb, var(--brand-navy) 72%, var(--ink));
 
     > span {
       color: var(--ink-soft);
@@ -2665,12 +2721,12 @@ body.community-page {
 
   .support-panel {
     background:
-      linear-gradient(135deg, color-mix(in srgb, var(--brand-blue) 9%, transparent), transparent 52%),
+      linear-gradient(135deg, color-mix(in srgb, var(--brand-navy) 9%, transparent), transparent 52%),
       var(--surface);
-    border: 0.14rem solid color-mix(in srgb, var(--brand-blue) 45%, var(--line));
+    border: 0.14rem solid color-mix(in srgb, var(--brand-navy) 45%, var(--line));
 
     > h2 {
-      color: var(--brand-blue-hover);
+      color: var(--brand-navy-hover);
     }
   }
 
@@ -2718,13 +2774,13 @@ body.community-page {
       width: 4rem;
       height: 4rem;
       object-fit: cover;
-      border: 2px solid color-mix(in srgb, var(--brand-blue) 32%, var(--line));
+      border: 2px solid color-mix(in srgb, var(--brand-navy) 32%, var(--line));
       border-radius: 0.45rem;
     }
 
     a:hover img,
     a:focus-visible img {
-      border-color: var(--brand-blue);
+      border-color: var(--brand-navy);
     }
   }
 
@@ -2752,7 +2808,7 @@ body.community-page {
         font-weight: 850;
         color: var(--light-ink);
         content: counter(care-step);
-        background: var(--brand-blue);
+        background: var(--brand-navy);
         border-radius: 50%;
       }
 
@@ -2777,7 +2833,7 @@ body.community-page {
 
     > header {
       padding-bottom: 1.25rem;
-      border-bottom: 0.18rem solid color-mix(in srgb, var(--brand-blue) 36%, var(--line));
+      border-bottom: 0.18rem solid color-mix(in srgb, var(--brand-navy) 36%, var(--line));
 
       h2 {
         margin: 0;
@@ -2799,8 +2855,8 @@ body.community-page {
 }
 
 .featured-event-banner {
-  color: #ffffff;
-  background: #9b146d;
+  color: var(--featured-event-text);
+  background: var(--featured-event-background);
 
   p {
     display: flex;
@@ -2820,29 +2876,45 @@ body.community-page {
     min-height: 2.35rem;
     padding: 0.35rem 0.75rem;
     font-weight: 850;
-    color: #062d29;
+    color: var(--featured-event-action-text);
     text-decoration: none;
-    background: var(--yellow);
-    border: 1px solid var(--yellow);
+    background: var(--featured-event-action-background);
+    border: 1px solid var(--featured-event-action-background);
     border-radius: 999rem;
 
     &:hover,
     &:focus-visible {
       text-decoration: underline;
-      background: #ffffff;
-      border-color: #ffffff;
+      background: var(--featured-event-action-hover-background);
+      border-color: var(--featured-event-action-hover-background);
     }
   }
 }
 
 body#events.event-detail {
+  --event-accent: var(--brand-magenta);
+  --event-accent-text: var(--light-ink);
+  --event-heading-accent: var(--brand-magenta);
+  --event-action-background: var(--yellow);
+  --event-action-hover-background: color-mix(in srgb, var(--yellow) 75%, #ffffff);
+  --event-action-text: #062d29;
+
+  &.camila-alves {
+    --event-accent: var(--brand-teal);
+    --event-accent-text: #062d29;
+    --event-heading-accent: var(--brand-navy);
+    --event-action-background: var(--brand-navy);
+    --event-action-hover-background: var(--brand-navy-hover);
+    --event-action-text: var(--light-ink);
+  }
+
   #intro {
     min-height: auto;
 
     > .eyebrow {
       font-size: 0.78rem;
       font-weight: 850;
-      color: #9b146d;
+      color: var(--event-heading-accent);
       text-transform: uppercase;
     }
 
@@ -2870,21 +2942,28 @@ body#events.event-detail {
           font-weight: 850;
           text-align: center;
           text-decoration: none;
-          border: 1px solid color-mix(in srgb, var(--brand-blue) 35%, var(--line));
+          border: 1px solid color-mix(in srgb, var(--brand-navy) 35%, var(--line));
           border-radius: 999rem;
 
           &:hover,
           &:focus-visible {
             text-decoration: underline;
-            background: color-mix(in srgb, var(--brand-blue) 10%, var(--surface));
+            background: color-mix(in srgb, var(--brand-navy) 10%, var(--surface));
           }
         }
       }
 
       li:first-child a {
-        color: #062d29;
-        background: var(--yellow);
-        border-color: var(--yellow);
+        color: var(--event-action-text);
+        background: var(--event-action-background);
+        border-color: var(--event-action-background);
+
+        &:hover,
+        &:focus-visible {
+          color: var(--event-action-text);
+          background: var(--event-action-hover-background);
+          border-color: var(--event-action-hover-background);
+        }
       }
     }
 
@@ -2912,7 +2991,7 @@ body#events.event-detail {
         padding: 1.25rem 0 1.25rem 1rem;
         background: transparent;
         border: 0;
-        border-left: 0.28rem solid #9b146d;
+        border-left: 0.28rem solid var(--event-accent);
         border-radius: 0;
         box-shadow: none;
 
@@ -2972,20 +3051,29 @@ body#events.event-detail {
     }
 
     thead th {
-      color: #ffffff;
-      background: #9b146d;
+      color: var(--event-accent-text);
+      background: var(--event-accent);
     }
   }
 
+  #registration iframe {
+    display: block;
+    width: 100%;
+    max-width: 50rem;
+    margin-top: 1rem;
+    border: 1px solid var(--line);
+  }
+
   .registration-action > a {
-    color: #062d29;
-    background: var(--yellow);
-    border-color: var(--yellow);
+    color: var(--event-action-text);
+    background: var(--event-action-background);
+    border-color: var(--event-action-background);
 
     &:hover,
     &:focus-visible {
-      color: #062d29;
-      background: color-mix(in srgb, var(--yellow) 75%, #ffffff);
+      color: var(--event-action-text);
+      background: var(--event-action-hover-background);
+      border-color: var(--event-action-hover-background);
     }
   }
 }

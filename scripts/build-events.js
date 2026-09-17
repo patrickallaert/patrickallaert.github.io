@@ -4,10 +4,10 @@ const { loadSiteData } = require("./site-data");
 
 const DOCS_PATH = path.join(__dirname, "..", "docs");
 const EVENTS_PATH = path.join(DOCS_PATH, "events", "index.html");
-const WORKSHOPS_PATH = path.join(DOCS_PATH, "events", "mardio-milena", "index.html");
 const VENUE_ADDRESSES = {
     brochet: "Rue du Brochet 55, 1050 Ixelles",
     dublin: "Rue de Dublin 13, 1050 Ixelles",
+    malibran: "Rue de la Digue 10, 1050 Ixelles",
 };
 
 const escapeHtml = (value) => String(value)
@@ -77,17 +77,17 @@ const renderWorkshopProgramme = (event, data) => groupByDate(event.occurrences).
     return [
         `<section class="event-day" aria-labelledby="${titleId}">`,
         `  <h3 id="${titleId}">${escapeHtml(formatDay(date))}</h3>`,
-        `  <p><strong>Venue:</strong> <a href="/venues/#${venue}">${escapeHtml(data.venues[venue])}</a>, ${escapeHtml(VENUE_ADDRESSES[venue])}</p>`,
+        `  <p><strong>Venue:</strong> <a href="/venues/#${venue}">${escapeHtml(data.venues[venue])}</a>${event.room ? `, ${escapeHtml(event.room)}` : ""}, ${escapeHtml(VENUE_ADDRESSES[venue])}</p>`,
         '  <div class="workshops">',
         ...occurrences.map((occurrence) => [
             `    <article id="${occurrence.id}">`,
             `      <h4>${escapeHtml(occurrence.title)}</h4>`,
             "      <dl>",
             `        <div><dt>Time</dt><dd>${renderTime(occurrence.time)}</dd></div>`,
-            `        <div><dt>Level</dt><dd>${escapeHtml(occurrence.level)}</dd></div>`,
-            `        <div><dt>Prerequisite</dt><dd>${escapeHtml(occurrence.prerequisite)}</dd></div>`,
+            ...(occurrence.level ? [`        <div><dt>Level</dt><dd>${escapeHtml(occurrence.level)}</dd></div>`] : []),
+            ...(occurrence.prerequisite ? [`        <div><dt>Prerequisite</dt><dd>${escapeHtml(occurrence.prerequisite)}</dd></div>`] : []),
             "      </dl>",
-            `      <p>${escapeHtml(occurrence.description)}</p>`,
+            ...(occurrence.description ? [`      <p>${escapeHtml(occurrence.description)}</p>`] : []),
             "    </article>",
         ].join("\n")),
         "  </div>",
@@ -95,16 +95,17 @@ const renderWorkshopProgramme = (event, data) => groupByDate(event.occurrences).
     ].join("\n");
 }).join("\n\n");
 
-const renderGuinguetteDetails = (guinguette, initiation, featuredEvent) => {
+const renderGuinguetteDetails = (guinguette, initiation, events) => {
     const { starts, ends } = guinguette.recurrence;
     const exception = guinguette.excludedDates[0];
+    const replacementEvent = events[guinguette.excludedDateEvents[exception]];
 
     return [
         '<div class="event-details">',
         '  <dl class="event-facts">',
         "    <div>",
         "      <dt>Dates</dt>",
-        `      <dd>Every Wednesday from <time datetime="${starts}">${escapeHtml(formatDate(starts))}</time> to <time datetime="${ends}">${escapeHtml(formatDate(ends, true))}</time>, except <time datetime="${exception}">${escapeHtml(formatDate(exception))}</time>, when the <a href="${featuredEvent.url}">Mardio &amp; Milena workshops</a> take place</dd>`,
+        `      <dd>Every Wednesday from <time datetime="${starts}">${escapeHtml(formatDate(starts))}</time> to <time datetime="${ends}">${escapeHtml(formatDate(ends, true))}</time>, except <time datetime="${exception}">${escapeHtml(formatDate(exception))}</time>, when <a href="${replacementEvent.url}">${escapeHtml(replacementEvent.title)}</a> took place</dd>`,
         "    </div>",
         "    <div>",
         "      <dt>Free dancing</dt>",
@@ -135,6 +136,40 @@ const renderGuinguetteDetails = (guinguette, initiation, featuredEvent) => {
     ].join("\n");
 };
 
+const renderPastEvents = (events) => [
+    "<ul>",
+    ...Object.values(events).filter((event) => event.status === "past")
+        .sort((left, right) => right.occurrences[0].date.localeCompare(left.occurrences[0].date))
+        .map((event) => [
+            "  <li>",
+            "    <article>",
+            "      <figure>",
+            `        <img src="${escapeHtml(event.image)}" alt="${escapeHtml(event.imageAlt)}" width="1080" height="1920" loading="lazy" decoding="async">`,
+            "      </figure>",
+            "      <div>",
+            `        <h3><a href="${escapeHtml(event.url)}">${escapeHtml(event.title)}</a></h3>`,
+            `        <p>${escapeHtml(event.label)} · ${escapeHtml(event.dates)}</p>`,
+            `        <p>${escapeHtml(event.summary)}</p>`,
+            "      </div>",
+            "    </article>",
+            "  </li>",
+        ].join("\n")),
+    "</ul>",
+].join("\n");
+
+const renderRegistration = (event) => {
+    if (!event.registrationUrl) {
+        return "<p><strong>Registrations will open soon.</strong> The registration form will be available directly on this page.</p>";
+    }
+
+    const separator = event.registrationUrl.includes("?") ? "&" : "?";
+
+    return [
+        `<p><a href="${escapeHtml(event.registrationUrl)}" rel="noopener noreferrer" target="_blank">Open the registration form in a new tab</a></p>`,
+        `<iframe src="${escapeHtml(`${event.registrationUrl}${separator}embedded=true`)}" title="Registration form for ${escapeHtml(event.title)}" width="640" height="1600" loading="lazy">Registration form for ${escapeHtml(event.title)}</iframe>`,
+    ].join("\n");
+};
+
 const renderPraticaSchedules = (events, data) => {
     const praticas = [events["sunday-pratica"], events["wednesday-pratica"]];
 
@@ -157,12 +192,15 @@ const renderPraticaSchedules = (events, data) => {
 
 const data = loadSiteData();
 let eventsHtml = fs.readFileSync(EVENTS_PATH, "utf8");
-eventsHtml = replaceBlock(eventsHtml, "summer-guinguette-details", renderGuinguetteDetails(data.events["summer-guinguette"], data.events["summer-initiation"], data.featuredEvent));
+eventsHtml = replaceBlock(eventsHtml, "summer-guinguette-details", renderGuinguetteDetails(data.events["summer-guinguette"], data.events["summer-initiation"], data.events));
 eventsHtml = replaceBlock(eventsHtml, "pratica-schedules", renderPraticaSchedules(data.events, data));
+eventsHtml = replaceBlock(eventsHtml, "past-events", renderPastEvents(data.events));
 fs.writeFileSync(EVENTS_PATH, eventsHtml);
 
-fs.writeFileSync(WORKSHOPS_PATH, replaceBlock(
-    fs.readFileSync(WORKSHOPS_PATH, "utf8"),
-    "workshop-programme",
-    renderWorkshopProgramme(data.featuredEvent, data),
-));
+for (const event of Object.values(data.events).filter((event) => event.occurrences)) {
+    const eventPath = path.join(DOCS_PATH, event.url, "index.html");
+    let eventHtml = fs.readFileSync(eventPath, "utf8");
+    eventHtml = replaceBlock(eventHtml, "workshop-programme", renderWorkshopProgramme(event, data));
+    eventHtml = replaceBlock(eventHtml, "event-registration", renderRegistration(event));
+    fs.writeFileSync(eventPath, eventHtml);
+}

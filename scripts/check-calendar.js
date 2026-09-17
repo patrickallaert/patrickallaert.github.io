@@ -11,6 +11,9 @@ const closedEvents = buildCalendarEvents({
 });
 
 assert.equal(on("2026-09-09").filter((event) => event.category === "workshops").length, 2);
+assert.equal(on("2026-10-03").filter((event) => event.category === "workshops").length, 3);
+assert.equal(on("2026-10-03").filter((event) => event.url.startsWith("/events/2026-10-camila-alves/")).length, 3);
+assert.equal(on("2026-10-03").find((event) => event.id.endsWith("frame-in-forro")).end, "2026-10-03T18:15:00");
 assert.equal(on("2026-09-09").filter((event) => event.id.startsWith("summer-guinguette")).length, 0);
 assert.equal(on("2026-09-02").find((event) => event.id.startsWith("summer-guinguette")).category, "social-dancing");
 assert.equal(events.filter((event) => event.url.startsWith("/try-forro/#")).length, 7);

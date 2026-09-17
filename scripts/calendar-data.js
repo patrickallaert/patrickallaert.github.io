@@ -61,7 +61,7 @@ const excludedDates = (data, id, event) => [
         .flatMap((term) => term.noClassDates),
 ];
 
-const publicEvents = (data) => Object.entries(data.events).flatMap(([id, event]) => {
+const publicEvents = (data) => Object.entries(data.events).filter(([, event]) => !event.occurrences).flatMap(([id, event]) => {
     const dates = event.recurrence ? weeklyDates({
         ...event.recurrence,
         excludedDates: excludedDates(data, id, event),
@@ -95,21 +95,23 @@ const freeIntroEvents = (data) => data.freeIntro.sessions
         venue: freeIntroVenue(data, session),
     }));
 
-const featuredEvents = (data) => data.featuredEvent.occurrences.map((occurrence) => timedEvent({
-    id: `mardio-milena-${occurrence.id}`,
-    title: occurrence.title,
-    date: occurrence.date,
-    time: occurrence.time,
-    url: `${data.featuredEvent.url}#${occurrence.id}`,
-    category: data.featuredEvent.category,
-    venue: data.venues[occurrence.venue],
-}));
+const workshopEvents = (data) => Object.entries(data.events).filter(([, event]) => event.occurrences).flatMap(([id, event]) => {
+    return event.occurrences.map((occurrence) => timedEvent({
+        id: `${id}-${occurrence.id}`,
+        title: occurrence.title,
+        date: occurrence.date,
+        time: occurrence.time,
+        url: `${event.url}#${occurrence.id}`,
+        category: event.category,
+        venue: data.venues[occurrence.venue],
+    }));
+});
 
 const buildCalendarEvents = (data) => [
     ...classEvents(data),
     ...publicEvents(data),
     ...freeIntroEvents(data),
-    ...featuredEvents(data),
+    ...workshopEvents(data),
 ].sort((left, right) => left.start.localeCompare(right.start) || left.title.localeCompare(right.title));
 
 module.exports = { buildCalendarEvents };

@@ -120,6 +120,12 @@ featured events. SCSS-only refactoring must preserve the rendered result and
 pass `npm run lint:css`. No fixed nesting-depth limit is imposed; stop nesting
 when the selector no longer belongs to one clear parent.
 
+The official Conexão palette is defined by the `--brand-*` properties in
+`:root`. Rotate the colours of the current featured event through the
+`--featured-event-*` properties rather than editing the banner and promotional
+blocks separately. Event-detail pages may override their semantic
+`--event-*` properties under an event-specific content class.
+
 ## Site data model
 
 `src/data/site.json` contains the structured information that changes with the
@@ -152,6 +158,28 @@ renaming, or removing a public page:
 - update its title, description, canonical URL, Open Graph data, and social card
 - add or remove its canonical URL in `docs/sitemap.xml`
 - keep non-indexable pages out of the sitemap and declare `noindex` in their HTML
+
+Special-event URLs include their year and month, for example
+`/events/2026-10-camila-alves/`. When moving an existing event to this format,
+keep a permanent Nginx redirect for both variants of its old URL:
+
+```nginx
+location = /events/mardio-milena {
+    return 301 /events/2026-09-mardio-milena/$is_args$args;
+}
+
+location = /events/mardio-milena/ {
+    return 301 /events/2026-09-mardio-milena/$is_args$args;
+}
+```
+
+The Camila Alves registration form should remain limited to email, first and
+last name, optional city, an optional photo/video preference, and one required
+attendance-and-role grid. Its rows are the three workshop times; its columns
+are `Not attending`, `Leader`, `Follower`, and `Flexible / I can adapt`. Keep
+newsletter subscriptions and the event description outside this form. Use this
+confirmation message: `Thank you. We have received your registration request.
+Your place is not confirmed yet; we will contact you by email.`
 
 `docs/robots.txt`, `docs/sitemap.xml`, the homepage JSON-LD, favicons, and the
 shared social image are static files maintained by hand.
