@@ -9,6 +9,7 @@ const VENUE_ADDRESSES = {
     dublin: "Rue de Dublin 13, 1050 Ixelles",
     malibran: "Rue de la Digue 10, 1050 Ixelles",
 };
+const REGISTRATION_CHOICES = ["Not attending", "Leader", "Follower", "Either"];
 
 const escapeHtml = (value) => String(value)
     .replaceAll("&", "&amp;")
@@ -70,7 +71,7 @@ const groupByDate = (occurrences) => occurrences.reduce((groups, occurrence) => 
     return groups;
 }, []);
 
-const renderWorkshopProgramme = (event, data) => groupByDate(event.occurrences).map(({ date, occurrences }) => {
+const renderWorkshopDays = (event, data) => groupByDate(event.occurrences).map(({ date, occurrences }) => {
     const venue = occurrences[0].venue;
     const titleId = `workshops-${date}-title`;
 
@@ -88,12 +89,53 @@ const renderWorkshopProgramme = (event, data) => groupByDate(event.occurrences).
             ...(occurrence.prerequisite ? [`        <div><dt>Prerequisite</dt><dd>${escapeHtml(occurrence.prerequisite)}</dd></div>`] : []),
             "      </dl>",
             ...(occurrence.description ? [`      <p>${escapeHtml(occurrence.description)}</p>`] : []),
+            ...(occurrence.registrationField ? [
+                '      <fieldset class="roles">',
+                "        <legend>Participation and role</legend>",
+                "        <div>",
+                ...REGISTRATION_CHOICES.map((choice) => [
+                    "          <label>",
+                    `            <input type="radio" name="${escapeHtml(occurrence.registrationField)}" value="${escapeHtml(choice)}"${choice === "Not attending" ? " checked" : ""}>`,
+                    `            <span>${escapeHtml(choice)}</span>`,
+                    "          </label>",
+                ].join("\n")),
+                "        </div>",
+                "      </fieldset>",
+            ] : []),
             "    </article>",
         ].join("\n")),
         "  </div>",
         "</section>",
     ].join("\n");
 }).join("\n\n");
+
+const renderWorkshopProgramme = (event, data) => {
+    const days = renderWorkshopDays(event, data);
+
+    if (!event.registrationUrl) return days;
+
+    return [
+        `<form class="selection" action="${escapeHtml(event.registrationUrl)}" method="get" target="_blank" rel="noopener" data-prices="${escapeHtml(JSON.stringify(event.prices))}">`,
+        '  <input type="hidden" name="usp" value="pp_url">',
+        days.split("\n").map((line) => `  ${line}`).join("\n"),
+        '  <footer class="summary">',
+        '    <output aria-live="polite">Choose at least one workshop.</output>',
+        '    <button type="submit">Continue to registration</button>',
+        "  </footer>",
+        "</form>",
+    ].join("\n");
+};
+
+const renderPrices = (event) => {
+    const prices = Object.entries(event.prices);
+
+    return prices.map(([quantity, price], index) => [
+        "<tr>",
+        `  <th scope="row">${index === prices.length - 1 ? "All " : ""}${quantity} workshop${quantity === "1" ? "" : "s"}</th>`,
+        `  <td>€${price}</td>`,
+        "</tr>",
+    ].join("\n")).join("\n");
+};
 
 const renderGuinguetteDetails = (guinguette, initiation, events) => {
     const { starts, ends } = guinguette.recurrence;
@@ -165,8 +207,8 @@ const renderRegistration = (event) => {
     const separator = event.registrationUrl.includes("?") ? "&" : "?";
 
     return [
-        `<p><a href="${escapeHtml(event.registrationUrl)}" rel="noopener noreferrer" target="_blank">Open the registration form in a new tab</a></p>`,
-        `<iframe src="${escapeHtml(`${event.registrationUrl}${separator}embedded=true`)}" title="Registration form for ${escapeHtml(event.title)}" width="640" height="1600" loading="lazy">Registration form for ${escapeHtml(event.title)}</iframe>`,
+        '<p class="prompt">Choose at least one workshop above, then continue to prepare the registration form.</p>',
+        `<iframe data-src="${escapeHtml(`${event.registrationUrl}${separator}embedded=true`)}" title="Registration form for ${escapeHtml(event.title)}" width="700" height="2048" loading="lazy" hidden>Registration form for ${escapeHtml(event.title)}</iframe>`,
     ].join("\n");
 };
 
@@ -201,6 +243,7 @@ for (const event of Object.values(data.events).filter((event) => event.occurrenc
     const eventPath = path.join(DOCS_PATH, event.url, "index.html");
     let eventHtml = fs.readFileSync(eventPath, "utf8");
     eventHtml = replaceBlock(eventHtml, "workshop-programme", renderWorkshopProgramme(event, data));
+    if (event.prices) eventHtml = replaceBlock(eventHtml, "event-prices", renderPrices(event));
     eventHtml = replaceBlock(eventHtml, "event-registration", renderRegistration(event));
     fs.writeFileSync(eventPath, eventHtml);
 }

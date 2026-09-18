@@ -6,14 +6,15 @@
   "scripts": {
     "build:html": "node scripts/build-classes.js && node scripts/build-levels.js && node scripts/build-venues.js && node scripts/build-events.js && node scripts/build-free-intro.js && node scripts/build-calendar.js && node scripts/build-registration.js && node scripts/build-featured-event.js",
     "build:css": "sass --no-source-map --style=compressed src/styles/site.scss docs/assets/site.css",
-    "build:js": "esbuild src/scripts/calendar.js --bundle --minify --legal-comments=none --format=iife --outfile=docs/assets/calendar.js",
+    "build:js": "esbuild src/scripts/calendar.js src/scripts/event-registration.js --bundle --minify --legal-comments=none --format=iife --outdir=docs/assets",
     "build": "npm run build:html && npm run build:css && npm run build:js",
     "lint:css": "stylelint \"src/styles/**/*.scss\"",
     "test:contrast": "node scripts/check-contrast.js",
     "test:calendar": "node scripts/check-calendar.js",
+    "test:event-registration": "node scripts/check-event-registration.js",
     "test:free-intro": "node scripts/check-free-intro.js",
     "audit:css": "node scripts/audit-css.js",
-    "verify": "npm run lint:css && npm run build && npm run test:contrast && npm run test:calendar && npm run test:free-intro",
+    "verify": "npm run lint:css && npm run build && npm run test:contrast && npm run test:calendar && npm run test:event-registration && npm run test:free-intro",
     "watch:css": "sass --watch src/styles/site.scss:docs/assets/site.css"
   },
   "devDependencies": {

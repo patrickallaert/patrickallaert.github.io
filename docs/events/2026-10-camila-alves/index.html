@@ -57,7 +57,8 @@
   </script>
   <link rel="preload" href="/assets/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/architects-daughter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/site.css?v=20260915">
+  <link rel="stylesheet" href="/assets/site.css?v=20260918">
+  <script defer src="/assets/event-registration.js?v=20260918"></script>
 </head>
 <body id="events" class="event-detail camila-alves">
   <a href="#main">Skip to content</a>
@@ -91,8 +92,7 @@
       <p>We’re excited to welcome Camila Alves from Lisbon to Brussels for three forró workshops.</p>
       <p><strong><time datetime="2026-10-03">Saturday 3 October 2026</time></strong></p>
       <ul aria-label="Event actions">
-        <li><a href="#registration">Registration information</a></li>
-        <li><a href="#programme">View the programme</a></li>
+        <li><a href="#programme">View workshops &amp; register</a></li>
       </ul>
       <figure>
         <img src="/assets/events/2026-10-camila-alves.webp" alt="Camila Alves" width="1080" height="1920" fetchpriority="high">
@@ -106,47 +106,6 @@
       <p>For Camila, dancing is not simply about following a set of rules or movements. It is about taking ownership of your dance, expressing who you are, and creating a conscious connection with the person you are dancing with.</p>
     </section>
 
-    <section id="programme" aria-labelledby="programme-title">
-      <h2 id="programme-title">Workshop Programme</h2>
-      <p>Three workshops across one afternoon, exploring turns technique, communication between roles, and frame in forró.</p>
-
-      <!-- workshop-programme:start -->
-      <section class="event-day" aria-labelledby="workshops-2026-10-03-title">
-        <h3 id="workshops-2026-10-03-title">Saturday 3 October</h3>
-        <p><strong>Venue:</strong> <a href="/venues/#malibran">Maison de Quartier Malibran</a>, Room Rhythm, Rue de la Digue 10, 1050 Ixelles</p>
-        <div class="workshops">
-          <article id="turns-technique">
-            <h4>Turns Technique: Pivot, Focus &amp; Energy (for Followers AND LEADERS)</h4>
-            <dl>
-              <div><dt>Time</dt><dd><time datetime="14:00">14:00</time>–<time datetime="15:15">15:15</time></dd></div>
-              <div><dt>Level</dt><dd>Open level</dd></div>
-              <div><dt>Prerequisite</dt><dd>You have done level 1 and up</dd></div>
-            </dl>
-            <p>Clean turns aren't magic, they're honestly just four boring things done right: your pivot point, your focus, your energy and your count. We're going to break down every single one (including the solo drilling nobody enjoys, sorry not sorry) before taking it into partnerwork. It's a proper technical class, less about looking cool and more about actually understanding what your body is doing when it spins.</p>
-          </article>
-          <article id="active-following-attentive-leading">
-            <h4>Active following &amp; attentive leading</h4>
-            <dl>
-              <div><dt>Time</dt><dd><time datetime="15:30">15:30</time>–<time datetime="16:45">16:45</time></dd></div>
-              <div><dt>Level</dt><dd>Open level</dd></div>
-              <div><dt>Prerequisite</dt><dd>You have done at least one level 2 and up</dd></div>
-            </dl>
-            <p>In this class we’ll explore the foundations of communication in dance. We’ll work on how followers can contribute ideas in a clear, courageous and comfortable way, and how leaders can develop awareness and responsiveness to those proposals, creating a true dialogue in Forró. Through simple exercises and partnerwork, we’ll build the skills needed to create a more collaborative, musical, and fun dance for all of us :)</p>
-          </article>
-          <article id="frame-in-forro">
-            <h4>Frame in Forró</h4>
-            <dl>
-              <div><dt>Time</dt><dd><time datetime="17:00">17:00</time>–<time datetime="18:15">18:15</time></dd></div>
-              <div><dt>Level</dt><dd>Intermediate level</dd></div>
-              <div><dt>Prerequisite</dt><dd>You have done at least two levels 2 and up</dd></div>
-            </dl>
-            <p>Frame is by far one of the hardest technical elements to understand and integrate in our dance, but so important! It's not stiffness and it's not some shape you hold like a mannequin in a shop window: it's the connection running through your hands, arms, shoulders and torso, the thing that actually lets you feel your partner (and get felt back). We'll work on exercises together first and then apply these ideas in a set of steps that I'm sure you'll love!</p>
-          </article>
-        </div>
-      </section>
-      <!-- workshop-programme:end -->
-    </section>
-
     <section id="prices" aria-labelledby="prices-title">
       <h2 id="prices-title">Prices &amp; Payment</h2>
       <p>Cash payment on the day is preferred. If paying in cash, please bring the exact amount.</p>
@@ -158,6 +117,7 @@
         </tr>
         </thead>
         <tbody>
+        <!-- event-prices:start -->
         <tr>
           <th scope="row">1 workshop</th>
           <td>€18</td>
@@ -170,16 +130,121 @@
           <th scope="row">All 3 workshops</th>
           <td>€45</td>
         </tr>
+        <!-- event-prices:end -->
         </tbody>
       </table>
       <p>Money should not be a barrier to participating. If the price is difficult for you, please contact us and we’ll look for a solution together.</p>
     </section>
 
-    <section id="registration" aria-labelledby="registration-title">
-      <h2 id="registration-title">Registration</h2>
-      <!-- event-registration:start -->
-      <p><strong>Registrations will open soon.</strong> The registration form will be available directly on this page.</p>
-      <!-- event-registration:end -->
+    <section id="programme" aria-labelledby="programme-title">
+      <h2 id="programme-title">Workshop Programme</h2>
+      <p>Three workshops across one afternoon, exploring turns technique, communication between roles, and frame in forró.</p>
+
+      <!-- workshop-programme:start -->
+      <form class="selection" action="https://docs.google.com/forms/d/e/1FAIpQLSdnp5n87nrkl1V4dwmBLCjxjaKyrZP92bg4opx8urea5RB3KQ/viewform" method="get" target="_blank" rel="noopener" data-prices="{&quot;1&quot;:18,&quot;2&quot;:32,&quot;3&quot;:45}">
+        <input type="hidden" name="usp" value="pp_url">
+        <section class="event-day" aria-labelledby="workshops-2026-10-03-title">
+          <h3 id="workshops-2026-10-03-title">Saturday 3 October</h3>
+          <p><strong>Venue:</strong> <a href="/venues/#malibran">Maison de Quartier Malibran</a>, Room Rhythm, Rue de la Digue 10, 1050 Ixelles</p>
+          <div class="workshops">
+            <article id="turns-technique">
+              <h4>Turns Technique: Pivot, Focus &amp; Energy (for Followers AND LEADERS)</h4>
+              <dl>
+                <div><dt>Time</dt><dd><time datetime="14:00">14:00</time>–<time datetime="15:15">15:15</time></dd></div>
+                <div><dt>Level</dt><dd>Open level</dd></div>
+                <div><dt>Prerequisite</dt><dd>You have done level 1 and up</dd></div>
+              </dl>
+              <p>Clean turns aren't magic, they're honestly just four boring things done right: your pivot point, your focus, your energy and your count. We're going to break down every single one (including the solo drilling nobody enjoys, sorry not sorry) before taking it into partnerwork. It's a proper technical class, less about looking cool and more about actually understanding what your body is doing when it spins.</p>
+              <fieldset class="roles">
+                <legend>Participation and role</legend>
+                <div>
+                  <label>
+                    <input type="radio" name="entry.974674964" value="Not attending" checked>
+                    <span>Not attending</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="entry.974674964" value="Leader">
+                    <span>Leader</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="entry.974674964" value="Follower">
+                    <span>Follower</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="entry.974674964" value="Either">
+                    <span>Either</span>
+                  </label>
+                </div>
+              </fieldset>
+            </article>
+            <article id="active-following-attentive-leading">
+              <h4>Active following &amp; attentive leading</h4>
+              <dl>
+                <div><dt>Time</dt><dd><time datetime="15:30">15:30</time>–<time datetime="16:45">16:45</time></dd></div>
+                <div><dt>Level</dt><dd>Open level</dd></div>
+                <div><dt>Prerequisite</dt><dd>You have done at least one level 2 and up</dd></div>
+              </dl>
+              <p>In this class we’ll explore the foundations of communication in dance. We’ll work on how followers can contribute ideas in a clear, courageous and comfortable way, and how leaders can develop awareness and responsiveness to those proposals, creating a true dialogue in Forró. Through simple exercises and partnerwork, we’ll build the skills needed to create a more collaborative, musical, and fun dance for all of us :)</p>
+              <fieldset class="roles">
+                <legend>Participation and role</legend>
+                <div>
+                  <label>
+                    <input type="radio" name="entry.500263104" value="Not attending" checked>
+                    <span>Not attending</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="entry.500263104" value="Leader">
+                    <span>Leader</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="entry.500263104" value="Follower">
+                    <span>Follower</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="entry.500263104" value="Either">
+                    <span>Either</span>
+                  </label>
+                </div>
+              </fieldset>
+            </article>
+            <article id="frame-in-forro">
+              <h4>Frame in Forró</h4>
+              <dl>
+                <div><dt>Time</dt><dd><time datetime="17:00">17:00</time>–<time datetime="18:15">18:15</time></dd></div>
+                <div><dt>Level</dt><dd>Intermediate level</dd></div>
+                <div><dt>Prerequisite</dt><dd>You have done at least two levels 2 and up</dd></div>
+              </dl>
+              <p>Frame is by far one of the hardest technical elements to understand and integrate in our dance, but so important! It's not stiffness and it's not some shape you hold like a mannequin in a shop window: it's the connection running through your hands, arms, shoulders and torso, the thing that actually lets you feel your partner (and get felt back). We'll work on exercises together first and then apply these ideas in a set of steps that I'm sure you'll love!</p>
+              <fieldset class="roles">
+                <legend>Participation and role</legend>
+                <div>
+                  <label>
+                    <input type="radio" name="entry.1247541740" value="Not attending" checked>
+                    <span>Not attending</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="entry.1247541740" value="Leader">
+                    <span>Leader</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="entry.1247541740" value="Follower">
+                    <span>Follower</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="entry.1247541740" value="Either">
+                    <span>Either</span>
+                  </label>
+                </div>
+              </fieldset>
+            </article>
+          </div>
+        </section>
+        <footer class="summary">
+          <output aria-live="polite">Choose at least one workshop.</output>
+          <button type="submit">Continue to registration</button>
+        </footer>
+      </form>
+      <!-- workshop-programme:end -->
     </section>
 
     <section id="practical-information" aria-labelledby="practical-information-title">
@@ -190,6 +255,14 @@
     <section id="evening" aria-labelledby="evening-title">
       <h2 id="evening-title">Continue Dancing in the Evening</h2>
       <p>After the workshops, Chove Chuva will play a live forró concert organised by Be Forró. <a href="https://www.instagram.com/p/Dc57Bgcjctr/" rel="noopener noreferrer" target="_blank">View the concert information on Instagram</a>. Admission is separate from the Conexão workshops.</p>
+    </section>
+
+    <section id="registration" aria-labelledby="registration-title">
+      <h2 id="registration-title">Complete Your Registration</h2>
+      <!-- event-registration:start -->
+      <p class="prompt">Choose at least one workshop above, then continue to prepare the registration form.</p>
+      <iframe data-src="https://docs.google.com/forms/d/e/1FAIpQLSdnp5n87nrkl1V4dwmBLCjxjaKyrZP92bg4opx8urea5RB3KQ/viewform?embedded=true" title="Registration form for Camila Alves in Brussels" width="700" height="2048" loading="lazy" hidden>Registration form for Camila Alves in Brussels</iframe>
+      <!-- event-registration:end -->
     </section>
   </main>
   <footer>

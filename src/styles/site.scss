@@ -3027,9 +3027,103 @@ body#events.event-detail {
             }
           }
         }
+
+        .roles {
+          padding: 0;
+          margin: 1rem 0 0;
+          border: 0;
+
+          legend {
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+          }
+
+          > div {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+            gap: 0.45rem;
+          }
+
+          label {
+            display: flex;
+            gap: 0.4rem;
+            align-items: center;
+            min-height: 2.75rem;
+            padding: 0.45rem 0.55rem;
+            color: var(--ink-soft);
+            cursor: pointer;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+
+            &:has(input:checked) {
+              color: var(--ink);
+              background: color-mix(in srgb, var(--event-accent) 12%, var(--surface));
+              border-color: var(--event-accent);
+            }
+
+            &:has(input[value="Not attending"]:checked) {
+              color: var(--ink-soft);
+              background: color-mix(in srgb, var(--ink) 5%, var(--surface));
+              border-color: color-mix(in srgb, var(--ink) 20%, var(--line));
+            }
+          }
+
+          input {
+            flex: none;
+            width: 1rem;
+            height: 1rem;
+            margin: 0;
+            accent-color: var(--event-accent);
+          }
+        }
       }
     }
 
+    .summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.25rem;
+      margin-top: 1.25rem;
+      border-top: 1px solid var(--line);
+
+      output {
+        display: grid;
+        gap: 0.15rem;
+
+        strong {
+          font-size: 1.3rem;
+          color: var(--event-heading-accent);
+        }
+      }
+
+      button {
+        min-height: 2.75rem;
+        padding: 0.55rem 0.9rem;
+        font-weight: 800;
+        color: var(--event-action-text);
+        cursor: pointer;
+        background: var(--event-action-background);
+        border: 1px solid var(--event-action-background);
+        border-radius: var(--radius);
+
+        &:hover,
+        &:focus-visible {
+          background: var(--event-action-hover-background);
+          border-color: var(--event-action-hover-background);
+        }
+
+        &:disabled {
+          color: var(--ink-soft);
+          cursor: not-allowed;
+          background: color-mix(in srgb, var(--ink) 8%, var(--surface));
+          border-color: var(--line);
+        }
+      }
+    }
   }
 
   .event-day {
@@ -3060,29 +3154,33 @@ body#events.event-detail {
     }
   }
 
-  #registration iframe {
-    display: block;
-    width: 100%;
-    max-width: 50rem;
-    margin-top: 1rem;
-    border: 1px solid var(--line);
-  }
+  #registration {
+    &:has(iframe[hidden]) {
+      display: none;
+    }
 
-  .registration-action > a {
-    color: var(--event-action-text);
-    background: var(--event-action-background);
-    border-color: var(--event-action-background);
+    > :is(h2, p, iframe) {
+      width: min(100%, 43.75rem);
+      margin-inline: auto;
+    }
 
-    &:hover,
-    &:focus-visible {
-      color: var(--event-action-text);
-      background: var(--event-action-hover-background);
-      border-color: var(--event-action-hover-background);
+    iframe {
+      display: none;
+      height: 128rem;
+      margin-top: 1rem;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
     }
   }
+
 }
 
 @media (min-width: 42rem) {
+  body#events.event-detail #registration iframe:not([hidden]) {
+    display: block;
+  }
+
   body.community-page .care-team-list {
     grid-template-columns: repeat(4, minmax(0, 10rem));
   }

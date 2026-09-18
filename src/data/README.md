@@ -13,7 +13,7 @@ that cannot be derived safely.
 - `registration` points to the only trimester accepting registrations and its form URL. Set it to `null` to close registration.
 - `freeIntro` controls the permanent `/try-forro/` page and its temporary promotion. `status` is explicitly `open` or `closed`; sessions identify standalone introductions or reference an existing event or scheduled class so the calendar does not duplicate them.
 - `featuredEvent` identifies the entry in `events` promoted across the site. Set it to `null` to remove the global banner and the promotional blocks from Home and Events. Promotional links always lead to the event page, never directly to its registration form.
-- A guest event may set `registrationUrl` to the full public `docs.google.com/forms/.../viewform` URL. Its detail page then embeds the form and retains an external fallback link. Use `null` while registrations are not open.
+- A guest event may set `registrationUrl` to the public `docs.google.com/forms/.../viewform` URL. Its occurrences can provide their Google Forms `registrationField`, while `prices` maps the number of selected workshops to the total price. The event page then prepares a prefilled form, embedded on tablet and desktop and opened externally on mobile. Use `null` while registrations are not open.
 - `venues`, `teachers`, and `courses` provide shared labels and course-specific display options.
 
 ## Derived By The Generator
