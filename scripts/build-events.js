@@ -137,47 +137,6 @@ const renderPrices = (event) => {
     ].join("\n")).join("\n");
 };
 
-const renderGuinguetteDetails = (guinguette, initiation, events) => {
-    const { starts, ends } = guinguette.recurrence;
-    const exception = guinguette.excludedDates[0];
-    const replacementEvent = events[guinguette.excludedDateEvents[exception]];
-
-    return [
-        '<div class="event-details">',
-        '  <dl class="event-facts">',
-        "    <div>",
-        "      <dt>Dates</dt>",
-        `      <dd>Every Wednesday from <time datetime="${starts}">${escapeHtml(formatDate(starts))}</time> to <time datetime="${ends}">${escapeHtml(formatDate(ends, true))}</time>, except <time datetime="${exception}">${escapeHtml(formatDate(exception))}</time>, when <a href="${replacementEvent.url}">${escapeHtml(replacementEvent.title)}</a> took place</dd>`,
-        "    </div>",
-        "    <div>",
-        "      <dt>Free dancing</dt>",
-        `      <dd>${renderTime(guinguette.time)}</dd>`,
-        "    </div>",
-        "    <div>",
-        "      <dt>Free initiation</dt>",
-        `      <dd>${renderTime(initiation.time)} every other Wednesday</dd>`,
-        "    </div>",
-        "    <div>",
-        "      <dt>Location</dt>",
-        `      <dd>${escapeHtml(guinguette.location)}</dd>`,
-        "    </div>",
-        "  </dl>",
-        "",
-        '  <div class="event-initiations">',
-        "    <h3>Initiation dates</h3>",
-        "    <ul>",
-        ...initiation.dates.map((date) => `      <li><time datetime="${date}">${escapeHtml(formatDate(date))}</time></li>`),
-        "    </ul>",
-        "  </div>",
-        "</div>",
-        "",
-        '<ul class="event-links" aria-label="Summer Forró Guinguettes links">',
-        `  <li><a href="${guinguette.links.instagram}" rel="noopener noreferrer" target="_blank">View the Instagram post</a></li>`,
-        `  <li><a href="${guinguette.links.facebook}" rel="noopener noreferrer" target="_blank">View the Facebook event</a></li>`,
-        "</ul>",
-    ].join("\n");
-};
-
 const renderPastEvents = (events) => [
     "<ul>",
     ...Object.values(events).filter((event) => event.status === "past")
@@ -234,7 +193,6 @@ const renderPraticaSchedules = (events, data) => {
 
 const data = loadSiteData();
 let eventsHtml = fs.readFileSync(EVENTS_PATH, "utf8");
-eventsHtml = replaceBlock(eventsHtml, "summer-guinguette-details", renderGuinguetteDetails(data.events["summer-guinguette"], data.events["summer-initiation"], data.events));
 eventsHtml = replaceBlock(eventsHtml, "pratica-schedules", renderPraticaSchedules(data.events, data));
 eventsHtml = replaceBlock(eventsHtml, "past-events", renderPastEvents(data.events));
 fs.writeFileSync(EVENTS_PATH, eventsHtml);

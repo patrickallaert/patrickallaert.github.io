@@ -34,7 +34,7 @@ Optional `scheduleNotice` on a schedule entry contains a `title` and `text` for 
 - `scripts/build-classes.js` replaces the `class-schedules` block in `docs/classes/index.html`.
 - `scripts/build-levels.js` replaces the `course-sessions:<course-id>` blocks in `docs/levels/index.html`.
 - `scripts/build-venues.js` replaces the `venue-sessions:<venue-id>` blocks in `docs/venues/index.html`.
-- `scripts/build-events.js` replaces guest workshop programmes, the past-events archive, Guinguette details, and prática schedules in `docs/events/`.
+- `scripts/build-events.js` replaces guest workshop programmes, the past-events archive, and prática schedules in `docs/events/`.
 - `scripts/build-calendar.js` writes all individual class and event occurrences into the calendar block in `docs/events/index.html`.
 - `scripts/build-registration.js` replaces the `registration-status` and `registration-link` blocks in `docs/register/index.html`.
 - `scripts/build-free-intro.js` builds `/try-forro/` and the `free-intro-*` promotional blocks on Home, Classes, Levels, Events, and Register.
