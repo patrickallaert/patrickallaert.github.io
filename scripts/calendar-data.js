@@ -4,9 +4,7 @@ const eventUrl = (course) => course === "pratica" ? "/events/#praticas" : `/leve
 
 const courseTitle = (data, course) => data.courses[course]?.title || `Level ${course.slice(-1)}`;
 
-const freeIntroUrl = (data, session) => data.freeIntro.status === "open"
-    ? `/try-forro/#${session.id}`
-    : "/try-forro/";
+const FREE_INTRO_URL = "/try-forro/";
 
 const freeIntroTitle = (session) => session.type === "trial"
     ? "Level 1 · Free trial class"
@@ -34,9 +32,8 @@ const classEvents = (data) => data.trimesters.flatMap((term) => term.schedule.fl
     if (session.event) return [];
 
     return sessionOccurrences(term, session).map((date) => {
-        const freeIntro = data.freeIntro.sessions.find((candidate) =>
+        const freeIntro = data.freeIntros.find((candidate) =>
             candidate.date === date
-            && candidate.venue === session.venue
             && candidate.source?.trimester === term.id
             && candidate.source?.course === session.course);
 
@@ -45,7 +42,7 @@ const classEvents = (data) => data.trimesters.flatMap((term) => term.schedule.fl
             title: freeIntro ? freeIntroTitle(freeIntro) : courseTitle(data, session.course),
             date,
             time: session.time,
-            url: freeIntro ? freeIntroUrl(data, freeIntro) : eventUrl(session.course),
+            url: freeIntro ? FREE_INTRO_URL : eventUrl(session.course),
             category: "classes",
             categories: freeIntro ? ["classes", "initiations"] : ["classes"],
             venue: data.venues[session.venue],
@@ -68,7 +65,7 @@ const publicEvents = (data) => Object.entries(data.events).filter(([, event]) =>
     }) : event.dates;
 
     return dates.map((date) => {
-        const freeIntro = data.freeIntro.sessions.find((session) =>
+        const freeIntro = data.freeIntros.find((session) =>
             session.date === date && session.source?.event === id);
 
         return timedEvent({
@@ -76,21 +73,21 @@ const publicEvents = (data) => Object.entries(data.events).filter(([, event]) =>
             title: freeIntro ? freeIntroTitle(freeIntro) : event.title,
             date,
             time: freeIntro?.time || event.time,
-            url: freeIntro ? freeIntroUrl(data, freeIntro) : event.url,
+            url: freeIntro ? FREE_INTRO_URL : event.url,
             category: event.category,
             venue: freeIntro ? freeIntroVenue(data, freeIntro) : event.venue ? data.venues[event.venue] : event.location,
         });
     });
 });
 
-const freeIntroEvents = (data) => data.freeIntro.sessions
+const freeIntroEvents = (data) => data.freeIntros
     .filter((session) => !session.source)
     .map((session) => timedEvent({
         id: `free-intro-${session.id}`,
         title: freeIntroTitle(session),
         date: session.date,
         time: session.time,
-        url: freeIntroUrl(data, session),
+        url: FREE_INTRO_URL,
         category: "initiations",
         venue: freeIntroVenue(data, session),
     }));

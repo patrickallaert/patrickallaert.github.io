@@ -10,7 +10,7 @@ that cannot be derived safely.
 - `noClassDates` lists dates on which every class scheduled that day is cancelled.
 - `schedule` contains the recurring class slots for a trimester.
 - `events` contains only the information needed by the calendar, shared programme pages, or featured-event promotion. Event-page content is edited directly in `docs/`.
-- `freeIntro` controls the permanent `/try-forro/` page and its temporary promotion. `status` is explicitly `open` or `closed`; sessions identify standalone introductions or reference an existing event or scheduled class so the calendar does not duplicate them.
+- `freeIntros` contains only the information needed to add free introductions and Level 1 trials to the calendar without duplicating their source event or class.
 - `featuredEvent` identifies the entry in `events` promoted across the site. Set it to `null` to remove the global banner and the promotional blocks from Home and Events. Promotional links always lead to the event page, never directly to its registration form.
 - `venues`, `teachers`, and `courses` provide shared labels and course-specific display options.
 
@@ -30,7 +30,6 @@ that cannot be derived safely.
 - `scripts/build-levels.js` replaces the `course-sessions:<course-id>` blocks in `docs/levels/index.html`.
 - `scripts/build-venues.js` replaces the `venue-sessions:<venue-id>` blocks in `docs/venues/index.html`.
 - `scripts/build-calendar.js` writes all individual class and event occurrences into the calendar block in `docs/events/index.html`.
-- `scripts/build-free-intro.js` builds `/try-forro/` and the `free-intro-*` promotional blocks on Home, Classes, Levels, Events, and Register.
 - `scripts/build-featured-event.js` replaces the `featured-event-banner`, `featured-event-home`, and `featured-event-summary` blocks in `docs/`.
 
 For the MVP, `docs/` is both the GitHub Pages publication directory and the
@@ -47,3 +46,7 @@ class. They are not part of the programme data or propagated automatically.
 Guest-event pages, prices, registration forms, prática summaries, and archive
 cards are edited directly in `docs/events/`. Keep only their calendar or
 featured-event metadata in `site.json`.
+
+The `/try-forro/` page and its permanent links from Home, Classes, Levels,
+Events, and Register are edited directly in `docs/`. Registration details,
+languages, addresses, and availability periods do not belong in `site.json`.
