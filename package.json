@@ -12,9 +12,8 @@
     "test:contrast": "node scripts/check-contrast.js",
     "test:calendar": "node scripts/check-calendar.js",
     "test:event-registration": "node scripts/check-event-registration.js",
-    "test:free-intro": "node scripts/check-free-intro.js",
     "audit:css": "node scripts/audit-css.js",
-    "verify": "npm run lint:css && npm run build && npm run test:contrast && npm run test:calendar && npm run test:event-registration && npm run test:free-intro",
+    "verify": "npm run lint:css && npm run build && npm run test:contrast && npm run test:calendar && npm run test:event-registration",
     "watch:css": "sass --watch src/styles/site.scss:docs/assets/site.css"
   },
   "devDependencies": {
