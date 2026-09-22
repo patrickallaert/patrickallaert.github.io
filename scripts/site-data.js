@@ -89,12 +89,6 @@ const validateSiteData = (data) => {
         }
     }
 
-    if (data.registration !== null) {
-        assert(data.registration && typeof data.registration === "object", "registration must be an object or null");
-        assert(trimesterIds.has(data.registration.trimester), `registration references unknown trimester ${data.registration.trimester}`);
-        assert(data.registration.url, "registration needs a url");
-    }
-
     return data;
 };
 

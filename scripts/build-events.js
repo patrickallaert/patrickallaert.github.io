@@ -137,27 +137,6 @@ const renderPrices = (event) => {
     ].join("\n")).join("\n");
 };
 
-const renderPastEvents = (events) => [
-    "<ul>",
-    ...Object.values(events).filter((event) => event.status === "past")
-        .sort((left, right) => right.occurrences[0].date.localeCompare(left.occurrences[0].date))
-        .map((event) => [
-            "  <li>",
-            "    <article>",
-            "      <figure>",
-            `        <img src="${escapeHtml(event.image)}" alt="${escapeHtml(event.imageAlt)}" width="1080" height="1920" loading="lazy" decoding="async">`,
-            "      </figure>",
-            "      <div>",
-            `        <h3><a href="${escapeHtml(event.url)}">${escapeHtml(event.title)}</a></h3>`,
-            `        <p>${escapeHtml(event.label)} · ${escapeHtml(event.dates)}</p>`,
-            `        <p>${escapeHtml(event.summary)}</p>`,
-            "      </div>",
-            "    </article>",
-            "  </li>",
-        ].join("\n")),
-    "</ul>",
-].join("\n");
-
 const renderRegistration = (event) => {
     if (!event.registrationUrl) {
         return "<p><strong>Registrations will open soon.</strong> The registration form will be available directly on this page.</p>";
@@ -194,10 +173,9 @@ const renderPraticaSchedules = (events, data) => {
 const data = loadSiteData();
 let eventsHtml = fs.readFileSync(EVENTS_PATH, "utf8");
 eventsHtml = replaceBlock(eventsHtml, "pratica-schedules", renderPraticaSchedules(data.events, data));
-eventsHtml = replaceBlock(eventsHtml, "past-events", renderPastEvents(data.events));
 fs.writeFileSync(EVENTS_PATH, eventsHtml);
 
-for (const event of Object.values(data.events).filter((event) => event.occurrences)) {
+for (const event of Object.values(data.events).filter((event) => event.status === "upcoming")) {
     const eventPath = path.join(DOCS_PATH, event.url, "index.html");
     let eventHtml = fs.readFileSync(eventPath, "utf8");
     eventHtml = replaceBlock(eventHtml, "workshop-programme", renderWorkshopProgramme(event, data));

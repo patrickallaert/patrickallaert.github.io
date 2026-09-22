@@ -1,9 +1,5 @@
 {
   "featuredEvent": "2026-10-camila-alves",
-  "registration": {
-    "trimester": "2026-09",
-    "url": "https://forms.gle/nJ5ZbAh3v3fsHC5M6"
-  },
   "freeIntro": {
     "status": "open",
     "registrationUrl": "https://forms.gle/n1eNggE7MnH8Amhc9",
@@ -125,52 +121,35 @@
       "status": "past",
       "category": "workshops",
       "title": "Mardio & Milena in Brussels",
-      "label": "Four special forró workshops",
-      "dates": "9–10 September 2026",
       "url": "/events/2026-09-mardio-milena/",
-      "summary": "Milena Morais and Mardio Costa visited Brussels for four special forró workshops.",
-      "image": "/assets/events/mardio-milena.webp",
-      "imageAlt": "Milena Morais and Mardio Costa",
       "occurrences": [
         {
           "id": "palha-do-coqueiro",
           "title": "A palha do coqueiro",
           "date": "2026-09-09",
           "time": "19:00-20:15",
-          "venue": "dublin",
-          "level": "Intermediate",
-          "prerequisite": "Completed Level 2 twice, or a higher level",
-          "description": "We’ll explore a different way of balancing the body, playing with imbalance, musicality, and movement."
+          "venue": "dublin"
         },
         {
           "id": "o-molho",
           "title": "O Molho",
           "date": "2026-09-09",
           "time": "20:30-21:45",
-          "venue": "dublin",
-          "level": "Open level",
-          "prerequisite": "Completed Level 2 once, or a higher level",
-          "description": "We’ll work on one of Mardio and Milena’s fundamental techniques, O Molho, and apply it to movements."
+          "venue": "dublin"
         },
         {
           "id": "temperos-do-nordeste",
           "title": "Temperos do Nordeste",
           "date": "2026-09-10",
           "time": "19:00-20:15",
-          "venue": "brochet",
-          "level": "Open level",
-          "prerequisite": "Completed Level 1 or a higher level",
-          "description": "We’ll explore the origins of forró and experience the characteristic movements of São João da Bahia through our bodies."
+          "venue": "brochet"
         },
         {
           "id": "adaptation",
           "title": "Adaptation: how to enjoy dancing with anyone",
           "date": "2026-09-10",
           "time": "20:30-21:45",
-          "venue": "brochet",
-          "level": "Advanced",
-          "prerequisite": "Completed Level 4, or danced intensively for four years and attended festivals",
-          "description": "We’ll work on techniques and tools to connect with different people and body types, applying them to movements and exploring adaptation."
+          "venue": "brochet"
         }
       ]
     },

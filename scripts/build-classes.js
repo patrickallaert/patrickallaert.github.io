@@ -161,7 +161,6 @@ const renderDay = (day, term, data) => {
 const renderTerm = (term, data) => [
     `    <section id="${term.id}">`,
     `      <h2>${escapeHtml(term.title)}</h2>`,
-    data.registration?.trimester === term.id && `      <p><a href="/register/">Register for ${escapeHtml(term.title)}</a></p>`,
     `      <p class="trimester-summary"><span><time datetime="${term.starts}">${formatDate(term.starts)}</time> - <time datetime="${term.ends}">${formatDate(term.ends)}</time></span> <span>${escapeHtml(term.summary)}</span></p>`,
     "",
     ...term.schedule.filter((session) => session.scheduleNotice)
