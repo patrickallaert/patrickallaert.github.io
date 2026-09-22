@@ -1,7 +1,6 @@
 const fs = require("fs");
 const path = require("path");
 const { loadSiteData, noClassDatesForDay, WEEKDAYS } = require("./site-data");
-const { renderScheduleNotice } = require("./schedule-notice");
 
 const CLASSES_PATH = path.join(__dirname, "..", "docs", "classes", "index.html");
 const START_MARKER = "    <!-- class-schedules:start -->";
@@ -163,8 +162,6 @@ const renderTerm = (term, data) => [
     `      <h2>${escapeHtml(term.title)}</h2>`,
     `      <p class="trimester-summary"><span><time datetime="${term.starts}">${formatDate(term.starts)}</time> - <time datetime="${term.ends}">${formatDate(term.ends)}</time></span> <span>${escapeHtml(term.summary)}</span></p>`,
     "",
-    ...term.schedule.filter((session) => session.scheduleNotice)
-        .map((session) => renderScheduleNotice(session.scheduleNotice)),
     '      <div class="schedule-days">',
     WEEKDAYS.filter((day) => term.schedule.some((session) => session.day === day))
         .map((day) => renderDay(day, term, data)).join("\n"),
@@ -185,19 +182,3 @@ const replaceSchedules = (html, schedules) => {
 const data = loadSiteData();
 
 fs.writeFileSync(CLASSES_PATH, replaceSchedules(fs.readFileSync(CLASSES_PATH, "utf8"), renderSchedules(data)));
-
-for (const page of ["index.html", "register/index.html"]) {
-    const pagePath = path.join(__dirname, "..", "docs", page);
-
-    fs.writeFileSync(pagePath, fs.readFileSync(pagePath, "utf8").replace(
-        /([ \t]*)<!-- schedule-notices:start -->[\s\S]*?<!-- schedule-notices:end -->/,
-        (_, indent) => [
-            `${indent}<!-- schedule-notices:start -->`,
-            ...data.trimesters.flatMap((term) => term.schedule
-                .filter((session) => session.scheduleNotice)
-                .flatMap((session) => renderScheduleNotice(session.scheduleNotice, term.id)
-                    .split("\n").map((line) => `${indent}${line}`))),
-            `${indent}<!-- schedule-notices:end -->`,
-        ].join("\n"),
-    ));
-}

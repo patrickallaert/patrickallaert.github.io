@@ -239,7 +239,7 @@ body {
       }
     }
 
-    .schedule-notice {
+    .notice {
       grid-column: 1 / -1;
       min-width: 0;
       padding: 1rem;
@@ -257,10 +257,6 @@ body {
       p + p {
         margin-top: 0.5rem;
       }
-    }
-
-    article > .schedule-notice {
-      grid-column: 1 / span 2;
     }
 
     .featured-event {
