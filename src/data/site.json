@@ -102,10 +102,6 @@
     "vero": "Vero"
   },
   "courses": {
-    "free-practice": {
-      "title": "Free practice",
-      "link": false
-    },
     "lead-follow": {
       "title": "Everyone Leads, Everyone Follows"
     },
@@ -118,9 +114,7 @@
   },
   "events": {
     "2026-09-mardio-milena": {
-      "status": "past",
       "category": "workshops",
-      "title": "Mardio & Milena in Brussels",
       "url": "/events/2026-09-mardio-milena/",
       "occurrences": [
         {
@@ -154,7 +148,6 @@
       ]
     },
     "2026-10-camila-alves": {
-      "status": "upcoming",
       "category": "workshops",
       "title": "Camila Alves in Brussels",
       "label": "Three forró workshops",
@@ -163,46 +156,27 @@
       "summary": "Camila Alves is coming from Lisbon for three workshops on turns technique, active following and attentive leading, and frame in forró.",
       "image": "/assets/events/2026-10-camila-alves.webp",
       "imageAlt": "Camila Alves",
-      "registrationUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdnp5n87nrkl1V4dwmBLCjxjaKyrZP92bg4opx8urea5RB3KQ/viewform",
-      "prices": {
-        "1": 18,
-        "2": 32,
-        "3": 45
-      },
-      "room": "Room Rhythm",
       "occurrences": [
         {
           "id": "turns-technique",
           "title": "Turns Technique: Pivot, Focus & Energy (for Followers AND LEADERS)",
           "date": "2026-10-03",
           "time": "14:00-15:15",
-          "venue": "malibran",
-          "registrationField": "entry.974674964",
-          "level": "Open level",
-          "prerequisite": "You have done level 1 and up",
-          "description": "Clean turns aren't magic, they're honestly just four boring things done right: your pivot point, your focus, your energy and your count. We're going to break down every single one (including the solo drilling nobody enjoys, sorry not sorry) before taking it into partnerwork. It's a proper technical class, less about looking cool and more about actually understanding what your body is doing when it spins."
+          "venue": "malibran"
         },
         {
           "id": "active-following-attentive-leading",
           "title": "Active following & attentive leading",
           "date": "2026-10-03",
           "time": "15:30-16:45",
-          "venue": "malibran",
-          "registrationField": "entry.500263104",
-          "level": "Open level",
-          "prerequisite": "You have done at least one level 2 and up",
-          "description": "In this class we’ll explore the foundations of communication in dance. We’ll work on how followers can contribute ideas in a clear, courageous and comfortable way, and how leaders can develop awareness and responsiveness to those proposals, creating a true dialogue in Forró. Through simple exercises and partnerwork, we’ll build the skills needed to create a more collaborative, musical, and fun dance for all of us :)"
+          "venue": "malibran"
         },
         {
           "id": "frame-in-forro",
           "title": "Frame in Forró",
           "date": "2026-10-03",
           "time": "17:00-18:15",
-          "venue": "malibran",
-          "registrationField": "entry.1247541740",
-          "level": "Intermediate level",
-          "prerequisite": "You have done at least two levels 2 and up",
-          "description": "Frame is by far one of the hardest technical elements to understand and integrate in our dance, but so important! It's not stiffness and it's not some shape you hold like a mannequin in a shop window: it's the connection running through your hands, arms, shoulders and torso, the thing that actually lets you feel your partner (and get felt back). We'll work on exercises together first and then apply these ideas in a set of steps that I'm sure you'll love!"
+          "venue": "malibran"
         }
       ]
     },
@@ -240,10 +214,8 @@
       "category": "social-dancing",
       "title": "Forró Prática",
       "url": "/events/#praticas",
-      "course": "pratica",
       "venue": "dublin",
       "time": "19:00-22:00",
-      "scheduleNote": "except the first Sunday of each month",
       "recurrence": {
         "day": "sunday",
         "starts": "2026-09-20",

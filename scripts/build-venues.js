@@ -28,7 +28,6 @@ const COURSE_ORDER = [
     "lead-follow",
     "roots",
     "pratica",
-    "free-practice",
 ];
 
 const escapeHtml = (value) => String(value)
@@ -69,8 +68,7 @@ const course = (data, id) => data.courses[id] || inferredCourse(id);
 
 const courseTitle = (data, id) => course(data, id).title || id;
 
-const courseHref = (id, item) => {
-    if (item.link === false) return null;
+const courseHref = (id) => {
     if (id === "pratica") return "/events/#praticas";
 
     return `/levels/#${id}`;
@@ -177,7 +175,6 @@ const groupByDay = (sessions) => sessions.reduce((groups, item) => {
 }, []);
 
 const sessionDetails = ({ term, session }, data, indent) => {
-    const item = course(data, session.course);
     const innerIndent = `${indent}  `;
     const detailIndent = `${innerIndent}  `;
     const dateRange = renderDateRange(term, session);
@@ -190,7 +187,7 @@ const sessionDetails = ({ term, session }, data, indent) => {
         `${indent}<li>`,
         `${innerIndent}<article class="${escapeHtml(courseClassName(data, session.course))}">`,
         portraits,
-        `${detailIndent}<h5>${link(courseHref(session.course, item), courseTitle(data, session.course))}</h5>`,
+        `${detailIndent}<h5>${link(courseHref(session.course), courseTitle(data, session.course))}</h5>`,
         `${detailIndent}<p class="term">${link(`/classes/#${term.id}`, term.title)}</p>`,
         `${detailIndent}<p class="time">${date}${renderTimeRange(session.time)}</p>`,
         noClass ? `${detailIndent}<p class="exceptions"><strong>No class:</strong> ${noClass}</p>` : "",
@@ -217,7 +214,6 @@ const renderDayGroup = ({ day, sessions }, data, indent) => {
 
 const renderVenueSessions = (venue, data) => {
     const sessions = scheduleForVenue(data, venue)
-        .filter(({ session }) => session.course !== "free-practice")
         .sort(compareSessions);
     const indent = "      ";
     const innerIndent = `${indent}  `;

@@ -9,10 +9,9 @@ that cannot be derived safely.
 - `trimesters` contains every programme to publish, in display order.
 - `noClassDates` lists dates on which every class scheduled that day is cancelled.
 - `schedule` contains the recurring class slots for a trimester.
-- `events` contains recurring or explicitly dated public activities such as práticas, Guinguettes, initiations, and guest workshops. Upcoming guest workshops contain everything needed to build their page. After an event, freeze its page and archive card in `docs/`, set its status to `past`, and keep only the fields needed by the calendar.
+- `events` contains only the information needed by the calendar, shared programme pages, or featured-event promotion. Event-page content is edited directly in `docs/`.
 - `freeIntro` controls the permanent `/try-forro/` page and its temporary promotion. `status` is explicitly `open` or `closed`; sessions identify standalone introductions or reference an existing event or scheduled class so the calendar does not duplicate them.
 - `featuredEvent` identifies the entry in `events` promoted across the site. Set it to `null` to remove the global banner and the promotional blocks from Home and Events. Promotional links always lead to the event page, never directly to its registration form.
-- A guest event may set `registrationUrl` to the public `docs.google.com/forms/.../viewform` URL. Its occurrences can provide their Google Forms `registrationField`, while `prices` maps the number of selected workshops to the total price. The event page then prepares a prefilled form, embedded on tablet and desktop and opened externally on mobile. Use `null` while registrations are not open.
 - `venues`, `teachers`, and `courses` provide shared labels and course-specific display options.
 
 ## Derived By The Generator
@@ -30,7 +29,6 @@ that cannot be derived safely.
 - `scripts/build-classes.js` replaces the `class-schedules` block in `docs/classes/index.html`.
 - `scripts/build-levels.js` replaces the `course-sessions:<course-id>` blocks in `docs/levels/index.html`.
 - `scripts/build-venues.js` replaces the `venue-sessions:<venue-id>` blocks in `docs/venues/index.html`.
-- `scripts/build-events.js` replaces upcoming guest workshop programmes and prática schedules in `docs/events/`. Past event pages and archive cards are directly editable HTML.
 - `scripts/build-calendar.js` writes all individual class and event occurrences into the calendar block in `docs/events/index.html`.
 - `scripts/build-free-intro.js` builds `/try-forro/` and the `free-intro-*` promotional blocks on Home, Classes, Levels, Events, and Register.
 - `scripts/build-featured-event.js` replaces the `featured-event-banner`, `featured-event-home`, and `featured-event-summary` blocks in `docs/`.
@@ -45,3 +43,7 @@ are edited directly when registrations open or close.
 
 Temporary notices are edited directly in `docs/` and use the generic `notice`
 class. They are not part of the programme data or propagated automatically.
+
+Guest-event pages, prices, registration forms, prática summaries, and archive
+cards are edited directly in `docs/events/`. Keep only their calendar or
+featured-event metadata in `site.json`.

@@ -31,8 +31,7 @@ const minutesBetween = ([start, end]) => {
 
 const link = (href, label) => href ? `<a href="${href}">${escapeHtml(label)}</a>` : escapeHtml(label);
 
-const courseHref = (id, course) => {
-    if (course.link === false) return null;
+const courseHref = (id) => {
     if (id === "pratica") return "/events/#praticas";
 
     return `/levels/#${id}`;
@@ -115,7 +114,7 @@ const renderSession = (session, data) => {
         `              <article class="${(courseClassName(session.course, course, minutesBetween(time)))}">`,
         renderPortraits(session, data.teachers),
         `                <p><time datetime="${time[0]}">${formatTime(time[0])}</time> - <time datetime="${time[1]}">${formatTime(time[1])}</time></p>`,
-        `                <h6>${link(courseHref(session.course, course), courseTitle(session.course, course))}</h6>`,
+        `                <h6>${link(courseHref(session.course), courseTitle(session.course, course))}</h6>`,
         renderDateRange(session) && `                ${renderDateRange(session)}`,
         renderTeachers(session, data.teachers) && `                ${renderTeachers(session, data.teachers)}`,
         session.note && `                <p>${escapeHtml(session.note)}</p>`,
