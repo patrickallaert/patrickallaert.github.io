@@ -10,18 +10,14 @@ const escapeHtml = (value) => String(value)
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;");
 
-const replaceBlock = (html, name, content) => {
-    const indentation = html.match(/\n([ \t]+)<a href="#main">/)[1];
-
-    return html.replace(
-        new RegExp(`([ \\t]*)<!-- ${name}:start -->[\\s\\S]*?[ \\t]*<!-- ${name}:end -->`, "g"),
-        (_, indent) => [
-            `${indent}<!-- ${name}:start -->`,
-            content.split("\n").map((line) => `${indent}${indentation.repeat(line.match(/^ */)[0].length / 2)}${line.trimStart()}`).join("\n"),
-            `${indent}<!-- ${name}:end -->`,
-        ].filter(Boolean).join("\n"),
-    );
-};
+const replaceBlock = (html, name, content) => html.replace(
+    new RegExp(`([ \\t]*)<!-- ${name}:start -->[\\s\\S]*?[ \\t]*<!-- ${name}:end -->`, "g"),
+    (_, indentation) => [
+        `${indentation}<!-- ${name}:start -->`,
+        content.split("\n").map((line) => `${indentation}${line}`).join("\n"),
+        `${indentation}<!-- ${name}:end -->`,
+    ].filter(Boolean).join("\n"),
+);
 
 const data = loadSiteData();
 const event = data.featuredEvent ? data.events[data.featuredEvent] : null;
