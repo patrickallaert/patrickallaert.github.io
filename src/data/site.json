@@ -2,61 +2,37 @@
   "featuredEvent": "2026-10-camila-alves",
   "freeIntros": [
     {
-      "id": "guinguette-2-september",
-      "type": "intro",
       "date": "2026-09-02",
       "location": "La Guinguette Henri",
-      "source": {
-        "event": "summer-initiation"
-      }
+      "event": "summer-initiation"
     },
     {
-      "id": "pianofabriek-12-september",
-      "type": "intro",
       "date": "2026-09-12",
       "time": "18:00-19:00",
       "location": "Pianofabriek"
     },
     {
-      "id": "ten-noey-14-september",
-      "type": "intro",
       "date": "2026-09-14",
       "time": "20:45-22:00",
       "venue": "ten-noey"
     },
     {
-      "id": "guinguette-16-september",
-      "type": "intro",
       "date": "2026-09-16",
       "location": "La Guinguette Henri",
-      "source": {
-        "event": "summer-initiation"
-      }
+      "event": "summer-initiation"
     },
     {
-      "id": "brochet-17-september",
-      "type": "intro",
       "date": "2026-09-17",
       "time": "19:00-20:15",
       "venue": "brochet"
     },
     {
-      "id": "ten-noey-21-september",
-      "type": "trial",
       "date": "2026-09-21",
-      "source": {
-        "trimester": "2026-09",
-        "course": "level-1"
-      }
+      "course": "level-1"
     },
     {
-      "id": "brochet-24-september",
-      "type": "trial",
       "date": "2026-09-24",
-      "source": {
-        "trimester": "2026-09",
-        "course": "level-1"
-      }
+      "course": "level-1"
     }
   ],
   "venues": {
@@ -90,31 +66,26 @@
   "events": {
     "2026-09-mardio-milena": {
       "category": "workshops",
-      "url": "/events/2026-09-mardio-milena/",
       "occurrences": [
         {
-          "id": "palha-do-coqueiro",
           "title": "A palha do coqueiro",
           "date": "2026-09-09",
           "time": "19:00-20:15",
           "venue": "dublin"
         },
         {
-          "id": "o-molho",
           "title": "O Molho",
           "date": "2026-09-09",
           "time": "20:30-21:45",
           "venue": "dublin"
         },
         {
-          "id": "temperos-do-nordeste",
           "title": "Temperos do Nordeste",
           "date": "2026-09-10",
           "time": "19:00-20:15",
           "venue": "brochet"
         },
         {
-          "id": "adaptation",
           "title": "Adaptation: how to enjoy dancing with anyone",
           "date": "2026-09-10",
           "time": "20:30-21:45",
@@ -127,31 +98,23 @@
       "title": "Camila Alves in Brussels",
       "label": "Three forró workshops",
       "dates": "3 October 2026",
-      "url": "/events/2026-10-camila-alves/",
       "summary": "Camila Alves is coming from Lisbon for three workshops on turns technique, active following and attentive leading, and frame in forró.",
       "image": "/assets/events/2026-10-camila-alves.webp",
       "imageAlt": "Camila Alves",
+      "date": "2026-10-03",
+      "venue": "malibran",
       "occurrences": [
         {
-          "id": "turns-technique",
           "title": "Turns Technique: Pivot, Focus & Energy (for Followers AND LEADERS)",
-          "date": "2026-10-03",
-          "time": "14:00-15:15",
-          "venue": "malibran"
+          "time": "14:00-15:15"
         },
         {
-          "id": "active-following-attentive-leading",
           "title": "Active following & attentive leading",
-          "date": "2026-10-03",
-          "time": "15:30-16:45",
-          "venue": "malibran"
+          "time": "15:30-16:45"
         },
         {
-          "id": "frame-in-forro",
           "title": "Frame in Forró",
-          "date": "2026-10-03",
-          "time": "17:00-18:15",
-          "venue": "malibran"
+          "time": "17:00-18:15"
         }
       ]
     },
@@ -162,7 +125,6 @@
       "location": "George Henri, Brussels",
       "time": "18:30-22:00",
       "recurrence": {
-        "day": "wednesday",
         "starts": "2026-07-01",
         "ends": "2026-09-16"
       },
@@ -176,48 +138,30 @@
       "url": "/events/#summer-guinguettes",
       "location": "George Henri, Brussels",
       "time": "19:30",
-      "dates": [
-        "2026-07-08",
-        "2026-07-22",
-        "2026-08-05",
-        "2026-08-19",
-        "2026-09-02",
-        "2026-09-16"
-      ]
+      "recurrence": {
+        "starts": "2026-07-08",
+        "ends": "2026-09-16",
+        "interval": 2
+      }
     },
     "sunday-pratica": {
       "category": "social-dancing",
-      "title": "Forró Prática",
-      "url": "/events/#praticas",
+      "course": "pratica",
       "venue": "dublin",
       "time": "19:00-22:00",
       "recurrence": {
-        "day": "sunday",
         "starts": "2026-09-20",
-        "ends": "2027-06-27"
-      },
-      "excludedDates": [
-        "2026-10-04",
-        "2026-11-01",
-        "2026-12-06",
-        "2027-01-03",
-        "2027-02-07",
-        "2027-03-07",
-        "2027-04-04",
-        "2027-05-02",
-        "2027-06-06"
-      ]
+        "ends": "2027-06-27",
+        "skipFirstOfMonth": true
+      }
     },
     "wednesday-pratica": {
       "category": "social-dancing",
-      "title": "Forró Prática",
-      "url": "/events/#praticas",
       "course": "pratica",
       "venue": "dublin",
       "time": "20:15-22:30",
       "note": "Open practice · No registration required",
       "recurrence": {
-        "day": "wednesday",
         "starts": "2026-09-23",
         "ends": "2027-06-30"
       }

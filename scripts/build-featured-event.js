@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { loadSiteData } = require("./site-data");
+const { eventPageUrl, loadSiteData } = require("./site-data");
 
 const DOCS_PATH = path.join(__dirname, "..", "docs");
 
@@ -21,12 +21,13 @@ const replaceBlock = (html, name, content) => html.replace(
 
 const data = loadSiteData();
 const event = data.featuredEvent ? data.events[data.featuredEvent] : null;
+const url = eventPageUrl(data.featuredEvent);
 const banner = event ? [
     "<aside class=\"featured-event-banner\" aria-label=\"Featured event\">",
     "  <p>",
     `    <strong>${escapeHtml(event.title)}</strong>`,
     `    <span>${escapeHtml(event.label)} · ${escapeHtml(event.dates)}</span>`,
-    `    <a href=\"${escapeHtml(event.url)}\">View event details</a>`,
+    `    <a href=\"${escapeHtml(url)}\">View event details</a>`,
     "  </p>",
     "</aside>",
 ].join("\n") : "";
@@ -38,7 +39,7 @@ const renderFeature = (eager = false) => event ? [
     `    <p class=\"event-date\">${escapeHtml(event.label)} · ${escapeHtml(event.dates)}</p>`,
     `    <p>${escapeHtml(event.summary)}</p>`,
     `    <ul aria-label=\"${escapeHtml(event.title)} links\">`,
-    `      <li><a href=\"${escapeHtml(event.url)}\">View event details</a></li>`,
+    `      <li><a href=\"${escapeHtml(url)}\">View event details</a></li>`,
     "    </ul>",
     "  </div>",
     "  <figure>",

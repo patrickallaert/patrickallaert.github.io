@@ -10,7 +10,7 @@ that cannot be derived safely.
 - `noClassDates` lists dates on which every class scheduled that day is cancelled.
 - `schedule` contains the recurring class slots for a trimester.
 - `events` contains only the information needed by the calendar, shared programme pages, or featured-event promotion. Event-page content is edited directly in `docs/`.
-- `freeIntros` contains only the information needed to add free introductions and Level 1 trials to the calendar without duplicating their source event or class.
+- `freeIntros` contains only the information needed to add free introductions and Level 1 trials to the calendar. An `event` reuses a recurring event; a `course` reuses a scheduled class and identifies it as a free trial.
 - `featuredEvent` identifies the entry in `events` promoted across the site. Set it to `null` to remove the global banner and the promotional blocks from Home and Events. Promotional links always lead to the event page, never directly to its registration form.
 - `venues`, `teachers`, and `courses` provide shared labels and course-specific display options.
 
@@ -19,10 +19,11 @@ that cannot be derived safely.
 - Venue links are derived from venue IDs: `brochet` becomes `/venues/#brochet`.
 - Teacher links are derived from teacher IDs: `simon` becomes `/about/#simon`.
 - Standard course links are derived from course IDs: `level-2` becomes `/levels/#level-2`.
+- Guest-event links are derived from their event IDs: `2026-10-camila-alves` becomes `/events/2026-10-camila-alves/`. Calendar occurrences link to that page's `#programme` section.
 - `level-N` and `roots-N` titles and CSS classes are inferred from their IDs.
 - Day names and the weekday for each no-class date are derived automatically.
 - Session duration classes are generated from the schedule.
-- Weekly calendar occurrences are derived from `recurrence`; one-off or irregular occurrences use `dates`. `excludedDates` removes exceptions. Each occurrence has one primary visual `category` and one or more filtering `categories`; free Level 1 trials belong to both classes and initiations without being duplicated.
+- Weekly calendar occurrences are derived from `recurrence`, whose `starts` value is the first occurrence. `interval` changes the number of weeks between occurrences, `skipFirstOfMonth` omits the first occurrence of every month, and `excludedDates` removes individual exceptions. One-off or irregular occurrences use `dates`. Each occurrence has one primary visual `category` and one or more filtering `categories`; free Level 1 trials belong to both classes and initiations without being duplicated.
 
 ## Generated HTML Blocks
 
@@ -45,7 +46,8 @@ class. They are not part of the programme data or propagated automatically.
 
 Guest-event pages, prices, registration forms, prática summaries, and archive
 cards are edited directly in `docs/events/`. Keep only their calendar or
-featured-event metadata in `site.json`.
+featured-event metadata in `site.json`. Every guest-event page with workshops
+must expose its programme as `<section id="programme">`.
 
 The `/try-forro/` page and its permanent links from Home, Classes, Levels,
 Events, and Register are edited directly in `docs/`. Registration details,

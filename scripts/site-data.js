@@ -18,20 +18,20 @@ const firstDayInRange = (start, day) => {
     return dateToIso(date);
 };
 
-const nextWeek = (date) => {
+const nextWeek = (date, interval) => {
     const next = utcDate(date);
 
-    next.setUTCDate(next.getUTCDate() + 7);
+    next.setUTCDate(next.getUTCDate() + 7 * interval);
 
     return dateToIso(next);
 };
 
-const weeklyDates = ({ day, starts, ends, excludedDates = [] }) => {
+const weeklyDates = ({ day, starts, ends, interval = 1, skipFirstOfMonth = false, excludedDates = [] }) => {
     const excluded = new Set(excludedDates);
     const dates = [];
 
-    for (let date = firstDayInRange(starts, day); date <= ends; date = nextWeek(date)) {
-        if (!excluded.has(date)) dates.push(date);
+    for (let date = day ? firstDayInRange(starts, day) : starts; date <= ends; date = nextWeek(date, interval)) {
+        if (!excluded.has(date) && !(skipFirstOfMonth && utcDate(date).getUTCDate() <= 7)) dates.push(date);
     }
 
     return dates;
@@ -67,7 +67,7 @@ const validateSiteData = (data) => {
 
             return {
                 event: item.event,
-                day: event.recurrence.day,
+                day: DAYS[utcDate(event.recurrence.starts).getUTCDay()],
                 venue: event.venue,
                 time: event.time,
                 course: event.course,
@@ -100,6 +100,7 @@ module.exports = {
     DATA_PATH,
     DAYS,
     WEEKDAYS,
+    eventPageUrl: (event) => `/events/${event}/`,
     loadSiteData,
     noClassDatesForDay,
     scheduleForLevel: (data, course) => data.trimesters
