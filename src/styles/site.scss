@@ -47,25 +47,24 @@ textarea {
 :root {
   --brand-yellow: #ffd91a;
   --brand-navy: #004f71;
-  --brand-navy-hover: #003b55;
   --brand-pink: #ff00bf;
   --brand-teal: #09b3b1;
   --brand-magenta: #b3128a;
   --brand-blue: #0077c8;
-  --brand-cyan: #14ccca;
+  --navy-dark: #003b55;
   --featured-event-background: var(--brand-teal);
   --featured-event-text: #062d29;
   --featured-event-emphasis: #062d29;
   --featured-event-action-background: var(--brand-navy);
-  --featured-event-action-hover-background: var(--brand-navy-hover);
-  --featured-event-action-text: #ffffff;
+  --featured-event-action-hover-background: var(--navy-dark);
+  --featured-event-action-text: var(--light-text);
   --paper: #fff7ea;
   --surface: #fffdf8;
   --surface-muted: color-mix(in srgb, var(--surface) 92%, var(--yellow));
   --surface-highlight: color-mix(in srgb, var(--yellow) 18%, var(--surface));
   --ink: #173846;
   --ink-soft: rgba(23, 56, 70, 0.74);
-  --light-ink: #fff;
+  --light-text: #fff;
   --clay: #b85f39;
   --clay-text: #8a3f24;
   --yellow: #f2c14e;
@@ -225,20 +224,20 @@ body {
         justify-self: end;
         min-height: 2.2rem;
         padding: 0.38rem 0.82rem;
-        color: var(--light-ink);
+        color: var(--light-text);
         background: var(--brand-navy);
         border-color: var(--brand-navy);
         box-shadow: 0 0.7rem 1.5rem rgba(0, 79, 113, 0.18);
 
         &:hover,
         &:focus-visible {
-          color: var(--light-ink);
-          background: var(--brand-navy-hover);
+          color: var(--light-text);
+          background: var(--navy-dark);
           transform: translateY(-1px);
         }
 
         &[aria-current="page"] {
-          color: var(--light-ink);
+          color: var(--light-text);
           background: var(--ink);
           border-color: var(--ink);
         }
@@ -302,7 +301,7 @@ body {
       }
 
       li:first-child a {
-        color: var(--light-ink);
+        color: var(--light-text);
         background: var(--brand-navy);
         border-color: var(--brand-navy);
       }
@@ -428,7 +427,7 @@ body {
       justify-content: center;
       min-height: 2.75rem;
       padding: 0.55rem 0.9rem;
-      color: var(--light-ink);
+      color: var(--light-text);
       text-align: center;
       text-decoration: none;
       background: var(--brand-navy);
@@ -437,9 +436,9 @@ body {
 
       &:hover,
       &:focus-visible {
-        color: var(--light-ink);
+        color: var(--light-text);
         text-decoration: underline;
-        background: var(--brand-navy-hover);
+        background: var(--navy-dark);
       }
     }
 
@@ -450,7 +449,7 @@ body {
 
       &:hover,
       &:focus-visible {
-        color: var(--brand-navy-hover);
+        color: var(--navy-dark);
         background: color-mix(in srgb, var(--brand-navy) 14%, var(--surface));
       }
     }
@@ -567,7 +566,7 @@ body {
 
       &:hover,
       &:focus-visible {
-        color: var(--brand-navy-hover);
+        color: var(--navy-dark);
       }
     }
   }
@@ -581,7 +580,7 @@ body {
 
       > p {
         font-weight: 800;
-        color: var(--light-ink);
+        color: var(--light-text);
       }
 
       ul {
@@ -612,7 +611,7 @@ body {
       width: min(100%, var(--max));
       padding: clamp(1.15rem, 3vw, 1.7rem);
       margin-inline: auto;
-      color: var(--light-ink);
+      color: var(--light-text);
       background:
         linear-gradient(135deg, color-mix(in srgb, var(--brand-navy) 16%, transparent), transparent),
         var(--ink);
@@ -643,7 +642,7 @@ body {
     }
 
     a {
-      color: var(--light-ink);
+      color: var(--light-text);
     }
 
     .contact-links {
@@ -812,7 +811,7 @@ body:not(#home, #legal, .community-page) {
       figcaption {
         padding: 0.7rem 0.85rem;
         margin: 0;
-        color: var(--light-ink);
+        color: var(--light-text);
         background: rgba(0, 79, 113, 0.88);
       }
     }
@@ -875,7 +874,7 @@ body.community-page {
     border: 0.14rem solid color-mix(in srgb, var(--brand-navy) 45%, var(--line));
 
     > h2 {
-      color: var(--brand-navy-hover);
+      color: var(--navy-dark);
     }
   }
 
@@ -955,7 +954,7 @@ body.community-page {
         width: 2.1rem;
         height: 2.1rem;
         font-weight: 850;
-        color: var(--light-ink);
+        color: var(--light-text);
         content: counter(care-step);
         background: var(--brand-navy);
         border-radius: 50%;
@@ -1108,7 +1107,7 @@ body#home {
 
           &[aria-current="true"] {
             width: 1.35rem;
-            color: var(--light-ink);
+            color: var(--light-text);
             background: var(--brand-navy);
             border-color: var(--brand-navy);
           }
@@ -1225,7 +1224,7 @@ body#home {
     h2,
     p,
     a {
-      color: var(--light-ink);
+      color: var(--light-text);
     }
 
     p {
@@ -1332,7 +1331,7 @@ body#about {
           border-color: var(--brand-magenta);
           box-shadow:
                   0 0 0 0.22rem color-mix(in srgb, var(--brand-magenta) 24%, transparent),
-                  0 0.8rem 1.8rem rgba(0, 79, 113, 0.1);
+                  0 0.8rem 1.8rem var(--shadow-color);
         }
 
         address {
@@ -1394,7 +1393,7 @@ body#about {
 
                 &:hover,
                 &:focus-visible {
-                  color: var(--light-ink);
+                  color: var(--light-text);
                   text-decoration: none;
                   background: color-mix(in srgb, var(--brand-navy) 14%, var(--surface));
                   border-color: color-mix(in srgb, var(--brand-navy) 48%, var(--line));
@@ -2433,8 +2432,8 @@ body#events {
   #calendar-viewer {
     --fc-classic-button: var(--brand-navy);
     --fc-classic-button-border: var(--brand-navy);
-    --fc-classic-button-strong: var(--brand-navy-hover);
-    --fc-classic-button-strong-border: var(--brand-navy-hover);
+    --fc-classic-button-strong: var(--navy-dark);
+    --fc-classic-button-strong-border: var(--navy-dark);
     --fc-classic-button-outline: color-mix(in srgb, var(--brand-navy) 45%, transparent);
     --fc-classic-primary: var(--brand-navy);
     --fc-classic-background: var(--surface);
@@ -2490,7 +2489,7 @@ body#events {
 
     a[aria-label] {
       font-weight: 400;
-      color: #ffffff;
+      color: var(--light-text);
       background: var(--calendar-category) !important;
       border-color: color-mix(in srgb, var(--calendar-category) 70%, #000000) !important;
 
@@ -2505,7 +2504,7 @@ body#events {
 
       &:hover,
       &:focus-visible {
-        color: #ffffff;
+        color: var(--light-text);
         filter: brightness(0.88);
       }
     }
@@ -2558,7 +2557,7 @@ body#events {
 
 body#events.event-detail {
   --event-accent: var(--brand-magenta);
-  --event-accent-text: var(--light-ink);
+  --event-accent-text: var(--light-text);
   --event-heading-accent: var(--brand-magenta);
   --event-action-background: var(--yellow);
   --event-action-hover-background: color-mix(in srgb, var(--yellow) 75%, #ffffff);
@@ -2569,8 +2568,8 @@ body#events.event-detail {
     --event-accent-text: #062d29;
     --event-heading-accent: var(--brand-navy);
     --event-action-background: var(--brand-navy);
-    --event-action-hover-background: var(--brand-navy-hover);
-    --event-action-text: var(--light-ink);
+    --event-action-hover-background: var(--navy-dark);
+    --event-action-text: var(--light-text);
   }
 
   #intro {
