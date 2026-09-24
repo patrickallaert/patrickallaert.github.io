@@ -52,24 +52,25 @@ textarea {
   --brand-magenta: #b3128a;
   --brand-blue: #0077c8;
   --navy-dark: #003b55;
+  --teal-text: #001f1d;
   --featured-event-background: var(--brand-teal);
-  --featured-event-text: #062d29;
-  --featured-event-emphasis: #062d29;
+  --featured-event-text: var(--teal-text);
+  --featured-event-emphasis: var(--teal-text);
   --featured-event-action-background: var(--brand-navy);
   --featured-event-action-hover-background: var(--navy-dark);
   --featured-event-action-text: var(--light-text);
   --paper: #fff7ea;
   --surface: #fffdf8;
-  --surface-muted: color-mix(in srgb, var(--surface) 92%, var(--yellow));
-  --surface-highlight: color-mix(in srgb, var(--yellow) 18%, var(--surface));
+  --surface-muted: color-mix(in srgb, var(--surface) 92%, var(--gold));
+  --surface-highlight: color-mix(in srgb, var(--gold) 18%, var(--surface));
   --ink: #173846;
   --ink-soft: rgba(23, 56, 70, 0.74);
   --light-text: #fff;
   --clay: #b85f39;
   --clay-text: #8a3f24;
-  --yellow: #f2c14e;
-  --green: #5e7f5e;
-  --green-text: #486948;
+  --gold: #f2c14e;
+  --sage: #5e7f5e;
+  --sage-text: #486948;
   --guava: #d96c75;
   --leather: #6b4226;
   --line: rgba(0, 79, 113, 0.16);
@@ -98,7 +99,7 @@ textarea {
   --course-level-4: #8f5fb8;
   --course-lead-follow: var(--guava);
   --course-roots: #8a7442;
-  --course-practice: var(--green);
+  --course-practice: var(--sage);
 }
 
 :focus-visible {
@@ -117,7 +118,7 @@ a {
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible {
-  outline: 0.18rem solid color-mix(in srgb, var(--brand-navy) 75%, var(--yellow));
+  outline: 0.18rem solid color-mix(in srgb, var(--brand-navy) 75%, var(--gold));
   outline-offset: 0.18rem;
 }
 
@@ -127,7 +128,7 @@ body {
   font-family: "Source Sans 3", sans-serif;
   line-height: var(--body-line-height);
   color: var(--ink);
-  background: linear-gradient(180deg, var(--paper) 0%, color-mix(in srgb, var(--green) 5%, var(--paper)) 100%);
+  background: var(--paper);
 
   > header nav ul {
     padding: 0;
@@ -143,7 +144,7 @@ body {
     z-index: 100;
     padding: 0.75rem 1rem;
     color: var(--ink);
-    background: var(--yellow);
+    background: var(--gold);
     transform: translateY(-140%);
 
     &:focus {
@@ -256,7 +257,7 @@ body {
       gap: 0.9rem;
       align-items: start;
       background:
-        linear-gradient(135deg, color-mix(in srgb, var(--yellow) 24%, transparent), transparent 50%),
+        linear-gradient(135deg, color-mix(in srgb, var(--gold) 24%, transparent), transparent 50%),
         var(--surface);
 
       h2,
@@ -493,7 +494,7 @@ body {
         font-size: clamp(5rem, 16vw, 8rem);
         font-weight: 800;
         line-height: 1;
-        color: color-mix(in srgb, var(--yellow) 42%, transparent);
+        color: color-mix(in srgb, var(--gold) 42%, transparent);
         pointer-events: none;
         content: "\201C";
       }
@@ -749,8 +750,8 @@ body:not(#home, #legal, .community-page) {
     gap: clamp(1rem, 3vw, 1.8rem);
     min-height: clamp(24rem, 46vw, 37rem);
     background:
-      linear-gradient(135deg, color-mix(in srgb, var(--yellow) 18%, transparent), transparent 45%),
-      linear-gradient(315deg, color-mix(in srgb, var(--green) 9%, transparent), transparent 52%),
+      linear-gradient(135deg, color-mix(in srgb, var(--gold) 18%, transparent), transparent 45%),
+      linear-gradient(315deg, color-mix(in srgb, var(--sage) 9%, transparent), transparent 52%),
       var(--surface);
 
     > h1 {
@@ -780,7 +781,7 @@ body:not(#home, #legal, .community-page) {
         display: grid;
         gap: 0.25rem;
         padding: 0.9rem 1rem;
-        background: color-mix(in srgb, var(--yellow) 12%, var(--surface));
+        background: var(--surface-muted);
         border: 1px solid var(--line);
         border-radius: 1rem;
       }
@@ -824,8 +825,8 @@ body.community-page {
     gap: clamp(0.9rem, 2vw, 1.25rem);
     min-height: auto;
     background:
-      linear-gradient(135deg, color-mix(in srgb, var(--yellow) 18%, transparent), transparent 46%),
-      linear-gradient(315deg, color-mix(in srgb, var(--green) 9%, transparent), transparent 54%),
+      linear-gradient(135deg, color-mix(in srgb, var(--gold) 18%, transparent), transparent 46%),
+      linear-gradient(315deg, color-mix(in srgb, var(--sage) 9%, transparent), transparent 54%),
       var(--surface);
 
     > h1 {
@@ -885,9 +886,9 @@ body.community-page {
   .emergency-notice {
     padding: clamp(1rem, 2.5vw, 1.35rem);
     margin: 1.5rem 0;
-    background: color-mix(in srgb, var(--yellow) 17%, var(--surface));
-    border: 1px solid color-mix(in srgb, var(--yellow) 58%, var(--line));
-    border-left: 0.35rem solid color-mix(in srgb, var(--yellow) 62%, var(--leather));
+    background: var(--surface-highlight);
+    border: 1px solid color-mix(in srgb, var(--gold) 58%, var(--line));
+    border-left: 0.35rem solid color-mix(in srgb, var(--gold) 62%, var(--leather));
     border-radius: 0.55rem;
 
     h3 {
@@ -1141,7 +1142,7 @@ body#home {
       145deg,
       color-mix(in srgb, var(--brand-navy) 8%, var(--surface)),
       var(--surface) 52%,
-      color-mix(in srgb, var(--yellow) 10%, var(--surface))
+      color-mix(in srgb, var(--gold) 10%, var(--surface))
     );
 
     > h1 {
@@ -1327,7 +1328,7 @@ body#about {
         box-shadow: var(--shadow-soft);
 
         &:target {
-          background: color-mix(in srgb, var(--yellow) 13%, var(--surface));
+          background: var(--surface-highlight);
           border-color: var(--brand-magenta);
           box-shadow:
                   0 0 0 0.22rem color-mix(in srgb, var(--brand-magenta) 24%, transparent),
@@ -1414,8 +1415,8 @@ body#about {
           font-weight: 850;
           line-height: 1;
           text-transform: uppercase;
-          background: color-mix(in srgb, var(--yellow) 52%, var(--surface));
-          border: 1px solid color-mix(in srgb, var(--yellow) 70%, var(--line));
+          background: color-mix(in srgb, var(--gold) 52%, var(--surface));
+          border: 1px solid color-mix(in srgb, var(--gold) 70%, var(--line));
           border-radius: 0.3rem;
         }
       }
@@ -1631,7 +1632,7 @@ body#classes {
           margin: 0 0 0.65rem;
           font-size: 0.82rem;
           line-height: 1.15;
-          color: var(--green-text);
+          color: var(--sage-text);
           text-transform: uppercase;
           overflow-wrap: anywhere;
 
@@ -1898,8 +1899,7 @@ body#venues main > section:not(#intro) > section[aria-labelledby$="-scheduled-cl
     padding: 0.9rem 1rem 1rem;
     overflow: hidden;
     background: var(--surface);
-    border: 1px solid color-mix(in srgb, var(--course-accent) 18%, rgba(181, 196, 192, 0.4));
-    border-color: color-mix(in srgb, var(--course-accent) 20%, var(--line));
+    border: 1px solid color-mix(in srgb, var(--course-accent) 20%, var(--line));
     border-left-style: none;
     border-left-width: 0;
     border-radius: var(--radius);
@@ -1939,7 +1939,7 @@ body#venues main > section:not(#intro) > section[aria-labelledby$="-scheduled-cl
     font-size: 0.72rem;
     white-space: nowrap;
     text-decoration: none;
-    background: color-mix(in srgb, var(--yellow) 20%, var(--surface));
+    background: var(--surface-highlight);
     border-radius: 999rem;
   }
 
@@ -2072,9 +2072,7 @@ body#venues {
   main > section:not(#intro) {
     display: grid;
     gap: clamp(1rem, 2.5vw, 1.55rem);
-    background:
-      linear-gradient(135deg, color-mix(in srgb, var(--green) 8%, transparent), transparent 54%),
-      var(--surface);
+    background: var(--surface);
 
     > h2,
     > address,
@@ -2091,7 +2089,7 @@ body#venues {
       color: var(--ink);
       text-decoration: none;
       background: var(--surface-highlight);
-      border: 1px solid color-mix(in srgb, var(--yellow) 35%, var(--line));
+      border: 1px solid color-mix(in srgb, var(--gold) 35%, var(--line));
       border-radius: var(--radius);
     }
 
@@ -2158,7 +2156,7 @@ body#register {
     padding: 1rem;
     color: var(--ink);
     background: var(--surface-highlight);
-    border: 1px solid color-mix(in srgb, var(--yellow) 48%, var(--line));
+    border: 1px solid color-mix(in srgb, var(--gold) 48%, var(--line));
     border-radius: var(--radius);
 
     p {
@@ -2231,8 +2229,8 @@ body#try-forro {
     display: grid;
     gap: 0.75rem;
     padding: clamp(1rem, 3vw, 1.5rem);
-    background: color-mix(in srgb, var(--yellow) 16%, var(--surface));
-    border-left: 0.25rem solid var(--yellow);
+    background: var(--surface-highlight);
+    border-left: 0.25rem solid var(--gold);
 
     h3,
     p {
@@ -2288,7 +2286,7 @@ body#events {
 
         strong {
           font-size: 0.78rem;
-          color: var(--green-text);
+          color: var(--sage-text);
           text-transform: uppercase;
         }
       }
@@ -2365,6 +2363,28 @@ body#events {
     }
   }
 
+  :is(.calendar-filters, #calendar-viewer) {
+    .classes {
+      --calendar-category: var(--brand-blue);
+      --calendar-category-text: var(--light-text);
+    }
+
+    .social-dancing {
+      --calendar-category: var(--brand-teal);
+      --calendar-category-text: var(--teal-text);
+    }
+
+    .workshops {
+      --calendar-category: var(--brand-magenta);
+      --calendar-category-text: var(--light-text);
+    }
+
+    .initiations {
+      --calendar-category: var(--brand-yellow);
+      --calendar-category-text: var(--ink);
+    }
+  }
+
   .calendar-filters {
     display: flex;
     flex-wrap: wrap;
@@ -2406,22 +2426,6 @@ body#events {
       accent-color: var(--calendar-category);
     }
 
-    .classes {
-      --calendar-category: #3c73b8;
-    }
-
-    .social-dancing {
-      --calendar-category: #5e7f5e;
-    }
-
-    .workshops {
-      --calendar-category: #b85f39;
-    }
-
-    .initiations {
-      --calendar-category: #9b4f72;
-    }
-
     .calendar-filter-note {
       width: 100%;
       margin: 0.15rem 0 0;
@@ -2438,10 +2442,11 @@ body#events {
     --fc-classic-primary: var(--brand-navy);
     --fc-classic-background: var(--surface);
     --fc-classic-foreground: var(--ink);
+    --fc-classic-faint-foreground: var(--ink-soft);
     --fc-classic-muted-foreground: var(--ink-soft);
     --fc-classic-border: color-mix(in srgb, var(--brand-navy) 20%, transparent);
     --fc-classic-strong-border: color-mix(in srgb, var(--brand-navy) 38%, transparent);
-    --fc-classic-today: color-mix(in srgb, var(--yellow) 24%, transparent);
+    --fc-classic-today: color-mix(in srgb, var(--gold) 24%, transparent);
     min-width: 0;
 
     > div:first-child {
@@ -2489,7 +2494,7 @@ body#events {
 
     a[aria-label] {
       font-weight: 400;
-      color: var(--light-text);
+      color: var(--calendar-category-text);
       background: var(--calendar-category) !important;
       border-color: color-mix(in srgb, var(--calendar-category) 70%, #000000) !important;
 
@@ -2504,31 +2509,15 @@ body#events {
 
       &:hover,
       &:focus-visible {
-        color: var(--light-text);
+        color: var(--calendar-category-text);
         filter: brightness(0.88);
       }
     }
 
-    a.classes {
-      --calendar-category: #35699f;
-    }
-
-    a.social-dancing {
-      --calendar-category: #486948;
-    }
-
-    a.workshops {
-      --calendar-category: #994928;
-    }
-
-    a.initiations {
-      --calendar-category: #8b4264;
-    }
-
     a.free-trial {
-      background: linear-gradient(110deg, #35699f 0 42%, #8b4264 42% 100%) !important;
-      border-color: #623047 !important;
-      box-shadow: none;
+      background: var(--brand-blue) !important;
+      border-color: var(--brand-yellow) !important;
+      box-shadow: inset 0 0 0 0.16rem var(--brand-yellow);
     }
 
     .calendar-event-details {
@@ -2547,10 +2536,6 @@ body#events {
       display: grid;
       gap: 0.08rem;
       min-width: 0;
-
-      > span {
-        opacity: 0.88;
-      }
     }
   }
 }
@@ -2559,13 +2544,13 @@ body#events.event-detail {
   --event-accent: var(--brand-magenta);
   --event-accent-text: var(--light-text);
   --event-heading-accent: var(--brand-magenta);
-  --event-action-background: var(--yellow);
-  --event-action-hover-background: color-mix(in srgb, var(--yellow) 75%, #ffffff);
-  --event-action-text: #062d29;
+  --event-action-background: var(--gold);
+  --event-action-hover-background: color-mix(in srgb, var(--gold) 75%, #ffffff);
+  --event-action-text: var(--teal-text);
 
   &.camila-alves {
     --event-accent: var(--brand-teal);
-    --event-accent-text: #062d29;
+    --event-accent-text: var(--teal-text);
     --event-heading-accent: var(--brand-navy);
     --event-action-background: var(--brand-navy);
     --event-action-hover-background: var(--navy-dark);

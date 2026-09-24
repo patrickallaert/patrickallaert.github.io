@@ -126,6 +126,12 @@ The official Conexão palette is defined by the `--brand-*` properties in
 blocks separately. Event-detail pages may override their semantic
 `--event-*` properties under an event-specific content class.
 
+Keep the official palette distinct from the functional site colours such as
+`--paper`, `--surface`, `--ink`, `--gold`, and `--sage`. Course and calendar
+colours are semantic: they may reference the official or functional palette,
+but their names describe the information they communicate rather than a visual
+shade.
+
 ## Site data model
 
 `src/data/site.json` contains the structured information that changes with the
