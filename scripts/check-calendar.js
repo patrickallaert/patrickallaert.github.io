@@ -20,9 +20,9 @@ assert.equal(find("2026-10-03", "Frame in Forró").end, "2026-10-03T18:15:00");
 assert.equal(find("2026-09-09", "Summer Forró Guinguette"), undefined);
 assert.equal(find("2026-09-02", "Summer Forró Guinguette").category, "social-dancing");
 assert.equal(events.every((event) => !Object.hasOwn(event, "id")), true);
-assert.equal(events.filter((event) => event.url === "/try-forro/").length, 7);
-assert.equal(events.filter((event) => event.url === "/try-forro/" && event.categories.includes("initiations")).length, 7);
-assert.equal(events.filter((event) => event.url === "/try-forro/" && event.categories.includes("classes")).length, 2);
+assert.equal(events.filter((event) => event.url === "/try-forro/").length, 11);
+assert.equal(events.filter((event) => event.url === "/try-forro/" && event.categories.includes("initiations")).length, 11);
+assert.equal(events.filter((event) => event.url === "/try-forro/" && event.categories.includes("classes")).length, 6);
 for (const date of ["2026-07-08", "2026-07-22", "2026-08-05", "2026-08-19", "2026-09-02", "2026-09-16"]) {
     assert.equal(on(date).filter((event) => event.start.endsWith("T19:30:00") && event.categories.includes("initiations")).length, 1);
 }
@@ -32,7 +32,9 @@ assert.equal(find("2026-09-14", "Free forró intro class").category, "initiation
 assert.equal(find("2026-09-17", "Free forró intro class").category, "initiations");
 assert.equal(find("2026-09-21", "Level 1 · Free trial class").venue, "GC Ten Noey");
 assert.deepEqual(find("2026-09-21", "Level 1 · Free trial class").categories, ["classes", "initiations"]);
-assert.deepEqual(find("2026-09-24", "Level 1 · Free trial class").categories, ["classes", "initiations"]);
+for (const date of ["2026-09-24", "2026-09-28", "2026-10-01", "2026-10-05", "2026-10-08"]) {
+    assert.deepEqual(find(date, "Level 1 · Free trial class").categories, ["classes", "initiations"]);
+}
 assert.equal(events.filter((event) => event.title === "Forró Prática" && event.start.endsWith("T19:00:00")).length, 32);
 assert.equal(events.filter((event) => event.title === "Forró Prática" && event.start.endsWith("T20:15:00")).length, 40);
 assert.equal(pratica("2026-09-20", "19:00").category, "social-dancing");

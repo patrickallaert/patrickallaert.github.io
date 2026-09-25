@@ -33,6 +33,22 @@
     {
       "date": "2026-09-24",
       "course": "level-1"
+    },
+    {
+      "date": "2026-09-28",
+      "course": "level-1"
+    },
+    {
+      "date": "2026-10-01",
+      "course": "level-1"
+    },
+    {
+      "date": "2026-10-05",
+      "course": "level-1"
+    },
+    {
+      "date": "2026-10-08",
+      "course": "level-1"
     }
   ],
   "venues": {
