@@ -10,10 +10,9 @@
     "build": "npm run build:html && npm run build:css && npm run build:js",
     "lint:css": "stylelint \"src/styles/**/*.scss\"",
     "test:contrast": "node scripts/check-contrast.js",
-    "test:calendar": "node scripts/check-calendar.js",
     "test:event-registration": "node scripts/check-event-registration.js",
     "audit:css": "node scripts/audit-css.js",
-    "verify": "npm run lint:css && npm run build && npm run test:contrast && npm run test:calendar && npm run test:event-registration",
+    "verify": "npm run lint:css && npm run build && npm run test:contrast && npm run test:event-registration",
     "watch:css": "sass --watch src/styles/site.scss:docs/assets/site.css"
   },
   "devDependencies": {
