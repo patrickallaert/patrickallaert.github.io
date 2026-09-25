@@ -32,6 +32,7 @@ that cannot be derived safely.
 - `scripts/build-venues.js` replaces the `venue-sessions:<venue-id>` blocks in `docs/venues/index.html`.
 - `scripts/build-calendar.js` writes all individual class and event occurrences into the calendar block in `docs/events/index.html`.
 - `scripts/build-featured-event.js` replaces the `featured-event-banner`, `featured-event-home`, and `featured-event-summary` blocks in `docs/`.
+- `scripts/build-links.js` creates the communication link list and its downloadable SVG and PNG QR codes. Upcoming guest events are derived from `site.json`; stable destinations are kept in the script so they do not enlarge programme data.
 
 For the MVP, `docs/` is both the GitHub Pages publication directory and the
 directly edited HTML source. Do not create a separate `site/` directory. Edit
@@ -43,6 +44,9 @@ are edited directly when registrations open or close.
 
 Temporary notices are edited directly in `docs/` and use the generic `notice`
 class. They are not part of the programme data or propagated automatically.
+
+The unlisted `/links/` page is generated for the communication team. Keep it
+out of navigation and `sitemap.xml`; its QR codes always use production URLs.
 
 Guest-event pages, prices, registration forms, prática summaries, and archive
 cards are edited directly in `docs/events/`. Keep only their calendar or

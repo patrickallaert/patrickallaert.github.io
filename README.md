@@ -68,6 +68,7 @@ Generated assets live in `docs/assets/`:
 
 - `docs/assets/site.css`
 - `docs/assets/site.css.map`
+- `docs/assets/qr/*.svg` and `docs/assets/qr/*.png`
 
 Regenerate them with `npm run build`.
 
@@ -157,6 +158,7 @@ Build scripts may update marked regions inside those same HTML files:
 - `venue-sessions:<venue-id>` blocks in `docs/venues/index.html`
 - `registration-status` and `registration-link` blocks in `docs/register/index.html`
 - `free-intro-*` blocks on the permanent `/try-forro/` page and its contextual entry points
+- `links` block and QR assets for the unlisted `/links/` communication page
 
 Stable publication metadata is maintained directly in the HTML. When adding,
 renaming, or removing a public page:
