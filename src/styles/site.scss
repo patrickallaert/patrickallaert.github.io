@@ -259,6 +259,106 @@ body {
     width: min(100%, var(--max));
     padding: var(--main-top-padding) var(--main-inline) clamp(3rem, 7vw, 5rem);
     margin-inline: auto;
+
+    > #intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: clamp(1rem, 2vw, 1.5rem);
+      background: var(--surface-gradient-warm);
+
+      > h1 {
+        max-width: 15ch;
+        margin: 0;
+
+        strong {
+          color: var(--clay-text);
+        }
+      }
+
+      > p {
+        max-width: 46rem;
+        margin: 0;
+        font-size: clamp(1rem, 1.45vw, 1.16rem);
+      }
+
+      > ul,
+      > ol {
+        display: grid;
+        gap: 0.75rem;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        &:not([aria-label="Trimester rhythm"]) > li {
+          display: grid;
+          gap: 0.25rem;
+          padding: 0.9rem 1rem;
+          background: var(--surface-muted);
+          border: 1px solid var(--line);
+          border-radius: 1rem;
+        }
+
+        strong {
+          display: block;
+          color: var(--ink);
+        }
+
+        span {
+          color: var(--ink-soft);
+        }
+      }
+
+      > figure {
+        margin: 0;
+
+        &:not(.initiative-logo) {
+          overflow: hidden;
+          border-radius: calc(var(--radius) * 1.1);
+          box-shadow: 0 1.3rem 2.8rem rgba(0, 79, 113, 0.12);
+
+          img {
+            width: 100%;
+            height: clamp(18rem, 52vw, 28rem);
+            object-fit: cover;
+            filter: saturate(1.03);
+          }
+
+          figcaption {
+            padding: 0.7rem 0.85rem;
+            margin: 0;
+            color: var(--light-text);
+            background: rgba(0, 79, 113, 0.88);
+          }
+        }
+
+        &.initiative-logo {
+          width: min(100%, 20rem);
+          margin-inline: auto;
+
+          img {
+            height: auto;
+          }
+        }
+      }
+
+      @media (min-width: 64rem) {
+        &:has(> :is(figure, #gallery)) {
+          grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+          column-gap: clamp(2rem, 4vw, 4rem);
+
+          > :is(h1, p, ul, ol, nav) {
+            grid-column: 1;
+          }
+
+          > :is(figure, #gallery) {
+            grid-row: 1 / span 3;
+            grid-column: 2;
+            align-self: center;
+          }
+        }
+      }
+    }
+
     > section.orientation {
       display: grid;
       gap: 0.9rem;
@@ -746,111 +846,7 @@ body {
   }
 }
 
-body:not(#home, #legal, #links, .community-page) {
-  #intro {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: clamp(1rem, 3vw, 1.8rem);
-    min-height: clamp(24rem, 46vw, 37rem);
-    background: var(--surface-gradient-warm);
-
-    > h1 {
-      max-width: 12ch;
-      margin: 0;
-
-      strong {
-        color: var(--clay-text);
-      }
-    }
-
-    > p {
-      max-width: 38rem;
-      margin: 0;
-      font-size: clamp(1rem, 1.45vw, 1.16rem);
-    }
-
-    > ul,
-    > ol {
-      display: grid;
-      gap: 0.75rem;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-
-      &:not([aria-label="Trimester rhythm"]) > li {
-        display: grid;
-        gap: 0.25rem;
-        padding: 0.9rem 1rem;
-        background: var(--surface-muted);
-        border: 1px solid var(--line);
-        border-radius: 1rem;
-      }
-
-      strong {
-        display: block;
-        color: var(--ink);
-      }
-
-      span {
-        color: var(--ink-soft);
-      }
-    }
-
-    > figure {
-      margin: 0;
-      overflow: hidden;
-      border-radius: calc(var(--radius) * 1.1);
-      box-shadow: 0 1.3rem 2.8rem rgba(0, 79, 113, 0.12);
-
-      img {
-        width: 100%;
-        height: clamp(18rem, 52vw, 28rem);
-        object-fit: cover;
-        filter: saturate(1.03);
-      }
-
-      figcaption {
-        padding: 0.7rem 0.85rem;
-        margin: 0;
-        color: var(--light-text);
-        background: rgba(0, 79, 113, 0.88);
-      }
-    }
-  }
-}
-
 body.community-page {
-  #intro {
-    display: grid;
-    gap: clamp(0.9rem, 2vw, 1.25rem);
-    min-height: auto;
-    background: var(--surface-gradient-warm);
-
-    > h1 {
-      max-width: 15ch;
-      margin: 0;
-
-      strong {
-        color: var(--clay-text);
-      }
-    }
-
-    > p {
-      max-width: 46rem;
-      margin: 0;
-      font-size: clamp(1rem, 1.45vw, 1.16rem);
-    }
-
-    .initiative-logo {
-      width: min(100%, 20rem);
-      margin: 0.35rem auto 0;
-
-      img {
-        height: auto;
-      }
-    }
-  }
-
   .page-actions {
     margin-top: 0.35rem;
 
@@ -866,7 +862,7 @@ body.community-page {
   }
 
   .support-panel {
-    background: var(--surface-gradient-blue);
+    background: var(--surface);
     border: 0.14rem solid color-mix(in srgb, var(--brand-navy) 45%, var(--line));
 
     > h2 {
@@ -1127,39 +1123,6 @@ body#home {
       cursor: pointer;
     }
   }
-  #intro {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: clamp(1rem, 4vw, 2rem);
-    align-items: center;
-    min-height: clamp(27rem, 58vh, 42rem);
-    background: linear-gradient(
-      145deg,
-      color-mix(in srgb, var(--brand-navy) 8%, var(--surface)),
-      var(--surface) 52%,
-      color-mix(in srgb, var(--gold) 10%, var(--surface))
-    );
-
-    > h1 {
-      max-width: 12ch;
-      margin: 0;
-
-      strong {
-        color: var(--clay-text);
-      }
-    }
-
-    > h1 + p {
-      max-width: 34rem;
-      margin: 0;
-      font-size: clamp(1rem, 1.5vw, 1.18rem);
-    }
-
-    > .intro-action {
-      margin: 0;
-    }
-  }
-
   #video {
     display: grid;
     gap: clamp(1rem, 4vw, 2.5rem);
@@ -2551,8 +2514,6 @@ body#events.event-detail {
   }
 
   #intro {
-    min-height: auto;
-
     > .eyebrow {
       font-size: 0.78rem;
       font-weight: 850;
@@ -2840,10 +2801,6 @@ body#legal {
 }
 
 body#links {
-  #intro {
-    background: var(--surface);
-  }
-
   main {
     > nav {
       ul {
@@ -3168,21 +3125,6 @@ body#links {
   }
 
   body#home {
-    #intro {
-      grid-template-columns: minmax(16rem, 0.86fr) minmax(21rem, 1.14fr);
-
-      > h1,
-      > h1 + p,
-      > .intro-action {
-        grid-column: 1;
-      }
-    }
-
-    #gallery {
-      grid-row: 1 / span 3;
-      grid-column: 2;
-    }
-
     #video {
       grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
       align-items: center;
@@ -3234,25 +3176,6 @@ body#links {
     }
   }
 
-  body.community-page #intro:has(> .initiative-logo) {
-    grid-template-columns: minmax(24rem, 1fr) minmax(16rem, 0.55fr);
-    column-gap: clamp(2.5rem, 6vw, 6rem);
-
-    > h1,
-    > p,
-    > nav {
-      grid-column: 1;
-    }
-
-    > .initiative-logo {
-      grid-row: 1 / span 6;
-      grid-column: 2;
-      align-self: center;
-      width: min(100%, 24rem);
-      margin: 0;
-    }
-  }
-
   body#classes {
     .schedule-days {
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -3260,34 +3183,10 @@ body#links {
     }
   }
 
-  body:not(#home, #legal, .community-page) {
-    #intro:has(> figure) {
-      grid-template-columns: minmax(18rem, 0.92fr) minmax(22rem, 1.08fr);
-      column-gap: clamp(2rem, 4vw, 4rem);
-
-      > h1,
-      > p,
-      > ul,
-      > ol {
-        grid-column: 1;
-      }
-
-      > figure {
-        grid-row: 1 / span 4;
-        grid-column: 2;
-      }
-    }
-  }
-
   body#levels #intro:has(> figure) {
     > ul[aria-label="Core aspects of each level"] {
       grid-template-columns: repeat(5, minmax(0, 1fr));
       grid-column: 1 / -1;
-    }
-
-    > figure {
-      grid-row: 1 / span 3;
-      align-self: start;
     }
   }
 
