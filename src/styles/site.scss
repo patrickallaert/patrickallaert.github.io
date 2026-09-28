@@ -63,6 +63,13 @@ textarea {
   --surface: #fffdf8;
   --surface-muted: color-mix(in srgb, var(--surface) 92%, var(--gold));
   --surface-highlight: color-mix(in srgb, var(--gold) 18%, var(--surface));
+  --surface-gradient-warm:
+    linear-gradient(135deg, color-mix(in srgb, var(--gold) 18%, transparent), transparent 45%),
+    linear-gradient(315deg, color-mix(in srgb, var(--sage) 9%, transparent), transparent 52%),
+    var(--surface);
+  --surface-gradient-blue:
+    linear-gradient(135deg, color-mix(in srgb, var(--brand-navy) 10%, transparent), transparent 52%),
+    var(--surface);
   --ink: #173846;
   --ink-soft: rgba(23, 56, 70, 0.74);
   --light-text: #fff;
@@ -478,9 +485,7 @@ body {
     }
 
     > figure:has(> blockquote) {
-      background:
-        linear-gradient(135deg, color-mix(in srgb, var(--brand-navy) 12%, transparent), transparent 54%),
-        var(--surface);
+      background: var(--surface-gradient-blue);
       border-color: color-mix(in srgb, var(--brand-navy) 22%, var(--line));
       blockquote,
       p {
@@ -613,9 +618,7 @@ body {
       padding: clamp(1.15rem, 3vw, 1.7rem);
       margin-inline: auto;
       color: var(--light-text);
-      background:
-        linear-gradient(135deg, color-mix(in srgb, var(--brand-navy) 16%, transparent), transparent),
-        var(--ink);
+      background: var(--ink);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
@@ -749,10 +752,7 @@ body:not(#home, #legal, #links, .community-page) {
     grid-template-columns: minmax(0, 1fr);
     gap: clamp(1rem, 3vw, 1.8rem);
     min-height: clamp(24rem, 46vw, 37rem);
-    background:
-      linear-gradient(135deg, color-mix(in srgb, var(--gold) 18%, transparent), transparent 45%),
-      linear-gradient(315deg, color-mix(in srgb, var(--sage) 9%, transparent), transparent 52%),
-      var(--surface);
+    background: var(--surface-gradient-warm);
 
     > h1 {
       max-width: 12ch;
@@ -824,10 +824,7 @@ body.community-page {
     display: grid;
     gap: clamp(0.9rem, 2vw, 1.25rem);
     min-height: auto;
-    background:
-      linear-gradient(135deg, color-mix(in srgb, var(--gold) 18%, transparent), transparent 46%),
-      linear-gradient(315deg, color-mix(in srgb, var(--sage) 9%, transparent), transparent 54%),
-      var(--surface);
+    background: var(--surface-gradient-warm);
 
     > h1 {
       max-width: 15ch;
@@ -869,9 +866,7 @@ body.community-page {
   }
 
   .support-panel {
-    background:
-      linear-gradient(135deg, color-mix(in srgb, var(--brand-navy) 9%, transparent), transparent 52%),
-      var(--surface);
+    background: var(--surface-gradient-blue);
     border: 0.14rem solid color-mix(in srgb, var(--brand-navy) 45%, var(--line));
 
     > h2 {
@@ -1168,7 +1163,7 @@ body#home {
   #video {
     display: grid;
     gap: clamp(1rem, 4vw, 2.5rem);
-    background: linear-gradient(135deg, color-mix(in srgb, var(--brand-navy) 42%, var(--ink)), var(--ink));
+    background: var(--ink);
     > div:last-child {
       aspect-ratio: 16 / 9;
       overflow: hidden;
@@ -2061,9 +2056,7 @@ body#levels {
   }
 
   section.class > section[aria-labelledby$="-scheduled-classes"] {
-    background:
-      linear-gradient(135deg, color-mix(in srgb, var(--course-accent) 7%, transparent), transparent 62%),
-      var(--surface-muted);
+    background: var(--surface-muted);
     border-color: color-mix(in srgb, var(--course-accent) 18%, var(--line));
   }
 }
