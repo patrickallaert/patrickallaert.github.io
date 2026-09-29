@@ -363,9 +363,7 @@ body {
       display: grid;
       gap: 0.9rem;
       align-items: start;
-      background:
-        linear-gradient(135deg, color-mix(in srgb, var(--gold) 24%, transparent), transparent 50%),
-        var(--surface);
+      background: var(--surface);
 
       h2,
       p,
@@ -2025,10 +2023,32 @@ body#levels {
 }
 
 body#venues {
+  #intro {
+    nav {
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem 1.25rem;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 2.75rem;
+      }
+    }
+
+    > figure img {
+      height: clamp(14rem, 26vw, 20rem);
+    }
+  }
+
   main > section:not(#intro) {
     display: grid;
     gap: clamp(1rem, 2.5vw, 1.55rem);
-    background: var(--surface);
 
     > h2,
     > address,
@@ -2039,14 +2059,22 @@ body#venues {
     }
 
     address a {
-      display: inline-grid;
-      gap: 0.08rem;
+      display: inline-block;
       padding: 0.7rem 0.85rem;
       color: var(--ink);
       text-decoration: none;
       background: var(--surface-highlight);
       border: 1px solid color-mix(in srgb, var(--gold) 35%, var(--line));
       border-radius: var(--radius);
+
+      .directions {
+        display: block;
+        margin-top: 0.3rem;
+        font-size: 0.85rem;
+        color: var(--brand-navy);
+        text-decoration: underline;
+        text-underline-offset: 0.14em;
+      }
     }
 
     > figure {
@@ -2066,12 +2094,22 @@ body#venues {
 
     > section[aria-labelledby$="-scheduled-classes"] {
       grid-column: 1 / -1;
-      padding-top: 1rem;
-      border-top: 1px solid var(--line);
+      padding-top: 0;
+      margin-top: 0;
 
       > .scheduled-days {
         display: grid;
         gap: 0.9rem;
+
+        @media (min-width: 78rem) {
+          &:has(> section + section) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+
+          > section:only-child > ul {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+        }
 
         > section {
           display: grid;
@@ -2973,12 +3011,6 @@ body#links {
     }
   }
 
-  body#venues main > section:not(#intro) > section[aria-labelledby$="-scheduled-classes"] {
-    > .scheduled-days {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-
   body#levels section.class > section[aria-labelledby$="-scheduled-classes"],
   body#venues main > section:not(#intro) > section[aria-labelledby$="-scheduled-classes"] {
     article {
@@ -3174,6 +3206,10 @@ body#links {
     > div {
       padding-left: clamp(0rem, 2vw, 1.5rem);
     }
+  }
+
+  body#safer-dance-spaces > main > #intro:has(> .initiative-logo) {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr);
   }
 
   body#classes {
