@@ -30,6 +30,8 @@
     {
       "@context": "https://schema.org",
       "@type": "Event",
+      "@id": "https://conexao.be/events/2026-09-mardio-milena/#event",
+      "url": "https://conexao.be/events/2026-09-mardio-milena/",
       "name": "Mardio & Milena: Four Special Forró Workshops",
       "description": "Four special forró workshops with Mardio Costa and Milena Morais in Brussels.",
       "startDate": "2026-09-09T19:00:00+02:00",
@@ -40,6 +42,7 @@
       "location": [
         {
           "@type": "Place",
+          "@id": "https://conexao.be/venues/#dublin",
           "name": "Salle Dublin",
           "address": {
             "@type": "PostalAddress",
@@ -51,6 +54,7 @@
         },
         {
           "@type": "Place",
+          "@id": "https://conexao.be/venues/#brochet",
           "name": "Dojo du Brochet",
           "address": {
             "@type": "PostalAddress",
@@ -62,10 +66,26 @@
         }
       ],
       "organizer": {
-        "@type": "Organization",
+        "@type": "EducationalOrganization",
+        "@id": "https://conexao.be/#organization",
         "name": "Conexão",
         "url": "https://conexao.be/"
-      }
+      },
+      "performer": [
+        {"@type": "Person", "name": "Mardio Costa"},
+        {"@type": "Person", "name": "Milena Morais"}
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://conexao.be/"},
+        {"@type": "ListItem", "position": 2, "name": "Events", "item": "https://conexao.be/events/"},
+        {"@type": "ListItem", "position": 3, "name": "Mardio & Milena", "item": "https://conexao.be/events/2026-09-mardio-milena/"}
+      ]
     }
   </script>
   <link rel="preload" href="/assets/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
