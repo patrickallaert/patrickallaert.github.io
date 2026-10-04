@@ -14,7 +14,7 @@ const replaceBlock = (html, name, content) => html.replace(
     new RegExp(`([ \\t]*)<!-- ${name}:start -->[\\s\\S]*?[ \\t]*<!-- ${name}:end -->`, "g"),
     (_, indentation) => [
         `${indentation}<!-- ${name}:start -->`,
-        content.split("\n").map((line) => `${indentation}${line}`).join("\n"),
+        content ? content.split("\n").map((line) => `${indentation}${line}`).join("\n") : "",
         `${indentation}<!-- ${name}:end -->`,
     ].filter(Boolean).join("\n"),
 );

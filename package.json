@@ -6,13 +6,12 @@
   "scripts": {
     "build:html": "node scripts/build-classes.js && node scripts/build-levels.js && node scripts/build-venues.js && node scripts/build-calendar.js && node scripts/build-featured-event.js && node scripts/build-links.js",
     "build:css": "sass --no-source-map --style=compressed src/styles/site.scss docs/assets/site.css",
-    "build:js": "esbuild src/scripts/calendar.js src/scripts/event-registration.js --bundle --minify --legal-comments=none --format=iife --outdir=docs/assets",
+    "build:js": "esbuild src/scripts/calendar.js --bundle --minify --legal-comments=none --format=iife --outdir=docs/assets",
     "build": "npm run build:html && npm run build:css && npm run build:js",
     "lint:css": "stylelint \"src/styles/**/*.scss\"",
     "test:contrast": "node scripts/check-contrast.js",
-    "test:event-registration": "node scripts/check-event-registration.js",
     "audit:css": "node scripts/audit-css.js",
-    "verify": "npm run lint:css && npm run build && npm run test:contrast && npm run test:event-registration",
+    "verify": "npm run lint:css && npm run build && npm run test:contrast",
     "watch:css": "sass --watch src/styles/site.scss:docs/assets/site.css"
   },
   "devDependencies": {

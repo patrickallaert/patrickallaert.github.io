@@ -1,5 +1,5 @@
 {
-  "featuredEvent": "2026-10-camila-alves",
+  "featuredEvent": null,
   "freeIntros": [
     {
       "date": "2026-09-02",
@@ -111,12 +111,6 @@
     },
     "2026-10-camila-alves": {
       "category": "workshops",
-      "title": "Camila Alves in Brussels",
-      "label": "Three forró workshops",
-      "dates": "3 October 2026",
-      "summary": "Camila Alves is coming from Lisbon for three workshops on turns technique, active following and attentive leading, and frame in forró.",
-      "image": "/assets/events/2026-10-camila-alves.webp",
-      "imageAlt": "Camila Alves",
       "date": "2026-10-03",
       "venue": "malibran",
       "occurrences": [

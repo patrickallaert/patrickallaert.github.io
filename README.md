@@ -181,13 +181,9 @@ location = /events/mardio-milena/ {
 }
 ```
 
-The Camila Alves registration form should remain limited to email, first and
-last name, optional city, an optional photo/video preference, and one required
-attendance-and-role grid. Its rows are the three workshop times; its columns
-are `Not attending`, `Leader`, `Follower`, and `Flexible / I can adapt`. Keep
-newsletter subscriptions and the event description outside this form. Use this
-confirmation message: `Thank you. We have received your registration request.
-Your place is not confirmed yet; we will contact you by email.`
+The previous workshop registration integration is documented in
+[Event registration](documentation/event-registration.md), with its Git reference
+for reuse in future events.
 
 `docs/robots.txt`, `docs/sitemap.xml`, the homepage JSON-LD, favicons, and the
 shared social image are static files maintained by hand.
