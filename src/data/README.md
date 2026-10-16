@@ -41,6 +41,8 @@ HTML outside generated markers by hand; edit generated content through
 
 The registration status and external form link in `docs/register/index.html`
 are edited directly when registrations open or close.
+See [Class registration modes](../../documentation/class-registration.md) for
+the reusable HTML blocks and switching checklist.
 
 Temporary notices are edited directly in `docs/` and use the generic `notice`
 class. They are not part of the programme data or propagated automatically.

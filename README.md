@@ -136,10 +136,11 @@ shade.
 ## Site data model
 
 `src/data/site.json` contains the structured information that changes with the
-programme: trimesters, schedules, venues, teachers, courses, registration, and
+programme: trimesters, schedules, venues, teachers, courses, events, and
 free sessions for the calendar. Every configured trimester is published in JSON order.
-Registration is either `null` when closed or points to exactly one configured
-trimester and its form URL.
+Class registration is maintained directly in HTML, not in the programme data.
+See [Class registration modes](documentation/class-registration.md) for the
+open and closed HTML blocks and the checklist for switching between them.
 
 The permanent `/try-forro/` page and its contextual links are edited directly
 in HTML. Between campaigns, keep the page online with a next-dates message and
@@ -168,7 +169,6 @@ Build scripts may update marked regions inside those same HTML files:
 - `class-schedules` blocks in `docs/classes/index.html`
 - `course-sessions:<course-id>` blocks in `docs/levels/index.html`
 - `venue-sessions:<venue-id>` blocks in `docs/venues/index.html`
-- `registration-status` and `registration-link` blocks in `docs/register/index.html`
 - `links` block and QR assets for the unlisted `/links/` communication page
 
 Stable publication metadata is maintained directly in the HTML. When adding,
