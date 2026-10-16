@@ -413,26 +413,6 @@ body {
       }
     }
 
-    .notice {
-      grid-column: 1 / -1;
-      min-width: 0;
-      padding: 1rem;
-      margin: 1rem 0;
-      line-height: 1.5;
-      color: var(--ink);
-      background: var(--surface-highlight);
-      border-left: 0.35rem solid var(--brand-navy);
-
-      p {
-        max-width: 75ch;
-        margin: 0;
-      }
-
-      p + p {
-        margin-top: 0.5rem;
-      }
-    }
-
     .featured-event {
       display: grid;
       gap: clamp(1.25rem, 4vw, 3rem);
