@@ -137,14 +137,26 @@ shade.
 
 `src/data/site.json` contains the structured information that changes with the
 programme: trimesters, schedules, venues, teachers, courses, registration, and
-free intro campaigns. Every configured trimester is published in JSON order.
+free sessions for the calendar. Every configured trimester is published in JSON order.
 Registration is either `null` when closed or points to exactly one configured
 trimester and its form URL.
 
-The permanent `/try-forro/` page and its temporary promotions are controlled by
-`freeIntro.status`. Set it to `open` while free sessions can be booked, or to
-`closed` to replace the schedule with the next-period message and remove the
-prominent links. Run `npm run build` and deploy after changing the status.
+The permanent `/try-forro/` page and its contextual links are edited directly
+in HTML. Between campaigns, keep the page online with a next-dates message and
+remove the old sessions and registration link. Keep past `freeIntros` entries
+in the data so that the calendar retains its history.
+
+The session layout and registration block are preserved in Git:
+
+```sh
+git show e658dcb29a49ae6660788dd1c47018d6fc27aa39:docs/try-forro/index.html
+```
+
+When new dates are confirmed, reuse the `.free-intro-sessions` articles and
+`.free-intro-registration` block from that version; their styles remain in
+`src/styles/site.scss`. Update dates, anchors, venues, languages, and the form
+URL, add the sessions to `freeIntros` for the calendar, and update the contextual
+links on Home, Classes, Events, and Register. Run `npm run build` before deploying.
 
 ## Current approach
 
@@ -157,7 +169,6 @@ Build scripts may update marked regions inside those same HTML files:
 - `course-sessions:<course-id>` blocks in `docs/levels/index.html`
 - `venue-sessions:<venue-id>` blocks in `docs/venues/index.html`
 - `registration-status` and `registration-link` blocks in `docs/register/index.html`
-- `free-intro-*` blocks on the permanent `/try-forro/` page and its contextual entry points
 - `links` block and QR assets for the unlisted `/links/` communication page
 
 Stable publication metadata is maintained directly in the HTML. When adding,
