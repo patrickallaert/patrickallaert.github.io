@@ -114,7 +114,6 @@ const sessionDetails = ({ term, session }, data, indent) => {
     return [
         `${indent}<li>`,
         `${innerIndent}<article>`,
-        portraits,
         `${detailIndent}<h4>${escapeHtml(dayName(session.day))}</h4>`,
         `${detailIndent}<p class="term">${link(`/classes/#${term.id}`, term.title)}</p>`,
         `${detailIndent}<p class="time">${date}${renderTimeRange(session.time)}</p>`,
@@ -123,6 +122,7 @@ const sessionDetails = ({ term, session }, data, indent) => {
         ].join("\n") : "",
         `${detailIndent}<p class="venue">${link(`/venues/#${session.venue}`, data.venues[session.venue])}</p>`,
         people ? `${detailIndent}<p class="people">${people}</p>` : "",
+        portraits,
         `${innerIndent}</article>`,
         `${indent}</li>`,
     ].filter(Boolean).join("\n");

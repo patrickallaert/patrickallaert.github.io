@@ -112,12 +112,12 @@ const renderSession = (session, data) => {
     const time = session.time.split("-");
     return [
         `              <article class="${(courseClassName(session.course, course, minutesBetween(time)))}">`,
-        renderPortraits(session, data.teachers),
         `                <p><time datetime="${time[0]}">${formatTime(time[0])}</time> - <time datetime="${time[1]}">${formatTime(time[1])}</time></p>`,
         `                <h6>${link(courseHref(session.course), courseTitle(session.course, course))}</h6>`,
         renderDateRange(session) && `                ${renderDateRange(session)}`,
         renderTeachers(session, data.teachers) && `                ${renderTeachers(session, data.teachers)}`,
         session.note && `                <p>${escapeHtml(session.note)}</p>`,
+        renderPortraits(session, data.teachers),
         "              </article>",
     ].filter(Boolean).join("\n");
 };

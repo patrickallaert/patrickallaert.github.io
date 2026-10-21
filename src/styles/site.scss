@@ -260,6 +260,33 @@ body {
     padding: var(--main-top-padding) var(--main-inline) clamp(3rem, 7vw, 5rem);
     margin-inline: auto;
 
+    .portraits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-block: 0.25rem;
+      margin: 0.25rem 0 0;
+
+      img {
+        flex: none;
+        width: 3.25rem;
+        height: 3.85rem;
+        object-fit: cover;
+        border: 0.12rem solid #ffffff;
+        border-radius: 0.25rem;
+        box-shadow: 0 0.45rem 0.9rem rgba(23, 29, 28, 0.14);
+        transform: rotate(3deg);
+
+        &:nth-child(2n) {
+          transform: rotate(-4deg);
+        }
+
+        &:nth-child(3n) {
+          transform: rotate(2deg);
+        }
+      }
+    }
+
     > #intro {
       display: grid;
       grid-template-columns: minmax(0, 1fr);
@@ -1609,63 +1636,6 @@ body#classes {
         color: var(--ink-soft);
       }
 
-      &:has(.portraits) {
-        grid-template-columns: minmax(0, 1fr) auto;
-        gap: 0.28rem 0.72rem;
-        align-items: start;
-      }
-
-      .portraits {
-        display: grid;
-        grid-row: 1 / span 4;
-        grid-column: 2;
-        justify-items: end;
-        width: max-content;
-
-        img {
-          flex: none;
-          width: 2.05rem;
-          height: 2.42rem;
-          object-fit: cover;
-          border: 0.12rem solid #ffffff;
-          border-radius: 0.25rem;
-          box-shadow: 0 0.45rem 0.9rem rgba(23, 29, 28, 0.14);
-        }
-
-        img:nth-child(1) {
-          transform: rotate(5deg);
-        }
-
-        img:nth-child(2n) {
-          transform: rotate(-7deg) translateY(0.1rem);
-        }
-
-        img:nth-child(3n) {
-          transform: rotate(6deg) translateY(-0.08rem);
-        }
-
-        img + img {
-          margin-top: -0.66rem;
-        }
-      }
-
-      &:has(.portraits) > :not(.portraits) {
-        grid-column: 1;
-      }
-
-      @media (min-width: 78rem) {
-        .portraits {
-          img {
-            width: 2.75rem;
-            height: 3.24rem;
-          }
-
-          img + img {
-            margin-top: -0.9rem;
-          }
-        }
-      }
-
       &::before {
         position: absolute;
         inset: 0 auto 0 0;
@@ -1744,56 +1714,6 @@ body#venues main > section:not(#intro) > section[aria-labelledby$="-scheduled-cl
       0 0.8rem 1.6rem rgba(38, 71, 67, 0.04);
   }
 
-  .portraits {
-    display: flex;
-    grid-row: 1 / span 2;
-    grid-column: 2;
-    align-self: start;
-    justify-self: end;
-    width: max-content;
-    max-width: 26rem;
-    overflow: hidden;
-    border-radius: calc(var(--radius) - 0.1rem);
-
-    &:has(img:nth-child(1)) {
-      width: 4.45rem;
-    }
-
-    &:has(img:nth-child(2)) {
-      width: 6.65rem;
-    }
-
-    &:has(img:nth-child(3)) {
-      width: 8.85rem;
-    }
-
-    img {
-      flex: none;
-      width: 3.55rem;
-      height: 4.15rem;
-      object-fit: cover;
-      border: 2px solid #ffffff;
-      border-radius: 0.3rem;
-      box-shadow: 0 0.45rem 1.1rem rgba(23, 29, 28, 0.12);
-    }
-
-    img:nth-child(1) {
-      transform: rotate(4deg);
-    }
-
-    img:nth-child(2n) {
-      transform: rotate(-8deg) translateY(0.12rem);
-    }
-
-    img:nth-child(3n) {
-      transform: rotate(6deg) translateY(-0.1rem);
-    }
-
-    img + img {
-      margin-left: -1.2rem;
-    }
-  }
-
   .exceptions {
     display: flex;
     flex-wrap: wrap;
@@ -1830,8 +1750,10 @@ body#venues main > section:not(#intro) > section[aria-labelledby$="-scheduled-cl
   }
   article {
     position: relative;
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     gap: 0.7rem;
+    align-items: start;
     padding: 0.9rem 1rem 1rem;
     overflow: hidden;
     background: var(--surface);
@@ -1847,18 +1769,27 @@ body#venues main > section:not(#intro) > section[aria-labelledby$="-scheduled-cl
     }
 
     > p {
+      flex: 0 0 100%;
       margin: 0;
+    }
+
+    > .term {
+      flex: 0 1 auto;
+    }
+
+    > .portraits {
+      flex: 0 0 100%;
     }
 
     > h4,
     > h5 {
-      padding: 0 0 0.6rem;
+      flex: 1 1 8rem;
+      min-width: 0;
       margin: 0;
       font-size: clamp(1.2rem, 2vw, 1.45rem);
       font-weight: 800;
       line-height: 1;
       color: var(--ink);
-      border-bottom: 1px solid color-mix(in srgb, var(--course-accent) 20%, transparent);
     }
 
     &.pratica {
@@ -2879,40 +2810,6 @@ body#links {
     }
   }
 
-  body#levels section.class > section[aria-labelledby$="-scheduled-classes"],
-  body#venues main > section:not(#intro) > section[aria-labelledby$="-scheduled-classes"] {
-    article {
-      grid-template-columns: minmax(8rem, 0.72fr) minmax(0, 1fr) auto;
-      gap: 0.62rem 1rem;
-      align-items: start;
-
-      > h4,
-      > h5 {
-        align-self: center;
-        padding: 0;
-        border: 0;
-      }
-    }
-
-    .term {
-      justify-self: end;
-    }
-
-    .time,
-    .exceptions {
-      grid-column: 1 / -1;
-    }
-
-  .course,
-    .venue,
-    .people {
-      align-self: start;
-    }
-
-    .portraits {
-      grid-column: 3;
-    }
-  }
   body.community-page .care-team-list {
     grid-template-columns: repeat(4, minmax(0, 10rem));
   }

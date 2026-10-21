@@ -186,13 +186,13 @@ const sessionDetails = ({ term, session }, data, indent) => {
     return [
         `${indent}<li>`,
         `${innerIndent}<article class="${escapeHtml(courseClassName(data, session.course))}">`,
-        portraits,
         `${detailIndent}<h5>${link(courseHref(session.course), courseTitle(data, session.course))}</h5>`,
         `${detailIndent}<p class="term">${link(`/classes/#${term.id}`, term.title)}</p>`,
         `${detailIndent}<p class="time">${date}${renderTimeRange(session.time)}</p>`,
         noClass ? `${detailIndent}<p class="exceptions"><strong>No class:</strong> ${noClass}</p>` : "",
         people ? `${detailIndent}<p class="people">${people}</p>` : "",
         session.note ? `${detailIndent}<p class="note">${escapeHtml(session.note)}</p>` : "",
+        portraits,
         `${innerIndent}</article>`,
         `${indent}</li>`,
     ].filter(Boolean).join("\n");
