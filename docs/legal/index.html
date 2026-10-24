@@ -28,7 +28,8 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preload" href="/assets/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/architects-daughter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/site.css?v=20261021">
+  <link rel="stylesheet" href="/assets/site.css?v=20261025-consent">
+  <script defer src="/assets/consent.js?v=20261025"></script>
 </head>
 <body id="legal">
   <a href="#main">Skip to content</a>
@@ -178,6 +179,24 @@
         <p>To exercise these rights, contact us at <a href="mailto:info@conexao.be">info@conexao.be</a>. We will reply within a maximum of one week.</p>
       </section>
 
+      <section id="cookies">
+        <h3>Cookies</h3>
+        <p>Analytics and YouTube videos are optional. You can accept or refuse them separately in <strong>Cookie preferences</strong>, available in the footer. We remember your choices in this browser for 180 days; you can change them anytime.</p>
+
+        <section id="analytics">
+          <h4>Google Analytics</h4>
+          <p>With your permission, Conexão ASBL uses Google Analytics 4 to understand visits and improve this website. Google receives information such as pages viewed, referral sources, and device and browser details. Advertising features are disabled.</p>
+          <p>The analytics cookies <code>_ga</code> and <code>_ga_4EZ01891D3</code> distinguish browsers and remember sessions, respectively. Their default lifetime is two years, renewed on visits. Withdrawing analytics consent stops collection and removes these cookies.</p>
+          <p>Read more about <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">how Google uses this information</a>.</p>
+        </section>
+
+        <section id="youtube">
+          <h4>YouTube Videos</h4>
+          <p>If you allow YouTube videos, the homepage can load Google's video player. Google receives connection information and may use cookies or browser storage. Refusing keeps the player off; withdrawing consent removes it and prevents further loading.</p>
+          <p>This does not erase data already sent to Google or cookies stored by YouTube; you can clear those through your browser settings. See <a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google’s privacy policy</a> for details.</p>
+        </section>
+      </section>
+
       <section>
         <h3>Communication</h3>
         <p>We use the data you provide to us to send you information about the course you signed up for, such as registration confirmation, course updates, or payment requests.</p>
@@ -210,8 +229,30 @@
         <span>Enterprise number: 0755.832.512</span>
         <address>Rue de l'Étang 137, 1040 Etterbeek</address>
       </div>
+      <button type="button" aria-controls="cookie-preferences" hidden>Cookie preferences</button>
       <p>&copy; 2026 Conexão. All rights reserved.</p>
     </div>
   </footer>
+  <dialog id="cookie-preferences" aria-labelledby="cookie-preferences-title" aria-describedby="cookie-preferences-description">
+    <header>
+      <img src="/assets/cookie.webp" alt="" width="160" height="160">
+      <h2 id="cookie-preferences-title">A little cookie before we dance?</h2>
+    </header>
+    <p id="cookie-preferences-description">May we use Google Analytics to improve this website and load YouTube videos? Both are optional, and you can change your choices anytime in Cookie preferences.</p>
+    <p><a href="/legal/#cookies">Cookie details</a></p>
+    <form method="dialog">
+      <details>
+        <summary>Choose preferences</summary>
+        <fieldset>
+          <legend>Your choices</legend>
+          <label><input type="checkbox" name="analytics"><span><strong>Google Analytics</strong>Understand visits and improve the website.</span></label>
+          <label><input type="checkbox" name="youtube"><span><strong>YouTube videos</strong>Load videos hosted by Google, which may use cookies or browser storage.</span></label>
+        </fieldset>
+        <button type="submit" value="selection">Save my choices</button>
+      </details>
+      <button type="submit" value="all">Yes, allow both</button>
+      <button type="submit" value="none">No thanks</button>
+    </form>
+  </dialog>
 </body>
 </html>

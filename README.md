@@ -161,6 +161,27 @@ links on Home, Classes, Events, and Register. Run `npm run build` before deployi
 
 ## Current approach
 
+The shared `src/scripts/consent.js` manages optional Google Analytics and YouTube
+preferences through one dialog. Visitors can accept both, refuse both, or choose
+each service separately. Choices are stored under `conexao-cookie-preferences`
+for 180 days per origin and can be changed through `Cookie preferences` in the
+footer. The same interface works on production, acceptance, and local previews;
+the unlisted `/links/` page is excluded. The Legal page remains accessible
+without an automatic consent prompt.
+
+Google Analytics 4 uses measurement ID `G-4EZ01891D3`. Its tag loads only on
+`conexao.be` after analytics consent, so acceptance and local visits are not sent
+to the production property. YouTube is controlled independently: its inert HTML
+template becomes a lazy-loaded player on the homepage when allowed, without
+autoplay. Otherwise, a local preview and play button open the same preferences.
+Withdrawing YouTube consent restores that preview. Keep the external YouTube
+link available for visitors without JavaScript.
+
+Maintain the dialog and footer control directly in each public HTML page, and
+include the deferred consent script when adding a page. Run `npm run build:js`
+after changing the script. Validate production collection in GA4 Realtime after
+deploying and accepting analytics.
+
 The current HTML pages are intentionally maintained directly in `docs/`.
 There is no separate `site/` source directory.
 

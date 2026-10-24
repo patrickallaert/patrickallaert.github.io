@@ -76,7 +76,8 @@
   </script>
   <link rel="preload" href="/assets/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/architects-daughter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/site.css?v=20261021">
+  <link rel="stylesheet" href="/assets/site.css?v=20261025-consent">
+  <script defer src="/assets/consent.js?v=20261025"></script>
 </head>
 <body id="home">
   <a href="#main">Skip to content</a>
@@ -151,14 +152,16 @@
       <div>
         <h2>See the Energy</h2>
         <p>If you want a more immediate sense of the atmosphere, this gives a much better impression than a text description ever could.</p>
+        <p id="youtube-notice">To watch here, allow YouTube videos in Cookie preferences. <a href="/legal/#youtube">Video privacy</a></p>
         <p><a href="https://www.youtube.com/watch?v=VQ5k7mmcWuQ" rel="noopener noreferrer" target="_blank">Watch on YouTube</a></p>
       </div>
-      <div>
-        <a class="video-facade" href="https://www.youtube.com/watch?v=VQ5k7mmcWuQ" rel="noopener noreferrer" target="_blank" aria-label="Play Conexão video on YouTube">
-          <img src="/assets/video/conexao.webp" alt="" width="640" height="360" loading="lazy" decoding="async">
-          <span aria-hidden="true"></span>
-        </a>
+      <div id="video-player">
+        <img src="/assets/video/conexao.webp" alt="Conexão forró video preview" width="640" height="360" loading="lazy" decoding="async">
+        <button type="button" aria-label="Choose preferences for YouTube videos" title="Choose preferences for YouTube videos" aria-controls="cookie-preferences" aria-describedby="youtube-notice" hidden></button>
       </div>
+      <template id="youtube-player">
+        <iframe src="https://www.youtube-nocookie.com/embed/VQ5k7mmcWuQ?rel=0" title="Conexão forró video on YouTube" width="640" height="360" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </template>
     </section>
 
   </main>
@@ -184,6 +187,7 @@
         <span>Enterprise number: 0755.832.512</span>
         <address>Rue de l'Étang 137, 1040 Etterbeek</address>
       </div>
+      <button type="button" aria-controls="cookie-preferences" hidden>Cookie preferences</button>
       <p>&copy; 2026 Conexão. All rights reserved.</p>
     </div>
   </footer>
@@ -238,18 +242,28 @@
       });
       render(0);
 
-      const videoFacade = document.querySelector('.video-facade');
-      videoFacade?.addEventListener('click', (event) => {
-        event.preventDefault();
-        const iframe = document.createElement('iframe');
-        iframe.src = 'https://www.youtube-nocookie.com/embed/VQ5k7mmcWuQ?rel=0&autoplay=1';
-        iframe.title = 'Conexão video';
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-        iframe.allowFullscreen = true;
-        videoFacade.replaceWith(iframe);
-      });
     })();
   </script>
+  <dialog id="cookie-preferences" aria-labelledby="cookie-preferences-title" aria-describedby="cookie-preferences-description">
+    <header>
+      <img src="/assets/cookie.webp" alt="" width="160" height="160">
+      <h2 id="cookie-preferences-title">A little cookie before we dance?</h2>
+    </header>
+    <p id="cookie-preferences-description">May we use Google Analytics to improve this website and load YouTube videos? Both are optional, and you can change your choices anytime in Cookie preferences.</p>
+    <p><a href="/legal/#cookies">Cookie details</a></p>
+    <form method="dialog">
+      <details>
+        <summary>Choose preferences</summary>
+        <fieldset>
+          <legend>Your choices</legend>
+          <label><input type="checkbox" name="analytics"><span><strong>Google Analytics</strong>Understand visits and improve the website.</span></label>
+          <label><input type="checkbox" name="youtube"><span><strong>YouTube videos</strong>Load videos hosted by Google, which may use cookies or browser storage.</span></label>
+        </fieldset>
+        <button type="submit" value="selection">Save my choices</button>
+      </details>
+      <button type="submit" value="all">Yes, allow both</button>
+      <button type="submit" value="none">No thanks</button>
+    </form>
+  </dialog>
 </body>
 </html>
