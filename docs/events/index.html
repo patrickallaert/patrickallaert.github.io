@@ -29,7 +29,7 @@
   <link rel="preload" href="/assets/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/architects-daughter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/calendar.css?v=20260903">
-  <link rel="stylesheet" href="/assets/site.css?v=20261025-consent">
+  <link rel="stylesheet" href="/assets/site.css?v=20261118">
   <script defer src="/assets/calendar.js?v=20260907"></script>
   <script defer src="/assets/consent.js?v=20261025"></script>
 </head>
@@ -50,13 +50,20 @@
     </nav>
   </header>
   <!-- featured-event-banner:start -->
+  <aside class="featured-event-banner" aria-label="Featured event">
+    <p>
+      <strong>Worlds Café: The relationship between forró and social &amp; political life</strong>
+      <span>22 November 2026 · 18:00–19:00 · Salle Dublin</span>
+      <a href="/events/#worlds-cafe">Discover the gathering</a>
+    </p>
+  </aside>
   <!-- featured-event-banner:end -->
   <main id="main">
     <section id="intro">
       <h1>Forró <strong>Events</strong></h1>
       <p>There are lots of opportunities to practice your forró skills, not to mention getting to know the lovely forró community.</p>
       <p>Conexão’s regular event rhythm is built around práticas and initiations, with occasional feedback weeks, workshops, and summer formats on top.</p>
-      <p class="intro-action"><a href="/try-forro/">Upcoming free sessions</a></p>
+      <p class="intro-action"><a href="/try-forro/">Free intro and Level 1 trial classes in January 2027</a></p>
       <figure>
         <img src="/assets/la-cellule.webp" alt="People dancing together during a Conexão forró event" width="1200" height="1200">
         <figcaption>
@@ -71,12 +78,13 @@
 
     <section id="calendar" aria-labelledby="calendar-title">
       <h2 id="calendar-title">Classes &amp; Events Calendar</h2>
-      <p>Browse exact dates for classes, practice and social dancing, workshops, and free introductions.</p>
+      <p>Browse exact dates for classes, practice and social dancing, workshops, community gatherings, and free introductions.</p>
       <fieldset class="calendar-filters">
         <legend>Show</legend>
         <label class="classes"><input type="checkbox" value="classes" checked> Classes</label>
         <label class="social-dancing"><input type="checkbox" value="social-dancing" checked> Practice &amp; social dancing</label>
         <label class="workshops"><input type="checkbox" value="workshops" checked> Workshops</label>
+        <label class="community"><input type="checkbox" value="community" checked> Community gatherings</label>
         <label class="initiations"><input type="checkbox" value="initiations" checked> Free intros &amp; trials</label>
         <p class="calendar-filter-note">Free Level 1 trial classes appear under both Classes and Free intros &amp; trials.</p>
       </fieldset>
@@ -124,6 +132,29 @@
         <p><strong>Contribution:</strong> voluntary contribution of €3-4</p>
         <p>If you have questions, you can write to <a href="mailto:info@conexao.be">info@conexao.be</a>.</p>
       </div>
+    </section>
+
+    <section id="special-activities">
+      <h2>Special activities at Salle Dublin</h2>
+      <p>On these Sundays, an activity or workshop is planned from 18:00 to 19:00, before the usual prática.</p>
+      <div>
+        <article id="worlds-cafe">
+          <p><time datetime="2026-11-22">Sunday 22 November 2026</time> · 18:00–19:00</p>
+          <h3>Worlds Café</h3>
+          <p>The relationship between forró and social &amp; political life.</p>
+        </article>
+        <article>
+          <p><time datetime="2027-01-24">Sunday 24 January 2027</time> · 18:00–19:00</p>
+          <h3>Guest workshop with Alessandra</h3>
+          <p><strong>To be confirmed.</strong> Frevo is a possible theme; the programme is not yet confirmed.</p>
+        </article>
+        <article>
+          <p><time datetime="2027-05-30">Sunday 30 May 2027</time> · 18:00–19:00</p>
+          <h3>Special activity</h3>
+          <p>Programme to be confirmed.</p>
+        </article>
+      </div>
+      <p><a href="/venues/#dublin">Find Salle Dublin</a>. Further details will be published here once confirmed.</p>
     </section>
 
     <section id="summer-guinguettes" aria-labelledby="summer-guinguettes-title">
@@ -311,6 +342,7 @@
           {"title":"Forró Prática","start":"2026-11-18T20:15:00","end":"2026-11-18T22:30:00","url":"/events/#praticas","category":"social-dancing","categories":["social-dancing"],"venue":"Salle Dublin","classNames":["social-dancing"]},
           {"title":"Level 1","start":"2026-11-19T19:00:00","end":"2026-11-19T20:15:00","url":"/levels/#level-1","category":"classes","categories":["classes"],"venue":"Dojo du Brochet","classNames":["classes","level-1"]},
           {"title":"Level 2","start":"2026-11-19T20:45:00","end":"2026-11-19T22:00:00","url":"/levels/#level-2","category":"classes","categories":["classes"],"venue":"Dojo du Brochet","classNames":["classes","level-2"]},
+          {"title":"Worlds Café: The relationship between forró and social & political life","start":"2026-11-22T18:00:00","end":"2026-11-22T19:00:00","url":"/events/#worlds-cafe","category":"community","categories":["community"],"venue":"Salle Dublin","classNames":["community"]},
           {"title":"Forró Prática","start":"2026-11-22T19:00:00","end":"2026-11-22T22:00:00","url":"/events/#praticas","category":"social-dancing","categories":["social-dancing"],"venue":"Salle Dublin","classNames":["social-dancing"]},
           {"title":"Everyone Leads, Everyone Follows","start":"2026-11-23T19:00:00","end":"2026-11-23T20:15:00","url":"/levels/#lead-follow","category":"classes","categories":["classes"],"venue":"GC Ten Noey","classNames":["classes","lead-follow"]},
           {"title":"Level 2","start":"2026-11-23T19:30:00","end":"2026-11-23T20:45:00","url":"/levels/#level-2","category":"classes","categories":["classes"],"venue":"Dojo du Brochet","classNames":["classes","level-2"]},
@@ -349,11 +381,21 @@
           {"title":"Forró Prática","start":"2026-12-23T20:15:00","end":"2026-12-23T22:30:00","url":"/events/#praticas","category":"social-dancing","categories":["social-dancing"],"venue":"Salle Dublin","classNames":["social-dancing"]},
           {"title":"Forró Prática","start":"2026-12-27T19:00:00","end":"2026-12-27T22:00:00","url":"/events/#praticas","category":"social-dancing","categories":["social-dancing"],"venue":"Salle Dublin","classNames":["social-dancing"]},
           {"title":"Forró Prática","start":"2026-12-30T20:15:00","end":"2026-12-30T22:30:00","url":"/events/#praticas","category":"social-dancing","categories":["social-dancing"],"venue":"Salle Dublin","classNames":["social-dancing"]},
+          {"title":"Free forró intro class","start":"2027-01-04T20:45:00","end":"2027-01-04T21:45:00","url":"/try-forro/","category":"initiations","categories":["initiations"],"venue":"Dojo du Brochet or GC Ten Noey (venue to be confirmed)","classNames":["initiations"]},
+          {"title":"Free forró intro class","start":"2027-01-06T19:00:00","end":"2027-01-06T20:00:00","url":"/try-forro/","category":"initiations","categories":["initiations"],"venue":"Salle Dublin","classNames":["initiations"]},
           {"title":"Forró Prática","start":"2027-01-06T20:15:00","end":"2027-01-06T22:30:00","url":"/events/#praticas","category":"social-dancing","categories":["social-dancing"],"venue":"Salle Dublin","classNames":["social-dancing"]},
+          {"title":"Free forró intro class","start":"2027-01-07T19:00:00","end":"2027-01-07T20:00:00","url":"/try-forro/","category":"initiations","categories":["initiations"],"venue":"Dojo du Brochet","classNames":["initiations"]},
           {"title":"Forró Prática","start":"2027-01-10T19:00:00","end":"2027-01-10T22:00:00","url":"/events/#praticas","category":"social-dancing","categories":["social-dancing"],"venue":"Salle Dublin","classNames":["social-dancing"]},
+          {"title":"Free forró intro class","start":"2027-01-10T19:00:00","end":"2027-01-10T20:00:00","url":"/try-forro/","category":"initiations","categories":["initiations"],"venue":"Salle Dublin","classNames":["initiations"]},
+          {"title":"Level 1 · Free trial class","start":"2027-01-11T20:45:00","end":"2027-01-11T22:00:00","url":"/try-forro/","category":"classes","categories":["classes","initiations"],"venue":"GC Ten Noey","classNames":["classes","level-1"]},
           {"title":"Forró Prática","start":"2027-01-13T20:15:00","end":"2027-01-13T22:30:00","url":"/events/#praticas","category":"social-dancing","categories":["social-dancing"],"venue":"Salle Dublin","classNames":["social-dancing"]},
+          {"title":"Level 1 · Free trial class","start":"2027-01-14T19:00:00","end":"2027-01-14T20:15:00","url":"/try-forro/","category":"classes","categories":["classes","initiations"],"venue":"Dojo du Brochet","classNames":["classes","level-1"]},
           {"title":"Forró Prática","start":"2027-01-17T19:00:00","end":"2027-01-17T22:00:00","url":"/events/#praticas","category":"social-dancing","categories":["social-dancing"],"venue":"Salle Dublin","classNames":["social-dancing"]},
+          {"title":"Free forró intro class","start":"2027-01-17T19:00:00","end":"2027-01-17T20:00:00","url":"/try-forro/","category":"initiations","categories":["initiations"],"venue":"Salle Dublin","classNames":["initiations"]},
+          {"title":"Level 1 · Free trial class","start":"2027-01-18T20:45:00","end":"2027-01-18T22:00:00","url":"/try-forro/","category":"classes","categories":["classes","initiations"],"venue":"GC Ten Noey","classNames":["classes","level-1"]},
           {"title":"Forró Prática","start":"2027-01-20T20:15:00","end":"2027-01-20T22:30:00","url":"/events/#praticas","category":"social-dancing","categories":["social-dancing"],"venue":"Salle Dublin","classNames":["social-dancing"]},
+          {"title":"Level 1 · Free trial class","start":"2027-01-21T19:00:00","end":"2027-01-21T20:15:00","url":"/try-forro/","category":"classes","categories":["classes","initiations"],"venue":"Dojo du Brochet","classNames":["classes","level-1"]},
+          {"title":"Guest workshop with Alessandra (to be confirmed)","start":"2027-01-24T18:00:00","end":"2027-01-24T19:00:00","url":"/events/#special-activities","category":"workshops","categories":["workshops"],"venue":"Salle Dublin","classNames":["workshops"]},
           {"title":"Forró Prática","start":"2027-01-24T19:00:00","end":"2027-01-24T22:00:00","url":"/events/#praticas","category":"social-dancing","categories":["social-dancing"],"venue":"Salle Dublin","classNames":["social-dancing"]},
           {"title":"Forró Prática","start":"2027-01-27T20:15:00","end":"2027-01-27T22:30:00","url":"/events/#praticas","category":"social-dancing","categories":["social-dancing"],"venue":"Salle Dublin","classNames":["social-dancing"]},
           {"title":"Forró Prática","start":"2027-01-31T19:00:00","end":"2027-01-31T22:00:00","url":"/events/#praticas","category":"social-dancing","categories":["social-dancing"],"venue":"Salle Dublin","classNames":["social-dancing"]},
@@ -386,6 +428,7 @@
           {"title":"Forró Prática","start":"2027-05-19T20:15:00","end":"2027-05-19T22:30:00","url":"/events/#praticas","category":"social-dancing","categories":["social-dancing"],"venue":"Salle Dublin","classNames":["social-dancing"]},
           {"title":"Forró Prática","start":"2027-05-23T19:00:00","end":"2027-05-23T22:00:00","url":"/events/#praticas","category":"social-dancing","categories":["social-dancing"],"venue":"Salle Dublin","classNames":["social-dancing"]},
           {"title":"Forró Prática","start":"2027-05-26T20:15:00","end":"2027-05-26T22:30:00","url":"/events/#praticas","category":"social-dancing","categories":["social-dancing"],"venue":"Salle Dublin","classNames":["social-dancing"]},
+          {"title":"Special activity (programme to be confirmed)","start":"2027-05-30T18:00:00","end":"2027-05-30T19:00:00","url":"/events/#special-activities","category":"community","categories":["community"],"venue":"Salle Dublin","classNames":["community"]},
           {"title":"Forró Prática","start":"2027-05-30T19:00:00","end":"2027-05-30T22:00:00","url":"/events/#praticas","category":"social-dancing","categories":["social-dancing"],"venue":"Salle Dublin","classNames":["social-dancing"]},
           {"title":"Forró Prática","start":"2027-06-02T20:15:00","end":"2027-06-02T22:30:00","url":"/events/#praticas","category":"social-dancing","categories":["social-dancing"],"venue":"Salle Dublin","classNames":["social-dancing"]},
           {"title":"Forró Prática","start":"2027-06-09T20:15:00","end":"2027-06-09T22:30:00","url":"/events/#praticas","category":"social-dancing","categories":["social-dancing"],"venue":"Salle Dublin","classNames":["social-dancing"]},

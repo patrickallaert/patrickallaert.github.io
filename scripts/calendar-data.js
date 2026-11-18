@@ -33,7 +33,8 @@ const classEvents = (data) => data.trimesters.flatMap((term) => term.schedule.fl
     return sessionOccurrences(term, session).map((date) => {
         const freeIntro = data.freeIntros.find((candidate) =>
             candidate.date === date
-            && candidate.course === session.course);
+            && candidate.course === session.course
+            && (!candidate.venue || candidate.venue === session.venue));
 
         return timedEvent({
             title: freeIntro ? freeIntroTitle(freeIntro) : courseTitle(data, session.course),
@@ -76,14 +77,19 @@ const publicEvents = (data) => Object.entries(data.events).filter(([, event]) =>
     });
 });
 
-const freeIntroEvents = (data) => data.freeIntros
-    .filter((session) => !session.event && !session.course)
+const freeIntroEvents = (data, classes) => data.freeIntros
+    .filter((session) => !session.event && (!session.course || !classes.some((event) =>
+        event.start.startsWith(`${session.date}T`)
+        && event.classNames.includes(session.course)
+        && (!session.venue || event.venue === data.venues[session.venue]))))
     .map((session) => timedEvent({
         title: freeIntroTitle(session),
         date: session.date,
         time: session.time,
         url: FREE_INTRO_URL,
-        category: "initiations",
+        category: session.course ? "classes" : "initiations",
+        categories: session.course ? ["classes", "initiations"] : ["initiations"],
+        className: session.course,
         venue: freeIntroVenue(data, session),
     }));
 
@@ -98,11 +104,15 @@ const workshopEvents = (data) => Object.entries(data.events).filter(([, event]) 
     }));
 });
 
-const buildCalendarEvents = (data) => [
-    ...classEvents(data),
-    ...publicEvents(data),
-    ...freeIntroEvents(data),
-    ...workshopEvents(data),
-].sort((left, right) => left.start.localeCompare(right.start) || left.title.localeCompare(right.title));
+const buildCalendarEvents = (data) => {
+    const classes = classEvents(data);
+
+    return [
+        ...classes,
+        ...publicEvents(data),
+        ...freeIntroEvents(data, classes),
+        ...workshopEvents(data),
+    ].sort((left, right) => left.start.localeCompare(right.start) || left.title.localeCompare(right.title));
+};
 
 module.exports = { buildCalendarEvents };

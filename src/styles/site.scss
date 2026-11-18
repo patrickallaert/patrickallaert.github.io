@@ -2378,6 +2378,34 @@ body#events {
     }
   }
 
+  #special-activities > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    gap: 1rem;
+    margin-block: 1.5rem;
+
+    article {
+      padding: 1.25rem;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+
+      > p:first-child {
+        margin-top: 0;
+        font-weight: 700;
+        color: var(--brand-navy);
+      }
+
+      h3 {
+        margin-block: 0.75rem;
+      }
+
+      > p:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
   #calendar {
     overflow: visible;
 
@@ -2387,6 +2415,11 @@ body#events {
   }
 
   :is(.calendar-filters, #calendar-viewer) {
+    .community {
+      --calendar-category: var(--brand-navy);
+      --calendar-category-text: var(--light-text);
+    }
+
     .classes {
       --calendar-category: var(--brand-blue);
       --calendar-category-text: var(--light-text);

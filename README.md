@@ -159,7 +159,19 @@ When new dates are confirmed, reuse the `.free-intro-sessions` articles and
 URL, add the sessions to `freeIntros` for the calendar, and update the contextual
 links on Home, Classes, Events, and Register. Run `npm run build` before deploying.
 
+Level 1 trials can be announced before a full trimester is ready: give these
+`freeIntros` entries an explicit `time`, `venue`, and `course: "level-1"`.
+The calendar includes them in both filters and merges them with matching
+scheduled classes once the trimester is added. Run `npm run test:calendar`
+to check this transition. Do not reuse an old registration form for new dates.
+
 ## Current approach
+
+The promotional banner is selected manually through `featuredEvent`. Events
+without an image receive only the banner, not an empty image-based feature.
+Worlds Café links to `/events/#worlds-cafe`; after 22 November 2026, set
+`featuredEvent` back to `null` and rebuild. Do not automatically promote
+unconfirmed activities. Community gatherings have their own calendar filter.
 
 The shared `src/scripts/consent.js` manages optional Google Analytics and YouTube
 preferences through one dialog. Visitors can accept both, refuse both, or choose
